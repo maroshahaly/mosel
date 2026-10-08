@@ -1118,5 +1118,16 @@
     "andrology.balanitis":   p => [p.has("سكر") && "السكري"]
   };
 
-  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.1.0", updatedAt: "2026-10" };
+  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.2.0", updatedAt: "2026-10" };
+
+  /* إضافة أمراض وأعراض من ملفات data/more_*.js
+     MOSEL_EXTEND("zoneKey", { zone?, regions?, symptoms?, conditions?, risk? }) */
+  root.MOSEL_EXTEND = function (key, add) {
+    if (add.zone && !ZONES.some(z => z.key === key)) ZONES.push(Object.assign({ key }, add.zone));
+    const d = DATA[key] || (DATA[key] = { symptoms: [], conditions: [] });
+    (add.symptoms || []).forEach(x => d.symptoms.push(x));
+    (add.conditions || []).forEach(x => d.conditions.push(x));
+    (add.regions || []).forEach(r => { const R = REGIONS.find(q => q.key === r); if (R && !R.specialties.includes(key)) R.specialties.push(key); });
+    Object.assign(RISK_FACTORS, add.risk || {});
+  };
 })(typeof window !== "undefined" ? window : globalThis);

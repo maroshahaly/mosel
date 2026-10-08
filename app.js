@@ -15,6 +15,9 @@ const PROFILE_KEY = "moselProfile";
 const MAX_FOLLOWUP_ROUNDS = 4;
 const QUICK_ACCESS = [
   { key: "sexual", title: "الصحة الجنسية — بسرية تامة", sub: "إفرازات، قروح، ثآليل، عدوى منقولة جنسيًا؛ لا يُحفظ شيء" },
+  { key: "pediatrics", title: "صحة الأطفال والرضّع", sub: "حمّى الرضيع، الجفاف، السعال، النمو والسلوك" },
+  { key: "infectious", title: "الحميات والأمراض المعدية", sub: "تيفود، حمّى مالطية، بلهارسيا، جديري، تسمم غذائي" },
+  { key: "hematology", title: "أمراض الدم", sub: "أنيميا، ثلاسيميا، أنيميا الفول، نزف، تضخم الغدد" },
   { key: "skin", title: "مشكلة في الجلد أو الشعر؟", sub: "حكة، طفح، حبوب، تساقط الشعر" },
   { key: "mental", title: "الصحة النفسية", sub: "قلق، اكتئاب، أرق، نوبات هلع" },
   { key: "geriatric", title: "صحة كبار السن", sub: "النسيان، التوازن، السقوط، التشوش المفاجئ" },
@@ -194,9 +197,8 @@ function bodyStage() {
     return `<div class="body-wrap photo">
       <img src="${BODY_PHOTOS[sex]}" alt="" draggable="false">
       <svg viewBox="0 0 100 200" preserveAspectRatio="none" role="group" aria-label="خريطة الجسم — اضغط على موضع الألم">
-        ${state.showOrgans ? organLayer([]) : ""}
         ${REGIONS.map(r => `<g class="region" data-region="${r.key}" tabindex="0" role="button" aria-label="${esc(r.name)}" fill="${r.color}">${P.shapes[r.key]}</g>`).join("")}
-        ${state.showOrgans ? "" : pulses(P.geo, 1.6)}
+        ${pulses(P.geo, 1.6)}
       </svg>
       ${tagLayer(P.geo, 100, 200)}
     </div>`;
@@ -216,70 +218,118 @@ const ORGAN_NAMES = {
   colon: "القولون (الأمعاء الغليظة)", smallint: "الأمعاء الدقيقة", appendix: "الزائدة الدودية", bladder: "المثانة",
   prostate: "البروستاتا", testes: "الخصيتان", uterus: "الرحم", ovaries: "المبيضان وقناتا فالوب", breast: "الثديان"
 };
+/* رسوم الأعضاء بأسلوب الرسم الطبي الواقعي: تدرّجات لونية للحجم والعمق،
+   ولمعة سطحية، ونسيج دقيق، وظلال ناعمة، وتفاصيل تشريحية (أوعية، فصوص، تلافيف). */
+function organDefs() {
+  const rg = (id, c1, c2, c3, cx = "38%", cy = "32%") => `<radialGradient id="${id}" cx="${cx}" cy="${cy}" r="75%"><stop offset="0" stop-color="${c1}"/><stop offset=".55" stop-color="${c2}"/><stop offset="1" stop-color="${c3}"/></radialGradient>`;
+  return `<defs>
+    <filter id="og-real" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="5" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -.45 .3" result="spots"/>
+      <feComposite in="spots" in2="SourceGraphic" operator="in" result="tex"/>
+      <feBlend in="SourceGraphic" in2="tex" mode="multiply" result="b"/>
+      <feGaussianBlur in="SourceAlpha" stdDeviation=".45" result="sh"/><feOffset in="sh" dx=".25" dy=".45" result="sho"/>
+      <feFlood flood-color="#2a0d0d" flood-opacity=".45"/><feComposite in2="sho" operator="in" result="shadow"/>
+      <feMerge><feMergeNode in="shadow"/><feMergeNode in="b"/></feMerge>
+    </filter>
+    <filter id="og-soft"><feGaussianBlur stdDeviation=".35"/></filter>
+    ${rg("g-brain", "#F6C9C3", "#E3A19C", "#B86F6C")}${rg("g-thy", "#E58A97", "#C2566A", "#8E2E43")}
+    ${rg("g-lung", "#F5C2C2", "#E08F97", "#A9555F")}${rg("g-heart", "#E2636F", "#B32F42", "#6E1626", "40%", "35%")}
+    ${rg("g-liver", "#B9573F", "#8E3424", "#5A1B12")}${rg("g-gb", "#9DC25A", "#5E8C3A", "#355A1E")}
+    ${rg("g-stom", "#F3B4A6", "#D9897A", "#A9574C")}${rg("g-spl", "#A84A5A", "#7A2E3B", "#4A1520")}
+    ${rg("g-panc", "#F7D9A0", "#E8B86D", "#B9853C")}${rg("g-kid", "#C46A55", "#9C4A3C", "#5E2219")}
+    ${rg("g-adr", "#F4C463", "#E0A23A", "#A8701A")}${rg("g-sint", "#F6C8B2", "#E7AE93", "#B97A5F")}
+    ${rg("g-blad", "#F6E09A", "#E6C25A", "#B08D2C")}${rg("g-pros", "#D79A90", "#B5716A", "#7E433D")}
+    ${rg("g-test", "#EBB8AE", "#C98A80", "#8E5249")}${rg("g-ut", "#EFA2B0", "#D27A8C", "#9C4559")}${rg("g-ov", "#F6C4CE", "#E39AA8", "#B06276")}
+    <linearGradient id="g-colon" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E7B08F"/><stop offset="1" stop-color="#B9785A"/></linearGradient>
+  </defs>`;
+}
+const SHINE = (cx, cy, rx, ry) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="#fff" opacity=".35" filter="url(#og-soft)"/>`;
 const ORGAN_SVG = {
-  brain: '<path d="M43 10.5 C43 6.8 46.5 5.6 50 5.6 C53.5 5.6 57 6.8 57 10.5 C57 13.2 54.5 14.4 50 14.4 C45.5 14.4 43 13.2 43 10.5 Z" fill="#E7A9A6" opacity=".85"/><path d="M50 6 V14 M45.5 8.5 q2 .8 1.4 2.8 M54.5 8.5 q-2 .8 -1.4 2.8 M46 12.5 q1.6-1.4 3 0 M51 12.5 q1.6-1.4 3 0" stroke="#B9706C" stroke-width=".4" fill="none"/>',
-  thyroid: '<path d="M46.8 31 C46.8 29.4 49 29.4 49.5 30.7 L50.5 30.7 C51 29.4 53.2 29.4 53.2 31 C53.2 32.7 51 33.1 50 32.1 C49 33.1 46.8 32.7 46.8 31 Z" fill="#C2566A"/>',
-  lungs: '<path d="M50 29 V38 M50 38 L47 41 M50 38 L53 41" stroke="#B8C4CC" stroke-width="1.2" fill="none"/><path d="M47 37 C42 36 37 39 35 45 C33 51 32 57 33 62 C37 63 43 61 46 59 C47 52 48 44 47 37 Z" fill="#E59AA0"/><path d="M53 37 C58 36 63 39 65 45 C67 51 68 57 67 62 C63 63 58 62 55 60 C56 57 57 55 55 53 C54 47 54 42 53 37 Z" fill="#E59AA0"/><path d="M36 50 q5 1 10 -2 M34 56 q6 0 12 -1 M66 52 q-5 1 -10 -2" stroke="#C27880" stroke-width=".5" fill="none"/>',
-  heart: '<path d="M49 46 C46 46 45 50 47 53 C49 56 53 58 57 57 C59 55 59 51 57 49 C55 46 52 45 49 46 Z" fill="#B23A48"/><path d="M50 46 q1 -3 3 -4 M53 46 q2 -2 4 -1" stroke="#8C2533" stroke-width="1" fill="none"/>',
-  liver: '<path d="M31 58 C38 56 50 56 57 58 C58 61 55 63 51 64 C45 66 39 69 34 70 C31 67 30 62 31 58 Z" fill="#8E3B2E"/>',
-  gallbladder: '<ellipse cx="41" cy="67.5" rx="1.8" ry="2.7" transform="rotate(-20 41 67.5)" fill="#5E8C3A"/>',
-  stomach: '<path d="M55 59 C60 57 66 59 66 64 C66 70 62 74 56 74 C53 74 51 72 52 70 C55 70 59 69 60 65 C60 62 57 61 55 61 Z" fill="#D9897A"/>',
-  spleen: '<ellipse cx="67" cy="64" rx="2.2" ry="4" transform="rotate(20 67 64)" fill="#7A2E3B"/>',
-  pancreas: '<path d="M45 72 C49 70 56 70 62 70.5 C63 71.5 62 73 60 73 C55 73.5 50 74 46 74 C44 74 44 72.5 45 72 Z" fill="#E8B86D"/>',
-  kidney: '<ellipse cx="41" cy="76" rx="3" ry="5" fill="#9C4A3C"/><ellipse cx="59" cy="75" rx="3" ry="5" fill="#9C4A3C"/>',
-  adrenal: '<path d="M39 71.5 L41 69 L43 71.5 Z M57 70.5 L59 68 L61 70.5 Z" fill="#E0A23A"/>',
-  colon: '<path d="M38 96 L37 82 C37 78 39 77 42 77 L58 77 C61 77 63 78 63 82 L63 92 C63 96 58 98 54 99 L51 101" stroke="#C98E6B" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M38 96 L37 82 C37 78 39 77 42 77 L58 77 C61 77 63 78 63 82 L63 92" stroke="#A9714F" stroke-width="4.2" stroke-dasharray=".4 2" fill="none"/>',
-  smallint: '<ellipse cx="50" cy="88" rx="10" ry="7.5" fill="#E7AE93"/><path d="M42 85 q3 -3 6 0 t6 0 t6 0 M42 89 q3 3 6 0 t6 0 t6 0 M43 93 q3 -2 6 0 t6 0" stroke="#C58467" stroke-width=".7" fill="none"/>',
-  appendix: '<path d="M38 97 q-1.5 2.5 .5 4.5" stroke="#B5674A" stroke-width="1.6" stroke-linecap="round" fill="none"/>',
-  bladder: '<ellipse cx="50" cy="106" rx="5" ry="4" fill="#E6C25A"/>',
-  breast: '<circle cx="42" cy="47" r="5" fill="none" stroke="#D27A8C" stroke-width="1"/><circle cx="58" cy="47" r="5" fill="none" stroke="#D27A8C" stroke-width="1"/>'
+  brain: `<path d="M42.6 10.6 C42.4 6.6 46.2 5.2 50 5.2 C53.8 5.2 57.6 6.6 57.4 10.6 C57.3 13.4 54.6 14.8 50 14.8 C45.4 14.8 42.7 13.4 42.6 10.6 Z" fill="url(#g-brain)"/>
+    <path d="M50 5.6 V14.4 M44 8 q1.6-.8 2.6.6 q-1.4 1.2 0 2.4 M44.2 12 q1.4-1 2.8 0 q1.2-1.2 2.2 0 M56 8 q-1.6-.8-2.6.6 q1.4 1.2 0 2.4 M55.8 12 q-1.4-1-2.8 0 q-1.2-1.2-2.2 0 M47 6.6 q.8 1.4 2.2.8 M53 6.6 q-.8 1.4-2.2.8" stroke="#A35E5A" stroke-width=".32" fill="none" stroke-linecap="round"/>${SHINE(46.5, 7.6, 2.6, 1.1)}`,
+  thyroid: `<path d="M50 29.8 L50 33.6" stroke="#B9C3CA" stroke-width="1.4"/><path d="M46.6 31.2 C46.4 29.2 48.6 29 49.4 30.5 L50.6 30.5 C51.4 29 53.6 29.2 53.4 31.2 C53.3 33.1 51.2 33.5 50 32.4 C48.8 33.5 46.7 33.1 46.6 31.2 Z" fill="url(#g-thy)"/>${SHINE(48, 30.6, .8, .4)}`,
+  lungs: `<path d="M50 28.5 V38.2" stroke="#C9D2D8" stroke-width="1.5" stroke-linecap="round"/><path d="M50 37.8 L46.6 41.4 M50 37.8 L53.4 41.4" stroke="#C9D2D8" stroke-width="1.1" stroke-linecap="round"/>
+    <path d="M47 37 C42 35.8 37 38.8 35 44.8 C33 50.8 32 57 33 62 C37 63.2 43 61.2 46 59 C47.2 52 48 44 47 37 Z" fill="url(#g-lung)"/>
+    <path d="M53 37 C58 35.8 63 38.8 65 44.8 C67 50.8 68 57 67 62 C63 63.2 58 62.2 55 60 C56 57 57 55 55.2 53 C54 47 54.2 42 53 37 Z" fill="url(#g-lung)"/>
+    <path d="M35.6 49.5 q5 1.4 10.6-2.6 M34 56.4 q6.4 .4 12.2-1.8 M66 51.2 q-5.4 1.4-10.6-2.4" stroke="#9E4B55" stroke-width=".35" fill="none"/>
+    <path d="M46.6 41.6 q-3 3-4.2 8 M46.6 41.6 q-1.4 5-1 10 M53.4 41.6 q3 3 4.2 8 M53.4 41.6 q1.6 5 1.4 9" stroke="#C47D86" stroke-width=".3" fill="none" opacity=".8"/>${SHINE(39, 43, 2.4, 3.6)}${SHINE(61, 43, 2.2, 3.4)}`,
+  heart: `<path d="M50.8 46.2 C50.8 43 52.6 41.6 54.4 41.8 C56 42 56.6 43.6 56 45" stroke="#C0384B" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M50 46 L49.6 42.4" stroke="#5D7FB5" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M48.6 45.6 C45.6 45.8 44.6 50 46.8 53.2 C49 56.4 53.2 58.4 57.2 57.2 C59.4 55.2 59.4 51 57.2 48.8 C55.2 46 52 44.8 48.6 45.6 Z" fill="url(#g-heart)"/>
+    <path d="M52.4 46.4 C51.4 49.6 52.6 53.6 55.6 56.6 M49 47.4 q-1.6 3 .4 6" stroke="#E9B44C" stroke-width=".45" fill="none" opacity=".85"/><path d="M52.4 46.4 C51.4 49.6 52.6 53.6 55.6 56.6" stroke="#7E1C2B" stroke-width=".25" fill="none"/>${SHINE(48.6, 48, 1.4, 1.8)}`,
+  liver: `<path d="M31 58 C38 55.6 50 55.6 57.2 57.8 C58.2 60.8 55.2 63 51 64.2 C45 66.2 39 69.2 34 70.2 C30.8 67 30 62 31 58 Z" fill="url(#g-liver)"/>
+    <path d="M45.6 56.4 C45 59.4 46.4 62 48.4 64.8" stroke="#5A1B12" stroke-width=".35" fill="none"/>${SHINE(37, 59.6, 4, 1.4)}`,
+  gallbladder: `<path d="M40.2 64.4 C42.6 64.6 43.4 67.6 42.4 69.8 C41.4 71.4 39.4 70.8 39.4 68.8 C39.2 67 39.2 65.4 40.2 64.4 Z" fill="url(#g-gb)"/>${SHINE(40.6, 66.4, .5, .9)}`,
+  stomach: `<path d="M54.6 58.6 C60 56.6 66.4 58.6 66.4 64 C66.4 70.4 62.2 74.4 56 74.2 C52.8 74.2 50.8 72.2 51.8 70 C55 70 59 69 59.8 65 C60 62 57.2 61 54.8 61.2 Z" fill="url(#g-stom)"/>
+    <path d="M58 63 q3 1 5 -.4 M57.6 66.4 q3 1 5.8-.6 M55.6 70 q3 .8 6.2-1.4" stroke="#B86A5D" stroke-width=".3" fill="none"/>${SHINE(61.6, 60.6, 2, .9)}`,
+  spleen: `<path d="M66 59.6 C68.6 59.8 69.8 63 69 66.4 C68.4 68.6 66 69 65.2 67 C64.6 64.6 64.8 61.4 66 59.6 Z" fill="url(#g-spl)"/>${SHINE(66.6, 62, .5, 1.1)}`,
+  pancreas: `<path d="M44.6 72.4 C48.6 70.4 56 70 62.2 70.4 C63.6 71.4 62.6 73.2 60.2 73.2 C55 73.6 50 74.2 46 74.4 C43.8 74.4 43.6 72.8 44.6 72.4 Z" fill="url(#g-panc)"/>
+    <path d="M45.6 73 q3 -.6 6 -.4 t6 -.4 t4 -.4" stroke="#C49048" stroke-width=".25" fill="none" stroke-dasharray=".5 .5"/>`,
+  kidney: `<path d="M41.6 81.4 L43.6 92" stroke="#E6D9A8" stroke-width=".7" fill="none"/><path d="M58.4 80.4 L56.4 92" stroke="#E6D9A8" stroke-width=".7" fill="none"/>
+    <path d="M40.6 71 C37.2 71.4 37 80.6 40.6 81.4 C42.8 81.8 43.2 78.4 42.2 76.4 C43.2 74.4 43 70.8 40.6 71 Z" fill="url(#g-kid)"/>
+    <path d="M59.4 70 C62.8 70.4 63 79.6 59.4 80.4 C57.2 80.8 56.8 77.4 57.8 75.4 C56.8 73.4 57 69.8 59.4 70 Z" fill="url(#g-kid)"/>${SHINE(39.6, 73.6, .8, 1.6)}${SHINE(60.6, 72.6, .8, 1.6)}`,
+  adrenal: `<path d="M38.8 71.6 Q40.6 68.2 42.6 71 Z M57.4 70.6 Q59.4 67.2 61.2 70 Z" fill="url(#g-adr)"/>`,
+  colon: `<path d="M38 96 L37 82 C37 78 39 77 42 77 L58 77 C61 77 63 78 63 82 L63 92 C63 96 58 98 54 99 L51 101" stroke="#9C5E43" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M38 96 L37 82 C37 78 39 77 42 77 L58 77 C61 77 63 78 63 82 L63 92 C63 96 58 98 54 99 L51 101" stroke="url(#g-colon)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M38 96 L37 82 C37 78 39 77 42 77 L58 77 C61 77 63 78 63 82 L63 92" stroke="#8C5238" stroke-width="4" stroke-dasharray=".35 1.9" fill="none" opacity=".7"/>
+    <path d="M36.4 94 L35.8 83 M41 76.2 L58 76.2 M64 82 L64 91" stroke="#fff" stroke-width=".5" opacity=".35" fill="none"/>`,
+  smallint: `<ellipse cx="50" cy="88" rx="10" ry="7.6" fill="url(#g-sint)"/>
+    <path d="M41.6 84.6 q2-2.4 4 0 t4 0 t4 0 t4 0 M41 88 q2 2.4 4 0 t4 0 t4 0 t4 0 t4 0 M42.4 91.6 q2-2.2 4 0 t4 0 t4 0 t4 0" stroke="#B9775C" stroke-width=".45" fill="none"/>${SHINE(46, 84, 3, 1)}`,
+  appendix: `<path d="M38.2 97.2 q-2 2.6 .2 5" stroke="#9C5E43" stroke-width="1.9" stroke-linecap="round" fill="none"/><path d="M38.2 97.2 q-2 2.6 .2 5" stroke="#D59473" stroke-width="1.2" stroke-linecap="round" fill="none"/>`,
+  bladder: `<path d="M45 105.6 C45 101.6 55 101.6 55 105.6 C55 109 52.4 110.4 50 110.4 C47.6 110.4 45 109 45 105.6 Z" fill="url(#g-blad)"/>${SHINE(48, 104, 1.6, .8)}`,
+  breast: `<circle cx="42" cy="47" r="5" fill="#F2B7C2" opacity=".45"/><circle cx="58" cy="47" r="5" fill="#F2B7C2" opacity=".45"/><circle cx="42" cy="47" r="5" fill="none" stroke="#C2566A" stroke-width=".5"/><circle cx="58" cy="47" r="5" fill="none" stroke="#C2566A" stroke-width=".5"/>`
 };
 const REPRO_SVG = {
   male: {
-    prostate: '<ellipse cx="50" cy="111.5" rx="2.4" ry="1.9" fill="#B5716A"/>',
-    testes: '<ellipse cx="47.6" cy="120" rx="1.9" ry="2.5" fill="#C98A80"/><ellipse cx="52.4" cy="120" rx="1.9" ry="2.5" fill="#C98A80"/>'
+    prostate: `<path d="M47.6 111.6 C47.6 110 52.4 110 52.4 111.6 C52.4 113.2 51 114 50 114 C49 114 47.6 113.2 47.6 111.6 Z" fill="url(#g-pros)"/>`,
+    testes: `<path d="M48.6 113.4 C47.6 115.6 47.4 116.6 47.6 117.6 M51.4 113.4 C52.4 115.6 52.6 116.6 52.4 117.6" stroke="#B9C3CA" stroke-width=".5" fill="none"/>
+      <ellipse cx="47.6" cy="120" rx="1.9" ry="2.6" fill="url(#g-test)"/><ellipse cx="52.4" cy="120" rx="1.9" ry="2.6" fill="url(#g-test)"/>${SHINE(47.2, 119, .5, .8)}${SHINE(52, 119, .5, .8)}`
   },
   female: {
-    uterus: '<path d="M47 99 C47 96 53 96 53 99 C53 103 51.5 106 50 107 C48.5 106 47 103 47 99 Z" fill="#D27A8C"/>',
-    ovaries: '<path d="M47 98.5 C44.5 96.5 42.5 97.5 41.5 99.5 M53 98.5 C55.5 96.5 57.5 97.5 58.5 99.5" stroke="#D27A8C" stroke-width=".8" fill="none"/><ellipse cx="41" cy="100.5" rx="1.9" ry="1.3" fill="#E39AA8"/><ellipse cx="59" cy="100.5" rx="1.9" ry="1.3" fill="#E39AA8"/>'
+    uterus: `<path d="M47 99 C46.8 95.8 53.2 95.8 53 99 C53 103 51.6 106.2 50 107.4 C48.4 106.2 47 103 47 99 Z" fill="url(#g-ut)"/>
+      <path d="M50 99.4 L50 105.6" stroke="#9C4559" stroke-width=".35"/>${SHINE(48.6, 98, .9, .7)}`,
+    ovaries: `<path d="M47.2 98.4 C44.6 96.2 42.4 97.2 41.4 99.4 M52.8 98.4 C55.4 96.2 57.6 97.2 58.6 99.4" stroke="#D27A8C" stroke-width=".9" fill="none" stroke-linecap="round"/>
+      <path d="M41.4 99.4 l-1 .6 M41.4 99.4 l-.6 1 M58.6 99.4 l1 .6 M58.6 99.4 l.6 1" stroke="#D27A8C" stroke-width=".4"/>
+      <ellipse cx="41.4" cy="101.2" rx="2" ry="1.4" fill="url(#g-ov)"/><ellipse cx="58.6" cy="101.2" rx="2" ry="1.4" fill="url(#g-ov)"/>`
   }
 };
 const ORGAN_CENTER = { brain: [50, 10], thyroid: [50, 31], lungs: [50, 50], heart: [52, 51], liver: [42, 63], gallbladder: [41, 67.5], stomach: [59, 66],
-  spleen: [67, 64], pancreas: [53, 72], kidney: [50, 75.5], adrenal: [50, 70], colon: [50, 85], smallint: [50, 88], appendix: [38.5, 99], bladder: [50, 106],
-  prostate: [50, 111.5], testes: [50, 120], uterus: [50, 101], ovaries: [50, 100], breast: [50, 47] };
-const UPPER_ORDER = ["kidney", "adrenal", "lungs", "heart", "liver", "gallbladder", "spleen", "stomach", "pancreas", "colon", "smallint", "appendix", "bladder", "thyroid", "brain"];
+  spleen: [67, 64], pancreas: [53, 72], kidney: [50, 76], adrenal: [50, 70], colon: [50, 85], smallint: [50, 88], appendix: [38.5, 99], bladder: [50, 106],
+  prostate: [50, 112], testes: [50, 120], uterus: [50, 101], ovaries: [50, 100], breast: [50, 47] };
+const DRAW_ORDER = ["kidney", "adrenal", "lungs", "heart", "liver", "gallbladder", "spleen", "stomach", "pancreas", "colon", "smallint", "appendix", "bladder", "thyroid", "brain", "breast"];
 
 function sexKey() { return state.profile.gender === "female" ? "female" : "male"; }
-/* "repro" = الأعضاء التناسلية حسب جنس المستخدم */
+/* "repro" = الأعضاء التناسلية حسب جنس المستخدم، ولا يُرسم أبدًا عضو من الجنس الآخر */
 function resolveOrgans(o) {
   return [].concat(o || []).flatMap(k => k === "repro" ? (sexKey() === "female" ? ["uterus", "ovaries"] : ["testes", "prostate"]) : [k])
-    .filter(k => k !== "breast" || true)
     .filter(k => sexKey() === "female" ? !["prostate", "testes"].includes(k) : !["uterus", "ovaries"].includes(k));
 }
-/* highlight: قائمة أعضاء تُبرَز والباقي يخفت؛ فارغة = كل الأعضاء بوضوح */
-function organLayer(highlight) {
-  const sex = sexKey(), hi = new Set(highlight || []);
-  const op = k => !hi.size ? .92 : hi.has(k) ? 1 : .18;
-  const upper = UPPER_ORDER.map(k => `<g class="organ" data-organ="${k}" opacity="${op(k)}"><title>${ORGAN_NAMES[k]}</title>${ORGAN_SVG[k]}</g>`).join("");
-  const breast = hi.has("breast") ? `<g opacity="1">${ORGAN_SVG.breast}</g>` : "";
-  const repro = Object.entries(REPRO_SVG[sex]).map(([k, svg]) => `<g class="organ" data-organ="${k}" opacity="${op(k)}"><title>${ORGAN_NAMES[k]}</title>${svg}</g>`).join("");
-  // صورة المرأة: الجذع أنحف قليلًا وأدنى بنحو 2%
+/* تُرسم الأعضاء المصابة فقط — لا تظهر الأعضاء الداخلية في العموم */
+function organLayer(keys) {
+  const sex = sexKey(), set = new Set(keys);
+  const upper = DRAW_ORDER.filter(k => set.has(k)).map(k => `<g class="organ">${ORGAN_SVG[k]}</g>`).join("");
+  const repro = Object.entries(REPRO_SVG[sex]).filter(([k]) => set.has(k)).map(([, svg]) => `<g class="organ">${svg}</g>`).join("");
+  const fx = sex === "female" ? x => 2.5 + x * .95 : x => x;
+  const rings = keys.map(k => { const c = ORGAN_CENTER[k]; return c ? `<circle class="organ-ring" cx="${fx(c[0])}" cy="${c[1] + (sex === "female" ? 2 : 0)}" r="5"/>` : ""; }).join("");
   const t = sex === "female" ? 'transform="translate(2.5 2) scale(.95 1)"' : "";
-  const rings = [...hi].map(k => { const c = ORGAN_CENTER[k]; if (!c) return ""; const y = sex === "female" ? c[1] + 2 : c[1];
-    return `<circle class="organ-ring" cx="${sex === "female" ? 2.5 + c[0] * .95 : c[0]}" cy="${y}" r="3.2"/>`; }).join("");
-  return `<g class="organs" style="mix-blend-mode:multiply"><g ${t}>${upper}${breast}</g>${sex === "female" ? `<g transform="translate(2.5 0) scale(.95 1)">${repro}</g>` : repro}</g>${rings}`;
+  const tr = sex === "female" ? 'transform="translate(2.5 0) scale(.95 1)"' : "";
+  return `${organDefs()}<g class="organs" filter="url(#og-real)"><g ${t}>${upper}</g><g ${tr}>${repro}</g></g>${rings}`;
 }
 
-/* بطاقة موضع العضو في النتيجة: الصورة الواقعية مقصوصة على المنطقة + الأعضاء */
+/* بطاقة العضو المصاب في النتيجة: الصورة الواقعية + العضو بحجم كبير وواضح */
 function organCard(organ) {
   const keys = resolveOrgans(organ);
   if (!keys.length) return "";
   const sex = sexKey();
-  if (!photoOK[sex]) return keys[0] && ORGANS[keys[0]] ? organTag(keys[0]) : "";
-  const head = keys.every(k => ["brain", "thyroid"].includes(k));
-  const vb = head ? "28 0 44 44" : (keys.some(k => ["prostate", "testes", "uterus", "ovaries", "bladder", "appendix"].includes(k)) ? "24 40 52 90" : "22 26 56 84");
-  return `<div class="organ photo"><svg viewBox="${vb}" aria-hidden="true"><image href="${BODY_PHOTOS[sex]}" x="0" y="0" width="100" height="200" preserveAspectRatio="none" opacity=".9"/>${organLayer(keys)}</svg>
-    <span><b>العضو المعني: ${keys.map(k => ORGAN_NAMES[k]).join("، ")}</b><br><span class="muted small">الموضع تقريبي على الجسم (يمين المريض يظهر على يسار الصورة).</span></span></div>`;
+  if (!photoOK[sex]) return ORGANS[keys[0]] ? organTag(keys[0]) : "";
+  // قصّ الصورة حول العضو المصاب ليظهر مكبّرًا وواضحًا
+  const pts = keys.map(k => ORGAN_CENTER[k]).filter(Boolean);
+  const cx = pts.reduce((a, p) => a + p[0], 0) / pts.length, cy = pts.reduce((a, p) => a + p[1], 0) / pts.length + (sex === "female" ? 2 : 0);
+  const span = Math.max(64, ...pts.map(p => Math.abs(p[1] - cy) * 2 + 40));
+  const w = span * .8, h = span;
+  const vb = `${Math.max(0, Math.min(100 - w, cx - w / 2)).toFixed(1)} ${Math.max(0, Math.min(200 - h, cy - h / 2)).toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`;
+  return `<div class="organ photo"><svg viewBox="${vb}" role="img" aria-label="موضع ${keys.map(k => ORGAN_NAMES[k]).join(" و")} في الجسم"><image href="${BODY_PHOTOS[sex]}" x="0" y="0" width="100" height="200" preserveAspectRatio="none" opacity=".75"/>${organLayer(keys)}</svg>
+    <span><b>العضو المعني: ${keys.map(k => ORGAN_NAMES[k]).join("، ")}</b><br><span class="muted small">رسم توضيحي لموضع العضو داخل الجسم (يمين المريض يظهر على يسار الصورة).</span></span></div>`;
 }
 
 const tagLayer = (geo, w, h) => `<div class="tag-layer">${REGIONS.map(r => `<button class="tag" data-region="${r.key}" style="left:${geo[r.key].l[0] / w * 100}%;top:${geo[r.key].l[1] / h * 100}%"><i style="background:${r.color}"></i>${esc(r.name)}</button>`).join("")}</div>`;
@@ -602,7 +652,6 @@ function renderHome() {
 
     <div class="stage">
       <div class="stage-head"><b>أين تشعر بالألم؟</b><span>اضغط على الموضع في الجسم</span></div>
-      ${photoOK[sexKey()] ? `<div class="layer-toggle" role="group" aria-label="طبقة العرض"><button data-act="layer-skin" aria-pressed="${!state.showOrgans}">الجسم</button><button data-act="layer-organs" aria-pressed="${!!state.showOrgans}">الأعضاء الداخلية</button></div>` : ""}
       ${bodyStage()}
     </div>
 
@@ -1002,8 +1051,6 @@ document.addEventListener("click", e => {
     case "back": return back();
     case "home": return restart();
     case "about": state.prev = state.screen; return go("about");
-    case "layer-skin": state.showOrgans = false; return render();
-    case "layer-organs": state.showOrgans = true; return render();
     case "stages": state.prev = state.screen; return go("stages");
     case "edit": state.editingProfile = true; return go("onboarding");
     case "cancel-edit":

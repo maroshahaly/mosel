@@ -2,13 +2,22 @@
 /* فحص آلي لمكتبة الأمراض — شغّله بعد أي تعديل في data/conditions.js:
      node tools/validate_data.mjs
    يخرج بالرمز 1 عند وجود أي خطأ (صالح للاستخدام في CI). */
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
 const file = fileURLToPath(new URL("../data/conditions.js", import.meta.url));
 const ctx = { window: {} };
-vm.runInNewContext(readFileSync(file, "utf8"), ctx);
+vm.createContext(ctx);
+vm.runInContext(readFileSync(file, "utf8"), ctx);
+// الملفات الإضافية بالترتيب نفسه الذي يحمّلها به index.html
+const dataDir = fileURLToPath(new URL("../data/", import.meta.url));
+const html = readFileSync(fileURLToPath(new URL("../index.html", import.meta.url)), "utf8");
+const listed = [...html.matchAll(/src="data\/(more_[^"]+\.js)"/g)].map(m => m[1]);
+for (const f of readdirSync(dataDir).filter(f => /^more_.*\.js$/.test(f)).sort()) {
+  if (!listed.includes(f)) { console.error(`✘ الملف data/${f} غير مُدرج في index.html`); process.exit(1); }
+  vm.runInContext(readFileSync(dataDir + f, "utf8"), ctx);
+}
 const { TRIAGE, ZONES, DATA, REGIONS, RISK_FACTORS } = ctx.window.MOSEL_DATA;
 
 const errors = [], warnings = [];

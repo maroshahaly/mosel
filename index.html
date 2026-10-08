@@ -172,9 +172,9 @@ a{color:var(--brand-ink);}
 .layer-toggle button{border:none; background:none; border-radius:999px; padding:6px 14px; font-size:12.5px; font-weight:600; color:var(--ink-2); cursor:pointer;}
 .layer-toggle button[aria-pressed="true"]{background:var(--brand); color:#fff;}
 .organs{pointer-events:none;}
-.organ-ring{fill:none; stroke:#E5484D; stroke-width:.6; animation:pulse 2.4s ease-out infinite; transform-box:fill-box; transform-origin:center;}
-.organ.photo{align-items:center;}
-.organ.photo svg{width:120px; height:auto; aspect-ratio:auto; border-radius:12px; background:#fff; flex:0 0 auto; max-height:200px;}
+.organ-ring{fill:none; stroke:#E5484D; stroke-width:.35; opacity:.7; animation:pulse 2.4s ease-out infinite; transform-box:fill-box; transform-origin:center;}
+.organ.photo{flex-direction:column; align-items:stretch; text-align:right; padding:10px;}
+.organ.photo svg{width:100%; max-width:300px; height:auto; margin:0 auto; display:block; border-radius:14px; background:radial-gradient(circle at 50% 40%, #fff, #F3EEEA); flex:0 0 auto;}
 .stages-card{border-color:color-mix(in srgb, var(--brand-500) 40%, var(--line)); background:linear-gradient(135deg, var(--brand-50), var(--surface));}
 .body-wrap.photo .leader{stroke-width:.35; stroke-dasharray:1 1; vector-effect:none;}
 .region{cursor:pointer; opacity:.16; transition:opacity .18s ease;}
@@ -373,6 +373,9 @@ a{color:var(--brand-ink);}
 <noscript><p style="padding:20px">يحتاج التطبيق إلى تفعيل JavaScript.</p></noscript>
 
 <script src="data/conditions.js"></script>
+<script src="data/more_01_zones.js"></script>
+<script src="data/more_02_systems.js"></script>
+<script src="data/more_03_specialties.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
