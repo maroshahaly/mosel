@@ -1,0 +1,329 @@
+{
+  "Orthopedics": [
+    {
+      "arabic_name": "خشونة المفاصل",
+      "english_term": "Osteoarthritis",
+      "cui": "C0029408",
+      "official_name": "Degenerative polyarthritis",
+      "definition_en": "A progressive, degenerative joint disease, the most common form of arthritis, especially in older persons. The disease is thought to result not from the aging process but from biochemical changes and biomechanical stresses affecting articular cartilage. In the foreign literature it is often called osteoarthrosis deformans."
+    },
+    {
+      "arabic_name": "التهاب المفاصل الروماتويدي",
+      "english_term": "Rheumatoid Arthritis",
+      "cui": "C0003873",
+      "official_name": "Rheumatoid Arthritis",
+      "definition_en": "A chronic systemic disease, primarily of the joints, marked by inflammatory changes in the synovial membranes and articular structures, widespread fibrinoid degeneration of the collagen fibers in mesenchymal tissues, and by atrophy and rarefaction of bony structures. Etiology is unknown, but autoimmune mechanisms have been implicated."
+    },
+    {
+      "arabic_name": "انزلاق غضروفي",
+      "english_term": "Intervertebral Disc Displacement",
+      "cui": "C0021818",
+      "official_name": "Intervertebral Disk Displacement",
+      "definition_en": "An INTERVERTEBRAL DISC in which the NUCLEUS PULPOSUS has protruded through surrounding ANNULUS FIBROSUS. This occurs most frequently in the lower lumbar region."
+    },
+    {
+      "arabic_name": "كسر أو إصابة رباط حادة",
+      "english_term": "Bone Fracture",
+      "cui": "C0016658",
+      "official_name": "Fracture",
+      "definition_en": "Breaks in bones."
+    },
+    {
+      "arabic_name": "التهاب مفصلي إنتاني",
+      "english_term": "Septic Arthritis",
+      "cui": "C0003869",
+      "official_name": "Arthritis, Infectious",
+      "definition_en": "Arthritis caused by BACTERIA; RICKETTSIA; MYCOPLASMA; VIRUSES; FUNGI; or PARASITES."
+    },
+    {
+      "arabic_name": "النقرس",
+      "english_term": "Gout",
+      "cui": "C0018099",
+      "official_name": "Gout",
+      "definition_en": "Metabolic disorder characterized by recurrent acute arthritis, hyperuricemia and deposition of sodium urate in and around the joints, sometimes with formation of URIC ACID calculi."
+    },
+    {
+      "arabic_name": "متلازمة النفق الرسغي",
+      "english_term": "Carpal Tunnel Syndrome",
+      "cui": "C0007286",
+      "official_name": "Carpal Tunnel Syndrome",
+      "definition_en": "Entrapment of the MEDIAN NERVE in the carpal tunnel, which is formed by the flexor retinaculum and the CARPAL BONES. This syndrome may be associated with repetitive occupational trauma (CUMULATIVE TRAUMA DISORDERS); wrist injuries; AMYLOID NEUROPATHIES; rheumatoid arthritis (see ARTHRITIS, RHEUMATOID); ACROMEGALY; PREGNANCY; and other conditions. Symptoms include burning pain and paresthesias involving the ventral surface of the hand and fingers which may radiate proximally. Impairment of sensation in the distribution of the median nerve and thenar muscle atrophy may occur. (Joynt, Clinical Neurology, 1995, Ch51, p45)"
+    },
+    {
+      "arabic_name": "هشاشة العظام",
+      "english_term": "Osteoporosis",
+      "cui": "C0029456",
+      "official_name": "Osteoporosis",
+      "definition_en": "Reduction of bone mass without alteration in the composition of bone, leading to fractures. Primary osteoporosis can be of two major types: postmenopausal osteoporosis (OSTEOPOROSIS, POSTMENOPAUSAL) and age-related or senile osteoporosis."
+    }
+  ],
+  "Internal Medicine": [
+    {
+      "arabic_name": "قولون عصبي",
+      "english_term": "Irritable Bowel Syndrome",
+      "cui": "C0022104",
+      "official_name": "Irritable Bowel Syndrome",
+      "definition_en": "A disorder with chronic or recurrent colonic symptoms without a clearcut etiology. This condition is characterized by chronic or recurrent ABDOMINAL PAIN, bloating, MUCUS in FECES, and an erratic disturbance of DEFECATION."
+    },
+    {
+      "arabic_name": "التهاب معوي",
+      "english_term": "Gastroenteritis",
+      "cui": "C0017160",
+      "official_name": "Gastroenteritis",
+      "definition_en": "INFLAMMATION of any segment of the GASTROINTESTINAL TRACT from ESOPHAGUS to RECTUM. Causes of gastroenteritis are many including genetic, infection, HYPERSENSITIVITY, drug effects, and CANCER."
+    },
+    {
+      "arabic_name": "قرحة معدة",
+      "english_term": "Peptic Ulcer",
+      "cui": "C0030920",
+      "official_name": "Peptic Ulcer",
+      "definition_en": "Ulcer that occurs in the regions of the GASTROINTESTINAL TRACT which come into contact with GASTRIC JUICE containing PEPSIN and GASTRIC ACID. It occurs when there are defects in the MUCOSA barrier. The common forms of peptic ulcers are associated with HELICOBACTER PYLORI and the consumption of nonsteroidal anti-inflammatory drugs (NSAIDS)."
+    }
+  ],
+  "Cardiology and Vascular": [
+    {
+      "arabic_name": "ذبحة صدرية",
+      "english_term": "Angina Pectoris",
+      "cui": "C0002962",
+      "official_name": "Angina Pectoris",
+      "definition_en": "The symptom of paroxysmal pain consequent to MYOCARDIAL ISCHEMIA usually of distinctive character, location and radiation. It is thought to be provoked by a transient stressful situation during which the oxygen requirements of the MYOCARDIUM exceed that supplied by the CORONARY CIRCULATION."
+    },
+    {
+      "arabic_name": "احتمال جلطة قلبية",
+      "english_term": "Myocardial Infarction",
+      "cui": "C0027051",
+      "official_name": "Myocardial Infarction",
+      "definition_en": "NECROSIS of the MYOCARDIUM caused by an obstruction of the blood supply to the heart (CORONARY CIRCULATION)."
+    },
+    {
+      "arabic_name": "ارتفاع ضغط الدم",
+      "english_term": "Hypertension",
+      "cui": "C0020538",
+      "official_name": "Hypertensive disease",
+      "definition_en": "Persistently high systemic arterial BLOOD PRESSURE. Based on multiple readings (BLOOD PRESSURE DETERMINATION), hypertension is currently defined as when SYSTOLIC PRESSURE is consistently greater than 140 mm Hg or when DIASTOLIC PRESSURE is consistently 90 mm Hg or more."
+    },
+    {
+      "arabic_name": "دوالي الأوردة",
+      "english_term": "Varicose Veins",
+      "cui": "C0042345",
+      "official_name": "Varicosity",
+      "definition_en": "Enlarged and tortuous VEINS."
+    },
+    {
+      "arabic_name": "قصور وريدي مزمن",
+      "english_term": "Chronic Venous Insufficiency",
+      "cui": "C1306557",
+      "official_name": "Chronic venous insufficiency",
+      "definition_en": null
+    }
+  ],
+  "Ophthalmology": [
+    {
+      "arabic_name": "التهاب ملتحمة",
+      "english_term": "Conjunctivitis",
+      "cui": "C0009763",
+      "official_name": "Conjunctivitis",
+      "definition_en": "INFLAMMATION of the CONJUNCTIVA."
+    },
+    {
+      "arabic_name": "جفاف العين",
+      "english_term": "Dry Eye Syndrome",
+      "cui": "C0013238",
+      "official_name": "Dry Eye Syndromes",
+      "definition_en": "Corneal and conjunctival dryness due to deficient tear production, predominantly in menopausal and post-menopausal women. Filamentary keratitis or erosion of the conjunctival and corneal epithelium may be caused by these disorders. Sensation of the presence of a foreign body in the eye and burning of the eyes may occur."
+    },
+    {
+      "arabic_name": "ارتفاع ضغط العين",
+      "english_term": "Ocular Hypertension",
+      "cui": "C0028840",
+      "official_name": "Ocular Hypertension",
+      "definition_en": "A condition in which the intraocular pressure is elevated above normal and which may lead to glaucoma."
+    }
+  ],
+  "ENT": [
+    {
+      "arabic_name": "التهاب الأذن الوسطى",
+      "english_term": "Otitis Media",
+      "cui": "C0029882",
+      "official_name": "Otitis Media",
+      "definition_en": "Inflammation of the MIDDLE EAR including the AUDITORY OSSICLES and the EUSTACHIAN TUBE."
+    },
+    {
+      "arabic_name": "التهاب الجيوب الأنفية",
+      "english_term": "Sinusitis",
+      "cui": "C0037199",
+      "official_name": "Sinusitis",
+      "definition_en": "Inflammation of the NASAL MUCOSA in one or more of the PARANASAL SINUSES."
+    },
+    {
+      "arabic_name": "التهاب اللوزتين",
+      "english_term": "Tonsillitis",
+      "cui": "C0040425",
+      "official_name": "Tonsillitis",
+      "definition_en": "Inflammation of the tonsils, especially the PALATINE TONSILS but the ADENOIDS (pharyngeal tonsils) and lingual tonsils may also be involved. Tonsillitis usually is caused by bacterial infection. Tonsillitis may be acute, chronic, or recurrent."
+    }
+  ],
+  "Dermatology": [
+    {
+      "arabic_name": "إكزيما",
+      "english_term": "Eczema",
+      "cui": "C0013595",
+      "official_name": "Eczema",
+      "definition_en": "A dermatitis characterized by a spongiotic tissue reaction pattern occurring as a reaction to many endogenous and exogenous agents."
+    },
+    {
+      "arabic_name": "صدفية",
+      "english_term": "Psoriasis",
+      "cui": "C0033860",
+      "official_name": "Psoriasis",
+      "definition_en": "A common genetically determined, chronic, inflammatory skin disease characterized by rounded erythematous, dry, scaling patches. The lesions have a predilection for nails, scalp, genitalia, extensor surfaces, and the lumbosacral region. Accelerated epidermopoiesis is considered to be the fundamental pathologic feature in psoriasis."
+    },
+    {
+      "arabic_name": "ثعلبة",
+      "english_term": "Alopecia Areata",
+      "cui": "C0002171",
+      "official_name": "Alopecia Areata",
+      "definition_en": "Loss of scalp and body hair involving microscopically inflammatory patchy areas."
+    }
+  ],
+  "Dental": [
+    {
+      "arabic_name": "تسوس الأسنان",
+      "english_term": "Dental Caries",
+      "cui": "C0011334",
+      "official_name": "Dental caries",
+      "definition_en": "Localized destruction of the tooth surface initiated by decalcification of the enamel followed by enzymatic lysis of organic structures and leading to cavity formation. If left unchecked, the cavity may penetrate the enamel and dentin and reach the pulp."
+    },
+    {
+      "arabic_name": "التهاب اللثة",
+      "english_term": "Gingivitis",
+      "cui": "C0017574",
+      "official_name": "Gingivitis",
+      "definition_en": "Inflammation of gum tissue (GINGIVA) without loss of connective tissue."
+    },
+    {
+      "arabic_name": "خراج سني",
+      "english_term": "Dental Abscess",
+      "cui": "C0518988",
+      "official_name": "Dental abscess",
+      "definition_en": "An infectious process that affects a tooth. It is characterized by localized periapical or periodontal collection of pus. It presents with pain and swelling of the gums and/or cheek."
+    }
+  ],
+  "Endocrinology": [
+    {
+      "arabic_name": "مرض السكري",
+      "english_term": "Diabetes Mellitus",
+      "cui": "C0011849",
+      "official_name": "Diabetes Mellitus",
+      "definition_en": "A heterogeneous group of disorders characterized by HYPERGLYCEMIA and GLUCOSE INTOLERANCE."
+    },
+    {
+      "arabic_name": "قصور الغدة الدرقية",
+      "english_term": "Hypothyroidism",
+      "cui": "C0020676",
+      "official_name": "Hypothyroidism",
+      "definition_en": "A syndrome that results from abnormally low secretion of THYROID HORMONES from the THYROID GLAND, leading to a decrease in BASAL METABOLIC RATE. In its most severe form, there is accumulation of MUCOPOLYSACCHARIDES in the SKIN and EDEMA, known as MYXEDEMA. It may be primary or secondary due to other pituitary disease, or hypothalamic dysfunction."
+    }
+  ],
+  "Andrology": [
+    {
+      "arabic_name": "ضعف جنسي وظيفي",
+      "english_term": "Erectile Dysfunction",
+      "cui": "C0242350",
+      "official_name": "Erectile dysfunction",
+      "definition_en": "The inability in the male to have a PENILE ERECTION due to psychological or organ dysfunction."
+    },
+    {
+      "arabic_name": "دوالي الخصية",
+      "english_term": "Varicocele",
+      "cui": "C0042341",
+      "official_name": "Varicocele",
+      "definition_en": "A condition characterized by the dilated tortuous veins of the SPERMATIC CORD with a marked left-sided predominance. Adverse effect on male fertility occurs when varicocele leads to an increased scrotal (and testicular) temperature and reduced testicular volume."
+    }
+  ],
+  "Gynecology": [
+    {
+      "arabic_name": "تكيس المبايض",
+      "english_term": "Polycystic Ovary Syndrome",
+      "cui": "C0032460",
+      "official_name": "Polycystic Ovary Syndrome",
+      "definition_en": "A complex disorder characterized by infertility, HIRSUTISM; OBESITY; and various menstrual disturbances such as OLIGOMENORRHEA; AMENORRHEA; ANOVULATION. Polycystic ovary syndrome is usually associated with bilateral enlarged ovaries studded with atretic follicles, not with cysts. The term, polycystic ovary, is misleading."
+    },
+    {
+      "arabic_name": "التهاب مهبلي",
+      "english_term": "Vaginitis",
+      "cui": "C0042267",
+      "official_name": "Vaginitis",
+      "definition_en": "Inflammation of the vagina characterized by pain and a purulent discharge."
+    },
+    {
+      "arabic_name": "أورام ليفية",
+      "english_term": "Uterine Fibroids",
+      "cui": "C0042133",
+      "official_name": "Uterine Fibroids",
+      "definition_en": "A benign smooth muscle neoplasm arising from the body of the uterus. It is characterized by the presence of spindle cells with cigar-shaped nuclei, interlacing fascicles, and a whorled pattern."
+    }
+  ],
+  "Geriatrics": [
+    {
+      "arabic_name": "خرف أو ألزهايمر مبكر",
+      "english_term": "Alzheimer Disease",
+      "cui": "C0002395",
+      "official_name": "Alzheimer's Disease",
+      "definition_en": "A degenerative disease of the BRAIN characterized by the insidious onset of DEMENTIA. Impairment of MEMORY, judgment, attention span, and problem solving skills are followed by severe APRAXIAS and a global loss of cognitive abilities. The condition primarily occurs after age 60, and is marked pathologically by severe cortical atrophy and the triad of SENILE PLAQUES; NEUROFIBRILLARY TANGLES; and NEUROPIL THREADS. (From Adams et al., Principles of Neurology, 6th ed, pp1049-57)"
+    },
+    {
+      "arabic_name": "ضعف عام مرتبط بالتقدم في السن",
+      "english_term": "Frailty Syndrome",
+      "cui": "C4505081",
+      "official_name": "Frailty Syndrome",
+      "definition_en": null
+    }
+  ],
+  "Congenital and Genetic Disorders": [
+    {
+      "arabic_name": "عيوب خلقية في القلب",
+      "english_term": "Congenital Heart Defect",
+      "cui": "C0018798",
+      "official_name": "Congenital Heart Defects",
+      "definition_en": "Developmental abnormalities involving structures of the heart. These defects are present at birth but may be discovered later in life."
+    },
+    {
+      "arabic_name": "اضطرابات وراثية استقلابية",
+      "english_term": "Inborn Errors of Metabolism",
+      "cui": "C0025521",
+      "official_name": "Inborn Errors of Metabolism",
+      "definition_en": "Errors in metabolic processes resulting from inborn genetic mutations that are inherited or acquired in utero."
+    },
+    {
+      "arabic_name": "تشوهات هيكلية خلقية",
+      "english_term": "Congenital Skeletal Malformation",
+      "cui": "C3649630",
+      "official_name": "congenital malformation syndromes with skeletal changes",
+      "definition_en": null
+    }
+  ],
+  "Mental Health": [
+    {
+      "arabic_name": "اضطراب قلق",
+      "english_term": "Anxiety Disorder",
+      "cui": "C0003469",
+      "official_name": "Anxiety Disorders",
+      "definition_en": "Persistent and disabling ANXIETY."
+    },
+    {
+      "arabic_name": "اكتئاب",
+      "english_term": "Depression",
+      "cui": "C0011570",
+      "official_name": "Mental Depression",
+      "definition_en": "Depressive states usually of moderate intensity in contrast with MAJOR DEPRESSIVE DISORDER present in neurotic and psychotic disorders."
+    },
+    {
+      "arabic_name": "اضطراب نوم أولي",
+      "english_term": "Primary Insomnia",
+      "cui": "C0033139",
+      "official_name": "Primary Insomnia",
+      "definition_en": "A sleep disorder characterized by difficulty initiating or maintaining sleep; this difficulty does not occur in the context of another sleep disorder and is not etiologically linked to a mental disorder, substance use, or a general medical condition."
+    }
+  ]
+}

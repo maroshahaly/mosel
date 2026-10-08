@@ -1,0 +1,21 @@
+{
+  "name": "موصل — دليلك الطبي الأول",
+  "short_name": "موصل",
+  "description": "حدد مكان الألم وأعراضك، واعرف الاحتمالات الأقرب والتخصص المناسب ومستوى الاستعجال.",
+  "id": "./",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F2F5F4",
+  "theme_color": "#0D5C53",
+  "orientation": "portrait",
+  "dir": "rtl",
+  "lang": "ar",
+  "categories": ["health", "medical"],
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
