@@ -1104,9 +1104,10 @@ document.addEventListener("change", e => {
 render();
 
 /* PWA: يشتغل من غير نت بعد أول فتح */
-if ("serviceWorker" in navigator && location.protocol !== "file:") {
-  window.addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
-}
+/* داخل بيئة معزولة (مثل صفحات المعاينة) لا يُسمح بالعمل دون اتصال، فنتجاهل ذلك بهدوء */
+window.addEventListener("load", () => {
+  try { if (location.protocol !== "file:" && navigator.serviceWorker) navigator.serviceWorker.register("sw.js").catch(() => {}); } catch (e) { /* غير متاح */ }
+});
 
 /* للاختبارات الآلية */
 window.__mosel = { state, scoreZone, evaluate, render };
