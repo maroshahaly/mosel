@@ -1,3 +1,4 @@
+/*! موصل (Mosel) — © 2026 Maro Shahaly. جميع الحقوق محفوظة. يُمنع النسخ أو إعادة النشر دون إذن كتابي. */
 /* =========================================================
    موصل — منطق التطبيق
    البيانات في data/conditions.js (window.MOSEL_DATA)
@@ -674,7 +675,7 @@ function renderHome() {
     </details>
 
     <div class="disclaimer">${ico(I.shield)}<span>«موصل» أداة توجيه أولية وليس تشخيصًا طبيًا؛ فالنتائج مبنية على الأعراض التي تختارها وعلى مراجع طبية عامة، والقرار النهائي للطبيب. <button class="link-btn" style="padding:0" data-act="about">كيف يعمل؟</button></span></div>
-    <div class="foot">الإصدار ${version}</div>
+    <div class="foot">الإصدار ${version} · جميع الحقوق محفوظة © 2026 موصل</div>
   </div>`;
   setCta(null);
   renderSearch();
@@ -899,7 +900,7 @@ function renderAbout() {
     <p>تُحفظ بياناتك (العمر والطول والوزن والأمراض المزمنة) على جهازك فقط ولا تُرسَل إلى أي خادم، ولا تُحفظ الأعراض إطلاقًا.</p>
     <div class="btn-row"><button class="btn btn-ghost" data-act="edit">${ico(I.user)} تعديل بياناتي</button><button class="btn btn-ghost" data-act="wipe">${ico(I.x)} حذف بياناتي</button></div>
     <div class="disclaimer">${ico(I.shield)}<span>«موصل» أداة توجيه وتثقيف صحي، وليس جهازًا طبيًا ولا بديلًا عن الطبيب، ويحتاج محتواه إلى مراجعة أطباء متخصصين واعتمادهم قبل الاستخدام الواسع.</span></div>
-    <div class="foot">الإصدار ${version}</div>
+    <div class="foot">الإصدار ${version} · جميع الحقوق محفوظة © 2026 موصل</div>
   </div>`;
   setCta(null);
 }

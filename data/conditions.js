@@ -1,3 +1,4 @@
+/*! موصل (Mosel) — © 2026 Maro Shahaly. جميع الحقوق محفوظة. يُمنع النسخ أو إعادة النشر دون إذن كتابي. */
 /* =========================================================
    موصل — مكتبة الأعراض والأمراض (العربية الفصحى)
    ---------------------------------------------------------
@@ -1118,7 +1119,7 @@
     "andrology.balanitis":   p => [p.has("سكر") && "السكري"]
   };
 
-  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.2.0", updatedAt: "2026-10" };
+  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.2.1", updatedAt: "2026-10" };
 
   /* إضافة أمراض وأعراض من ملفات data/more_*.js
      MOSEL_EXTEND("zoneKey", { zone?, regions?, symptoms?, conditions?, risk? }) */
