@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const root = fileURLToPath(new URL("../", import.meta.url)), out = root + "dist/";
 rmSync(out, { recursive: true, force: true }); mkdirSync(out + "data", { recursive: true });
 for (const f of ["index.html", "app.js", "sw.js", "manifest.json", "_headers", "LICENSE"]) cpSync(root + f, out + f);
-for (const f of readdirSync(root + "data").filter(f => f === "conditions.js" || /^more_.*\.js$/.test(f))) cpSync(root + "data/" + f, out + "data/" + f);
+for (const f of readdirSync(root + "data").filter(f => f === "conditions.js" || f === "care.js" || /^more_.*\.js$/.test(f))) cpSync(root + "data/" + f, out + "data/" + f);
 cpSync(root + "icons", out + "icons", { recursive: true });
 mkdirSync(out + "assets"); for (const f of readdirSync(root + "assets").filter(f => /\.(jpg|png|webp)$/.test(f))) cpSync(root + "assets/" + f, out + "assets/" + f);
 // تصغير الشيفرة (minify) لصعوبة نسخها وسرعة التحميل، مع الإبقاء على سطر حقوق الملكية /*! */

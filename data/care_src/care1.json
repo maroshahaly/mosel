@@ -1,0 +1,1617 @@
+{
+ "bones.oa": {
+  "tests": [
+   "سرعة الترسيب والبروتين التفاعلي (ESR/CRP) عند الشك في سبب التهابي"
+  ],
+  "imaging": [
+   "أشعة سينية على المفصل (X-ray) عند الحاجة"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية الموضعية",
+    "ex": "diclofenac (topical), ibuprofen (topical)"
+   },
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "برنامج تمارين علاجية وعلاج طبيعي",
+   "حقن كورتيزون داخل المفصل لنوبات الألم الشديدة",
+   "جراحة استبدال المفصل في الحالات المتقدمة"
+  ],
+  "selfcare": [
+   "نشاط بدني منتظم كالمشي والسباحة",
+   "إنقاص الوزن الزائد"
+  ],
+  "refs": [
+   "NICE",
+   "ACR",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG226 Osteoarthritis in over 16s: diagnosis and management (2022)"
+ },
+ "bones.ra": {
+  "tests": [
+   "العامل الروماتويدي (RF)",
+   "الأجسام المضادة للببتيد السيتروليني (Anti-CCP)",
+   "سرعة الترسيب والبروتين التفاعلي (ESR/CRP)",
+   "صورة دم كاملة ووظائف الكبد والكلى (CBC, LFT, RFT)"
+  ],
+  "imaging": [
+   "أشعة سينية على اليدين والقدمين (X-ray)",
+   "موجات فوق صوتية على المفاصل (Ultrasound) عند الحاجة"
+  ],
+  "meds": [
+   {
+    "cls": "أدوية معدِّلة لمسار المرض التقليدية (csDMARDs)",
+    "ex": "methotrexate, sulfasalazine, hydroxychloroquine, leflunomide",
+    "note": "بوصفة طبية فقط مع تحاليل دورية؛ الميثوتريكسات ممنوع في الحمل"
+   },
+   {
+    "cls": "كورتيزون لفترة قصيرة",
+    "ex": "prednisolone",
+    "note": "بوصفة طبية فقط؛ مؤقت حتى يبدأ مفعول العلاج الأساسي"
+   },
+   {
+    "cls": "أدوية حيوية عند عدم الاستجابة",
+    "ex": "adalimumab, etanercept, infliximab",
+    "note": "بوصفة استشاري فقط؛ فحص السل قبل البدء"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي ووظيفي لحماية المفاصل"
+  ],
+  "selfcare": [
+   "الإقلاع عن التدخين",
+   "نشاط بدني منتظم بحسب التحمل"
+  ],
+  "refs": [
+   "ACR",
+   "EULAR",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ACR Guideline for the Treatment of Rheumatoid Arthritis (2021)"
+ },
+ "bones.disc": {
+  "tests": [],
+  "imaging": [
+   "رنين مغناطيسي على العمود الفقري (MRI) عند استمرار الأعراض أو الضعف العصبي"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي وتمارين موجّهة",
+   "حقن كورتيزون فوق الجافية (Epidural) لألم عرق النسا الشديد",
+   "جراحة استئصال الجزء البارز من الغضروف عند فشل العلاج أو الضعف العصبي"
+  ],
+  "selfcare": [
+   "الاستمرار في الحركة الخفيفة وتجنب الراحة التامة في السرير",
+   "التوجه للطوارئ فورًا عند فقدان التحكم في البول أو البراز"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG59 Low back pain and sciatica in over 16s: assessment and management (2016, updated 2020)"
+ },
+ "bones.backstrain": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي وتمارين تقوية عند استمرار الألم",
+   "برنامج تمارين جماعي أو علاج يدوي ضمن خطة متكاملة"
+  ],
+  "selfcare": [
+   "الاستمرار في الأنشطة اليومية بقدر التحمل",
+   "كمادات دافئة على موضع الألم"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG59 Low back pain and sciatica in over 16s: assessment and management (2016, updated 2020)"
+ },
+ "bones.fracture": {
+  "tests": [
+   "صورة دم كاملة وتحاليل التخثر قبل الجراحة عند الحاجة (CBC, INR)"
+  ],
+  "imaging": [
+   "أشعة سينية على العظم المصاب من زاويتين (X-ray)",
+   "أشعة مقطعية (CT) للكسور المعقدة أو المفصلية",
+   "رنين مغناطيسي (MRI) لإصابات الأربطة أو الكسور الخفية"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات الألم",
+    "ex": "paracetamol, ibuprofen, morphine",
+    "note": "تُعطى في المستشفى؛ المورفين تحت إشراف طبي فقط"
+   }
+  ],
+  "procedures": [
+   "رد الكسر وتثبيته بالجبس أو الجبيرة",
+   "تثبيت جراحي بالشرائح والمسامير عند الحاجة",
+   "علاج طبيعي لاستعادة الحركة بعد الالتئام"
+  ],
+  "selfcare": [
+   "تثبيت العضو المصاب وعدم تحريكه",
+   "كمادة باردة ملفوفة بقماش ورفع العضو",
+   "الاتصال بالإسعاف (123) عند كسر مفتوح أو نزيف أو تشوّه واضح"
+  ],
+  "refs": [
+   "NICE",
+   "AAOS",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG38 Fractures (non-complex): assessment and management (2016)"
+ },
+ "bones.septic": {
+  "tests": [
+   "سحب سائل المفصل وتحليله وزرعه (Synovial fluid analysis)",
+   "مزرعة دم (Blood culture)",
+   "صورة دم كاملة والبروتين التفاعلي (CBC, CRP)"
+  ],
+  "imaging": [
+   "أشعة سينية على المفصل (X-ray)",
+   "موجات فوق صوتية لتأكيد وجود سائل وتوجيه السحب (Ultrasound)"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية وريدية",
+    "ex": "flucloxacillin, cefazolin, ceftriaxone, vancomycin",
+    "note": "تُعطى في المستشفى؛ يحدد الطبيب النوع حسب المزرعة"
+   }
+  ],
+  "procedures": [
+   "غسيل المفصل وتصريفه بالإبرة أو المنظار أو الجراحة",
+   "علاج طبيعي بعد السيطرة على العدوى"
+  ],
+  "selfcare": [
+   "التوجه فورًا إلى الطوارئ عند مفصل ساخن متورم مع حمى"
+  ],
+  "refs": [
+   "WHO_EML",
+   "IDSA"
+  ],
+  "guide": "British Society for Rheumatology / BOA guideline for management of the hot swollen joint in adults (2006)"
+ },
+ "bones.gout": {
+  "tests": [
+   "حمض اليوريك في الدم (Serum urate)",
+   "سحب سائل المفصل وفحص البلورات (Synovial fluid)",
+   "وظائف الكلى (Creatinine/eGFR)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية أو أشعة سينية على المفصل عند الشك في التشخيص"
+  ],
+  "meds": [
+   {
+    "cls": "علاج النوبة: مضادات الالتهاب غير الستيرويدية",
+    "ex": "naproxen, ibuprofen",
+    "note": "الحذر مع أمراض الكلى والمعدة والقلب"
+   },
+   {
+    "cls": "علاج النوبة: الكولشيسين",
+    "ex": "colchicine",
+    "note": "بوصفة طبية فقط؛ تداخلات دوائية كثيرة"
+   },
+   {
+    "cls": "علاج النوبة: الكورتيزون",
+    "ex": "prednisolone",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "خافضات حمض اليوريك للوقاية طويلة الأمد",
+    "ex": "allopurinol, febuxostat",
+    "note": "بوصفة طبية فقط؛ لا يُوقف أثناء النوبة دون استشارة"
+   }
+  ],
+  "procedures": [
+   "حقن كورتيزون داخل المفصل في بعض الحالات"
+  ],
+  "selfcare": [
+   "رفع المفصل وكمادات باردة أثناء النوبة",
+   "تقليل الكحول والمشروبات المحلّاة واللحوم الحمراء والمأكولات البحرية",
+   "شرب كمية كافية من الماء"
+  ],
+  "refs": [
+   "NICE",
+   "ACR",
+   "EULAR",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG219 Gout: diagnosis and management (2022)"
+ },
+ "bones.cts": {
+  "tests": [
+   "دراسة توصيل الأعصاب وتخطيط العضلات (NCS/EMG)",
+   "سكر الدم ووظائف الغدة الدرقية عند الحاجة (HbA1c, TSH)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على العصب الأوسط (Ultrasound) عند الحاجة"
+  ],
+  "meds": [],
+  "procedures": [
+   "جبيرة ليلية للمعصم بوضع محايد",
+   "حقن كورتيزون في النفق الرسغي",
+   "جراحة تحرير النفق الرسغي عند الأعراض الشديدة أو ضعف العضلات"
+  ],
+  "selfcare": [
+   "ارتداء جبيرة المعصم ليلًا",
+   "أخذ فترات راحة من الحركات المتكررة لليد"
+  ],
+  "refs": [
+   "AAOS",
+   "NICE"
+  ],
+  "guide": "AAOS Clinical Practice Guideline on Management of Carpal Tunnel Syndrome"
+ },
+ "bones.osteoporosis": {
+  "tests": [
+   "فيتامين د والكالسيوم في الدم",
+   "وظائف الكلى والغدة الدرقية (eGFR, TSH)"
+  ],
+  "imaging": [
+   "قياس كثافة العظام (DXA)",
+   "أشعة سينية على العمود الفقري عند الشك في كسر فقري"
+  ],
+  "meds": [
+   {
+    "cls": "البيسفوسفونات",
+    "ex": "alendronic acid, risedronic acid, zoledronic acid",
+    "note": "بوصفة طبية فقط؛ تُؤخذ الأقراص بطريقة خاصة يشرحها الطبيب"
+   },
+   {
+    "cls": "الكالسيوم وفيتامين د عند النقص",
+    "ex": "calcium carbonate, colecalciferol"
+   },
+   {
+    "cls": "بديل عند عدم ملاءمة البيسفوسفونات",
+    "ex": "denosumab",
+    "note": "بوصفة طبية فقط؛ لا يُوقف فجأة دون خطة بديلة"
+   }
+  ],
+  "procedures": [
+   "تقييم خطر الكسر بأداة (FRAX)",
+   "برنامج للوقاية من السقوط وتمارين التوازن"
+  ],
+  "selfcare": [
+   "تمارين حمل الوزن والمقاومة بانتظام",
+   "الإقلاع عن التدخين وتقليل الكحول",
+   "غذاء غني بالكالسيوم وتعرّض معتدل للشمس"
+  ],
+  "refs": [
+   "NICE",
+   "ENDO",
+   "WHO_EML"
+  ],
+  "guide": "NOGG UK clinical guideline for the prevention and treatment of osteoporosis (2022)"
+ },
+ "bones.frozenshoulder": {
+  "tests": [
+   "سكر الدم (HbA1c) لارتباط الحالة بالسكري"
+  ],
+  "imaging": [
+   "أشعة سينية على الكتف (X-ray) لاستبعاد أسباب أخرى"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي وتمارين إطالة متدرّجة",
+   "حقن كورتيزون داخل مفصل الكتف",
+   "توسيع المفصل بالحقن أو التحرير بالمنظار في الحالات المستعصية"
+  ],
+  "selfcare": [
+   "تمارين إطالة لطيفة يومية ضمن حدود الألم",
+   "كمادات دافئة قبل التمارين"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "British Elbow & Shoulder Society (BESS) patient care pathway for frozen shoulder (2015)"
+ },
+ "bones.rotatorcuff": {
+  "tests": [],
+  "imaging": [
+   "موجات فوق صوتية على الكتف (Ultrasound)",
+   "رنين مغناطيسي (MRI) عند الشك في تمزق كامل"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي بتمارين تقوية الكتف",
+   "حقن كورتيزون حول الوتر لتخفيف الألم مؤقتًا",
+   "إصلاح جراحي بالمنظار للتمزقات الكاملة المناسبة"
+  ],
+  "selfcare": [
+   "تعديل الأنشطة التي تتطلب رفع الذراع فوق الرأس",
+   "كمادات باردة بعد النشاط"
+  ],
+  "refs": [
+   "AAOS",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "AAOS Clinical Practice Guideline: Management of Rotator Cuff Injuries (2019)"
+ },
+ "bones.tenniselbow": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية الموضعية",
+    "ex": "diclofenac (topical), ibuprofen (topical)"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي بتمارين التحميل التدريجي للأوتار",
+   "شريط ضاغط (دعامة) للساعد"
+  ],
+  "selfcare": [
+   "تقليل الحركات المسببة للألم كالقبض المتكرر",
+   "كمادات باردة على موضع الألم"
+  ],
+  "refs": [
+   "NICE"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Tennis elbow"
+ },
+ "bones.plantar": {
+  "tests": [],
+  "imaging": [
+   "موجات فوق صوتية (Ultrasound) عند استمرار الأعراض"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "تمارين إطالة لوتر العرقوب واللفافة الأخمصية",
+   "نعال طبية داعمة أو جبيرة ليلية",
+   "حقن كورتيزون في الحالات المستعصية"
+  ],
+  "selfcare": [
+   "أحذية داعمة لقوس القدم وتجنب المشي حافيًا",
+   "إطالة باطن القدم صباحًا",
+   "إنقاص الوزن الزائد"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Plantar fasciitis"
+ },
+ "bones.anklesprain": {
+  "tests": [],
+  "imaging": [
+   "أشعة سينية (X-ray) عند انطباق معايير أوتاوا للكاحل"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات ومضادات التهاب",
+    "ex": "paracetamol, ibuprofen",
+    "note": "لأيام قليلة؛ الحذر مع أمراض المعدة والكلى"
+   }
+  ],
+  "procedures": [
+   "رباط ضاغط أو دعامة للكاحل",
+   "علاج طبيعي لتمارين التوازن والتقوية"
+  ],
+  "selfcare": [
+   "الراحة والثلج والضغط ورفع القدم في الأيام الأولى",
+   "العودة التدريجية للمشي بحسب التحمل"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Sprains and strains"
+ },
+ "bones.neck": {
+  "tests": [],
+  "imaging": [
+   "رنين مغناطيسي (MRI) عند وجود تنميل أو ضعف في الذراع"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات بسيطة ومضادات التهاب",
+    "ex": "paracetamol, ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي وتمارين للرقبة",
+   "جراحة لتخفيف الضغط على النخاع أو الأعصاب عند الاعتلال العصبي المتقدم"
+  ],
+  "selfcare": [
+   "الحفاظ على وضعية جيدة أثناء استخدام الشاشات",
+   "كمادات دافئة وحركة لطيفة للرقبة"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Neck pain - non-specific"
+ },
+ "bones.as": {
+  "tests": [
+   "البروتين التفاعلي وسرعة الترسيب (CRP/ESR)",
+   "فحص الجين (HLA-B27)"
+  ],
+  "imaging": [
+   "أشعة سينية على المفاصل العجزية الحرقفية (X-ray)",
+   "رنين مغناطيسي على المفاصل العجزية الحرقفية (MRI)"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "naproxen, ibuprofen",
+    "note": "الخيار الأول؛ الحذر مع أمراض المعدة والكلى والقلب"
+   },
+   {
+    "cls": "أدوية حيوية عند عدم الاستجابة",
+    "ex": "adalimumab, etanercept, infliximab",
+    "note": "بوصفة استشاري فقط؛ فحص السل قبل البدء"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي وتمارين يومية للحفاظ على مرونة العمود الفقري"
+  ],
+  "selfcare": [
+   "تمارين إطالة يومية ونشاط بدني منتظم",
+   "الإقلاع عن التدخين"
+  ],
+  "refs": [
+   "EULAR",
+   "ACR",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ASAS-EULAR recommendations for the management of axial spondyloarthritis (2022 update)"
+ },
+ "bones.fibromyalgia": {
+  "tests": [
+   "صورة دم كاملة وسرعة الترسيب (CBC, ESR) لاستبعاد أسباب أخرى",
+   "وظائف الغدة الدرقية (TSH)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات اكتئاب بجرعة منخفضة لتعديل الألم",
+    "ex": "amitriptyline, duloxetine",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "برنامج تمارين هوائية متدرّجة",
+   "العلاج المعرفي السلوكي (CBT) للتعامل مع الألم المزمن",
+   "برامج متعددة التخصصات لإدارة الألم"
+  ],
+  "selfcare": [
+   "نشاط بدني منتظم ومتدرّج",
+   "تنظيم مواعيد النوم"
+  ],
+  "refs": [
+   "EULAR",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "EULAR revised recommendations for the management of fibromyalgia (2016)"
+ },
+ "bones.lupus": {
+  "tests": [
+   "الأجسام المضادة للنواة (ANA)",
+   "أجسام (Anti-dsDNA) ومستوى المتمّمات (C3/C4)",
+   "صورة دم كاملة ووظائف الكلى (CBC, Creatinine)",
+   "تحليل البول للبروتين (Urinalysis)"
+  ],
+  "imaging": [
+   "أشعة أو تخطيط حسب الأعضاء المصابة (الصدر، القلب، الكلى)"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الملاريا",
+    "ex": "hydroxychloroquine",
+    "note": "بوصفة طبية فقط؛ مع فحص دوري للعين"
+   },
+   {
+    "cls": "الكورتيزون بأقل جرعة ممكنة",
+    "ex": "prednisolone",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مثبطات المناعة حسب إصابة الأعضاء",
+    "ex": "azathioprine, mycophenolate mofetil, methotrexate",
+    "note": "بوصفة استشاري فقط؛ بعضها ممنوع في الحمل"
+   }
+  ],
+  "procedures": [
+   "خزعة الكلى عند الشك في التهاب الكلية الذئبي"
+  ],
+  "selfcare": [
+   "الوقاية من الشمس بواقٍ عالي الحماية",
+   "الإقلاع عن التدخين"
+  ],
+  "refs": [
+   "EULAR",
+   "ACR",
+   "WHO_EML"
+  ],
+  "guide": "EULAR recommendations for the management of systemic lupus erythematosus (2023 update)"
+ },
+ "bones.scoliosis": {
+  "tests": [],
+  "imaging": [
+   "أشعة سينية كاملة للعمود الفقري واقفًا لقياس زاوية كوب (X-ray)",
+   "رنين مغناطيسي (MRI) عند أعراض عصبية أو نمط غير معتاد"
+  ],
+  "meds": [],
+  "procedures": [
+   "متابعة دورية بالأشعة خلال فترة النمو",
+   "مشدّ (دعامة) للظهر للأطفال والمراهقين في طور النمو",
+   "تمارين علاجية خاصة بالجنف",
+   "جراحة تثبيت الفقرات للانحناءات الكبيرة أو المتزايدة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AAOS"
+  ],
+  "guide": "SOSORT guidelines: orthopaedic and rehabilitation treatment of idiopathic scoliosis during growth (2016)"
+ },
+ "bones.meniscus": {
+  "tests": [],
+  "imaging": [
+   "رنين مغناطيسي على الركبة (MRI)",
+   "أشعة سينية (X-ray) لاستبعاد الكسر"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي لتقوية عضلات الفخذ واستعادة الثبات",
+   "إصلاح أو تهذيب الغضروف بالمنظار عند أعراض القفل",
+   "إعادة بناء الرباط الصليبي جراحيًا عند عدم الثبات أو للرياضيين"
+  ],
+  "selfcare": [
+   "الراحة والثلج ورفع الساق في الأيام الأولى",
+   "استخدام عكازات عند صعوبة تحميل الوزن"
+  ],
+  "refs": [
+   "AAOS",
+   "WHO_EML"
+  ],
+  "guide": "AAOS Clinical Practice Guideline: Management of Anterior Cruciate Ligament Injuries (2022)"
+ },
+ "bones.trigger": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, naproxen",
+    "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"
+   }
+  ],
+  "procedures": [
+   "جبيرة للإصبع",
+   "حقن كورتيزون في غمد الوتر",
+   "جراحة تحرير بكرة الوتر عند فشل الحقن"
+  ],
+  "selfcare": [
+   "تجنب القبض القوي المتكرر",
+   "تمارين إطالة لطيفة للأصابع"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Trigger finger"
+ },
+ "bones.pmr": {
+  "tests": [
+   "سرعة الترسيب والبروتين التفاعلي (ESR/CRP)",
+   "صورة دم كاملة ووظائف الكبد والكلى",
+   "العامل الروماتويدي و(Anti-CCP) لاستبعاد أمراض أخرى",
+   "إنزيم العضلات (CK) ووظائف الغدة الدرقية (TSH)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على الكتفين والوركين (Ultrasound) عند الحاجة"
+  ],
+  "meds": [
+   {
+    "cls": "الكورتيزون",
+    "ex": "prednisolone",
+    "note": "بوصفة طبية فقط؛ يُخفَّض تدريجيًا ولا يُوقف فجأة"
+   },
+   {
+    "cls": "حماية العظام مع الكورتيزون طويل الأمد",
+    "ex": "calcium carbonate, colecalciferol, alendronic acid",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "دواء موفّر للكورتيزون عند الانتكاس",
+    "ex": "methotrexate",
+    "note": "بوصفة استشاري فقط"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "مراجعة الطوارئ فورًا عند صداع جديد أو اضطراب الرؤية أو ألم الفك عند المضغ"
+  ],
+  "refs": [
+   "EULAR",
+   "ACR",
+   "WHO_EML"
+  ],
+  "guide": "EULAR/ACR recommendations for the management of polymyalgia rheumatica (2015)"
+ },
+ "internal.appendicitis": {
+  "tests": [
+   "صورة دم كاملة والبروتين التفاعلي (CBC, CRP)",
+   "تحليل البول (Urinalysis)",
+   "اختبار الحمل للنساء في سن الإنجاب (β-hCG)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على البطن (Ultrasound) خاصة للأطفال والحوامل",
+   "أشعة مقطعية على البطن (CT)"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية وريدية",
+    "ex": "ceftriaxone, cefuroxime, metronidazole",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "مسكنات ومحاليل وريدية",
+    "ex": "paracetamol, morphine",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "استئصال الزائدة الدودية بالمنظار أو بالجراحة المفتوحة",
+   "علاج بالمضادات الحيوية وحدها لحالات مختارة غير معقدة"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) أو التوجه للطوارئ فورًا",
+   "الامتناع عن الأكل والشرب حتى تقييم الطبيب"
+  ],
+  "refs": [
+   "WHO_EML",
+   "IDSA"
+  ],
+  "guide": "WSES Jerusalem guidelines for diagnosis and treatment of acute appendicitis (2020 update)"
+ },
+ "internal.gallstones": {
+  "tests": [
+   "وظائف الكبد والبيليروبين (LFT)",
+   "إنزيم الليبيز أو الأميليز (Lipase/Amylase)",
+   "صورة دم كاملة (CBC)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على البطن (Ultrasound)",
+   "رنين مغناطيسي على القنوات الصفراوية (MRCP) عند الشك في حصوة بالقناة"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات المغص المراري",
+    "ex": "diclofenac, paracetamol",
+    "note": "بوصفة طبية؛ الحذر مع أمراض المعدة والكلى"
+   },
+   {
+    "cls": "مضادات حيوية عند التهاب المرارة الحاد",
+    "ex": "ceftriaxone, metronidazole",
+    "note": "بوصفة طبية فقط؛ تُعطى غالبًا في المستشفى"
+   }
+  ],
+  "procedures": [
+   "استئصال المرارة بالمنظار",
+   "منظار القنوات الصفراوية (ERCP) لإزالة حصوة القناة"
+  ],
+  "selfcare": [
+   "تقليل الوجبات الدسمة الثقيلة",
+   "التوجه للطوارئ عند حمى أو اصفرار أو ألم مستمر"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG188 Gallstone disease: diagnosis and management (2014)"
+ },
+ "internal.pancreatitis": {
+  "tests": [
+   "إنزيم الليبيز أو الأميليز في الدم (Lipase/Amylase)",
+   "صورة دم كاملة ووظائف الكبد والكلى",
+   "الدهون الثلاثية والكالسيوم في الدم",
+   "البروتين التفاعلي (CRP) لتقدير الشدة"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على البطن للبحث عن حصوات المرارة",
+   "أشعة مقطعية بالصبغة (CT) عند الشك أو لتقييم المضاعفات"
+  ],
+  "meds": [
+   {
+    "cls": "محاليل وريدية",
+    "ex": "sodium lactate (compound solution), sodium chloride",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "مسكنات الألم",
+    "ex": "paracetamol, morphine",
+    "note": "تُعطى في المستشفى؛ المورفين تحت إشراف طبي"
+   }
+  ],
+  "procedures": [
+   "تغذية مبكرة بالفم أو بأنبوب حسب التحمل",
+   "منظار القنوات الصفراوية (ERCP) عند انسداد بحصوة أو التهاب القنوات",
+   "استئصال المرارة لاحقًا إذا كان السبب حصوات",
+   "تصريف التجمعات أو النخر المصاب عند الحاجة"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) أو التوجه للطوارئ فورًا",
+   "الامتناع التام عن الكحول"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG104 Pancreatitis (2018)"
+ },
+ "internal.hepatitis": {
+  "tests": [
+   "وظائف الكبد (ALT, AST, Bilirubin)",
+   "فحوص الفيروسات (HAV IgM, HBsAg, Anti-HCV)",
+   "الحمل الفيروسي (HBV DNA / HCV RNA)",
+   "زمن التخثر (INR)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على الكبد (Ultrasound)",
+   "تصوير مرونة الكبد (Elastography) لتقدير التليّف"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات فيروسية مباشرة لالتهاب الكبد (ج)",
+    "ex": "sofosbuvir, daclatasvir, velpatasvir",
+    "note": "بوصفة اختصاصي فقط"
+   },
+   {
+    "cls": "مضادات فيروسية لالتهاب الكبد (ب) المزمن",
+    "ex": "tenofovir disoproxil fumarate, entecavir",
+    "note": "بوصفة اختصاصي فقط؛ لا يُوقف دون استشارة"
+   }
+  ],
+  "procedures": [
+   "متابعة دورية لوظائف الكبد وتقييم درجة التليّف",
+   "تطعيم المخالطين ضد التهاب الكبد (أ) و(ب)"
+  ],
+  "selfcare": [
+   "الامتناع عن الكحول والأدوية والأعشاب غير الموصوفة",
+   "عدم مشاركة الأدوات الحادة أو فرش الأسنان",
+   "غسل اليدين جيدًا لمنع انتقال التهاب الكبد (أ)"
+  ],
+  "refs": [
+   "WHO",
+   "WHO_EML",
+   "AASLD",
+   "EASL"
+  ],
+  "guide": "WHO Guidelines for the prevention, diagnosis, care and treatment for people with chronic hepatitis B infection (2024)"
+ },
+ "internal.anemia": {
+  "tests": [
+   "صورة دم كاملة (CBC)",
+   "مخزون الحديد (Ferritin)",
+   "فيتامين ب12 وحمض الفوليك (B12, Folate)",
+   "فحص السيلياك (tTG-IgA) أو الدم الخفي حسب الحالة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "الحديد الفموي",
+    "ex": "ferrous sulfate, ferrous fumarate",
+    "note": "قد يسبب إمساكًا وبرازًا داكنًا؛ يُحفظ بعيدًا عن الأطفال"
+   },
+   {
+    "cls": "الحديد الوريدي عند عدم التحمل أو عدم الاستجابة",
+    "ex": "ferric carboxymaltose, iron sucrose",
+    "note": "يُعطى في المستشفى أو العيادة"
+   },
+   {
+    "cls": "فيتامين ب12 أو حمض الفوليك عند النقص",
+    "ex": "hydroxocobalamin, folic acid"
+   }
+  ],
+  "procedures": [
+   "منظار علوي وسفلي لنقص الحديد غير المفسّر",
+   "نقل دم في فقر الدم الشديد"
+  ],
+  "selfcare": [
+   "غذاء غني بالحديد كاللحوم والبقوليات والخضروات الورقية",
+   "تناول الحديد بعيدًا عن الشاي والقهوة"
+  ],
+  "refs": [
+   "NICE",
+   "ASH",
+   "WHO_EML"
+  ],
+  "guide": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults (2021)"
+ },
+ "internal.ckd": {
+  "tests": [
+   "الكرياتينين ومعدل الترشيح الكلوي (Creatinine, eGFR)",
+   "نسبة الألبومين إلى الكرياتينين في البول (uACR)",
+   "الأملاح والبوتاسيوم والهيموجلوبين",
+   "سكر الدم والدهون (HbA1c, Lipids)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على الكلى (Ultrasound)"
+  ],
+  "meds": [
+   {
+    "cls": "مثبطات الإنزيم المحوّل أو حاصرات مستقبلات الأنجيوتنسين",
+    "ex": "lisinopril, enalapril, losartan",
+    "note": "بوصفة طبية فقط؛ متابعة البوتاسيوم؛ ممنوعة في الحمل"
+   },
+   {
+    "cls": "مثبطات (SGLT2)",
+    "ex": "dapagliflozin, empagliflozin",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "خافضات الكوليسترول (الستاتينات)",
+    "ex": "atorvastatin, simvastatin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "ضبط ضغط الدم والسكر وفق أهداف علاجية",
+   "غسيل الكلى أو زراعة الكلية في المرحلة المتقدمة"
+  ],
+  "selfcare": [
+   "تقليل الملح وتجنب مضادات الالتهاب غير الستيرويدية دون استشارة",
+   "الإقلاع عن التدخين"
+  ],
+  "refs": [
+   "KDIGO",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease"
+ },
+ "internal.cirrhosis": {
+  "tests": [
+   "وظائف الكبد والألبومين وزمن التخثر (LFT, INR)",
+   "صورة دم كاملة (CBC)",
+   "فحوص الأسباب كفيروسات الكبد (HBsAg, Anti-HCV)",
+   "ألفا فيتو بروتين (AFP) ضمن مراقبة سرطان الكبد"
+  ],
+  "imaging": [
+   "موجات فوق صوتية دورية على البطن لمراقبة سرطان الكبد",
+   "تصوير مرونة الكبد (Elastography)"
+  ],
+  "meds": [
+   {
+    "cls": "حاصرات بيتا غير الانتقائية للوقاية من نزيف الدوالي",
+    "ex": "propranolol, carvedilol",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مدرّات البول لعلاج الاستسقاء",
+    "ex": "spironolactone, furosemide",
+    "note": "بوصفة طبية فقط مع متابعة الأملاح ووظائف الكلى"
+   },
+   {
+    "cls": "علاج اعتلال الدماغ الكبدي",
+    "ex": "lactulose, rifaximin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "منظار علوي للكشف عن دوالي المريء وربطها",
+   "بزل سائل الاستسقاء عند الحاجة",
+   "تقييم زراعة الكبد في الحالات المتقدمة"
+  ],
+  "selfcare": [
+   "الامتناع التام عن الكحول",
+   "تجنب مضادات الالتهاب غير الستيرويدية والأعشاب دون استشارة",
+   "التوجه للطوارئ عند قيء دموي أو براز أسود أو تشوّش"
+  ],
+  "refs": [
+   "NICE",
+   "AASLD",
+   "EASL",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG50 Cirrhosis in over 16s: assessment and management (2016)"
+ },
+ "internal.kidneystone": {
+  "tests": [
+   "تحليل البول (Urinalysis)",
+   "وظائف الكلى والكالسيوم وحمض اليوريك",
+   "صورة دم كاملة (CBC) عند الحمى",
+   "تحليل الحصوة بعد خروجها"
+  ],
+  "imaging": [
+   "أشعة مقطعية منخفضة الجرعة دون صبغة (Non-contrast CT)",
+   "موجات فوق صوتية (Ultrasound) للحوامل والأطفال"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الالتهاب غير الستيرويدية لمغص الكلى",
+    "ex": "diclofenac, ibuprofen",
+    "note": "الحذر مع ضعف وظائف الكلى"
+   },
+   {
+    "cls": "حاصرات ألفا لتسهيل خروج حصوة الحالب",
+    "ex": "tamsulosin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "تفتيت الحصوات بالموجات التصادمية (ESWL)",
+   "منظار الحالب مع التفتيت بالليزر (URS)",
+   "استخراج الحصوة عبر الجلد (PCNL) للحصوات الكبيرة",
+   "تصريف عاجل بقسطرة أو أنبوب عند الانسداد مع العدوى"
+  ],
+  "selfcare": [
+   "الإكثار من شرب الماء",
+   "تقليل الملح في الطعام",
+   "التوجه للطوارئ عند حمى مع ألم الكلى"
+  ],
+  "refs": [
+   "NICE",
+   "EAU",
+   "AUA",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG118 Renal and ureteric stones: assessment and management (2019)"
+ },
+ "internal.uti": {
+  "tests": [
+   "تحليل البول بالشريط أو المجهر (Urinalysis)",
+   "مزرعة بول (Urine culture) عند الحاجة",
+   "اختبار الحمل للنساء عند الحاجة"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على الجهاز البولي عند التكرار أو لدى الرجال"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية لالتهاب المثانة غير المعقد",
+    "ex": "nitrofurantoin, fosfomycin, trimethoprim, pivmecillinam",
+    "note": "بوصفة طبية فقط؛ يختار الطبيب حسب الحمل ووظائف الكلى"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "الإكثار من شرب السوائل",
+   "مسكن بسيط كالباراسيتامول لتخفيف الألم",
+   "مراجعة الطبيب فورًا عند حمى أو ألم في الخاصرة"
+  ],
+  "refs": [
+   "NICE",
+   "IDSA",
+   "EAU",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG109 Urinary tract infection (lower): antimicrobial prescribing (2018)"
+ },
+ "internal.ibs": {
+  "tests": [
+   "صورة دم كاملة والبروتين التفاعلي (CBC, CRP)",
+   "فحص السيلياك (tTG-IgA)",
+   "كالبروتكتين البراز (Faecal calprotectin) عند الإسهال"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات التقلّص",
+    "ex": "mebeverine, hyoscine butylbromide, peppermint oil"
+   },
+   {
+    "cls": "ملينات زيادة حجم البراز",
+    "ex": "ispaghula husk"
+   },
+   {
+    "cls": "مضاد الإسهال للنمط الإسهالي",
+    "ex": "loperamide",
+    "note": "لا يُستخدم مع حمى أو دم في البراز"
+   },
+   {
+    "cls": "مضاد اكتئاب ثلاثي بجرعة منخفضة كخط ثانٍ",
+    "ex": "amitriptyline",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "العلاج المعرفي السلوكي (CBT) أو التنويم الموجّه للأمعاء عند استمرار الأعراض",
+   "استشارة اختصاصي تغذية لنظام منخفض (FODMAP)"
+  ],
+  "selfcare": [
+   "وجبات منتظمة وتقليل الكافيين والأطعمة الدهنية والغازية",
+   "نشاط بدني منتظم وإدارة التوتر"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG61 Irritable bowel syndrome in adults: diagnosis and management (2008, updated 2017)"
+ },
+ "internal.hemorrhoids": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "ملينات زيادة حجم البراز",
+    "ex": "ispaghula husk"
+   },
+   {
+    "cls": "مستحضرات موضعية لتخفيف الأعراض",
+    "ex": "lidocaine (topical), hydrocortisone (topical)",
+    "note": "لمدة قصيرة فقط"
+   }
+  ],
+  "procedures": [
+   "فحص بالمنظار الشرجي (Proctoscopy)",
+   "ربط البواسير بالحلقات المطاطية",
+   "استئصال البواسير جراحيًا للدرجات المتقدمة",
+   "منظار القولون عند وجود نزيف مع عوامل خطورة"
+  ],
+  "selfcare": [
+   "زيادة الألياف والسوائل",
+   "تجنب الحزق والجلوس الطويل في الحمام",
+   "مغطس ماء دافئ"
+  ],
+  "refs": [
+   "NICE",
+   "ACG"
+  ],
+  "guide": "ASCRS Clinical Practice Guidelines for the Management of Hemorrhoids"
+ },
+ "internal.fissure": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مرخيات العضلة العاصرة الموضعية",
+    "ex": "glyceryl trinitrate (topical), diltiazem (topical)",
+    "note": "بوصفة طبية فقط؛ قد يسبب الصداع"
+   },
+   {
+    "cls": "ملينات لتليين البراز",
+    "ex": "ispaghula husk, lactulose"
+   },
+   {
+    "cls": "مخدر موضعي",
+    "ex": "lidocaine (topical)"
+   }
+  ],
+  "procedures": [
+   "حقن توكسين البوتولينوم في العضلة العاصرة عند فشل العلاج الموضعي",
+   "قطع جزئي للعضلة العاصرة الداخلية (LIS) للشقوق المزمنة"
+  ],
+  "selfcare": [
+   "زيادة الألياف والسوائل لتليين البراز",
+   "مغطس ماء دافئ بعد التبرز"
+  ],
+  "refs": [
+   "NICE",
+   "ACG"
+  ],
+  "guide": "ASCRS Clinical Practice Guideline for the Management of Anal Fissures"
+ },
+ "internal.gastroenteritis": {
+  "tests": [
+   "تحليل البراز أو مزرعته عند وجود دم أو استمرار الإسهال",
+   "الأملاح ووظائف الكلى عند الجفاف الشديد"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "محلول الإرواء الفموي (ORS)",
+    "ex": "oral rehydration salts"
+   },
+   {
+    "cls": "الزنك للأطفال المصابين بالإسهال",
+    "ex": "zinc sulfate",
+    "note": "الجرعة حسب العمر والوزن يحددها طبيب الأطفال"
+   },
+   {
+    "cls": "مضاد الإسهال للبالغين فقط",
+    "ex": "loperamide",
+    "note": "لا يُعطى للأطفال أو مع دم في البراز أو حمى"
+   }
+  ],
+  "procedures": [
+   "محاليل وريدية في الجفاف الشديد"
+  ],
+  "selfcare": [
+   "شرب محلول الإرواء والسوائل بكثرة",
+   "الاستمرار في الأكل الخفيف والرضاعة للأطفال",
+   "غسل اليدين جيدًا"
+  ],
+  "refs": [
+   "WHO",
+   "WHO_EML",
+   "NICE",
+   "CDC"
+  ],
+  "guide": "WHO The treatment of diarrhoea: a manual for physicians and other senior health workers (2005)"
+ },
+ "internal.ibd": {
+  "tests": [
+   "صورة دم كاملة والبروتين التفاعلي (CBC, CRP)",
+   "كالبروتكتين البراز (Faecal calprotectin)",
+   "مزرعة البراز وفحص المطثية العسيرة لاستبعاد العدوى"
+  ],
+  "imaging": [
+   "رنين مغناطيسي على الأمعاء (MR enterography)",
+   "أشعة مقطعية على البطن (CT) عند الشك في مضاعفات"
+  ],
+  "meds": [
+   {
+    "cls": "أمينوساليسيلات لالتهاب القولون التقرحي",
+    "ex": "mesalazine, sulfasalazine",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "الكورتيزون للنوبات",
+    "ex": "prednisolone, budesonide",
+    "note": "بوصفة طبية فقط؛ لفترة محدودة"
+   },
+   {
+    "cls": "مثبطات المناعة",
+    "ex": "azathioprine, mercaptopurine, methotrexate",
+    "note": "بوصفة اختصاصي فقط مع تحاليل دورية"
+   },
+   {
+    "cls": "أدوية حيوية",
+    "ex": "infliximab, adalimumab, vedolizumab",
+    "note": "بوصفة اختصاصي؛ فحص السل والتهاب الكبد قبل البدء"
+   }
+  ],
+  "procedures": [
+   "منظار القولون مع خزعات للتشخيص والمتابعة",
+   "جراحة استئصال الجزء المصاب عند المضاعفات أو فشل العلاج"
+  ],
+  "selfcare": [
+   "الإقلاع عن التدخين خاصة في داء كرون"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "British Society of Gastroenterology consensus guidelines on the management of inflammatory bowel disease in adults (2019)"
+ },
+ "internal.ulcer": {
+  "tests": [
+   "فحص جرثومة المعدة بالنفس أو البراز (H. pylori)",
+   "صورة دم كاملة (CBC) عند الشك في نزيف"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات مضخة البروتون",
+    "ex": "omeprazole, lansoprazole",
+    "note": "بوصفة طبية؛ لفترة يحددها الطبيب"
+   },
+   {
+    "cls": "علاج جرثومة المعدة متعدد الأدوية",
+    "ex": "amoxicillin, clarithromycin, metronidazole, bismuth",
+    "note": "بوصفة طبية فقط؛ يجب إكمال المدة كاملة"
+   }
+  ],
+  "procedures": [
+   "منظار علوي للتشخيص وأخذ خزعات ومتابعة قرحة المعدة",
+   "إيقاف أو تعديل المسكنات غير الستيرويدية والأسبرين بإشراف الطبيب"
+  ],
+  "selfcare": [
+   "تجنب المسكنات غير الستيرويدية دون استشارة",
+   "الإقلاع عن التدخين وتقليل الكحول",
+   "التوجه للطوارئ عند قيء دموي أو براز أسود"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG184 Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management (2014, updated 2019)"
+ },
+ "internal.gerd": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الحموضة والألجينات",
+    "ex": "aluminium hydroxide, magnesium hydroxide, sodium alginate"
+   },
+   {
+    "cls": "مثبطات مضخة البروتون",
+    "ex": "omeprazole, lansoprazole, esomeprazole",
+    "note": "لفترة محددة ثم يراجع الطبيب الحاجة إليها"
+   },
+   {
+    "cls": "حاصرات مستقبلات الهيستامين (H2)",
+    "ex": "famotidine"
+   }
+  ],
+  "procedures": [
+   "منظار علوي عند صعوبة البلع أو فقدان الوزن أو علامات إنذار أخرى",
+   "جراحة تثبيت فم المعدة (Fundoplication) لحالات مختارة"
+  ],
+  "selfcare": [
+   "إنقاص الوزن وتجنب الأكل قبل النوم بثلاث ساعات",
+   "رفع رأس السرير",
+   "تقليل الوجبات الدسمة والقهوة والتدخين"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG184 Gastro-oesophageal reflux disease and dyspepsia in adults: investigation and management (2014, updated 2019)"
+ },
+ "internal.diverticular": {
+  "tests": [
+   "صورة دم كاملة (CBC) وفصيلة الدم والتوافق",
+   "زمن التخثر ووظائف الكلى (INR, Creatinine)"
+  ],
+  "imaging": [
+   "أشعة مقطعية على الأوعية (CT angiography) عند النزيف النشط",
+   "تصوير الأوعية بالقسطرة (Angiography) عند الحاجة"
+  ],
+  "meds": [
+   {
+    "cls": "محاليل وريدية ونقل دم عند الحاجة",
+    "ex": "sodium chloride, sodium lactate (compound solution)",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "منظار القولون للتشخيص وإيقاف النزيف",
+   "سدّ الوعاء النازف بالقسطرة (Embolization)",
+   "جراحة استئصال جزء من القولون عند النزيف المستمر"
+  ],
+  "selfcare": [
+   "التوجه للطوارئ عند نزيف غزير أو دوخة",
+   "عدم إيقاف أدوية السيولة أو بدئها دون استشارة الطبيب"
+  ],
+  "refs": [
+   "ACG"
+  ],
+  "guide": "ACG Clinical Guideline: Management of Patients With Acute Lower Gastrointestinal Bleeding (2023)"
+ },
+ "internal.colon_check": {
+  "tests": [
+   "صورة دم كاملة ومخزون الحديد (CBC, Ferritin)",
+   "فحص الدم الخفي المناعي في البراز (FIT)"
+  ],
+  "imaging": [
+   "تصوير القولون بالأشعة المقطعية (CT colonography) إذا تعذّر المنظار"
+  ],
+  "meds": [],
+  "procedures": [
+   "منظار القولون مع أخذ خزعات",
+   "إحالة عاجلة وفق مسار الاشتباه بالسرطان"
+  ],
+  "selfcare": [],
+  "refs": [
+   "NICE",
+   "ACG"
+  ],
+  "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated)"
+ },
+ "internal.celiac": {
+  "tests": [
+   "أجسام مضادة لإنزيم ترانسغلوتاميناز (tTG-IgA) مع IgA الكلي",
+   "صورة دم كاملة والحديد وفيتامين د وب12"
+  ],
+  "imaging": [
+   "قياس كثافة العظام (DXA) عند الحاجة"
+  ],
+  "meds": [
+   {
+    "cls": "مكملات لتعويض النقص عند الحاجة",
+    "ex": "ferrous sulfate, folic acid, calcium carbonate, colecalciferol"
+   }
+  ],
+  "procedures": [
+   "منظار علوي مع خزعات من الاثني عشر لتأكيد التشخيص",
+   "متابعة مع اختصاصي تغذية"
+  ],
+  "selfcare": [
+   "عدم إيقاف الغلوتين قبل اكتمال التحاليل والمنظار",
+   "الالتزام مدى الحياة بنظام خالٍ من الغلوتين بعد التشخيص"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG20 Coeliac disease: recognition, assessment and management (2015)"
+ },
+ "internal.lactose": {
+  "tests": [
+   "اختبار تنفس الهيدروجين (Hydrogen breath test)",
+   "فحص السيلياك (tTG-IgA) عند الشك"
+  ],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "استشارة اختصاصي تغذية لضمان كفاية الكالسيوم"
+  ],
+  "selfcare": [
+   "تقليل منتجات الألبان أو اختيار الخالية من اللاكتوز",
+   "تجربة كميات صغيرة من الزبادي والأجبان الصلبة",
+   "تعويض الكالسيوم من مصادر غذائية أخرى"
+  ],
+  "refs": [
+   "AAP"
+  ],
+  "guide": "AAP Clinical Report: Lactose Intolerance in Infants, Children, and Adolescents (2006)"
+ },
+ "internal.constipation": {
+  "tests": [
+   "صورة دم كاملة والكالسيوم ووظائف الغدة الدرقية (CBC, TSH) عند الحاجة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "ملينات زيادة حجم البراز",
+    "ex": "ispaghula husk"
+   },
+   {
+    "cls": "ملينات أسموزية",
+    "ex": "macrogol, lactulose"
+   },
+   {
+    "cls": "ملينات منبّهة لفترات قصيرة",
+    "ex": "senna, bisacodyl"
+   }
+  ],
+  "procedures": [
+   "منظار القولون عند علامات إنذار كالنزيف أو فقدان الوزن",
+   "علاج بالارتجاع الحيوي (Biofeedback) لاضطراب الإخراج الوظيفي"
+  ],
+  "selfcare": [
+   "زيادة الألياف والسوائل تدريجيًا",
+   "نشاط بدني منتظم",
+   "عدم تأجيل الذهاب إلى الحمام"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Constipation"
+ },
+ "internal.fattyliver": {
+  "tests": [
+   "وظائف الكبد (ALT, AST)",
+   "سكر الدم والدهون (HbA1c, Lipids)",
+   "مؤشر التليّف (FIB-4)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على البطن (Ultrasound)",
+   "تصوير مرونة الكبد (Elastography) لتقدير التليّف"
+  ],
+  "meds": [],
+  "procedures": [
+   "برنامج منظم لإنقاص الوزن",
+   "علاج السكري والضغط والدهون المصاحبة",
+   "جراحة السمنة لحالات مختارة"
+  ],
+  "selfcare": [
+   "إنقاص الوزن تدريجيًا",
+   "نشاط بدني منتظم ونظام غذائي متوسطي",
+   "تجنب الكحول والمشروبات المحلّاة"
+  ],
+  "refs": [
+   "EASL",
+   "AASLD",
+   "NICE"
+  ],
+  "guide": "EASL-EASD-EASO Clinical Practice Guidelines on the management of MASLD (2024)"
+ },
+ "internal.dysphagia": {
+  "tests": [
+   "صورة دم كاملة (CBC)",
+   "وظائف الكبد والكلى"
+  ],
+  "imaging": [
+   "بلع الباريوم (Barium swallow) عند الحاجة",
+   "أشعة مقطعية (CT) للصدر والبطن عند الاشتباه بورم"
+  ],
+  "meds": [],
+  "procedures": [
+   "منظار علوي عاجل مع أخذ خزعات",
+   "توسيع المريء بالمنظار عند وجود تضيّق",
+   "إحالة عاجلة وفق مسار الاشتباه بالسرطان"
+  ],
+  "selfcare": [
+   "التوجه للطوارئ إذا علق الطعام وتعذّر بلع اللعاب"
+  ],
+  "refs": [
+   "NICE",
+   "ACG"
+  ],
+  "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated)"
+ },
+ "internal.gastritis": {
+  "tests": [
+   "اختبار النفس باليوريا أو مستضد البراز (H. pylori)",
+   "صورة دم كاملة (CBC) عند الشك في نزيف"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات مضخة البروتون",
+    "ex": "omeprazole, lansoprazole",
+    "note": "بوصفة طبية؛ لفترة يحددها الطبيب"
+   },
+   {
+    "cls": "علاج جرثومة المعدة متعدد الأدوية",
+    "ex": "amoxicillin, clarithromycin, metronidazole, bismuth",
+    "note": "بوصفة طبية فقط؛ يجب إكمال المدة كاملة"
+   }
+  ],
+  "procedures": [
+   "منظار علوي عند علامات الإنذار أو التقدم في العمر",
+   "اختبار تأكيد القضاء على الجرثومة بعد انتهاء العلاج"
+  ],
+  "selfcare": [
+   "تجنب المسكنات غير الستيرويدية دون استشارة",
+   "تقليل الكحول والتدخين"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "Maastricht VI/Florence consensus report on the management of Helicobacter pylori infection (2022)"
+ },
+ "internal.diverticulitis": {
+  "tests": [
+   "صورة دم كاملة والبروتين التفاعلي (CBC, CRP)",
+   "تحليل البول ووظائف الكلى"
+  ],
+  "imaging": [
+   "أشعة مقطعية على البطن بالصبغة (CT)"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية عند علامات العدوى الجهازية أو المضاعفات",
+    "ex": "amoxicillin + clavulanic acid, ciprofloxacin, metronidazole",
+    "note": "بوصفة طبية فقط؛ قد لا تلزم في الحالات البسيطة"
+   },
+   {
+    "cls": "مسكن بسيط",
+    "ex": "paracetamol",
+    "note": "يُفضَّل تجنب مضادات الالتهاب غير الستيرويدية"
+   }
+  ],
+  "procedures": [
+   "تصريف الخراج عبر الجلد بالتوجيه الإشعاعي",
+   "جراحة عند الانثقاب أو التهاب الصفاق",
+   "منظار القولون بعد التعافي عند الحاجة لاستبعاد أسباب أخرى"
+  ],
+  "selfcare": [
+   "سوائل صافية في الأيام الأولى حسب إرشاد الطبيب",
+   "التوجه للطوارئ عند ألم شديد أو حمى مرتفعة"
+  ],
+  "refs": [
+   "NICE",
+   "ACG",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG147 Diverticular disease: diagnosis and management (2019)"
+ },
+ "internal.obstruction": {
+  "tests": [
+   "صورة دم كاملة والأملاح ووظائف الكلى",
+   "حمض اللاكتيك (Lactate)"
+  ],
+  "imaging": [
+   "أشعة مقطعية على البطن (CT)",
+   "أشعة سينية على البطن (X-ray)"
+  ],
+  "meds": [
+   {
+    "cls": "محاليل وريدية وتعويض الأملاح",
+    "ex": "sodium chloride, sodium lactate (compound solution), potassium chloride",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "مسكنات ومضادات القيء",
+    "ex": "paracetamol, morphine, ondansetron",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "أنبوب أنفي معدي لتفريغ المعدة",
+   "مادة تباين فموية ذائبة في الماء في انسداد الالتصاقات",
+   "جراحة عند الاختناق أو فشل العلاج التحفظي"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) أو التوجه للطوارئ فورًا",
+   "الامتناع عن الأكل والشرب"
+  ],
+  "refs": [
+   "WHO_EML"
+  ],
+  "guide": "WSES Bologna guidelines for diagnosis and management of adhesive small bowel obstruction (2017 update)"
+ },
+ "internal.pyelonephritis": {
+  "tests": [
+   "تحليل البول ومزرعته (Urinalysis, Urine culture)",
+   "صورة دم كاملة ووظائف الكلى",
+   "مزرعة دم عند الحمى الشديدة",
+   "اختبار الحمل للنساء (β-hCG)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية على الكلى (Ultrasound)",
+   "أشعة مقطعية (CT) عند عدم التحسن أو الشك في انسداد"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية فموية",
+    "ex": "cefalexin, ciprofloxacin, sulfamethoxazole + trimethoprim",
+    "note": "بوصفة طبية فقط؛ يختار الطبيب حسب المزرعة والحمل"
+   },
+   {
+    "cls": "مضادات حيوية وريدية للحالات الشديدة",
+    "ex": "ceftriaxone, gentamicin",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "تصريف عاجل للكلية عند وجود انسداد"
+  ],
+  "selfcare": [
+   "شرب سوائل كافية",
+   "مسكن بسيط كالباراسيتامول للحمى والألم"
+  ],
+  "refs": [
+   "NICE",
+   "IDSA",
+   "EAU",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG111 Pyelonephritis (acute): antimicrobial prescribing (2018)"
+ }
+}

@@ -94,8 +94,10 @@ for (const k of Object.keys(RISK_FACTORS)) if (!ids.has(k)) errors.push(`RISK_FA
       if (!k.refs?.length) errors.push(`care/${id}: بلا مرجع`);
       for (const r of k.refs || []) if (!ORGS.has(r)) errors.push(`care/${id}: مرجع غير معروف ${r}`);
       if (!k.guide?.trim()) warnings.push(`care/${id}: بلا دليل إرشادي محدد`);
-      const texts = [...(k.tests||[]), ...(k.imaging||[]), ...(k.procedures||[]), ...(k.selfcare||[]), ...(k.meds||[]).flatMap(m => [m.cls, m.ex, m.note].filter(Boolean))];
-      for (const t of texts) if (DOSE.test(t)) errors.push(`care/${id}: يبدو أنه يحتوي جرعة: «${t}»`);
+      // الجرعات ممنوعة في الأدوية؛ أما الرعاية الذاتية (كالتفريش مرتين يوميًا أو قاعدة 15/15 لهبوط السكر) فمسموحة
+      const medTexts = (k.meds||[]).flatMap(m => [m.cls, m.ex, m.note].filter(Boolean));
+      for (const t of medTexts) if (DOSE.test(t)) errors.push(`care/${id}: يبدو أنه يحتوي جرعة دواء: «${t}»`);
+      for (const t of [...(k.tests||[]), ...(k.imaging||[]), ...(k.procedures||[])]) if (/\d+\s*(mg|mcg|ملغ|مجم|ملجم)/i.test(t)) errors.push(`care/${id}: جرعة في غير موضعها: «${t}»`);
       for (const m of k.meds || []) if (!m.cls?.trim()) errors.push(`care/${id}: دواء بلا فئة`);
       if (!(k.tests||[]).length && !(k.imaging||[]).length && !(k.meds||[]).length && !(k.procedures||[]).length) errors.push(`care/${id}: فارغ تمامًا`);
     }
