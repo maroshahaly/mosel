@@ -1080,6 +1080,12 @@
     { key: "knee", name: "الركبتان", color: "#476E9E", specialties: ["bones"] },
     { key: "leg", name: "الساقان", color: "#3F6694", specialties: ["bones", "heart", "neuro", "skin"] },
     { key: "foot", name: "القدمان والكاحلان", color: "#3A5E88", specialties: ["bones", "endocrine", "neuro", "skin"] },
+    { key: "jaw", name: "الفك والخدّان", color: "#6B8F4E", specialties: ["dental", "ent", "neuro"] },
+    { key: "armpit", name: "الإبطان", color: "#7A6E9A", specialties: ["skin", "hematology", "gynecology"] },
+    { key: "breast", name: "الثديان", color: "#B05A7A", specialties: ["gynecology"], sex: "female" },
+    { key: "umbilical", name: "السُّرّة وما حولها", color: "#D49433", specialties: ["internal"] },
+    { key: "groin", name: "المغبنان (ثنية أعلى الفخذ)", color: "#8A5A9C", specialties: ["andrology", "bones", "sexual", "infectious"] },
+    { key: "elbow", name: "المرفقان", color: "#5E9A63", specialties: ["bones", "neuro"] },
     { key: "occiput", name: "مؤخرة الرأس", color: "#3E8E9A", specialties: ["neuro", "bones"], view: "back" },
     { key: "nape", name: "الرقبة من الخلف", color: "#7A8A3C", specialties: ["bones", "neuro"], view: "back" },
     { key: "scapula", name: "لوحا الكتفين", color: "#5E9A63", specialties: ["bones", "heart"], view: "back" },
@@ -1119,6 +1125,12 @@
     knee: ["مفصل الركبة", "الغضروف الهلالي", "الأربطة الصليبية والجانبية", "الرضفة (صابونة الركبة)"],
     leg: ["عظما الساق (القصبة والشظية)", "عضلة بطّة الساق", "الأوردة العميقة والسطحية"],
     foot: ["مفصل الكاحل", "عظام القدم والأصابع", "وتر أكيلس", "اللفافة الأخمصية (أسفل الكعب)"],
+    jaw: ["مفصل الفك الصدغي", "عضلات المضغ", "الغدة النكفية", "العصب الخامس (ثلاثي التوائم)"],
+    armpit: ["الغدد الليمفاوية الإبطية", "الغدد العرقية", { n: "الامتداد الإبطي للثدي", sex: "female" }],
+    breast: ["نسيج الثدي", "الحلمة والهالة", "الغدد الليمفاوية المجاورة"],
+    umbilical: ["الأمعاء الدقيقة", "السُّرّة (موضع الفتق السري)", "بداية ألم الزائدة الدودية", "الشريان الأورطي"],
+    groin: ["القناة الأربية (موضع الفتق)", "الغدد الليمفاوية الأربية", "مفصل الورك", "الشريان والوريد الفخذيان"],
+    elbow: ["مفصل المرفق", "أوتار المرفق (مرفق لاعب التنس)", "العصب الزندي"],
     occiput: ["مؤخرة الدماغ والمخيخ", "عضلات قاعدة الجمجمة", "الأعصاب القذالية"],
     nape: ["فقرات الرقبة والأقراص", "عضلات الرقبة الخلفية", "الحبل الشوكي العنقي"],
     scapula: ["عظما اللوح", "عضلات الكتف الخلفية", "قمتا الرئتين"],
@@ -1187,7 +1199,7 @@
     "andrology.balanitis":   p => [p.has("سكر") && "السكري"]
   };
 
-  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, REGION_ORGANS, RISK_FACTORS, version: "3.7.0", updatedAt: "2026-10" };
+  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, REGION_ORGANS, RISK_FACTORS, version: "3.8.0", updatedAt: "2026-10" };
 
   /* إضافة أمراض وأعراض من ملفات data/more_*.js
      MOSEL_EXTEND("zoneKey", { zone?, regions?, symptoms?, conditions?, risk? }) */

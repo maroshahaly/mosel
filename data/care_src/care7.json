@@ -1,0 +1,392 @@
+{
+"bones.musclestrain": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على العضلة (Ultrasound) عند الشك في تمزق كبير", "رنين مغناطيسي (MRI) نادرًا عند الشك في تمزق كامل أو إصابة وتر"],
+ "meds": [
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol"},
+  {"cls": "مضادات الالتهاب غير الستيرويدية الموضعية", "ex": "diclofenac (topical), ibuprofen (topical)"},
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen", "note": "أقل مدة ممكنة؛ الحذر مع أمراض المعدة والكلى والقلب"}
+ ],
+ "procedures": ["برنامج إطالة وتقوية تدريجي أو علاج طبيعي عند بطء التحسن"],
+ "selfcare": ["حركة خفيفة بدل الراحة التامة", "كمادات باردة في أول يومين ثم دافئة", "إحماء وإطالة قبل الرياضة"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Sprains and strains (2020)"
+},
+"bones.cramps": {
+ "tests": ["أملاح الدم: الصوديوم والبوتاسيوم والكالسيوم والمغنيسيوم (Electrolytes, Ca, Mg) عند التكرار", "وظائف الكلى والغدة الدرقية وسكر الدم (Creatinine, TSH, Glucose) عند التكرار دون سبب واضح"],
+ "imaging": ["دوبلر على أوردة الساق (Venous Doppler) عند وجود تورّم أو ألم مستمر في السمانة"],
+ "meds": [
+  {"cls": "مراجعة الأدوية المسببة للتقلّصات", "ex": "diuretics, statins", "note": "لا يُوقف أي دواء دون استشارة الطبيب"}
+ ],
+ "procedures": ["تمارين إطالة منتظمة لعضلات السمانة قبل النوم"],
+ "selfcare": ["إطالة العضلة وتدليكها أثناء الشد", "شرب سوائل كافية خاصة في الحر والمجهود"],
+ "refs": ["AAN", "NICE"],
+ "guide": "AAN Evidence-based review: Symptomatic treatment for muscle cramps (2010)"
+},
+"bones.crepitus": {
+ "tests": [],
+ "imaging": ["أشعة سينية على المفصل (X-ray) فقط عند وجود ألم أو تورّم أو محدودية حركة"],
+ "meds": [],
+ "procedures": ["طمأنة المريض وتثقيفه بأن الطقطقة غير المؤلمة طبيعية", "فحص سريري للمفصل لاستبعاد الخشونة أو إصابة الغضروف عند وجود ألم"],
+ "selfcare": ["نشاط بدني منتظم وتقوية العضلات حول المفاصل", "الحفاظ على وزن صحي"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE NG226 Osteoarthritis in over 16s: diagnosis and management (2022)"
+},
+"internal.dehydration": {
+ "tests": ["أملاح الدم ووظائف الكلى (Electrolytes, Urea, Creatinine) عند الجفاف المتوسط أو لدى المسنين", "سكر الدم (Glucose) عند العطش الشديد غير المبرر"],
+ "imaging": [],
+ "meds": [
+  {"cls": "محلول معالجة الجفاف الفموي (ORS)", "ex": "oral rehydration salts", "note": "الخيار الأول في الجفاف الخفيف والمتوسط"},
+  {"cls": "محاليل وريدية في المستشفى عند الجفاف الشديد", "ex": "sodium chloride, Ringer's lactate", "note": "بإشراف طبي فقط"}
+ ],
+ "procedures": ["تقييم درجة الجفاف بالعلامات الحيوية وقياس الضغط في وضعي الجلوس والوقوف"],
+ "selfcare": ["الشرب على دفعات صغيرة متكررة", "تجنّب الحر والمجهود الشديد وقت الظهيرة", "الانتباه للون البول (الفاتح علامة ترطيب جيد)"],
+ "refs": ["WHO", "WHO_EML", "NICE"],
+ "guide": "WHO The treatment of diarrhoea: a manual for physicians and other senior health workers (2005)"
+},
+"internal.dyspepsia": {
+ "tests": ["فحص جرثومة المعدة بالتنفس أو البراز (Urea breath test / H. pylori stool antigen)", "صورة دم كاملة (CBC) عند الشك في فقر الدم"],
+ "imaging": ["منظار علوي (Upper endoscopy) عند علامات الإنذار أو العمر فوق 55 مع فقدان وزن"],
+ "meds": [
+  {"cls": "مثبطات مضخة البروتون لفترة قصيرة", "ex": "omeprazole, esomeprazole, pantoprazole"},
+  {"cls": "مضادات الحموضة", "ex": "aluminium hydroxide, magnesium hydroxide, calcium carbonate"},
+  {"cls": "علاج جرثومة المعدة عند ثبوتها", "ex": "clarithromycin, amoxicillin, metronidazole, bismuth", "note": "بوصفة طبية فقط وفق نظام علاجي كامل"}
+ ],
+ "procedures": [],
+ "selfcare": ["وجبات صغيرة متعددة", "تقليل الدهون والقهوة والمشروبات الغازية", "تجنّب مضادات الالتهاب دون حاجة", "إنقاص الوزن والإقلاع عن التدخين"],
+ "refs": ["NICE", "ACG"],
+ "guide": "ACG and CAG Clinical Guideline: Management of Dyspepsia (2017)"
+},
+"internal.gas": {
+ "tests": ["تحاليل الداء البطني أو عدم تحمّل اللاكتوز عند استمرار الأعراض (Celiac serology, Lactose breath test)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الغازات", "ex": "simeticone"},
+  {"cls": "مضادات التقلّص للمغص", "ex": "hyoscine butylbromide, mebeverine"}
+ ],
+ "procedures": [],
+ "selfcare": ["الأكل ببطء وتجنّب العلكة والمشروبات الغازية", "تقليل الأطعمة المسببة للغازات", "المشي بعد الوجبات"],
+ "refs": ["ACG", "NICE"],
+ "guide": "AGA Clinical Practice Update on Evaluation and Management of Belching, Abdominal Bloating, and Distention (2023)"
+},
+"internal.hiccups": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["مناورات تنبيه العصب الحائر: حبس النفس، شرب ماء بارد، مناورة فالسالفا"],
+ "selfcare": ["الأكل ببطء وتجنّب الوجبات الكبيرة", "تجنّب المشروبات الغازية"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Hiccups (2021)"
+},
+"internal.hiccups_persistent": {
+ "tests": ["أملاح الدم والكالسيوم ووظائف الكلى والكبد وسكر الدم (Electrolytes, Ca, RFT, LFT, Glucose)"],
+ "imaging": ["أشعة سينية على الصدر (Chest X-ray)", "منظار علوي أو أشعة مقطعية حسب الشك في السبب (Endoscopy / CT)"],
+ "meds": [
+  {"cls": "علاج السبب كالارتجاع", "ex": "omeprazole"},
+  {"cls": "أدوية للفواق المستعصي", "ex": "baclofen, metoclopramide, chlorpromazine, gabapentin", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["مراجعة الأدوية المحتملة السبب"],
+ "selfcare": ["تجنّب الوجبات الكبيرة والكحول"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Hiccups (2021)"
+},
+"internal.thrombosedhemorrhoid": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "ملينات وألياف", "ex": "ispaghula husk, macrogol, lactulose"},
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "مستحضرات موضعية مخدرة أو مضادة للالتهاب", "ex": "lidocaine (topical), hydrocortisone (topical)", "note": "لفترة قصيرة فقط"}
+ ],
+ "procedures": ["فحص شرجي لدى الجرّاح", "استئصال الجلطة تحت التخدير الموضعي خلال أول 72 ساعة عند الألم الشديد"],
+ "selfcare": ["مغاطس ماء دافئ", "تجنّب الإجهاد والجلوس الطويل في الحمام"],
+ "refs": ["ACG", "NICE"],
+ "guide": "ACG Clinical Guideline: Management of Benign Anorectal Disorders (2021)"
+},
+"internal.prolapsedhemorrhoids": {
+ "tests": ["صورة دم كاملة (CBC) عند النزيف المتكرر"],
+ "imaging": ["منظار شرجي أو منظار سيني (Anoscopy / Sigmoidoscopy)", "منظار القولون (Colonoscopy) عند علامات الإنذار أو العمر فوق 45"],
+ "meds": [
+  {"cls": "ملينات وألياف", "ex": "ispaghula husk, macrogol"},
+  {"cls": "مستحضرات موضعية للبواسير", "ex": "hydrocortisone (topical), lidocaine (topical)", "note": "لفترة قصيرة فقط"},
+  {"cls": "أدوية مقوية للأوردة", "ex": "diosmin, hesperidin"}
+ ],
+ "procedures": ["الربط بالحلقات المطاطية (Rubber band ligation)", "استئصال البواسير جراحيًا (Hemorrhoidectomy) أو الدباسة (Stapled hemorrhoidopexy)", "ربط الشرايين بالموجات (Doppler-guided ligation)"],
+ "selfcare": ["الإكثار من الألياف والماء", "تجنّب الإجهاد والجلوس الطويل في الحمام"],
+ "refs": ["ACG", "NICE"],
+ "guide": "ACG Clinical Guideline: Management of Benign Anorectal Disorders (2021)"
+},
+"internal.analfistula": {
+ "tests": ["سكر الدم (Glucose/HbA1c)", "تحاليل الالتهاب المعوي عند الشك في داء كرون (CRP, Fecal calprotectin)"],
+ "imaging": ["رنين مغناطيسي على الحوض (Pelvic MRI) لتحديد مسار الناسور", "موجات فوق صوتية عبر الشرج (Endoanal ultrasound)"],
+ "meds": [
+  {"cls": "مضادات حيوية عند وجود التهاب حاد مصاحب", "ex": "metronidazole, ciprofloxacin, amoxicillin-clavulanate", "note": "بوصفة طبية فقط؛ لا تعالج الناسور وحدها"}
+ ],
+ "procedures": ["فتح الناسور جراحيًا (Fistulotomy)", "خيط السيتون (Seton)", "ربط المسار بين العضلتين (LIFT) أو الشريحة المتقدمة للحفاظ على عضلة الشرج"],
+ "selfcare": ["مغاطس ماء دافئ", "نظافة المنطقة وجفافها"],
+ "refs": ["ACG", "NICE"],
+ "guide": "ASCRS Clinical Practice Guidelines for the Management of Anorectal Abscess, Fistula-in-Ano, and Rectovaginal Fistula (2022)"
+},
+"internal.perianalabscess": {
+ "tests": ["صورة دم كاملة (CBC)", "سكر الدم (Glucose)"],
+ "imaging": ["أشعة مقطعية أو رنين على الحوض (CT / MRI) عند الخراج العميق"],
+ "meds": [
+  {"cls": "مسكنات", "ex": "paracetamol, ibuprofen"},
+  {"cls": "مضادات حيوية مكمّلة للتصريف عند وجود التهاب منتشر أو سكري أو ضعف مناعة", "ex": "amoxicillin-clavulanate, metronidazole, ciprofloxacin", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["شق الخراج وتصريفه جراحيًا", "المتابعة لاحتمال تكوّن ناسور لاحقًا"],
+ "selfcare": ["مغاطس ماء دافئ بعد التصريف", "تليين البراز"],
+ "refs": ["ACG", "IDSA"],
+ "guide": "ASCRS Clinical Practice Guidelines for the Management of Anorectal Abscess, Fistula-in-Ano, and Rectovaginal Fistula (2022)"
+},
+"internal.pruritusani": {
+ "tests": ["فحص الشريط اللاصق للديدان الدبوسية عند الشك (Tape test)", "سكر الدم (Glucose) عند الحكة المستمرة"],
+ "imaging": ["منظار شرجي (Anoscopy) لاستبعاد البواسير أو الشرخ"],
+ "meds": [
+  {"cls": "كورتيزون موضعي خفيف لفترة قصيرة", "ex": "hydrocortisone (topical)"},
+  {"cls": "مضادات الفطريات الموضعية عند ثبوت عدوى فطرية", "ex": "clotrimazole, miconazole"},
+  {"cls": "طاردات الديدان عند ثبوت الديدان الدبوسية", "ex": "mebendazole, albendazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["التنظيف بالماء دون صابون معطر", "التجفيف بالتربيت", "ملابس داخلية قطنية", "تجنّب الحك"],
+ "refs": ["ACG", "NICE"],
+ "guide": "ACG Clinical Guideline: Management of Benign Anorectal Disorders (2021)"
+},
+"endocrine.hyponatremia": {
+ "tests": ["أملاح الدم (Na, K)", "أسمولية الدم والبول وصوديوم البول (Serum/urine osmolality, Urine Na)", "وظائف الكلى والكبد والغدة الدرقية والكورتيزول الصباحي (RFT, LFT, TSH, Cortisol)", "سكر الدم (Glucose)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "تقييد السوائل في الحالات المزمنة الخفيفة حسب السبب", "ex": "fluid restriction", "note": "بإشراف طبي"},
+  {"cls": "محلول ملحي مفرط التركيز في المستشفى للحالات الشديدة", "ex": "hypertonic sodium chloride", "note": "في المستشفى فقط مع متابعة لصيقة لتجنّب التصحيح السريع"}
+ ],
+ "procedures": ["مراجعة الأدوية المسببة كمدرات البول الثيازيدية ومضادات الاكتئاب"],
+ "selfcare": ["عدم الإفراط في شرب الماء دون عطش", "عدم إيقاف الأدوية أو تغييرها دون الطبيب"],
+ "refs": ["ENDO", "KDIGO"],
+ "guide": "Clinical practice guideline on diagnosis and treatment of hyponatraemia (ESE/ESICM/ERBP, 2014)"
+},
+"endocrine.hypokalemia": {
+ "tests": ["أملاح الدم (K, Na, Mg)", "وظائف الكلى (Creatinine)", "بوتاسيوم البول عند عدم وضوح السبب (Urine K)"],
+ "imaging": ["تخطيط القلب الكهربائي (ECG)"],
+ "meds": [
+  {"cls": "مكملات البوتاسيوم", "ex": "potassium chloride", "note": "بوصفة طبية فقط؛ الحذر الشديد مع أمراض الكلى"},
+  {"cls": "مكملات المغنيسيوم عند نقصه", "ex": "magnesium sulfate, magnesium oxide", "note": "بوصفة طبية فقط"},
+  {"cls": "مدرات البول الحافظة للبوتاسيوم حسب السبب", "ex": "spironolactone, amiloride", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["علاج السبب كالقيء أو الإسهال أو مراجعة مدرات البول والملينات"],
+ "selfcare": ["أطعمة غنية بالبوتاسيوم كالموز والبرتقال والبطاطس إن سمح الطبيب", "عدم الإفراط في الملينات"],
+ "refs": ["KDIGO", "WHO_EML"],
+ "guide": "KDIGO Controversies Conference: Potassium homeostasis and management of dyskalemia in kidney diseases (2020)"
+},
+"skin.furuncle": {
+ "tests": ["سكر الدم (Glucose/HbA1c) عند تكرار الدمامل", "مزرعة الصديد عند التكرار أو فشل العلاج (Pus culture)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "إزالة استعمار المكورات العنقودية عند التكرار", "ex": "mupirocin (nasal), chlorhexidine (wash)", "note": "بإرشاد طبي"}
+ ],
+ "procedures": ["تصريف الدمّل إذا كبر وتكوّن فيه صديد متموّج"],
+ "selfcare": ["كمادات دافئة متكررة", "عدم عصر الدمّل", "غسل اليدين وعدم مشاركة المناشف"],
+ "refs": ["IDSA", "NICE"],
+ "guide": "IDSA Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections (2014)"
+},
+"skin.abscess": {
+ "tests": ["مزرعة الصديد وحساسية المضادات (Pus culture & sensitivity)", "سكر الدم (Glucose)"],
+ "imaging": ["موجات فوق صوتية على الجلد (Soft-tissue ultrasound) لتأكيد وجود تجمّع صديدي"],
+ "meds": [
+  {"cls": "مضادات حيوية مضادة للمكورات العنقودية عند الحاجة", "ex": "flucloxacillin, cefalexin, clindamycin, doxycycline, trimethoprim-sulfamethoxazole", "note": "بوصفة طبية فقط حسب الحجم والحالة ومقاومة MRSA"},
+  {"cls": "مسكنات", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": ["شق الخراج وتصريفه (Incision and drainage)"],
+ "selfcare": ["تغيير الضماد يوميًا والحفاظ على نظافته", "غسل اليدين وعدم مشاركة الأدوات الشخصية"],
+ "refs": ["IDSA", "NICE"],
+ "guide": "IDSA Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections (2014)"
+},
+"skin.abscess_spreading": {
+ "tests": ["صورة دم كاملة والبروتين التفاعلي (CBC, CRP)", "مزرعة الصديد ومزرعة الدم عند الحمّى (Pus & blood culture)", "سكر الدم (Glucose)"],
+ "imaging": ["موجات فوق صوتية على الجلد (Soft-tissue ultrasound)"],
+ "meds": [
+  {"cls": "مضادات حيوية فموية أو وريدية حسب الشدة", "ex": "flucloxacillin, cefalexin, clindamycin, cefazolin, vancomycin", "note": "بوصفة طبية فقط؛ الوريدي في المستشفى"}
+ ],
+ "procedures": ["شق الخراج وتصريفه", "تحديد حافة الاحمرار لمتابعة الاستجابة"],
+ "selfcare": ["رفع العضو المصاب", "متابعة الحرارة واتساع الاحمرار"],
+ "refs": ["IDSA", "NICE"],
+ "guide": "NICE NG141 Cellulitis and erysipelas: antimicrobial prescribing (2019)"
+},
+"skin.pilonidal": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية عند التهاب الجلد المحيط", "ex": "amoxicillin-clavulanate, clindamycin, metronidazole", "note": "بوصفة طبية فقط؛ لا تُغني عن التصريف"},
+  {"cls": "مسكنات", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": ["شق وتصريف الخراج العصعصي الحاد", "استئصال الجيب جراحيًا مع إغلاق خارج الخط الأوسط أو بالشريحة", "إزالة الشعر بالليزر للوقاية من التكرار"],
+ "selfcare": ["نظافة المنطقة وجفافها", "إزالة الشعر من المنطقة", "تقليل الجلوس الطويل"],
+ "refs": ["NICE", "IDSA"],
+ "guide": "ASCRS Clinical Practice Guidelines for the Management of Pilonidal Disease (2019)"
+},
+"skin.minorwound": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مطهرات موضعية خفيفة", "ex": "povidone-iodine, chlorhexidine"},
+  {"cls": "لقاح التيتانوس عند عدم اكتمال التطعيم أو مرور مدة طويلة", "ex": "tetanus-diphtheria vaccine (Td/Tdap)"}
+ ],
+ "procedures": ["تنظيف الجرح بالماء الجاري وإزالة الأجسام الغريبة"],
+ "selfcare": ["الضغط حتى يتوقف النزيف", "تغطية الجرح بضماد نظيف وتغييره يوميًا", "مراقبة علامات العدوى"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Tetanus: Wound management for tetanus prevention (Pink Book, 2024)"
+},
+"skin.laceration": {
+ "tests": [],
+ "imaging": ["أشعة سينية (X-ray) عند الشك في جسم غريب أو كسر تحت الجرح"],
+ "meds": [
+  {"cls": "تخدير موضعي للخياطة", "ex": "lidocaine"},
+  {"cls": "لقاح التيتانوس وأحيانًا الغلوبولين المناعي حسب حالة التطعيم ونوع الجرح", "ex": "Td/Tdap vaccine, tetanus immunoglobulin"},
+  {"cls": "مضادات حيوية وقائية لعضّات الحيوانات أو الجروح شديدة التلوث", "ex": "amoxicillin-clavulanate", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["غسل الجرح وتنظيفه طبيًا", "إغلاق الجرح بالغرز أو اللاصق الطبي أو الدبابيس", "تقييم الأعصاب والأوتار والأوعية تحت الجرح"],
+ "selfcare": ["الضغط المباشر ورفع العضو حتى الوصول للطبيب", "إبقاء الجرح جافًا ونظيفًا بعد الخياطة", "مواعيد فك الغرز حسب توجيه الطبيب"],
+ "refs": ["WHO", "ACEP", "CDC"],
+ "guide": "WHO Surgical Care at the District Hospital: wound management (2003)"
+},
+"skin.sunburn": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مسكنات ومضادات التهاب بسيطة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "مرطبات ومهدئات موضعية", "ex": "aloe vera gel, calamine lotion"}
+ ],
+ "procedures": [],
+ "selfcare": ["كمادات باردة وحمّام فاتر", "شرب سوائل كافية", "واقي شمس واسع الطيف وملابس واقية", "تجنّب شمس الظهيرة"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE NG34 Sunlight exposure: risks and benefits (2016)"
+},
+"skin.sunburn_severe": {
+ "tests": ["أملاح الدم ووظائف الكلى (Electrolytes, Creatinine) عند علامات الجفاف أو الإجهاد الحراري"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مسكنات ومضادات التهاب", "ex": "paracetamol, ibuprofen"},
+  {"cls": "ضمادات وكريمات الحروق عند تمزق الفقاعات", "ex": "silver sulfadiazine, non-adherent dressings", "note": "بإرشاد طبي"},
+  {"cls": "محلول معالجة الجفاف الفموي", "ex": "oral rehydration salts"}
+ ],
+ "procedures": ["العناية بالفقاعات وتغطيتها", "تقييم الإجهاد الحراري وضربة الشمس"],
+ "selfcare": ["عدم فقء الفقاعات", "سوائل كثيرة", "تجنّب الشمس تمامًا حتى الشفاء"],
+ "refs": ["AAD", "NICE"],
+ "guide": "NICE NG34 Sunlight exposure: risks and benefits (2016)"
+},
+"skin.insectbite": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الهيستامين الفموية للحكة", "ex": "cetirizine, loratadine"},
+  {"cls": "كورتيزون موضعي خفيف", "ex": "hydrocortisone (topical)"},
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "مضاد حيوي فقط عند ثبوت عدوى ثانوية", "ex": "flucloxacillin, cefalexin", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["إحالة لاختبار الحساسية عند تفاعل جهازي سابق للسعات النحل والدبابير"],
+ "selfcare": ["إزالة إبرة النحلة بالكشط", "كمادات باردة", "تجنّب الحك", "طارد الحشرات والناموسيات"],
+ "refs": ["NICE", "AAAAI"],
+ "guide": "NICE NG182 Insect bites and stings: antimicrobial prescribing (2020)"
+},
+"skin.ingrownnail": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية فقط عند التهاب منتشر", "ex": "flucloxacillin, cefalexin", "note": "بوصفة طبية فقط"},
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": ["رفع حافة الظفر بقطعة قطن أو أنبوب واقٍ", "الاستئصال الجزئي للظفر مع كيّ منبت الحافة (Partial nail avulsion with phenolisation)"],
+ "selfcare": ["نقع القدم في ماء دافئ", "قص الأظافر بشكل مستقيم", "حذاء واسع من الأمام"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Ingrown toenail (2022)"
+},
+"skin.corns": {
+ "tests": ["سكر الدم (Glucose/HbA1c) لمن لديه عوامل خطر"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مرطبات مقشرة", "ex": "urea cream, salicylic acid (topical)", "note": "تُتجنب المستحضرات الحمضية لمرضى السكري وضعف الدورة الدموية"}
+ ],
+ "procedures": ["كشط الجلد المتصلّب لدى أخصائي القدم", "نعل طبي أو وسائد لتوزيع الضغط"],
+ "selfcare": ["حذاء مريح مناسب المقاس", "نقع القدم وتنعيمها بحجر الخفاف بلطف", "عدم قطع المسمار ذاتيًا"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Corns and callus (2021)"
+},
+"dental.enamelcaries": {
+ "tests": [],
+ "imaging": ["أشعة سينية بين الأسنان (Bitewing radiographs) حسب خطر التسوّس"],
+ "meds": [
+  {"cls": "فلورايد عالي التركيز", "ex": "sodium fluoride varnish, sodium fluoride toothpaste", "note": "الورنيش يطبقه طبيب الأسنان"},
+  {"cls": "عوامل إعادة التمعدن", "ex": "silver diamine fluoride, casein phosphopeptide-amorphous calcium phosphate"}
+ ],
+ "procedures": ["سدّادات الشقوق (Pit and fissure sealants)", "تقييم خطر التسوّس وجدولة المتابعة"],
+ "selfcare": ["التفريش مرتين يوميًا بمعجون بالفلورايد", "خيط الأسنان", "تقليل السكريات والمشروبات الحمضية بين الوجبات"],
+ "refs": ["ADA_DENTAL", "WHO"],
+ "guide": "ADA Evidence-based clinical practice guideline on nonrestorative treatments for carious lesions (2018)"
+},
+"dental.reversiblepulpitis": {
+ "tests": ["اختبار حيوية العصب بالبرودة (Cold pulp test)"],
+ "imaging": ["أشعة سينية على السن (Periapical / Bitewing radiograph)"],
+ "meds": [
+  {"cls": "مسكنات", "ex": "ibuprofen, paracetamol"}
+ ],
+ "procedures": ["إزالة التسوّس وحشو السن مع تبطين واقٍ للعصب", "تغطية العصب غير المباشرة (Indirect pulp capping)"],
+ "selfcare": ["تجنّب البارد والحلو مؤقتًا", "التفريش بمعجون بالفلورايد"],
+ "refs": ["ADA_DENTAL"],
+ "guide": "ADA Evidence-based clinical practice guideline on antibiotic use for the urgent management of pulpal- and periapical-related dental pain and intraoral swelling (2019)"
+},
+"dental.irreversiblepulpitis": {
+ "tests": ["اختبارات حيوية العصب والقرع (Pulp vitality and percussion tests)"],
+ "imaging": ["أشعة سينية على السن (Periapical radiograph)"],
+ "meds": [
+  {"cls": "مسكنات", "ex": "ibuprofen, paracetamol", "note": "المضادات الحيوية غير موصى بها لالتهاب العصب دون تورّم أو أعراض جهازية"}
+ ],
+ "procedures": ["فتح السن وإزالة العصب (Pulpotomy / Pulpectomy)", "علاج قناة الجذر (Root canal treatment)", "الخلع عند تعذّر إنقاذ السن"],
+ "selfcare": ["تجنّب المضغ على السن المصابة", "عدم وضع أقراص المسكن على اللثة"],
+ "refs": ["ADA_DENTAL"],
+ "guide": "ADA Evidence-based clinical practice guideline on antibiotic use for the urgent management of pulpal- and periapical-related dental pain and intraoral swelling (2019)"
+},
+"dental.sensitivity": {
+ "tests": ["اختبار البرودة والهواء لتحديد الأسنان المصابة واستبعاد التسوّس أو التشقق"],
+ "imaging": [],
+ "meds": [
+  {"cls": "معاجين مزيلة للحساسية", "ex": "potassium nitrate, stannous fluoride, arginine toothpaste"},
+  {"cls": "عوامل موضعية لسدّ القنيات العاجية", "ex": "fluoride varnish, dentin bonding agents", "note": "يطبقها طبيب الأسنان"}
+ ],
+ "procedures": ["حشو تجميلي عند تآكل عنق السن", "ترقيع اللثة عند التراجع الشديد"],
+ "selfcare": ["فرشاة ناعمة وتفريش لطيف", "تقليل المشروبات الحمضية وعدم التفريش مباشرة بعدها", "واقٍ ليلي عند صرير الأسنان"],
+ "refs": ["ADA_DENTAL"],
+ "guide": "Canadian Advisory Board on Dentin Hypersensitivity: Consensus-based recommendations for the diagnosis and management of dentin hypersensitivity (2003)"
+},
+"dental.crackedtooth": {
+ "tests": ["اختبار العض على أداة مخصصة (Bite test)", "إضاءة السن لكشف الشرخ (Transillumination)", "اختبار حيوية العصب"],
+ "imaging": ["أشعة سينية على السن (Periapical radiograph)", "أشعة مقطعية مخروطية (CBCT) عند الحاجة"],
+ "meds": [
+  {"cls": "مسكنات", "ex": "ibuprofen, paracetamol"}
+ ],
+ "procedures": ["تاج يحمي السن (Crown)", "علاج عصب عند وصول الشرخ إلى اللب", "الخلع عند امتداد الشرخ إلى الجذر"],
+ "selfcare": ["تجنّب المضغ على الجهة المصابة والأطعمة الصلبة", "واقٍ ليلي عند صرير الأسنان"],
+ "refs": ["ADA_DENTAL"],
+ "guide": "AAE Endodontics: Colleagues for Excellence — Cracking the Cracked Tooth Code (2008)"
+},
+"ent.motionsickness": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الهيستامين المهدئة للوقاية قبل السفر", "ex": "dimenhydrinate, meclizine, promethazine", "note": "تسبب النعاس؛ لا تُستخدم مع القيادة"},
+  {"cls": "مضادات الكولين", "ex": "hyoscine (scopolamine) transdermal patch", "note": "بوصفة طبية؛ غير مناسبة لمرضى الزَّرَق ضيق الزاوية وتضخّم البروستاتا"}
+ ],
+ "procedures": ["تمارين التعوّد التدريجي على الحركة لمن يسافرون كثيرًا"],
+ "selfcare": ["الجلوس في المقعد الأمامي والنظر إلى الأفق", "تجنّب القراءة والشاشات أثناء الحركة", "وجبات خفيفة وهواء نقي"],
+ "refs": ["CDC"],
+ "guide": "CDC Yellow Book: Motion Sickness (2024)"
+},
+"mental.sleepdeprivation": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["تثقيف حول صحة النوم (Sleep hygiene)", "استبيان النعاس (Epworth Sleepiness Scale) والإحالة لدراسة النوم عند الشك في انقطاع النفس النومي"],
+ "selfcare": ["تخصيص وقت نوم كافٍ بمواعيد ثابتة", "إبعاد الشاشات قبل النوم", "تقليل الكافيين بعد العصر", "عدم القيادة مع النعاس"],
+ "refs": ["CDC", "NICE"],
+ "guide": "AASM/SRS Joint Consensus Statement: Recommended Amount of Sleep for a Healthy Adult (2015)"
+}
+}

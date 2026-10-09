@@ -34,7 +34,7 @@ const TERMS = [
 const TERMS_ACK = "أُقرّ بأنني قرأت {link} واستوعبتها وفهمتها وأوافق عليها، وبأنني المسؤول الأول والأخير عن صحتي وصحة ذويّ، وأن «موصل» للاسترشاد فقط ولا يتحمل هو أو القائمون عليه أي مسؤولية قانونية أو طبية.";
 const MAX_FOLLOWUP_ROUNDS = 4;
 const QUICK_ACCESS = [
-  { key: "sexual", title: "الصحة الجنسية — بسرية تامة", sub: "إفرازات، قروح، ثآليل، عدوى منقولة جنسيًا؛ لا يُحفظ شيء" },
+  { key: "sexual", title: "الصحة الجنسية — بسرية تامة", sub: "إفرازات، قروح، ثآليل، عدوى منقولة جنسيًا؛ لا تُحفظ في السجل" },
   { key: "pediatrics", title: "صحة الأطفال والرضّع", sub: "حمّى الرضيع، الجفاف، السعال، النمو والسلوك" },
   { key: "infectious", title: "الحميات والأمراض المعدية", sub: "تيفود، حمّى مالطية، بلهارسيا، جديري، تسمم غذائي" },
   { key: "hematology", title: "أمراض الدم", sub: "أنيميا، ثلاسيميا، أنيميا الفول، نزف، تضخم الغدد" },
@@ -185,7 +185,9 @@ function pulses(geo, r) {
    في نظام إحداثيات 100×200، فتبقى مطابقة لأي حجم شاشة.
    إن لم تتوفر الصورة يعود التطبيق تلقائيًا إلى الرسم البديل.
    ========================================================= */
-const BODY_PHOTOS = { male: "assets/body-male.jpg", female: "assets/body-female.jpg" };
+// في النسخة المنشورة تأتي الصور مفكوكة التشفير من loader.js على شكل روابط blob:
+const asset = p => (window.MOSEL_ASSETS || {})[p] || p;
+const BODY_PHOTOS = { male: asset("assets/body-male.jpg"), female: asset("assets/body-female.jpg") };
 /* المناطق على الصورة (من قياس الصورتين 560×1110 بكسل ÷ 5.6 أفقيًا و5.55 رأسيًا).
    كل منطقة: شكل SVG (أو أكثر، للجهتين) ونقطة ارتكاز a لظهور اسمها عند المرور عليها */
 const E = (cx, cy, rx, ry) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"/>`;
@@ -216,14 +218,23 @@ function photoGeo(o) {
     thigh: RC(o.th[0], o.pel[1], o.th[1], o.knee[1] - o.knee[3] - o.pel[1], 3) + RC(m(o.th[0] + o.th[1]), o.pel[1], o.th[1], o.knee[1] - o.knee[3] - o.pel[1], 3),
     knee: E(o.knee[0], o.knee[1], o.knee[2], o.knee[3]) + E(m(o.knee[0]), o.knee[1], o.knee[2], o.knee[3]),
     leg: RC(o.leg[0], o.knee[1] + o.knee[3], o.leg[1], o.foot[1] - o.foot[3] - o.knee[1] - o.knee[3], 4) + RC(m(o.leg[0] + o.leg[1]), o.knee[1] + o.knee[3], o.leg[1], o.foot[1] - o.foot[3] - o.knee[1] - o.knee[3], 4),
-    foot: E(o.foot[0], o.foot[1], o.foot[2], o.foot[3]) + E(m(o.foot[0]), o.foot[1], o.foot[2], o.foot[3])
+    foot: E(o.foot[0], o.foot[1], o.foot[2], o.foot[3]) + E(m(o.foot[0]), o.foot[1], o.foot[2], o.foot[3]),
+    // مناطق صغيرة تُرسم فوق ما تحتها
+    jaw: E(c - 5.6, o.mouth + .6, 2.3, 3) + E(c + 5.6, o.mouth + .6, 2.3, 3),
+    armpit: E(o.sh[0] + 2.6, o.sh[1] + 6, 2.1, 3) + E(m(o.sh[0] + 2.6), o.sh[1] + 6, 2.1, 3),
+    breast: E(c - 7, o.chest[0] + 9, 5.6, 4.6) + E(c + 7, o.chest[0] + 9, 5.6, 4.6),
+    umbilical: E(c, o.abd, 3.3, 3.3),
+    groin: E(c - 12.5, o.pel[1] - 3.5, 4.2, 2.6) + E(c + 12.5, o.pel[1] - 3.5, 4.2, 2.6),
+    elbow: E(o.elbow[0], o.elbow[1], 3.2, 3.4) + E(m(o.elbow[0]), o.elbow[1], 3.2, 3.4)
   };
   const a = {
     head: [c, o.head[0]], eyes: [c, o.eyes], ears: [m(o.ear[0]), o.ear[1]], nose: [c, o.nose], mouth: [c, o.mouth], neck: [c, (o.neck[0] + o.neck[1]) / 2],
     shoulder: [m(o.sh[0]), o.sh[1]], chest: [c, (o.chest[0] + o.chest[1]) / 2], ruq: [c - 10.4, (o.chest[1] + o.abd) / 2], epi: [c, (o.chest[1] + o.abd) / 2], luq: [c + 10.4, (o.chest[1] + o.abd) / 2],
     rlq: [c - 10.7, (o.abd + o.pel[0]) / 2], hypo: [c, (o.abd + o.pel[0]) / 2], llq: [c + 10.7, (o.abd + o.pel[0]) / 2],
     pelvis: [c, (o.pel[0] + o.pel[1]) / 2], arm: [m(o.armA[0]), o.armA[1]], hand: [m(o.hand[0]), o.hand[1]], thigh: [m(o.th[0] + o.th[1] / 2), (o.pel[1] + o.knee[1]) / 2],
-    knee: [m(o.knee[0]), o.knee[1]], leg: [m(o.leg[0] + o.leg[1] / 2), (o.knee[1] + o.foot[1]) / 2], foot: [m(o.foot[0]), o.foot[1]]
+    knee: [m(o.knee[0]), o.knee[1]], leg: [m(o.leg[0] + o.leg[1] / 2), (o.knee[1] + o.foot[1]) / 2], foot: [m(o.foot[0]), o.foot[1]],
+    jaw: [c + 5.6, o.mouth + .6], armpit: [m(o.sh[0] + 2.6), o.sh[1] + 6], breast: [c + 7, o.chest[0] + 9], umbilical: [c, o.abd],
+    groin: [c + 12.5, o.pel[1] - 3.5], elbow: [m(o.elbow[0]), o.elbow[1]]
   };
   return { shapes, a };
 }
@@ -255,13 +266,13 @@ function photoGeoBack(o) {
 const GEO_IN = {
   male: { c: 50.9, head: [9.5, 8.6, 6.6], eyes: 17.7, ear: [42.6, 20], nose: 21.4, mouth: 25.3, neck: [28.6, 33.8], sh: [31.2, 38.8],
     chest: [35, 58.5], abd: 77.5, pel: [95.5, 115.5], arm: "25,43.5 33,45 33.4,59.5 30.4,77.5 25.5,98 19.3,97.3 22.9,77.5 25.4,58.6", armA: [27.5, 70],
-    hand: [20.3, 106], th: [31.5, 15.5], knee: [39.3, 140.5, 6.2, 5.3], leg: [34, 11], foot: [33, 183, 7, 8.4] },
+    hand: [20.3, 106], elbow: [26.6, 77.5], th: [31.5, 15.5], knee: [39.3, 140.5, 6.2, 5.3], leg: [34, 11], foot: [33, 183, 7, 8.4] },
   female: { c: 50.5, head: [12.5, 8.4, 6.2], eyes: 21.3, ear: [42.4, 23.4], nose: 25.2, mouth: 28.8, neck: [33.2, 37.2], sh: [33, 40.6],
     chest: [39, 61.3], abd: 77.5, pel: [91.2, 111.6], arm: "28.5,44 35.5,45.5 34.5,62 29,80 26.5,97 20.5,96.5 22.5,80 27,62", armA: [28.5, 72],
-    hand: [21.8, 106.3], th: [31, 16], knee: [40.2, 139, 6, 5.4], leg: [34, 10.5], foot: [37, 181, 6.5, 7.4] }
+    hand: [21.8, 106.3], elbow: [25.8, 80], th: [31, 16], knee: [40.2, 139, 6, 5.4], leg: [34, 10.5], foot: [37, 181, 6.5, 7.4] }
 };
 const PHOTO_GEO_BACK = { male: photoGeoBack(GEO_IN.male), female: photoGeoBack(GEO_IN.female) };
-const BACK_PHOTOS = { male: "assets/body-male-back.jpg", female: "assets/body-female-back.jpg" };
+const BACK_PHOTOS = { male: asset("assets/body-male-back.jpg"), female: asset("assets/body-female-back.jpg") };
 const PHOTO_GEO = { male: photoGeo(GEO_IN.male), female: photoGeo(GEO_IN.female) };
 const photoOK = {};
 for (const [k, src] of [...Object.entries(BODY_PHOTOS), ...Object.entries(BACK_PHOTOS).map(([x, v]) => [x + "Back", v])]) {
@@ -274,13 +285,13 @@ for (const [k, src] of [...Object.entries(BODY_PHOTOS), ...Object.entries(BACK_P
 const regionOrgans = key => (REGION_ORGANS[key] || []).filter(o => typeof o === "string" || !o.sex || !state.profile.gender || o.sex === state.profile.gender).map(o => typeof o === "string" ? o : o.n);
 // المناطق التي لا تُرسم على الصورة (الظهر، الجلد، الجسم كله) تظهر أزرارًا أسفلها
 const offRegions = keys => {
-  const list = REGIONS.filter(r => r.off || !keys.includes(r.key) && r.view !== "back");
+  const list = REGIONS.filter(r => r.off || !keys.includes(r.key) && r.view !== "back" && (!r.sex || r.sex === state.profile.gender));
   return list.length ? `<div class="region-list">${list.map(r => `<button class="region-btn" data-region="${r.key}"><i style="background:${r.color}"></i>${esc(r.name)}</button>`).join("")}</div>` : "";
 };
 // وجه واحد من الجسم (أمامي أو خلفي) بصورته ومناطقه
 function bodyFace(sex, back) {
   const P = back ? PHOTO_GEO_BACK[sex] : PHOTO_GEO[sex];
-  const on = REGIONS.filter(r => !r.off && P.shapes[r.key] && (back ? true : r.view !== "back"));
+  const on = REGIONS.filter(r => !r.off && P.shapes[r.key] && (back ? true : r.view !== "back") && (!r.sex || r.sex === sex));
   return `<div class="face ${back ? "back" : "front"}">
       <img src="${back ? BACK_PHOTOS[sex] : BODY_PHOTOS[sex]}" alt="" draggable="false">
       <svg viewBox="0 0 100 200" preserveAspectRatio="none" role="group" aria-label="${back ? "الجسم من الخلف" : "الجسم من الأمام"} — مرّر المؤشر أو المس موضع الألم">
@@ -293,7 +304,7 @@ function bodyStage() {
   const sex = state.profile.gender === "female" ? "female" : "male";
   if (photoOK[sex]) {
     const canTurn = !!photoOK[sex + "Back"];
-    const frontKeys = REGIONS.filter(r => !r.off && PHOTO_GEO[sex].shapes[r.key]).map(r => r.key);
+    const frontKeys = REGIONS.filter(r => !r.off && PHOTO_GEO[sex].shapes[r.key] && (!r.sex || r.sex === sex)).map(r => r.key);
     return `<div class="body-wrap photo ${canTurn ? "turnable" : ""}" data-sex="${sex}">
       <div class="flipper" style="transform:rotateY(${state.turn}deg)">${bodyFace(sex, false)}${canTurn ? bodyFace(sex, true) : ""}</div>
       <button class="map-tip" id="map-tip" hidden></button>
@@ -571,9 +582,9 @@ const state = {
   checked: new Set(), denied: new Set(), asked: new Set(),
   answers: {}, followup: [], round: 0,
   openCond: null, query: "",
-  describe: "", described: null, caseId: null, recTab: "history", turn: 0
+  describe: "", described: null, caseId: null, recTab: "history", turn: 0, unsureRed: new Set(), system: null, info: null, infoZone: null
 };
-const resetCase = () => { state.checked = new Set(); state.denied = new Set(); state.asked = new Set(); state.answers = {}; state.followup = []; state.round = 0; state.openCond = null; };
+const resetCase = () => { state.unsureRed = new Set(); state.checked = new Set(); state.denied = new Set(); state.asked = new Set(); state.answers = {}; state.followup = []; state.round = 0; state.openCond = null; };
 
 const $content = document.getElementById("content");
 const $topbar = document.getElementById("topbar");
@@ -673,11 +684,13 @@ function pickQuestions(zoneKey, top) {
     .slice(0, 3);
 }
 
+// أمان: مع أي علامة خطر (مؤكدة أو «لست متأكدًا») لا نؤخر النتيجة بأسئلة إضافية
+const redPresent = () => DATA[state.zone].symptoms.some(s => s.red && (state.checked.has(s.id) || state.unsureRed.has(s.id)));
 function evaluate() {
   const scored = scoreZone(state.zone);
   const top = scored.slice(0, 3);
   const ambiguous = top.length >= 2 && (top[0].pct - top[1].pct) < 25;
-  if (ambiguous && state.round < MAX_FOLLOWUP_ROUNDS) {
+  if (ambiguous && state.round < MAX_FOLLOWUP_ROUNDS && !redPresent()) {
     const qs = pickQuestions(state.zone, top);
     if (qs.length) {
       state.followup = qs; state.round++;
@@ -696,9 +709,10 @@ function commitAnswers() {
   for (const q of state.followup) {
     const a = state.answers[q.id];
     state.asked.add(q.id);
-    state.checked.delete(q.id); state.denied.delete(q.id);
+    state.checked.delete(q.id); state.denied.delete(q.id); state.unsureRed.delete(q.id);
     if (a === "yes") state.checked.add(q.id);
     else if (a === "no") state.denied.add(q.id);
+    else if (a === "unsure" && q.red) state.unsureRed.add(q.id);
   }
   evaluate();
 }
@@ -710,6 +724,8 @@ function go(screen) { state.screen = screen; render(); }
 function back() {
   const s = state.screen;
   if (s === "terms") go(state.prev || "about");
+  else if (s === "condinfo") go("systems");
+  else if (s === "systems") { if (state.system) { state.system = null; render(); } else go("home"); }
   else if (s === "describe" || s === "records" || s === "tips") go(s === "tips" && state.prev === "results" ? "results" : "home");
   else if (s === "about" || s === "stages") go(state.prev || "home");
   else if (s === "results" || s === "followup") { state.round = 0; state.asked = new Set(); state.denied = new Set(); state.answers = {}; go("symptoms"); }
@@ -835,6 +851,23 @@ function describeIndex() {
   IDX = { docs, idf };
   return IDX;
 }
+/* أمان: عبارات الطوارئ والأزمة النفسية تُكشف مباشرة من النص (فصحى وعامية) قبل أي مطابقة للأعراض.
+   أي تطابق هنا يُظهر تحذير الطوارئ أو بطاقة الدعم النفسي فورًا، حتى لو لم يُفهم باقي الوصف. */
+const CRISIS_RE = /(انتحار|انتحر|اموت نفسي|اقتل نفسي|انهي حياتي|انهاء حياتي|اذي نفسي|اوذي نفسي|ايذاء نفسي|اضر نفسي|مش عايز اعيش|مش عاوز اعيش|لا اريد العيش|لا اريد ان اعيش|عايز اموت|عاوز اموت|نفسي اموت|اريد ان اموت|الحياه ملهاش لازمه|الحياه ملهاش معني|الحياه بلا قيمه|الحياه لا تستحق)/;
+const EMERGENCY_RE = [
+  [/((وشي|وجهي|الوش|الوجه|فمي|بقي|بوقي)\s*(مايل|معوج|اتعوج|اعوج|مال|مايله))|((نص|نصف)\s*(جسمي|جسمه|الجسم)|جنب واحد|ناحيه واحده)[^.]{0,25}(مش بيتحرك|مشلول|تقيل|خدران|ضعيف|ضعف|منمل)|(مش قادر|مش قادره|لا استطيع)\s*(اتكلم|اتكلم كويس|الكلام)\s*(فجاه|فجأه)?|(كلامي|لساني)\s*(متلخبط|تقيل|تقل)\s*(فجاه)?/, "قد تكون علامات جلطة دماغية (اعوجاج الوجه، ضعف جانب واحد، اضطراب الكلام)"],
+  [/(اسوا|اشد|اقوي|اصعب)\s*صداع|صداع\s*(مفاجئ|فجاه|فجأه)\s*(شديد|جامد|رهيب)?|صداع\s*(شديد|جامد|رهيب)\s*(فجاه|مفاجئ)/, "صداع مفاجئ شديد"],
+  [/((رضيع|بيبي|مولود|ابني|بنتي|طفلي|ابنتي)[^.]{0,30}(عمره|عمرها|سنه|عنده|عندها)?[^.]{0,12}(شهر|شهرين|اسبوع|اسابيع|ايام|يوم)[^.]{0,30}(سخونيه|سخونه|حراره|حمي|سخن))|((سخونيه|سخونه|حراره|حمي)[^.]{0,30}(رضيع|مولود|بيبي)[^.]{0,20}(شهر|شهرين|اسابيع|ايام)?)/, "حمّى عند رضيع صغير (أقل من 3 أشهر)"],
+  [/(الم|وجع|ضغط|كتمه|عصر|تقل|ثقل)[^.]{0,25}صدر[^.]{0,40}(عرق|دراع|ذراع|فك|كتف|نهجان|ضيق)/, "ألم أو ضغط في الصدر مع عرق أو امتداد إلى الذراع أو الفك"],
+  [/(مش قادر|مش قادره|لا استطيع)\s*(اتنفس|التنفس|اخد نفسي)|نفسي مقطوع|بتخنق|(شفايفي|شفتي|شفايفه)\s*(زرق|زرقا|زرقاء)|ازرقاق/, "صعوبة شديدة في التنفس"],
+  [/(اغمي|اغمى|فاقد|فقد|فقدت)\s*(عليه|عليا|عليها|الوعي|وعيه)|تشنجات|بيتشنج|بتتشنج|نوبه صرع/, "فقدان الوعي أو تشنجات"],
+  [/نزيف\s*(شديد|جامد|كتير|مش بيقف|لا يتوقف)|(بترجع|برجع|بيرجع|بستفرغ|قيء|ترجيع)\s*دم|براز\s*(اسود|اسود زي)/, "نزيف شديد أو قيء دموي أو براز أسود"],
+  [/(شفايفي|شفتي|لساني|وشي|وجهي|زوري)\s*(وارم|وارمه|ورم|منفوخ|منفوخه|اتورم)[^.]{0,40}(نفس|تنفس|بلع)/, "تورّم الوجه أو اللسان مع صعوبة التنفس (حساسية شديدة)"]
+];
+function describeAlerts(text) {
+  const t = normAr(text).replace(/[^ء-ي\s.]/g, " ").replace(/\s+/g, " ");
+  return { crisis: CRISIS_RE.test(t), emergencies: EMERGENCY_RE.filter(([re]) => re.test(t)).map(([, label]) => label) };
+}
 // يرتب التخصصات حسب ما فُهم من الوصف، ويعيد لكل تخصص الأعراض المطابقة
 function analyzeDescription(text) {
   const u = userStems(text), { docs } = describeIndex();
@@ -901,8 +934,11 @@ function renderTopbar() {
     $topbar.innerHTML = `<div class="bar-row">
       <div class="brand"><div class="logo">${ico(I.pulse, 2.4).replace('stroke="currentColor"', 'stroke="#fff"')}</div>
         <div><div class="brand-name">موصل</div><div class="brand-sub">حدّد موضع الألم واعرف الطبيب المناسب</div></div></div>
-      ${prefBtns()}<button class="icon-btn" data-act="about" aria-label="عن موصل والمصادر">${ico(I.info)}</button>
-    </div>`;
+      <div class="bar-actions"><a class="sos" href="tel:${EMERGENCY_NUMBER}" aria-label="اتصل بالإسعاف ${EMERGENCY_NUMBER}">${ico(I.phone)}${EMERGENCY_NUMBER}</a>
+      <button class="icon-btn aa" data-act="prefs" aria-expanded="${!!state.showPrefs}" aria-label="حجم الخط والوضع الليلي">Aa</button>
+      <button class="icon-btn" data-act="about" aria-label="عن موصل والمصادر">${ico(I.info)}</button></div>
+    </div>
+    ${state.showPrefs ? `<div class="prefs-row"><span>حجم الخط والوضع</span>${prefBtns()}</div>` : ""}`;
     return;
   }
   const z = ZONE[state.zone], r = REGIONS.find(x => x.key === state.region);
@@ -913,7 +949,8 @@ function renderTopbar() {
     results: "النتيجة",
     about: "عن موصل والمصادر",
     stages: "حاسبة المراحل", terms: "الشروط والأحكام",
-    describe: "تحليل وصفك", records: "سجلّي الصحي", tips: "نصائح لصحتك"
+    describe: "تحليل وصفك", records: "سجلّي الصحي", tips: "نصائح لصحتك",
+    systems: state.system ? (SYSTEMS.find(x => x.key === state.system) || {}).name || "أجهزة الجسم" : "الأمراض حسب أجهزة الجسم", condinfo: "عن المرض"
   }[state.screen] || "";
   const si = stepIndex();
   $topbar.innerHTML = `<div class="bar-row">
@@ -1049,6 +1086,8 @@ function renderHome() {
       <button class="quick" data-act="tips"><span class="qi">${ico(I.heart)}</span>
         <span class="t"><b>نصائح لصحتك</b><span>${personalTips().length ? `${personalTips().length} نصائح تخصك` : "النوم والرياضة والغذاء"}</span></span></button>
     </div>
+    <button class="quick sys-entry" data-act="systems"><span class="qi">${ico(I.book)}</span>
+      <span class="t"><b>الأمراض حسب أجهزة الجسم</b><span>تصفّح كل الأمراض مرتبة حسب الجهاز، مع علاجها ومراجعها</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
     <div class="label">أو اختر مباشرة دون تحديد موضع</div>
     ${quick}
 
@@ -1236,10 +1275,10 @@ function guideLine(c) {
     <span>التصنيف: <a href="https://icd.who.int/browse10/2019/en#/${esc(c.icd10)}" target="_blank" rel="noopener noreferrer">منظمة الصحة العالمية ICD-10 · ${esc(c.icd10)}</a></span>
     ${k && k.guide ? `<span>الدليل العلاجي: <a href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(k.guide)}" target="_blank" rel="noopener noreferrer" dir="ltr">${esc(k.guide)}</a></span>` : ""}
     ${orgs.length ? `<span class="orgs-mini">${orgs.map(r => `<a href="${GUIDE_ORGS[r][1]}" target="_blank" rel="noopener noreferrer">${esc(GUIDE_ORGS[r][0])}</a>`).join("")}</span>` : ""}
-    ${(LOCAL_GUIDES[c.id] || []).map(([, t, u]) => `<span>دليل محلي: <a href="${encodeURI(u)}" target="_blank" rel="noopener noreferrer">${esc(t)}</a></span>`).join("")}
-    <details class="local-refs"><summary>المرجعية المصرية والخليجية</summary>
+    ${(LOCAL_GUIDES[c.id] || []).map(([, t, u]) => `<span>دليل خليجي منشور لهذا المرض: <a href="${encodeURI(u)}" target="_blank" rel="noopener noreferrer">${esc(t)}</a></span>`).join("")}
+    <details class="local-refs"><summary>مراجعة المطابقة المحلية (مصر والخليج)</summary>
       <span class="orgs-mini">${LOCAL_ORGS.map(r => `<a href="${GUIDE_ORGS[r][1]}" target="_blank" rel="noopener noreferrer">${esc(GUIDE_ORGS[r][0])}</a>`).join("")}</span>
-      <small>للتحقق من مطابقة العلاج والأدوية للأدلة الوطنية والأدوية المسجلة محليًا.</small></details></div></div>`;
+      <small>روابط عامة لصفحات الأدلة والأدوية لدى هذه الجهات، للتحقق من مطابقة المعلومة للأدلة الوطنية والأدوية المسجلة محليًا. وجود الرابط لا يعني أن الجهة راجعت هذا المحتوى أو اعتمدته.</small></details></div></div>`;
 }
 function careBlock(c) {
   const k = CARE[c.id];
@@ -1310,7 +1349,8 @@ function condCard(c, rank, isTop) {
 }
 
 function overallTriage(scored) {
-  const redSym = DATA[state.zone].symptoms.filter(s => s.red && state.checked.has(s.id));
+  // «لست متأكدًا» على علامة خطر تُعامل كأنها موجودة (الأحوط)
+  const redSym = DATA[state.zone].symptoms.filter(s => s.red && (state.checked.has(s.id) || state.unsureRed.has(s.id)));
   let t = scored.length ? scored[0].triage : "doctor";
   for (const c of scored) {
     if (c.pct >= 50 && TRIAGE_ORDER.indexOf(c.triage) > TRIAGE_ORDER.indexOf(t) && (c.flag || c.triage === "urgent")) t = c.triage;
@@ -1328,7 +1368,7 @@ function renderResults() {
   const top = scored[0], rest = scored.slice(1, 6);
   const picked = zoneSymptoms(state.zone).filter(s => state.checked.has(s.id));
   const isEmergency = tri.key === "emergency" && !tri.crisis;
-  saveHistory(top, tri.key);
+  saveHistory(top, tri.key, tri.crisis);
   const zTips = (TIPS.zone || {})[state.zone] || [];
   const cardLine = cardSummary();
 
@@ -1408,13 +1448,19 @@ function runDescribe() {
 }
 function renderDescribe() {
   const res = state.described || [];
-  const red = res.some(z => z.red);
+  const al = describeAlerts(state.describe);
+  const red = res.some(z => z.red) || al.emergencies.length > 0;
   $content.innerHTML = `<div class="fade-in">
+    ${al.crisis ? `<div class="alert crisis" role="alert">${ico(I.heart).replace("<svg", '<svg class="ai"')}<div>
+      <b>لست وحدك — تحدّث مع أحد الآن</b>
+      <p>ما تمر به له علاج ومساعدة متاحة. اتصل بالخط الساخن للصحة النفسية (مجاني وسري)، أو بشخص تثق به. وإذا كنت في خطر الآن فاتصل بالإسعاف ${EMERGENCY_NUMBER}.</p>
+      <div class="btn-row"><a class="btn" href="tel:${MENTAL_HOTLINE}">${ico(I.phone)} ${MENTAL_HOTLINE}</a><a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} ${EMERGENCY_NUMBER}</a></div></div></div>` : ""}
+    ${red ? `<div class="alert danger" role="alert">${ico(I.alert).replace("<svg", '<svg class="ai"')}<div><b>في وصفك علامة قد تكون خطيرة</b>
+      ${al.emergencies.length ? `<p><b>${al.emergencies.map(esc).join("، ")}.</b></p>` : ""}
+      <p>لا تنتظر؛ اتصل بالإسعاف ${EMERGENCY_NUMBER} أو توجّه إلى أقرب طوارئ الآن.</p>
+      <a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} اتصل ${EMERGENCY_NUMBER}</a></div></div>` : ""}
     <div class="card"><div class="small muted">وصفك:</div><p style="margin:4px 0 0">«${esc(state.describe)}»</p>
       <button class="link-btn" style="padding:0;margin-top:6px" data-act="desc-edit">تعديل الوصف</button></div>
-    ${red ? `<div class="alert danger" role="alert">${ico(I.alert).replace("<svg", '<svg class="ai"')}<div><b>في وصفك علامة قد تكون خطيرة</b>
-      <p>إذا كانت الأعراض شديدة أو مفاجئة فلا تنتظر؛ اتصل بالإسعاف ${EMERGENCY_NUMBER} أو توجّه إلى أقرب طوارئ.</p>
-      <a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} اتصل ${EMERGENCY_NUMBER}</a></div></div>` : ""}
     ${res.length ? `<h2 class="h2" style="margin:16px 0 4px">فهمنا من وصفك</h2>
       <p class="muted small" style="margin:0 0 10px">اختر التخصص الأقرب، وستجد هذه الأعراض محددة مسبقًا؛ أكمل باقي أعراضك ثم اعرض النتيجة.</p>
       ${res.map((z, i) => `<div class="card desc-z ${i === 0 ? "best" : ""}">
@@ -1429,9 +1475,99 @@ function renderDescribe() {
   setCta(null);
 }
 
+/* ---------- الأمراض حسب أجهزة الجسم ---------- */
+const SYSTEMS = [
+  { key: "cardio", name: "القلب والأوعية الدموية", icon: I.heart },
+  { key: "resp", name: "الجهاز التنفسي", icon: I.pulse },
+  { key: "digest", name: "الجهاز الهضمي والكبد", icon: I.list },
+  { key: "urinary", name: "الكلى والمسالك البولية", icon: I.list },
+  { key: "nervous", name: "الدماغ والأعصاب", icon: I.bulb },
+  { key: "msk", name: "العظام والعضلات والمفاصل", icon: I.user },
+  { key: "endo", name: "الغدد الصماء والتمثيل الغذائي", icon: I.clock },
+  { key: "male", name: "الجهاز التناسلي الذكري", icon: I.user, sex: "male" },
+  { key: "female", name: "الجهاز التناسلي الأنثوي والثدي", icon: I.user, sex: "female" },
+  { key: "sti", name: "العدوى المنقولة جنسيًا", icon: I.shield },
+  { key: "skin", name: "الجلد والشعر والأظافر", icon: I.user },
+  { key: "eye", name: "العين", icon: I.info },
+  { key: "ent", name: "الأنف والأذن والحنجرة", icon: I.info },
+  { key: "oral", name: "الفم والأسنان", icon: I.info },
+  { key: "blood", name: "الدم والمناعة", icon: I.pulse },
+  { key: "mind", name: "الصحة النفسية", icon: I.bulb },
+  { key: "infect", name: "الأمراض المعدية والحميات", icon: I.shield },
+  { key: "kids", name: "أمراض الأطفال", icon: I.user },
+  { key: "elder", name: "أمراض كبار السن", icon: I.user },
+  { key: "congen", name: "العيوب الخلقية والوراثية", icon: I.user }
+];
+const ZONE_SYSTEM = { heart: "cardio", respiratory: "resp", neuro: "nervous", bones: "msk", endocrine: "endo", andrology: "male", gynecology: "female",
+  sexual: "sti", skin: "skin", eyes: "eye", ent: "ent", dental: "oral", hematology: "blood", mental: "mind", infectious: "infect",
+  pediatrics: "kids", geriatric: "elder", congenital: "congen", internal: "digest" };
+// يُستنتج الجهاز من العضو المصاب أولًا ثم من التخصص
+function systemOf(c, zoneKey) {
+  const o = [].concat(c.organ || [])[0];
+  if (["pediatrics", "geriatric", "congenital", "sexual", "mental", "infectious"].includes(zoneKey)) return ZONE_SYSTEM[zoneKey];
+  if (o === "kidney" || o === "bladder") return "urinary";
+  if (o === "prostate" || o === "testes") return "male";
+  if (["uterus", "ovaries"].includes(o) || o === "breast" && zoneKey === "gynecology") return "female";
+  if (o === "heart") return "cardio";
+  if (o === "lungs") return "resp";
+  if (o === "brain") return "nervous";
+  return ZONE_SYSTEM[zoneKey] || "digest";
+}
+// تمييز العدد بالعربية الفصحى: مرض واحد، مرضان، 3–10 أمراض، 11 فأكثر مرضًا
+const countAr = (n, one, two, few, many) => n === 1 ? one : n === 2 ? two : n % 100 >= 3 && n % 100 <= 10 ? `${n} ${few}` : `${n} ${many}`;
+const diseasesAr = n => countAr(n, "مرض واحد", "مرضان", "أمراض", "مرضًا");
+function systemIndex() {
+  const idx = Object.fromEntries(SYSTEMS.map(s => [s.key, []]));
+  for (const z of ZONES) if (allowedZone(z.key)) for (const c of DATA[z.key].conditions.filter(sexOk)) idx[systemOf(c, z.key)].push({ c, zone: z.key });
+  return idx;
+}
+function renderSystems() {
+  const idx = systemIndex(), sys = SYSTEMS.find(s => s.key === state.system);
+  if (!sys) {
+    $content.innerHTML = `<div class="fade-in">
+      <h1 class="h1">الأمراض حسب أجهزة الجسم</h1>
+      <p class="lead">تصفّح ${diseasesAr(Object.values(idx).reduce((a, l) => a + l.length, 0))} مرتبة حسب جهاز الجسم، واقرأ عن أي مرض وعلاجه ومراجعه.</p>
+      <div class="sys-grid">${SYSTEMS.filter(s => (!s.sex || !state.profile.gender || s.sex === state.profile.gender) && idx[s.key].length).map(s => `
+        <button class="sys-card" data-system="${s.key}"><span class="qi">${ico(s.icon)}</span><b>${esc(s.name)}</b><small>${diseasesAr(idx[s.key].length)}</small></button>`).join("")}</div>
+    </div>`;
+  } else {
+    const list = idx[sys.key].slice().sort((a, b) => TRIAGE_ORDER.indexOf(b.c.triage) - TRIAGE_ORDER.indexOf(a.c.triage) || a.c.name.localeCompare(b.c.name, "ar"));
+    $content.innerHTML = `<div class="fade-in">
+      <h1 class="h1">${esc(sys.name)}</h1>
+      <div class="cond-list">${list.map(({ c, zone }) => `<button class="cond-row t-${TRIAGE[c.triage].tone}" data-info="${c.id}" data-info-zone="${zone}">
+        <span><b>${esc(c.name)}</b><small>${esc(c.en)} · ICD-10 ${esc(c.icd10)}</small></span><span class="tri">${esc(TRIAGE[c.triage].label)}</span></button>`).join("")}</div>
+    </div>`;
+  }
+  setCta(null);
+}
+function renderCondInfo() {
+  const zone = state.infoZone, c = DATA[zone] && DATA[zone].conditions.find(x => x.id === state.info);
+  if (!c) return go("systems");
+  const syms = Object.entries(c.weights).sort((a, b) => b[1] - a[1]).map(([id]) => DATA[zone].symptoms.find(s => s.id === id)).filter(Boolean).filter(sexOk);
+  $content.innerHTML = `<div class="fade-in">
+    <article class="cond top open"><div class="cond-head">
+      <div class="kicker"><span class="badge code">ICD-10 ${esc(c.icd10)}</span><span class="badge">${esc(TRIAGE[c.triage].label)}</span></div>
+      <h3 class="cond-name">${esc(c.name)}</h3><div class="cond-en">${esc(c.en)}</div></div>
+      <div class="cond-body">
+        ${c.organ ? organCard(c.organ) : ""}
+        ${guideLine(c)}
+        <div class="blk def"><span class="bl">${ico(I.info)}ما هو؟</span>${esc(c.def)}</div>
+        <div class="blk why"><span class="bl">${ico(I.list)}أعراضه المعتادة</span><div class="matched">${syms.map(s => `<span>${esc(s.label)}</span>`).join("")}</div></div>
+        <div class="blk tx"><span class="bl">${ico(I.steth)}كيف يُعالَج؟</span>${esc(c.treatment)}</div>
+        ${careBlock(c)}
+        ${refsFor(c)}
+      </div></article>
+    <button class="btn btn-primary btn-block" style="margin-top:12px" data-zone="${zone}">${ico(I.list)} قيّم أعراضي في ${esc(ZONE[zone].name)}</button>
+    <div class="disclaimer">${ico(I.shield)}<span>معلومات للتثقيف فقط، وليست تشخيصًا لحالتك. التشخيص والعلاج للطبيب.</span></div>
+  </div>`;
+  setCta(null);
+}
+
 /* ---------- سجلّي الصحي ---------- */
-function saveHistory(top, triKey) {
-  if (!state.caseId || !state.zone) return;
+// خصوصية: تقييمات الصحة الجنسية والأزمات النفسية لا تُحفظ في السجل أبدًا
+const PRIVATE_ZONES = new Set(["sexual"]);
+function saveHistory(top, triKey, crisis) {
+  if (!state.caseId || !state.zone || PRIVATE_ZONES.has(state.zone) || crisis) return;
   const e = { id: state.caseId, at: new Date().toISOString(), zone: state.zone, checked: [...state.checked], denied: [...state.denied],
     top: top ? { id: top.id, name: top.name, pct: top.pct } : null, triage: triKey };
   history = [e, ...history.filter(h => h.id !== e.id)].slice(0, HIST_MAX);
@@ -1540,7 +1676,7 @@ function renderAbout() {
       ${sources}
     </ul>
     <h2>خصوصيتك</h2>
-    <p>تُحفظ بياناتك (العمر والطول والوزن والأمراض المزمنة) على جهازك فقط ولا تُرسَل إلى أي خادم، ولا تُحفظ الأعراض إطلاقًا.</p>
+    <p>لا يُرسَل أي شيء إلى أي خادم. تُحفظ على جهازك فقط: بياناتك الأساسية (العمر والطول والوزن والأمراض المزمنة)، وبطاقتك الصحية إن ملأتها، وسجل تقييماتك (الأعراض المختارة والنتيجة) لتعود إليه. <b>لا تُحفظ أبدًا</b> تقييمات الصحة الجنسية ولا التقييمات التي ظهرت فيها علامات أزمة نفسية. يمكنك حذف أي تقييم أو حذف كل بياناتك في أي وقت.</p>
     <h2>العرض</h2>
     <div class="pref-row"><span>الوضع الليلي وحجم الخط</span>${prefBtns()}</div>
     <h2>شروط الاستخدام</h2>
@@ -1684,6 +1820,8 @@ function render() {
   else if (s === "about") renderAbout();
   else if (s === "stages") renderStages();
   else if (s === "describe") renderDescribe();
+  else if (s === "systems") renderSystems();
+  else if (s === "condinfo") renderCondInfo();
   else if (s === "records") renderRecords();
   else if (s === "tips") renderTips();
   if (render.last !== s) { window.scrollTo(0, 0); render.last = s; }
@@ -1719,6 +1857,8 @@ document.addEventListener("click", e => {
     return;
   }
   if (ds.recTab) { state.recTab = ds.recTab; return render(); }
+  if (ds.system) { state.system = ds.system; window.scrollTo(0, 0); return render(); }
+  if (ds.info) { state.info = ds.info; state.infoZone = ds.infoZone; window.scrollTo(0, 0); return go("condinfo"); }
   if (ds.hist) return openHistory(ds.hist);
   if (ds.histDel) { history = history.filter(h => h.id !== ds.histDel); keep(HIST_KEY, history); toast("حُذف التقييم"); return render(); }
   if (ds.chronic) {
@@ -1734,11 +1874,13 @@ document.addEventListener("click", e => {
     case "terms": e.preventDefault(); state.prev = state.screen; return go("terms");
     case "turn-l": return turnBy(-180);
     case "turn-r": return turnBy(180);
+    case "prefs": state.showPrefs = !state.showPrefs; return renderTopbar();
     case "describe": return runDescribe();
     case "voice": return toggleVoice();
     case "desc-edit": return go("home");
     case "records": state.prev = state.screen; return go("records");
     case "tips": state.prev = state.screen; return go("tips");
+    case "systems": state.system = null; return go("systems");
     case "theme": { const m = THEME_NEXT[curTheme()]; applyTheme(m); toast("الوضع: " + THEME_NAME[m]); return render(); }
     case "zoom+": case "zoom-": {
       const i = Math.max(0, Math.min(ZOOMS.length - 1, ZOOMS.indexOf(curZoom()) + (ds.act === "zoom+" ? 1 : -1)));
