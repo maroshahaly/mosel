@@ -238,31 +238,41 @@ function photoGeo(o) {
   };
   return { shapes, a };
 }
-/* المنظر الخلفي: نفس الوقفة والمقاسات، بمناطق الظهر */
+/* المنظر الخلفي: صورتا الظهر لهما مقاساتهما الخاصة (مقيسة على الصورتين 560×1110) */
 function photoGeoBack(o) {
-  const c = o.c, m = x => +(2 * c - x).toFixed(1), mid = (o.chest[1] + o.abd) / 2;
+  const c = o.c, m = x => +(2 * c - x).toFixed(1);
+  const R2 = ([x, y, w, h], r) => RC(x, y, w, h, r) + RC(m(x + w), y, w, h, r);
   const shapes = {
-    occiput: E(c, o.head[0] + 2, o.head[1], o.head[2] + 1.5),
-    nape: RC(c - 4.6, o.neck[0], 9.2, o.neck[1] - o.neck[0] + 1, 2),
-    scapula: E(c - 8.5, o.chest[0] + 7, 5.6, 6.2) + E(c + 8.5, o.chest[0] + 7, 5.6, 6.2),
-    upperback: RC(c - 3.2, o.chest[0] + 1, 6.4, o.chest[1] - o.chest[0] + 2, 3),
-    flank: RC(c - 15.5, o.chest[1] + 1, 6, o.abd - o.chest[1] + 2, 3) + RC(c + 9.5, o.chest[1] + 1, 6, o.abd - o.chest[1] + 2, 3),
-    lowback: RC(c - 9, o.chest[1] + 4, 18, o.pel[0] - o.chest[1] - 3, 4),
-    buttocks: RC(c - 19, o.pel[0], 38, o.pel[1] - o.pel[0], 5),
+    occiput: E(c, o.head[0], o.head[1], o.head[2]),
+    nape: RC(c - 5, o.nape[0], 10, o.nape[1] - o.nape[0], 2),
+    scapula: E(o.scap[0], o.scap[1], o.scap[2], o.scap[3]) + E(m(o.scap[0]), o.scap[1], o.scap[2], o.scap[3]),
+    upperback: RC(c - 3.2, o.spine[0], 6.4, o.spine[1] - o.spine[0], 3),
+    flank: R2(o.flank, 3),
+    lowback: RC(c - o.low[0], o.low[1], 2 * o.low[0], o.low[2] - o.low[1], 4),
+    buttocks: RC(c - o.butt[0], o.butt[1], 2 * o.butt[0], o.butt[2] - o.butt[1], 5),
     arm: PG(o.arm) + PG(mirrorPts(o.arm, c)),
-    hand: E(o.hand[0], o.hand[1], 5.2, 8.6) + E(m(o.hand[0]), o.hand[1], 5.2, 8.6),
-    hamstring: RC(o.th[0], o.pel[1], o.th[1], o.knee[1] - o.pel[1], 3) + RC(m(o.th[0] + o.th[1]), o.pel[1], o.th[1], o.knee[1] - o.pel[1], 3),
-    calf: RC(o.leg[0], o.knee[1], o.leg[1], o.foot[1] - o.foot[3] - o.knee[1] + 2, 4) + RC(m(o.leg[0] + o.leg[1]), o.knee[1], o.leg[1], o.foot[1] - o.foot[3] - o.knee[1] + 2, 4),
-    heel: E(o.foot[0] + 3, o.foot[1] - 1, 4.2, 6) + E(m(o.foot[0] + 3), o.foot[1] - 1, 4.2, 6)
+    hand: E(o.hand[0], o.hand[1], o.hand[2], o.hand[3]) + E(m(o.hand[0]), o.hand[1], o.hand[2], o.hand[3]),
+    hamstring: R2(o.ham, 3),
+    calf: R2(o.calf, 4),
+    heel: E(o.heel[0], o.heel[1], 4.6, 4.8) + E(m(o.heel[0]), o.heel[1], 4.6, 4.8)
   };
+  const ctr = r => [m(r[0] + r[2] / 2), r[1] + r[3] / 2];
   const a = {
-    occiput: [c, o.head[0] + 2], nape: [c, (o.neck[0] + o.neck[1]) / 2], scapula: [c + 8.5, o.chest[0] + 7], upperback: [c, (o.chest[0] + o.chest[1]) / 2],
-    flank: [c + 12.5, mid], lowback: [c, (o.chest[1] + o.pel[0]) / 2 + 2], buttocks: [c, (o.pel[0] + o.pel[1]) / 2], arm: [m(o.armA[0]), o.armA[1]],
-    hand: [m(o.hand[0]), o.hand[1]], hamstring: [m(o.th[0] + o.th[1] / 2), (o.pel[1] + o.knee[1]) / 2], calf: [m(o.leg[0] + o.leg[1] / 2), (o.knee[1] + o.foot[1]) / 2],
-    heel: [m(o.foot[0] + 3), o.foot[1] - 1]
+    occiput: [c, o.head[0]], nape: [c, (o.nape[0] + o.nape[1]) / 2], scapula: [m(o.scap[0]), o.scap[1]], upperback: [c, (o.spine[0] + o.spine[1]) / 2],
+    flank: ctr(o.flank), lowback: [c, (o.low[1] + o.low[2]) / 2], buttocks: [c, (o.butt[1] + o.butt[2]) / 2], arm: [m(o.armA[0]), o.armA[1]],
+    hand: [m(o.hand[0]), o.hand[1]], hamstring: ctr(o.ham), calf: ctr(o.calf), heel: [m(o.heel[0]), o.heel[1]]
   };
   return { shapes, a };
 }
+// الظهر: [x, y, عرض, ارتفاع] للمستطيلات على الجهة اليسرى من الصورة، وتُعكس تلقائيًا
+const GEO_BACK = {
+  male: { c: 50, head: [16, 8.6, 10.5], nape: [26, 33], scap: [41, 47, 7, 8], spine: [37, 76], flank: [30.5, 75, 6, 16], low: [12, 79, 98],
+    butt: [21, 99, 117], arm: "22.5,56 31,58 31,74 29.5,98 19.5,98 19,78", armA: [26, 76], hand: [24, 107, 4.6, 8],
+    ham: [30.5, 118, 15, 25], calf: [31, 144, 12, 33], heel: [34.5, 186] },
+  female: { c: 50, head: [16, 8.2, 10], nape: [27, 34], scap: [42, 48, 6.5, 7.5], spine: [38, 73], flank: [31.5, 72, 5.8, 15], low: [12, 76, 91],
+    butt: [21, 91, 114], arm: "28,42 34,44 34,70 32,98 24,98 25,72", armA: [29, 72], hand: [26.5, 107, 4, 7],
+    ham: [31.5, 116, 15, 27], calf: [31.5, 144, 12, 34], heel: [36.5, 188] }
+};
 const GEO_IN = {
   male: { c: 50.9, head: [9.5, 8.6, 6.6], eyes: 17.7, ear: [42.6, 20], nose: 21.4, mouth: 25.3, neck: [28.6, 33.8], sh: [31.2, 38.8],
     chest: [35, 58.5], abd: 77.5, pel: [95.5, 115.5], arm: "25,43.5 33,45 33.4,59.5 30.4,77.5 25.5,98 19.3,97.3 22.9,77.5 25.4,58.6", armA: [27.5, 70],
@@ -271,7 +281,7 @@ const GEO_IN = {
     chest: [39, 61.3], abd: 77.5, pel: [91.2, 111.6], arm: "28.5,44 35.5,45.5 34.5,62 29,80 26.5,97 20.5,96.5 22.5,80 27,62", armA: [28.5, 72],
     hand: [21.8, 106.3], elbow: [25.8, 80], th: [31, 16], knee: [40.2, 139, 6, 5.4], leg: [34, 10.5], foot: [37, 181, 6.5, 7.4] }
 };
-const PHOTO_GEO_BACK = { male: photoGeoBack(GEO_IN.male), female: photoGeoBack(GEO_IN.female) };
+const PHOTO_GEO_BACK = { male: photoGeoBack(GEO_BACK.male), female: photoGeoBack(GEO_BACK.female) };
 const BACK_PHOTOS = { male: asset("assets/body-male-back.jpg"), female: asset("assets/body-female-back.jpg") };
 const PHOTO_GEO = { male: photoGeo(GEO_IN.male), female: photoGeo(GEO_IN.female) };
 const photoOK = {};
@@ -492,10 +502,23 @@ function organLayer(keys) {
   return `${organDefs()}<g class="organs" filter="url(#og-real)"><g ${t}>${upper}</g><g ${tr}>${repro}</g></g>${rings}`;
 }
 
+/* صور تشريحية حقيقية (رسوم طبية من Blausen Medical، رخصة CC BY 3.0) لكل عضو متاح */
+const ORGAN_PHOTO = { brain: "brain", thyroid: "thyroid", lungs: "lungs", heart: "heart", liver: "liver", gallbladder: "gbp", pancreas: "pancreas",
+  stomach: "digestive", colon: "colon", appendix: "colon", smallint: "smallint", kidney: "kidney", uterus: "female", ovaries: "female" };
+function organAtlas(keys) {
+  const files = [...new Set(keys.map(k => ORGAN_PHOTO[k]).filter(Boolean))].slice(0, 2);
+  if (!files.length) return "";
+  return `<details class="atlas"><summary>${ico(I.info)}<span>صورة تشريحية حقيقية للعضو</span></summary>
+    <div class="atlas-imgs">${files.map(f => `<img src="${asset("assets/organs/" + f + ".jpg")}" alt="رسم تشريحي: ${esc(keys.map(k => ORGAN_NAMES[k]).join("، "))}" loading="lazy">`).join("")}</div>
+    <p class="muted small">رسم طبي مرجعي (التسميات بالإنجليزية) — Blausen.com staff (2014), Medical gallery of Blausen Medical 2014, WikiJournal of Medicine 1(2) — رخصة CC BY 3.0.</p></details>`;
+}
 /* بطاقة العضو المصاب في النتيجة: الصورة الواقعية + العضو بحجم كبير وواضح */
 function organCard(organ) {
   const keys = resolveOrgans(organ);
   if (!keys.length) return "";
+  return organCardInner(keys) + organAtlas(keys);
+}
+function organCardInner(keys) {
   const sex = sexKey();
   if (!photoOK[sex]) return ORGANS[keys[0]] ? organTag(keys[0]) : "";
   // قصّ الصورة حول العضو المصاب ليظهر مكبّرًا وواضحًا
@@ -934,7 +957,7 @@ function renderTopbar() {
     $topbar.innerHTML = `<div class="bar-row">
       <div class="brand"><div class="logo">${ico(I.pulse, 2.4).replace('stroke="currentColor"', 'stroke="#fff"')}</div>
         <div><div class="brand-name">موصل</div><div class="brand-sub">حدّد موضع الألم واعرف الطبيب المناسب</div></div></div>
-      <div class="bar-actions"><a class="sos" href="tel:${EMERGENCY_NUMBER}" aria-label="اتصل بالإسعاف ${EMERGENCY_NUMBER}">${ico(I.phone)}${EMERGENCY_NUMBER}</a>
+      <div class="bar-actions"><a class="sos" href="tel:${EMERGENCY_NUMBER}" aria-label="رقم الإسعاف ${EMERGENCY_NUMBER}">${ico(I.phone)}<span>إسعاف</span> ${EMERGENCY_NUMBER}</a>
       <button class="icon-btn aa" data-act="prefs" aria-expanded="${!!state.showPrefs}" aria-label="حجم الخط والوضع الليلي">Aa</button>
       <button class="icon-btn" data-act="about" aria-label="عن موصل والمصادر">${ico(I.info)}</button></div>
     </div>
@@ -1324,7 +1347,7 @@ function condCard(c, rank, isTop) {
       <div class="kicker">
         <span class="rank">${isTop ? "الاحتمال الأقرب" : "#" + rank}</span>
         <span class="badge code">ICD-10 ${esc(c.icd10)}</span>
-        ${c.flag ? `<span class="badge" style="background:var(--danger-bg);color:var(--danger-ink)">${ico(I.alert)}قد تكون طارئة</span>` : ""}
+        ${c.flag ? `<span class="badge" style="background:var(--warn-bg);color:var(--warn-ink)">${ico(I.clock)}تستحق تقييمًا سريعًا</span>` : ""}
         ${!isTop ? ico(I.chevD).replace("<svg", '<svg class="expand" style="margin-inline-start:auto"') : ""}
       </div>
       <h3 class="cond-name">${esc(c.name)}</h3>
@@ -1351,9 +1374,13 @@ function condCard(c, rank, isTop) {
 function overallTriage(scored) {
   // «لست متأكدًا» على علامة خطر تُعامل كأنها موجودة (الأحوط)
   const redSym = DATA[state.zone].symptoms.filter(s => s.red && (state.checked.has(s.id) || state.unsureRed.has(s.id)));
-  let t = scored.length ? scored[0].triage : "doctor";
+  // رزانة: الاحتمال الضعيف لا يرفع مستوى الاستعجال. الطوارئ تأتي من علامة خطر اختارها المستخدم،
+  // أو من حالة طارئة هي الأقرب بتطابق قوي (60% فأكثر)؛ وما دون ذلك يُنصح بالكشف العاجل دون تخويف.
+  const top = scored[0];
+  let t = !top ? "doctor" : top.triage === "emergency" && top.pct < 60 ? (top.pct >= 35 ? "urgent" : "doctor") : top.triage;
   for (const c of scored) {
-    if (c.pct >= 50 && TRIAGE_ORDER.indexOf(c.triage) > TRIAGE_ORDER.indexOf(t) && (c.flag || c.triage === "urgent")) t = c.triage;
+    const ct = c.triage === "emergency" && c.pct < 60 ? "urgent" : c.triage;
+    if (c.pct >= 50 && TRIAGE_ORDER.indexOf(ct) > TRIAGE_ORDER.indexOf(t) && (c.flag || ct === "urgent")) t = ct;
   }
   if (redSym.length) t = "emergency";
   return { key: t, redSym, crisis: redSym.some(s => s.crisis) };
@@ -1379,8 +1406,8 @@ function renderResults() {
       <p>لهذه الأفكار علاج ومساعدة متاحة. اتصل بالخط الساخن للصحة النفسية (مجاني وسري)، أو بشخص تثق به. وإذا كنت في خطر الآن فاتصل بالإسعاف ${EMERGENCY_NUMBER}.</p>
       <div class="btn-row"><a class="btn" href="tel:${MENTAL_HOTLINE}">${ico(I.phone)} ${MENTAL_HOTLINE}</a><a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} ${EMERGENCY_NUMBER}</a></div></div></div>` : ""}
     ${isEmergency ? `<div class="alert danger" role="alert">${ico(I.alert).replace("<svg", '<svg class="ai"')}<div>
-      <b>هذه الأعراض تستدعي الطوارئ</b>
-      <p>${tri.redSym.length ? "اخترت علامة خطر: " + tri.redSym.map(s => esc(s.label)).join("، ") + "." : "هناك احتمال لحالة طارئة."} لا تنتظر؛ اتصل بالإسعاف أو توجّه إلى أقرب مستشفى.</p>
+      <b>ننصحك بتقييم طبي فوري للاطمئنان</b>
+      <p>${tri.redSym.length ? "ذكرتَ: " + tri.redSym.map(s => esc(s.label)).join("، ") + "، وهي علامة يُستحسن أن يقيّمها طبيب الطوارئ مباشرة." : "قد تكون الأعراض لحالة تحتاج تقييمًا فوريًا."} توجّه إلى أقرب قسم طوارئ أو اتصل بالإسعاف، والتقييم المبكر يطمئنك في الغالب.</p>
       <a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} اتصل ${EMERGENCY_NUMBER}</a></div></div>` : ""}
 
     <section class="triage t-${T.tone}" aria-label="الخطوة التالية">
@@ -1455,9 +1482,9 @@ function renderDescribe() {
       <b>لست وحدك — تحدّث مع أحد الآن</b>
       <p>ما تمر به له علاج ومساعدة متاحة. اتصل بالخط الساخن للصحة النفسية (مجاني وسري)، أو بشخص تثق به. وإذا كنت في خطر الآن فاتصل بالإسعاف ${EMERGENCY_NUMBER}.</p>
       <div class="btn-row"><a class="btn" href="tel:${MENTAL_HOTLINE}">${ico(I.phone)} ${MENTAL_HOTLINE}</a><a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} ${EMERGENCY_NUMBER}</a></div></div></div>` : ""}
-    ${red ? `<div class="alert danger" role="alert">${ico(I.alert).replace("<svg", '<svg class="ai"')}<div><b>في وصفك علامة قد تكون خطيرة</b>
+    ${red ? `<div class="alert danger" role="alert">${ico(I.alert).replace("<svg", '<svg class="ai"')}<div><b>وصفك يتضمن ما يستحق تقييمًا طبيًا فوريًا</b>
       ${al.emergencies.length ? `<p><b>${al.emergencies.map(esc).join("، ")}.</b></p>` : ""}
-      <p>لا تنتظر؛ اتصل بالإسعاف ${EMERGENCY_NUMBER} أو توجّه إلى أقرب طوارئ الآن.</p>
+      <p>للاطمئنان، توجّه إلى أقرب قسم طوارئ أو اتصل بالإسعاف ${EMERGENCY_NUMBER}. وفي أغلب الحالات يكون التقييم المبكر مطمئنًا.</p>
       <a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} اتصل ${EMERGENCY_NUMBER}</a></div></div>` : ""}
     <div class="card"><div class="small muted">وصفك:</div><p style="margin:4px 0 0">«${esc(state.describe)}»</p>
       <button class="link-btn" style="padding:0;margin-top:6px" data-act="desc-edit">تعديل الوصف</button></div>
@@ -1674,6 +1701,7 @@ function renderAbout() {
       <li>معلومات المرضى: <a href="https://medlineplus.gov/" target="_blank" rel="noopener noreferrer">MedlinePlus</a>، <a href="https://www.nhs.uk/conditions/" target="_blank" rel="noopener noreferrer">NHS</a>، <a href="https://www.mayoclinic.org/diseases-conditions" target="_blank" rel="noopener noreferrer">Mayo Clinic</a></li>
       <li>مرجع الأطباء: <a href="https://www.ncbi.nlm.nih.gov/books/NBK430685/" target="_blank" rel="noopener noreferrer">StatPearls — NCBI</a></li>
       ${sources}
+      <li>الرسوم التشريحية للأعضاء: Blausen.com staff (2014). <a href="https://en.wikiversity.org/wiki/WikiJournal_of_Medicine/Medical_gallery_of_Blausen_Medical_2014" target="_blank" rel="noopener noreferrer">Medical gallery of Blausen Medical 2014</a>. WikiJournal of Medicine 1(2) — رخصة <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a> (صُغّرت للعرض دون تعديل المحتوى).</li>
     </ul>
     <h2>خصوصيتك</h2>
     <p>لا يُرسَل أي شيء إلى أي خادم. تُحفظ على جهازك فقط: بياناتك الأساسية (العمر والطول والوزن والأمراض المزمنة)، وبطاقتك الصحية إن ملأتها، وسجل تقييماتك (الأعراض المختارة والنتيجة) لتعود إليه. <b>لا تُحفظ أبدًا</b> تقييمات الصحة الجنسية ولا التقييمات التي ظهرت فيها علامات أزمة نفسية. يمكنك حذف أي تقييم أو حذف كل بياناتك في أي وقت.</p>

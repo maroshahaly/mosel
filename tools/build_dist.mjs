@@ -12,6 +12,8 @@ for (const f of ["index.html", "app.js", "prefs.js", "sw.js", "manifest.json", "
 for (const f of readdirSync(root + "data").filter(f => f === "conditions.js" || f === "care.js" || f === "tips.js" || /^more_.*\.js$/.test(f))) cpSync(root + "data/" + f, out + "data/" + f);
 cpSync(root + "icons", out + "icons", { recursive: true });
 mkdirSync(out + "assets"); for (const f of readdirSync(root + "assets").filter(f => /\.(jpg|png|webp)$/.test(f))) cpSync(root + "assets/" + f, out + "assets/" + f);
+// الصور التشريحية (Blausen، رخصة CC BY 3.0): تُنسخ وتُشفَّر مع الحزمة، لكن لا نضع عليها علامتنا لأنها ليست من إنتاجنا
+mkdirSync(out + "assets/organs"); for (const f of readdirSync(root + "assets/organs").filter(f => /\.(jpg|png|webp)$/.test(f))) cpSync(root + "assets/organs/" + f, out + "assets/organs/" + f);
 // تصغير الشيفرة (minify) لصعوبة نسخها وسرعة التحميل، مع الإبقاء على سطر حقوق الملكية /*! */
 const jsFiles = ["app.js", "prefs.js", "sw.js", ...readdirSync(out + "data").map(f => "data/" + f)];
 try {
@@ -24,7 +26,8 @@ if (process.env.MOSEL_PROTECT !== "0") {
   for (const f of assetFiles) execFileSync("python3", [root + "tools/watermark.py", "embed", out + f, out + f], { stdio: "pipe" });
   const html = readFileSync(out + "index.html", "utf8");
   const dataFiles = [...html.matchAll(/<script src="(data\/[^"]+)"><\/script>/g)].map(m => m[1]);
-  const r = await protect(out, { dataFiles, assetFiles });
+  const organFiles = readdirSync(out + "assets/organs").map(f => "assets/organs/" + f);
+  const r = await protect(out, { dataFiles, assetFiles: [...assetFiles, ...organFiles] });
   console.log(`✔ الحماية: ${assetFiles.length} صور بعلامة مائية، ${dataFiles.length} ملفات بيانات مشفّرة في pack.bin (${(r.packBytes / 1024).toFixed(0)} ك.ب)، قفل النطاق على: ${r.domains.join("، ")}`);
 }
 // تحقّق: لا ذكر لأي أداة أو جهة تطوير في ملفات الموقع

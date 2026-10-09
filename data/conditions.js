@@ -22,8 +22,8 @@
   "use strict";
 
   const TRIAGE = {
-    emergency: { label: "طوارئ فورًا", action: "اتصل بالإسعاف (123) أو توجّه إلى أقرب قسم طوارئ الآن دون انتظار.", tone: "danger" },
-    urgent:    { label: "فحص عاجل خلال 24 ساعة", action: "احجز موعدًا اليوم أو غدًا على الأكثر، وإذا اشتدت الأعراض فجأة فتوجّه إلى الطوارئ.", tone: "warn" },
+    emergency: { label: "يُنصح بالتوجه إلى الطوارئ", action: "هذه الأعراض تحتاج إلى تقييم طبي فوري للاطمئنان. توجّه إلى أقرب قسم طوارئ أو اتصل بالإسعاف (123)، وحافظ على هدوئك؛ فالتقييم المبكر يطمئنك ويحميك.", tone: "danger" },
+    urgent:    { label: "يُنصح بالكشف خلال 24 ساعة", action: "احجز موعدًا اليوم أو غدًا. وإذا اشتدت الأعراض أو ظهرت أعراض جديدة فتوجّه إلى الطوارئ.", tone: "warn" },
     doctor:    { label: "راجع الطبيب المختص", action: "الحالة ليست طارئة، لكنها تحتاج إلى فحص وتشخيص لدى طبيب التخصص خلال أيام.", tone: "info" },
     self:      { label: "رعاية منزلية ومتابعة", action: "تتحسن غالبًا بالرعاية المنزلية. راجع الطبيب إذا لم تتحسن خلال أسبوع أو ظهرت أعراض جديدة.", tone: "ok" }
   };
@@ -1199,7 +1199,7 @@
     "andrology.balanitis":   p => [p.has("سكر") && "السكري"]
   };
 
-  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, REGION_ORGANS, RISK_FACTORS, version: "3.8.0", updatedAt: "2026-10" };
+  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, REGION_ORGANS, RISK_FACTORS, version: "3.9.0", updatedAt: "2026-10" };
 
   /* إضافة أمراض وأعراض من ملفات data/more_*.js
      MOSEL_EXTEND("zoneKey", { zone?, regions?, symptoms?, conditions?, risk? }) */
