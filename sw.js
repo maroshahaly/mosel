@@ -1,7 +1,7 @@
 /*! موصل (Mosel) — © 2026 Maro Shahaly. جميع الحقوق محفوظة. يُمنع النسخ أو إعادة النشر دون إذن كتابي. */
 /* موصل — service worker: التطبيق يفتح من غير نت بعد أول زيارة.
    غيّر VERSION مع أي تعديل في الملفات عشان الموبايلات تاخد التحديث. */
-const VERSION = "mosel-v3.3.0";
+const VERSION = "mosel-v3.4.0";
 const SHELL = ["./", "./index.html", "./app.js", "./data/conditions.js", "./data/more_01_zones.js", "./data/more_02_systems.js", "./data/more_03_specialties.js", "./data/care.js", "./manifest.json", "./icons/icon.svg", "./icons/icon-192.png", "./assets/body-male.jpg", "./assets/body-female.jpg"];
 
 self.addEventListener("install", e => {

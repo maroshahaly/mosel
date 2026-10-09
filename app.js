@@ -13,6 +13,29 @@ const ZONE = Object.fromEntries(ZONES.map(z => [z.key, z]));
 const EMERGENCY_NUMBER = "123";                 // إسعاف مصر
 const MENTAL_HOTLINE = "08008880700";           // الخط الساخن للصحة النفسية — الأمانة العامة للصحة النفسية (مصر)
 const PROFILE_KEY = "moselProfile";
+const TERMS_KEY = "moselTerms";
+const TERMS_VERSION = "1.0";
+/* شروط الاستخدام وإخلاء المسؤولية: يجب الموافقة عليها قبل أي استخدام، ويُعاد طلبها عند تغيير TERMS_VERSION */
+const TERMS = [
+  ["طبيعة الخدمة", "«موصل» أداة معلوماتية للتثقيف والاسترشاد الصحي العام فقط، تعرض احتمالات تقريبية مبنية على الأعراض التي يُدخلها المستخدم بنفسه. وهو ليس جهازًا طبيًا، ولا يقدّم تشخيصًا ولا وصفة علاجية ولا استشارة طبية، ولا تنشأ عن استخدامه أي علاقة بين طبيب ومريض."],
+  ["ليس بديلًا عن الطبيب", "كل ما يعرضه التطبيق من أمراض وتحاليل وأشعة وأدوية وإجراءات هو للمعرفة العامة فقط. ويجب مراجعة طبيب مرخّص قبل اتخاذ أي قرار صحي، ولا يجوز تناول أي دواء أو تغيير أي علاج أو إيقافه اعتمادًا على التطبيق."],
+  ["حالات الطوارئ", "في أي حالة طارئة أو عند الشك في خطورة الحالة يجب الاتصال بالإسعاف (123) أو التوجه إلى أقرب قسم طوارئ فورًا، دون الاعتماد على التطبيق أو انتظار نتيجته."],
+  ["مسؤولية المستخدم", "يُقرّ المستخدم بأنه المسؤول الأول والأخير عن صحته الشخصية وعن صحة من يستخدم التطبيق نيابةً عنهم من أسرته وذويه، وعن كل قرار يتخذه أو يمتنع عنه بناءً على ما يعرضه التطبيق، وعن صحة البيانات التي يُدخلها."],
+  ["إخلاء المسؤولية", "تُقدَّم المعلومات «كما هي» ودون أي ضمان صريح أو ضمني بدقتها أو اكتمالها أو ملاءمتها لحالة بعينها. وإلى أقصى حد يسمح به القانون، لا يتحمل التطبيق ولا مالكه ولا القائمون عليه ولا المساهمون فيه، من قريب أو بعيد، أي مسؤولية قانونية أو طبية أو مدنية، مباشرة أو غير مباشرة، عن أي ضرر أو خسارة أو مضاعفات تنشأ عن استخدام التطبيق أو الاعتماد عليه أو تعذّر استخدامه."],
+  ["عدم المطالبة", "يتعهد المستخدم، إلى الحد الذي يسمح به القانون، بعدم إقامة أي دعوى أو شكوى أو مطالبة ضد التطبيق أو القائمين عليه بسبب استخدامه، وبتحمّل أي مطالبة يقيمها الغير بسبب مخالفته لهذه الشروط."],
+  ["القاصرون", "الاستخدام مقصور على من بلغ ثمانية عشر عامًا. ومن هو دون ذلك لا يستخدمه إلا بموافقة وليّ أمره وإشرافه، ويتحمل وليّ الأمر المسؤولية كاملة."],
+  ["الخصوصية", "تُحفظ بيانات المستخدم على جهازه فقط ولا تُرسل إلى أي خادم، ويستطيع حذفها في أي وقت من صفحة «عن التطبيق»."],
+  ["المحتوى الطبي", "المحتوى مبني على مراجع وأدلة إرشادية دولية، وهو قيد المراجعة من أطباء مختصين، وقد يُعدَّل أو يُحذف دون إشعار مسبق."],
+  ["الملكية الفكرية", "جميع حقوق التطبيق ومحتواه وتصميمه وبياناته محفوظة لمالكه. ويُمنع نسخه أو إعادة نشره أو استخدامه في منتج آخر، كليًا أو جزئيًا، دون إذن كتابي مسبق."],
+  ["القانون الواجب التطبيق", "تخضع هذه الشروط لقوانين جمهورية مصر العربية، وتختص المحاكم المصرية بنظر أي نزاع ينشأ عنها."],
+  ["تعديل الشروط", "يجوز تعديل هذه الشروط في أي وقت، ويُطلب من المستخدم الموافقة على النسخة الجديدة قبل مواصلة الاستخدام. واستمرار الاستخدام بعد الموافقة يعني القبول الكامل بها."]
+];
+const TERMS_CHECKS = [
+  "قرأتُ شروط الاستخدام وفهمتها، وأوافق عليها كاملة.",
+  "أُقرّ بأنني المسؤول الأول والأخير عن صحتي وصحة ذويّ، وأن «موصل» للاسترشاد فقط، ولا تقع على التطبيق أو القائمين عليه أي مسؤولية قانونية أو طبية من قريب أو بعيد.",
+  "أتعهد بمراجعة طبيب مرخّص قبل أي علاج، وبالاتصال بالإسعاف (123) في حالات الطوارئ.",
+  "أُقرّ بأن عمري ثمانية عشر عامًا فأكثر، أو أنني أستخدم التطبيق بموافقة وليّ أمري وإشرافه."
+];
 const MAX_FOLLOWUP_ROUNDS = 4;
 const QUICK_ACCESS = [
   { key: "sexual", title: "الصحة الجنسية — بسرية تامة", sub: "إفرازات، قروح، ثآليل، عدوى منقولة جنسيًا؛ لا يُحفظ شيء" },
@@ -360,11 +383,15 @@ function organTag(key) {
 let saved = null;
 try { const raw = localStorage.getItem(PROFILE_KEY); if (raw) saved = JSON.parse(raw); } catch (e) { /* تخزين مقفول */ }
 if (saved && !Array.isArray(saved.chronic)) saved.chronic = [];
+let terms = null;
+try { terms = JSON.parse(localStorage.getItem(TERMS_KEY) || "null"); } catch (e) { /* تخزين مقفول */ }
+const termsOk = () => !!(terms && terms.v === TERMS_VERSION);
 
 const state = {
-  screen: saved ? "home" : "onboarding",
+  screen: !termsOk() ? "terms" : saved ? "home" : "onboarding",
+  termsChecks: TERMS_CHECKS.map(() => false), termsView: false,
   profile: saved || { gender: null, age: "", height: "", weight: "", chronic: [] },
-  consent: !!saved,
+  consent: !!saved || termsOk(),
   editingProfile: false,
   region: null, zone: null,
   checked: new Set(), denied: new Set(), asked: new Set(),
@@ -507,7 +534,8 @@ function commitAnswers() {
 function go(screen) { state.screen = screen; render(); }
 function back() {
   const s = state.screen;
-  if (s === "about" || s === "stages") go(state.prev || "home");
+  if (s === "terms") { state.termsView = false; go(state.prev || "about"); }
+  else if (s === "about" || s === "stages") go(state.prev || "home");
   else if (s === "results" || s === "followup") { state.round = 0; state.asked = new Set(); state.denied = new Set(); state.answers = {}; go("symptoms"); }
   else if (s === "symptoms") { resetCase(); state.zone = null; go(state.region ? "sections" : "home"); }
   else if (s === "sections") { state.region = null; go("home"); }
@@ -536,7 +564,7 @@ function stepIndex() {
   return { sections: 1, symptoms: 2, followup: 2, results: 3 }[state.screen];
 }
 function renderTopbar() {
-  if (state.screen === "onboarding") { $topbar.hidden = true; return; }
+  if (state.screen === "onboarding" || (state.screen === "terms" && !state.termsView)) { $topbar.hidden = true; return; }
   $topbar.hidden = false;
   if (state.screen === "home") {
     $topbar.innerHTML = `<div class="bar-row">
@@ -553,7 +581,7 @@ function renderTopbar() {
     followup: "أسئلة للتأكد",
     results: "النتيجة",
     about: "عن موصل والمصادر",
-    stages: "حاسبة المراحل"
+    stages: "حاسبة المراحل", terms: "شروط الاستخدام"
   }[state.screen] || "";
   const si = stepIndex();
   $topbar.innerHTML = `<div class="bar-row">
@@ -576,6 +604,29 @@ function setCta(text, onClick, disabled) {
 /* =========================================================
    الشاشات
    ========================================================= */
+function renderTerms() {
+  const view = state.termsView;
+  const all = state.termsChecks.every(Boolean);
+  $content.innerHTML = `<div class="fade-in terms">
+    <div class="onb-hero"><div class="brand"><div class="logo">${ico(I.pulse, 2.4)}</div><div class="brand-name">موصل</div></div>
+      <h1>شروط الاستخدام وإخلاء المسؤولية</h1>
+      <p>${view ? `وافقت على هذه الشروط (الإصدار ${TERMS_VERSION})${terms && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString("ar-EG", { year: "numeric", month: "long", day: "numeric" })) : ""}.` : "يُرجى قراءة الشروط التالية بعناية. لا يمكن استخدام التطبيق دون الموافقة عليها."}</p></div>
+    <ol class="terms-list">${TERMS.map(([h, t]) => `<li><b>${esc(h)}:</b> ${esc(t)}</li>`).join("")}</ol>
+    ${view ? `<div style="text-align:center;margin-top:12px"><button class="btn btn-ghost" data-act="back">رجوع</button></div>` : `
+    <div class="terms-checks">${TERMS_CHECKS.map((t, i) => `<label class="consent"><input type="checkbox" data-term="${i}" ${state.termsChecks[i] ? "checked" : ""}><span>${esc(t)}</span></label>`).join("")}</div>
+    <p class="small muted" id="terms-hint" style="text-align:center">${all ? "شكرًا لك. اضغط «أوافق وأتابع»." : "يجب تحديد جميع الإقرارات للمتابعة."}</p>
+    <div style="text-align:center"><button class="link-btn" data-act="decline">لا أوافق</button></div>`}
+  </div>`;
+  if (view) setCta(null); else setCta("أوافق وأتابع", acceptTerms, !all);
+}
+function acceptTerms() {
+  if (!state.termsChecks.every(Boolean)) return;
+  terms = { v: TERMS_VERSION, at: new Date().toISOString(), checks: TERMS_CHECKS.length };
+  try { localStorage.setItem(TERMS_KEY, JSON.stringify(terms)); } catch (e) { /* ignore */ }
+  state.consent = true;
+  go(saved || profileValid(state.profile) ? "home" : "onboarding");
+}
+
 function renderOnboarding() {
   const p = state.profile;
   const fld = (f, label, unit, ph) => {
@@ -605,7 +656,7 @@ function renderOnboarding() {
     </div></div>
     <div class="field"><span class="flabel" id="lc">الأمراض المزمنة <span class="muted small">(اختياري — تزيد دقة الترشيح)</span></span>
       <div class="chips" role="group" aria-labelledby="lc">${CHRONIC_OPTIONS.map(c => `<button class="chip" data-chronic="${esc(c)}" aria-pressed="${p.chronic.includes(c)}">${esc(c)}</button>`).join("")}</div></div>
-    ${state.editingProfile ? "" : `<label class="consent"><input type="checkbox" id="consent" ${state.consent ? "checked" : ""}>
+    ${state.editingProfile || termsOk() ? "" : `<label class="consent"><input type="checkbox" id="consent" ${state.consent ? "checked" : ""}>
       <span>أُقرّ بأن «موصل» <b>أداة توجيه أولية وليس تشخيصًا طبيًا</b>، ولا يغني عن زيارة الطبيب، وفي الطوارئ سأتصل بالإسعاف ${EMERGENCY_NUMBER}.</span></label>`}
     ${state.editingProfile ? `<div style="text-align:center;margin-top:8px"><button class="link-btn" data-act="cancel-edit">رجوع دون حفظ</button></div>` : ""}
   </div>`;
@@ -972,6 +1023,8 @@ function renderAbout() {
     </ul>
     <h2>خصوصيتك</h2>
     <p>تُحفظ بياناتك (العمر والطول والوزن والأمراض المزمنة) على جهازك فقط ولا تُرسَل إلى أي خادم، ولا تُحفظ الأعراض إطلاقًا.</p>
+    <h2>شروط الاستخدام</h2>
+    <p>استخدامك لـ«موصل» خاضع لشروط الاستخدام وإخلاء المسؤولية التي وافقت عليها${terms && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString("ar-EG", { year: "numeric", month: "long", day: "numeric" })) : ""}. <button class="link-btn" data-act="terms">اقرأ الشروط</button></p>
     <div class="btn-row"><button class="btn btn-ghost" data-act="edit">${ico(I.user)} تعديل بياناتي</button><button class="btn btn-ghost" data-act="wipe">${ico(I.x)} حذف بياناتي</button></div>
     <div class="disclaimer">${ico(I.shield)}<span>«موصل» أداة توجيه وتثقيف صحي، وليس جهازًا طبيًا ولا بديلًا عن الطبيب، ويحتاج محتواه إلى مراجعة أطباء متخصصين واعتمادهم قبل الاستخدام الواسع.</span></div>
     <div class="foot">الإصدار ${version} · جميع الحقوق محفوظة © 2026 موصل</div>
@@ -1091,7 +1144,9 @@ async function shareReport() {
 function render() {
   renderTopbar();
   const s = state.screen;
-  if (s === "onboarding") renderOnboarding();
+  if (s !== "terms" && !termsOk()) { state.screen = "terms"; return render(); }
+  if (s === "terms") renderTerms();
+  else if (s === "onboarding") renderOnboarding();
   else if (s === "home") renderHome();
   else if (s === "sections") renderSections();
   else if (s === "symptoms") renderSymptoms();
@@ -1127,6 +1182,9 @@ document.addEventListener("click", e => {
     case "home": return restart();
     case "about": state.prev = state.screen; return go("about");
     case "stages": state.prev = state.screen; return go("stages");
+    case "terms": state.prev = state.screen; state.termsView = true; return go("terms");
+    case "decline":
+      return toast("لا يمكن استخدام «موصل» دون الموافقة على الشروط. في الطوارئ اتصل بالإسعاف 123.");
     case "edit": state.editingProfile = true; return go("onboarding");
     case "cancel-edit":
       try { state.profile = JSON.parse(localStorage.getItem(PROFILE_KEY)) || state.profile; } catch (err) { /* ignore */ }
@@ -1168,6 +1226,10 @@ document.addEventListener("input", e => {
     updateOnboardCta();
   }
   if (t.id === "consent") { state.consent = t.checked; updateOnboardCta(); }
+  if (t.dataset && t.dataset.term !== undefined) { state.termsChecks[+t.dataset.term] = t.checked;
+    const all = state.termsChecks.every(Boolean), h = document.getElementById("terms-hint");
+    if (h) h.textContent = all ? "شكرًا لك. اضغط «أوافق وأتابع»." : "يجب تحديد جميع الإقرارات للمتابعة.";
+    setCta("أوافق وأتابع", acceptTerms, !all); }
   if (t.dataset && t.dataset.stage) { state.stages[t.dataset.stage] = t.value; renderStageOut(); }
   if (t.dataset && "stageKnown" in t.dataset) { state.stages.known = t.checked; renderStageOut(); }
 });
