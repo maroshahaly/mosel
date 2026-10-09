@@ -30,12 +30,8 @@ const TERMS = [
   ["القانون الواجب التطبيق", "تخضع هذه الشروط لقوانين جمهورية مصر العربية، وتختص المحاكم المصرية بنظر أي نزاع ينشأ عنها."],
   ["تعديل الشروط", "يجوز تعديل هذه الشروط في أي وقت، ويُطلب من المستخدم الموافقة على النسخة الجديدة قبل مواصلة الاستخدام. واستمرار الاستخدام بعد الموافقة يعني القبول الكامل بها."]
 ];
-const TERMS_CHECKS = [
-  "قرأتُ شروط الاستخدام وفهمتها، وأوافق عليها كاملة.",
-  "أُقرّ بأنني المسؤول الأول والأخير عن صحتي وصحة ذويّ، وأن «موصل» للاسترشاد فقط، ولا تقع على التطبيق أو القائمين عليه أي مسؤولية قانونية أو طبية من قريب أو بعيد.",
-  "أتعهد بمراجعة طبيب مرخّص قبل أي علاج، وبالاتصال بالإسعاف (123) في حالات الطوارئ.",
-  "أُقرّ بأن عمري ثمانية عشر عامًا فأكثر، أو أنني أستخدم التطبيق بموافقة وليّ أمري وإشرافه."
-];
+/* الإقرار الوحيد في شاشة البداية؛ «الشروط والأحكام» فيه رابط يفتح البنود كاملة */
+const TERMS_ACK = "أُقرّ بأنني قرأت {link} واستوعبتها وفهمتها وأوافق عليها، وبأنني المسؤول الأول والأخير عن صحتي وصحة ذويّ، وأن «موصل» للاسترشاد فقط ولا يتحمل هو أو القائمون عليه أي مسؤولية قانونية أو طبية.";
 const MAX_FOLLOWUP_ROUNDS = 4;
 const QUICK_ACCESS = [
   { key: "sexual", title: "الصحة الجنسية — بسرية تامة", sub: "إفرازات، قروح، ثآليل، عدوى منقولة جنسيًا؛ لا يُحفظ شيء" },
@@ -388,10 +384,9 @@ try { terms = JSON.parse(localStorage.getItem(TERMS_KEY) || "null"); } catch (e)
 const termsOk = () => !!(terms && terms.v === TERMS_VERSION);
 
 const state = {
-  screen: !termsOk() ? "terms" : saved ? "home" : "onboarding",
-  termsChecks: TERMS_CHECKS.map(() => false), termsView: false,
+  screen: saved && termsOk() ? "home" : "onboarding",
   profile: saved || { gender: null, age: "", height: "", weight: "", chronic: [] },
-  consent: !!saved || termsOk(),
+  consent: termsOk(),
   editingProfile: false,
   region: null, zone: null,
   checked: new Set(), denied: new Set(), asked: new Set(),
@@ -534,7 +529,7 @@ function commitAnswers() {
 function go(screen) { state.screen = screen; render(); }
 function back() {
   const s = state.screen;
-  if (s === "terms") { state.termsView = false; go(state.prev || "about"); }
+  if (s === "terms") go(state.prev || "about");
   else if (s === "about" || s === "stages") go(state.prev || "home");
   else if (s === "results" || s === "followup") { state.round = 0; state.asked = new Set(); state.denied = new Set(); state.answers = {}; go("symptoms"); }
   else if (s === "symptoms") { resetCase(); state.zone = null; go(state.region ? "sections" : "home"); }
@@ -564,7 +559,7 @@ function stepIndex() {
   return { sections: 1, symptoms: 2, followup: 2, results: 3 }[state.screen];
 }
 function renderTopbar() {
-  if (state.screen === "onboarding" || (state.screen === "terms" && !state.termsView)) { $topbar.hidden = true; return; }
+  if (state.screen === "onboarding") { $topbar.hidden = true; return; }
   $topbar.hidden = false;
   if (state.screen === "home") {
     $topbar.innerHTML = `<div class="bar-row">
@@ -581,7 +576,7 @@ function renderTopbar() {
     followup: "أسئلة للتأكد",
     results: "النتيجة",
     about: "عن موصل والمصادر",
-    stages: "حاسبة المراحل", terms: "شروط الاستخدام"
+    stages: "حاسبة المراحل", terms: "الشروط والأحكام"
   }[state.screen] || "";
   const si = stepIndex();
   $topbar.innerHTML = `<div class="bar-row">
@@ -605,26 +600,19 @@ function setCta(text, onClick, disabled) {
    الشاشات
    ========================================================= */
 function renderTerms() {
-  const view = state.termsView;
-  const all = state.termsChecks.every(Boolean);
+  const accepted = termsOk();
+  const when = accepted && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString("ar-EG", { year: "numeric", month: "long", day: "numeric" })) : "";
   $content.innerHTML = `<div class="fade-in terms">
-    <div class="onb-hero"><div class="brand"><div class="logo">${ico(I.pulse, 2.4)}</div><div class="brand-name">موصل</div></div>
-      <h1>شروط الاستخدام وإخلاء المسؤولية</h1>
-      <p>${view ? `وافقت على هذه الشروط (الإصدار ${TERMS_VERSION})${terms && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString("ar-EG", { year: "numeric", month: "long", day: "numeric" })) : ""}.` : "يُرجى قراءة الشروط التالية بعناية. لا يمكن استخدام التطبيق دون الموافقة عليها."}</p></div>
+    <div class="onb-hero"><h1>الشروط والأحكام</h1>
+      <p>${accepted ? `وافقت على هذه الشروط (الإصدار ${TERMS_VERSION})${when}.` : "يُرجى قراءة البنود التالية بعناية؛ استخدامك لـ«موصل» يعني موافقتك عليها كاملة."}</p></div>
     <ol class="terms-list">${TERMS.map(([h, t]) => `<li><b>${esc(h)}:</b> ${esc(t)}</li>`).join("")}</ol>
-    ${view ? `<div style="text-align:center;margin-top:12px"><button class="btn btn-ghost" data-act="back">رجوع</button></div>` : `
-    <div class="terms-checks">${TERMS_CHECKS.map((t, i) => `<label class="consent"><input type="checkbox" data-term="${i}" ${state.termsChecks[i] ? "checked" : ""}><span>${esc(t)}</span></label>`).join("")}</div>
-    <p class="small muted" id="terms-hint" style="text-align:center">${all ? "شكرًا لك. اضغط «أوافق وأتابع»." : "يجب تحديد جميع الإقرارات للمتابعة."}</p>
-    <div style="text-align:center"><button class="link-btn" data-act="decline">لا أوافق</button></div>`}
   </div>`;
-  if (view) setCta(null); else setCta("أوافق وأتابع", acceptTerms, !all);
+  if (accepted) setCta(null);
+  else setCta("قرأتها وفهمتها وأنا المسؤول", () => { state.consent = true; go("onboarding"); }, false);
 }
-function acceptTerms() {
-  if (!state.termsChecks.every(Boolean)) return;
-  terms = { v: TERMS_VERSION, at: new Date().toISOString(), checks: TERMS_CHECKS.length };
+function saveTerms() {
+  terms = { v: TERMS_VERSION, at: new Date().toISOString() };
   try { localStorage.setItem(TERMS_KEY, JSON.stringify(terms)); } catch (e) { /* ignore */ }
-  state.consent = true;
-  go(saved || profileValid(state.profile) ? "home" : "onboarding");
 }
 
 function renderOnboarding() {
@@ -656,18 +644,19 @@ function renderOnboarding() {
     </div></div>
     <div class="field"><span class="flabel" id="lc">الأمراض المزمنة <span class="muted small">(اختياري — تزيد دقة الترشيح)</span></span>
       <div class="chips" role="group" aria-labelledby="lc">${CHRONIC_OPTIONS.map(c => `<button class="chip" data-chronic="${esc(c)}" aria-pressed="${p.chronic.includes(c)}">${esc(c)}</button>`).join("")}</div></div>
-    ${state.editingProfile || termsOk() ? "" : `<label class="consent"><input type="checkbox" id="consent" ${state.consent ? "checked" : ""}>
-      <span>أُقرّ بأن «موصل» <b>أداة توجيه أولية وليس تشخيصًا طبيًا</b>، ولا يغني عن زيارة الطبيب، وفي الطوارئ سأتصل بالإسعاف ${EMERGENCY_NUMBER}.</span></label>`}
+    ${state.editingProfile && termsOk() ? "" : `<label class="consent"><input type="checkbox" id="consent" ${state.consent ? "checked" : ""}>
+      <span>${esc(TERMS_ACK).replace("{link}", `<button type="button" class="link-btn terms-link" data-act="terms">الشروط والأحكام</button>`)}</span></label>`}
     ${state.editingProfile ? `<div style="text-align:center;margin-top:8px"><button class="link-btn" data-act="cancel-edit">رجوع دون حفظ</button></div>` : ""}
   </div>`;
   updateOnboardCta();
 }
 function updateOnboardCta() {
-  const ok = profileValid(state.profile) && (state.editingProfile || state.consent);
+  const ok = profileValid(state.profile) && (termsOk() || state.consent);
   setCta(state.editingProfile ? "حفظ التعديلات" : "ابدأ الآن", submitProfile, !ok);
 }
 function submitProfile() {
-  if (!profileValid(state.profile)) return;
+  if (!profileValid(state.profile) || !(termsOk() || state.consent)) return;
+  if (!termsOk()) saveTerms();
   try { localStorage.setItem(PROFILE_KEY, JSON.stringify(state.profile)); } catch (e) { /* ignore */ }
   const wasEditing = state.editingProfile;
   state.editingProfile = false;
@@ -1144,7 +1133,7 @@ async function shareReport() {
 function render() {
   renderTopbar();
   const s = state.screen;
-  if (s !== "terms" && !termsOk()) { state.screen = "terms"; return render(); }
+  if (s !== "terms" && s !== "onboarding" && !termsOk()) { state.screen = "onboarding"; return render(); }
   if (s === "terms") renderTerms();
   else if (s === "onboarding") renderOnboarding();
   else if (s === "home") renderHome();
@@ -1182,9 +1171,7 @@ document.addEventListener("click", e => {
     case "home": return restart();
     case "about": state.prev = state.screen; return go("about");
     case "stages": state.prev = state.screen; return go("stages");
-    case "terms": state.prev = state.screen; state.termsView = true; return go("terms");
-    case "decline":
-      return toast("لا يمكن استخدام «موصل» دون الموافقة على الشروط. في الطوارئ اتصل بالإسعاف 123.");
+    case "terms": e.preventDefault(); state.prev = state.screen; return go("terms");
     case "edit": state.editingProfile = true; return go("onboarding");
     case "cancel-edit":
       try { state.profile = JSON.parse(localStorage.getItem(PROFILE_KEY)) || state.profile; } catch (err) { /* ignore */ }
@@ -1226,10 +1213,6 @@ document.addEventListener("input", e => {
     updateOnboardCta();
   }
   if (t.id === "consent") { state.consent = t.checked; updateOnboardCta(); }
-  if (t.dataset && t.dataset.term !== undefined) { state.termsChecks[+t.dataset.term] = t.checked;
-    const all = state.termsChecks.every(Boolean), h = document.getElementById("terms-hint");
-    if (h) h.textContent = all ? "شكرًا لك. اضغط «أوافق وأتابع»." : "يجب تحديد جميع الإقرارات للمتابعة.";
-    setCta("أوافق وأتابع", acceptTerms, !all); }
   if (t.dataset && t.dataset.stage) { state.stages[t.dataset.stage] = t.value; renderStageOut(); }
   if (t.dataset && "stageKnown" in t.dataset) { state.stages.known = t.checked; renderStageOut(); }
 });
