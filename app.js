@@ -310,8 +310,83 @@ function bodyFace(sex, back) {
       </svg></div>`;
 }
 const facingBack = () => Math.abs(((state.turn % 360) + 360) % 360 - 180) < 90;
+/* =========================================================
+   الجسم ثلاثي الأبعاد (body3d.js + assets/body3d.bin من MakeHuman، رخصة CC0)
+   يلف 360° بالسحب، ويتشكل حسب الجنس ومؤشر كتلة الجسم والعمر.
+   إن لم يدعم الجهاز WebGL يعود التطبيق تلقائيًا إلى الصور الأمامية والخلفية.
+   ========================================================= */
+const B3D = { ok: false, api: null, canvas: null, sig: "", armed: null };
+const webglOK = (() => { try { const c = document.createElement("canvas"); return !!(window.WebGLRenderingContext && c.getContext("webgl")); } catch (e) { return false; } })();
+if (webglOK && window.MoselBody3D) {
+  fetch(asset("assets/body3d.bin")).then(r => { if (!r.ok) throw new Error(r.status); return r.arrayBuffer(); })
+    .then(buf => { B3D.buf = buf; B3D.ok = true; if (state.screen === "home") render(); }).catch(() => { B3D.ok = false; });
+}
+function bodyShape() {
+  const p = state.profile, b = bmiOf(p), bmi = b ? parseFloat(b.text) : 22, age = parseFloat(p.age) || 30;
+  // فروق الوزن في MakeHuman خفيفة (بضعة سنتيمترات)، فنضخّمها بما يتناسب مع مؤشر كتلة الجسم
+  return { thin: bmi < 21 ? Math.min(1.5, (21 - bmi) / 3) : 0, heavy: bmi > 24 ? Math.min(2.6, (bmi - 24) / 5.5) : 0, old: Math.max(0, Math.min(.8, (age - 45) / 40)) };
+}
+const FACES3D = [["0", "أمام"], ["90", "جانب"], ["180", "خلف"]];
+function body3dStage(sex) {
+  const list = REGIONS.filter(r => (!r.sex || r.sex === sex));
+  return `<div class="body-wrap b3d" data-sex="${sex}">
+      <div id="b3d-slot" class="b3d-slot"></div>
+      <button class="map-tip" id="map-tip" hidden></button>
+      <div class="b3d-zoom"><button class="icon-btn sm" data-act="b3d-zin" aria-label="تكبير">+</button><button class="icon-btn sm" data-act="b3d-zout" aria-label="تصغير">−</button></div>
+    </div>
+    <div class="turn-ctl b3d-ctl">
+      <button class="icon-btn sm" data-act="b3d-l" aria-label="لفّ الجسم يسارًا">${ico(I.restart)}</button>
+      <div class="face-seg" role="group" aria-label="اتجاه العرض">${FACES3D.map(([d, n]) => `<button data-face="${d}">${n}</button>`).join("")}</div>
+      <button class="icon-btn sm flip-x" data-act="b3d-r" aria-label="لفّ الجسم يمينًا">${ico(I.restart)}</button>
+    </div>
+    <p class="b3d-hint">اسحب الجسم ليلف في كل الاتجاهات، ثم المس موضع الألم. للتكبير استخدم + و−.</p>
+    ${offRegions(REGIONS.map(r => r.key))}
+    <details class="reg-pick"><summary>${ico(I.list)} أو اختر المنطقة من قائمة</summary>
+      <div class="region-list">${list.filter(r => !r.off).map(r => `<button class="region-btn" data-region="${r.key}"><i style="background:${r.color}"></i>${esc(r.name)}</button>`).join("")}</div></details>`;
+}
+function mount3d() {
+  const slot = document.getElementById("b3d-slot");
+  if (!slot || !B3D.ok) return;
+  if (!B3D.canvas) {
+    B3D.canvas = document.createElement("canvas");
+    B3D.canvas.className = "b3d-canvas"; B3D.canvas.tabIndex = 0;
+    B3D.canvas.setAttribute("role", "img");
+    B3D.canvas.setAttribute("aria-label", "مجسّم ثلاثي الأبعاد للجسم. استخدم السهمين يمينًا ويسارًا للّف، أو اختر المنطقة من القائمة أسفله.");
+  }
+  slot.appendChild(B3D.canvas);
+  if (!B3D.api) {
+    try {
+      B3D.api = MoselBody3D.create(B3D.canvas, B3D.buf, {
+        alias: s => s === "male" ? { breast: "chest" } : {},
+        onHover: (k, x, y) => k ? showTip3d(k, x, y) : hideTip(),
+        onPick: pick3d, onDragStart: hideTip
+      });
+    } catch (e) { B3D.ok = false; return render(); }
+  }
+  const sex = state.profile.gender === "female" ? "female" : "male", shape = bodyShape(), sig = sex + JSON.stringify(shape);
+  if (B3D.sig !== sig) { B3D.api.setBody(sex, shape); B3D.sig = sig; }
+  B3D.api.redraw();
+}
+function showTip3d(key, cx, cy) {
+  const tip = document.getElementById("map-tip"), wrap = tip && tip.parentElement, r = REGIONS.find(x => x.key === key);
+  if (!tip || !r) return hideTip();
+  const b = wrap.getBoundingClientRect(), x = (cx - b.left) / b.width * 100, y = (cy - b.top) / b.height * 100;
+  tip.dataset.region = key;
+  const near = regionOrgans(key).slice(0, 3);
+  tip.innerHTML = `<b>${esc(r.name)} <span aria-hidden="true">‹</span></b>${near.length ? `<small>${near.map(esc).join(" · ")}</small>` : ""}`;
+  tip.style.left = Math.min(78, Math.max(22, x)) + "%"; tip.style.top = y + "%";
+  tip.classList.toggle("below", y < 16);
+  tip.hidden = false;
+}
+// الفأرة: نقرة واحدة تفتح المنطقة. اللمس: أول لمسة تُظهر الاسم وتُبرز المنطقة، والثانية (أو لمس الاسم) تفتحها
+function pick3d(key, x, y, type) {
+  if (!key) { B3D.armed = null; B3D.api.setHot(null); return hideTip(); }
+  if (type === "mouse" || B3D.armed === key) { B3D.armed = null; return pickRegion(key); }
+  B3D.armed = key; B3D.api.setHot(key); showTip3d(key, x, y);
+}
 function bodyStage() {
   const sex = state.profile.gender === "female" ? "female" : "male";
+  if (B3D.ok) return body3dStage(sex);
   if (photoOK[sex]) {
     const canTurn = !!photoOK[sex + "Back"];
     const frontKeys = REGIONS.filter(r => !r.off && PHOTO_GEO[sex].shapes[r.key] && (!r.sex || r.sex === sex)).map(r => r.key);
@@ -346,6 +421,15 @@ document.addEventListener("pointermove", e => {
   if (!dragged && Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(e.clientY - drag.y)) { dragged = true; hideTip(); }
   if (dragged) { e.preventDefault(); setTurn(drag.base - dx * 0.9, false); }
 }, { passive: false });
+// إلغاء اللمس (تمرير الصفحة أو خروج الإصبع) أو الإفلات خارج النافذة: نُعيد الجسم دائمًا إلى الأمام أو الخلف حتى لا يبقى مائلًا
+const endTurn = e => {
+  if (!drag || e.pointerId !== drag.id) return;
+  if (e.type !== "pointerup" && dragged) { state.turn = Math.round(state.turn / 180) * 180; setTurn(state.turn, true); setTimeout(() => { if (state.screen === "home") render(); }, 560); drag = null; return; }
+  if (e.type !== "pointerup") { setTurn(state.turn, true); drag = null; return; }
+  return true;
+};
+document.addEventListener("pointercancel", endTurn);
+window.addEventListener("blur", () => { if (drag) { setTurn(state.turn, true); drag = null; } });
 document.addEventListener("pointerup", e => {
   if (!drag || e.pointerId !== drag.id) return;
   if (dragged) {
@@ -379,6 +463,7 @@ function hideTip() {
   const tip = document.getElementById("map-tip");
   if (tip) tip.hidden = true;
   armed = null;
+  if (B3D.api && !B3D.armed) B3D.api.setHot(null);
   document.querySelectorAll(".body-wrap .region.hot").forEach(g => g.classList.remove("hot"));
 }
 document.addEventListener("pointerdown", e => { lastPointer = e.pointerType || "mouse"; }, true);
@@ -743,7 +828,28 @@ function commitAnswers() {
 /* =========================================================
    التنقل
    ========================================================= */
-function go(screen) { state.screen = screen; render(); }
+/* سجل التنقل: كل انتقال يُسجَّل في تاريخ المتصفح، فزر الرجوع في الهاتف أو المتصفح (وBackspace وEsc) يرجع شاشة داخل البرنامج */
+let navDepth = 0, fromPop = false;
+function go(screen) {
+  const changed = state.screen !== screen;
+  state.screen = screen;
+  if (changed && !fromPop && screen !== "onboarding" && screen !== "terms") {
+    try { window.history.pushState({ mosel: ++navDepth, s: screen }, ""); } catch (e) { /* بيئة بلا History API */ }
+  }
+  render();
+}
+try { window.history.replaceState({ mosel: 0, s: state.screen }, ""); } catch (e) { /* */ }
+window.addEventListener("popstate", ev => {
+  navDepth = (ev.state && ev.state.mosel) || 0;
+  if (state.screen === "home" || state.screen === "onboarding") return;
+  fromPop = true; try { hideTip(); back(); } finally { fromPop = false; }
+});
+// خطوة رجوع واحدة: نستخدم تاريخ المتصفح إن وُجد، وإلا نرجع مباشرة
+function goBack() {
+  if (state.screen === "home" || state.screen === "onboarding") return;
+  if (navDepth > 0 && window.history.state && window.history.state.mosel > 0) { navDepth--; window.history.back(); }
+  else back();
+}
 function back() {
   const s = state.screen;
   if (s === "terms") go(state.prev || "about");
@@ -1148,6 +1254,7 @@ function renderHome() {
   </div>`;
   setCta(null);
   renderSearch();
+  mount3d();
 }
 
 function renderSearch() {
@@ -1871,7 +1978,12 @@ function render() {
   else if (s === "condinfo") renderCondInfo();
   else if (s === "records") renderRecords();
   else if (s === "tips") renderTips();
-  if (render.last !== s) { window.scrollTo(0, 0); render.last = s; }
+  if (render.last !== s) {
+    window.scrollTo(0, 0);
+    // لقارئ الشاشة ومستخدمي لوحة المفاتيح: ننقل التركيز إلى عنوان الشاشة الجديدة
+    if (render.last !== undefined) { const h = $content.querySelector("h1, h2"); if (h) { h.setAttribute("tabindex", "-1"); h.focus({ preventScroll: true }); } else $content.focus({ preventScroll: true }); }
+    render.last = s;
+  }
 }
 
 document.addEventListener("click", e => {
@@ -1887,6 +1999,7 @@ document.addEventListener("click", e => {
     armed = null;
     return pickRegion(ds.region);
   }
+  if (ds.face != null && B3D.api) { hideTip(); return B3D.api.face(+ds.face * Math.PI / 180); }
   if (ds.zone) return pickZone(ds.zone, ds.preset);
   if (ds.sym) { state.checked.has(ds.sym) ? state.checked.delete(ds.sym) : state.checked.add(ds.sym); return render(); }
   if (ds.ans) return answer(ds.q, ds.ans);
@@ -1914,11 +2027,15 @@ document.addEventListener("click", e => {
     return render();
   }
   switch (ds.act) {
-    case "back": return back();
+    case "back": return goBack();
     case "home": return restart();
     case "about": state.prev = state.screen; return go("about");
     case "stages": state.prev = state.screen; return go("stages");
     case "terms": e.preventDefault(); state.prev = state.screen; return go("terms");
+    case "b3d-l": hideTip(); return B3D.api && B3D.api.turn(-Math.PI / 4);
+    case "b3d-r": hideTip(); return B3D.api && B3D.api.turn(Math.PI / 4);
+    case "b3d-zin": hideTip(); return B3D.api && B3D.api.zoom(1.3);
+    case "b3d-zout": hideTip(); return B3D.api && B3D.api.zoom(1 / 1.3);
     case "turn-l": return turnBy(-180);
     case "turn-r": return turnBy(180);
     case "prefs": state.showPrefs = !state.showPrefs; return renderTopbar();
@@ -1954,7 +2071,25 @@ document.addEventListener("click", e => {
   }
 });
 
+const typing = el => el && (el.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(el.tagName));
 document.addEventListener("keydown", e => {
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+  // Backspace خارج حقول الكتابة = رجوع، وEsc يغلق ما هو مفتوح ثم يرجع، و/ ينقل إلى البحث
+  if (e.key === "Backspace" && !typing(e.target)) { e.preventDefault(); return goBack(); }
+  if (e.key === "Escape") {
+    const tip = document.getElementById("map-tip");
+    if (tip && !tip.hidden) { B3D.armed = null; return hideTip(); }
+    if (state.showPrefs) { state.showPrefs = false; return renderTopbar(); }
+    const open = document.querySelector("details[open]:focus-within");
+    if (open) { open.open = false; open.querySelector("summary")?.focus(); return; }
+    if (typing(e.target)) return e.target.blur();
+    return goBack();
+  }
+  if (e.key === "/" && !typing(e.target) && state.screen === "home") { const q = document.getElementById("q"); if (q) { e.preventDefault(); q.focus(); } return; }
+  if (e.target === B3D.canvas && B3D.api) {
+    const k = { ArrowLeft: () => B3D.api.turn(-Math.PI / 4), ArrowRight: () => B3D.api.turn(Math.PI / 4), "+": () => B3D.api.zoom(1.3), "=": () => B3D.api.zoom(1.3), "-": () => B3D.api.zoom(1 / 1.3), "0": () => B3D.api.zoom(0) }[e.key];
+    if (k) { e.preventDefault(); hideTip(); return k(); }
+  }
   const g = e.target.closest && e.target.closest("g.region");
   if (g && (e.key === "Enter" || e.key === " ")) { e.preventDefault(); pickRegion(g.dataset.region); }
 });

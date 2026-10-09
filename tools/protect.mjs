@@ -73,7 +73,7 @@ export async function protect(out, { dataFiles, assetFiles }) {
     var plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:buf.slice(0,12)},key,buf.slice(12));
     var p=JSON.parse(new TextDecoder().decode(plain));
     window.MOSEL_ASSETS={};
-    Object.keys(p.img).forEach(function(f){var t=/\\.png$/.test(f)?"image/png":"image/jpeg";window.MOSEL_ASSETS[f]=URL.createObjectURL(new Blob([b64(p.img[f])],{type:t}));});
+    Object.keys(p.img).forEach(function(f){var t=/\\.png$/.test(f)?"image/png":/\\.bin$/.test(f)?"application/octet-stream":"image/jpeg";window.MOSEL_ASSETS[f]=URL.createObjectURL(new Blob([b64(p.img[f])],{type:t}));});
     var s=document.createElement("script");s.src=URL.createObjectURL(new Blob([p.js],{type:"text/javascript"}));
     s.onload=function(){var x=document.createElement("script");x.src="app.js";document.body.appendChild(x);};
     document.body.appendChild(s);
@@ -88,7 +88,8 @@ export async function protect(out, { dataFiles, assetFiles }) {
     "--identifier-names-generator", "hexadecimal", "--rename-globals", "false", "--self-defending", "false", ...extra], { stdio: "pipe" });
   obf("loader.js", ["--control-flow-flattening", "true", "--dead-code-injection", "true", "--string-array-encoding", "rc4"]);
   obf("app.js");
-  for (const f of ["loader.js", "app.js"]) {
+  obf("body3d.js");
+  for (const f of ["loader.js", "app.js", "body3d.js"]) {
     const s = readFileSync(out + f, "utf8");
     if (!s.startsWith("/*!")) writeFileSync(out + f, "/*! موصل (Mosel) — © 2026 Maro Shahaly. جميع الحقوق محفوظة. يُمنع النسخ أو إعادة النشر دون إذن كتابي. */\n" + s);
   }
@@ -107,7 +108,7 @@ export async function protect(out, { dataFiles, assetFiles }) {
 
   // رؤوس الأمان: السماح بسكربتات وصور blob: الناتجة عن فك التشفير محليًا فقط
   let hdr = readFileSync(out + "_headers", "utf8");
-  hdr = hdr.replace("script-src 'self';", "script-src 'self' blob:;").replace("img-src 'self' data:;", "img-src 'self' data: blob:;");
+  hdr = hdr.replace("script-src 'self';", "script-src 'self' blob:;").replace("img-src 'self' data:;", "img-src 'self' data: blob:;").replace("connect-src 'self'", "connect-src 'self' blob:");
   writeFileSync(out + "_headers", hdr);
   writeFileSync(out + "robots.txt", "User-agent: *\nDisallow: /data/\nDisallow: /assets/\nAllow: /\n");
   return { domains: DOMAINS, packBytes: readFileSync(out + "data/pack.bin").length };

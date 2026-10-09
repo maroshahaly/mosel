@@ -14,8 +14,11 @@ vm.runInContext(readFileSync(file, "utf8"), ctx);
 const dataDir = fileURLToPath(new URL("../data/", import.meta.url));
 const html = readFileSync(fileURLToPath(new URL("../index.html", import.meta.url)), "utf8");
 const listed = [...html.matchAll(/src="data\/(more_[^"]+\.js)"/g)].map(m => m[1]);
+// MOSEL_ONLY=more_05_x.js : فحص ملف إضافي واحد مع الملفات الأساسية (للعمل المتوازي على ملفات منفصلة)
+const ONLY = process.env.MOSEL_ONLY;
 for (const f of readdirSync(dataDir).filter(f => /^more_.*\.js$/.test(f)).sort()) {
-  if (!listed.includes(f)) { console.error(`✘ الملف data/${f} غير مُدرج في index.html`); process.exit(1); }
+  if (ONLY && !/^more_0[1-4]_/.test(f) && f !== ONLY) continue;
+  if (!ONLY && !listed.includes(f)) { console.error(`✘ الملف data/${f} غير مُدرج في index.html`); process.exit(1); }
   vm.runInContext(readFileSync(dataDir + f, "utf8"), ctx);
 }
 const { TRIAGE, ZONES, DATA, REGIONS, RISK_FACTORS } = ctx.window.MOSEL_DATA;
@@ -85,12 +88,13 @@ for (const k of Object.keys(RISK_FACTORS)) if (!ids.has(k)) errors.push(`RISK_FA
   else {
     if (!html.includes('src="data/care.js"')) errors.push("data/care.js غير مُدرج في index.html");
     const box = {}; new Function("window", "globalThis", readFileSync(carePath, "utf8"))(box, box);
-    const CARE = box.MOSEL_CARE || {};
+    let CARE = box.MOSEL_CARE || {};
+    if (ONLY) { CARE = {}; for (const f of readdirSync(dataDir + "care_src").filter(f => f.endsWith(".json"))) Object.assign(CARE, JSON.parse(readFileSync(dataDir + "care_src/" + f, "utf8"))); }
     const ORGS = new Set(["WHO","WHO_EML","NICE","CDC","FDA","EMA","ADA","ACC_AHA","ESC","ESH","GINA","GOLD","KDIGO","IDSA","ACOG","RCOG","AUA","EAU","AAP","APA","AAD","AAO","ACR","EULAR","ESHRE","ACG","AASLD","EASL","ATS","ERS","BTS","ESMO","NCCN","ASCO","ILAE","AAN","AHS","ENDO","ATA","AAOS","ACEP","ESPGHAN","AAO_HNS","ADA_DENTAL","WFSBP","ISSM","WHO_MHGAP","ASH","AAAAI"]);
     const DOSE = /\d+(\.\d+)?\s*(mg|mcg|µg|g\b|ml|iu|units?|ملغ|مجم|ملجم|مل\b|وحدة|ميكروغرام|جرام|غرام)|(مرتين|ثلاث مرات|مرة) (يوميًا|يوميا|في اليوم)|\b(bid|tid|qid|q\d+h)\b/i;
     for (const id of ids) if (!CARE[id]) errors.push(`care: ${id} بلا بيانات علاج`);
     for (const [id, k] of Object.entries(CARE)) {
-      if (!ids.has(id)) errors.push(`care: ${id} لا يطابق أي مرض`);
+      if (!ids.has(id)) { if (!ONLY) errors.push(`care: ${id} لا يطابق أي مرض`); continue; }
       if (!k.refs?.length) errors.push(`care/${id}: بلا مرجع`);
       for (const r of k.refs || []) if (!ORGS.has(r)) errors.push(`care/${id}: مرجع غير معروف ${r}`);
       if (!k.guide?.trim()) warnings.push(`care/${id}: بلا دليل إرشادي محدد`);
