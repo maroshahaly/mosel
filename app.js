@@ -1012,6 +1012,19 @@ function saveTerms() {
   try { localStorage.setItem(TERMS_KEY, JSON.stringify(terms)); } catch (e) { /* ignore */ }
 }
 
+/* رسالة «موصل» وأسباب الثقة به — تظهر في الترحيب والرئيسية وصفحة «كيف يعمل» */
+const MISSION = "«موصل» رفيقك في المتابعة المستمرة لصحتك العامة؛ هدفه الحد من انتشار السمنة، والوقاية من الأمراض المعدية، والتعامل الواعي مع الأمراض المزمنة والمستعصية، للارتقاء بك وبأسرتك إلى حياة أفضل.";
+const totalConds = () => ZONES.reduce((a, z) => a + DATA[z.key].conditions.length, 0);
+const WHY = () => [
+  [I.book, "مرجعية دولية في كل معلومة", "كل حالة مرتبطة برمز ICD-10 الصادر عن منظمة الصحة العالمية، وبأدلة إرشادية دولية مثل NICE وCDC وجمعيات التخصص، مع المطابقة بالأدلة المصرية والخليجية."],
+  [I.list, `${totalConds()} حالة في ${SYSTEMS.length} جهازًا من أجهزة الجسم`, "من الصداع الخفيف والإمساك وشد العضلات، إلى أمراض القلب والسكري والكلى، لكلٍّ منها تعريف وفحوصات وعلاج مقترح ومراجع."],
+  [I.lock, "خصوصيتك أولًا", "لا حساب ولا تسجيل؛ بياناتك تبقى على جهازك ولا تُرسَل إلى أي خادم، وتحذفها متى شئت."],
+  [I.pen, "يفهم كلامك كما تقوله", "صف حالتك بكلماتك أو بصوتك، حتى باللهجة العامية، فيرشدك إلى الاحتمالات الأقرب والتخصص المناسب."],
+  [I.shield, "هادئ ومطمئن", "لا يُفزعك دون سبب؛ يرشدك بهدوء، ولا ينبّهك للطوارئ إلا عند علامة خطر حقيقية."],
+  [I.steth, "يُطوَّر بمنهجية الأجهزة الطبية الرقمية", "وفق معايير ISO 13485 للجودة وIEC 62304 للبرمجيات وISO 14971 لإدارة المخاطر، وملفاتها موثقة ومتاحة للأطباء والجهات المراجِعة."],
+  [I.heart, "متابعة مستمرة لا مرة واحدة", "سجل صحي وبطاقة صحية ونصائح تخصك، وحساب مراحل السكري والضغط والكلى؛ مجانًا، ويعمل حتى دون إنترنت بعد أول فتح."]
+];
+const whyList = cls => `<ul class="why ${cls || ""}">${WHY().map(([ic, t, d]) => `<li><span class="wi">${ico(ic)}</span><span><b>${t}</b><span>${d}</span></span></li>`).join("")}</ul>`;
 function renderOnboarding() {
   const p = state.profile;
   const fld = (f, label, unit, ph) => {
@@ -1023,14 +1036,16 @@ function renderOnboarding() {
   $content.innerHTML = `<div class="fade-in">
     <div class="onb-hero">
       <div class="brand"><div class="logo">${ico(I.pulse, 2.4)}</div><div class="brand-name">موصل</div></div>
-      <h1>${state.editingProfile ? "تعديل بياناتك" : "اعرف دلالة أعراضك والطبيب المناسب لحالتك"}</h1>
-      <p>ثلاث خطوات: حدّد موضع الألم، واختر أعراضك، واحصل على احتمالات مرتبة مع مستوى الاستعجال والتخصص المناسب.</p>
+      <h1>${state.editingProfile ? "تعديل بياناتك" : "صحتك أولًا… كل يوم"}</h1>
+      <p>${state.editingProfile ? "حدّث بياناتك لتبقى النتائج والنصائح دقيقة." : MISSION}</p>
       <div class="trust-row">
         <span>${ico(I.lock)} بياناتك على جهازك فقط</span>
         <span>${ico(I.book)} رموز ICD-10 ومراجع</span>
         <span>${ico(I.clock)} أقل من دقيقتين</span>
       </div>
     </div>
+    ${state.editingProfile ? "" : `<details class="why-box" open><summary>لماذا «موصل»؟ سبعة أسباب تجعلك تثق به</summary>${whyList()}</details>
+    <div class="label">ابدأ ببياناتك الأساسية</div>`}
     <div class="field"><span class="flabel" id="lg">الجنس</span>
       <div class="seg" role="group" aria-labelledby="lg">
         <button data-gender="male" aria-pressed="${p.gender === "male"}">ذكر</button>
@@ -1127,6 +1142,7 @@ function renderHome() {
       <a class="btn btn-danger btn-block" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} اتصل بالإسعاف ${EMERGENCY_NUMBER}</a>
     </details>
 
+    <details class="why-box"><summary>رسالة «موصل» ولماذا تثق به</summary><p class="mission">${MISSION}</p>${whyList()}</details>
     <div class="disclaimer">${ico(I.shield)}<span>«موصل» أداة توجيه أولية وليس تشخيصًا طبيًا؛ فالنتائج مبنية على الأعراض التي تختارها وعلى مراجع طبية عامة، والقرار النهائي للطبيب. <button class="link-btn" style="padding:0" data-act="about">كيف يعمل؟</button></span></div>
     <div class="foot">الإصدار ${version} · جميع الحقوق محفوظة © 2026 موصل</div>
   </div>`;
@@ -1672,6 +1688,9 @@ function renderAbout() {
   const total = ZONES.reduce((a, z) => a + DATA[z.key].conditions.length, 0);
   const sources = Object.entries(ZONE_SOURCES).flatMap(([k, arr]) => arr.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener noreferrer">${esc(s.name)}</a> <span class="muted small">(${esc(ZONE[k].name)})</span></li>`)).join("");
   $content.innerHTML = `<div class="fade-in about">
+    <h1 class="h1">رسالة «موصل»</h1>
+    <p class="mission">${MISSION}</p>
+    ${whyList()}
     <h1 class="h1">كيف يعمل «موصل»؟</h1>
     <p>يقارن «موصل» الأعراض التي تختارها بمكتبة تضم <b>${total} حالة</b> في <b>${ZONES.length} تخصصًا</b>، وكل حالة مرتبطة برمز <b>ICD-10</b> الدولي الصادر عن منظمة الصحة العالمية.</p>
     <h2>خطوات التقييم</h2>
