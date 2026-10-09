@@ -1067,8 +1067,12 @@
     { key: "neck", name: "الرقبة والحلق", color: "#7A8A3C", specialties: ["ent", "endocrine", "bones"] },
     { key: "shoulder", name: "الكتفان", color: "#5E9A63", specialties: ["bones", "heart"] },
     { key: "chest", name: "الصدر", color: "#C2414B", specialties: ["heart", "respiratory", "internal", "gynecology"] },
-    { key: "abdomen", name: "أعلى البطن", color: "#D08A2E", specialties: ["internal", "endocrine"] },
-    { key: "lowabd", name: "أسفل البطن", color: "#C47A3A", specialties: ["internal", "gynecology", "andrology"] },
+    { key: "ruq", name: "أعلى يمين البطن", color: "#D08A2E", specialties: ["internal", "endocrine"] },
+    { key: "epi", name: "فم المعدة (أعلى منتصف البطن)", color: "#D49433", specialties: ["internal", "heart"] },
+    { key: "luq", name: "أعلى يسار البطن", color: "#C98A35", specialties: ["internal", "hematology"] },
+    { key: "rlq", name: "أسفل يمين البطن", color: "#C47A3A", specialties: ["internal", "gynecology"] },
+    { key: "hypo", name: "أسفل منتصف البطن", color: "#BE7440", specialties: ["internal", "gynecology", "andrology"] },
+    { key: "llq", name: "أسفل يسار البطن", color: "#B86E45", specialties: ["internal", "gynecology"] },
     { key: "pelvis", name: "الحوض والأعضاء التناسلية", color: "#9C5A8B", specialties: ["andrology", "gynecology", "sexual", "internal"] },
     { key: "arm", name: "الذراعان والمرفقان", color: "#5E9A63", specialties: ["bones", "neuro", "skin"] },
     { key: "hand", name: "اليدان والمعصمان", color: "#4E8A5A", specialties: ["bones", "neuro", "skin"] },
@@ -1076,10 +1080,59 @@
     { key: "knee", name: "الركبتان", color: "#476E9E", specialties: ["bones"] },
     { key: "leg", name: "الساقان", color: "#3F6694", specialties: ["bones", "heart", "neuro", "skin"] },
     { key: "foot", name: "القدمان والكاحلان", color: "#3A5E88", specialties: ["bones", "endocrine", "neuro", "skin"] },
+    { key: "occiput", name: "مؤخرة الرأس", color: "#3E8E9A", specialties: ["neuro", "bones"], view: "back" },
+    { key: "nape", name: "الرقبة من الخلف", color: "#7A8A3C", specialties: ["bones", "neuro"], view: "back" },
+    { key: "scapula", name: "لوحا الكتفين", color: "#5E9A63", specialties: ["bones", "heart"], view: "back" },
+    { key: "upperback", name: "أعلى الظهر", color: "#8A6A4A", specialties: ["bones", "respiratory", "heart"], view: "back" },
+    { key: "flank", name: "الخاصرتان (موضع الكليتين)", color: "#C47A3A", specialties: ["internal", "bones"], view: "back" },
+    { key: "lowback", name: "أسفل الظهر", color: "#8A6A4A", specialties: ["bones", "neuro", "internal"], view: "back" },
+    { key: "buttocks", name: "الأرداف والعَجُز", color: "#9C5A8B", specialties: ["bones", "internal", "neuro"], view: "back" },
+    { key: "hamstring", name: "خلف الفخذين", color: "#4F76A8", specialties: ["bones", "neuro"], view: "back" },
+    { key: "calf", name: "بطّتا الساقين", color: "#3F6694", specialties: ["bones", "heart", "neuro"], view: "back" },
+    { key: "heel", name: "الكعبان ووتر أكيلس", color: "#3A5E88", specialties: ["bones", "endocrine"], view: "back" },
     { key: "back", name: "الظهر والعمود الفقري", color: "#8A6A4A", specialties: ["bones", "neuro", "internal"], off: true },
     { key: "skin", name: "الجلد والشعر والأظافر", color: "#B07A5A", specialties: ["skin", "infectious", "sexual"], off: true },
     { key: "whole", name: "الجسم كله (حمّى، تعب، وزن)", color: "#6A6F8A", specialties: ["internal", "infectious", "endocrine", "hematology", "mental", "geriatric"], off: true }
   ];
+
+
+  /* الأعضاء الأقرب لكل منطقة (sex: يظهر لجنس واحد فقط). يمين المريض = يسار الصورة */
+  const REGION_ORGANS = {
+    head: ["الدماغ", "الجمجمة وفروة الرأس", "الجيوب الأنفية الجبهية"],
+    eyes: ["مقلة العين (القرنية والعدسة والشبكية)", "الجفون", "العصب البصري"],
+    ears: ["الأذن الخارجية والوسطى والداخلية", "طبلة الأذن", "عصب السمع والتوازن"],
+    nose: ["تجويف الأنف", "الجيوب الأنفية"],
+    mouth: ["الأسنان واللثة", "اللسان", "اللوزتان", "الغدد اللعابية", "مفصل الفك"],
+    neck: ["البلعوم والحنجرة", "الغدة الدرقية", "الغدد الليمفاوية", "فقرات الرقبة", "الشريانان السباتيان"],
+    shoulder: ["مفصل الكتف", "أوتار الكفة المدوّرة", "عظم الترقوة"],
+    chest: ["القلب", "الرئتان", "المريء", "الأضلاع وعضلات الصدر", { n: "الثديان", sex: "female" }],
+    ruq: ["الكبد", "المرارة", "الكلية اليمنى", "الاثنا عشر", "انحناء القولون الأيمن"],
+    epi: ["المعدة", "البنكرياس", "الاثنا عشر", "الشريان الأورطي", "أسفل القلب"],
+    luq: ["الطحال", "المعدة", "الكلية اليسرى", "ذيل البنكرياس", "انحناء القولون الأيسر"],
+    rlq: ["الزائدة الدودية", "بداية القولون (الأعور)", "نهاية الأمعاء الدقيقة", "الحالب الأيمن", { n: "المبيض الأيمن وقناة فالوب", sex: "female" }, { n: "الحبل المنوي الأيمن", sex: "male" }],
+    hypo: ["المثانة", "الأمعاء الدقيقة", { n: "الرحم", sex: "female" }, { n: "البروستاتا (خلف العانة)", sex: "male" }],
+    llq: ["القولون السيني", "القولون النازل", "الحالب الأيسر", { n: "المبيض الأيسر وقناة فالوب", sex: "female" }, { n: "الحبل المنوي الأيسر", sex: "male" }],
+    pelvis: ["المثانة والإحليل", "المستقيم والشرج", "عظم العانة ومفصلا الورك", { n: "القضيب والخصيتان", sex: "male" }, { n: "البروستاتا", sex: "male" }, { n: "الرحم والمبيضان", sex: "female" }, { n: "المهبل والفرج", sex: "female" }],
+    arm: ["عظام العضد والساعد", "مفصل المرفق", "العضلات والأوتار", "العصبان الزندي والكعبري"],
+    hand: ["مفصل الرسغ", "عظام اليد والأصابع", "العصب المتوسط (النفق الرسغي)", "أوتار الأصابع"],
+    thigh: ["مفصل الورك", "عظم الفخذ", "عضلات الفخذ", "الوريد الفخذي", "القناة الأربية (موضع الفتق)"],
+    knee: ["مفصل الركبة", "الغضروف الهلالي", "الأربطة الصليبية والجانبية", "الرضفة (صابونة الركبة)"],
+    leg: ["عظما الساق (القصبة والشظية)", "عضلة بطّة الساق", "الأوردة العميقة والسطحية"],
+    foot: ["مفصل الكاحل", "عظام القدم والأصابع", "وتر أكيلس", "اللفافة الأخمصية (أسفل الكعب)"],
+    occiput: ["مؤخرة الدماغ والمخيخ", "عضلات قاعدة الجمجمة", "الأعصاب القذالية"],
+    nape: ["فقرات الرقبة والأقراص", "عضلات الرقبة الخلفية", "الحبل الشوكي العنقي"],
+    scapula: ["عظما اللوح", "عضلات الكتف الخلفية", "قمتا الرئتين"],
+    upperback: ["الفقرات الصدرية", "الأضلاع من الخلف", "الرئتان من الخلف", "المريء والشريان الأورطي"],
+    flank: ["الكليتان", "الحالبان (بدايتهما)", "الغدتان الكظريتان", "عضلات الخاصرة"],
+    lowback: ["الفقرات القطنية والأقراص", "جذور العصب الوركي", "عضلات أسفل الظهر"],
+    buttocks: ["عظم العَجُز والعصعص", "المفصل العجزي الحرقفي", "العصب الوركي", "الشرج والمستقيم"],
+    hamstring: ["عضلات خلف الفخذ", "العصب الوركي", "الوريد العميق"],
+    calf: ["عضلة بطّة الساق", "الأوردة العميقة (موضع الجلطة)", "العصب الظنبوبي"],
+    heel: ["عظم الكعب", "وتر أكيلس", "اللفافة الأخمصية"],
+    back: ["العمود الفقري والأقراص", "الحبل الشوكي والأعصاب", "عضلات الظهر", "الكليتان (في الخاصرتين)"],
+    skin: ["الجلد", "الشعر وفروة الرأس", "الأظافر", "الغدد العرقية والدهنية"],
+    whole: ["الدم ونخاع العظم", "الجهاز المناعي والغدد الليمفاوية", "الغدد الصماء", "التمثيل الغذائي"]
+  };
 
   /* عوامل خطورة معروفة ترفع النسبة (ولا تخفضها أبدًا) عند وجود تطابق أعراض أصلًا */
   const RISK_FACTORS = {
@@ -1134,7 +1187,7 @@
     "andrology.balanitis":   p => [p.has("سكر") && "السكري"]
   };
 
-  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.6.0", updatedAt: "2026-10" };
+  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, REGION_ORGANS, RISK_FACTORS, version: "3.7.0", updatedAt: "2026-10" };
 
   /* إضافة أمراض وأعراض من ملفات data/more_*.js
      MOSEL_EXTEND("zoneKey", { zone?, regions?, symptoms?, conditions?, risk? }) */
