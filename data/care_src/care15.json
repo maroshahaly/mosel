@@ -1,0 +1,600 @@
+{
+"pediatrics.kawasaki": {
+ "tests": ["صورة دم كاملة وسرعة الترسيب وبروتين سي التفاعلي (CBC, ESR, CRP)", "الألبومين وإنزيمات الكبد وتحليل البول (Albumin, LFTs, Urinalysis)"],
+ "imaging": ["موجات فوق صوتية على القلب (Echocardiography) عند التشخيص ثم بعد أسبوعين وستة أسابيع"],
+ "meds": [
+  {"cls": "الغلوبولين المناعي الوريدي", "ex": "intravenous immunoglobulin (IVIG)", "note": "في المستشفى خلال الأيام العشرة الأولى"},
+  {"cls": "مضادات الصفائح", "ex": "acetylsalicylic acid", "note": "بإشراف طبي فقط؛ لا يُعطى الأسبرين للأطفال دون طبيب"},
+  {"cls": "الكورتيكوستيرويدات للحالات عالية الخطورة أو المقاومة", "ex": "prednisolone, methylprednisolone"}
+ ],
+ "procedures": ["متابعة لدى طبيب قلب الأطفال بحسب حالة الشرايين التاجية"],
+ "selfcare": ["الالتزام بمواعيد تصوير القلب", "تأجيل اللقاحات الحية بحسب توجيه الطبيب بعد الغلوبولين المناعي"],
+ "refs": ["ACC_AHA", "AAP"],
+ "guide": "AHA Scientific Statement: Diagnosis, Treatment, and Long-Term Management of Kawasaki Disease (2017)"
+},
+"pediatrics.fifth": {
+ "tests": ["أجسام مضادة للفيروس الصغير B19 (Parvovirus B19 IgM/IgG) للحامل المخالطة أو ضعيفي المناعة", "صورة دم كاملة وعدد الخلايا الشبكية (CBC, Reticulocytes) لمرضى الأنيميا الوراثية"],
+ "imaging": [],
+ "meds": [{"cls": "خافضات الحرارة والمسكنات", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["إبلاغ الحوامل المخالطات لمراجعة طبيب النساء"],
+ "selfcare": ["السوائل والراحة", "غسل اليدين جيدًا"],
+ "refs": ["NICE", "CDC"],
+ "guide": "NICE CKS: Parvovirus B19 infection (2022)"
+},
+"pediatrics.otitis": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "المسكنات وخافضات الحرارة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "المضادات الحيوية عند الحاجة (فورية أو مؤجلة)", "ex": "amoxicillin; clarithromycin أو azithromycin عند حساسية البنسلين", "note": "بحسب العمر وشدة الأعراض وتقدير الطبيب"}
+ ],
+ "procedures": ["فحص طبلة الأذن بالمنظار", "إحالة لطبيب الأنف والأذن عند التكرار أو بقاء السائل مع ضعف السمع (أنابيب التهوية)"],
+ "selfcare": ["تجنّب التدخين حول الطفل", "الرضاعة الطبيعية وعدم إرضاع الطفل مستلقيًا بالزجاجة", "استكمال اللقاحات"],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE NG91 Otitis media (acute): antimicrobial prescribing (2018); AAP Clinical Practice Guideline: Acute Otitis Media (2013)"
+},
+"pediatrics.reflux": {
+ "tests": [],
+ "imaging": ["أشعة بالصبغة على الجزء العلوي من الجهاز الهضمي (Upper GI contrast) فقط عند القيء الأخضر أو الشك في انسداد"],
+ "meds": [
+  {"cls": "مكثفات الحليب أو الألجينات لفترة تجريبية", "ex": "alginate preparations", "note": "فقط إذا استمر الضيق رغم تعديل الرضاعة"},
+  {"cls": "مثبطات مضخة البروتون", "ex": "omeprazole", "note": "لا تُستعمل للترجيع البسيط؛ فقط عند وجود مضاعفات وبقرار الطبيب"}
+ ],
+ "procedures": ["مراجعة طريقة الرضاعة وكمياتها", "متابعة الوزن على منحنى النمو"],
+ "selfcare": ["رضعات أصغر وأكثر تكرارًا", "التجشئة أثناء الرضعة", "النوم على الظهر دائمًا"],
+ "refs": ["NICE", "ESPGHAN"],
+ "guide": "NICE NG1 Gastro-oesophageal reflux disease in children and young people (2015, updated 2019); NASPGHAN/ESPGHAN Pediatric GER guidelines (2018)"
+},
+"pediatrics.cmpa": {
+ "tests": ["اختبار الجلد بالوخز أو الأجسام المضادة النوعية IgE (Skin prick test, specific IgE) للتفاعل الفوري"],
+ "imaging": [],
+ "meds": [
+  {"cls": "تركيبات حليب عالية التحلّل", "ex": "extensively hydrolysed formula"},
+  {"cls": "تركيبات الأحماض الأمينية للحالات الشديدة", "ex": "amino acid-based formula"},
+  {"cls": "حاقن الأدرينالين الذاتي عند التفاعل التحسسي الشديد", "ex": "adrenaline (epinephrine) auto-injector"}
+ ],
+ "procedures": ["إيقاف بروتين حليب البقر 2–4 أسابيع ثم إعادة تجربته بإشراف طبي", "متابعة مع أخصائي تغذية الأطفال", "إعادة إدخال تدريجية (سلّم الحليب) بقرار الطبيب"],
+ "selfcare": ["استمرار الرضاعة الطبيعية مع حمية الأم بإشراف", "مكملات الكالسيوم وفيتامين د للأم المرضعة الممتنعة عن الألبان", "قراءة ملصقات الأطعمة"],
+ "refs": ["ESPGHAN", "NICE"],
+ "guide": "ESPGHAN Position Paper: Diagnosis and Management of Cow's Milk Protein Allergy in Infants (2024); NICE CG116 Food allergy in under 19s (2011)"
+},
+"pediatrics.pneumonia": {
+ "tests": ["قياس تشبّع الأكسجين (Pulse oximetry)", "صورة دم كاملة وبروتين سي التفاعلي (CBC, CRP) في الحالات المتوسطة والشديدة"],
+ "imaging": ["أشعة سينية على الصدر (Chest X-ray) عند الشك في المضاعفات أو عدم التحسن"],
+ "meds": [
+  {"cls": "المضادات الحيوية الفموية", "ex": "amoxicillin; macrolides عند الحساسية أو الشك في المفطورة", "note": "بحسب تقدير الطبيب"},
+  {"cls": "خافضات الحرارة", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": ["دخول المستشفى للأكسجين أو السوائل الوريدية في الحالات الشديدة"],
+ "selfcare": ["سوائل كافية وراحة", "مراقبة سرعة التنفس واللون والنشاط", "استكمال لقاحات المكورات الرئوية والمستدمية"],
+ "refs": ["BTS", "NICE", "WHO"],
+ "guide": "BTS Guidelines for the management of community acquired pneumonia in children (2011); NICE NG138 Pneumonia (community-acquired): antimicrobial prescribing (2019)"
+},
+"pediatrics.intussusception": {
+ "tests": ["صورة دم كاملة وأملاح الدم (CBC, Electrolytes)"],
+ "imaging": ["موجات فوق صوتية على البطن (Abdominal ultrasound) — فحص التشخيص الأول"],
+ "meds": [{"cls": "السوائل الوريدية والمسكنات في المستشفى", "ex": "intravenous fluids"}],
+ "procedures": ["الإرجاع بحقنة شرجية بالهواء أو السائل تحت التصوير", "جراحة عند فشل الإرجاع أو الثقب أو الصدمة"],
+ "selfcare": ["عدم إعطاء طعام أو مسهلات قبل التقييم"],
+ "refs": ["WHO", "ACR"],
+ "guide": "WHO Pocket Book of Hospital Care for Children (2013)"
+},
+"pediatrics.constipation": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "الملينات الأسموزية", "ex": "macrogol (polyethylene glycol)", "note": "خيار أول؛ قد يلزم لعدة أشهر مع إيقاف تدريجي"},
+  {"cls": "الملينات المنشطة إضافة عند الحاجة", "ex": "senna, sodium picosulfate"}
+ ],
+ "procedures": ["تفريغ البراز المتراكم ثم علاج صيانة", "برنامج جلوس منتظم على المرحاض مع جدول ومكافآت"],
+ "selfcare": ["سوائل وألياف كافية", "نشاط بدني", "تجنّب العقاب على التلطيخ"],
+ "refs": ["NICE", "ESPGHAN"],
+ "guide": "NICE CG99 Constipation in children and young people (2010, updated 2017); ESPGHAN/NASPGHAN Functional constipation guideline (2014)"
+},
+"pediatrics.uti": {
+ "tests": ["تحليل البول بالشريط والمجهر ومزرعة البول (Urinalysis, Urine culture) من عينة نظيفة"],
+ "imaging": ["موجات فوق صوتية على الكلى والمسالك (Renal ultrasound) للرضّع والحالات غير النمطية أو المتكررة", "مسح الكلى أو تصوير المثانة أثناء التبوّل (DMSA, MCUG) في حالات محددة"],
+ "meds": [
+  {"cls": "المضادات الحيوية الفموية", "ex": "trimethoprim, nitrofurantoin, cefalexin, amoxicillin-clavulanate", "note": "بحسب العمر والمزرعة والإرشادات المحلية"},
+  {"cls": "المضادات الحيوية الوريدية للرضّع الصغار والحالات الشديدة", "ex": "ceftriaxone, cefotaxime"}
+ ],
+ "procedures": ["إحالة لطبيب كلى الأطفال عند التكرار أو تشوهات المسالك"],
+ "selfcare": ["سوائل كافية", "علاج الإمساك", "التبوّل المنتظم وعدم الحبس"],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE NG224 Urinary tract infection in under 16s: diagnosis and management (2022); AAP UTI Clinical Practice Guideline (2011, reaffirmed 2016)"
+},
+"pediatrics.nappyrash": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "كريمات حاجزة", "ex": "zinc oxide, petrolatum"},
+  {"cls": "مضادات الفطريات الموضعية عند العدوى الفطرية", "ex": "clotrimazole, miconazole, nystatin"},
+  {"cls": "كورتيكوستيرويد موضعي خفيف لفترة قصيرة عند الالتهاب الشديد", "ex": "hydrocortisone 1%", "note": "بوصفة الطبيب ولمدة قصيرة"}
+ ],
+ "procedures": [],
+ "selfcare": ["تغيير الحفاض كثيرًا", "تنظيف لطيف بالماء دون مناديل معطرة", "فترات دون حفاض"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Nappy rash (2023)"
+},
+"pediatrics.cradlecap": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الفطريات الموضعية للحالات المستمرة", "ex": "ketoconazole cream, clotrimazole cream"},
+  {"cls": "كورتيكوستيرويد موضعي خفيف عند الالتهاب", "ex": "hydrocortisone", "note": "بوصفة الطبيب ولفترة قصيرة"}
+ ],
+ "procedures": [],
+ "selfcare": ["شامبو أطفال لطيف", "زيت نباتي لتطرية القشور ثم تمشيط لطيف"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Seborrhoeic dermatitis (2024)"
+},
+"pediatrics.eczema": {
+ "tests": ["مسحة جلدية عند الشك في عدوى بكتيرية أو فيروسية (Skin swab)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "المرطبات الطبية", "ex": "emollients (ointments, creams)"},
+  {"cls": "الكورتيكوستيرويدات الموضعية بحسب الشدة", "ex": "hydrocortisone, clobetasone butyrate"},
+  {"cls": "مثبطات الكالسينيورين الموضعية للوجه أو الحالات المتكررة", "ex": "tacrolimus ointment, pimecrolimus"},
+  {"cls": "مضادات الفيروسات عند الإكزيما الهربسية", "ex": "aciclovir", "note": "حالة عاجلة"}
+ ],
+ "procedures": ["إحالة لطبيب الجلد للحالات الشديدة أو غير المستجيبة"],
+ "selfcare": ["ترطيب يومي بكثرة", "بديل للصابون", "ملابس قطنية وأظافر قصيرة"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CG57 Atopic eczema in under 12s: diagnosis and management (2007, updated 2023)"
+},
+"pediatrics.wheeze": {
+ "tests": ["قياس تشبّع الأكسجين أثناء النوبة (Pulse oximetry)"],
+ "imaging": ["أشعة سينية على الصدر فقط عند الشك في سبب آخر كجسم غريب"],
+ "meds": [
+  {"cls": "موسعات الشعب قصيرة المفعول بحجرة الاستنشاق", "ex": "salbutamol"},
+  {"cls": "الوقاية عند تكرر النوبات", "ex": "inhaled corticosteroids (budesonide, fluticasone), montelukast", "note": "بقرار الطبيب"},
+  {"cls": "الكورتيكوستيرويدات الفموية للنوبات الشديدة في المستشفى", "ex": "prednisolone"}
+ ],
+ "procedures": ["تعليم استعمال البخاخ مع الحجرة والقناع", "خطة مكتوبة للنوبات"],
+ "selfcare": ["بيئة خالية من التدخين", "التطعيم ضد الإنفلونزا"],
+ "refs": ["ERS", "BTS", "NICE", "GINA"],
+ "guide": "BTS/NICE/SIGN NG245 Asthma: diagnosis, monitoring and chronic asthma management (2024); ERS Task Force on preschool wheeze (2008)"
+},
+"pediatrics.speechdelay": {
+ "tests": ["اختبار السمع (Audiology assessment)"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["تقييم لدى أخصائي النطق والتخاطب", "أدوات فحص النمو المعيارية", "إحالة لتقييم النمو الشامل أو التوحد عند وجود علامات أخرى"],
+ "selfcare": ["التحدث والقراءة مع الطفل يوميًا", "تقليل الشاشات", "اللعب التفاعلي"],
+ "refs": ["AAP"],
+ "guide": "AAP Clinical Report: Promoting Optimal Development — Identifying Infants and Young Children With Developmental Disorders Through Developmental Surveillance and Screening (2020)"
+},
+"pediatrics.devdelay": {
+ "tests": ["التحليل الجيني بالمصفوفة الكروموسومية الدقيقة وفحص الكروموسوم X الهش (Chromosomal microarray, Fragile X)", "وظائف الغدة الدرقية وإنزيم العضلات والرصاص والحديد بحسب الحالة (TSH, CK, Lead, Ferritin)", "اختبار السمع والبصر"],
+ "imaging": ["رنين مغناطيسي على الدماغ (Brain MRI) عند وجود علامات عصبية"],
+ "meds": [],
+ "procedures": ["تقييم لدى طبيب الأطفال المتخصص في النمو", "برامج التدخل المبكر: علاج طبيعي ووظيفي وتخاطب"],
+ "selfcare": ["اللعب التحفيزي اليومي", "متابعة مراحل النمو"],
+ "refs": ["AAP", "AAN"],
+ "guide": "AAP Clinical Report: Comprehensive Evaluation of the Child With Intellectual Disability or Global Developmental Delays (2014)"
+},
+"pediatrics.growingpains": {
+ "tests": ["صورة دم كاملة وسرعة الترسيب فقط عند وجود علامات غير نمطية (CBC, ESR)"],
+ "imaging": ["أشعة سينية فقط عند ألم في جهة واحدة أو مفصل أو عرج"],
+ "meds": [{"cls": "المسكنات البسيطة عند الحاجة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["فحص سريري للمفاصل والمشية"],
+ "selfcare": ["تدليك وكمادات دافئة", "تمارين إطالة"],
+ "refs": ["AAP"],
+ "guide": "Evans AM. Growing pains: contemporary knowledge and recommended practice. J Foot Ankle Res (2008)"
+},
+"pediatrics.teething": {
+ "tests": [],
+ "imaging": [],
+ "meds": [{"cls": "المسكنات المناسبة للعمر عند الضيق", "ex": "paracetamol, ibuprofen", "note": "تجنّب جل التخدير الموضعي (benzocaine) لدى الرضّع"}],
+ "procedures": [],
+ "selfcare": ["عضّاضات مبرّدة", "تدليك اللثة", "تنظيف الأسنان الأولى بفرشاة ناعمة ومعجون بالفلورايد"],
+ "refs": ["NICE", "FDA"],
+ "guide": "NICE CKS: Teething (2024); FDA Safety Communication on benzocaine teething products (2018)"
+},
+"pediatrics.adenoids": {
+ "tests": ["دراسة النوم (Polysomnography) عند الشك في انقطاع النفس الانسدادي غير الواضح"],
+ "imaging": ["أشعة جانبية على البلعوم الأنفي أو المنظار الأنفي المرن (Lateral neck X-ray / nasendoscopy)"],
+ "meds": [{"cls": "الكورتيكوستيرويدات الأنفية تجريبيًا", "ex": "mometasone nasal spray, fluticasone nasal spray"}],
+ "procedures": ["استئصال اللحمية مع اللوزتين أو دونهما عند انقطاع النفس أو التهاب الأذن المتكرر"],
+ "selfcare": ["غسول ملحي للأنف", "مراقبة توقفات التنفس أثناء النوم"],
+ "refs": ["AAO_HNS", "AAP"],
+ "guide": "AAO-HNS Clinical Practice Guideline: Tonsillectomy in Children (Update) (2019); AAP Clinical Practice Guideline: Childhood Obstructive Sleep Apnea Syndrome (2012)"
+},
+"pediatrics.brue": {
+ "tests": ["فحص سريري شامل وقياس العلامات الحيوية", "تخطيط القلب الكهربائي (ECG) للرضيع منخفض الخطورة", "فحوص إضافية بحسب الخطورة (CBC, glucose, pertussis PCR)"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["مراقبة قصيرة بقياس التأكسج المستمر", "تدريب الأهل على إنعاش الرضّع"],
+ "selfcare": ["النوم الآمن على الظهر في سرير خالٍ", "تجنّب التدخين حول الرضيع"],
+ "refs": ["AAP"],
+ "guide": "AAP Clinical Practice Guideline: Brief Resolved Unexplained Events (2016)"
+},
+"pediatrics.sepsis": {
+ "tests": ["مزرعة الدم وصورة دم كاملة وبروتين سي التفاعلي (Blood culture, CBC, CRP)", "اللاكتات وغازات الدم (Lactate, Blood gas)", "تحليل ومزرعة البول، والسائل النخاعي بحسب الحالة"],
+ "imaging": ["أشعة سينية على الصدر بحسب مصدر العدوى المحتمل"],
+ "meds": [
+  {"cls": "المضادات الحيوية الوريدية واسعة الطيف خلال الساعة الأولى", "ex": "ceftriaxone, cefotaxime"},
+  {"cls": "سوائل وريدية ودعم الدورة الدموية", "ex": "crystalloid fluids, adrenaline, noradrenaline"}
+ ],
+ "procedures": ["إنعاش في الطوارئ ونقل إلى العناية المركزة عند الحاجة"],
+ "selfcare": ["استكمال اللقاحات الروتينية"],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE NG51 Suspected sepsis: recognition, diagnosis and early management (2016, updated 2024); Surviving Sepsis Campaign International Guidelines for Children (2020)"
+},
+"pediatrics.safeguarding": {
+ "tests": ["صورة دم كاملة وفحوص التخثر لاستبعاد أمراض النزيف (CBC, Coagulation screen)"],
+ "imaging": ["مسح هيكلي بالأشعة (Skeletal survey) للأطفال دون السنتين", "تصوير الدماغ (CT/MRI) عند الشك في إصابة رأس"],
+ "meds": [],
+ "procedures": ["تقييم لدى طبيب الأطفال المختص بحماية الطفل", "إبلاغ جهات حماية الطفل وفق الأنظمة المحلية", "فحص العين لنزيف الشبكية عند الرضّع"],
+ "selfcare": [],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE CG89 Child maltreatment: when to suspect maltreatment in under 18s (2009, updated 2017); AAP Clinical Report: Evaluation of Suspected Child Physical Abuse (2015)"
+},
+"pediatrics.obesity": {
+ "tests": ["سكر صائم أو السكر التراكمي (Fasting glucose, HbA1c)", "دهون الدم ووظائف الكبد (Lipid profile, ALT)", "قياس ضغط الدم"],
+ "imaging": [],
+ "meds": [{"cls": "العلاج الدوائي للمراهقين في حالات مختارة", "ex": "orlistat, liraglutide, semaglutide", "note": "بقرار أخصائي مع برنامج نمط الحياة"}],
+ "procedures": ["برنامج عائلي مكثف لتعديل السلوك والتغذية والنشاط", "جراحة السمنة للمراهقين في حالات شديدة مختارة"],
+ "selfcare": ["ساعة نشاط بدني يوميًا", "تقليل المشروبات المحلاة", "تقليل الشاشات ونوم كافٍ"],
+ "refs": ["AAP", "NICE"],
+ "guide": "AAP Clinical Practice Guideline for the Evaluation and Treatment of Children and Adolescents With Obesity (2023)"
+},
+"pediatrics.breathholding": {
+ "tests": ["صورة دم كاملة ومخزون الحديد (CBC, Ferritin)", "تخطيط القلب الكهربائي (ECG) خاصة في النوبات الشاحبة"],
+ "imaging": [],
+ "meds": [{"cls": "مكملات الحديد عند نقصه", "ex": "ferrous sulfate", "note": "بجرعة يحددها الطبيب"}],
+ "procedures": ["تخطيط كهربية الدماغ فقط عند الشك في الصرع"],
+ "selfcare": ["وضع الطفل على جنبه أثناء النوبة", "الهدوء وعدم تعزيز السلوك"],
+ "refs": ["AAP"],
+ "guide": "DiMario FJ. Prospective study of children with cyanotic and pallid breath-holding spells. Pediatrics (2001)"
+},
+"pediatrics.hsp": {
+ "tests": ["تحليل البول للدم والبروتين ونسبة البروتين إلى الكرياتينين (Urinalysis, UPCR)", "صورة دم كاملة والصفائح ووظائف الكلى (CBC, Platelets, Creatinine)", "قياس ضغط الدم"],
+ "imaging": ["موجات فوق صوتية على البطن عند ألم بطن شديد لاستبعاد الانغلاف"],
+ "meds": [
+  {"cls": "المسكنات", "ex": "paracetamol, ibuprofen", "note": "تجنّب مضادات الالتهاب عند إصابة الكلى"},
+  {"cls": "الكورتيكوستيرويدات للألم البطني الشديد أو إصابة الكلى", "ex": "prednisolone", "note": "بقرار الطبيب"}
+ ],
+ "procedures": ["متابعة البول والضغط لمدة 6 أشهر على الأقل", "إحالة لطبيب كلى الأطفال عند وجود بروتين كثير أو ارتفاع الضغط"],
+ "selfcare": ["الراحة ورفع الساقين", "فحص البول المنزلي بحسب الخطة"],
+ "refs": ["EULAR", "NICE"],
+ "guide": "SHARE (EULAR-supported) recommendations for diagnosis and treatment of IgA vasculitis (2019)"
+},
+"pediatrics.herpangina": {
+ "tests": [],
+ "imaging": [],
+ "meds": [{"cls": "المسكنات وخافضات الحرارة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["تقييم الجفاف عند قلة الشرب"],
+ "selfcare": ["سوائل باردة وأطعمة لينة", "غسل اليدين وتنظيف الأسطح"],
+ "refs": ["CDC"],
+ "guide": "CDC Non-Polio Enterovirus: Clinical Overview (2024)"
+},
+"pediatrics.nightterrors": {
+ "tests": ["دراسة النوم فقط عند الشك في انقطاع النفس أو الصرع الليلي"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["الإيقاظ المجدول قبل موعد النوبة المعتاد", "تقييم الشخير وانقطاع النفس"],
+ "selfcare": ["مواعيد نوم منتظمة", "تأمين غرفة الطفل", "عدم إيقاظه أثناء النوبة"],
+ "refs": ["AAP"],
+ "guide": "AASM International Classification of Sleep Disorders, 3rd edition (ICSD-3, 2014)"
+},
+"pediatrics.nephrotic": {
+ "tests": ["تحليل البول ونسبة البروتين إلى الكرياتينين (Urinalysis, UPCR)", "الألبومين ووظائف الكلى ودهون الدم (Albumin, Creatinine, Lipids)", "متابعة البروتين بالشريط منزليًا"],
+ "imaging": ["موجات فوق صوتية على الكلى عند الحاجة"],
+ "meds": [
+  {"cls": "الكورتيكوستيرويدات الفموية", "ex": "prednisolone", "note": "خط أول لدى الأطفال بإشراف طبيب الكلى"},
+  {"cls": "مثبطات المناعة للحالات المتكررة أو المقاومة", "ex": "cyclophosphamide, tacrolimus, mycophenolate, rituximab"},
+  {"cls": "مدرات البول للتورّم الشديد", "ex": "furosemide", "note": "بحذر وفي المستشفى غالبًا"}
+ ],
+ "procedures": ["خزعة كلى عند عدم الاستجابة للكورتيزون أو الصورة غير النمطية"],
+ "selfcare": ["تقليل الملح", "فحص البول المنزلي", "اللقاحات بحسب توجيه الطبيب"],
+ "refs": ["KDIGO"],
+ "guide": "KDIGO Clinical Practice Guideline for the Management of Glomerular Diseases (2021); IPNA recommendations for steroid-sensitive nephrotic syndrome (2023)"
+},
+"pediatrics.rickets": {
+ "tests": ["الكالسيوم والفوسفور وإنزيم الفوسفاتيز القلوي (Ca, Phosphate, ALP)", "فيتامين د وهرمون الغدة جار الدرقية (25-OH vitamin D, PTH)"],
+ "imaging": ["أشعة سينية على الرسغ أو الركبة (Wrist/knee X-ray)"],
+ "meds": [
+  {"cls": "فيتامين د", "ex": "cholecalciferol, ergocalciferol", "note": "جرعة علاجية يحددها الطبيب ثم جرعة وقائية"},
+  {"cls": "مكملات الكالسيوم", "ex": "calcium carbonate"}
+ ],
+ "procedures": ["تحويل للعظام عند استمرار التقوّس بعد العلاج", "تحويل للغدد عند الشك في كساح غير غذائي"],
+ "selfcare": ["مكمل فيتامين د للرضّع", "التعرّض المعتدل للشمس", "أطعمة غنية بالكالسيوم"],
+ "refs": ["ENDO", "WHO"],
+ "guide": "Global Consensus Recommendations on Prevention and Management of Nutritional Rickets (2016)"
+},
+"pediatrics.infantilespasms": {
+ "tests": ["تخطيط كهربية الدماغ أثناء النوم واليقظة (EEG) — اضطراب نظم مفرط (hypsarrhythmia)", "فحوص جينية وأيضية بحسب الحالة"],
+ "imaging": ["رنين مغناطيسي على الدماغ (Brain MRI)"],
+ "meds": [
+  {"cls": "العلاج الهرموني", "ex": "prednisolone, ACTH (tetracosactide)"},
+  {"cls": "مضادات الصرع", "ex": "vigabatrin", "note": "خط أول خصوصًا في التصلب الحدبي"}
+ ],
+ "procedures": ["إحالة عاجلة لطبيب أعصاب الأطفال", "متابعة النمو والتأهيل"],
+ "selfcare": ["تصوير النوبات بالهاتف", "تدوين مواعيد النوبات"],
+ "refs": ["AAN", "ILAE"],
+ "guide": "AAN/CNS Evidence-based guideline update: Medical treatment of infantile spasms (2012)"
+},
+"congenital.vsd": {
+ "tests": ["قياس تشبّع الأكسجين (Pulse oximetry)", "تخطيط القلب الكهربائي (ECG)"],
+ "imaging": ["موجات فوق صوتية على القلب (Echocardiography)", "أشعة سينية على الصدر"],
+ "meds": [
+  {"cls": "مدرات البول لفشل القلب", "ex": "furosemide, spironolactone"},
+  {"cls": "مثبطات الإنزيم المحوّل", "ex": "captopril, enalapril", "note": "بقرار طبيب القلب"}
+ ],
+ "procedures": ["إغلاق جراحي أو عبر القسطرة للثقوب الكبيرة", "تغذية عالية السعرات"],
+ "selfcare": ["متابعة الوزن", "العناية بالأسنان", "استكمال اللقاحات"],
+ "refs": ["ACC_AHA", "ESC"],
+ "guide": "2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease (2018); ESC Guidelines for the management of adult congenital heart disease (2020)"
+},
+"congenital.asd": {
+ "tests": ["تخطيط القلب الكهربائي (ECG)"],
+ "imaging": ["موجات فوق صوتية على القلب عبر الصدر أو المريء (TTE/TEE)"],
+ "meds": [{"cls": "علاج اضطرابات النظم عند حدوثها", "ex": "beta blockers", "note": "بقرار طبيب القلب"}],
+ "procedures": ["إغلاق الثقب بجهاز عبر القسطرة", "إغلاق جراحي لبعض الأنواع"],
+ "selfcare": ["متابعة دورية لدى طبيب القلب"],
+ "refs": ["ACC_AHA", "ESC"],
+ "guide": "2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease (2018); ESC Guidelines for the management of adult congenital heart disease (2020)"
+},
+"congenital.pda": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على القلب (Echocardiography)"],
+ "meds": [{"cls": "أدوية إغلاق القناة لدى الخدّج", "ex": "ibuprofen, indomethacin, paracetamol", "note": "في وحدة رعاية حديثي الولادة فقط"}],
+ "procedures": ["إغلاق عبر القسطرة", "ربط جراحي للقناة"],
+ "selfcare": ["متابعة النمو والوزن"],
+ "refs": ["ACC_AHA", "AAP"],
+ "guide": "2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease (2018)"
+},
+"congenital.tof": {
+ "tests": ["قياس تشبّع الأكسجين (Pulse oximetry)", "صورة دم كاملة (CBC)"],
+ "imaging": ["موجات فوق صوتية على القلب", "رنين مغناطيسي على القلب في المتابعة طويلة الأمد (Cardiac MRI)"],
+ "meds": [{"cls": "حاصرات بيتا لتقليل نوبات الازرقاق قبل الجراحة", "ex": "propranolol", "note": "بقرار طبيب القلب"}],
+ "procedures": ["إصلاح جراحي كامل غالبًا في السنة الأولى", "متابعة مدى الحياة وقد يلزم استبدال الصمام الرئوي لاحقًا"],
+ "selfcare": ["وضعية الركبتين إلى الصدر أثناء النوبة", "العناية بالأسنان"],
+ "refs": ["ACC_AHA", "ESC"],
+ "guide": "2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease (2018); ESC Guidelines for the management of adult congenital heart disease (2020)"
+},
+"congenital.coarctation": {
+ "tests": ["قياس ضغط الدم في الذراعين والساقين", "فحص تشبّع الأكسجين لحديثي الولادة (Pulse oximetry screening)"],
+ "imaging": ["موجات فوق صوتية على القلب", "تصوير مقطعي أو رنين مغناطيسي للأورطي (CT/MR angiography)"],
+ "meds": [
+  {"cls": "البروستاغلاندين للمواليد الحرجين", "ex": "alprostadil", "note": "في العناية المركزة فقط"},
+  {"cls": "خافضات ضغط الدم", "ex": "beta blockers, ACE inhibitors"}
+ ],
+ "procedures": ["إصلاح جراحي", "توسيع بالبالون والدعامة عبر القسطرة"],
+ "selfcare": ["قياس الضغط بانتظام مدى الحياة"],
+ "refs": ["ACC_AHA", "ESC"],
+ "guide": "2018 AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease (2018)"
+},
+"congenital.ddh": {
+ "tests": ["فحص بارلو وأورتولاني"],
+ "imaging": ["موجات فوق صوتية على الورك (Hip ultrasound) قبل عمر 4–6 أشهر", "أشعة سينية على الحوض بعد عمر 4–6 أشهر"],
+ "meds": [],
+ "procedures": ["حمّالة بافليك", "إرجاع مغلق وجبس، أو جراحة للحالات المتأخرة"],
+ "selfcare": ["لفّ الرضيع بطريقة تسمح بحركة الوركين"],
+ "refs": ["AAP", "AAOS"],
+ "guide": "AAOS Clinical Practice Guideline: Detection and Nonoperative Management of Pediatric Developmental Dysplasia of the Hip in Infants up to Six Months of Age (2022); AAP DDH Clinical Report (2016)"
+},
+"congenital.clubfoot": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["طريقة بونسيتي: جبس متتابع أسبوعي", "قطع وتر أكيلس عبر الجلد", "دعامة القدمين (حذاء بقضيب) لسنوات"],
+ "selfcare": ["الالتزام بارتداء الدعامة لمنع الانتكاس"],
+ "refs": ["AAOS"],
+ "guide": "Ponseti method of clubfoot treatment (AAOS OrthoInfo: Clubfoot, current standard of care)"
+},
+"congenital.undescended": {
+ "tests": ["فحوص هرمونية وجينية عند عدم الإحساس بالخصيتين كلتيهما"],
+ "imaging": ["لا يُنصح روتينيًا بالموجات فوق الصوتية قبل الإحالة"],
+ "meds": [],
+ "procedures": ["جراحة تثبيت الخصية (Orchidopexy) ويُفضَّل قبل 18 شهرًا", "تنظير البطن للخصية غير المحسوسة"],
+ "selfcare": ["الفحص الذاتي للخصيتين في سن المراهقة"],
+ "refs": ["AUA", "EAU"],
+ "guide": "AUA Guideline: Evaluation and Treatment of Cryptorchidism (2014); EAU Guidelines on Paediatric Urology (2024)"
+},
+"congenital.hypospadias": {
+ "tests": ["تقييم اضطرابات النمو الجنسي عند وجود خصية غير محسوسة"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["إصلاح جراحي بين 6 و18 شهرًا", "تأجيل الختان إلى ما بعد تقييم الجرّاح"],
+ "selfcare": [],
+ "refs": ["EAU", "AUA"],
+ "guide": "EAU Guidelines on Paediatric Urology (2024)"
+},
+"congenital.hypothyroid": {
+ "tests": ["هرمون TSH وT4 الحر في الدم (TSH, Free T4)"],
+ "imaging": ["موجات فوق صوتية أو مسح للغدة الدرقية (Thyroid ultrasound / scintigraphy) دون تأخير العلاج"],
+ "meds": [{"cls": "هرمون الغدة الدرقية", "ex": "levothyroxine", "note": "يُبدأ فورًا بعد التأكيد بجرعة يحددها الطبيب"}],
+ "procedures": ["متابعة دورية للهرمونات والنمو والتطور"],
+ "selfcare": ["إعطاء الدواء يوميًا بانتظام", "عدم خلطه بحليب الصويا أو الحديد والكالسيوم في الوقت نفسه"],
+ "refs": ["ENDO", "AAP"],
+ "guide": "ESPE-ENDO Consensus Guidelines on Screening, Diagnosis and Management of Congenital Hypothyroidism (2020–2021 update); AAP Clinical Report (2023)"
+},
+"congenital.pku": {
+ "tests": ["مستوى الفينيل ألانين والتيروسين في الدم (Phe, Tyr)", "التحليل الجيني لجين PAH"],
+ "imaging": [],
+ "meds": [
+  {"cls": "تركيبات بروتين خالية من الفينيل ألانين", "ex": "phenylalanine-free amino acid formula"},
+  {"cls": "العوامل المساعدة للإنزيم للمستجيبين", "ex": "sapropterin"},
+  {"cls": "العلاج الإنزيمي للبالغين", "ex": "pegvaliase"}
+ ],
+ "procedures": ["متابعة لدى فريق أمراض الأيض وأخصائي تغذية", "خطة خاصة قبل الحمل وأثناءه"],
+ "selfcare": ["الالتزام بالحمية مدى الحياة", "تجنّب المحلّي aspartame"],
+ "refs": ["AAP", "FDA"],
+ "guide": "European guidelines on the diagnosis and management of phenylketonuria (van Wegberg et al., 2017)"
+},
+"congenital.hydrocephalus": {
+ "tests": ["قياس محيط الرأس على منحنى النمو", "فحص قاع العين"],
+ "imaging": ["موجات فوق صوتية عبر اليافوخ (Cranial ultrasound)", "رنين مغناطيسي على الدماغ (Brain MRI)"],
+ "meds": [],
+ "procedures": ["تحويلة بطينية بريتونية (VP shunt)", "فتح منظاري في البطين الثالث (ETV)"],
+ "selfcare": ["معرفة علامات انسداد التحويلة: صداع وقيء ونعاس"],
+ "refs": ["AAP", "AAN"],
+ "guide": "Congress of Neurological Surgeons: Pediatric Hydrocephalus Systematic Review and Evidence-Based Guidelines (2014; update 2020)"
+},
+"congenital.cah": {
+ "tests": ["17-هيدروكسي بروجستيرون (17-OHP)", "أملاح الدم والسكر والرينين (Electrolytes, Glucose, Renin)", "تحديد الكروموسومات والتحليل الجيني"],
+ "imaging": ["موجات فوق صوتية على الحوض والكظر عند الأعضاء الملتبسة"],
+ "meds": [
+  {"cls": "الكورتيكوستيرويدات البديلة", "ex": "hydrocortisone"},
+  {"cls": "الهرمونات الحافظة للأملاح", "ex": "fludrocortisone"},
+  {"cls": "مكملات الملح للرضّع", "ex": "sodium chloride"}
+ ],
+ "procedures": ["فريق متعدد التخصصات لاضطرابات النمو الجنسي", "خطة جرعات المرض وبطاقة طوارئ"],
+ "selfcare": ["مضاعفة الجرعة أثناء المرض بحسب الخطة", "حقنة طوارئ في المنزل"],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Congenital Adrenal Hyperplasia Due to Steroid 21-Hydroxylase Deficiency (2018)"
+},
+"congenital.dmd": {
+ "tests": ["إنزيم العضلات (Creatine kinase)", "التحليل الجيني لجين الديستروفين"],
+ "imaging": ["موجات فوق صوتية أو رنين مغناطيسي على القلب", "قياس كثافة العظام (DXA)"],
+ "meds": [
+  {"cls": "الكورتيكوستيرويدات", "ex": "prednisone, deflazacort, vamorolone"},
+  {"cls": "علاجات موجّهة لطفرات محددة", "ex": "eteplirsen, golodirsen, ataluren", "note": "بحسب الطفرة وتوافرها"},
+  {"cls": "أدوية حماية القلب", "ex": "ACE inhibitors"}
+ ],
+ "procedures": ["علاج طبيعي وجبائر ليلية", "متابعة وظائف التنفس والقلب", "استشارة وراثية للأسرة"],
+ "selfcare": ["نشاط معتدل دون إجهاد", "اللقاحات بما فيها الإنفلونزا"],
+ "refs": ["CDC", "AAN"],
+ "guide": "DMD Care Considerations (CDC-supported, Lancet Neurol 2018); AAN Practice guideline: Corticosteroid treatment of Duchenne muscular dystrophy (2016)"
+},
+"congenital.tonguetie": {
+ "tests": ["تقييم الرضاعة لدى استشارية رضاعة"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["قطع لجام اللسان (Frenotomy) عند تأثر الرضاعة"],
+ "selfcare": ["تحسين وضعية الإرضاع والالتقام"],
+ "refs": ["NICE", "AAO_HNS"],
+ "guide": "NICE IPG149 Division of ankyloglossia (tongue-tie) for breastfeeding (2005); AAO-HNS Clinical Consensus Statement: Ankyloglossia in Children (2020)"
+},
+"congenital.umbilicalhernia": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية عند الشك في الاختناق"],
+ "meds": [],
+ "procedures": ["الملاحظة حتى سن 4–5 سنوات", "إصلاح جراحي إن استمر أو كان كبيرًا جدًا"],
+ "selfcare": ["عدم استعمال الأربطة أو العملات على السرة"],
+ "refs": ["AAP"],
+ "guide": "WHO Pocket Book of Hospital Care for Children (2013) — common surgical problems"
+},
+"congenital.hemangioma": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على الآفة العميقة", "رنين مغناطيسي للأورام الكبيرة في الوجه أو أسفل الظهر"],
+ "meds": [
+  {"cls": "حاصرات بيتا الفموية", "ex": "propranolol", "note": "بإشراف طبي ومتابعة"},
+  {"cls": "حاصرات بيتا الموضعية للآفات الصغيرة السطحية", "ex": "timolol gel"}
+ ],
+ "procedures": ["ليزر أو جراحة لبقايا الورم بعد الضمور"],
+ "selfcare": ["تصوير الآفة دوريًا لمتابعة نموها"],
+ "refs": ["AAP", "AAD"],
+ "guide": "AAP Clinical Practice Guideline for the Management of Infantile Hemangiomas (2019)"
+},
+"congenital.portwine": {
+ "tests": ["قياس ضغط العين عند إصابة الجفن أو الجبهة"],
+ "imaging": ["رنين مغناطيسي على الدماغ عند الشك في متلازمة ستيرج-ويبر"],
+ "meds": [],
+ "procedures": ["ليزر الصبغة النبضي (Pulsed dye laser)"],
+ "selfcare": ["الحماية من الشمس"],
+ "refs": ["AAD", "AAO"],
+ "guide": "Consensus statement for the management and treatment of port-wine birthmarks in Sturge-Weber syndrome (JAMA Dermatol, 2021)"
+},
+"congenital.cataract": {
+ "tests": ["فحص الانعكاس الأحمر", "فحوص للعدوى الخلقية والأيض والجينات بحسب الحالة"],
+ "imaging": ["موجات فوق صوتية على العين عند تعذّر رؤية قاعها"],
+ "meds": [{"cls": "قطرات بعد الجراحة", "ex": "topical corticosteroids, topical antibiotics"}],
+ "procedures": ["إزالة الساد جراحيًا مبكرًا", "عدسات لاصقة أو نظارات أو عدسة مزروعة", "علاج الكسل البصري بالتغطية"],
+ "selfcare": ["الالتزام بالتغطية والعدسات"],
+ "refs": ["AAO", "NICE"],
+ "guide": "AAO Preferred Practice Pattern: Pediatric Eye Evaluations (2022)"
+},
+"congenital.plagiocephaly": {
+ "tests": ["فحص شكل الرأس من أعلى ومراقبة حركة الرقبة"],
+ "imaging": ["لا يلزم تصوير غالبًا؛ أشعة مقطعية فقط عند الشك في انغلاق الدروز"],
+ "meds": [],
+ "procedures": ["تعديل الوضعيات", "علاج طبيعي عند ميل الرقبة", "خوذة تقويمية لحالات شديدة مختارة"],
+ "selfcare": ["وقت على البطن مع المراقبة", "تبديل اتجاه الرأس في النوم"],
+ "refs": ["AAP"],
+ "guide": "AAP Clinical Report: Prevention and Management of Positional Skull Deformities in Infants (2011); CNS Guideline on Positional Plagiocephaly (2016)"
+},
+"congenital.torticollis": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على عضلة الرقبة", "موجات فوق صوتية على الوركين لاستبعاد الخلع"],
+ "meds": [],
+ "procedures": ["علاج طبيعي بتمارين إطالة", "جراحة لتحرير العضلة نادرًا"],
+ "selfcare": ["تشجيع الالتفات للجهة المحدودة", "وقت على البطن"],
+ "refs": ["AAP"],
+ "guide": "APTA Physical Therapy Management of Congenital Muscular Torticollis: Clinical Practice Guideline (2018)"
+},
+"congenital.craniosynostosis": {
+ "tests": ["فحص قاع العين للضغط داخل الجمجمة", "فحص جيني عند تعدد الدروز أو المتلازمات"],
+ "imaging": ["أشعة مقطعية ثلاثية الأبعاد على الجمجمة (3D CT)"],
+ "meds": [],
+ "procedures": ["جراحة إعادة تشكيل الجمجمة أو جراحة منظارية مع خوذة"],
+ "selfcare": [],
+ "refs": ["AAP"],
+ "guide": "Mathijssen IMJ. Updated Guideline on Treatment and Management of Craniosynostosis (J Craniofac Surg, 2021)"
+},
+"congenital.hirschsprung": {
+ "tests": ["خزعة شفط من المستقيم (Rectal suction biopsy)"],
+ "imaging": ["أشعة بالصبغة على القولون (Contrast enema)"],
+ "meds": [{"cls": "المضادات الحيوية عند التهاب الأمعاء والقولون", "ex": "metronidazole, intravenous antibiotics"}],
+ "procedures": ["غسيل المستقيم قبل الجراحة", "جراحة السحب (Pull-through)"],
+ "selfcare": ["معرفة علامات التهاب الأمعاء والقولون بعد الجراحة"],
+ "refs": ["AAP", "ESPGHAN"],
+ "guide": "ERNICA guidelines for the management of Hirschsprung disease (Kyrklund et al., 2020)"
+},
+"congenital.biliaryatresia": {
+ "tests": ["البيليروبين الكلي والمباشر (Total and conjugated bilirubin)", "وظائف الكبد وGGT وفحوص التخثر"],
+ "imaging": ["موجات فوق صوتية على الكبد والمرارة (Abdominal ultrasound)", "مسح الكبد والمرارة (HIDA scan) عند الحاجة"],
+ "meds": [{"cls": "فيتامينات ذائبة في الدهون", "ex": "vitamin A, vitamin D, vitamin E, vitamin K"}],
+ "procedures": ["جراحة كاساي (Portoenterostomy)", "زرع الكبد عند الفشل"],
+ "selfcare": ["مراقبة لون البراز ببطاقة الألوان"],
+ "refs": ["ESPGHAN", "NICE"],
+ "guide": "NASPGHAN-ESPGHAN Guideline for the Evaluation of Cholestatic Jaundice in Infants (2017); NICE CG98 Jaundice in newborn babies under 28 days (2010, updated 2023)"
+},
+"congenital.fragilex": {
+ "tests": ["التحليل الجيني لتكرارات CGG في جين FMR1"],
+ "imaging": [],
+ "meds": [{"cls": "علاج الأعراض المصاحبة", "ex": "stimulants, SSRIs", "note": "بقرار الطبيب بحسب الأعراض"}],
+ "procedures": ["تدخل مبكر بالتخاطب والعلاج الوظيفي والسلوكي", "استشارة وراثية وفحص الأقارب"],
+ "selfcare": ["روتين يومي منظم", "دعم تعليمي فردي"],
+ "refs": ["AAP"],
+ "guide": "AAP Clinical Report: Health Supervision for Children With Fragile X Syndrome (2011)"
+},
+"congenital.fasd": {
+ "tests": ["تقييم النمو والوظائف العصبية والسلوك"],
+ "imaging": [],
+ "meds": [{"cls": "علاج اضطرابات الانتباه والسلوك المصاحبة", "ex": "methylphenidate", "note": "بقرار الطبيب"}],
+ "procedures": ["تقييم متعدد التخصصات", "دعم تعليمي وسلوكي"],
+ "selfcare": ["الامتناع عن الكحول تمامًا أثناء الحمل"],
+ "refs": ["CDC", "AAP"],
+ "guide": "AAP Clinical Report: Fetal Alcohol Spectrum Disorders (2015); CDC FAS Guidelines for Referral and Diagnosis (2004)"
+},
+"congenital.marfan": {
+ "tests": ["التحليل الجيني لجين FBN1", "فحص العين بالمصباح الشقي"],
+ "imaging": ["موجات فوق صوتية على القلب لقياس الأورطي", "رنين مغناطيسي أو مقطعي للأورطي"],
+ "meds": [{"cls": "حاصرات بيتا أو حاصرات مستقبلات الأنجيوتنسين", "ex": "atenolol, losartan", "note": "لإبطاء توسّع الأورطي"}],
+ "procedures": ["جراحة وقائية للأورطي عند بلوغ حد التوسع"],
+ "selfcare": ["تجنّب الرياضات العنيفة والتنافسية", "متابعة سنوية"],
+ "refs": ["ACC_AHA"],
+ "guide": "Revised Ghent nosology for Marfan syndrome (2010); 2022 ACC/AHA Guideline for the Diagnosis and Management of Aortic Disease (2022)"
+},
+"congenital.nf1": {
+ "tests": ["فحص العين السنوي", "قياس ضغط الدم", "تحليل جيني عند الحاجة"],
+ "imaging": ["رنين مغناطيسي عند وجود أعراض عصبية أو بصرية"],
+ "meds": [{"cls": "مثبطات MEK للأورام الضفيرية", "ex": "selumetinib"}],
+ "procedures": ["استئصال جراحي للأورام المزعجة", "متابعة متعددة التخصصات"],
+ "selfcare": ["متابعة سنوية منتظمة", "دعم تعليمي عند صعوبات التعلم"],
+ "refs": ["AAP"],
+ "guide": "AAP Clinical Report: Health Supervision for Children With Neurofibromatosis Type 1 (2019); Revised diagnostic criteria for NF1 (2021)"
+},
+"congenital.nld": {
+ "tests": [],
+ "imaging": [],
+ "meds": [{"cls": "قطرات مضادة حيوية عند الإفرازات الصديدية الكثيفة", "ex": "chloramphenicol, fusidic acid"}],
+ "procedures": ["تدليك الكيس الدمعي", "فتح القناة بالمسبار (Probing) إن استمر بعد عمر سنة"],
+ "selfcare": ["تنظيف العين بماء مغلي مبرّد"],
+ "refs": ["AAO", "NICE"],
+ "guide": "AAO Preferred Practice Pattern: Pediatric Eye Evaluations (2022)"
+}
+}

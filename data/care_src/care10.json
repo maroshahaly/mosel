@@ -1,0 +1,905 @@
+{
+"heart.unstable_angina": {
+ "tests": ["تخطيط القلب الكهربائي (ECG) فور الوصول وتكراره", "إنزيم التروبونين عالي الحساسية (hs-Troponin) متكرر", "صورة دم كاملة ووظائف الكلى وسكر ودهون الدم"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "قسطرة الشرايين التاجية (Coronary angiography)"],
+ "meds": [
+  {"cls": "مضادات الصفائح", "ex": "aspirin, ticagrelor, clopidogrel"},
+  {"cls": "مضادات التخثر", "ex": "fondaparinux, enoxaparin, unfractionated heparin"},
+  {"cls": "النترات", "ex": "glyceryl trinitrate"},
+  {"cls": "حاصرات بيتا", "ex": "bisoprolol, metoprolol"},
+  {"cls": "الستاتينات عالية الفاعلية", "ex": "atorvastatin, rosuvastatin"}
+ ],
+ "procedures": ["توسيع الشريان بالبالون وتركيب دعامة (PCI)", "جراحة تحويل مسار الشرايين التاجية (CABG) عند الحاجة", "برنامج إعادة التأهيل القلبي"],
+ "selfcare": ["الإقلاع عن التدخين", "الالتزام بالأدوية الوقائية", "الاتصال بالإسعاف عند ألم يستمر أكثر من 15 دقيقة"],
+ "refs": ["ESC", "ACC_AHA", "NICE"],
+ "guide": "ESC Guidelines for the management of acute coronary syndromes (2023)"
+},
+"heart.vasospastic": {
+ "tests": ["تخطيط القلب أثناء النوبة (ECG)", "هولتر لمراقبة القلب 24–48 ساعة (Holter)", "إنزيم التروبونين (Troponin)"],
+ "imaging": ["قسطرة الشرايين التاجية مع اختبار تحريض التشنّج في مركز متخصص (Coronary angiography with provocation testing)"],
+ "meds": [
+  {"cls": "حاصرات قنوات الكالسيوم", "ex": "diltiazem, amlodipine, verapamil"},
+  {"cls": "النترات طويلة وقصيرة المفعول", "ex": "isosorbide mononitrate, glyceryl trinitrate"},
+  {"cls": "الستاتينات", "ex": "atorvastatin"}
+ ],
+ "procedures": ["مراجعة المحفّزات وتجنّب المنبّهات"],
+ "selfcare": ["الإقلاع عن التدخين", "تجنّب المنبّهات كالكوكايين ومشروبات الطاقة"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of chronic coronary syndromes (2024)"
+},
+"heart.hfref": {
+ "tests": ["الببتيد الدماغي (NT-proBNP)", "وظائف الكلى والأملاح (Creatinine, Electrolytes)", "صورة دم كاملة ومخزون الحديد (CBC, Ferritin, TSAT)", "تخطيط القلب (ECG)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "أشعة صدر (Chest X-ray)", "رنين مغناطيسي على القلب (Cardiac MRI) عند الحاجة"],
+ "meds": [
+  {"cls": "مثبطات الإنزيم المحوّل أو مثبطات مستقبلات الأنجيوتنسين والنيبريليسين", "ex": "ramipril, sacubitril/valsartan"},
+  {"cls": "حاصرات بيتا", "ex": "bisoprolol, carvedilol"},
+  {"cls": "مضادات القشرانيات المعدنية", "ex": "spironolactone, eplerenone"},
+  {"cls": "مثبطات SGLT2", "ex": "dapagliflozin, empagliflozin"},
+  {"cls": "مدرات البول العروية", "ex": "furosemide, bumetanide", "note": "لتخفيف الاحتقان"}
+ ],
+ "procedures": ["مزيل رجفان قابل للزرع (ICD) أو منظم ثلاثي الحجرات (CRT) لحالات مختارة", "إعادة التأهيل القلبي"],
+ "selfcare": ["وزن النفس يوميًا", "تقليل الملح", "التطعيم ضد الإنفلونزا والمكورات الرئوية"],
+ "refs": ["ESC", "ACC_AHA", "NICE"],
+ "guide": "ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure (2021) and focused update (2023)"
+},
+"heart.hfpef": {
+ "tests": ["الببتيد الدماغي (NT-proBNP)", "وظائف الكلى والأملاح", "سكر الدم التراكمي (HbA1c)", "تخطيط القلب (ECG)"],
+ "imaging": ["موجات صوتية على القلب مع تقييم وظيفة الارتخاء (Echocardiography)", "أشعة صدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "مثبطات SGLT2", "ex": "empagliflozin, dapagliflozin"},
+  {"cls": "مدرات البول العروية", "ex": "furosemide", "note": "لتخفيف الاحتقان"},
+  {"cls": "مضادات القشرانيات المعدنية", "ex": "spironolactone, finerenone", "note": "لحالات مختارة"},
+  {"cls": "أدوية ضبط الضغط", "ex": "amlodipine, ramipril"}
+ ],
+ "procedures": ["برنامج نشاط بدني وإعادة تأهيل قلبي", "علاج الرجفان الأذيني والسمنة المصاحبة"],
+ "selfcare": ["ضبط الضغط والسكر", "إنقاص الوزن", "تقليل الملح"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure (2021) and focused update (2023)"
+},
+"heart.ahf": {
+ "tests": ["الببتيد الدماغي (NT-proBNP)", "إنزيم التروبونين (Troponin)", "غازات الدم (ABG)", "وظائف الكلى والأملاح", "تخطيط القلب (ECG)"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "موجات صوتية على القلب والرئة (Echocardiography, Lung ultrasound)"],
+ "meds": [
+  {"cls": "مدرات البول العروية الوريدية", "ex": "furosemide (IV)"},
+  {"cls": "موسّعات الأوعية", "ex": "glyceryl trinitrate (IV)", "note": "عند ارتفاع الضغط"},
+  {"cls": "الأكسجين", "ex": "oxygen"}
+ ],
+ "procedures": ["التنفس بالضغط الإيجابي غير الجراحي (CPAP/NIV)", "علاج السبب: قسطرة طارئة أو ضبط النظم"],
+ "selfcare": ["الجلوس منتصبًا مع إنزال الساقين حتى وصول الإسعاف"],
+ "refs": ["ESC", "NICE"],
+ "guide": "ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure (2021); NICE CG187 Acute heart failure (2014, updated 2021)"
+},
+"heart.flutter": {
+ "tests": ["تخطيط القلب (ECG)", "وظائف الغدة الدرقية والأملاح (TSH, Electrolytes)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)"],
+ "meds": [
+  {"cls": "أدوية إبطاء النبض", "ex": "bisoprolol, diltiazem, verapamil"},
+  {"cls": "مضادات التخثر الفموية", "ex": "apixaban, rivaroxaban, edoxaban, warfarin", "note": "حسب تقييم خطر السكتة"},
+  {"cls": "مضادات اضطراب النظم", "ex": "amiodarone"}
+ ],
+ "procedures": ["الصدمة الكهربائية لإرجاع النظم (Cardioversion)", "الكيّ بالقسطرة لدائرة الرفرفة (Catheter ablation)"],
+ "selfcare": ["تقليل الكحول والمنبّهات"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of patients with supraventricular tachycardia (2019)"
+},
+"heart.vt": {
+ "tests": ["تخطيط القلب (ECG)", "أملاح الدم والمغنيسيوم (Electrolytes, Mg)", "إنزيم التروبونين (Troponin)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "رنين مغناطيسي على القلب (Cardiac MRI)", "قسطرة الشرايين التاجية عند الاشتباه في نقص التروية"],
+ "meds": [
+  {"cls": "مضادات اضطراب النظم", "ex": "amiodarone, lidocaine"},
+  {"cls": "حاصرات بيتا", "ex": "bisoprolol, metoprolol"}
+ ],
+ "procedures": ["الصدمة الكهربائية (Cardioversion/Defibrillation)", "مزيل رجفان قابل للزرع (ICD)", "الكيّ بالقسطرة (Catheter ablation)"],
+ "selfcare": ["تعلّم أفراد الأسرة الإنعاش القلبي الرئوي"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death (2022)"
+},
+"heart.sss": {
+ "tests": ["تخطيط القلب (ECG)", "هولتر أو مسجّل أحداث (Holter / event recorder)", "وظائف الغدة الدرقية (TSH)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)"],
+ "meds": [
+  {"cls": "مراجعة الأدوية المبطئة للقلب", "ex": "beta blockers, digoxin, verapamil", "note": "لا يوقف أي دواء دون استشارة الطبيب"},
+  {"cls": "مضادات التخثر الفموية", "ex": "apixaban, rivaroxaban", "note": "عند وجود رجفان أذيني"}
+ ],
+ "procedures": ["تركيب منظم ضربات دائم (Permanent pacemaker)"],
+ "selfcare": ["تجنّب القيادة بعد الإغماء حتى يسمح الطبيب"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines on cardiac pacing and cardiac resynchronization therapy (2021)"
+},
+"heart.wpw": {
+ "tests": ["تخطيط القلب (ECG)", "هولتر (Holter)", "دراسة كهربية للقلب (Electrophysiology study)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)"],
+ "meds": [
+  {"cls": "مضادات اضطراب النظم", "ex": "flecainide, propafenone", "note": "بقرار طبيب القلب"},
+  {"cls": "أدوية إنهاء نوبة تسرّع فوق البطيني", "ex": "adenosine", "note": "تُتجنّب مع الرجفان الأذيني المصاحب للمسار الإضافي"}
+ ],
+ "procedures": ["الكيّ بالقسطرة للمسار الإضافي (Catheter ablation)", "مناورات المبهم لإنهاء النوبات المنتظمة"],
+ "selfcare": ["تعلّم مناورة فالسالفا المعدّلة"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of patients with supraventricular tachycardia (2019)"
+},
+"heart.longqt": {
+ "tests": ["تخطيط القلب مع قياس QTc", "أملاح الدم والمغنيسيوم والكالسيوم", "فحص جيني وفحص الأقارب", "هولتر واختبار جهد"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)"],
+ "meds": [
+  {"cls": "حاصرات بيتا غير الانتقائية", "ex": "nadolol, propranolol"},
+  {"cls": "إيقاف الأدوية المطيلة لفترة QT", "ex": "macrolides, fluoroquinolones, haloperidol, ondansetron", "note": "لا يوقف أي دواء دون استشارة الطبيب"}
+ ],
+ "procedures": ["مزيل رجفان قابل للزرع (ICD) لحالات مختارة", "قطع العصب الودي القلبي الأيسر لحالات مختارة"],
+ "selfcare": ["حمل قائمة بالأدوية الممنوعة", "تجنّب السباحة منفردًا والأصوات المفاجئة حسب النوع"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death (2022)"
+},
+"heart.brugada": {
+ "tests": ["تخطيط القلب مع الأقطاب العلوية", "اختبار تحريض دوائي في مركز متخصص (Ajmaline/flecainide challenge)", "فحص جيني وفحص الأقارب"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)"],
+ "meds": [
+  {"cls": "خافضات الحرارة عند الحمّى", "ex": "paracetamol"},
+  {"cls": "مضادات اضطراب النظم لحالات مختارة", "ex": "quinidine"}
+ ],
+ "procedures": ["مزيل رجفان قابل للزرع (ICD) لمن تعرّض لإغماء أو توقف قلب"],
+ "selfcare": ["خفض الحرارة سريعًا", "تجنّب الأدوية الممنوعة والكحول الكثير"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death (2022)"
+},
+"heart.ectopics": {
+ "tests": ["تخطيط القلب (ECG)", "هولتر 24 ساعة (Holter)", "أملاح الدم ووظائف الغدة الدرقية وصورة دم"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography) عند كثرة النبضات أو الأعراض"],
+ "meds": [
+  {"cls": "حاصرات بيتا", "ex": "bisoprolol, propranolol", "note": "للأعراض المزعجة فقط"}
+ ],
+ "procedures": ["الكيّ بالقسطرة للنبضات البطينية الكثيرة جدًا لحالات مختارة"],
+ "selfcare": ["تقليل الكافيين والكحول", "تحسين النوم وإدارة التوتر"],
+ "refs": ["ESC", "NICE"],
+ "guide": "ESC Guidelines for the management of patients with ventricular arrhythmias (2022); NICE CKS: Palpitations"
+},
+"heart.as": {
+ "tests": ["تخطيط القلب (ECG)", "الببتيد الدماغي (NT-proBNP)"],
+ "imaging": ["موجات صوتية على القلب مع دوبلر (Echocardiography)", "أشعة مقطعية على القلب قبل الاستبدال بالقسطرة (Cardiac CT)"],
+ "meds": [
+  {"cls": "علاج الأمراض المصاحبة", "ex": "antihypertensives, diuretics", "note": "لا توجد أدوية توقف تقدم التضيّق"}
+ ],
+ "procedures": ["استبدال الصمام الأبهري جراحيًا (SAVR)", "استبدال الصمام بالقسطرة (TAVI)"],
+ "selfcare": ["تجنّب المجهود العنيف حتى التقييم", "العناية بالأسنان"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC/EACTS Guidelines for the management of valvular heart disease (2021)"
+},
+"heart.ar": {
+ "tests": ["تخطيط القلب (ECG)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "رنين مغناطيسي أو مقطعية على القلب والأبهر (Cardiac MRI/CT)"],
+ "meds": [
+  {"cls": "خافضات الضغط", "ex": "ramipril, losartan, amlodipine"}
+ ],
+ "procedures": ["استبدال الصمام الأبهري أو إصلاحه جراحيًا"],
+ "selfcare": ["متابعة دورية بالموجات الصوتية", "ضبط الضغط"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC/EACTS Guidelines for the management of valvular heart disease (2021)"
+},
+"heart.ms": {
+ "tests": ["تخطيط القلب (ECG)"],
+ "imaging": ["موجات صوتية على القلب عبر الصدر وعبر المريء (TTE/TEE)"],
+ "meds": [
+  {"cls": "مدرات البول", "ex": "furosemide"},
+  {"cls": "أدوية إبطاء النبض", "ex": "bisoprolol, diltiazem"},
+  {"cls": "مضادات التخثر", "ex": "warfarin", "note": "مع الرجفان الأذيني في التضيّق الميترالي المتوسط إلى الشديد"},
+  {"cls": "الوقاية الثانوية من الحمّى الروماتيزمية", "ex": "benzathine benzylpenicillin"}
+ ],
+ "procedures": ["توسيع الصمام الميترالي بالبالون عبر القسطرة (PMC)", "استبدال الصمام جراحيًا"],
+ "selfcare": ["مراجعة طبيب القلب قبل الحمل"],
+ "refs": ["ESC", "ACC_AHA", "WHO"],
+ "guide": "ESC/EACTS Guidelines for the management of valvular heart disease (2021)"
+},
+"heart.mr": {
+ "tests": ["تخطيط القلب (ECG)", "الببتيد الدماغي (NT-proBNP)"],
+ "imaging": ["موجات صوتية على القلب عبر الصدر وعبر المريء (TTE/TEE)"],
+ "meds": [
+  {"cls": "أدوية قصور القلب", "ex": "sacubitril/valsartan, bisoprolol, dapagliflozin", "note": "للارتجاع الثانوي"},
+  {"cls": "مدرات البول", "ex": "furosemide"}
+ ],
+ "procedures": ["إصلاح الصمام الميترالي جراحيًا", "إصلاح الصمام بالقسطرة (Transcatheter edge-to-edge repair)"],
+ "selfcare": ["متابعة دورية بالموجات الصوتية"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC/EACTS Guidelines for the management of valvular heart disease (2021)"
+},
+"heart.mvp": {
+ "tests": ["تخطيط القلب (ECG)", "هولتر عند الخفقان (Holter)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)"],
+ "meds": [
+  {"cls": "حاصرات بيتا", "ex": "propranolol, bisoprolol", "note": "للخفقان المزعج فقط"}
+ ],
+ "procedures": ["متابعة دورية بالموجات الصوتية عند وجود ارتجاع"],
+ "selfcare": ["تقليل الكافيين"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ACC/AHA Guideline for the management of patients with valvular heart disease (2020)"
+},
+"heart.endocarditis": {
+ "tests": ["ثلاث مزارع دم على الأقل قبل المضاد الحيوي (Blood cultures)", "صورة دم كاملة ومؤشرات الالتهاب (CBC, CRP)", "تحليل بول ووظائف الكلى"],
+ "imaging": ["موجات صوتية على القلب عبر الصدر وعبر المريء (TTE/TEE)", "أشعة مقطعية أو PET-CT في حالات مختارة"],
+ "meds": [
+  {"cls": "مضادات حيوية وريدية حسب المزرعة", "ex": "benzylpenicillin, ceftriaxone, vancomycin, gentamicin, daptomycin"}
+ ],
+ "procedures": ["جراحة الصمام عند قصور القلب أو العدوى غير المسيطر عليها أو خطر الانصمام", "فريق متخصص في التهاب الشغاف"],
+ "selfcare": ["العناية بصحة الأسنان وفحصها دوريًا", "عدم الحقن بإبر غير معقمة"],
+ "refs": ["ESC", "ACC_AHA", "NICE"],
+ "guide": "ESC Guidelines for the management of endocarditis (2023)"
+},
+"heart.rhd": {
+ "tests": ["تخطيط القلب (ECG)", "مؤشرات العدوى العقدية (ASO titre) عند الاشتباه بنوبة حادة"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)"],
+ "meds": [
+  {"cls": "الوقاية الثانوية بالبنسلين طويل المفعول", "ex": "benzathine benzylpenicillin"},
+  {"cls": "بدائل البنسلين عند التحسس", "ex": "erythromycin"},
+  {"cls": "أدوية قصور القلب والرجفان", "ex": "furosemide, bisoprolol, warfarin"}
+ ],
+ "procedures": ["توسيع الصمام بالبالون أو إصلاحه أو استبداله"],
+ "selfcare": ["الالتزام بحقن الوقاية في موعدها", "علاج التهاب الحلق البكتيري لدى أفراد الأسرة"],
+ "refs": ["WHO", "ESC"],
+ "guide": "WHO guideline for the prevention and diagnosis of rheumatic fever and rheumatic heart disease (2024)"
+},
+"heart.myocarditis": {
+ "tests": ["إنزيم التروبونين (Troponin)", "الببتيد الدماغي (NT-proBNP)", "مؤشرات الالتهاب (CRP)", "تخطيط القلب (ECG)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "رنين مغناطيسي على القلب (Cardiac MRI)", "قسطرة تاجية لاستبعاد الجلطة عند الحاجة"],
+ "meds": [
+  {"cls": "أدوية قصور القلب", "ex": "ramipril, bisoprolol", "note": "عند ضعف وظيفة البطين"},
+  {"cls": "مثبطات المناعة لأنواع محددة", "ex": "prednisolone", "note": "بقرار تخصصي بعد خزعة القلب"}
+ ],
+ "procedures": ["خزعة من عضلة القلب لحالات مختارة", "مراقبة النظم في المستشفى"],
+ "selfcare": ["الامتناع عن الرياضة التنافسية 3–6 أشهر حتى يسمح الطبيب"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of myocarditis and pericarditis (2025)"
+},
+"heart.tamponade": {
+ "tests": ["تخطيط القلب (ECG)", "تحليل السائل التاموري (Pericardial fluid analysis)", "صورة دم ووظائف الكلى ومؤشرات الالتهاب"],
+ "imaging": ["موجات صوتية على القلب عاجلة (Echocardiography)", "أشعة صدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "السوائل الوريدية مؤقتًا", "ex": "sodium chloride 0.9% (IV)", "note": "إجراء داعم إلى حين التصريف"}
+ ],
+ "procedures": ["بزل التامور بالإبرة عبر الجلد (Pericardiocentesis)", "تصريف جراحي (Pericardial window) عند الحاجة"],
+ "selfcare": ["الاتصال بالإسعاف فورًا"],
+ "refs": ["ESC", "ACEP"],
+ "guide": "ESC Guidelines for the diagnosis and management of pericardial diseases (2015)"
+},
+"heart.constrictive": {
+ "tests": ["الببتيد الدماغي (NT-proBNP)", "وظائف الكبد والكلى", "فحص السل (IGRA)"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "أشعة مقطعية أو رنين على القلب (Cardiac CT/MRI)", "قسطرة القلب الأيمن والأيسر (Cardiac catheterization)"],
+ "meds": [
+  {"cls": "مدرات البول", "ex": "furosemide"},
+  {"cls": "مضادات الالتهاب للحالات العابرة الحديثة", "ex": "ibuprofen, colchicine"},
+  {"cls": "علاج السل عند ثبوته", "ex": "rifampicin, isoniazid, pyrazinamide, ethambutol"}
+ ],
+ "procedures": ["استئصال غشاء التامور جراحيًا (Pericardiectomy)"],
+ "selfcare": ["تقليل الملح"],
+ "refs": ["ESC"],
+ "guide": "ESC Guidelines for the diagnosis and management of pericardial diseases (2015)"
+},
+"heart.dcm": {
+ "tests": ["الببتيد الدماغي (NT-proBNP)", "وظائف الغدة الدرقية والحديد", "فحص جيني عند الاشتباه الوراثي", "تخطيط القلب وهولتر"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "رنين مغناطيسي على القلب (Cardiac MRI)", "تقييم الشرايين التاجية لاستبعاد نقص التروية"],
+ "meds": [
+  {"cls": "أدوية قصور القلب المثبتة", "ex": "sacubitril/valsartan, bisoprolol, spironolactone, dapagliflozin"},
+  {"cls": "مدرات البول", "ex": "furosemide"}
+ ],
+ "procedures": ["مزيل رجفان قابل للزرع (ICD) أو منظم ثلاثي الحجرات (CRT)", "فحص أقارب الدرجة الأولى"],
+ "selfcare": ["الامتناع التام عن الكحول", "تقليل الملح"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of cardiomyopathies (2023)"
+},
+"heart.hcm": {
+ "tests": ["تخطيط القلب (ECG)", "هولتر 48 ساعة (Holter)", "فحص جيني وفحص الأقارب", "اختبار جهد قلبي رئوي"],
+ "imaging": ["موجات صوتية على القلب مع قياس تدرّج الانسداد (Echocardiography)", "رنين مغناطيسي على القلب (Cardiac MRI)"],
+ "meds": [
+  {"cls": "حاصرات بيتا", "ex": "bisoprolol, propranolol"},
+  {"cls": "حاصرات قنوات الكالسيوم غير الديهيدروبيريدينية", "ex": "verapamil, diltiazem"},
+  {"cls": "مثبطات الميوسين القلبي", "ex": "mavacamten", "note": "بقرار تخصصي"}
+ ],
+ "procedures": ["تقييم خطر الموت المفاجئ وتركيب مزيل رجفان (ICD)", "استئصال جزء من الحاجز جراحيًا أو كيّه بالكحول (Septal myectomy / alcohol septal ablation)"],
+ "selfcare": ["تجنّب المجهود العنيف والجفاف حتى تقييم طبيب القلب"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of cardiomyopathies (2023)"
+},
+"heart.takotsubo": {
+ "tests": ["تخطيط القلب (ECG)", "إنزيم التروبونين (Troponin)", "الببتيد الدماغي (NT-proBNP)"],
+ "imaging": ["قسطرة الشرايين التاجية مع تصوير البطين (Coronary angiography, ventriculography)", "موجات صوتية على القلب للمتابعة", "رنين مغناطيسي على القلب (Cardiac MRI)"],
+ "meds": [
+  {"cls": "أدوية قصور القلب", "ex": "ramipril, bisoprolol", "note": "حسب الحالة"},
+  {"cls": "مضادات التخثر", "ex": "heparin", "note": "عند وجود خثرة في البطين"}
+ ],
+ "procedures": ["مراقبة النظم والضغط في وحدة القلب", "دعم نفسي"],
+ "selfcare": ["إدارة التوتر"],
+ "refs": ["ESC"],
+ "guide": "ESC Guidelines for the management of acute coronary syndromes (2023); International Expert Consensus Document on Takotsubo Syndrome (2018)"
+},
+"heart.peripartum": {
+ "tests": ["الببتيد الدماغي (NT-proBNP)", "تخطيط القلب (ECG)", "صورة دم ووظائف الكلى والغدة الدرقية"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "رنين مغناطيسي على القلب بعد الولادة عند الحاجة"],
+ "meds": [
+  {"cls": "أدوية قصور القلب المناسبة للحمل أو الرضاعة", "ex": "metoprolol, hydralazine, isosorbide dinitrate, enalapril (after delivery)"},
+  {"cls": "مدرات البول", "ex": "furosemide"},
+  {"cls": "مضادات التخثر", "ex": "enoxaparin", "note": "عند الضعف الشديد"},
+  {"cls": "مثبطات البرولاكتين", "ex": "bromocriptine", "note": "بقرار تخصصي"}
+ ],
+ "procedures": ["متابعة في فريق قلب وحمل متخصص", "استشارة قبل أي حمل لاحق"],
+ "selfcare": ["عدم إهمال ضيق التنفس في آخر الحمل وبعد الولادة"],
+ "refs": ["ESC", "ACOG"],
+ "guide": "ESC Guidelines for the management of cardiovascular disease and pregnancy (2025)"
+},
+"heart.aaa": {
+ "tests": ["دهون الدم ووظائف الكلى"],
+ "imaging": ["موجات صوتية على الأبهر البطني (Abdominal aortic ultrasound)", "أشعة مقطعية بالصبغة على الأبهر (CT angiography) قبل الإصلاح"],
+ "meds": [
+  {"cls": "الستاتينات", "ex": "atorvastatin"},
+  {"cls": "مضادات الصفائح", "ex": "aspirin", "note": "حسب الأمراض المصاحبة"},
+  {"cls": "خافضات الضغط", "ex": "amlodipine, ramipril"}
+ ],
+ "procedures": ["متابعة دورية بالموجات الصوتية حسب القطر", "إصلاح بدعامة عبر القسطرة (EVAR) أو جراحة مفتوحة"],
+ "selfcare": ["الإقلاع عن التدخين", "ضبط الضغط"],
+ "refs": ["NICE", "ESC"],
+ "guide": "NICE NG156 Abdominal aortic aneurysm: diagnosis and management (2020); ESC Guidelines for the management of peripheral arterial and aortic diseases (2024)"
+},
+"heart.aaa_rupture": {
+ "tests": ["فصيلة الدم والتوافق (Group and crossmatch)", "صورة دم ووظائف الكلى والتجلط"],
+ "imaging": ["موجات صوتية سريعة بجانب السرير (POCUS)", "أشعة مقطعية بالصبغة (CT angiography) إن سمحت الحالة"],
+ "meds": [
+  {"cls": "نقل الدم ومشتقاته", "ex": "packed red cells, plasma"}
+ ],
+ "procedures": ["إصلاح طارئ بدعامة عبر القسطرة (EVAR) أو جراحة مفتوحة"],
+ "selfcare": ["عدم تناول شيء بالفم وانتظار الإسعاف"],
+ "refs": ["NICE", "ESC"],
+ "guide": "NICE NG156 Abdominal aortic aneurysm: diagnosis and management (2020)"
+},
+"heart.limbischemia": {
+ "tests": ["التجلط وصورة الدم ووظائف الكلى وإنزيم العضلات (CK)", "تخطيط القلب لكشف الرجفان الأذيني"],
+ "imaging": ["دوبلر على الشرايين (Arterial Doppler)", "أشعة مقطعية بالصبغة على الشرايين (CT angiography)"],
+ "meds": [
+  {"cls": "مضادات التخثر الوريدية", "ex": "unfractionated heparin"},
+  {"cls": "مذيبات الجلطات الموضعية عبر القسطرة", "ex": "alteplase", "note": "لحالات مختارة"}
+ ],
+ "procedures": ["استخراج الجلطة جراحيًا أو بالقسطرة (Embolectomy/thrombectomy)", "تحويل مسار الشريان"],
+ "selfcare": ["الاتصال بالإسعاف فورًا"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of peripheral arterial and aortic diseases (2024)"
+},
+"heart.buerger": {
+ "tests": ["تحاليل لاستبعاد الأمراض المناعية والسكري وفرط التخثر"],
+ "imaging": ["دوبلر على الشرايين (Arterial Doppler)", "تصوير الشرايين (Angiography)"],
+ "meds": [
+  {"cls": "نظائر البروستاسيكلين", "ex": "iloprost", "note": "لحالات الإقفار الشديد"},
+  {"cls": "مسكنات الألم", "ex": "paracetamol"},
+  {"cls": "أدوية الإقلاع عن التدخين", "ex": "varenicline, nicotine replacement therapy"}
+ ],
+ "procedures": ["العناية بالقرح والجروح", "بتر جزئي في الحالات المتقدمة"],
+ "selfcare": ["الإقلاع التام عن التدخين بكل أشكاله", "حماية الأطراف من البرد والإصابات"],
+ "refs": ["ESC"],
+ "guide": "ESC Guidelines for the management of peripheral arterial and aortic diseases (2024)"
+},
+"heart.raynaud": {
+ "tests": ["الأجسام المضادة للنواة (ANA) عند الاشتباه بسبب ثانوي", "صورة دم ومؤشرات الالتهاب"],
+ "imaging": ["فحص الشعيرات الدموية حول الأظافر (Nailfold capillaroscopy)"],
+ "meds": [
+  {"cls": "حاصرات قنوات الكالسيوم", "ex": "nifedipine, amlodipine"}
+ ],
+ "procedures": ["إحالة لأمراض الروماتيزم عند الاشتباه بمرض مناعي"],
+ "selfcare": ["تدفئة الجسم والأطراف", "الإقلاع عن التدخين", "تجنّب البرد المفاجئ"],
+ "refs": ["NICE", "EULAR"],
+ "guide": "NICE CKS: Raynaud's phenomenon (2020)"
+},
+"heart.thrombophlebitis": {
+ "tests": [],
+ "imaging": ["دوبلر على أوردة الساق (Venous duplex ultrasound)"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, diclofenac (topical)"},
+  {"cls": "مضادات التخثر", "ex": "fondaparinux", "note": "عندما يكون الجزء المصاب طويلًا أو قريبًا من الأوردة العميقة"}
+ ],
+ "procedures": ["علاج الدوالي لاحقًا عند التكرار"],
+ "selfcare": ["كمادات دافئة", "رفع الساق", "الجوارب الضاغطة", "الحركة وعدم الجلوس الطويل"],
+ "refs": ["NICE", "ESC"],
+ "guide": "NICE CKS: Superficial thrombophlebitis (2022)"
+},
+"heart.vasovagal": {
+ "tests": ["تخطيط القلب (ECG)", "قياس الضغط مستلقيًا وواقفًا", "سكر الدم وصورة دم عند الحاجة"],
+ "imaging": ["اختبار الطاولة المائلة (Tilt-table test) لحالات مختارة"],
+ "meds": [
+  {"cls": "أدوية لحالات متكررة مختارة", "ex": "midodrine, fludrocortisone", "note": "بقرار تخصصي"}
+ ],
+ "procedures": ["مناورات الضغط العضلي المضاد", "تدريب الوقوف"],
+ "selfcare": ["شرب سوائل كافية", "تجنّب المحفّزات", "الاستلقاء ورفع الساقين عند البوادر"],
+ "refs": ["ESC", "NICE"],
+ "guide": "ESC Guidelines for the diagnosis and management of syncope (2018); NICE CG109 Transient loss of consciousness (2010, updated 2023)"
+},
+"heart.pots": {
+ "tests": ["اختبار الوقوف النشط لمدة 10 دقائق مع قياس النبض والضغط", "صورة دم ومخزون الحديد ووظائف الغدة الدرقية", "تخطيط القلب (ECG)"],
+ "imaging": ["اختبار الطاولة المائلة (Tilt-table test)"],
+ "meds": [
+  {"cls": "أدوية لحالات مختارة", "ex": "propranolol, ivabradine, midodrine, fludrocortisone", "note": "بقرار تخصصي"}
+ ],
+ "procedures": ["برنامج رياضة تدريجي يبدأ بتمارين أفقية"],
+ "selfcare": ["زيادة السوائل والملح حسب توجيه الطبيب", "الجوارب الضاغطة", "النهوض ببطء"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "Heart Rhythm Society Expert Consensus Statement on POTS (2015); ESC Guidelines on syncope (2018)"
+},
+"heart.secondary_htn": {
+ "tests": ["وظائف الكلى والأملاح وتحليل البول", "نسبة الألدوستيرون إلى الرينين (Aldosterone/renin ratio)", "الميتانفرينات في البلازما أو البول (Metanephrines)", "وظائف الغدة الدرقية والكورتيزول عند الاشتباه"],
+ "imaging": ["دوبلر على شرايين الكلى (Renal artery Doppler)", "أشعة مقطعية على الكلى والغدد الكظرية عند الحاجة", "دراسة نوم عند الاشتباه بانقطاع النفس"],
+ "meds": [
+  {"cls": "خافضات الضغط", "ex": "amlodipine, ramipril, indapamide"},
+  {"cls": "مضادات الألدوستيرون", "ex": "spironolactone, eplerenone", "note": "في فرط الألدوستيرون"}
+ ],
+ "procedures": ["علاج السبب: جراحة الغدة الكظرية أو توسيع شريان الكلى أو جهاز ضغط الهواء أثناء النوم"],
+ "selfcare": ["قياس الضغط المنزلي المنتظم", "مراجعة الأدوية المرفعة للضغط كمضادات الالتهاب وموانع الحمل الهرمونية"],
+ "refs": ["ESC", "ESH", "NICE"],
+ "guide": "ESC Guidelines for the management of elevated blood pressure and hypertension (2024)"
+},
+"heart.whitecoat": {
+ "tests": ["قياس الضغط المتنقل 24 ساعة (ABPM) أو القياس المنزلي (HBPM)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "لا يُبدأ دواء عادة", "ex": "none", "note": "يُقرّر الطبيب حسب الخطر القلبي الوعائي الإجمالي"}
+ ],
+ "procedures": ["تقييم الخطر القلبي الوعائي", "متابعة سنوية للضغط"],
+ "selfcare": ["القياس المنزلي بجهاز معتمد", "نمط حياة صحي وتقليل الملح"],
+ "refs": ["NICE", "ESH", "ESC"],
+ "guide": "NICE NG136 Hypertension in adults: diagnosis and management (2019, updated 2023)"
+},
+"heart.dyslipidaemia": {
+ "tests": ["تحليل دهون الدم الكامل (Lipid profile)", "سكر الدم التراكمي ووظائف الكبد والكلى والغدة الدرقية", "حساب خطر الأمراض القلبية الوعائية (QRISK3/SCORE2)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الستاتينات", "ex": "atorvastatin, rosuvastatin"},
+  {"cls": "مثبطات امتصاص الكوليسترول", "ex": "ezetimibe"},
+  {"cls": "مثبطات PCSK9 لحالات مختارة", "ex": "evolocumab, alirocumab, inclisiran"}
+ ],
+ "procedures": ["متابعة دهون الدم بعد بدء العلاج"],
+ "selfcare": ["نظام غذائي صحي قليل الدهون المشبعة", "نشاط بدني منتظم", "الإقلاع عن التدخين"],
+ "refs": ["ESC", "NICE", "ACC_AHA"],
+ "guide": "ESC/EAS Guidelines for the management of dyslipidaemias (2019) and focused update (2025); NICE NG238 (2023)"
+},
+"heart.fh": {
+ "tests": ["تحليل دهون الدم (Lipid profile)", "معايير التشخيص (Simon Broome / Dutch Lipid Clinic Network)", "فحص جيني (Genetic testing)", "فحص الأقارب من الدرجة الأولى"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الستاتينات عالية الفاعلية", "ex": "atorvastatin, rosuvastatin"},
+  {"cls": "مثبطات امتصاص الكوليسترول", "ex": "ezetimibe"},
+  {"cls": "مثبطات PCSK9", "ex": "evolocumab, alirocumab"}
+ ],
+ "procedures": ["فصل الكوليسترول الضار من الدم (Lipoprotein apheresis) للحالات متماثلة الجينات"],
+ "selfcare": ["نظام غذائي صحي", "عدم التدخين", "فحص الأطفال في العائلة"],
+ "refs": ["NICE", "ESC"],
+ "guide": "NICE CG71 Familial hypercholesterolaemia: identification and management (2008, updated 2019)"
+},
+"heart.asd": {
+ "tests": ["تخطيط القلب (ECG)", "هولتر عند الخفقان"],
+ "imaging": ["موجات صوتية على القلب عبر الصدر وعبر المريء (TTE/TEE)", "رنين مغناطيسي على القلب (Cardiac MRI)"],
+ "meds": [
+  {"cls": "علاج اضطرابات النظم المصاحبة", "ex": "bisoprolol, apixaban"}
+ ],
+ "procedures": ["إغلاق الثقب بجهاز عبر القسطرة (Transcatheter closure)", "إغلاق جراحي"],
+ "selfcare": ["المتابعة في مركز عيوب القلب الخلقية للبالغين خاصة قبل الحمل"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines for the management of adult congenital heart disease (2020)"
+},
+"heart.lymphoedema": {
+ "tests": ["تحاليل لاستبعاد أسباب التورّم الأخرى: وظائف الكلى والكبد والبروتين والغدة الدرقية"],
+ "imaging": ["دوبلر على الأوردة لاستبعاد الجلطة", "تصوير الأوعية اللمفية (Lymphoscintigraphy) عند الحاجة"],
+ "meds": [
+  {"cls": "مضادات حيوية عند التهاب النسيج الخلوي", "ex": "flucloxacillin, clarithromycin"}
+ ],
+ "procedures": ["العلاج المتكامل لإزالة الاحتقان (Complete decongestive therapy)", "الملابس الضاغطة المفصّلة", "جراحات لمفية لحالات مختارة"],
+ "selfcare": ["العناية بالجلد وترطيبه", "تجنّب الجروح في الطرف المصاب", "تمارين منتظمة وإنقاص الوزن"],
+ "refs": ["NCCN", "NICE"],
+ "guide": "International Society of Lymphology Consensus Document on the diagnosis and treatment of peripheral lymphedema (2023)"
+},
+"respiratory.aspiration": {
+ "tests": ["صورة دم ومؤشرات الالتهاب (CBC, CRP)", "قياس تشبع الأكسجين", "مزرعة البلغم عند الإمكان"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "تقييم البلع بالأشعة أو المنظار (Videofluoroscopy / FEES)"],
+ "meds": [
+  {"cls": "مضادات حيوية", "ex": "amoxicillin/clavulanate, ceftriaxone, metronidazole"}
+ ],
+ "procedures": ["تقييم البلع من أخصائي التخاطب والبلع", "تعديل قوام الطعام ووضعية الأكل"],
+ "selfcare": ["الجلوس منتصبًا أثناء الأكل وبعده", "نظافة الفم والأسنان"],
+ "refs": ["ATS", "IDSA", "NICE"],
+ "guide": "ATS/IDSA Guideline: Diagnosis and treatment of adults with community-acquired pneumonia (2019)"
+},
+"respiratory.atypical": {
+ "tests": ["قياس تشبع الأكسجين", "مؤشرات الالتهاب (CRP)", "اختبار PCR للميكوبلازما عند الحاجة"],
+ "imaging": ["أشعة صدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "الماكروليدات", "ex": "azithromycin, clarithromycin"},
+  {"cls": "التتراسيكلينات", "ex": "doxycycline", "note": "لا تُستخدم للأطفال الصغار والحوامل"}
+ ],
+ "procedures": [],
+ "selfcare": ["الراحة والسوائل", "خافض حرارة عند الحاجة"],
+ "refs": ["ATS", "IDSA", "NICE"],
+ "guide": "ATS/IDSA Guideline: Diagnosis and treatment of adults with community-acquired pneumonia (2019)"
+},
+"respiratory.legionella": {
+ "tests": ["اختبار مستضد الليجيونيلا في البول (Urinary antigen)", "مزرعة أو PCR للبلغم", "أملاح الدم (نقص الصوديوم شائع) ووظائف الكبد والكلى"],
+ "imaging": ["أشعة صدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "الكينولونات التنفسية", "ex": "levofloxacin, moxifloxacin"},
+  {"cls": "الماكروليدات", "ex": "azithromycin"}
+ ],
+ "procedures": ["الإبلاغ للجهات الصحية لتتبّع المصدر"],
+ "selfcare": ["صيانة أنظمة المياه والتكييف"],
+ "refs": ["CDC", "ATS", "IDSA"],
+ "guide": "CDC Legionella (Legionnaires' disease): Clinical features and diagnosis; ATS/IDSA CAP guideline (2019)"
+},
+"respiratory.abscess": {
+ "tests": ["مزرعة البلغم والدم", "صورة دم ومؤشرات الالتهاب"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "أشعة مقطعية على الصدر (CT chest)"],
+ "meds": [
+  {"cls": "مضادات حيوية تغطي اللاهوائيات", "ex": "amoxicillin/clavulanate, clindamycin, piperacillin/tazobactam"}
+ ],
+ "procedures": ["منظار شعبي لاستبعاد الانسداد أو الورم", "تصريف عبر الجلد أو جراحة نادرًا"],
+ "selfcare": ["علاج الأسنان", "الامتناع عن الكحول"],
+ "refs": ["IDSA", "BTS"],
+ "guide": "ATS/IDSA Guideline: Diagnosis and treatment of adults with community-acquired pneumonia (2019)"
+},
+"respiratory.empyema": {
+ "tests": ["تحليل السائل الجنبي: الحموضة والسكر وLDH والمزرعة (Pleural fluid pH, glucose, LDH, culture)", "مزارع الدم"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "موجات صوتية على الصدر (Thoracic ultrasound)", "أشعة مقطعية على الصدر بالصبغة"],
+ "meds": [
+  {"cls": "مضادات حيوية", "ex": "amoxicillin/clavulanate, ceftriaxone, metronidazole"},
+  {"cls": "أدوية داخل الجنبة", "ex": "alteplase, dornase alfa", "note": "لحالات مختارة"}
+ ],
+ "procedures": ["أنبوب صدري لتصريف الصديد (Chest drain)", "جراحة صدر بالمنظار (VATS)"],
+ "selfcare": [],
+ "refs": ["BTS"],
+ "guide": "BTS Guideline for pleural disease (2023)"
+},
+"respiratory.effusion": {
+ "tests": ["تحليل السائل الجنبي: البروتين وLDH والخلايا والمزرعة وفحص الخلايا الخبيثة (Light's criteria, cytology)", "الببتيد الدماغي ووظائف الكبد والكلى"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "موجات صوتية على الصدر (Thoracic ultrasound)", "أشعة مقطعية على الصدر"],
+ "meds": [
+  {"cls": "علاج السبب", "ex": "furosemide", "note": "في الانصباب الناتج عن قصور القلب"}
+ ],
+ "procedures": ["سحب السائل بالإبرة (Thoracentesis)", "إلصاق الجنبة أو قسطرة جنبية دائمة للحالات المتكررة"],
+ "selfcare": [],
+ "refs": ["BTS", "ERS"],
+ "guide": "BTS Guideline for pleural disease (2023)"
+},
+"respiratory.pleurisy": {
+ "tests": ["مؤشرات الالتهاب (CRP)", "D-dimer لاستبعاد جلطة الرئة حسب الاحتمال السريري", "تخطيط القلب (ECG)"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "موجات صوتية على الصدر عند الحاجة"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen"},
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol"}
+ ],
+ "procedures": [],
+ "selfcare": ["الراحة", "الاستلقاء على الجانب المؤلم قد يخفف الألم"],
+ "refs": ["BTS", "NICE"],
+ "guide": "BTS Guideline for pleural disease (2023)"
+},
+"respiratory.ph": {
+ "tests": ["الببتيد الدماغي (NT-proBNP)", "وظائف الرئة وقدرة الانتشار (PFT, DLCO)", "اختبار المشي 6 دقائق", "تحاليل الأمراض المناعية وفيروس نقص المناعة ووظائف الكبد"],
+ "imaging": ["موجات صوتية على القلب (Echocardiography)", "مسح التهوية والتروية (V/Q scan)", "أشعة مقطعية على الصدر", "قسطرة القلب الأيمن (Right heart catheterization)"],
+ "meds": [
+  {"cls": "مضادات مستقبلات الإندوثيلين", "ex": "ambrisentan, bosentan, macitentan"},
+  {"cls": "مثبطات الفوسفوديستراز-5", "ex": "sildenafil, tadalafil"},
+  {"cls": "مدرات البول", "ex": "furosemide"}
+ ],
+ "procedures": ["الأكسجين طويل الأمد", "استئصال الجلطات المزمنة جراحيًا أو توسيع الشرايين بالبالون (في CTEPH)"],
+ "selfcare": ["تجنّب الحمل والمجهود الشديد", "التطعيمات"],
+ "refs": ["ESC", "ERS"],
+ "guide": "ESC/ERS Guidelines for the diagnosis and treatment of pulmonary hypertension (2022)"
+},
+"respiratory.ipf": {
+ "tests": ["وظائف الرئة وقدرة الانتشار (Spirometry, DLCO)", "اختبار المشي 6 دقائق", "تحاليل الأمراض المناعية لاستبعاد الأسباب الثانوية"],
+ "imaging": ["أشعة مقطعية عالية الدقة على الصدر (HRCT)"],
+ "meds": [
+  {"cls": "مضادات التليّف", "ex": "nintedanib, pirfenidone"}
+ ],
+ "procedures": ["مناقشة في فريق متعدد التخصصات", "إعادة التأهيل الرئوي", "الأكسجين", "تقييم زراعة الرئة"],
+ "selfcare": ["الإقلاع عن التدخين", "التطعيم ضد الإنفلونزا والمكورات الرئوية"],
+ "refs": ["ATS", "ERS", "NICE"],
+ "guide": "ATS/ERS/JRS/ALAT Clinical Practice Guideline: Idiopathic Pulmonary Fibrosis (2022)"
+},
+"respiratory.sarcoid": {
+ "tests": ["الكالسيوم في الدم والبول", "إنزيم المحوّل للأنجيوتنسين (ACE) أحيانًا", "وظائف الرئة", "تخطيط القلب", "فحص العينين"],
+ "imaging": ["أشعة صدر وأشعة مقطعية عالية الدقة", "منظار شعبي بالموجات الصوتية لأخذ عينة (EBUS)", "رنين على القلب عند الاشتباه"],
+ "meds": [
+  {"cls": "الكورتيزون الجهازي", "ex": "prednisolone"},
+  {"cls": "مثبطات المناعة", "ex": "methotrexate, infliximab"}
+ ],
+ "procedures": ["أخذ عينة نسيجية للتأكيد"],
+ "selfcare": ["تجنّب التدخين", "المتابعة الدورية حتى في غياب العلاج"],
+ "refs": ["ERS", "ATS"],
+ "guide": "ERS clinical practice guidelines on treatment of sarcoidosis (2021); ATS Clinical Practice Guideline on diagnosis and detection of sarcoidosis (2020)"
+},
+"respiratory.hp": {
+ "tests": ["وظائف الرئة وقدرة الانتشار", "الأجسام المضادة النوعية للمستضد (Serum IgG precipitins)", "غسيل شعبي بالمنظار (BAL lymphocytosis)"],
+ "imaging": ["أشعة مقطعية عالية الدقة على الصدر (HRCT)"],
+ "meds": [
+  {"cls": "الكورتيزون الجهازي", "ex": "prednisolone"},
+  {"cls": "مثبطات المناعة أو مضادات التليّف", "ex": "mycophenolate mofetil, nintedanib", "note": "للأنواع المزمنة أو المتليّفة"}
+ ],
+ "procedures": ["تحديد المستضد المسبب وإبعاده"],
+ "selfcare": ["تجنّب الطيور والعفن والقش المتعفن", "تهوية المنزل"],
+ "refs": ["ATS", "ERS"],
+ "guide": "ATS/JRS/ALAT Clinical Practice Guideline: Diagnosis of Hypersensitivity Pneumonitis in Adults (2020)"
+},
+"respiratory.pneumoconiosis": {
+ "tests": ["وظائف الرئة وقدرة الانتشار", "فحص السل (IGRA) لمرضى السحار السيليسي"],
+ "imaging": ["أشعة صدر حسب تصنيف منظمة العمل الدولية (ILO)", "أشعة مقطعية عالية الدقة على الصدر (HRCT)"],
+ "meds": [
+  {"cls": "الموسّعات الشعبية عند وجود انسداد", "ex": "salbutamol, tiotropium"}
+ ],
+ "procedures": ["إيقاف التعرض المهني", "إعادة التأهيل الرئوي", "الأكسجين طويل الأمد عند الحاجة"],
+ "selfcare": ["الإقلاع عن التدخين", "أقنعة الحماية المعتمدة في العمل", "التطعيمات"],
+ "refs": ["ATS", "WHO"],
+ "guide": "ATS Official Statement: The Occupational Burden of Nonmalignant Respiratory Diseases (2019)"
+},
+"respiratory.byssinosis": {
+ "tests": ["قياس وظائف التنفس قبل وردية العمل وبعدها (Cross-shift spirometry)"],
+ "imaging": ["أشعة صدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "الموسّعات الشعبية", "ex": "salbutamol"},
+  {"cls": "الكورتيزون المستنشق", "ex": "beclometasone, budesonide", "note": "عند الأعراض المستمرة"}
+ ],
+ "procedures": ["تقليل غبار القطن بالتهوية وأنظمة الشفط", "تغيير مكان العمل عند الحاجة"],
+ "selfcare": ["أقنعة الحماية", "الإقلاع عن التدخين"],
+ "refs": ["ATS", "WHO"],
+ "guide": "ATS Official Statement: The Occupational Burden of Nonmalignant Respiratory Diseases (2019)"
+},
+"respiratory.severe_asthma": {
+ "tests": ["قياس ذروة التدفق (PEF)", "تشبع الأكسجين", "غازات الدم الشرياني عند التشبع المنخفض"],
+ "imaging": ["أشعة صدر عند الاشتباه بمضاعفات"],
+ "meds": [
+  {"cls": "الموسّعات الشعبية قصيرة المفعول", "ex": "salbutamol, ipratropium bromide"},
+  {"cls": "الكورتيزون الجهازي", "ex": "prednisolone, hydrocortisone (IV)"},
+  {"cls": "علاجات إضافية للنوبات الشديدة", "ex": "magnesium sulfate (IV)"},
+  {"cls": "الأكسجين", "ex": "oxygen"}
+ ],
+ "procedures": ["مراقبة في الطوارئ أو العناية المركزة", "مراجعة خطة الربو المكتوبة قبل الخروج"],
+ "selfcare": ["الالتزام بالبخاخ الوقائي", "خطة عمل مكتوبة للربو"],
+ "refs": ["GINA", "BTS", "NICE"],
+ "guide": "GINA Global Strategy for Asthma Management and Prevention (2025); BTS/NICE/SIGN Asthma guideline (2024)"
+},
+"respiratory.eib": {
+ "tests": ["قياس وظائف التنفس مع اختبار الموسّع (Spirometry)", "اختبار تحدٍّ بالمجهود أو بالتهوية الطوعية (Exercise/EVH challenge)", "أكسيد النيتريك في الزفير (FeNO)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الموسّعات الشعبية قصيرة المفعول قبل الرياضة", "ex": "salbutamol, terbutaline"},
+  {"cls": "بخاخ مركّب من كورتيزون وفورموتيرول", "ex": "budesonide/formoterol"},
+  {"cls": "مضادات مستقبلات اللوكوترين", "ex": "montelukast"}
+ ],
+ "procedures": [],
+ "selfcare": ["الإحماء التدريجي قبل الرياضة", "تغطية الفم والأنف في الهواء البارد"],
+ "refs": ["ATS", "GINA"],
+ "guide": "ATS Clinical Practice Guideline: Exercise-induced Bronchoconstriction (2013)"
+},
+"respiratory.copd_exac": {
+ "tests": ["تشبع الأكسجين وغازات الدم عند الحاجة", "صورة دم ومؤشرات الالتهاب (CBC, CRP)", "مزرعة البلغم في الحالات المتكررة"],
+ "imaging": ["أشعة صدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "الموسّعات الشعبية قصيرة المفعول", "ex": "salbutamol, ipratropium bromide"},
+  {"cls": "الكورتيزون الفموي لمدة قصيرة", "ex": "prednisolone"},
+  {"cls": "مضادات حيوية عند تغيّر لون البلغم", "ex": "amoxicillin, doxycycline, clarithromycin"}
+ ],
+ "procedures": ["التنفس بالضغط الإيجابي غير الجراحي (NIV) عند الحماض التنفسي", "إعادة التأهيل الرئوي بعد التعافي"],
+ "selfcare": ["الإقلاع عن التدخين", "خطة عمل للتفاقم", "التطعيمات"],
+ "refs": ["GOLD", "NICE"],
+ "guide": "GOLD Global Strategy for Prevention, Diagnosis and Management of COPD (2025)"
+},
+"respiratory.chronic_bronchitis": {
+ "tests": ["قياس وظائف التنفس (Spirometry)", "صورة دم"],
+ "imaging": ["أشعة صدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "الموسّعات الشعبية طويلة المفعول", "ex": "tiotropium, umeclidinium, salmeterol"},
+  {"cls": "أدوية الإقلاع عن التدخين", "ex": "varenicline, nicotine replacement therapy"},
+  {"cls": "حالّات البلغم لحالات مختارة", "ex": "carbocisteine"}
+ ],
+ "procedures": ["إعادة التأهيل الرئوي"],
+ "selfcare": ["الإقلاع عن التدخين", "التطعيم ضد الإنفلونزا والمكورات الرئوية"],
+ "refs": ["GOLD", "NICE"],
+ "guide": "GOLD Global Strategy for Prevention, Diagnosis and Management of COPD (2025)"
+},
+"respiratory.bronchiectasis": {
+ "tests": ["مزرعة البلغم بما فيها الزائفة والمتفطرات", "صورة دم والمناعة (Immunoglobulins)", "تحاليل لأسباب محددة كالرشاشيات"],
+ "imaging": ["أشعة مقطعية عالية الدقة على الصدر (HRCT)"],
+ "meds": [
+  {"cls": "مضادات حيوية للنوبات حسب المزرعة", "ex": "amoxicillin, ciprofloxacin, doxycycline"},
+  {"cls": "مضادات حيوية وقائية طويلة الأمد لحالات مختارة", "ex": "azithromycin"}
+ ],
+ "procedures": ["تقنيات تنظيف الشعب الهوائية بالعلاج الطبيعي التنفسي", "محلول ملحي مستنشق عالي التركيز"],
+ "selfcare": ["تمارين تنظيف الصدر يوميًا", "التطعيمات", "النشاط البدني"],
+ "refs": ["BTS", "ERS"],
+ "guide": "BTS Guideline for bronchiectasis in adults (2019)"
+},
+"respiratory.hyperventilation": {
+ "tests": ["تشبع الأكسجين", "تخطيط القلب وسكر الدم عند أول نوبة أو مع ألم صدر"],
+ "imaging": [],
+ "meds": [
+  {"cls": "علاج القلق أو الهلع المصاحب", "ex": "sertraline, escitalopram", "note": "عند تشخيص اضطراب الهلع"}
+ ],
+ "procedures": ["إعادة تدريب التنفس مع أخصائي العلاج الطبيعي", "العلاج المعرفي السلوكي"],
+ "selfcare": ["التنفس البطني البطيء", "عدم التنفس في كيس"],
+ "refs": ["NICE"],
+ "guide": "NICE CG113 Generalised anxiety disorder and panic disorder in adults (2011, updated 2020)"
+},
+"respiratory.ams": {
+ "tests": ["تشبع الأكسجين"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات الأنهيدراز الكربونية للوقاية أو العلاج", "ex": "acetazolamide"},
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "الكورتيكوستيرويدات للحالات الشديدة", "ex": "dexamethasone"}
+ ],
+ "procedures": ["النزول إلى ارتفاع أقل عند عدم التحسن"],
+ "selfcare": ["الصعود التدريجي", "الراحة وشرب السوائل", "تجنّب الكحول"],
+ "refs": ["CDC"],
+ "guide": "Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Acute Altitude Illness (2024 update); CDC Yellow Book"
+},
+"respiratory.hape": {
+ "tests": ["تشبع الأكسجين"],
+ "imaging": ["أشعة صدر أو موجات صوتية على الرئة عند التوفر"],
+ "meds": [
+  {"cls": "الأكسجين", "ex": "oxygen"},
+  {"cls": "حاصرات قنوات الكالسيوم", "ex": "nifedipine", "note": "إلى حين النزول"}
+ ],
+ "procedures": ["النزول الفوري", "غرفة الضغط المحمولة (Portable hyperbaric chamber)"],
+ "selfcare": ["الصعود التدريجي للوقاية"],
+ "refs": ["CDC"],
+ "guide": "Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Acute Altitude Illness (2024 update)"
+},
+"respiratory.smoke": {
+ "tests": ["قياس الكربوكسي هيموغلوبين (COHb)", "غازات الدم واللاكتات", "تشبع الأكسجين"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "منظار الحنجرة أو الشعب لتقييم الحروق"],
+ "meds": [
+  {"cls": "الأكسجين بتركيز عالٍ", "ex": "oxygen"},
+  {"cls": "ترياق السيانيد عند الاشتباه", "ex": "hydroxocobalamin"},
+  {"cls": "الموسّعات الشعبية", "ex": "salbutamol"}
+ ],
+ "procedures": ["أنبوب تنفس مبكر عند حروق المجرى الهوائي", "مراقبة لساعات"],
+ "selfcare": ["الخروج إلى الهواء الطلق"],
+ "refs": ["ACEP"],
+ "guide": "ACEP Clinical Policy: Critical issues in the evaluation and management of adult patients presenting with acute carbon monoxide poisoning (2017)"
+},
+"respiratory.co": {
+ "tests": ["قياس الكربوكسي هيموغلوبين (COHb)", "تخطيط القلب وإنزيم التروبونين", "اختبار الحمل لدى النساء في سن الإنجاب"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الأكسجين بتركيز عالٍ", "ex": "oxygen"}
+ ],
+ "procedures": ["الأكسجين عالي الضغط (Hyperbaric oxygen) لحالات مختارة", "تقييم عصبي ومتابعة"],
+ "selfcare": ["تركيب كاشف أول أكسيد الكربون", "صيانة السخانات والمدافئ", "عدم تشغيل المولدات داخل المنزل"],
+ "refs": ["ACEP", "CDC"],
+ "guide": "ACEP Clinical Policy: Critical issues in the evaluation and management of adult patients presenting with acute carbon monoxide poisoning (2017)"
+},
+"respiratory.chronic_cough": {
+ "tests": ["قياس وظائف التنفس مع اختبار الموسّع (Spirometry)", "أكسيد النيتريك في الزفير (FeNO)", "عدد الحمضات في الدم"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "أشعة مقطعية عند الحاجة"],
+ "meds": [
+  {"cls": "الكورتيزون المستنشق عند الاشتباه بالربو", "ex": "budesonide, fluticasone"},
+  {"cls": "مثبطات مضخة البروتون عند أعراض الارتجاع", "ex": "omeprazole"},
+  {"cls": "بخاخات الأنف للتنقيط الأنفي الخلفي", "ex": "mometasone (nasal)"},
+  {"cls": "إيقاف مثبطات الإنزيم المحوّل", "ex": "ramipril, lisinopril", "note": "يُستبدل بدواء آخر بقرار الطبيب"}
+ ],
+ "procedures": ["علاج السعال بالتخاطب والعلاج الطبيعي للحالات المقاومة"],
+ "selfcare": ["الإقلاع عن التدخين"],
+ "refs": ["ERS", "BTS"],
+ "guide": "ERS guidelines on the diagnosis and treatment of chronic cough in adults and children (2020)"
+},
+"respiratory.postinfectious": {
+ "tests": [],
+ "imaging": ["أشعة صدر إذا تجاوز السعال 8 أسابيع أو ظهرت علامات خطر"],
+ "meds": [
+  {"cls": "موسّعات أو كورتيزون مستنشق لحالات مختارة", "ex": "ipratropium bromide, budesonide", "note": "بقرار الطبيب"}
+ ],
+ "procedures": [],
+ "selfcare": ["السوائل الدافئة والعسل لمن تجاوز عامًا", "تجنّب التدخين والمهيّجات"],
+ "refs": ["ERS", "NICE"],
+ "guide": "ERS guidelines on the diagnosis and treatment of chronic cough (2020); NICE NG120 Cough (acute): antimicrobial prescribing (2019)"
+},
+"respiratory.ohs": {
+ "tests": ["غازات الدم الشرياني (ABG)", "البيكربونات في الدم", "دراسة النوم (Polysomnography)", "وظائف الغدة الدرقية"],
+ "imaging": ["موجات صوتية على القلب لتقييم ارتفاع الضغط الرئوي"],
+ "meds": [],
+ "procedures": ["جهاز ضغط الهواء الإيجابي المستمر أو ثنائي المستوى أثناء النوم (CPAP/NIV)", "برنامج إنقاص الوزن أو جراحة السمنة"],
+ "selfcare": ["إنقاص الوزن", "تجنّب المهدئات والكحول"],
+ "refs": ["ATS"],
+ "guide": "ATS Clinical Practice Guideline: Evaluation and Management of Obesity Hypoventilation Syndrome (2019)"
+},
+"respiratory.abpa": {
+ "tests": ["الغلوبيولين المناعي IgE الكلي", "IgE وIgG الخاصة بالرشاشيات", "عدد الحمضات في الدم"],
+ "imaging": ["أشعة مقطعية عالية الدقة على الصدر (HRCT)"],
+ "meds": [
+  {"cls": "الكورتيزون الجهازي", "ex": "prednisolone"},
+  {"cls": "مضادات الفطريات", "ex": "itraconazole, voriconazole"},
+  {"cls": "العلاجات البيولوجية لحالات مختارة", "ex": "omalizumab"}
+ ],
+ "procedures": ["متابعة مستوى IgE"],
+ "selfcare": ["الالتزام بعلاج الربو"],
+ "refs": ["ERS"],
+ "guide": "ISHAM-AWG revised clinical practice guidelines for allergic bronchopulmonary aspergillosis (2024)"
+},
+"respiratory.foreignbody": {
+ "tests": ["تشبع الأكسجين"],
+ "imaging": ["أشعة صدر في الشهيق والزفير (Inspiratory/expiratory chest X-ray)", "أشعة مقطعية على الصدر"],
+ "meds": [
+  {"cls": "مضادات حيوية عند وجود التهاب رئوي مصاحب", "ex": "amoxicillin/clavulanate"}
+ ],
+ "procedures": ["منظار شعبي لإخراج الجسم الغريب (Bronchoscopy)", "الإسعافات الأولية للاختناق: ضربات الظهر وضغطات البطن"],
+ "selfcare": ["إبعاد الأجسام الصغيرة والمكسرات عن الأطفال دون 5 سنوات"],
+ "refs": ["BTS", "AAP"],
+ "guide": "BTS Guideline for advanced diagnostic and therapeutic flexible bronchoscopy in adults (2011)"
+},
+"respiratory.evali": {
+ "tests": ["تشبع الأكسجين", "صورة دم ومؤشرات الالتهاب", "مسحات لاستبعاد الإنفلونزا وكوفيد"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "أشعة مقطعية على الصدر (CT chest)"],
+ "meds": [
+  {"cls": "الكورتيزون الجهازي", "ex": "prednisolone, methylprednisolone"},
+  {"cls": "مضادات حيوية تجريبية حتى استبعاد العدوى", "ex": "ceftriaxone, azithromycin"}
+ ],
+ "procedures": ["الأكسجين ودعم التنفس عند الحاجة"],
+ "selfcare": ["التوقف عن التدخين الإلكتروني نهائيًا"],
+ "refs": ["CDC"],
+ "guide": "CDC Update: Interim guidance for health care providers for managing patients with suspected EVALI (2020)"
+},
+"respiratory.a1at": {
+ "tests": ["مستوى ألفا-1 أنتيتريبسين في الدم", "تحديد النمط الجيني (Phenotype/genotype)", "وظائف الرئة والكبد"],
+ "imaging": ["أشعة مقطعية على الصدر", "موجات صوتية على الكبد"],
+ "meds": [
+  {"cls": "العلاج التعويضي بالبروتين", "ex": "alpha-1 proteinase inhibitor (IV)", "note": "لحالات مختارة"},
+  {"cls": "الموسّعات الشعبية", "ex": "tiotropium, salmeterol"}
+ ],
+ "procedures": ["إعادة التأهيل الرئوي", "فحص الأقارب"],
+ "selfcare": ["الإقلاع التام عن التدخين", "تجنّب الكحول", "التطعيمات"],
+ "refs": ["ERS", "ATS", "GOLD"],
+ "guide": "ERS statement: diagnosis and treatment of pulmonary disease in alpha-1 antitrypsin deficiency (2017)"
+},
+"respiratory.latenttb": {
+ "tests": ["اختبار السل الجلدي (TST) أو الدموي (IGRA)", "اختبار فيروس نقص المناعة", "وظائف الكبد قبل العلاج"],
+ "imaging": ["أشعة صدر لاستبعاد السل النشط (Chest X-ray)"],
+ "meds": [
+  {"cls": "العلاج الوقائي للسل", "ex": "isoniazid, rifapentine, rifampicin"}
+ ],
+ "procedures": ["متابعة الالتزام والأعراض الجانبية أثناء العلاج"],
+ "selfcare": ["إكمال العلاج كاملًا", "مراجعة الطبيب عند ظهور أعراض السل"],
+ "refs": ["WHO", "NICE", "CDC"],
+ "guide": "WHO consolidated guidelines on tuberculosis: Module 1: Prevention – tuberculosis preventive treatment (2024)"
+},
+"respiratory.hiccups": {
+ "tests": ["أملاح الدم والكالسيوم ووظائف الكلى والسكر"],
+ "imaging": ["أشعة صدر", "أشعة مقطعية أو رنين على المخ عند وجود أعراض عصبية"],
+ "meds": [
+  {"cls": "مثبطات مضخة البروتون عند الارتجاع", "ex": "omeprazole"},
+  {"cls": "أدوية للفواق المستعصي", "ex": "baclofen, metoclopramide, chlorpromazine", "note": "بقرار الطبيب"}
+ ],
+ "procedures": [],
+ "selfcare": ["حبس النفس قليلًا أو شرب ماء بارد للفواق القصير"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Palliative care – hiccups (2021)"
+},
+"respiratory.longcovid": {
+ "tests": ["صورة دم ووظائف الكلى والكبد والغدة الدرقية", "تشبع الأكسجين أثناء الراحة والمجهود", "تخطيط القلب"],
+ "imaging": ["أشعة صدر إذا استمرت الأعراض التنفسية"],
+ "meds": [
+  {"cls": "علاج الأعراض كلٌّ على حدة", "ex": "paracetamol"}
+ ],
+ "procedures": ["تأهيل متعدد التخصصات", "إدارة الطاقة والعودة التدريجية للنشاط"],
+ "selfcare": ["تنظيم النشاط والراحة", "نوم منتظم"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE NG188 COVID-19 rapid guideline: managing the long-term effects of COVID-19 (2020, updated 2024)"
+},
+"respiratory.nodule": {
+ "tests": ["حساب خطر الورم (Brock model)"],
+ "imaging": ["أشعة مقطعية متابعة على فترات (CT surveillance)", "أشعة مقطعية بالإصدار البوزيتروني (PET-CT) لحالات مختارة"],
+ "meds": [],
+ "procedures": ["أخذ عينة عبر الجلد أو بالمنظار عند ارتفاع الخطر", "استئصال جراحي لحالات مختارة"],
+ "selfcare": ["الإقلاع عن التدخين", "الالتزام بمواعيد المتابعة"],
+ "refs": ["BTS"],
+ "guide": "BTS Guidelines for the investigation and management of pulmonary nodules (2015)"
+},
+"respiratory.mesothelioma": {
+ "tests": ["تحليل السائل الجنبي وفحص الخلايا"],
+ "imaging": ["أشعة صدر (Chest X-ray)", "أشعة مقطعية على الصدر بالصبغة", "PET-CT لتحديد المرحلة"],
+ "meds": [
+  {"cls": "العلاج المناعي", "ex": "nivolumab, ipilimumab"},
+  {"cls": "العلاج الكيميائي", "ex": "pemetrexed, cisplatin"}
+ ],
+ "procedures": ["أخذ عينة بالمنظار الصدري (Thoracoscopic biopsy)", "قسطرة جنبية دائمة أو إلصاق الجنبة", "فريق أورام متعدد التخصصات"],
+ "selfcare": [],
+ "refs": ["BTS", "NICE", "ESMO"],
+ "guide": "BTS Guideline for the investigation and management of malignant pleural mesothelioma (2018)"
+}
+}

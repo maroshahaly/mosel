@@ -1,0 +1,862 @@
+{
+"internal.ureteric_stone": {
+ "tests": ["تحليل بول (Urinalysis)", "وظائف الكلى (Creatinine) وصورة دم كاملة (CBC)", "تحليل الحصوة بعد خروجها (Stone analysis)"],
+ "imaging": ["أشعة مقطعية بدون صبغة بجرعة منخفضة (Low-dose non-contrast CT KUB)", "موجات فوق صوتية (Ultrasound) للحوامل والأطفال"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "diclofenac, ibuprofen", "note": "الخيار الأول للمغص ما لم يوجد قصور كلوي أو مانع آخر"},
+  {"cls": "مسكنات أفيونية عند عدم الاستجابة", "ex": "morphine"},
+  {"cls": "حاصرات ألفا لتسهيل مرور الحصوة (العلاج الطارد)", "ex": "tamsulosin"},
+  {"cls": "مضادات القيء", "ex": "metoclopramide, ondansetron"}
+ ],
+ "procedures": ["تفتيت الحصوة بالموجات التصادمية من خارج الجسم (ESWL)", "منظار الحالب مع التفتيت بالليزر (Ureteroscopy)", "تركيب دعامة حالبية (JJ stent) أو أنبوب كلوي عند العدوى أو الانسداد"],
+ "selfcare": ["شرب سوائل كافية", "تصفية البول لالتقاط الحصوة وتحليلها"],
+ "refs": ["EAU", "AUA", "NICE"],
+ "guide": "EAU Guidelines on Urolithiasis (2024)"
+},
+"internal.bladder_stone": {
+ "tests": ["تحليل ومزرعة بول (Urinalysis & culture)", "وظائف الكلى (Creatinine)"],
+ "imaging": ["موجات فوق صوتية على المثانة مع قياس البول المتبقي (Ultrasound, PVR)", "أشعة سينية أو مقطعية على المسالك (KUB X-ray / CT)"],
+ "meds": [{"cls": "مضادات حيوية حسب المزرعة عند وجود عدوى", "ex": "nitrofurantoin, cefalexin"}],
+ "procedures": ["تفتيت حصوة المثانة بالمنظار (Cystolitholapaxy)", "علاج سبب الانسداد كتضخم البروستاتا"],
+ "selfcare": ["شرب سوائل كافية", "عدم تأجيل التبول"],
+ "refs": ["EAU", "AUA"],
+ "guide": "EAU Guidelines on Urolithiasis (2024)"
+},
+"internal.staghorn": {
+ "tests": ["مزرعة بول (Urine culture)", "وظائف الكلى (Creatinine)", "تحليل الحصوة (Stone analysis)"],
+ "imaging": ["أشعة مقطعية (CT KUB)", "مسح نووي لوظيفة الكلية (DMSA / MAG3 renogram) عند الشك في ضعف الكلية"],
+ "meds": [{"cls": "مضادات حيوية حسب المزرعة", "ex": "ceftriaxone, ciprofloxacin", "note": "قبل الجراحة وبعدها حسب المزرعة"}],
+ "procedures": ["استخراج الحصوة عبر الجلد (PCNL)", "استئصال الكلية في حالة فقدان وظيفتها"],
+ "selfcare": ["المتابعة الدورية لمنع التكرار", "شرب سوائل كافية"],
+ "refs": ["AUA", "EAU"],
+ "guide": "AUA Surgical Management of Stones Guideline (2016)"
+},
+"internal.recurrent_stones": {
+ "tests": ["تحليل الحصوة (Stone analysis)", "بول 24 ساعة: كالسيوم وأكسالات وسيترات وحمض يوريك وصوديوم وحجم (24-hour urine)", "كالسيوم الدم وهرمون الغدة جار الدرقية وحمض اليوريك (Ca, PTH, Uric acid)"],
+ "imaging": ["موجات فوق صوتية أو أشعة مقطعية منخفضة الجرعة للمتابعة (Ultrasound / Low-dose CT)"],
+ "meds": [
+  {"cls": "مدرات الثيازيد لفرط كالسيوم البول", "ex": "hydrochlorothiazide, chlorthalidone, indapamide"},
+  {"cls": "أملاح السيترات لنقص السيترات", "ex": "potassium citrate"},
+  {"cls": "مثبطات إنزيم زانثين أوكسيديز", "ex": "allopurinol"}
+ ],
+ "procedures": ["تقييم أيضي شامل لدى المرضى المعرّضين لخطر التكرار"],
+ "selfcare": ["شرب سوائل كافية لإخراج لترين ونصف من البول يوميًا", "تقليل الملح والبروتين الحيواني", "كالسيوم غذائي طبيعي وعدم تقييده"],
+ "refs": ["AUA", "EAU"],
+ "guide": "AUA Medical Management of Kidney Stones (2014, amended 2019)"
+},
+"internal.uric_stones": {
+ "tests": ["حمض اليوريك في الدم وبول 24 ساعة (Serum & urine uric acid)", "قياس حموضة البول (Urine pH)", "تحليل الحصوة (Stone analysis)"],
+ "imaging": ["أشعة مقطعية بدون صبغة (Non-contrast CT) لأن الحصوة لا تظهر غالبًا في الأشعة العادية"],
+ "meds": [
+  {"cls": "قلونة البول", "ex": "potassium citrate, sodium bicarbonate"},
+  {"cls": "مثبطات إنزيم زانثين أوكسيديز", "ex": "allopurinol, febuxostat"}
+ ],
+ "procedures": ["إذابة الحصوة دوائيًا أو إزالتها بالمنظار عند الانسداد"],
+ "selfcare": ["الإكثار من السوائل", "تقليل اللحوم الحمراء والأحشاء والمأكولات البحرية والمشروبات المحلّاة بالفركتوز", "إنقاص الوزن الزائد"],
+ "refs": ["EAU", "AUA", "ACR"],
+ "guide": "EAU Guidelines on Urolithiasis (2024)"
+},
+"internal.hydronephrosis": {
+ "tests": ["وظائف الكلى والأملاح (Creatinine, Electrolytes)", "تحليل ومزرعة بول (Urinalysis & culture)"],
+ "imaging": ["موجات فوق صوتية على الكلى والمثانة (Renal ultrasound)", "أشعة مقطعية (CT urography) لتحديد السبب", "مسح نووي لتقييم الانسداد (MAG3 diuretic renogram)"],
+ "meds": [{"cls": "مسكنات حسب الحاجة", "ex": "paracetamol"}],
+ "procedures": ["دعامة حالبية (JJ stent) أو أنبوب كلوي عبر الجلد (Nephrostomy)", "علاج السبب كإزالة الحصوة أو إصلاح تضيّق الوصلة الحوضية الحالبية (Pyeloplasty)"],
+ "selfcare": ["المتابعة الدورية بالموجات فوق الصوتية"],
+ "refs": ["EAU", "AUA"],
+ "guide": "EAU Guidelines on Urolithiasis (2024)"
+},
+"internal.obstructive_uropathy": {
+ "tests": ["وظائف الكلى والأملاح (Creatinine, Potassium)", "تحليل ومزرعة بول", "صورة دم كاملة (CBC)"],
+ "imaging": ["موجات فوق صوتية على الكلى والمثانة (Renal & bladder ultrasound)", "أشعة مقطعية لتحديد السبب (CT)"],
+ "meds": [{"cls": "مضادات حيوية عند وجود عدوى", "ex": "ceftriaxone, gentamicin"}],
+ "procedures": ["قسطرة بولية (Urethral catheter) للانسداد أسفل المثانة", "دعامة حالبية أو أنبوب كلوي عبر الجلد", "مراقبة إدرار البول المفرط بعد فك الانسداد (Post-obstructive diuresis)"],
+ "selfcare": [],
+ "refs": ["NICE", "EAU", "KDIGO"],
+ "guide": "NICE NG148 Acute kidney injury: prevention, detection and management (2019)"
+},
+"internal.pyonephrosis": {
+ "tests": ["مزرعة دم وبول (Blood & urine cultures)", "صورة دم كاملة ووظائف الكلى ومؤشرات الالتهاب (CBC, Creatinine, CRP, Lactate)"],
+ "imaging": ["موجات فوق صوتية عاجلة (Ultrasound)", "أشعة مقطعية (CT)"],
+ "meds": [{"cls": "مضادات حيوية وريدية واسعة الطيف", "ex": "piperacillin-tazobactam, ceftriaxone, gentamicin"}],
+ "procedures": ["تصريف عاجل للكلية بأنبوب عبر الجلد (Nephrostomy) أو دعامة حالبية", "تأجيل إزالة الحصوة حتى السيطرة على العدوى"],
+ "selfcare": [],
+ "refs": ["EAU", "IDSA"],
+ "guide": "EAU Guidelines on Urolithiasis (2024) — Decompression of obstructed infected kidney"
+},
+"internal.recurrent_uti": {
+ "tests": ["مزرعة بول مع كل نوبة (Urine culture)", "سكر الدم (Glucose)"],
+ "imaging": ["موجات فوق صوتية على الكلى والمثانة مع البول المتبقي عند وجود عوامل خطر (Ultrasound)"],
+ "meds": [
+  {"cls": "الإستروجين المهبلي الموضعي بعد انقطاع الطمث", "ex": "estradiol (vaginal), estriol (vaginal)"},
+  {"cls": "وقاية بالمضادات الحيوية بإشراف الطبيب", "ex": "nitrofurantoin, trimethoprim, fosfomycin"},
+  {"cls": "وقاية غير مضادة حيوية", "ex": "methenamine hippurate"}
+ ],
+ "procedures": ["منظار المثانة عند الشك في سبب تشريحي أو دم مستمر في البول"],
+ "selfcare": ["شرب سوائل كافية", "عدم حبس البول", "التبول بعد العلاقة الزوجية"],
+ "refs": ["AUA", "EAU", "NICE"],
+ "guide": "AUA/CUA/SUFU Guideline: Recurrent Uncomplicated UTIs in Women (2019, amended 2022)"
+},
+"internal.interstitial_cystitis": {
+ "tests": ["تحليل ومزرعة بول لاستبعاد العدوى (Urinalysis & culture)", "فحص خلايا البول عند الاشتباه (Urine cytology)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الاكتئاب ثلاثية الحلقات", "ex": "amitriptyline"},
+  {"cls": "مضادات الهيستامين", "ex": "hydroxyzine, cimetidine"},
+  {"cls": "عوامل حماية بطانة المثانة", "ex": "pentosan polysulfate", "note": "يحتاج متابعة عيون دورية"},
+  {"cls": "علاجات داخل المثانة", "ex": "dimethyl sulfoxide (DMSO), lidocaine, heparin"}
+ ],
+ "procedures": ["منظار المثانة لاستبعاد قرح هانر وعلاجها", "علاج طبيعي لعضلات قاع الحوض"],
+ "selfcare": ["تجنّب المهيّجات كالقهوة والحمضيات والأطعمة الحارة", "إدارة التوتر"],
+ "refs": ["AUA", "EAU"],
+ "guide": "AUA Guideline: Diagnosis and Treatment of Interstitial Cystitis/Bladder Pain Syndrome (2022)"
+},
+"internal.urethritis": {
+ "tests": ["اختبار التضخيم الجيني للسيلان والكلاميديا والميكوبلازما (NAAT)", "تحليل بول الدفعة الأولى (First-void urine)", "فحص الأمراض المنقولة جنسيًا الأخرى (HIV, Syphilis)"],
+ "imaging": [],
+ "meds": [{"cls": "مضادات حيوية حسب المسبب", "ex": "doxycycline, ceftriaxone, azithromycin"}],
+ "procedures": ["إبلاغ الشريك وعلاجه"],
+ "selfcare": ["الامتناع عن العلاقة حتى انتهاء علاج الطرفين", "استعمال الواقي"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021)"
+},
+"internal.aki": {
+ "tests": ["الكرياتينين واليوريا والأملاح (Creatinine, Urea, Electrolytes)", "تحليل بول بالشريط (Urine dipstick)", "غازات الدم عند الحاجة (Blood gas)"],
+ "imaging": ["موجات فوق صوتية على الكلى خلال 24 ساعة عند الشك في انسداد (Renal ultrasound)"],
+ "meds": [
+  {"cls": "سوائل وريدية متوازنة عند نقص الحجم", "ex": "Ringer's lactate, sodium chloride"},
+  {"cls": "مراجعة الأدوية الضارة بالكلى وإيقافها مؤقتًا", "ex": "NSAIDs, ACE inhibitors, ARBs, metformin", "note": "بقرار من الطبيب"}
+ ],
+ "procedures": ["الغسيل الكلوي عند المضاعفات الخطيرة (Dialysis)", "قسطرة بولية عند احتباس البول"],
+ "selfcare": ["شرب سوائل كافية أثناء المرض", "تجنّب مسكنات مضادات الالتهاب دون استشارة"],
+ "refs": ["KDIGO", "NICE"],
+ "guide": "KDIGO Clinical Practice Guideline for Acute Kidney Injury (2012)"
+},
+"internal.nephrotic": {
+ "tests": ["نسبة البروتين أو الألبومين إلى الكرياتينين في البول (UPCR/UACR)", "ألبومين الدم والدهون ووظائف الكلى (Albumin, Lipids, Creatinine)", "أجسام مضادة لمستقبل PLA2R وفحوص السكر والمناعة (Anti-PLA2R, HbA1c, ANA)"],
+ "imaging": ["موجات فوق صوتية على الكلى (Renal ultrasound)"],
+ "meds": [
+  {"cls": "مدرات العروة للتورّم", "ex": "furosemide"},
+  {"cls": "مثبطات الإنزيم المحوّل أو حاصرات مستقبلات الأنجيوتنسين", "ex": "ramipril, losartan"},
+  {"cls": "الكورتيزون ومثبطات المناعة حسب النوع", "ex": "prednisolone, tacrolimus, rituximab"},
+  {"cls": "مضادات التخثر في حالات مختارة", "ex": "warfarin, apixaban"}
+ ],
+ "procedures": ["خزعة الكلية (Kidney biopsy) لتحديد النوع لدى البالغين"],
+ "selfcare": ["تقليل الملح", "مراقبة الوزن والتورّم"],
+ "refs": ["KDIGO"],
+ "guide": "KDIGO Clinical Practice Guideline for the Management of Glomerular Diseases (2021)"
+},
+"internal.nephritic": {
+ "tests": ["تحليل بول مجهري للكريات المشوهة والأسطوانات (Urine microscopy)", "وظائف الكلى والأملاح", "المتممات وأجسام ANCA وanti-GBM وASO (C3, C4, ANCA, anti-GBM, ASO)"],
+ "imaging": ["موجات فوق صوتية على الكلى (Renal ultrasound)"],
+ "meds": [
+  {"cls": "خافضات الضغط ومدرات البول", "ex": "furosemide, amlodipine"},
+  {"cls": "الكورتيزون ومثبطات المناعة حسب السبب", "ex": "methylprednisolone, cyclophosphamide, rituximab"}
+ ],
+ "procedures": ["خزعة الكلية (Kidney biopsy)", "استبدال البلازما في حالات مختارة (Plasma exchange)"],
+ "selfcare": ["تقليل الملح والسوائل حسب تعليمات الطبيب"],
+ "refs": ["KDIGO"],
+ "guide": "KDIGO Clinical Practice Guideline for the Management of Glomerular Diseases (2021)"
+},
+"internal.iga": {
+ "tests": ["نسبة البروتين إلى الكرياتينين في البول (UPCR)", "وظائف الكلى (Creatinine, eGFR)", "تحليل بول مجهري"],
+ "imaging": ["موجات فوق صوتية على الكلى"],
+ "meds": [
+  {"cls": "مثبطات الإنزيم المحوّل أو حاصرات مستقبلات الأنجيوتنسين", "ex": "ramipril, losartan"},
+  {"cls": "مثبطات SGLT2", "ex": "dapagliflozin, empagliflozin"},
+  {"cls": "علاجات موجهة في حالات مختارة", "ex": "sparsentan, budesonide (targeted-release)"}
+ ],
+ "procedures": ["خزعة الكلية للتشخيص (Kidney biopsy)"],
+ "selfcare": ["ضبط الضغط وتقليل الملح", "الإقلاع عن التدخين"],
+ "refs": ["KDIGO"],
+ "guide": "KDIGO Clinical Practice Guideline for the Management of IgA Nephropathy and IgA Vasculitis (2025)"
+},
+"internal.adpkd": {
+ "tests": ["وظائف الكلى (Creatinine, eGFR)", "تحليل بول", "فحص جيني عند الحاجة (PKD1/PKD2)"],
+ "imaging": ["موجات فوق صوتية على الكلى (Renal ultrasound)", "رنين مغناطيسي لحساب حجم الكلى (MRI total kidney volume)", "رنين على شرايين المخ لمن لديه تاريخ عائلي لتمدّد الشرايين (MRA)"],
+ "meds": [
+  {"cls": "مثبطات الإنزيم المحوّل أو حاصرات مستقبلات الأنجيوتنسين", "ex": "ramipril, losartan"},
+  {"cls": "مضادات مستقبلات الفازوبريسين لإبطاء نمو الأكياس", "ex": "tolvaptan", "note": "يحتاج متابعة وظائف الكبد"}
+ ],
+ "procedures": ["استشارة وراثية وفحص أفراد الأسرة"],
+ "selfcare": ["شرب الماء بكثرة", "تقليل الملح", "ضبط الضغط"],
+ "refs": ["KDIGO", "NICE"],
+ "guide": "KDIGO Clinical Practice Guideline for ADPKD (2025)"
+},
+"internal.renal_cyst": {
+ "tests": ["وظائف الكلى (Creatinine)"],
+ "imaging": ["موجات فوق صوتية (Ultrasound)", "أشعة مقطعية أو رنين بالصبغة لتصنيف بوزنياك للأكياس المعقدة (CT/MRI, Bosniak classification)"],
+ "meds": [],
+ "procedures": ["متابعة أو استئصال الأكياس المعقدة حسب تصنيف بوزنياك"],
+ "selfcare": [],
+ "refs": ["EAU", "ACR"],
+ "guide": "Bosniak Classification of Cystic Renal Masses, Version 2019"
+},
+"internal.kidneyca_warning": {
+ "tests": ["تحليل بول", "وظائف الكلى وصورة دم كاملة والكالسيوم (Creatinine, CBC, Ca)"],
+ "imaging": ["أشعة مقطعية بالصبغة على البطن والصدر (CT abdomen/chest with contrast)"],
+ "meds": [],
+ "procedures": ["إحالة سريعة لطبيب المسالك البولية", "استئصال الورم جزئيًا أو استئصال الكلية (Partial / radical nephrectomy)"],
+ "selfcare": ["الإقلاع عن التدخين"],
+ "refs": ["EAU", "NICE"],
+ "guide": "EAU Guidelines on Renal Cell Carcinoma (2024)"
+},
+"internal.bladderca_warning": {
+ "tests": ["تحليل ومزرعة بول لاستبعاد العدوى", "فحص خلايا البول (Urine cytology)", "وظائف الكلى"],
+ "imaging": ["أشعة مقطعية على المسالك بالصبغة (CT urography)"],
+ "meds": [],
+ "procedures": ["منظار المثانة (Cystoscopy)", "استئصال الورم بالمنظار عبر مجرى البول (TURBT)"],
+ "selfcare": ["الإقلاع عن التدخين"],
+ "refs": ["NICE", "EAU", "AUA"],
+ "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated 2025)"
+},
+"internal.oab": {
+ "tests": ["تحليل بول لاستبعاد العدوى والسكر (Urinalysis)", "مذكرة التبول لثلاثة أيام (Bladder diary)", "قياس البول المتبقي (PVR)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "منبهات مستقبلات بيتا-3", "ex": "mirabegron, vibegron"},
+  {"cls": "مضادات الموسكارين", "ex": "solifenacin, trospium, oxybutynin", "note": "الحذر لدى المسنين لتأثيرها في الذاكرة"}
+ ],
+ "procedures": ["تدريب المثانة وتمارين قاع الحوض", "حقن البوتولينوم في المثانة (OnabotulinumtoxinA)", "تحفيز العصب الظنبوبي أو العجزي (PTNS / Sacral neuromodulation)"],
+ "selfcare": ["تقليل الكافيين والمشروبات الغازية", "تنظيم شرب السوائل"],
+ "refs": ["AUA", "NICE", "EAU"],
+ "guide": "AUA/SUFU Guideline: Diagnosis and Treatment of Idiopathic Overactive Bladder (2024)"
+},
+"internal.stress_incontinence": {
+ "tests": ["تحليل بول", "مذكرة التبول (Bladder diary)", "قياس البول المتبقي (PVR)"],
+ "imaging": [],
+ "meds": [{"cls": "الإستروجين المهبلي الموضعي بعد انقطاع الطمث", "ex": "estradiol (vaginal)"}],
+ "procedures": ["تمارين قاع الحوض بإشراف مختص لثلاثة أشهر على الأقل", "دراسة ديناميكية للتبول قبل الجراحة (Urodynamics) عند الحاجة", "شريط مجرى البول الأوسط أو تعليق الإحليل أو المواد المالئة (Mid-urethral sling, colposuspension, bulking agents)", "العاصرة الصناعية لدى الرجال بعد جراحة البروستاتا (Artificial urinary sphincter)"],
+ "selfcare": ["إنقاص الوزن الزائد", "علاج السعال المزمن والإمساك"],
+ "refs": ["NICE", "AUA", "EAU"],
+ "guide": "NICE NG123 Urinary incontinence and pelvic organ prolapse in women: management (2019)"
+},
+"internal.urge_incontinence": {
+ "tests": ["تحليل بول", "مذكرة التبول (Bladder diary)", "قياس البول المتبقي (PVR)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "منبهات مستقبلات بيتا-3", "ex": "mirabegron, vibegron"},
+  {"cls": "مضادات الموسكارين", "ex": "solifenacin, tolterodine, trospium", "note": "تجنّب oxybutynin لدى المسنين الضعفاء"}
+ ],
+ "procedures": ["تدريب المثانة لستة أسابيع على الأقل", "حقن البوتولينوم في المثانة", "التحفيز العصبي العجزي (Sacral neuromodulation)"],
+ "selfcare": ["تقليل الكافيين", "التبول في مواعيد منتظمة"],
+ "refs": ["NICE", "AUA"],
+ "guide": "NICE NG123 Urinary incontinence and pelvic organ prolapse in women: management (2019)"
+},
+"internal.nocturia": {
+ "tests": ["مذكرة التبول لثلاثة أيام (Frequency-volume chart)", "تحليل بول وسكر الدم ووظائف الكلى (Urinalysis, HbA1c, Creatinine)", "الصوديوم في الدم عند الحاجة"],
+ "imaging": [],
+ "meds": [{"cls": "نظائر الفازوبريسين لزيادة إنتاج البول الليلي في حالات مختارة", "ex": "desmopressin", "note": "يتطلب متابعة الصوديوم خاصة لدى المسنين"}],
+ "procedures": ["علاج السبب: تضخم البروستاتا أو فرط نشاط المثانة أو انقطاع النفس أثناء النوم"],
+ "selfcare": ["تقليل السوائل والكافيين قبل النوم بساعتين", "إفراغ المثانة قبل النوم", "رفع الساقين مساءً عند تورّمهما"],
+ "refs": ["EAU", "NICE"],
+ "guide": "EAU Guidelines on Management of Non-neurogenic Male LUTS (2024)"
+},
+"internal.chronic_retention": {
+ "tests": ["وظائف الكلى (Creatinine)", "تحليل ومزرعة بول", "قياس البول المتبقي (PVR)"],
+ "imaging": ["موجات فوق صوتية على الكلى والمثانة (Ultrasound)"],
+ "meds": [
+  {"cls": "حاصرات ألفا عند تضخم البروستاتا", "ex": "tamsulosin, alfuzosin"},
+  {"cls": "مراجعة الأدوية المسببة للاحتباس", "ex": "anticholinergics, opioids", "note": "بقرار من الطبيب"}
+ ],
+ "procedures": ["القسطرة المتقطعة النظيفة أو القسطرة الدائمة (CISC / Indwelling catheter)", "دراسة ديناميكية للتبول (Urodynamics)", "جراحة البروستاتا عند الحاجة"],
+ "selfcare": ["التبول المزدوج (الانتظار ثم المحاولة مرة أخرى)"],
+ "refs": ["AUA", "EAU", "NICE"],
+ "guide": "AUA White Paper: Non-neurogenic Chronic Urinary Retention (2016)"
+},
+"internal.neurogenic_bladder": {
+ "tests": ["وظائف الكلى (Creatinine)", "تحليل ومزرعة بول", "قياس البول المتبقي"],
+ "imaging": ["موجات فوق صوتية دورية على الكلى (Renal ultrasound)"],
+ "meds": [
+  {"cls": "مضادات الموسكارين", "ex": "oxybutynin, solifenacin"},
+  {"cls": "منبهات مستقبلات بيتا-3", "ex": "mirabegron"}
+ ],
+ "procedures": ["دراسة ديناميكية للتبول (Video-urodynamics)", "القسطرة المتقطعة النظيفة (CISC)", "حقن البوتولينوم في المثانة", "توسيع المثانة جراحيًا في حالات مختارة"],
+ "selfcare": ["الالتزام بمواعيد القسطرة", "شرب سوائل كافية"],
+ "refs": ["EAU", "AUA", "NICE"],
+ "guide": "EAU Guidelines on Neuro-Urology (2024)"
+},
+"internal.ras": {
+ "tests": ["وظائف الكلى والبوتاسيوم (Creatinine, K)", "الدهون وسكر الدم (Lipids, HbA1c)"],
+ "imaging": ["دوبلر على الشرايين الكلوية (Renal artery duplex)", "أشعة مقطعية أو رنين على الشرايين (CTA / MRA)"],
+ "meds": [
+  {"cls": "خافضات الضغط", "ex": "amlodipine, ramipril", "note": "مع متابعة وظائف الكلى بعد البدء"},
+  {"cls": "الستاتينات", "ex": "atorvastatin, rosuvastatin"},
+  {"cls": "مضادات الصفائح", "ex": "aspirin, clopidogrel"}
+ ],
+ "procedures": ["توسيع الشريان بالبالون مع أو دون دعامة في حالات مختارة (Renal angioplasty/stenting)"],
+ "selfcare": ["الإقلاع عن التدخين", "قياس الضغط المنزلي"],
+ "refs": ["ESC", "ACC_AHA"],
+ "guide": "ESC Guidelines on the Diagnosis and Treatment of Peripheral Arterial Diseases (2017)"
+},
+"internal.hyperkalemia": {
+ "tests": ["إعادة تحليل البوتاسيوم دون انحلال العينة (Repeat K)", "تخطيط القلب (ECG)", "وظائف الكلى وسكر الدم وغازات الدم"],
+ "imaging": [],
+ "meds": [
+  {"cls": "تثبيت غشاء القلب في الحالات الشديدة", "ex": "calcium gluconate"},
+  {"cls": "نقل البوتاسيوم إلى داخل الخلايا", "ex": "insulin with glucose, salbutamol"},
+  {"cls": "رابطات البوتاسيوم", "ex": "sodium zirconium cyclosilicate, patiromer"},
+  {"cls": "مراجعة الأدوية الرافعة للبوتاسيوم", "ex": "spironolactone, ACE inhibitors, trimethoprim", "note": "بقرار من الطبيب"}
+ ],
+ "procedures": ["مراقبة قلبية مستمرة", "الغسيل الكلوي عند عدم الاستجابة"],
+ "selfcare": ["تقليل الأطعمة الغنية بالبوتاسيوم لمرضى الكلى بإرشاد أخصائي التغذية", "تجنّب بدائل الملح المحتوية على البوتاسيوم"],
+ "refs": ["KDIGO", "NICE"],
+ "guide": "UK Kidney Association Clinical Practice Guideline: Treatment of Acute Hyperkalaemia in Adults (2023)"
+},
+"internal.hypercalcemia": {
+ "tests": ["الكالسيوم المصحح أو المتأين (Adjusted / ionized Ca)", "هرمون الغدة جار الدرقية (PTH)", "وظائف الكلى وفيتامين د والفوسفات وتخطيط القلب", "بروتينات الدم والبول للورم النقوي (Protein electrophoresis)"],
+ "imaging": ["أشعة الصدر أو أشعة مقطعية عند الشك في ورم"],
+ "meds": [
+  {"cls": "سوائل وريدية", "ex": "sodium chloride"},
+  {"cls": "البيسفوسفونات الوريدية", "ex": "zoledronic acid, pamidronate"},
+  {"cls": "مثبطات RANKL في حالات مختارة", "ex": "denosumab"}
+ ],
+ "procedures": ["علاج السبب كاستئصال الغدة جار الدرقية"],
+ "selfcare": ["شرب سوائل كافية", "إيقاف مكملات الكالسيوم وفيتامين د بإشراف الطبيب"],
+ "refs": ["NICE", "ENDO"],
+ "guide": "Society for Endocrinology Emergency Guidance: Acute Hypercalcaemia (2016)"
+},
+"internal.metabolic_acidosis": {
+ "tests": ["غازات الدم (Blood gas)", "الأملاح وفجوة الأنيونات (Electrolytes, Anion gap)", "اللاكتات والكيتونات وسكر الدم ووظائف الكلى"],
+ "imaging": [],
+ "meds": [{"cls": "مكملات البيكربونات لمرضى الكلى المزمن", "ex": "sodium bicarbonate"}],
+ "procedures": ["علاج السبب (الحماض الكيتوني أو الإنتان أو التسمم)", "الغسيل الكلوي في الحالات الشديدة"],
+ "selfcare": [],
+ "refs": ["KDIGO", "NICE"],
+ "guide": "KDIGO Clinical Practice Guideline for the Evaluation and Management of CKD (2024)"
+},
+"internal.dkd": {
+ "tests": ["نسبة الألبومين إلى الكرياتينين في البول (UACR) سنويًا", "وظائف الكلى (eGFR)", "السكر التراكمي والدهون والبوتاسيوم (HbA1c, Lipids, K)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات SGLT2", "ex": "empagliflozin, dapagliflozin"},
+  {"cls": "مثبطات الإنزيم المحوّل أو حاصرات مستقبلات الأنجيوتنسين", "ex": "ramipril, losartan"},
+  {"cls": "مضادات مستقبلات القشرانيات المعدنية غير الستيرويدية", "ex": "finerenone"},
+  {"cls": "منبهات مستقبلات GLP-1", "ex": "semaglutide"},
+  {"cls": "الستاتينات", "ex": "atorvastatin"}
+ ],
+ "procedures": ["إحالة لطبيب الكلى عند تراجع الوظائف أو زيادة الزلال"],
+ "selfcare": ["ضبط السكر والضغط", "تقليل الملح", "الإقلاع عن التدخين"],
+ "refs": ["KDIGO", "ADA"],
+ "guide": "KDIGO Clinical Practice Guideline for Diabetes Management in CKD (2022)"
+},
+"internal.proteinuria": {
+ "tests": ["نسبة الألبومين أو البروتين إلى الكرياتينين في البول (UACR/UPCR)", "وظائف الكلى (eGFR)", "تحليل بول مجهري وسكر الدم"],
+ "imaging": ["موجات فوق صوتية على الكلى عند الحاجة"],
+ "meds": [{"cls": "مثبطات الإنزيم المحوّل أو حاصرات مستقبلات الأنجيوتنسين عند الاستمرار", "ex": "ramipril, losartan"}],
+ "procedures": ["إحالة لطبيب الكلى عند الارتفاع الكبير أو مع دم في البول"],
+ "selfcare": ["ضبط الضغط", "تقليل الملح"],
+ "refs": ["KDIGO", "NICE"],
+ "guide": "NICE NG203 Chronic kidney disease: assessment and management (2021)"
+},
+"internal.microhematuria": {
+ "tests": ["تحليل بول مجهري متكرر (Urine microscopy)", "مزرعة بول", "وظائف الكلى والبروتين في البول"],
+ "imaging": ["موجات فوق صوتية على الكلى أو أشعة مقطعية على المسالك حسب درجة الخطورة (Ultrasound / CT urography)"],
+ "meds": [],
+ "procedures": ["منظار المثانة لذوي الخطورة المتوسطة والعالية (Cystoscopy)"],
+ "selfcare": ["الإقلاع عن التدخين"],
+ "refs": ["AUA", "NICE"],
+ "guide": "AUA/SUFU Guideline: Microhematuria (2020, amended 2025)"
+},
+"endocrine.subacute_thyroiditis": {
+ "tests": ["وظائف الدرقية (TSH, FT4, FT3)", "سرعة الترسيب والبروتين التفاعلي (ESR, CRP)"],
+ "imaging": ["موجات فوق صوتية على الدرقية (Thyroid ultrasound)", "مسح امتصاص اليود المشع عند الحاجة (Radioiodine uptake)"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen"},
+  {"cls": "الكورتيزون في الحالات الشديدة", "ex": "prednisolone"},
+  {"cls": "حاصرات بيتا للخفقان", "ex": "propranolol"}
+ ],
+ "procedures": ["متابعة وظائف الدرقية لمرحلة القصور العابر"],
+ "selfcare": ["الراحة"],
+ "refs": ["ATA"],
+ "guide": "ATA Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis (2016)"
+},
+"endocrine.hashimoto": {
+ "tests": ["وظائف الدرقية (TSH, FT4)", "الأجسام المضادة (Anti-TPO)"],
+ "imaging": ["موجات فوق صوتية عند وجود تضخم أو عقد (Thyroid ultrasound)"],
+ "meds": [{"cls": "هرمون الدرقية البديل عند القصور", "ex": "levothyroxine"}],
+ "procedures": ["متابعة TSH دوريًا"],
+ "selfcare": ["تناول هرمون الدرقية على معدة فارغة", "إبلاغ الطبيب عند التخطيط للحمل"],
+ "refs": ["ATA", "NICE"],
+ "guide": "NICE NG145 Thyroid disease: assessment and management (2019)"
+},
+"endocrine.postpartum_thyroiditis": {
+ "tests": ["وظائف الدرقية (TSH, FT4)", "الأجسام المضادة (Anti-TPO)", "أجسام مستقبل TSH لاستبعاد غريفز (TRAb)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "حاصرات بيتا في مرحلة الفرط", "ex": "propranolol, metoprolol"},
+  {"cls": "هرمون الدرقية البديل في مرحلة القصور", "ex": "levothyroxine"}
+ ],
+ "procedures": ["متابعة سنوية لوظائف الدرقية"],
+ "selfcare": ["الانتباه لأعراض اكتئاب ما بعد الولادة"],
+ "refs": ["ATA"],
+ "guide": "ATA Guidelines for the Diagnosis and Management of Thyroid Disease During Pregnancy and the Postpartum (2017)"
+},
+"endocrine.subclinical_hypothyroid": {
+ "tests": ["إعادة TSH وFT4 بعد ثلاثة أشهر", "الأجسام المضادة (Anti-TPO)"],
+ "imaging": [],
+ "meds": [{"cls": "هرمون الدرقية البديل في حالات مختارة", "ex": "levothyroxine"}],
+ "procedures": ["متابعة دورية لوظائف الدرقية"],
+ "selfcare": [],
+ "refs": ["NICE", "ATA"],
+ "guide": "NICE NG145 Thyroid disease: assessment and management (2019)"
+},
+"endocrine.subclinical_hyperthyroid": {
+ "tests": ["إعادة TSH وFT4 وFT3", "أجسام مستقبل TSH (TRAb)", "تخطيط القلب عند الخفقان (ECG)"],
+ "imaging": ["موجات فوق صوتية ومسح نووي للدرقية (Ultrasound, Technetium/radioiodine scan)", "قياس كثافة العظام لدى كبار السن (DXA)"],
+ "meds": [
+  {"cls": "مضادات الدرقية في حالات مختارة", "ex": "carbimazole, methimazole"},
+  {"cls": "حاصرات بيتا للأعراض", "ex": "propranolol"}
+ ],
+ "procedures": ["العلاج باليود المشع لدى المرضى الأكثر عرضة للمضاعفات"],
+ "selfcare": [],
+ "refs": ["ATA", "NICE"],
+ "guide": "ATA Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis (2016)"
+},
+"endocrine.toxic_nodular": {
+ "tests": ["وظائف الدرقية (TSH, FT4, FT3)"],
+ "imaging": ["موجات فوق صوتية على الدرقية", "مسح نووي للدرقية (Radionuclide scan)"],
+ "meds": [
+  {"cls": "مضادات الدرقية", "ex": "carbimazole, methimazole"},
+  {"cls": "حاصرات بيتا", "ex": "propranolol, bisoprolol"}
+ ],
+ "procedures": ["العلاج باليود المشع (Radioactive iodine)", "استئصال الدرقية (Thyroidectomy)"],
+ "selfcare": [],
+ "refs": ["ATA", "NICE"],
+ "guide": "ATA Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis (2016)"
+},
+"endocrine.thyroidca_warning": {
+ "tests": ["وظائف الدرقية (TSH)", "عينة بالإبرة الدقيقة (Fine-needle aspiration cytology)"],
+ "imaging": ["موجات فوق صوتية على الدرقية والعقد الليمفاوية (Neck ultrasound)"],
+ "meds": [],
+ "procedures": ["إحالة سريعة لعيادة الغدد أو جراحة الرقبة", "فحص الأحبال الصوتية بالمنظار عند البحة (Laryngoscopy)"],
+ "selfcare": [],
+ "refs": ["ATA", "NICE"],
+ "guide": "ATA Management Guidelines for Adult Patients with Thyroid Nodules and Differentiated Thyroid Cancer (2015)"
+},
+"endocrine.ted": {
+ "tests": ["وظائف الدرقية وأجسام مستقبل TSH (TSH, FT4, TRAb)"],
+ "imaging": ["أشعة مقطعية أو رنين على محجر العين (CT/MRI orbits)"],
+ "meds": [
+  {"cls": "قطرات مرطبة للعين", "ex": "carboxymethylcellulose, hyaluronic acid"},
+  {"cls": "مكملات السيلينيوم للحالات الخفيفة", "ex": "selenium"},
+  {"cls": "الكورتيزون الوريدي للحالات النشطة", "ex": "methylprednisolone"},
+  {"cls": "علاجات حيوية", "ex": "teprotumumab, tocilizumab"}
+ ],
+ "procedures": ["تقييم لدى طبيب العيون", "تخفيف ضغط المحجر أو جراحة الحَوَل والجفون في المرحلة المستقرة"],
+ "selfcare": ["الإقلاع عن التدخين", "نظارات شمسية ورفع الرأس أثناء النوم"],
+ "refs": ["ATA", "AAO"],
+ "guide": "ATA/ETA Consensus Statement on the Management of Thyroid Eye Disease (2022)"
+},
+"endocrine.thyroid_storm": {
+ "tests": ["وظائف الدرقية (TSH, FT4, FT3)", "تخطيط القلب والأملاح ووظائف الكبد"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الدرقية", "ex": "propylthiouracil, methimazole"},
+  {"cls": "حاصرات بيتا", "ex": "propranolol, esmolol"},
+  {"cls": "الكورتيزون", "ex": "hydrocortisone"},
+  {"cls": "اليود غير العضوي بعد مضاد الدرقية", "ex": "potassium iodide (Lugol's solution)"}
+ ],
+ "procedures": ["الدخول للعناية المركزة", "التبريد وعلاج السبب المحرّض"],
+ "selfcare": [],
+ "refs": ["ATA"],
+ "guide": "ATA Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis (2016)"
+},
+"endocrine.adrenal_crisis": {
+ "tests": ["الكورتيزول وACTH قبل العلاج إن أمكن دون تأخيره", "الأملاح وسكر الدم (Na, K, Glucose)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الكورتيزون الوريدي أو العضلي", "ex": "hydrocortisone"},
+  {"cls": "سوائل وريدية", "ex": "sodium chloride, dextrose"}
+ ],
+ "procedures": ["بطاقة طوارئ وحقنة هيدروكورتيزون للحالات الطارئة", "تعليم قواعد مضاعفة الجرعة أثناء المرض"],
+ "selfcare": ["مضاعفة جرعة الكورتيزون أثناء المرض حسب تعليمات الطبيب"],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Diagnosis and Treatment of Primary Adrenal Insufficiency (2016)"
+},
+"endocrine.steroid_ai": {
+ "tests": ["الكورتيزول الصباحي (Morning cortisol)", "اختبار التحفيز بـ ACTH عند الحاجة (Short Synacthen test)"],
+ "imaging": [],
+ "meds": [{"cls": "الكورتيزون البديل والتقليل التدريجي", "ex": "hydrocortisone, prednisolone"}],
+ "procedures": ["خطة تقليل تدريجي للكورتيزون", "بطاقة توعية بالكورتيزون"],
+ "selfcare": ["عدم إيقاف الكورتيزون فجأة", "قواعد مضاعفة الجرعة أثناء المرض"],
+ "refs": ["ENDO"],
+ "guide": "ESE/Endocrine Society Guideline on Glucocorticoid-Induced Adrenal Insufficiency (2024)"
+},
+"endocrine.hyperaldosteronism": {
+ "tests": ["نسبة الألدوستيرون إلى الرينين (Aldosterone-renin ratio)", "البوتاسيوم في الدم", "اختبار تأكيدي كتحميل الملح (Saline suppression test)"],
+ "imaging": ["أشعة مقطعية على الغدد الكظرية (Adrenal CT)", "أخذ عينات من أوردة الكظرية (Adrenal venous sampling)"],
+ "meds": [{"cls": "مضادات مستقبلات القشرانيات المعدنية", "ex": "spironolactone, eplerenone"}],
+ "procedures": ["استئصال الغدة الكظرية بالمنظار في الحالات أحادية الجانب (Laparoscopic adrenalectomy)"],
+ "selfcare": ["تقليل الملح"],
+ "refs": ["ENDO", "ESH"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Management of Primary Aldosteronism (2016)"
+},
+"endocrine.pheo": {
+ "tests": ["الميتانفرينات الحرة في البلازما أو البول (Plasma free / urine metanephrines)", "فحص جيني (Genetic testing)"],
+ "imaging": ["أشعة مقطعية أو رنين على الغدد الكظرية (CT/MRI)", "تصوير وظيفي عند الحاجة (Ga-68 DOTATATE PET)"],
+ "meds": [
+  {"cls": "حاصرات ألفا للتحضير قبل الجراحة", "ex": "phenoxybenzamine, doxazosin"},
+  {"cls": "حاصرات بيتا بعد حاصرات ألفا فقط", "ex": "propranolol"}
+ ],
+ "procedures": ["استئصال الورم جراحيًا (Adrenalectomy)"],
+ "selfcare": [],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Pheochromocytoma and Paraganglioma (2014)"
+},
+"endocrine.incidentaloma": {
+ "tests": ["اختبار تثبيط الكورتيزول بالديكساميثازون (Overnight dexamethasone suppression test)", "الميتانفرينات في البلازما", "نسبة الألدوستيرون إلى الرينين عند ارتفاع الضغط"],
+ "imaging": ["أشعة مقطعية بدون صبغة لقياس كثافة الكتلة (Unenhanced CT, Hounsfield units)"],
+ "meds": [],
+ "procedures": ["استئصال الكتلة النشطة أو المشبوهة (Adrenalectomy)"],
+ "selfcare": [],
+ "refs": ["ENDO"],
+ "guide": "ESE/ENSAT Clinical Practice Guideline on Adrenal Incidentalomas (2023)"
+},
+"endocrine.prolactinoma": {
+ "tests": ["هرمون البرولاكتين (Prolactin)", "اختبار الحمل ووظائف الدرقية والكلى", "هرمونات النخامية الأخرى"],
+ "imaging": ["رنين مغناطيسي على الغدة النخامية (Pituitary MRI)", "فحص مجال الرؤية (Visual field testing)"],
+ "meds": [{"cls": "منبهات الدوبامين", "ex": "cabergoline, bromocriptine"}],
+ "procedures": ["جراحة النخامية عبر الأنف عند عدم الاستجابة (Transsphenoidal surgery)"],
+ "selfcare": [],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Diagnosis and Treatment of Hyperprolactinemia (2011)"
+},
+"endocrine.acromegaly": {
+ "tests": ["عامل النمو الشبيه بالأنسولين (IGF-1)", "اختبار تحمّل الجلوكوز مع هرمون النمو (OGTT with GH)"],
+ "imaging": ["رنين مغناطيسي على الغدة النخامية (Pituitary MRI)", "فحص مجال الرؤية"],
+ "meds": [
+  {"cls": "نظائر السوماتوستاتين", "ex": "octreotide, lanreotide, pasireotide"},
+  {"cls": "مضادات مستقبل هرمون النمو", "ex": "pegvisomant"}
+ ],
+ "procedures": ["جراحة النخامية عبر الأنف (Transsphenoidal surgery)", "العلاج الإشعاعي عند الحاجة"],
+ "selfcare": [],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Acromegaly (2014)"
+},
+"endocrine.hypopituitarism": {
+ "tests": ["الكورتيزول الصباحي وACTH", "وظائف الدرقية (TSH, FT4)", "الهرمونات التناسلية وIGF-1 والصوديوم"],
+ "imaging": ["رنين مغناطيسي على الغدة النخامية (Pituitary MRI)"],
+ "meds": [
+  {"cls": "الكورتيزون البديل (يُبدأ أولًا)", "ex": "hydrocortisone"},
+  {"cls": "هرمون الدرقية البديل", "ex": "levothyroxine"},
+  {"cls": "الهرمونات التناسلية البديلة", "ex": "testosterone, estradiol"},
+  {"cls": "هرمون النمو في حالات مختارة", "ex": "somatropin"}
+ ],
+ "procedures": ["بطاقة طوارئ للكورتيزون"],
+ "selfcare": ["قواعد مضاعفة جرعة الكورتيزون أثناء المرض"],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Hormonal Replacement in Hypopituitarism in Adults (2016)"
+},
+"endocrine.siadh": {
+ "tests": ["الصوديوم وأسمولية الدم والبول وصوديوم البول (Na, Serum & urine osmolality, Urine Na)", "وظائف الدرقية والكورتيزول الصباحي"],
+ "imaging": ["أشعة الصدر أو أشعة مقطعية للبحث عن السبب عند الحاجة"],
+ "meds": [
+  {"cls": "مضادات مستقبلات الفازوبريسين في حالات مختارة", "ex": "tolvaptan"},
+  {"cls": "اليوريا الفموية", "ex": "urea"},
+  {"cls": "مراجعة الأدوية المسببة", "ex": "SSRIs, carbamazepine, thiazides", "note": "بقرار من الطبيب"}
+ ],
+ "procedures": ["تقييد السوائل بإشراف الطبيب", "تصحيح الصوديوم ببطء لتجنّب أذى المخ"],
+ "selfcare": ["الالتزام بكمية السوائل المحددة"],
+ "refs": ["NICE", "ENDO"],
+ "guide": "European Clinical Practice Guideline on Diagnosis and Treatment of Hyponatraemia (ESE/ESICM/ERBP, 2014)"
+},
+"endocrine.reactive_hypoglycemia": {
+ "tests": ["قياس السكر أثناء الأعراض", "اختبار وجبة مختلطة عند الحاجة (Mixed-meal test)", "السكر التراكمي (HbA1c)"],
+ "imaging": [],
+ "meds": [{"cls": "مثبطات ألفا جلوكوزيداز في حالات مختارة بعد جراحات المعدة", "ex": "acarbose"}],
+ "procedures": ["استشارة أخصائي تغذية"],
+ "selfcare": ["وجبات صغيرة متكررة غنية بالألياف والبروتين", "تقليل السكريات البسيطة والمشروبات المحلّاة"],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Evaluation and Management of Adult Hypoglycemic Disorders (2009)"
+},
+"endocrine.fasting_hypoglycemia": {
+ "tests": ["السكر والأنسولين والببتيد-C وبيتا-هيدروكسي بيوتيرات أثناء الهبوط (Glucose, Insulin, C-peptide, BHB)", "فحص أدوية السلفونيل يوريا في الدم", "اختبار صيام 72 ساعة تحت المراقبة"],
+ "imaging": ["أشعة مقطعية أو رنين على البنكرياس", "منظار بالموجات فوق الصوتية (Endoscopic ultrasound)"],
+ "meds": [{"cls": "أدوية تقلل إفراز الأنسولين قبل الجراحة أو عند تعذّرها", "ex": "diazoxide, octreotide"}],
+ "procedures": ["استئصال ورم الأنسولين جراحيًا"],
+ "selfcare": ["حمل سكر سريع دائمًا", "وجبات منتظمة وعدم الصيام الطويل حتى التشخيص"],
+ "refs": ["ENDO"],
+ "guide": "Endocrine Society Clinical Practice Guideline: Evaluation and Management of Adult Hypoglycemic Disorders (2009)"
+},
+"endocrine.metabolic_syndrome": {
+ "tests": ["سكر الصيام والتراكمي (FPG, HbA1c)", "الدهون (Lipid profile)", "وظائف الكبد (ALT)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الستاتينات حسب خطر القلب", "ex": "atorvastatin, rosuvastatin"},
+  {"cls": "خافضات الضغط", "ex": "ramipril, amlodipine"},
+  {"cls": "الميتفورمين لمقدمات السكري في حالات مختارة", "ex": "metformin"}
+ ],
+ "procedures": ["برنامج تعديل نمط الحياة"],
+ "selfcare": ["إنقاص الوزن 5–10%", "نشاط بدني 150 دقيقة أسبوعيًا", "نظام غذائي متوسطي"],
+ "refs": ["ACC_AHA", "ADA"],
+ "guide": "AHA/NHLBI Scientific Statement: Diagnosis and Management of the Metabolic Syndrome (2005)"
+},
+"endocrine.overweight": {
+ "tests": ["سكر الدم التراكمي والدهون وضغط الدم (HbA1c, Lipids, BP)"],
+ "imaging": [],
+ "meds": [{"cls": "أدوية إنقاص الوزن عند وجود أمراض مرتبطة بالوزن ووفق المعايير", "ex": "orlistat, semaglutide, tirzepatide"}],
+ "procedures": ["قياس مؤشر كتلة الجسم ومحيط الخصر", "استشارة أخصائي تغذية"],
+ "selfcare": ["تقليل السكريات والمشروبات المحلّاة", "نشاط بدني منتظم", "نوم كافٍ"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE NG246 Overweight and obesity management (2025)"
+},
+"endocrine.severe_obesity": {
+ "tests": ["السكر التراكمي والدهون ووظائف الكبد والدرقية (HbA1c, Lipids, LFT, TSH)", "دراسة النوم عند الشك في انقطاع النفس"],
+ "imaging": [],
+ "meds": [{"cls": "أدوية إنقاص الوزن", "ex": "semaglutide, tirzepatide, liraglutide, orlistat"}],
+ "procedures": ["برنامج متخصص متعدد التخصصات لإدارة الوزن", "جراحة السمنة لمن تنطبق عليه المعايير (Bariatric surgery)"],
+ "selfcare": ["الدعم السلوكي ومتابعة الوزن", "نشاط بدني تدريجي"],
+ "refs": ["NICE", "WHO", "ADA"],
+ "guide": "NICE NG246 Overweight and obesity management (2025)"
+},
+"endocrine.osteomalacia": {
+ "tests": ["فيتامين د والكالسيوم والفوسفات (25-OH vitamin D, Ca, PO4)", "الفوسفاتاز القلوي وهرمون الجار درقية (ALP, PTH)", "فحوص سوء الامتصاص عند الحاجة"],
+ "imaging": ["أشعة سينية للبحث عن الكسور الكاذبة (Looser zones)", "قياس كثافة العظام (DXA)"],
+ "meds": [
+  {"cls": "فيتامين د بجرعات علاجية بإشراف الطبيب", "ex": "cholecalciferol, ergocalciferol"},
+  {"cls": "مكملات الكالسيوم", "ex": "calcium carbonate, calcium citrate"}
+ ],
+ "procedures": ["علاج السبب كسوء الامتصاص"],
+ "selfcare": ["التعرّض المعتدل للشمس", "أطعمة غنية بالكالسيوم"],
+ "refs": ["ENDO", "NICE"],
+ "guide": "Global Consensus Recommendations on Prevention and Management of Nutritional Rickets (2016)"
+},
+"endocrine.hypoparathyroidism": {
+ "tests": ["الكالسيوم المصحح والفوسفات والمغنيسيوم", "هرمون الجار درقية (PTH)", "الكالسيوم في بول 24 ساعة"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مكملات الكالسيوم", "ex": "calcium carbonate, calcium citrate"},
+  {"cls": "فيتامين د النشط", "ex": "calcitriol, alfacalcidol"},
+  {"cls": "بدائل هرمون الجار درقية في حالات مختارة", "ex": "palopegteriparatide"},
+  {"cls": "الكالسيوم الوريدي في الحالات الحادة", "ex": "calcium gluconate"}
+ ],
+ "procedures": ["متابعة دورية للكالسيوم ووظائف الكلى"],
+ "selfcare": [],
+ "refs": ["ENDO"],
+ "guide": "International Guidelines for the Management of Chronic Hypoparathyroidism (JBMR, 2022)"
+},
+"hematology.folate": {
+ "tests": ["صورة دم كاملة (CBC, MCV)", "الفولات وفيتامين ب12 معًا (Serum folate, B12)"],
+ "imaging": [],
+ "meds": [{"cls": "مكملات حمض الفوليك", "ex": "folic acid", "note": "بعد استبعاد نقص ب12 أو علاجه معًا"}],
+ "procedures": ["تقييم السبب كسوء الامتصاص أو الأدوية"],
+ "selfcare": ["الخضروات الورقية والبقوليات", "تقليل الكحول"],
+ "refs": ["NICE", "ASH"],
+ "guide": "BSH Guidelines for the Diagnosis and Treatment of Cobalamin and Folate Disorders (2014)"
+},
+"hematology.aiha": {
+ "tests": ["صورة دم كاملة والخلايا الشبكية (CBC, Reticulocytes)", "اختبار كومبس المباشر (DAT)", "LDH والبيليروبين والهابتوغلوبين"],
+ "imaging": ["أشعة مقطعية أو موجات فوق صوتية للبحث عن أورام ليمفاوية عند الحاجة"],
+ "meds": [
+  {"cls": "الكورتيزون", "ex": "prednisolone"},
+  {"cls": "العلاج الحيوي المضاد لـ CD20", "ex": "rituximab"},
+  {"cls": "مكملات حمض الفوليك", "ex": "folic acid"}
+ ],
+ "procedures": ["نقل الدم في الحالات الشديدة", "استئصال الطحال في حالات مختارة"],
+ "selfcare": ["تجنّب البرد في النوع البارد"],
+ "refs": ["ASH"],
+ "guide": "First International Consensus on Diagnosis and Treatment of Autoimmune Haemolytic Anaemia (2020)"
+},
+"hematology.spherocytosis": {
+ "tests": ["صورة دم وسمير الدم (CBC, Blood film)", "اختبار ربط EMA (EMA binding test)", "البيليروبين والخلايا الشبكية"],
+ "imaging": ["موجات فوق صوتية على البطن للطحال والمرارة"],
+ "meds": [{"cls": "مكملات حمض الفوليك", "ex": "folic acid"}],
+ "procedures": ["استئصال الطحال للحالات المتوسطة والشديدة مع التطعيمات قبله", "استئصال المرارة عند الحصوات المؤلمة", "نقل الدم عند الحاجة"],
+ "selfcare": ["الانتباه لنوبات الشحوب الشديد بعد العدوى"],
+ "refs": ["ASH"],
+ "guide": "BSH Guidelines for the Diagnosis and Management of Hereditary Spherocytosis (2011)"
+},
+"hematology.thal_trait": {
+ "tests": ["صورة دم كاملة (CBC, MCV, MCH)", "مخزون الحديد (Ferritin)", "الفصل الكهربائي للهيموغلوبين أو HPLC (HbA2)"],
+ "imaging": [],
+ "meds": [{"cls": "لا يحتاج إلى أدوية؛ ويُتجنّب الحديد ما لم يثبت نقصه", "ex": "iron (only if deficient)"}],
+ "procedures": ["فحص الشريك قبل الزواج والاستشارة الوراثية"],
+ "selfcare": [],
+ "refs": ["WHO"],
+ "guide": "TIF Guidelines for the Management of Transfusion Dependent Thalassaemia (2021)"
+},
+"hematology.sickle_crisis": {
+ "tests": ["صورة دم كاملة والخلايا الشبكية", "مزرعة دم", "غازات الدم أو قياس الأكسجين"],
+ "imaging": ["أشعة الصدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "مسكنات أفيونية سريعة", "ex": "morphine"},
+  {"cls": "مضادات حيوية", "ex": "ceftriaxone, azithromycin"},
+  {"cls": "العلاج الوقائي طويل الأمد", "ex": "hydroxyurea"}
+ ],
+ "procedures": ["أكسجين وسوائل وريدية", "نقل الدم أو تبادل الدم في الحالات الشديدة", "مقياس التنفس التحفيزي"],
+ "selfcare": ["حمل خطة الرعاية الشخصية"],
+ "refs": ["ASH", "NICE"],
+ "guide": "NHLBI Evidence-Based Management of Sickle Cell Disease: Expert Panel Report (2014)"
+},
+"hematology.sickle_trait": {
+ "tests": ["الفصل الكهربائي للهيموغلوبين أو HPLC (Hb electrophoresis)"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["فحص الشريك قبل الزواج والاستشارة الوراثية"],
+ "selfcare": ["شرب الماء الكافي أثناء المجهود والحر"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC: What You Should Know About Sickle Cell Trait (2024)"
+},
+"hematology.aplastic": {
+ "tests": ["صورة دم كاملة والخلايا الشبكية", "فحص الخلايا المصابة بالبيلة الهيموغلوبينية الليلية (PNH flow cytometry)", "فيتامين ب12 والفولات وفيروسات الكبد"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات المناعة", "ex": "antithymocyte globulin, ciclosporin"},
+  {"cls": "منبهات مستقبل الثرومبوبويتين", "ex": "eltrombopag"}
+ ],
+ "procedures": ["خزعة ونخاع العظم (Bone marrow biopsy)", "نقل الدم والصفائح", "زراعة نخاع العظم"],
+ "selfcare": ["الوقاية من العدوى"],
+ "refs": ["ASH"],
+ "guide": "BSH Guidelines for the Diagnosis and Management of Adult Aplastic Anaemia (2016)"
+},
+"hematology.pv": {
+ "tests": ["صورة دم كاملة", "فحص طفرة JAK2 (JAK2 V617F)", "هرمون الإريثروبويتين (EPO)"],
+ "imaging": ["موجات فوق صوتية على البطن للطحال"],
+ "meds": [
+  {"cls": "مضادات الصفائح", "ex": "aspirin"},
+  {"cls": "أدوية مخفضة لإنتاج الدم", "ex": "hydroxyurea, ropeginterferon alfa-2b, ruxolitinib"}
+ ],
+ "procedures": ["الفصد الدوري (Venesection)"],
+ "selfcare": ["الإقلاع عن التدخين", "ضبط عوامل خطر القلب"],
+ "refs": ["NCCN", "ASH"],
+ "guide": "NCCN Clinical Practice Guidelines: Myeloproliferative Neoplasms (2025)"
+},
+"hematology.et": {
+ "tests": ["صورة دم كاملة ومخزون الحديد ومؤشرات الالتهاب (CBC, Ferritin, CRP)", "فحص الطفرات (JAK2, CALR, MPL)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الصفائح", "ex": "aspirin"},
+  {"cls": "أدوية مخفضة للصفائح", "ex": "hydroxyurea, anagrelide, interferon alfa"}
+ ],
+ "procedures": ["خزعة نخاع العظم"],
+ "selfcare": ["ضبط عوامل خطر القلب والإقلاع عن التدخين"],
+ "refs": ["NCCN", "ASH"],
+ "guide": "NCCN Clinical Practice Guidelines: Myeloproliferative Neoplasms (2025)"
+},
+"hematology.vwd": {
+ "tests": ["مستضد عامل فون ويلبراند ونشاطه والعامل الثامن (VWF:Ag, VWF activity, FVIII)", "صورة دم وزمن التجلط (CBC, PT, APTT)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "محفزات إفراز العامل", "ex": "desmopressin"},
+  {"cls": "مضادات تحلل الجلطة", "ex": "tranexamic acid"},
+  {"cls": "مركّزات العامل", "ex": "von Willebrand factor concentrate"},
+  {"cls": "العلاج الهرموني للحيض الغزير", "ex": "combined oral contraceptives, levonorgestrel IUS"}
+ ],
+ "procedures": ["خطة وقائية قبل الجراحات وخلع الأسنان"],
+ "selfcare": ["تجنّب الأسبرين ومضادات الالتهاب", "إبلاغ طبيب الأسنان والجرّاح"],
+ "refs": ["ASH"],
+ "guide": "ASH ISTH NHF WFH Guidelines on the Diagnosis and Management of von Willebrand Disease (2021)"
+},
+"hematology.myeloma": {
+ "tests": ["صورة دم كاملة والكالسيوم ووظائف الكلى", "الفصل الكهربائي لبروتينات الدم والبول (SPEP, UPEP)", "سلاسل الضوء الحرة (Serum free light chains)"],
+ "imaging": ["أشعة مقطعية منخفضة الجرعة للجسم أو رنين أو PET-CT (Whole-body low-dose CT)"],
+ "meds": [
+  {"cls": "العلاجات المناعية والموجهة", "ex": "lenalidomide, bortezomib, daratumumab"},
+  {"cls": "الكورتيزون", "ex": "dexamethasone"},
+  {"cls": "أدوية حماية العظام", "ex": "zoledronic acid, denosumab"}
+ ],
+ "procedures": ["خزعة نخاع العظم", "زراعة الخلايا الجذعية الذاتية لمن يناسبه"],
+ "selfcare": [],
+ "refs": ["NICE", "NCCN", "ESMO"],
+ "guide": "NICE NG35 Myeloma: diagnosis and management (2016, updated 2018)"
+},
+"hematology.mgus": {
+ "tests": ["الفصل الكهربائي لبروتينات الدم (SPEP)", "سلاسل الضوء الحرة", "صورة دم كاملة والكالسيوم ووظائف الكلى"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["متابعة دورية حسب درجة الخطورة", "خزعة نخاع العظم للحالات عالية الخطورة"],
+ "selfcare": [],
+ "refs": ["NCCN", "NICE"],
+ "guide": "IMWG Consensus: Monoclonal Gammopathy of Undetermined Significance — risk stratification and follow-up (2010)"
+},
+"hematology.neutropenia": {
+ "tests": ["إعادة صورة الدم مع التفريق (CBC with differential)", "سمير الدم (Blood film)", "فيتامين ب12 والفولات والفحوص المناعية والفيروسية"],
+ "imaging": [],
+ "meds": [{"cls": "عوامل تحفيز مستعمرات الخلايا المحببة في حالات مختارة", "ex": "filgrastim"}],
+ "procedures": ["مراجعة الأدوية المسببة", "خزعة نخاع العظم عند الاستمرار أو الشدة"],
+ "selfcare": ["النظافة الجيدة ومراجعة الطوارئ عند الحمّى"],
+ "refs": ["ASH", "ASCO"],
+ "guide": "BSH Good Practice Paper: Investigation and Management of Neutropenia in Adults (2023)"
+},
+"hematology.febrile_neutropenia": {
+ "tests": ["مزرعة دم قبل المضاد الحيوي (Blood cultures)", "صورة دم كاملة ووظائف الكلى والكبد واللاكتات"],
+ "imaging": ["أشعة الصدر (Chest X-ray)"],
+ "meds": [
+  {"cls": "مضادات حيوية وريدية واسعة الطيف خلال ساعة", "ex": "piperacillin-tazobactam, cefepime, meropenem"},
+  {"cls": "عوامل تحفيز مستعمرات الخلايا المحببة في حالات مختارة", "ex": "filgrastim"}
+ ],
+ "procedures": ["تقييم الخطورة (MASCC score)"],
+ "selfcare": [],
+ "refs": ["IDSA", "ASCO", "NICE"],
+ "guide": "ASCO/IDSA Guideline: Outpatient Management of Fever and Neutropenia in Adults Treated for Malignancy (2018)"
+},
+"hematology.splenomegaly": {
+ "tests": ["صورة دم كاملة وسمير الدم (CBC, Blood film)", "وظائف الكبد", "فحوص العدوى حسب الحالة (الملاريا، البروسيلا، EBV)"],
+ "imaging": ["موجات فوق صوتية على البطن (Abdominal ultrasound)", "أشعة مقطعية عند الحاجة"],
+ "meds": [],
+ "procedures": ["إحالة لطبيب الدم عند عدم وضوح السبب"],
+ "selfcare": ["تجنّب الرياضات الاحتكاكية حتى التقييم"],
+ "refs": ["NICE"],
+ "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated 2025)"
+},
+"hematology.hemochromatosis": {
+ "tests": ["الفيريتين ونسبة تشبّع الترانسفيرين (Ferritin, TSAT)", "فحص جين HFE", "وظائف الكبد وسكر الدم"],
+ "imaging": ["رنين مغناطيسي لتقدير الحديد في الكبد (MRI liver iron)", "تصوير مرونة الكبد (FibroScan)"],
+ "meds": [{"cls": "خالبات الحديد عند تعذّر الفصد", "ex": "deferasirox, desferrioxamine"}],
+ "procedures": ["الفصد المنتظم (Venesection)", "فحص الأقارب من الدرجة الأولى"],
+ "selfcare": ["تجنّب مكملات الحديد وفيتامين سي", "تقليل الكحول"],
+ "refs": ["EASL", "NICE"],
+ "guide": "EASL Clinical Practice Guidelines on Haemochromatosis (2022)"
+},
+"hematology.acd": {
+ "tests": ["صورة دم كاملة (CBC)", "الفيريتين وتشبّع الترانسفيرين والبروتين التفاعلي (Ferritin, TSAT, CRP)", "وظائف الكلى"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الحديد الوريدي في حالات مختارة", "ex": "ferric carboxymaltose, iron sucrose"},
+  {"cls": "منشطات تكوين الكريات الحمراء لمرضى الكلى", "ex": "epoetin alfa, darbepoetin alfa"}
+ ],
+ "procedures": ["ضبط المرض المسبب"],
+ "selfcare": ["عدم تناول الحديد دون تحليل"],
+ "refs": ["KDIGO", "NICE"],
+ "guide": "KDIGO Clinical Practice Guideline for Anemia in CKD (2012)"
+},
+"hematology.ttp": {
+ "tests": ["صورة دم وسمير الدم للخلايا المجزأة (Schistocytes)", "نشاط إنزيم ADAMTS13", "LDH والبيليروبين ووظائف الكلى والتروبونين"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الكورتيزون", "ex": "methylprednisolone, prednisolone"},
+  {"cls": "العلاج الحيوي المضاد لـ CD20", "ex": "rituximab"},
+  {"cls": "مثبطات عامل فون ويلبراند", "ex": "caplacizumab"}
+ ],
+ "procedures": ["استبدال البلازما العاجل (Plasma exchange)"],
+ "selfcare": [],
+ "refs": ["ASH"],
+ "guide": "ISTH Guidelines for the Treatment of Thrombotic Thrombocytopenic Purpura (2020)"
+},
+"hematology.mds": {
+ "tests": ["صورة دم وسمير الدم", "فيتامين ب12 والفولات والحديد والنحاس", "خزعة نخاع العظم مع الفحص الجيني (Cytogenetics, NGS)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "منشطات تكوين الكريات الحمراء", "ex": "epoetin alfa, luspatercept"},
+  {"cls": "عوامل نقص الميثيل", "ex": "azacitidine, decitabine"},
+  {"cls": "خالبات الحديد لمن يتلقى نقل دم متكرر", "ex": "deferasirox"}
+ ],
+ "procedures": ["نقل الدم", "زراعة نخاع العظم لمن يناسبه"],
+ "selfcare": [],
+ "refs": ["NCCN", "ESMO"],
+ "guide": "NCCN Clinical Practice Guidelines: Myelodysplastic Syndromes (2025)"
+},
+"hematology.hht": {
+ "tests": ["صورة دم ومخزون الحديد", "فحص جيني (ENG, ACVRL1)"],
+ "imaging": ["إيكو القلب بالفقاعات للكشف عن تشوهات الرئة الوعائية (Bubble echocardiography)", "رنين على المخ (Brain MRI)"],
+ "meds": [
+  {"cls": "مضادات تحلل الجلطة", "ex": "tranexamic acid"},
+  {"cls": "تعويض الحديد", "ex": "ferrous sulfate, ferric carboxymaltose"},
+  {"cls": "مضادات تكوين الأوعية في حالات مختارة", "ex": "bevacizumab"}
+ ],
+ "procedures": ["الكي أو العلاج بالليزر لنزيف الأنف", "سد التشوهات الوعائية الرئوية بالقسطرة (Embolization)"],
+ "selfcare": ["ترطيب الأنف بالمراهم أو البخاخات الملحية"],
+ "refs": ["AAO_HNS"],
+ "guide": "Second International Guidelines for the Diagnosis and Management of HHT (2020)"
+}
+}

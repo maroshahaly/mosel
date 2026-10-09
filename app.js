@@ -55,6 +55,8 @@ const I = {
   x: '<path d="M6 6l12 12M18 6L6 18"/>',
   user: '<circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+  thermo: '<path d="M14 14.76V4a2 2 0 0 0-4 0v10.76a4 4 0 1 0 4 0z"/><path d="M12 9v7"/>',
+  drop: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
   alert: '<path d="M12 9v4M12 17h.01M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/>',
   phone: '<path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L8 9.8a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/>',
   search: '<circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>',
@@ -1225,6 +1227,8 @@ function renderHome() {
     <button class="quick stages-card" data-act="stages"><span class="qi">${ico(I.clock)}</span>
       <span class="t"><b>اعرف مرحلة السكري والضغط والكلى</b><span>أدخل نتائج تحاليلك وقياساتك لتعرف درجتها وفق الإرشادات الدولية</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
     <div class="quick-2">
+      <button class="quick" data-act="vitals"><span class="qi">${ico(I.pulse)}</span>
+        <span class="t"><b>قياساتي وأجهزتي</b><span>${vitals.length ? `${vitals.length} قراءة` : "الضغط والنبض والأكسجين والسكر"}</span></span></button>
       <button class="quick" data-act="records"><span class="qi">${ico(I.folder)}</span>
         <span class="t"><b>سجلّي الصحي</b><span>${history.length ? `${history.length} تقييم محفوظ` : "تقييماتك وبطاقتك الصحية"}</span></span></button>
       <button class="quick" data-act="tips"><span class="qi">${ico(I.heart)}</span>
@@ -1724,13 +1728,51 @@ function saveHistory(top, triKey, crisis) {
   keep(HIST_KEY, history);
 }
 const fmtDate = iso => { try { return new Date(iso).toLocaleString("ar-EG", { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } };
+/* مواقف خاصة: أمراض الطفولة والعيوب الخلقية والعمليات والحوادث... تُحفظ في البطاقة الصحية وتظهر في تقرير الطبيب */
+const SPECIAL_TYPES = [
+  ["childhood", "مرض في الطفولة"], ["congenital", "عيب خلقي وُلدت به"], ["surgery", "عملية جراحية"], ["injury", "حادث أو إصابة أو كسر"],
+  ["hospital", "دخول مستشفى أو عناية مركزة"], ["allergy", "حساسية شديدة أو صدمة تحسسية"], ["pregnancy", "حمل أو ولادة متعسرة"], ["trauma", "تجربة صعبة أثّرت عليّ"], ["other", "موقف آخر"]
+];
+const SPECIAL_NAME = Object.fromEntries(SPECIAL_TYPES);
+const specials = () => Array.isArray(card.special) ? card.special : [];
+function renderSpecial() {
+  const list = specials();
+  return `<div class="card rec-card special">
+      <p class="muted small" style="margin:0 0 10px">سجّل هنا ما حدث لك منذ الطفولة ويهمّ طبيبك أن يعرفه: مرض قديم، أو عيب خلقي وُلدت به، أو عملية، أو حادث. تُحفظ على جهازك فقط.</p>
+      <div class="field"><label class="flabel" for="sp-type">نوع الموقف</label>
+        <select id="sp-type">${SPECIAL_TYPES.filter(([k]) => k !== "pregnancy" || state.profile.gender !== "male").map(([k, n]) => `<option value="${k}">${n}</option>`).join("")}</select></div>
+      <div class="field"><label class="flabel" for="sp-title">ماذا حدث؟</label>
+        <input id="sp-title" type="text" maxlength="120" placeholder="مثل: ثقب بين البطينين في القلب، حمى روماتيزمية، كسر في الساق"></div>
+      <div class="field"><label class="flabel" for="sp-when">متى؟</label>
+        <input id="sp-when" type="text" maxlength="40" placeholder="مثل: منذ الولادة، في سن 7 سنوات، عام 2015"></div>
+      <div class="field"><label class="flabel" for="sp-notes">تفاصيل أو علاج (اختياري)</label>
+        <textarea id="sp-notes" rows="2" maxlength="300" placeholder="مثل: أُغلق جراحيًا وأتابع سنويًا مع طبيب القلب"></textarea></div>
+      <button class="btn btn-primary btn-block" data-act="sp-add">${ico(I.check)} إضافة إلى مواقفي الخاصة</button>
+    </div>
+    ${list.length ? `<div class="sp-list">${list.map(x => `<div class="sp-item">
+        <div><span class="sp-type">${esc(SPECIAL_NAME[x.type] || "موقف")}</span>${x.when ? ` <span class="muted small">· ${esc(x.when)}</span>` : ""}
+          <b>${esc(x.title)}</b>${x.notes ? `<p class="muted small">${esc(x.notes)}</p>` : ""}</div>
+        <button class="icon-btn sm" data-sp-del="${esc(x.id)}" aria-label="حذف هذا الموقف">${ico(I.trash)}</button></div>`).join("")}</div>`
+      : `<div class="empty">لم تسجّل أي موقف خاص بعد.</div>`}`;
+}
+function addSpecial() {
+  const title = (document.getElementById("sp-title")?.value || "").trim();
+  if (!title) { toast("اكتب ماذا حدث أولًا"); document.getElementById("sp-title")?.focus(); return; }
+  card.special = [...specials(), { id: Date.now().toString(36), type: document.getElementById("sp-type").value, title,
+    when: document.getElementById("sp-when").value.trim(), notes: document.getElementById("sp-notes").value.trim() }];
+  keep(CARD_KEY, card); toast("أُضيف إلى مواقفك الخاصة"); render();
+}
 function renderRecords() {
   const tab = state.recTab;
   const tabs = `<div class="seg rec-tabs" role="tablist">
-    <button role="tab" data-rec-tab="history" aria-pressed="${tab === "history"}">${ico(I.folder)} التقييمات السابقة (${history.length})</button>
-    <button role="tab" data-rec-tab="card" aria-pressed="${tab === "card"}">${ico(I.card)} بطاقتي الصحية</button></div>`;
+    <button role="tab" data-rec-tab="history" aria-pressed="${tab === "history"}">${ico(I.folder)} التقييمات (${history.length})</button>
+    <button role="tab" data-rec-tab="card" aria-pressed="${tab === "card"}">${ico(I.card)} بطاقتي</button>
+    <button role="tab" data-rec-tab="vitals" aria-pressed="${tab === "vitals"}">${ico(I.pulse)} قياساتي</button>
+    <button role="tab" data-rec-tab="special" aria-pressed="${tab === "special"}">${ico(I.book)} مواقف خاصة${specials().length ? ` (${specials().length})` : ""}</button></div>`;
   let body;
-  if (tab === "card") {
+  if (tab === "vitals") body = renderVitals();
+  else if (tab === "special") body = renderSpecial();
+  else if (tab === "card") {
     body = `<div class="card rec-card">
       <p class="muted small" style="margin:0 0 10px">تُحفظ على جهازك فقط، وتظهر في التقرير المطبوع لطبيبك وفي حالات الطوارئ.</p>
       <div class="field"><label class="flabel" for="c-blood">فصيلة الدم</label>
@@ -1767,6 +1809,241 @@ function openHistory(id) {
   state.zone = h.zone; state.caseId = h.id; state.region = null;
   state.checked = new Set(h.checked); state.denied = new Set(h.denied || []);
   go("results");
+}
+
+/* =========================================================
+   قياساتي: ربط أجهزة القياس (بلوتوث) واستيراد ملفات الساعات والهواتف والإدخال اليدوي
+   ---------------------------------------------------------
+   • بلوتوث: الخدمات الصحية القياسية (Bluetooth SIG) التي تلتزم بها أغلب الأجهزة الطبية المعتمدة:
+     ضغط الدم 0x1810، نبض القلب 0x180D، الأكسجين 0x1822، الحرارة 0x1809، الوزن 0x181D، السكر 0x1808.
+     يعمل في Chrome وEdge على أندرويد والكمبيوتر (ميزة Web Bluetooth)، ولا يدعمه Safari على آيفون.
+   • ملفات: تصدير Apple Health (export.zip أو export.xml)، وملفات CSV من تطبيقات الأجهزة
+     (Omron وWithings وSamsung Health وFitbit وغيرها) — ومنها ما يصلك بالبريد فتحفظه ثم تفتحه هنا.
+   • كل القراءات على جهازك فقط، وتظهر في تقرير الطبيب.
+   ========================================================= */
+const VITALS_KEY = "moselVitals", VITALS_MAX = 2000;
+let vitals = load(VITALS_KEY, []);
+if (!Array.isArray(vitals)) vitals = [];
+const VT = {
+  bp:      { name: "ضغط الدم", unit: "ملم زئبق", icon: I.heart, fields: [["sys", "الانقباضي", 70, 260], ["dia", "الانبساطي", 40, 160], ["pulse", "النبض (اختياري)", 30, 220, true]] },
+  hr:      { name: "نبض القلب", unit: "نبضة/دقيقة", icon: I.pulse, fields: [["v", "النبض", 25, 230]] },
+  spo2:    { name: "نسبة الأكسجين", unit: "%", icon: I.steth, fields: [["v", "الأكسجين SpO₂", 50, 100], ["pulse", "النبض (اختياري)", 30, 220, true]] },
+  temp:    { name: "الحرارة", unit: "°م", icon: I.thermo, fields: [["v", "درجة الحرارة", 33, 43.5]] },
+  weight:  { name: "الوزن", unit: "كجم", icon: I.user, fields: [["v", "الوزن", 2, 350]] },
+  glucose: { name: "سكر الدم", unit: "ملجم/دسل", icon: I.drop, fields: [["v", "السكر", 20, 700]], ctx: true }
+};
+const saveVitals = () => { vitals.sort((a, b) => b.at - a.at); if (vitals.length > VITALS_MAX) vitals.length = VITALS_MAX; keep(VITALS_KEY, vitals); };
+function addVital(type, v, src, at) {
+  at = at || Date.now();
+  // منع التكرار عند استيراد الملف نفسه مرتين
+  if (vitals.some(x => x.type === type && Math.abs(x.at - at) < 60000 && JSON.stringify(x.v) === JSON.stringify(v))) return false;
+  vitals.push({ id: at.toString(36) + Math.random().toString(36).slice(2, 6), at, type, v, src: src || "manual" });
+  return true;
+}
+/* تفسير هادئ وموثّق لكل قراءة (ACC/AHA وESH لضغط الدم، WHO/ADA للسكر، BTS للأكسجين، NICE للحرارة) */
+function vitalNote(x) {
+  const v = x.v;
+  if (x.type === "bp") { const r = classifyBP({ sys: v.sys, dia: v.dia })[0]; return r ? { tone: r.tone, t: r.title.replace(/ \(.*\)$/, "") } : null; }
+  if (x.type === "hr") return v.v < 50 ? { tone: "info", t: "نبض بطيء (أقل من 50). طبيعي عند الرياضيين؛ راجع الطبيب إن صاحبه دوخة أو إغماء." }
+    : v.v > 120 ? { tone: "warn", t: "نبض سريع وأنت في راحة. استرح وأعد القياس؛ وإن استمر أو صاحبه ألم صدر أو ضيق تنفس فراجع الطبيب." }
+    : v.v > 100 ? { tone: "info", t: "نبض أعلى قليلًا من المعتاد في الراحة (أكثر من 100). أعد القياس بعد راحة 5 دقائق." } : { tone: "ok", t: "نبض في المعدل الطبيعي (50–100)." };
+  if (x.type === "spo2") return v.v >= 95 ? { tone: "ok", t: "نسبة أكسجين طبيعية." } : v.v >= 92 ? { tone: "info", t: "أقل قليلًا من المعتاد. تأكد من دفء الإصبع وثباته وأعد القياس؛ وراجع الطبيب إن تكرر." }
+    : v.v >= 88 ? { tone: "warn", t: "أكسجين منخفض (أقل من 92). أعد القياس، وإن تأكد فراجع الطبيب اليوم — إلا إن كان طبيبك حدّد لك نطاقًا خاصًا (كمرضى الانسداد الرئوي)." }
+    : { tone: "danger", t: "أكسجين منخفض جدًا. أعد القياس فورًا؛ وإن تأكد أو صاحبه ضيق تنفس فاتصل بالإسعاف 123." };
+  if (x.type === "temp") return v.v >= 39.5 ? { tone: "warn", t: "حمّى مرتفعة. اشرب سوائل وتناول خافضًا للحرارة، وراجع الطبيب إن استمرت أكثر من يومين أو صاحبها تيبّس رقبة أو طفح." }
+    : v.v >= 38 ? { tone: "info", t: "حمّى (38° فأكثر). راحة وسوائل، وراقبها." } : v.v < 35 ? { tone: "warn", t: "حرارة منخفضة (أقل من 35°). تدفّأ وأعد القياس، وراجع الطبيب إن تأكدت." } : { tone: "ok", t: "حرارة طبيعية." };
+  if (x.type === "weight") { const h = parseFloat(state.profile.height); if (!h) return null; const b = v.v / Math.pow(h / 100, 2);
+    return { tone: b >= 30 || b < 18.5 ? "warn" : b >= 25 ? "info" : "ok", t: `مؤشر كتلة الجسم ${b.toFixed(1)}: ${b < 18.5 ? "نحافة" : b < 25 ? "وزن طبيعي" : b < 30 ? "زيادة وزن" : "سمنة"}.` }; }
+  if (x.type === "glucose") {
+    const g = v.v, fast = v.ctx === "fasting";
+    if (g < 70) return { tone: g < 54 ? "danger" : "warn", t: "سكر منخفض. تناول 15 جرامًا من سكر سريع (نصف كوب عصير) وأعد القياس بعد 15 دقيقة؛ وإن فقد المريض وعيه فاتصل بالإسعاف 123." };
+    if (fast) return g < 100 ? { tone: "ok", t: "سكر صائم طبيعي." } : g < 126 ? { tone: "info", t: "سكر صائم مرتفع قليلًا (100–125): مرحلة ما قبل السكري. أكّده بتحليل في معمل." } : { tone: "warn", t: "سكر صائم 126 فأكثر. يحتاج إلى تأكيد بتحليل آخر ومراجعة الطبيب." };
+    return g < 140 ? { tone: "ok", t: "سكر عشوائي في المعدل المعتاد." } : g < 200 ? { tone: "info", t: "سكر مرتفع قليلًا بعد الأكل. تابع القياسات." } : g < 300 ? { tone: "warn", t: "سكر مرتفع (200 فأكثر). راجع الطبيب لتقييمه." } : { tone: "danger", t: "سكر مرتفع جدًا. اشرب ماء، وراجع الطوارئ إن صاحبه قيء أو نعاس شديد أو تنفس سريع." };
+  }
+  return null;
+}
+const vitalText = x => x.type === "bp" ? `${x.v.sys}/${x.v.dia}${x.v.pulse ? ` · نبض ${x.v.pulse}` : ""}` : x.type === "spo2" ? `${x.v.v}%${x.v.pulse ? ` · نبض ${x.v.pulse}` : ""}`
+  : `${+(+x.v.v).toFixed(1)} ${VT[x.type].unit}${x.type === "glucose" && x.v.ctx ? ` (${x.v.ctx === "fasting" ? "صائم" : "عشوائي"})` : ""}`;
+const SRC_NAME = { manual: "إدخال يدوي", bluetooth: "بلوتوث", file: "ملف مستورد" };
+
+// منحنى صغير لآخر 30 قراءة (SVG) مع النطاق الطبيعي مظللًا
+function sparkline(type) {
+  const pts = vitals.filter(x => x.type === type).slice(0, 30).reverse();
+  if (pts.length < 2) return "";
+  const val = x => type === "bp" ? x.v.sys : +x.v.v;
+  const vals = pts.map(val).concat(type === "bp" ? pts.map(x => x.v.dia) : []);
+  const NORMAL = { bp: [80, 120], hr: [50, 100], spo2: [95, 100], temp: [36, 37.5], glucose: [70, 140], weight: null }[type];
+  let lo = Math.min(...vals, ...(NORMAL || [])), hi = Math.max(...vals, ...(NORMAL || [])); if (hi - lo < 1) { hi += 1; lo -= 1; }
+  const W = 300, Hh = 70, X = i => 6 + i * (W - 12) / (pts.length - 1), Y = v => Hh - 6 - (v - lo) / (hi - lo) * (Hh - 12);
+  const line = arr => arr.map((v, i) => `${i ? "L" : "M"}${X(i).toFixed(1)} ${Y(v).toFixed(1)}`).join("");
+  return `<svg class="spark" viewBox="0 0 ${W} ${Hh}" role="img" aria-label="تغيّر ${VT[type].name} في آخر ${pts.length} قراءة">
+    ${NORMAL ? `<rect x="0" y="${Y(NORMAL[1]).toFixed(1)}" width="${W}" height="${(Y(NORMAL[0]) - Y(NORMAL[1])).toFixed(1)}" class="spark-band"/>` : ""}
+    <path d="${line(pts.map(val))}" class="spark-l"/>${type === "bp" ? `<path d="${line(pts.map(x => x.v.dia))}" class="spark-l2"/>` : ""}
+    ${pts.map((x, i) => `<circle cx="${X(i).toFixed(1)}" cy="${Y(val(x)).toFixed(1)}" r="2.2" class="spark-d"/>`).join("")}</svg>`;
+}
+
+function renderVitals() {
+  const t = state.vType || "bp", T = VT[t];
+  const bt = !!(navigator.bluetooth && window.isSecureContext);
+  const mine = vitals.filter(x => x.type === t);
+  const last = mine[0], note = last && vitalNote(last);
+  return `<div class="card rec-card vitals">
+      <div class="vt-tabs" role="tablist" aria-label="نوع القياس">${Object.entries(VT).map(([k, x]) => `<button role="tab" data-vtype="${k}" aria-pressed="${k === t}">${ico(x.icon)}<span>${x.name}</span></button>`).join("")}</div>
+      ${last ? `<div class="vt-last t-${note ? note.tone : "info"}"><span class="muted small">آخر قراءة · ${esc(fmtDate(last.at))} · ${SRC_NAME[last.src] || ""}</span>
+        <b>${esc(vitalText(last))}</b>${note ? `<span>${esc(note.t)}</span>` : ""}</div>${sparkline(t)}` : `<p class="muted small">لا توجد قراءات ${T.name} بعد.</p>`}
+      <details class="vt-add" ${mine.length ? "" : "open"}><summary>${ico(I.pen)} إدخال قراءة يدويًا</summary>
+        <div class="nums">${T.fields.map(([k, l, mn, mx, opt]) => `<div class="num"><label for="vt-${k}">${l}</label><input id="vt-${k}" type="number" inputmode="decimal" step="any" min="${mn}" max="${mx}" data-vfield="${k}" ${opt ? "" : "required"}><div class="unit">${t === "bp" || k === "pulse" ? (k === "pulse" ? "نبضة/د" : T.unit) : T.unit}</div></div>`).join("")}</div>
+        ${T.ctx ? `<div class="seg" role="group" aria-label="توقيت القياس"><button data-vctx="fasting" aria-pressed="${state.vCtx === "fasting"}">صائم</button><button data-vctx="random" aria-pressed="${state.vCtx !== "fasting"}">عشوائي / بعد الأكل</button></div>` : ""}
+        <button class="btn btn-primary btn-block" data-act="vt-save">${ico(I.check)} حفظ القراءة</button></details>
+    </div>
+    <div class="card rec-card">
+      <h2 class="h2">${ico(I.share)} ربط جهاز أو استيراد قراءات</h2>
+      <div class="vt-src">
+        <button class="btn btn-ghost btn-block" data-act="vt-ble" ${bt ? "" : "disabled"}>${ico(I.pulse)} ربط جهاز ${T.name} بالبلوتوث</button>
+        ${bt ? "" : `<p class="muted small">الربط بالبلوتوث يعمل من متصفح Chrome أو Edge على أندرويد أو الكمبيوتر. على آيفون استخدم الاستيراد من ملف.</p>`}
+        <label class="btn btn-ghost btn-block file-btn">${ico(I.folder)} استيراد ملف من ساعة أو هاتف أو بريد
+          <input type="file" id="vt-file" accept=".csv,.txt,.xml,.zip,text/csv,application/zip,text/xml" hidden></label>
+      </div>
+      <details class="vt-help"><summary>كيف أنقل قراءات ساعتي أو هاتفي أو جهازي؟</summary><ul>
+        <li><b>أجهزة الضغط والأكسجين والحرارة والوزن والسكر التي تدعم البلوتوث الصحي القياسي</b> (كثير من موديلات Omron وBeurer وA&D وغيرها): شغّل الجهاز في وضع الاقتران واضغط «ربط جهاز».</li>
+        <li><b>آيفون وساعة Apple:</b> تطبيق «الصحة» ← صورتك ← «تصدير كل البيانات الصحية»، ثم اختر الملف export.zip هنا (أو أرسله لنفسك بالبريد واحفظه ثم افتحه).</li>
+        <li><b>Samsung Health وFitbit وWithings وOmron Connect وGoogle Fit:</b> صدّر بياناتك ملف CSV من إعدادات التطبيق أو موقعه، ثم استورده هنا.</li>
+        <li><b>بالبريد:</b> إن أرسل لك الجهاز أو المعمل ملف القراءات بالبريد فاحفظ المرفق ثم استورده من هنا.</li>
+        <li>الساعات التي لا تشارك قراءاتها مباشرة (لأسباب الخصوصية لدى الشركات) تُنقل بياناتها عن طريق التصدير فقط.</li></ul></details>
+    </div>
+    ${mine.length ? `<div class="label">كل قراءات ${T.name} (${mine.length})</div><div class="hist">${mine.slice(0, 60).map(x => { const n = vitalNote(x); return `<div class="hist-row t-${n ? n.tone : "info"}">
+      <div class="hist-main"><span class="hist-d">${esc(fmtDate(x.at))} · ${SRC_NAME[x.src] || ""}</span><b>${esc(vitalText(x))}</b>${n ? `<span class="hist-t">${esc(n.t)}</span>` : ""}</div>
+      <button class="icon-btn sm" data-vdel="${x.id}" aria-label="حذف القراءة">${ico(I.trash)}</button></div>`; }).join("")}</div>` : ""}`;
+}
+function saveManualVital() {
+  const t = state.vType || "bp", T = VT[t], v = {};
+  for (const [k, l, mn, mx, opt] of T.fields) {
+    const raw = document.getElementById("vt-" + k)?.value;
+    if (raw === "" || raw == null) { if (opt) continue; toast(`أدخل ${l}`); return; }
+    const n = parseFloat(raw);
+    if (!(n >= mn && n <= mx)) { toast(`قيمة ${l} غير منطقية (${mn}–${mx})`); return; }
+    v[k] = n;
+  }
+  if (t === "bp" && v.dia >= v.sys) { toast("الانبساطي يجب أن يكون أقل من الانقباضي"); return; }
+  if (T.ctx) v.ctx = state.vCtx === "fasting" ? "fasting" : "random";
+  addVital(t, v, "manual"); saveVitals(); toast("حُفظت القراءة"); render();
+}
+
+/* ---------- البلوتوث الصحي القياسي ---------- */
+const sfloat = (dv, o) => { const raw = dv.getUint16(o, true); let m = raw & 0x0fff, e = raw >> 12; if (m >= 0x800) m -= 0x1000; if (e >= 8) e -= 16; return m * Math.pow(10, e); };
+const float32 = (dv, o) => { const raw = dv.getUint32(o, true); let m = raw & 0xffffff, e = raw >> 24; if (m >= 0x800000) m -= 0x1000000; if (e >= 128) e -= 256; return m * Math.pow(10, e); };
+const BLE = {
+  bp: { svc: 0x1810, chr: 0x2a35, mode: "indicate", parse(dv) { const f = dv.getUint8(0), kpa = f & 1; let sys = sfloat(dv, 1), dia = sfloat(dv, 3); if (kpa) { sys *= 7.50062; dia *= 7.50062; }
+      let o = 7; if (f & 2) o += 7; const r = { type: "bp", v: { sys: Math.round(sys), dia: Math.round(dia) } }; if (f & 4) r.v.pulse = Math.round(sfloat(dv, o)); return r; } },
+  hr: { svc: 0x180d, chr: 0x2a37, mode: "notify", once: true, parse(dv) { const f = dv.getUint8(0); return { type: "hr", v: { v: f & 1 ? dv.getUint16(1, true) : dv.getUint8(1) } }; } },
+  spo2: { svc: 0x1822, chr: 0x2a5e, alt: 0x2a5f, mode: "indicate", parse(dv) { return { type: "spo2", v: { v: Math.round(sfloat(dv, 1)), pulse: Math.round(sfloat(dv, 3)) } }; } },
+  temp: { svc: 0x1809, chr: 0x2a1c, mode: "indicate", parse(dv) { const f = dv.getUint8(0); let c = float32(dv, 1); if (f & 1) c = (c - 32) * 5 / 9; return { type: "temp", v: { v: Math.round(c * 10) / 10 } }; } },
+  weight: { svc: 0x181d, chr: 0x2a9d, mode: "indicate", parse(dv) { const f = dv.getUint8(0), raw = dv.getUint16(1, true); return { type: "weight", v: { v: Math.round((f & 1 ? raw * 0.01 * 0.453592 : raw * 0.005) * 10) / 10 } }; } },
+  glucose: { svc: 0x1808, chr: 0x2a18, mode: "notify", racp: 0x2a52, parse(dv) { const f = dv.getUint8(0); let o = 10; if (f & 1) o += 2; if (!(f & 2)) return null;
+      const c = sfloat(dv, o), mg = f & 4 ? c * 1000 * 18.016 : c * 100000; return { type: "glucose", v: { v: Math.round(mg), ctx: "random" } }; } }
+};
+async function connectBLE() {
+  const t = state.vType || "bp", spec = BLE[t];
+  try {
+    const dev = await navigator.bluetooth.requestDevice({ filters: [{ services: [spec.svc] }] });
+    toast("جارٍ الاتصال بـ" + (dev.name || "الجهاز") + "…");
+    const gatt = await dev.gatt.connect(), svc = await gatt.getPrimaryService(spec.svc);
+    let ch; try { ch = await svc.getCharacteristic(spec.chr); } catch (e) { if (!spec.alt) throw e; ch = await svc.getCharacteristic(spec.alt); }
+    let got = 0;
+    ch.addEventListener("characteristicvaluechanged", ev => {
+      try { const r = spec.parse(ev.target.value); if (r && addVital(r.type, r.v, "bluetooth")) { got++; saveVitals(); render(); toast(`استُقبلت قراءة: ${vitalText({ type: r.type, v: r.v })}`); }
+        if (spec.once && got) { ch.stopNotifications().catch(() => {}); gatt.disconnect(); } } catch (e) { /* قراءة غير مكتملة */ }
+    });
+    await ch.startNotifications();
+    if (spec.racp) { const racp = await svc.getCharacteristic(spec.racp); await racp.startNotifications(); await racp.writeValue(new Uint8Array([1, 1])); }
+    toast("تم الاتصال. ابدأ القياس على الجهاز وستصل القراءة تلقائيًا.");
+  } catch (e) {
+    if (e && e.name === "NotFoundError") return; // المستخدم أغلق نافذة الاختيار
+    toast("تعذّر الاتصال بالجهاز. تأكد أنه في وضع الاقتران ويدعم البلوتوث الصحي القياسي، أو استورد قراءاته من ملف.");
+  }
+}
+
+/* ---------- استيراد الملفات ---------- */
+// قارئ ZIP مصغّر (يكفي لملف export.zip من Apple Health) باستخدام DecompressionStream المدمج في المتصفح
+async function unzipFind(buf, re) {
+  const dv = new DataView(buf); let eocd = -1;
+  for (let i = buf.byteLength - 22; i >= Math.max(0, buf.byteLength - 70000); i--) if (dv.getUint32(i, true) === 0x06054b50) { eocd = i; break; }
+  if (eocd < 0) throw new Error("zip");
+  let p = dv.getUint32(eocd + 16, true); const n = dv.getUint16(eocd + 10, true);
+  for (let k = 0; k < n; k++) {
+    const method = dv.getUint16(p + 10, true), csize = dv.getUint32(p + 20, true), nl = dv.getUint16(p + 28, true), el = dv.getUint16(p + 30, true), cl = dv.getUint16(p + 32, true), lo = dv.getUint32(p + 42, true);
+    const name = new TextDecoder().decode(new Uint8Array(buf, p + 46, nl));
+    if (re.test(name)) {
+      const start = lo + 30 + dv.getUint16(lo + 26, true) + dv.getUint16(lo + 28, true), data = new Uint8Array(buf, start, csize);
+      if (method === 0) return new Blob([data]).stream();
+      return new Blob([data]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+    }
+    p += 46 + nl + el + cl;
+  }
+  throw new Error("nofile");
+}
+// قراءة Apple Health export.xml على دفعات (قد يكون حجمه مئات الميجابايت)
+const HK = { HeartRate: "hr", OxygenSaturation: "spo2", BodyTemperature: "temp", BodyMass: "weight", BloodGlucose: "glucose", BloodPressureSystolic: "sys", BloodPressureDiastolic: "dia" };
+async function importAppleStream(stream) {
+  const rd = stream.pipeThrough(new TextDecoderStream()).getReader(), since = Date.now() - 365 * 864e5, bp = new Map();
+  let rest = "", n = 0;
+  for (;;) {
+    const { value, done } = await rd.read();
+    const text = rest + (value || "");
+    const cut = done ? text.length : text.lastIndexOf("<Record");
+    const part = cut > 0 ? text.slice(0, cut) : "";
+    rest = cut > 0 ? text.slice(cut) : text;
+    for (const m of part.matchAll(/<Record type="HKQuantityTypeIdentifier(\w+)"[^>]*?unit="([^"]*)"[^>]*?startDate="([^"]+)"[^>]*?value="([\d.]+)"/g)) {
+      const k = HK[m[1]]; if (!k) continue;
+      const at = Date.parse(m[3].replace(" ", "T").replace(" ", "")); if (!(at > since)) continue;
+      let v = parseFloat(m[4]), u = m[2];
+      if (k === "sys" || k === "dia") { const e = bp.get(m[3]) || {}; e[k] = Math.round(v); bp.set(m[3], e); continue; }
+      if (k === "spo2" && v <= 1) v *= 100;
+      if (k === "temp" && /F/.test(u)) v = (v - 32) * 5 / 9;
+      if (k === "weight" && /lb/.test(u)) v *= 0.453592;
+      if (k === "glucose" && /mol/.test(u)) v *= 18.016;
+      if (k === "hr" && n > 0 && vitals.length && vitals[vitals.length - 1].type === "hr" && Math.abs(vitals[vitals.length - 1].at - at) < 3600e3) continue; // نبضة واحدة في الساعة تكفي
+      if (addVital(k, { v: Math.round(v * 10) / 10, ...(k === "glucose" ? { ctx: "random" } : {}) }, "file", at)) n++;
+    }
+    if (done) break;
+  }
+  for (const [d, e] of bp) if (e.sys && e.dia && addVital("bp", { sys: e.sys, dia: e.dia }, "file", Date.parse(d.replace(" ", "T").replace(" ", "")))) n++;
+  return n;
+}
+// CSV عام: يتعرّف على الأعمدة بالاسم (عربي أو إنجليزي) فيناسب تصدير أغلب التطبيقات
+function importCSV(text) {
+  const lines = text.replace(/^﻿/, "").split(/\r?\n/).filter(l => l.trim());
+  if (lines.length < 2) return 0;
+  const sep = (lines[0].match(/;/g) || []).length > (lines[0].match(/,/g) || []).length ? ";" : lines[0].includes("\t") ? "\t" : ",";
+  const split = l => l.split(sep).map(c => c.replace(/^"|"$/g, "").trim());
+  const head = split(lines[0]).map(h => h.toLowerCase());
+  const col = re => head.findIndex(h => re.test(h));
+  const c = { date: col(/date|time|تاريخ|وقت|measured|start/), sys: col(/sys|انقباض/), dia: col(/dia|انبساط/), pulse: col(/pulse|heart ?rate|bpm|نبض/),
+    spo2: col(/spo2|oxygen|saturation|أكسجين/), temp: col(/temp|حرار/), weight: col(/weight|وزن|mass/), glu: col(/gluc|sugar|سكر/) };
+  let n = 0;
+  for (const l of lines.slice(1)) {
+    const r = split(l), num = i => i >= 0 ? parseFloat((r[i] || "").replace(",", ".")) : NaN;
+    let at = c.date >= 0 ? Date.parse(r[c.date]) : NaN; if (!(at > 0)) at = Date.now();
+    if (num(c.sys) > 60 && num(c.dia) > 30) { if (addVital("bp", { sys: Math.round(num(c.sys)), dia: Math.round(num(c.dia)), ...(num(c.pulse) > 0 ? { pulse: Math.round(num(c.pulse)) } : {}) }, "file", at)) n++; }
+    else if (num(c.pulse) > 20) { if (addVital("hr", { v: Math.round(num(c.pulse)) }, "file", at)) n++; }
+    if (num(c.spo2) > 50) { const s = num(c.spo2) <= 1 ? num(c.spo2) * 100 : num(c.spo2); if (addVital("spo2", { v: Math.round(s) }, "file", at)) n++; }
+    if (num(c.temp) > 30) { const t = num(c.temp) > 50 ? (num(c.temp) - 32) * 5 / 9 : num(c.temp); if (addVital("temp", { v: Math.round(t * 10) / 10 }, "file", at)) n++; }
+    if (num(c.weight) > 1) if (addVital("weight", { v: Math.round(num(c.weight) * 10) / 10 }, "file", at)) n++;
+    if (num(c.glu) > 1) { const g = num(c.glu) < 35 ? num(c.glu) * 18.016 : num(c.glu); if (addVital("glucose", { v: Math.round(g), ctx: "random" }, "file", at)) n++; }
+  }
+  return n;
+}
+async function importVitalsFile(file) {
+  if (!file) return;
+  toast("جارٍ قراءة الملف…");
+  try {
+    let n = 0;
+    if (/\.zip$/i.test(file.name)) n = await importAppleStream(await unzipFind(await file.arrayBuffer(), /export\.xml$/));
+    else if (/\.xml$/i.test(file.name)) n = await importAppleStream(file.stream());
+    else n = importCSV(await file.text());
+    saveVitals(); render();
+    toast(n ? `استُوردت ${n} قراءة جديدة` : "لم نجد في الملف قراءات جديدة معروفة الأعمدة");
+  } catch (e) { toast("تعذّرت قراءة الملف. جرّب ملف CSV أو ملف export.zip من تطبيق الصحة."); }
 }
 
 /* ---------- نصائح لصحتك ---------- */
@@ -1929,6 +2206,8 @@ function cardSummary() {
     card.name ? `الاسم: ${card.name}` : "", card.blood ? `فصيلة الدم: ${card.blood}` : "",
     card.allergies ? `الحساسية: ${card.allergies}` : "", card.meds ? `الأدوية الحالية: ${card.meds}` : "",
     card.surgeries ? `عمليات/أمراض سابقة: ${card.surgeries}` : "",
+    (() => { const last = Object.keys(VT).map(k => vitals.find(x => x.type === k)).filter(Boolean); return last.length ? `آخر القياسات: ${last.map(x => `${VT[x.type].name} ${vitalText(x)} (${fmtDate(x.at)})`).join("؛ ")}` : ""; })(),
+    specials().length ? `مواقف خاصة: ${specials().map(x => `${SPECIAL_NAME[x.type] || ""}: ${x.title}${x.when ? ` (${x.when})` : ""}`).join("؛ ")}` : "",
     card.emPhone ? `للطوارئ: ${card.emName || ""} ${card.emPhone}` : ""
   ].filter(Boolean).join(" · ");
 }
@@ -2017,6 +2296,10 @@ document.addEventListener("click", e => {
     return;
   }
   if (ds.recTab) { state.recTab = ds.recTab; return render(); }
+  if (ds.vtype) { state.vType = ds.vtype; return render(); }
+  if (ds.vctx) { state.vCtx = ds.vctx; document.querySelectorAll("[data-vctx]").forEach(b => b.setAttribute("aria-pressed", b.dataset.vctx === ds.vctx)); return; }
+  if (ds.vdel) { vitals = vitals.filter(x => x.id !== ds.vdel); saveVitals(); toast("حُذفت القراءة"); return render(); }
+  if (ds.spDel) { card.special = specials().filter(x => x.id !== ds.spDel); keep(CARD_KEY, card); toast("حُذف الموقف"); return render(); }
   if (ds.system) { state.system = ds.system; window.scrollTo(0, 0); return render(); }
   if (ds.info) { state.info = ds.info; state.infoZone = ds.infoZone; window.scrollTo(0, 0); return go("condinfo"); }
   if (ds.hist) return openHistory(ds.hist);
@@ -2043,6 +2326,7 @@ document.addEventListener("click", e => {
     case "voice": return toggleVoice();
     case "desc-edit": return go("home");
     case "records": state.prev = state.screen; return go("records");
+    case "vitals": state.prev = state.screen; state.recTab = "vitals"; return go("records");
     case "tips": state.prev = state.screen; return go("tips");
     case "systems": state.system = null; return go("systems");
     case "theme": { const m = THEME_NEXT[curTheme()]; applyTheme(m); toast("الوضع: " + THEME_NAME[m]); return render(); }
@@ -2050,6 +2334,9 @@ document.addEventListener("click", e => {
       const i = Math.max(0, Math.min(ZOOMS.length - 1, ZOOMS.indexOf(curZoom()) + (ds.act === "zoom+" ? 1 : -1)));
       applyZoom(ZOOMS[i]); return toast("حجم الخط: " + ZOOMS[i] + "%");
     }
+    case "sp-add": return addSpecial();
+    case "vt-save": return saveManualVital();
+    case "vt-ble": return connectBLE();
     case "hist-clear":
       if (!confirm("هل تريد مسح كل التقييمات المحفوظة؟")) return;
       history = []; keep(HIST_KEY, history); return render();
@@ -2064,8 +2351,8 @@ document.addEventListener("click", e => {
     case "print": return window.print();
     case "wipe":
       if (!confirm("هل تريد حذف بياناتك من هذا الجهاز؟")) return;
-      try { [PROFILE_KEY, CARD_KEY, HIST_KEY].forEach(k => localStorage.removeItem(k)); } catch (err) { /* ignore */ }
-      card = {}; history = [];
+      try { [PROFILE_KEY, CARD_KEY, HIST_KEY, VITALS_KEY].forEach(k => localStorage.removeItem(k)); } catch (err) { /* ignore */ }
+      card = {}; history = []; vitals = [];
       state.profile = { gender: null, age: "", height: "", weight: "", chronic: [] };
       state.consent = false; resetCase(); return go("onboarding");
   }
@@ -2118,6 +2405,7 @@ document.addEventListener("input", e => {
   if (t.dataset && "stageKnown" in t.dataset) { state.stages.known = t.checked; renderStageOut(); }
 });
 document.addEventListener("change", e => {
+  if (e.target.id === "vt-file") { const f = e.target.files && e.target.files[0]; e.target.value = ""; return importVitalsFile(f); }
   if (e.target.id === "consent") { state.consent = e.target.checked; updateOnboardCta(); }
   if ("stageKnown" in (e.target.dataset || {})) { state.stages.known = e.target.checked; renderStageOut(); }
 });
@@ -2131,5 +2419,5 @@ window.addEventListener("load", () => {
 });
 
 /* للاختبارات الآلية */
-window.__mosel = { state, scoreZone, evaluate, render, analyzeDescription };
+window.__mosel = { state, scoreZone, evaluate, render, analyzeDescription, BLE, importCSV, vitalNote, getVitals: () => vitals };
 })();

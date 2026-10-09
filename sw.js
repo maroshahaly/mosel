@@ -1,8 +1,8 @@
 /*! موصل (Mosel) — © 2026 Maro Shahaly. جميع الحقوق محفوظة. يُمنع النسخ أو إعادة النشر دون إذن كتابي. */
 /* موصل — service worker: التطبيق يفتح من غير نت بعد أول زيارة.
    غيّر VERSION مع أي تعديل في الملفات عشان الموبايلات تاخد التحديث. */
-const VERSION = "mosel-v3.9.1";
-const SHELL = ["./", "./index.html", "./body3d.js", "./app.js", "./assets/body3d.bin", "./data/conditions.js", "./data/more_01_zones.js", "./data/more_02_systems.js", "./data/more_03_specialties.js", "./data/more_04_minor.js","./data/care.js", "./data/tips.js", "./prefs.js", "./manifest.json", "./icons/icon.svg", "./icons/icon-192.png", "./assets/body-male.jpg", "./assets/body-female.jpg", "./assets/body-male-back.jpg", "./assets/body-female-back.jpg"];
+const VERSION = "mosel-v4.0.0";
+const SHELL = ["./", "./index.html", "./body3d.js", "./app.js", "./assets/body3d.bin", "./data/conditions.js", "./data/more_01_zones.js", "./data/more_02_systems.js", "./data/more_03_specialties.js", "./data/more_04_minor.js", "./data/more_05_digestive.js", "./data/more_06_urinary_endocrine.js", "./data/more_07_heart_lungs.js", "./data/more_08_neuro_mind.js", "./data/more_09_eye_ent_mouth.js", "./data/more_10_skin_infection.js", "./data/more_11_bones_repro.js", "./data/more_12_children_congenital.js","./data/care.js", "./data/tips.js", "./prefs.js", "./manifest.json", "./icons/icon.svg", "./icons/icon-192.png", "./assets/body-male.jpg", "./assets/body-female.jpg", "./assets/body-male-back.jpg", "./assets/body-female-back.jpg"];
 
 self.addEventListener("install", e => {
   e.waitUntil(caches.open(VERSION).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

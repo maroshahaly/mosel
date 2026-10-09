@@ -1,0 +1,842 @@
+{
+"neuro.cluster": {
+ "tests": [],
+ "imaging": ["رنين مغناطيسي على المخ (MRI brain) عند أول تشخيص أو وجود علامات غير نمطية"],
+ "meds": [
+  {"cls": "علاج النوبة: الأكسجين عالي التدفق عبر قناع", "ex": "oxygen", "note": "بوصفة وتجهيز طبي"},
+  {"cls": "علاج النوبة: التريبتانات غير الفموية", "ex": "sumatriptan (subcutaneous), zolmitriptan (nasal)"},
+  {"cls": "العلاج الوقائي خلال فترة العنقود", "ex": "verapamil", "note": "يحتاج إلى تخطيط قلب للمتابعة"},
+  {"cls": "علاج انتقالي قصير المدى", "ex": "prednisolone", "note": "بإشراف طبيب الأعصاب"}
+ ],
+ "procedures": ["إحالة إلى طبيب الأعصاب", "حقن العصب القذالي الأكبر في حالات مختارة"],
+ "selfcare": ["تجنّب الكحول أثناء فترة العنقود", "الإقلاع عن التدخين", "تدوين يوميات النوبات"],
+ "refs": ["NICE", "AHS"],
+ "guide": "NICE CG150 Headaches in over 12s: diagnosis and management (2012, updated 2021)"
+},
+"neuro.moh": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "إيقاف المسكن المُفرَط في استعماله", "ex": "paracetamol, NSAIDs, triptans, codeine-containing analgesics", "note": "الأفيونات والمهدئات تُسحب تدريجيًا بإشراف طبي"},
+  {"cls": "علاج وقائي للصداع الأصلي", "ex": "amitriptyline, propranolol, topiramate", "note": "يختاره الطبيب حسب نوع الصداع والحالة"}
+ ],
+ "procedures": ["تثقيف المريض بآلية صداع الإفراط وخطة الإيقاف", "متابعة بيوميات الصداع بعد أسابيع من الإيقاف"],
+ "selfcare": ["تدوين أيام الصداع وأيام تناول المسكنات", "انتظام النوم والوجبات والسوائل", "عدم استعمال المسكنات أكثر من أيام قليلة أسبوعيًا"],
+ "refs": ["NICE", "AHS"],
+ "guide": "NICE CG150 Headaches in over 12s: diagnosis and management (2012, updated 2021)"
+},
+"neuro.occipital": {
+ "tests": [],
+ "imaging": ["رنين مغناطيسي على الرقبة أو المخ (MRI) عند وجود علامات عصبية أو أعراض غير نمطية"],
+ "meds": [
+  {"cls": "مسكنات بسيطة لفترة قصيرة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "أدوية آلام الأعصاب", "ex": "amitriptyline, gabapentin, pregabalin"}
+ ],
+ "procedures": ["حقن مخدر موضعي للعصب القذالي الأكبر (Occipital nerve block)", "علاج طبيعي للرقبة وتصحيح الوضعية"],
+ "selfcare": ["كمادات دافئة على مؤخرة الرقبة", "تجنّب الوضعيات المطوّلة للرقبة أمام الشاشات"],
+ "refs": ["AHS", "NICE"],
+ "guide": "International Classification of Headache Disorders, 3rd edition (ICHD-3) (2018)"
+},
+"neuro.tia": {
+ "tests": ["تخطيط القلب الكهربائي (ECG) ومراقبة النظم للبحث عن الرجفان الأذيني", "صورة دم كاملة وسكر الدم والسكر التراكمي والدهون (CBC, Glucose, HbA1c, Lipid profile)"],
+ "imaging": ["رنين مغناطيسي على المخ بتقنية الانتشار (MRI DWI)", "دوبلر أو تصوير الشرايين السباتية (Carotid Doppler / CTA)"],
+ "meds": [
+  {"cls": "مضادات الصفائح", "ex": "aspirin, clopidogrel", "note": "يحددها الطبيب بعد استبعاد النزيف"},
+  {"cls": "الستاتينات", "ex": "atorvastatin"},
+  {"cls": "مضادات التخثر عند ثبوت الرجفان الأذيني", "ex": "apixaban, rivaroxaban, dabigatran"}
+ ],
+ "procedures": ["تقييم عاجل في عيادة أو وحدة السكتة خلال 24 ساعة", "استئصال بطانة الشريان السباتي عند وجود تضيّق شديد مسبب"],
+ "selfcare": ["الإقلاع عن التدخين", "ضبط الضغط والسكر", "عدم القيادة حتى يسمح الطبيب"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE NG128 Stroke and transient ischaemic attack in over 16s: diagnosis and initial management (2019, updated 2022)"
+},
+"neuro.cvt": {
+ "tests": ["صورة دم كاملة ووظائف التخثر (CBC, PT/INR, aPTT)", "فحوص أهبة التخثر في حالات مختارة (Thrombophilia screen)"],
+ "imaging": ["رنين مغناطيسي مع تصوير الأوردة (MRI + MR venography)", "أشعة مقطعية مع تصوير الأوردة (CT venography)"],
+ "meds": [
+  {"cls": "مضادات التخثر في المرحلة الحادة", "ex": "enoxaparin, unfractionated heparin", "note": "في المستشفى فقط"},
+  {"cls": "مضادات التخثر الفموية بعد الاستقرار", "ex": "warfarin, dabigatran"},
+  {"cls": "مضادات الصرع عند حدوث تشنّجات", "ex": "levetiracetam"}
+ ],
+ "procedures": ["دخول المستشفى ومراقبة عصبية", "مراجعة وسائل منع الحمل الهرمونية"],
+ "selfcare": ["الالتزام بمضاد التخثر ومواعيد المتابعة", "إخبار الطبيب قبل أي حمل لاحق"],
+ "refs": ["ACC_AHA"],
+ "guide": "Diagnosis and Management of Cerebral Venous Thrombosis: A Scientific Statement From the American Heart Association (2024)"
+},
+"neuro.encephalitis": {
+ "tests": ["بزل قطني وتحليل السائل الشوكي مع فحص PCR للفيروسات (CSF analysis, HSV PCR)", "صورة دم كاملة وأملاح وسكر ومزرعة دم", "تخطيط الدماغ الكهربائي (EEG)", "أجسام مضادة للالتهاب الدماغي المناعي عند الاشتباه"],
+ "imaging": ["رنين مغناطيسي على المخ (MRI brain)", "أشعة مقطعية قبل البزل القطني عند الحاجة (CT head)"],
+ "meds": [
+  {"cls": "مضادات الفيروسات الوريدية تُبدأ فور الاشتباه", "ex": "aciclovir"},
+  {"cls": "مضادات الصرع عند حدوث نوبات", "ex": "levetiracetam"},
+  {"cls": "علاج مناعي للالتهاب الدماغي المناعي", "ex": "methylprednisolone, intravenous immunoglobulin", "note": "بإشراف متخصص"}
+ ],
+ "procedures": ["دخول المستشفى وربما العناية المركزة"],
+ "selfcare": ["التأهيل العصبي والمعرفي بعد التعافي"],
+ "refs": ["IDSA", "NICE"],
+ "guide": "IDSA Clinical Practice Guidelines: The Management of Encephalitis (2008)"
+},
+"neuro.braintumour": {
+ "tests": ["فحص قاع العين للبحث عن تورّم العصب البصري (Fundoscopy)"],
+ "imaging": ["رنين مغناطيسي على المخ بالصبغة (MRI brain with contrast)", "أشعة مقطعية على المخ عند تعذّر الرنين (CT head)"],
+ "meds": [
+  {"cls": "الكورتيزون لتقليل الوذمة حول الورم", "ex": "dexamethasone", "note": "بعد التشخيص وبإشراف متخصص"},
+  {"cls": "مضادات الصرع عند حدوث نوبات", "ex": "levetiracetam"}
+ ],
+ "procedures": ["إحالة عاجلة لطبيب الأعصاب أو جراحة المخ", "خزعة أو استئصال جراحي حسب نتائج التصوير"],
+ "selfcare": ["تدوين نمط الصداع والأعراض المصاحبة", "عدم القيادة بعد أي نوبة تشنّج"],
+ "refs": ["NICE", "NCCN"],
+ "guide": "NICE NG99 Brain tumours (primary) and brain metastases in over 16s (2018, updated 2021)"
+},
+"neuro.iih": {
+ "tests": ["فحص قاع العين ومجال الرؤية (Fundoscopy, Visual fields)", "بزل قطني وقياس ضغط الفتح (Lumbar puncture opening pressure)"],
+ "imaging": ["رنين مغناطيسي على المخ مع تصوير الأوردة (MRI + MR venography)"],
+ "meds": [
+  {"cls": "مثبطات الأنهيدراز الكربونية", "ex": "acetazolamide"},
+  {"cls": "بدائل عند عدم التحمّل أو لعلاج الصداع", "ex": "topiramate"}
+ ],
+ "procedures": ["برنامج إنقاص وزن منظم", "تحويلة السائل الشوكي أو تركيب دعامة في الجيب الوريدي أو فتح غمد العصب البصري عند تهديد البصر"],
+ "selfcare": ["إنقاص الوزن", "متابعة دورية لمجال الرؤية لدى طبيب العيون", "تجنّب الإفراط في المسكنات"],
+ "refs": ["AAO", "NICE"],
+ "guide": "Idiopathic intracranial hypertension: consensus guidelines on management (Mollan et al., J Neurol Neurosurg Psychiatry, 2018)"
+},
+"neuro.nph": {
+ "tests": ["اختبار سحب السائل الشوكي ومراقبة المشي قبله وبعده (CSF tap test)", "تقييم معرفي (MoCA)"],
+ "imaging": ["رنين مغناطيسي على المخ (MRI brain) لتقييم حجم البطينات"],
+ "meds": [],
+ "procedures": ["تركيب صمام تحويلة بطيني بريتوني (Ventriculoperitoneal shunt) لدى المستجيبين", "علاج طبيعي للمشي والتوازن"],
+ "selfcare": ["الوقاية من السقوط في المنزل", "مواعيد منتظمة للحمام لتقليل السلس"],
+ "refs": ["AAN"],
+ "guide": "AAN Practice guideline: Treatment of idiopathic normal pressure hydrocephalus (2015)"
+},
+"neuro.essentialtremor": {
+ "tests": ["وظائف الغدة الدرقية (TSH) لاستبعاد فرط النشاط"],
+ "imaging": [],
+ "meds": [
+  {"cls": "حاصرات بيتا", "ex": "propranolol", "note": "يُتجنّب مع الربو"},
+  {"cls": "مضادات الصرع", "ex": "primidone, topiramate"}
+ ],
+ "procedures": ["التحفيز العميق للمخ (Deep brain stimulation) أو الموجات فوق الصوتية المركزة في الحالات الشديدة", "علاج وظيفي وأدوات مساعدة مثقلة"],
+ "selfcare": ["تقليل الكافيين", "استخدام أكواب وأدوات مثقلة"],
+ "refs": ["AAN"],
+ "guide": "AAN Evidence-based guideline update: Treatment of essential tremor (2011)"
+},
+"neuro.mnd": {
+ "tests": ["تخطيط العضلات والأعصاب (EMG / Nerve conduction studies)", "وظائف التنفس (FVC)", "تحاليل لاستبعاد الأسباب الأخرى (CK, TSH, B12, Calcium)"],
+ "imaging": ["رنين مغناطيسي على المخ والنخاع العنقي لاستبعاد الانضغاط"],
+ "meds": [
+  {"cls": "دواء يبطئ تطور المرض", "ex": "riluzole"},
+  {"cls": "علاج الأعراض: التشنّج العضلي وسيلان اللعاب", "ex": "baclofen, glycopyrronium"}
+ ],
+ "procedures": ["متابعة لدى فريق متعدد التخصصات", "تهوية غير جراحية (NIV) عند ضعف التنفس", "أنبوب تغذية عبر المعدة (Gastrostomy) عند صعوبة البلع"],
+ "selfcare": ["تخطيط مسبق للرعاية", "وسائل مساعدة للتواصل والحركة"],
+ "refs": ["NICE", "AAN"],
+ "guide": "NICE NG42 Motor neurone disease: assessment and management (2016, updated 2019)"
+},
+"neuro.ulnar": {
+ "tests": ["تخطيط الأعصاب (Nerve conduction studies) عند الضعف أو استمرار الأعراض"],
+ "imaging": ["موجات فوق صوتية على العصب الزندي (Ultrasound) في حالات مختارة"],
+ "meds": [
+  {"cls": "مسكنات بسيطة عند الحاجة", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": ["جبيرة ليلية تُبقي المرفق ممدودًا جزئيًا", "تحرير جراحي للعصب أو نقله عند الضعف أو فشل العلاج التحفظي"],
+ "selfcare": ["تجنّب الاتكاء على المرفق", "تجنّب ثني المرفق لفترات طويلة (كالهاتف أو النوم واليد تحت الرأس)"],
+ "refs": ["AAOS", "AAN"],
+ "guide": "AAEM/AAN/AAPM&R Practice parameter: Electrodiagnostic studies in ulnar neuropathy at the elbow (1999)"
+},
+"neuro.vestibularneuritis": {
+ "tests": ["فحص سريري للحركات العينية (HINTS) لتمييزه عن السكتة", "تخطيط السمع (Audiometry)"],
+ "imaging": ["رنين مغناطيسي على المخ عند وجود علامات عصبية أو عوامل خطر للسكتة"],
+ "meds": [
+  {"cls": "مضادات الدوار والغثيان لأيام قليلة فقط", "ex": "prochlorperazine, cyclizine", "note": "الاستخدام الطويل يؤخر التعافي"},
+  {"cls": "الكورتيزون في الأيام الأولى", "ex": "prednisolone", "note": "حسب تقدير الطبيب والأدلة محدودة"}
+ ],
+ "procedures": ["تمارين تأهيل التوازن (Vestibular rehabilitation)"],
+ "selfcare": ["الحركة التدريجية المبكرة", "شرب السوائل أثناء القيء", "تجنّب القيادة حتى زوال الدوار"],
+ "refs": ["AAO_HNS", "NICE"],
+ "guide": "Bárány Society diagnostic criteria for acute unilateral vestibulopathy (2022)"
+},
+"neuro.firstseizure": {
+ "tests": ["سكر الدم والأملاح والكالسيوم والمغنيسيوم (Glucose, Electrolytes, Ca, Mg)", "تخطيط القلب (ECG)", "تخطيط الدماغ الكهربائي (EEG)", "فحص السموم عند الاشتباه"],
+ "imaging": ["رنين مغناطيسي على المخ (MRI brain)", "أشعة مقطعية عاجلة عند إصابة الرأس أو علامات عصبية (CT head)"],
+ "meds": [
+  {"cls": "مضادات الصرع عند ارتفاع خطر التكرار بقرار المختص", "ex": "levetiracetam, lamotrigine"}
+ ],
+ "procedures": ["إحالة عاجلة لطبيب الأعصاب (خلال أسبوعين)"],
+ "selfcare": ["عدم القيادة وفق أنظمة بلدك", "عدم السباحة أو الاستحمام في حوض دون مرافق", "النوم الكافي وتجنّب الكحول"],
+ "refs": ["NICE", "ILAE", "AAN"],
+ "guide": "NICE NG217 Epilepsies in children, young people and adults (2022)"
+},
+"neuro.status": {
+ "tests": ["سكر الدم فورًا (Capillary glucose)", "الأملاح ووظائف الكلى والكبد ومستوى مضادات الصرع", "تخطيط الدماغ المستمر عند عدم استعادة الوعي"],
+ "imaging": ["أشعة مقطعية على المخ بعد الاستقرار (CT head)"],
+ "meds": [
+  {"cls": "الخط الأول: البنزوديازيبينات", "ex": "midazolam (buccal), lorazepam (IV), diazepam (rectal)"},
+  {"cls": "الخط الثاني: مضادات الصرع الوريدية", "ex": "levetiracetam, phenytoin, sodium valproate"},
+  {"cls": "تصحيح نقص السكر أو الثيامين عند الحاجة", "ex": "glucose, thiamine"}
+ ],
+ "procedures": ["تأمين مجرى الهواء والأكسجين", "العناية المركزة والتخدير العام عند الحالات المقاومة"],
+ "selfcare": ["خطة إسعافية مكتوبة للمرضى المعروفين بالصرع", "تدريب الأسرة على وضع الإفاقة وإعطاء الدواء الإسعافي"],
+ "refs": ["ILAE", "NICE"],
+ "guide": "AES Evidence-Based Guideline: Treatment of Convulsive Status Epilepticus in Children and Adults (2016)"
+},
+"neuro.syncope": {
+ "tests": ["تخطيط القلب (ECG) لكل حالة إغماء", "قياس الضغط في وضعي الاستلقاء والوقوف", "صورة دم كاملة وسكر الدم عند الحاجة"],
+ "imaging": ["إيكو على القلب (Echocardiography) عند الشك في مرض قلبي"],
+ "meds": [
+  {"cls": "مراجعة الأدوية الخافضة للضغط", "ex": "antihypertensives, diuretics, alpha-blockers", "note": "لا يُوقف أي دواء دون استشارة الطبيب"}
+ ],
+ "procedures": ["اختبار الطاولة المائلة (Tilt-table test) في الحالات المتكررة غير الواضحة", "مراقبة نظم القلب (Holter) عند الشك في سبب قلبي"],
+ "selfcare": ["مناورات شد العضلات عند الإحساس بالإغماء", "شرب سوائل كافية", "تجنّب الوقوف الطويل والأماكن الحارة"],
+ "refs": ["ESC", "NICE"],
+ "guide": "ESC Guidelines for the diagnosis and management of syncope (2018)"
+},
+"neuro.pcs": {
+ "tests": ["تقييم معرفي وعصبي نفسي عند استمرار الأعراض", "فحص التوازن والرؤية"],
+ "imaging": ["رنين مغناطيسي على المخ عند استمرار الأعراض أو وجود علامات عصبية"],
+ "meds": [
+  {"cls": "مسكنات بسيطة لفترة محدودة", "ex": "paracetamol", "note": "تجنّب الإفراط لمنع صداع المسكنات"},
+  {"cls": "علاج الصداع المستمر أو اضطراب المزاج", "ex": "amitriptyline, sertraline", "note": "بوصفة طبية"}
+ ],
+ "procedures": ["عودة تدريجية للنشاط والعمل", "تأهيل دهليزي أو علاج معرفي سلوكي حسب الأعراض"],
+ "selfcare": ["انتظام النوم", "تقليل الشاشات في الأيام الأولى ثم زيادتها تدريجيًا", "تجنّب الرياضات الاحتكاكية حتى زوال الأعراض"],
+ "refs": ["CDC", "NICE"],
+ "guide": "Ontario Neurotrauma Foundation Guideline for Concussion/mTBI and Persistent Symptoms, 3rd edition (2018)"
+},
+"neuro.narcolepsy": {
+ "tests": ["دراسة النوم الليلية (Polysomnography)", "اختبار الغفوات المتعددة (MSLT)", "قياس الهيبوكريتين في السائل الشوكي في حالات مختارة"],
+ "imaging": [],
+ "meds": [
+  {"cls": "منشطات اليقظة", "ex": "modafinil, pitolisant, solriamfetol"},
+  {"cls": "علاج الجمدة والنعاس", "ex": "sodium oxybate, venlafaxine"}
+ ],
+ "procedures": ["متابعة لدى طب النوم"],
+ "selfcare": ["قيلولات قصيرة مجدولة", "مواعيد نوم ثابتة", "تجنّب القيادة حتى ضبط الأعراض"],
+ "refs": ["AAN", "FDA"],
+ "guide": "AASM Clinical Practice Guideline: Treatment of central disorders of hypersomnolence (2021)"
+},
+"neuro.ftd": {
+ "tests": ["تقييم معرفي وسلوكي شامل (Neuropsychological assessment)", "تحاليل لاستبعاد الأسباب القابلة للعلاج (B12, TSH)", "استشارة وفحص جيني عند وجود تاريخ عائلي"],
+ "imaging": ["رنين مغناطيسي على المخ (MRI brain)", "تصوير مقطعي بالإصدار البوزيتروني (FDG-PET) في حالات مختارة"],
+ "meds": [
+  {"cls": "علاج الأعراض السلوكية", "ex": "sertraline, citalopram, trazodone"},
+  {"cls": "مثبطات الكولين إستراز", "ex": "donepezil", "note": "غير مفيدة في هذا النوع وقد تزيد الأعراض"}
+ ],
+ "procedures": ["علاج النطق واللغة", "دعم الأسرة وتخطيط الرعاية"],
+ "selfcare": ["روتين يومي ثابت", "ترتيبات قانونية ومالية مبكرة"],
+ "refs": ["NICE"],
+ "guide": "NICE NG97 Dementia: assessment, management and support for people living with dementia and their carers (2018)"
+},
+"neuro.gca": {
+ "tests": ["سرعة الترسيب والبروتين التفاعلي (ESR, CRP)", "صورة دم كاملة (CBC)", "خزعة الشريان الصدغي (Temporal artery biopsy)"],
+ "imaging": ["موجات فوق صوتية على الشريانين الصدغي والإبطي (Ultrasound)"],
+ "meds": [
+  {"cls": "الكورتيزون عالي الجرعة يُبدأ فور الاشتباه", "ex": "prednisolone, methylprednisolone (IV)", "note": "الوريدي عند وجود أعراض بصرية"},
+  {"cls": "علاج موفّر للكورتيزون", "ex": "tocilizumab, methotrexate"},
+  {"cls": "حماية العظام والمعدة أثناء الكورتيزون", "ex": "alendronate, calcium and vitamin D, omeprazole"}
+ ],
+ "procedures": ["إحالة عاجلة لطبيب الروماتيزم وطبيب العيون عند أي أعراض بصرية"],
+ "selfcare": ["عدم إيقاف الكورتيزون فجأة", "مراقبة السكر والضغط أثناء العلاج"],
+ "refs": ["ACR", "EULAR"],
+ "guide": "ACR/Vasculitis Foundation Guideline for the Management of Giant Cell Arteritis and Takayasu Arteritis (2021)"
+},
+"neuro.dystonia": {
+ "tests": [],
+ "imaging": ["رنين مغناطيسي على المخ عند البدء المبكر أو وجود علامات أخرى"],
+ "meds": [
+  {"cls": "ذيفان البوتولينوم بالحقن في العضلات المصابة", "ex": "botulinum toxin type A"},
+  {"cls": "أدوية فموية مساعدة", "ex": "trihexyphenidyl, clonazepam, baclofen"}
+ ],
+ "procedures": ["علاج طبيعي", "التحفيز العميق للمخ في الحالات المقاومة"],
+ "selfcare": ["حيل حسية (كلمس الذقن) قد تخفف الانقباض", "تمارين إطالة للرقبة"],
+ "refs": ["AAN"],
+ "guide": "AAN Practice guideline update: Botulinum neurotoxin for the treatment of blepharospasm, cervical dystonia, adult spasticity, and headache (2016)"
+},
+"neuro.hemifacial": {
+ "tests": [],
+ "imaging": ["رنين مغناطيسي على المخ لتقييم العصب الوجهي (MRI brain)"],
+ "meds": [
+  {"cls": "ذيفان البوتولينوم بالحقن", "ex": "botulinum toxin type A"},
+  {"cls": "أدوية فموية قليلة الفاعلية", "ex": "carbamazepine, clonazepam"}
+ ],
+ "procedures": ["جراحة تخفيف الضغط الوعائي عن العصب (Microvascular decompression) في حالات مختارة"],
+ "selfcare": ["النوم الكافي وتقليل الكافيين والتوتر"],
+ "refs": ["AAN"],
+ "guide": "AAN Assessment: Botulinum neurotoxin for the treatment of movement disorders (2008)"
+},
+"neuro.caudaequina": {
+ "tests": ["قياس البول المتبقي بعد التبول (Post-void residual bladder scan)", "فحص الإحساس حول الشرج ونغمة الشرج"],
+ "imaging": ["رنين مغناطيسي عاجل على العمود القطني (Emergency MRI lumbar spine)"],
+ "meds": [
+  {"cls": "مسكنات للألم أثناء الانتظار", "ex": "paracetamol, opioids", "note": "في المستشفى"}
+ ],
+ "procedures": ["جراحة عاجلة لتخفيف الضغط (Decompressive surgery)", "قسطرة بولية عند الاحتباس"],
+ "selfcare": ["معرفة علامات الخطر لدى مرضى عرق النسا والتوجه للطوارئ فورًا عند ظهورها"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "GIRFT National Suspected Cauda Equina Syndrome Pathway (NHS England, 2023)"
+},
+"neuro.huntington": {
+ "tests": ["فحص جيني لتكرار CAG في جين HTT بعد استشارة وراثية"],
+ "imaging": ["رنين مغناطيسي على المخ (MRI brain)"],
+ "meds": [
+  {"cls": "علاج الرقاص", "ex": "tetrabenazine, deutetrabenazine, olanzapine"},
+  {"cls": "علاج الاكتئاب والقلق", "ex": "sertraline, citalopram"}
+ ],
+ "procedures": ["استشارة وراثية للأسرة", "علاج طبيعي وعلاج النطق والبلع وتقييم التغذية"],
+ "selfcare": ["دعم الأسرة ومجموعات المرضى", "تأمين المنزل من السقوط"],
+ "refs": ["AAN"],
+ "guide": "AAN Evidence-based guideline: Pharmacologic treatment of chorea in Huntington disease (2012)"
+},
+"neuro.phn": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "أدوية آلام الأعصاب", "ex": "amitriptyline, duloxetine, gabapentin, pregabalin"},
+  {"cls": "علاجات موضعية", "ex": "lidocaine plaster, capsaicin cream"}
+ ],
+ "procedures": ["إحالة لعيادة الألم عند فشل العلاج"],
+ "selfcare": ["ملابس قطنية ناعمة", "كمادات باردة", "لقاح الحزام الناري للوقاية لمن تجاوزوا الخمسين"],
+ "refs": ["NICE", "CDC"],
+ "guide": "NICE CG173 Neuropathic pain in adults: pharmacological management in non-specialist settings (2013, updated 2020)"
+},
+"neuro.tga": {
+ "tests": ["سكر الدم (Glucose)", "تخطيط الدماغ (EEG) عند تكرار النوبات أو قصرها"],
+ "imaging": ["رنين مغناطيسي على المخ بتقنية الانتشار (MRI DWI)"],
+ "meds": [],
+ "procedures": ["مراقبة طبية حتى زوال النوبة", "فحص عصبي كامل لاستبعاد السكتة"],
+ "selfcare": ["الطمأنة بأن المآل جيد غالبًا", "مرافقة الشخص حتى تعود ذاكرته"],
+ "refs": ["AAN"],
+ "guide": "Hodges and Warlow diagnostic criteria for transient global amnesia (1990)"
+},
+"neuro.rbd": {
+ "tests": ["دراسة النوم بالفيديو (Video polysomnography)", "فحص عصبي دوري للبحث عن علامات باركنسون"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الميلاتونين", "ex": "melatonin"},
+  {"cls": "البنزوديازيبينات", "ex": "clonazepam", "note": "الحذر لدى المسنين ومرضى انقطاع النفس"}
+ ],
+ "procedures": ["مراجعة الأدوية المحرّضة كبعض مضادات الاكتئاب"],
+ "selfcare": ["إبعاد الأشياء الحادة عن السرير", "وضع الفراش قرب الأرض", "نوم الشريك منفصلًا عند الضرورة"],
+ "refs": ["AAN"],
+ "guide": "AASM Clinical Practice Guideline: Management of REM sleep behavior disorder (2023)"
+},
+"neuro.tics": {
+ "tests": ["تقييم الاضطرابات المصاحبة كفرط الحركة والوسواس القهري"],
+ "imaging": [],
+ "meds": [
+  {"cls": "ناهضات ألفا-2", "ex": "clonidine, guanfacine"},
+  {"cls": "مضادات الذهان", "ex": "aripiprazole, risperidone", "note": "عند الشدة وبعد العلاج السلوكي"}
+ ],
+ "procedures": ["العلاج السلوكي الشامل للعرّات (CBIT) وتدريب عكس العادة"],
+ "selfcare": ["تثقيف الأسرة والمدرسة أو مكان العمل", "النوم الكافي وتقليل التوتر"],
+ "refs": ["AAN"],
+ "guide": "AAN Practice guideline recommendations summary: Treatment of tics in people with Tourette syndrome and chronic tic disorders (2019)"
+},
+"neuro.fnd": {
+ "tests": ["تخطيط الدماغ بالفيديو (Video-EEG) لتمييز النوبات الوظيفية عن الصرع", "فحص عصبي للبحث عن العلامات الإيجابية (كعلامة هوفر)"],
+ "imaging": ["رنين مغناطيسي على المخ أو النخاع عند الحاجة لاستبعاد الأسباب البنيوية"],
+ "meds": [
+  {"cls": "علاج القلق أو الاكتئاب المصاحب", "ex": "sertraline, citalopram"}
+ ],
+ "procedures": ["شرح التشخيص بوضوح من طبيب الأعصاب", "علاج طبيعي متخصص للاضطرابات الوظيفية", "علاج نفسي (العلاج المعرفي السلوكي)"],
+ "selfcare": ["الاطلاع على مصادر تثقيفية موثوقة عن الاضطراب", "العودة التدريجية للأنشطة"],
+ "refs": ["APA", "AAN"],
+ "guide": "APA DSM-5-TR: Functional neurological symptom disorder (conversion disorder) diagnostic criteria (2022)"
+},
+"neuro.intracranialhypotension": {
+ "tests": ["قياس ضغط السائل الشوكي في حالات مختارة"],
+ "imaging": ["رنين مغناطيسي على المخ بالصبغة (MRI brain with contrast)", "رنين مغناطيسي على العمود الفقري كاملًا للبحث عن التسرّب (MRI whole spine)"],
+ "meds": [
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "الكافيين", "ex": "caffeine"}
+ ],
+ "procedures": ["رقعة دموية فوق الجافية (Epidural blood patch)", "إصلاح جراحي أو موجّه للتسرّب في الحالات المستمرة"],
+ "selfcare": ["الاستلقاء والراحة وشرب السوائل في الأيام الأولى", "تجنّب الإجهاد ورفع الأثقال"],
+ "refs": ["AHS", "NICE"],
+ "guide": "Cheema S, et al. Multidisciplinary consensus guideline for the diagnosis and management of spontaneous intracranial hypotension (J Neurol Neurosurg Psychiatry, 2023)"
+},
+"mental.phobia": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["العلاج المعرفي السلوكي بالتعرّض التدريجي (Exposure therapy)", "العلاج بالواقع الافتراضي في بعض المراكز"],
+ "selfcare": ["عدم الاستسلام للتجنّب", "تمارين التنفس البطيء"],
+ "refs": ["WFSBP", "APA"],
+ "guide": "WFSBP Guidelines for the pharmacological treatment of anxiety, obsessive-compulsive and posttraumatic stress disorders — Part I (2023)"
+},
+"mental.agoraphobia": {
+ "tests": ["وظائف الغدة الدرقية عند الحاجة (TSH)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية", "ex": "sertraline, escitalopram, paroxetine"},
+  {"cls": "بدائل", "ex": "venlafaxine, clomipramine"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي مع التعرّض التدريجي"],
+ "selfcare": ["خطة تعرّض تدريجي مكتوبة", "تجنّب المهدئات والكحول للتعامل مع القلق"],
+ "refs": ["NICE", "WFSBP"],
+ "guide": "NICE CG113 Generalised anxiety disorder and panic disorder in adults: management (2011, updated 2020)"
+},
+"mental.adjustment": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["إرشاد نفسي قصير المدى وحل المشكلات", "تقييم خطر الانتحار عند الحاجة"],
+ "selfcare": ["الحفاظ على الروتين والنوم والنشاط", "التحدث مع أشخاص موثوقين", "تجنّب الكحول والمواد"],
+ "refs": ["WHO_MHGAP", "WHO"],
+ "guide": "WHO mhGAP Intervention Guide version 2.0 (2016)"
+},
+"mental.dysthymia": {
+ "tests": ["صورة دم كاملة ووظائف الغدة الدرقية (CBC, TSH)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية", "ex": "sertraline, fluoxetine, escitalopram"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي أو العلاج بين الأشخاص"],
+ "selfcare": ["نشاط بدني منتظم", "نوم منتظم", "الأنشطة الاجتماعية الممتعة"],
+ "refs": ["NICE", "APA"],
+ "guide": "NICE NG222 Depression in adults: treatment and management (2022)"
+},
+"mental.sad": {
+ "tests": ["وظائف الغدة الدرقية وفيتامين د عند الحاجة (TSH, Vitamin D)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الاكتئاب", "ex": "sertraline, fluoxetine, bupropion"}
+ ],
+ "procedures": ["العلاج بالضوء الساطع صباحًا بإشراف طبي (Bright light therapy)", "العلاج المعرفي السلوكي"],
+ "selfcare": ["التعرّض لضوء النهار صباحًا", "المشي في الهواء الطلق", "انتظام النوم"],
+ "refs": ["NICE", "FDA"],
+ "guide": "NICE NG222 Depression in adults: treatment and management (2022)"
+},
+"mental.schizophrenia": {
+ "tests": ["فحوص قبل مضادات الذهان ومتابعتها: الوزن والسكر التراكمي والدهون والبرولاكتين (Weight, HbA1c, Lipids, Prolactin)", "تخطيط القلب (ECG) عند الحاجة", "فحص السموم في البداية"],
+ "imaging": ["رنين مغناطيسي على المخ في النوبة الأولى عند وجود علامات غير نمطية"],
+ "meds": [
+  {"cls": "مضادات الذهان", "ex": "aripiprazole, risperidone, olanzapine, quetiapine"},
+  {"cls": "مضادات الذهان طويلة المفعول بالحقن", "ex": "paliperidone palmitate, aripiprazole (long-acting)"},
+  {"cls": "للحالات المقاومة", "ex": "clozapine", "note": "تحتاج إلى مراقبة منتظمة لكريات الدم"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي للذهان والتدخل الأسري", "التأهيل المهني والاجتماعي"],
+ "selfcare": ["الالتزام بالدواء", "تجنّب الحشيش والمنشطات", "نشاط بدني وغذاء صحي"],
+ "refs": ["NICE", "APA"],
+ "guide": "NICE CG178 Psychosis and schizophrenia in adults: prevention and management (2014)"
+},
+"mental.adhd": {
+ "tests": ["قياس الضغط والنبض والوزن قبل العلاج وأثناءه", "تخطيط القلب عند وجود تاريخ قلبي"],
+ "imaging": [],
+ "meds": [
+  {"cls": "المنبهات", "ex": "methylphenidate, lisdexamfetamine"},
+  {"cls": "غير المنبهات", "ex": "atomoxetine, guanfacine"}
+ ],
+ "procedures": ["تقييم تشخيصي لدى مختص يشمل تاريخ الطفولة", "العلاج المعرفي السلوكي وتدريب مهارات التنظيم"],
+ "selfcare": ["استخدام القوائم والتذكيرات", "تقسيم المهام", "نوم منتظم ونشاط بدني"],
+ "refs": ["NICE", "APA"],
+ "guide": "NICE NG87 Attention deficit hyperactivity disorder: diagnosis and management (2018, updated 2019)"
+},
+"mental.autism": {
+ "tests": ["تقييم تشخيصي متخصص (مثل ADOS-2)", "تقييم الحالات المصاحبة كالقلق والاكتئاب وفرط الحركة"],
+ "imaging": [],
+ "meds": [
+  {"cls": "علاج الحالات المصاحبة فقط", "ex": "sertraline, fluoxetine", "note": "لا يوجد دواء للسمات الأساسية"}
+ ],
+ "procedures": ["دعم اجتماعي ومهني", "تكيّفات بيئية في العمل والدراسة", "العلاج المعرفي السلوكي المعدّل للقلق"],
+ "selfcare": ["تنظيم البيئة الحسية", "التواصل مع مجموعات دعم البالغين ذوي التوحد"],
+ "refs": ["NICE"],
+ "guide": "NICE CG142 Autism spectrum disorder in adults: diagnosis and management (2012, updated 2021)"
+},
+"mental.alcohol": {
+ "tests": ["وظائف الكبد وإنزيم GGT وصورة الدم (LFT, GGT, MCV)", "استبيان AUDIT", "الأملاح والمغنيسيوم"],
+ "imaging": ["موجات فوق صوتية أو قياس تليّف الكبد عند الحاجة"],
+ "meds": [
+  {"cls": "فيتامين ب1 للوقاية من اعتلال الدماغ", "ex": "thiamine"},
+  {"cls": "أدوية منع الانتكاس", "ex": "acamprosate, naltrexone, disulfiram"},
+  {"cls": "سحب الكحول المُشرَف عليه", "ex": "chlordiazepoxide, diazepam", "note": "بإشراف طبي فقط"}
+ ],
+ "procedures": ["المقابلة التحفيزية والعلاج المعرفي السلوكي", "مجموعات الدعم المتبادل"],
+ "selfcare": ["عدم التوقف المفاجئ دون استشارة عند الاعتماد الشديد", "تجنّب الأماكن والمحفزات المرتبطة بالشرب"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE CG115 Alcohol-use disorders: diagnosis, assessment and management of harmful drinking and alcohol dependence (2011)"
+},
+"mental.alcoholwithdrawal": {
+ "tests": ["سكر الدم والأملاح والمغنيسيوم والفوسفات", "وظائف الكبد والكلى", "مقياس شدة الانسحاب (CIWA-Ar)"],
+ "imaging": ["أشعة مقطعية على المخ عند التشنّج الأول أو إصابة الرأس"],
+ "meds": [
+  {"cls": "البنزوديازيبينات وفق بروتوكول", "ex": "chlordiazepoxide, diazepam, lorazepam"},
+  {"cls": "فيتامين ب1 الوريدي", "ex": "thiamine"},
+  {"cls": "تصحيح السوائل والأملاح", "ex": "sodium chloride, magnesium sulfate, potassium chloride"}
+ ],
+ "procedures": ["دخول المستشفى والمراقبة", "إحالة لخدمات علاج الإدمان بعد الاستقرار"],
+ "selfcare": ["عدم التوقف المفاجئ عن الشرب دون إشراف لمن يعتمد عليه"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE CG100 Alcohol-use disorders: diagnosis and management of physical complications (2010, updated 2017)"
+},
+"mental.opioid": {
+ "tests": ["فحص البول للمواد", "فحص التهاب الكبد ب وج وفيروس نقص المناعة (HBV, HCV, HIV)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "العلاج الدوائي البديل", "ex": "methadone, buprenorphine"},
+  {"cls": "عكس الجرعة الزائدة", "ex": "naloxone"},
+  {"cls": "منع الانتكاس بعد السحب", "ex": "naltrexone"}
+ ],
+ "procedures": ["دعم نفسي واجتماعي", "برامج الحد من الضرر"],
+ "selfcare": ["عدم التعاطي وحيدًا", "انتباه لانخفاض التحمّل بعد فترة توقف"],
+ "refs": ["WHO", "NICE"],
+ "guide": "WHO Guidelines for the psychosocially assisted pharmacological treatment of opioid dependence (2009)"
+},
+"mental.cannabis": {
+ "tests": ["فحص البول للمواد عند الحاجة"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["المقابلة التحفيزية والعلاج المعرفي السلوكي", "علاج القلق والاكتئاب واضطراب النوم المصاحب"],
+ "selfcare": ["خطة تقليل تدريجي", "تجنّب المحفزات والرفقة المرتبطة بالتعاطي"],
+ "refs": ["WHO_MHGAP", "WHO"],
+ "guide": "WHO mhGAP Intervention Guide version 2.0 (2016)"
+},
+"mental.stimulant": {
+ "tests": ["فحص البول للمواد", "تخطيط القلب عند ألم الصدر أو الخفقان (ECG)"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["التعزيز المشروط (Contingency management)", "العلاج المعرفي السلوكي", "علاج الاكتئاب والذهان المصاحب"],
+ "selfcare": ["النوم والتغذية المنتظمة", "مجموعات الدعم"],
+ "refs": ["NICE", "WHO_MHGAP"],
+ "guide": "NICE CG51 Drug misuse in over 16s: psychosocial interventions (2007)"
+},
+"mental.gambling": {
+ "tests": ["استبيان شدة مشكلة القمار (PGSI)", "تقييم خطر الانتحار"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الأفيون في حالات مختارة", "ex": "naltrexone", "note": "استخدام خارج الاعتماد وبوصفة المختص"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي", "إرشاد مالي وأسري"],
+ "selfcare": ["حجب مواقع وتطبيقات المراهنات", "تسليم إدارة المال مؤقتًا لشخص موثوق"],
+ "refs": ["NICE"],
+ "guide": "NICE NG248 Gambling-related harms: identification, assessment and management (2025)"
+},
+"mental.grief": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["دعم نفسي وإرشاد في الفقد عند الحاجة", "تقييم الحزن الممتد أو الاكتئاب إذا استمر الضيق الشديد"],
+ "selfcare": ["التحدث عن الفقيد مع المقرّبين", "الحفاظ على النوم والأكل والروتين", "عدم اتخاذ قرارات مصيرية في الأسابيع الأولى"],
+ "refs": ["WHO_MHGAP"],
+ "guide": "WHO mhGAP Intervention Guide version 2.0 (2016)"
+},
+"mental.burnout": {
+ "tests": ["صورة دم كاملة ووظائف الغدة الدرقية وسكر الدم (CBC, TSH, Glucose) لاستبعاد أسباب الإرهاق"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["إرشاد نفسي أو علاج معرفي سلوكي", "تقييم الاكتئاب والقلق"],
+ "selfcare": ["حدود واضحة لساعات العمل", "الإجازات والنوم الكافي", "النشاط البدني والدعم الاجتماعي"],
+ "refs": ["WHO"],
+ "guide": "WHO ICD-11: Burn-out (QD85) as an occupational phenomenon (2019)"
+},
+"mental.somatic": {
+ "tests": ["فحوص أساسية مختارة مرة واحدة دون تكرار غير ضروري"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الاكتئاب عند القلق أو الاكتئاب أو الألم المصاحب", "ex": "sertraline, amitriptyline, duloxetine"}
+ ],
+ "procedures": ["متابعة منتظمة مع طبيب واحد", "العلاج المعرفي السلوكي"],
+ "selfcare": ["نشاط بدني تدريجي", "تقليل البحث عن الأعراض"],
+ "refs": ["APA"],
+ "guide": "APA DSM-5-TR: Somatic symptom disorder diagnostic criteria (2022)"
+},
+"mental.illnessanxiety": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية", "ex": "fluoxetine, sertraline, paroxetine"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي", "مواعيد متابعة منتظمة بدل الزيارات الطارئة المتكررة"],
+ "selfcare": ["تقليل الفحص الذاتي والبحث على الإنترنت", "تمارين الاسترخاء"],
+ "refs": ["APA"],
+ "guide": "APA DSM-5-TR: Illness anxiety disorder diagnostic criteria (2022)"
+},
+"mental.bpd": {
+ "tests": ["تقييم خطر إيذاء النفس"],
+ "imaging": [],
+ "meds": [
+  {"cls": "علاج الحالات المصاحبة فقط", "ex": "sertraline, lamotrigine", "note": "لا يوجد دواء معتمد للاضطراب نفسه"}
+ ],
+ "procedures": ["العلاج السلوكي الجدلي (DBT)", "العلاج القائم على التعقّل (MBT)", "خطة مكتوبة للأزمات"],
+ "selfcare": ["مهارات تنظيم المشاعر", "تجنّب الكحول والمواد"],
+ "refs": ["NICE", "APA"],
+ "guide": "NICE CG78 Borderline personality disorder: recognition and management (2009)"
+},
+"mental.selfharm": {
+ "tests": ["مستوى الباراسيتامول والساليسيلات في الدم عند تناول أدوية (Paracetamol, Salicylate levels)", "وظائف الكبد والكلى والأملاح", "تخطيط القلب عند تناول أدوية سامة للقلب"],
+ "imaging": [],
+ "meds": [
+  {"cls": "ترياق التسمم بالباراسيتامول", "ex": "acetylcysteine", "note": "في المستشفى وفق المستوى في الدم"},
+  {"cls": "الفحم المنشط في حالات مختارة", "ex": "activated charcoal"}
+ ],
+ "procedures": ["علاج الجروح أو الحروق", "تقييم نفسي واجتماعي شامل", "خطة أمان ومتابعة قريبة"],
+ "selfcare": ["إبعاد الأدوية والأدوات الحادة", "قائمة بأرقام الأشخاص وخطوط المساندة للأزمات"],
+ "refs": ["NICE", "WHO_MHGAP"],
+ "guide": "NICE NG225 Self-harm: assessment, management and preventing recurrence (2022)"
+},
+"mental.suicidal": {
+ "tests": ["تقييم شامل لخطر الانتحار والسبب الكامن"],
+ "imaging": [],
+ "meds": [
+  {"cls": "علاج الاكتئاب الكامن", "ex": "sertraline, escitalopram", "note": "بمتابعة قريبة في الأسابيع الأولى"},
+  {"cls": "في اضطرابات المزاج لدى المختص", "ex": "lithium"}
+ ],
+ "procedures": ["تقييم طارئ لدى الطب النفسي", "خطة أمان مكتوبة", "متابعة قريبة بعد الأزمة"],
+ "selfcare": ["عدم البقاء وحيدًا في الأزمة", "إبعاد وسائل الأذى", "الاتصال بخط مساندة أو بالطوارئ"],
+ "refs": ["NICE", "WHO_MHGAP"],
+ "guide": "WHO mhGAP Intervention Guide version 2.0: Self-harm/suicide module (2016)"
+},
+"mental.bdd": {
+ "tests": ["تقييم خطر الانتحار"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية", "ex": "fluoxetine, sertraline, escitalopram"},
+  {"cls": "بديل عند عدم الاستجابة", "ex": "clomipramine"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي مع التعرّض ومنع الاستجابة"],
+ "selfcare": ["تقليل تفقّد المرآة والمقارنة", "تأجيل أي قرار تجميلي"],
+ "refs": ["NICE", "APA"],
+ "guide": "NICE CG31 Obsessive-compulsive disorder and body dysmorphic disorder: treatment (2005)"
+},
+"mental.trichotillomania": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مكملات بأدلة محدودة", "ex": "N-acetylcysteine", "note": "بعد استشارة الطبيب"}
+ ],
+ "procedures": ["تدريب عكس العادة (Habit reversal training)", "العلاج المعرفي السلوكي"],
+ "selfcare": ["تحديد المحفزات", "إشغال اليدين بأدوات بديلة", "تغطية الشعر أو ارتداء قفازات في أوقات الخطر"],
+ "refs": ["APA"],
+ "guide": "APA DSM-5-TR: Trichotillomania (hair-pulling disorder) diagnostic criteria (2022)"
+},
+"mental.acutestress": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["الإسعاف النفسي الأولي (Psychological first aid)", "علاج معرفي سلوكي مركّز على الصدمة إذا استمرت الأعراض"],
+ "selfcare": ["الأمان والراحة والتواصل مع المقرّبين", "تجنّب الكحول والمهدئات", "العودة التدريجية للروتين"],
+ "refs": ["NICE", "WHO_MHGAP"],
+ "guide": "NICE NG116 Post-traumatic stress disorder (2018)"
+},
+"mental.benzodiazepine": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "التحويل إلى بنزوديازيبين طويل المفعول ثم التقليل التدريجي", "ex": "diazepam", "note": "خطة بطيئة بإشراف الطبيب"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي للأرق أو القلق", "متابعة منتظمة أثناء التقليل"],
+ "selfcare": ["عدم الإيقاف المفاجئ", "تجنّب الكحول والأفيونات"],
+ "refs": ["NICE"],
+ "guide": "NICE NG215 Medicines associated with dependence or withdrawal symptoms: safe prescribing and withdrawal management for adults (2022)"
+},
+"mental.nightmare": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "حاصرات ألفا في حالات مختارة مرتبطة بالصدمة", "ex": "prazosin", "note": "الأدلة متفاوتة وبوصفة الطبيب"}
+ ],
+ "procedures": ["العلاج بإعادة كتابة الحلم وتخيّله (Imagery rehearsal therapy)", "مراجعة الأدوية المسببة"],
+ "selfcare": ["مواعيد نوم منتظمة", "تقليل الشاشات والكافيين والكحول قبل النوم"],
+ "refs": ["APA"],
+ "guide": "AASM Position Paper for the Treatment of Nightmare Disorder in Adults (2018)"
+},
+"mental.dsps": {
+ "tests": ["يوميات النوم أو جهاز قياس النشاط (Actigraphy)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الميلاتونين بتوقيت محدد مساءً", "ex": "melatonin"}
+ ],
+ "procedures": ["العلاج بالضوء الساطع صباحًا"],
+ "selfcare": ["ثبات موعد الاستيقاظ", "ضوء النهار صباحًا وتقليل الضوء ليلًا", "تقديم موعد النوم تدريجيًا"],
+ "refs": ["AAN"],
+ "guide": "AASM Clinical Practice Guideline for the Treatment of Intrinsic Circadian Rhythm Sleep-Wake Disorders (2015)"
+},
+"mental.delusional": {
+ "tests": ["فحوص لاستبعاد الأسباب العضوية والمواد"],
+ "imaging": ["تصوير المخ عند البداية المتأخرة أو علامات عصبية"],
+ "meds": [
+  {"cls": "مضادات الذهان", "ex": "aripiprazole, risperidone, olanzapine"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي", "إشراك الأسرة وبناء علاقة ثقة"],
+ "selfcare": ["الالتزام بالمتابعة"],
+ "refs": ["NICE", "APA"],
+ "guide": "NICE CG178 Psychosis and schizophrenia in adults: prevention and management (2014)"
+},
+"mental.arfid": {
+ "tests": ["الوزن ومؤشر كتلة الجسم", "صورة دم كاملة والحديد وفيتامين ب12 وفيتامين د والأملاح"],
+ "imaging": [],
+ "meds": [
+  {"cls": "تعويض نقص الفيتامينات والمعادن عند ثبوته", "ex": "iron, vitamin B12, vitamin D"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي المخصص لاضطراب تجنّب الطعام", "متابعة مع أخصائي تغذية"],
+ "selfcare": ["إدخال أطعمة جديدة تدريجيًا", "وجبات منتظمة دون ضغط"],
+ "refs": ["APA", "NICE"],
+ "guide": "APA DSM-5-TR: Avoidant/restrictive food intake disorder diagnostic criteria (2022)"
+},
+"geriatric.falls": {
+ "tests": ["قياس الضغط في وضعي الاستلقاء والوقوف", "تخطيط القلب (ECG)", "صورة دم كاملة وفيتامين د والأملاح وسكر الدم", "اختبار النهوض والمشي (Timed Up and Go)", "فحص البصر"],
+ "imaging": ["قياس كثافة العظام (DXA)"],
+ "meds": [
+  {"cls": "مراجعة الأدوية المرتبطة بالسقوط وتقليلها", "ex": "benzodiazepines, Z-drugs, antipsychotics, antihypertensives", "note": "بإشراف الطبيب"},
+  {"cls": "فيتامين د عند النقص", "ex": "colecalciferol"}
+ ],
+ "procedures": ["برنامج تمارين قوة وتوازن (مثل برنامج أوتاغو)", "تقييم منزلي لدى أخصائي العلاج الوظيفي"],
+ "selfcare": ["إضاءة ليلية ومقابض في الحمام", "إزالة السجاد المنزلق", "أحذية مغلقة ثابتة", "النهوض ببطء"],
+ "refs": ["NICE", "WHO"],
+ "guide": "World Guidelines for Falls Prevention and Management for Older Adults (2022)"
+},
+"geriatric.sarcopenia": {
+ "tests": ["قوة قبضة اليد (Grip strength)", "سرعة المشي واختبار النهوض من الكرسي", "فيتامين د ووظائف الغدة الدرقية والألبومين"],
+ "imaging": ["قياس الكتلة العضلية بالـ DXA أو المعاوقة الحيوية (BIA)"],
+ "meds": [
+  {"cls": "فيتامين د عند النقص", "ex": "colecalciferol"}
+ ],
+ "procedures": ["تمارين مقاومة منتظمة بإشراف", "تقييم غذائي"],
+ "selfcare": ["بروتين كافٍ في كل وجبة", "النشاط البدني اليومي"],
+ "refs": ["WHO"],
+ "guide": "EWGSOP2 Sarcopenia: revised European consensus on definition and diagnosis (2019)"
+},
+"geriatric.presbycusis": {
+ "tests": ["فحص الأذن بالمنظار لاستبعاد الشمع", "تخطيط السمع (Pure-tone audiometry)"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["تركيب سماعات طبية", "زراعة القوقعة في الحالات الشديدة", "أجهزة مساعدة على الاستماع"],
+ "selfcare": ["الطلب من المتحدثين مواجهتك والتحدث بوضوح", "تقليل الضوضاء الخلفية", "حماية الأذن من الضجيج"],
+ "refs": ["NICE", "AAO_HNS"],
+ "guide": "NICE NG98 Hearing loss in adults: assessment and management (2018, updated 2023)"
+},
+"geriatric.vertebralfracture": {
+ "tests": ["الكالسيوم ووظائف الكلى وفيتامين د", "فحوص لاستبعاد الأسباب الثانوية والورم النقوي عند الشك"],
+ "imaging": ["أشعة سينية على العمود الفقري (X-ray spine)", "قياس كثافة العظام (DXA)", "رنين مغناطيسي عند أعراض عصبية أو الشك في سبب آخر"],
+ "meds": [
+  {"cls": "مسكنات", "ex": "paracetamol"},
+  {"cls": "علاج هشاشة العظام", "ex": "alendronate, risedronate, zoledronic acid, denosumab, teriparatide"},
+  {"cls": "الكالسيوم وفيتامين د", "ex": "calcium carbonate, colecalciferol"}
+ ],
+ "procedures": ["علاج طبيعي وتمارين تقوية الظهر", "تقييم خطر السقوط"],
+ "selfcare": ["حركة لطيفة مبكرة", "تجنّب رفع الأثقال والانحناء المفاجئ"],
+ "refs": ["NICE", "ENDO"],
+ "guide": "NOGG Clinical guideline for the prevention and treatment of osteoporosis (2022)"
+},
+"geriatric.hipfracture": {
+ "tests": ["صورة دم كاملة والأملاح ووظائف الكلى وفصيلة الدم", "تخطيط القلب قبل الجراحة"],
+ "imaging": ["أشعة سينية على الحوض والورك (X-ray)", "رنين مغناطيسي عند الشك مع أشعة طبيعية"],
+ "meds": [
+  {"cls": "تسكين الألم", "ex": "paracetamol, opioids"},
+  {"cls": "الوقاية من الجلطات بعد الجراحة", "ex": "enoxaparin"},
+  {"cls": "علاج هشاشة العظام بعد الكسر", "ex": "zoledronic acid, alendronate"}
+ ],
+ "procedures": ["حقن مخدر موضعي لعصب الفخذ (Fascia iliaca block)", "جراحة التثبيت أو الاستبدال خلال يوم إلى يومين", "تأهيل وحركة مبكرة"],
+ "selfcare": ["الوقاية من السقوط بعد العودة للمنزل"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CG124 Hip fracture: management (2011, updated 2023)"
+},
+"geriatric.elderabuse": {
+ "tests": ["فحص سريري وتوثيق الإصابات", "تقييم التغذية والأدوية"],
+ "imaging": ["أشعة سينية عند الشك في كسور غير مفسرة"],
+ "meds": [],
+ "procedures": ["إحالة لجهات الحماية الاجتماعية", "مقابلة المسن على انفراد", "دعم مقدّم الرعاية المرهق"],
+ "selfcare": ["الحفاظ على التواصل الاجتماعي", "معرفة جهات التبليغ المحلية"],
+ "refs": ["WHO"],
+ "guide": "WHO Tackling abuse of older people: five priorities for the United Nations Decade of Healthy Ageing (2022)"
+},
+"geriatric.impaction": {
+ "tests": ["فحص المستقيم بالإصبع (Digital rectal examination)", "الأملاح والكالسيوم ووظائف الغدة الدرقية"],
+ "imaging": ["أشعة سينية على البطن عند الشك في انسداد"],
+ "meds": [
+  {"cls": "الحقن الشرجية والتحاميل", "ex": "phosphate enema, glycerol suppository, bisacodyl"},
+  {"cls": "الملينات الأسموزية", "ex": "macrogol, lactulose"}
+ ],
+ "procedures": ["إزالة يدوية للبراز في حالات مختارة", "مراجعة الأدوية المسببة للإمساك"],
+ "selfcare": ["سوائل وألياف كافية", "الحركة اليومية", "الذهاب للحمام بانتظام بعد الوجبات"],
+ "refs": ["NICE", "ACG"],
+ "guide": "NICE CG49 Faecal incontinence in adults: management (2007)"
+},
+"geriatric.vasculardementia": {
+ "tests": ["تقييم معرفي (MoCA)", "فيتامين ب12 ووظائف الغدة الدرقية وسكر الدم والدهون"],
+ "imaging": ["رنين مغناطيسي على المخ (MRI brain)"],
+ "meds": [
+  {"cls": "ضبط عوامل الخطر الوعائية", "ex": "amlodipine, ramipril, atorvastatin, clopidogrel"},
+  {"cls": "مثبطات الكولين إستراز في الخرف المختلط مع ألزهايمر فقط", "ex": "donepezil, galantamine"}
+ ],
+ "procedures": ["تأهيل معرفي ووظيفي", "دعم الأسرة"],
+ "selfcare": ["الإقلاع عن التدخين", "نشاط بدني وذهني", "ضبط الضغط والسكر"],
+ "refs": ["NICE"],
+ "guide": "NICE NG97 Dementia: assessment, management and support for people living with dementia and their carers (2018)"
+},
+"geriatric.lewy": {
+ "tests": ["تقييم معرفي", "تقييم اضطراب سلوك النوم"],
+ "imaging": ["رنين مغناطيسي على المخ", "تصوير ناقل الدوبامين (DaTscan) في حالات مختارة"],
+ "meds": [
+  {"cls": "مثبطات الكولين إستراز", "ex": "donepezil, rivastigmine"},
+  {"cls": "تُتجنّب مضادات الذهان التقليدية", "ex": "haloperidol", "note": "خطر تفاعل شديد؛ لا تُعطى إلا بقرار مختص"}
+ ],
+ "procedures": ["علاج طبيعي ووقاية من السقوط", "دعم الأسرة"],
+ "selfcare": ["إخبار أي طبيب بالتشخيص", "روتين يومي ثابت"],
+ "refs": ["NICE"],
+ "guide": "Diagnosis and management of dementia with Lewy bodies: Fourth consensus report of the DLB Consortium (McKeith et al., 2017)"
+},
+"geriatric.mci": {
+ "tests": ["تقييم معرفي (MoCA)", "فيتامين ب12 ووظائف الغدة الدرقية وسكر الدم", "تقييم الاكتئاب والسمع"],
+ "imaging": ["تصوير المخ في حالات مختارة"],
+ "meds": [
+  {"cls": "مراجعة الأدوية المؤثرة في الإدراك", "ex": "anticholinergics, benzodiazepines", "note": "لا يوجد دواء معتمد للضعف الإدراكي البسيط"}
+ ],
+ "procedures": ["إعادة تقييم دورية", "تدريب معرفي"],
+ "selfcare": ["نشاط بدني منتظم", "أنشطة ذهنية واجتماعية", "نوم جيد"],
+ "refs": ["AAN"],
+ "guide": "AAN Practice guideline update summary: Mild cognitive impairment (2018)"
+},
+"geriatric.dysphagia": {
+ "tests": ["تقييم البلع لدى أخصائي النطق والبلع"],
+ "imaging": ["تصوير البلع بالأشعة (Videofluoroscopy)", "تنظير البلع بالألياف (FEES)"],
+ "meds": [
+  {"cls": "مراجعة الأدوية وأشكالها الصيدلانية", "ex": "liquid formulations", "note": "لا تُطحن الأقراص دون استشارة الصيدلي"}
+ ],
+ "procedures": ["تعديل قوام الطعام والسوائل", "تمارين البلع", "تغذية بديلة عند الحاجة"],
+ "selfcare": ["الجلوس مستقيمًا أثناء الأكل وبعده", "لقمات صغيرة", "نظافة الفم"],
+ "refs": ["NICE", "WHO"],
+ "guide": "ESPEN guideline on clinical nutrition and hydration in geriatrics (2022)"
+},
+"geriatric.faecalincontinence": {
+ "tests": ["فحص المستقيم", "فحص البراز عند الإسهال"],
+ "imaging": ["موجات فوق صوتية عبر الشرج أو قياس ضغط الشرج في حالات مختارة"],
+ "meds": [
+  {"cls": "مضادات الإسهال", "ex": "loperamide"},
+  {"cls": "منظمات قوام البراز", "ex": "ispaghula husk"}
+ ],
+ "procedures": ["تمارين عضلات الحوض والارتجاع الحيوي", "علاج انحشار البراز إن وُجد"],
+ "selfcare": ["مواعيد منتظمة للحمام", "العناية بالجلد", "تعديل الألياف حسب قوام البراز"],
+ "refs": ["NICE"],
+ "guide": "NICE CG49 Faecal incontinence in adults: management (2007)"
+},
+"geriatric.caregiver": {
+ "tests": ["تقييم الاكتئاب والقلق لدى مقدّم الرعاية"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["تقييم احتياجات مقدّم الرعاية", "رعاية مؤقتة أو نهارية", "مجموعات دعم"],
+ "selfcare": ["وقت للراحة والنوم", "طلب المساعدة من الأسرة", "الاهتمام بالصحة الشخصية"],
+ "refs": ["NICE"],
+ "guide": "NICE NG150 Supporting adult carers (2020)"
+},
+"geriatric.subdural": {
+ "tests": ["وظائف التخثر والصفائح (PT/INR, Platelets)"],
+ "imaging": ["أشعة مقطعية على المخ (CT head)"],
+ "meds": [
+  {"cls": "عكس مفعول مميعات الدم عند الحاجة", "ex": "vitamin K, prothrombin complex concentrate, idarucizumab", "note": "في المستشفى فقط"}
+ ],
+ "procedures": ["تصريف جراحي عبر ثقب في الجمجمة (Burr hole drainage)", "إصمام الشريان السحائي الأوسط في حالات مختارة"],
+ "selfcare": ["عدم إيقاف المميعات دون استشارة", "الوقاية من السقوط"],
+ "refs": ["NICE", "ACEP"],
+ "guide": "NICE NG232 Head injury: assessment and early management (2023)"
+},
+"geriatric.isolation": {
+ "tests": ["تقييم الاكتئاب والسمع والبصر"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["الوصفة الاجتماعية (Social prescribing)", "ربط المسن بالأنشطة المجتمعية"],
+ "selfcare": ["تواصل منتظم مع الأهل والجيران", "المشاركة في أنشطة جماعية أو تطوعية"],
+ "refs": ["WHO"],
+ "guide": "WHO Social isolation and loneliness among older people: advocacy brief (2021)"
+}
+}

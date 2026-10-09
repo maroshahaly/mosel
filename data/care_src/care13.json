@@ -1,0 +1,918 @@
+{
+"skin.perioral": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية موضعية", "ex": "metronidazole (topical), clindamycin (topical)"},
+  {"cls": "مثبطات الكالسينيورين الموضعية أو حمض الأزيليك", "ex": "pimecrolimus (topical), azelaic acid"},
+  {"cls": "مضادات حيوية فموية من فئة التتراسيكلين للحالات الواسعة", "ex": "doxycycline, lymecycline", "note": "لا تُستعمل في الحمل ولا للأطفال دون 12 عامًا"}
+ ],
+ "procedures": [],
+ "selfcare": ["إيقاف كريمات الكورتيزون على الوجه", "غسول لطيف دون مستحضرات تجميل ثقيلة"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Perioral dermatitis (2021)"
+},
+"skin.dyshidrotic": {
+ "tests": ["اختبار الرقعة الجلدية (Patch test) عند الاشتباه في سبب تحسسي"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي قوي لفترة قصيرة", "ex": "betamethasone valerate, mometasone furoate"},
+  {"cls": "مرطّبات ومطرّيات", "ex": "emollients"}
+ ],
+ "procedures": ["العلاج الضوئي الموضعي (PUVA) للحالات المقاومة"],
+ "selfcare": ["قفازات قطنية تحت المطاطية", "تجنّب المنظفات والماء الساخن"],
+ "refs": ["NICE", "AAD"],
+ "guide": "ESCD Guidelines for diagnosis, prevention and treatment of hand eczema (2022)"
+},
+"skin.irritantdermatitis": {
+ "tests": ["اختبار الرقعة الجلدية (Patch test) إذا لم يتحسن لاستبعاد التحسس"], "imaging": [],
+ "meds": [
+  {"cls": "مرطّبات ومطرّيات وبدائل الصابون", "ex": "emollients"},
+  {"cls": "كورتيزون موضعي للنوبات", "ex": "hydrocortisone, mometasone furoate"}
+ ],
+ "procedures": [],
+ "selfcare": ["لبس القفازات", "مرطّب بعد كل غسل لليدين"],
+ "refs": ["NICE", "AAD"],
+ "guide": "ESCD Guidelines for diagnosis, prevention and treatment of hand eczema (2022)"
+},
+"skin.allergicdermatitis": {
+ "tests": ["اختبار الرقعة الجلدية (Patch test) لتحديد المادة المسببة"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي", "ex": "mometasone furoate, betamethasone valerate"},
+  {"cls": "مضادات الهيستامين للحكة", "ex": "cetirizine, loratadine"},
+  {"cls": "كورتيزون فموي لفترة قصيرة للحالات الواسعة", "ex": "prednisolone"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنّب المادة المسببة بعد تحديدها"],
+ "refs": ["AAD", "NICE"],
+ "guide": "NICE CKS: Dermatitis – contact (2023)"
+},
+"skin.nummular": {
+ "tests": ["مسحة بكتيرية عند وجود قشور صفراء أو صديد"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي متوسط إلى قوي", "ex": "mometasone furoate, betamethasone valerate"},
+  {"cls": "مرطّبات ومطرّيات", "ex": "emollients"}
+ ],
+ "procedures": [],
+ "selfcare": ["ترطيب مكثف", "تجنّب الصابون المعطّر"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Eczema – discoid (2023)"
+},
+"skin.lsc": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي قوي تحت ضماد أحيانًا", "ex": "clobetasol propionate"},
+  {"cls": "مضادات الهيستامين المنوّمة ليلًا", "ex": "chlorphenamine, hydroxyzine"}
+ ],
+ "procedures": ["حقن الكورتيزون داخل الآفة للحالات المقاومة"],
+ "selfcare": ["تقليم الأظافر وتغطية المنطقة ليلًا"],
+ "refs": ["AAD", "NICE"],
+ "guide": "NICE CKS: Lichen simplex (2021)"
+},
+"skin.guttate": {
+ "tests": ["مسح من الحلق أو تحليل الأجسام المضادة للعقديات (ASO)"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي ومشتقات فيتامين د", "ex": "calcipotriol, betamethasone dipropionate"},
+  {"cls": "مضاد حيوي عند ثبوت عدوى عقدية في الحلق", "ex": "phenoxymethylpenicillin"}
+ ],
+ "procedures": ["العلاج الضوئي بالأشعة فوق البنفسجية ضيقة النطاق (NB-UVB)"],
+ "selfcare": ["ترطيب الجلد"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CG153 Psoriasis: assessment and management (2017)"
+},
+"skin.pustularpsoriasis": {
+ "tests": ["صورة دم كاملة (CBC)", "أملاح ووظائف كلى وكبد", "الكالسيوم والألبومين", "مزرعة دم عند الحمّى"], "imaging": [],
+ "meds": [
+  {"cls": "رتينويدات فموية", "ex": "acitretin", "note": "ممنوع في الحمل"},
+  {"cls": "مثبطات المناعة", "ex": "ciclosporin, methotrexate"},
+  {"cls": "علاج بيولوجي مضاد لمستقبل إنترلوكين-36", "ex": "spesolimab"}
+ ],
+ "procedures": ["دخول المستشفى للمتابعة والسوائل عند الشدة"],
+ "selfcare": [],
+ "refs": ["NICE", "AAD"],
+ "guide": "Joint AAD–NPF Guidelines of care for the management of psoriasis with systemic nonbiologic therapies (2020)"
+},
+"skin.erythroderma": {
+ "tests": ["صورة دم كاملة (CBC)", "أملاح ووظائف كلى وكبد وألبومين", "خزعة جلدية لمعرفة السبب"], "imaging": [],
+ "meds": [
+  {"cls": "مطرّيات كثيفة", "ex": "emollients (white soft paraffin)"},
+  {"cls": "كورتيزون موضعي خفيف إلى متوسط", "ex": "hydrocortisone, clobetasone butyrate"},
+  {"cls": "علاج جهازي حسب السبب", "ex": "ciclosporin, methotrexate"}
+ ],
+ "procedures": ["دخول المستشفى لتعويض السوائل وضبط الحرارة"],
+ "selfcare": [],
+ "refs": ["NICE", "AAD"],
+ "guide": "BAD Guidelines: Erythroderma – patient information and management (2020)"
+},
+"skin.nailpsoriasis": {
+ "tests": ["فحص قلامة الظفر للفطريات (KOH and culture) لاستبعاد الفطريات"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي ومشتقات فيتامين د", "ex": "clobetasol propionate, calcipotriol"},
+  {"cls": "علاج جهازي أو بيولوجي للحالات الشديدة", "ex": "methotrexate, adalimumab"}
+ ],
+ "procedures": ["حقن الكورتيزون في ثنية الظفر"],
+ "selfcare": ["تقصير الأظافر وحمايتها من الإصابات"],
+ "refs": ["AAD", "NICE"],
+ "guide": "Joint AAD–NPF Guidelines of care for the management and treatment of psoriasis with biologics (2019)"
+},
+"skin.chronicurticaria": {
+ "tests": ["صورة دم كاملة (CBC) وسرعة الترسيب أو CRP", "وظائف الغدة الدرقية والأجسام المضادة (TSH, anti-TPO) عند الحاجة"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات الهيستامين غير المنوّمة", "ex": "cetirizine, fexofenadine, bilastine", "note": "قد يرفع الطبيب الجرعة حتى أربعة أضعاف"},
+  {"cls": "علاج بيولوجي مضاد للغلوبولين المناعي E للحالات المقاومة", "ex": "omalizumab"},
+  {"cls": "مثبطات المناعة", "ex": "ciclosporin"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنّب مضادات الالتهاب غير الستيرويدية إن كانت تزيدها", "تدوين المحفزات"],
+ "refs": ["AAAAI", "NICE"],
+ "guide": "EAACI/GA²LEN/EuroGuiDerm/APAAACI Guideline for urticaria (2022)"
+},
+"skin.angioedema": {
+ "tests": ["مستوى المتمم C4 ووظيفة مثبط C1 عند التكرار دون شرى", "مراجعة الأدوية (مثبطات ACE)"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات الهيستامين", "ex": "cetirizine, fexofenadine"},
+  {"cls": "كورتيزون فموي لفترة قصيرة في التحسسية", "ex": "prednisolone"},
+  {"cls": "أدرينالين بالحقن العضلي عند إصابة مجرى التنفس", "ex": "epinephrine (adrenaline)"},
+  {"cls": "علاج الوذمة الوراثية", "ex": "icatibant, C1-esterase inhibitor"}
+ ],
+ "procedures": [],
+ "selfcare": ["إيقاف مثبطات ACE بالتشاور مع الطبيب إذا كانت السبب"],
+ "refs": ["AAAAI", "NICE"],
+ "guide": "EAACI/GA²LEN/EuroGuiDerm/APAAACI Guideline for urticaria (2022)"
+},
+"skin.drugeruption": {
+ "tests": ["صورة دم كاملة مع الحمضات (CBC with eosinophils)", "وظائف الكبد والكلى لاستبعاد متلازمة DRESS"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي", "ex": "mometasone furoate"},
+  {"cls": "مضادات الهيستامين", "ex": "cetirizine, chlorphenamine"}
+ ],
+ "procedures": [],
+ "selfcare": ["تسجيل اسم الدواء المسبب في ملفك الطبي"],
+ "refs": ["NICE", "AAAAI"],
+ "guide": "NICE CG183 Drug allergy: diagnosis and management (2014)"
+},
+"skin.sjs": {
+ "tests": ["خزعة جلدية", "صورة دم كاملة وأملاح ووظائف كلى وكبد", "مزارع عند الاشتباه في عدوى"], "imaging": [],
+ "meds": [
+  {"cls": "رعاية داعمة: سوائل وريدية ومسكنات وعناية بالجروح", "ex": "isotonic crystalloids"},
+  {"cls": "علاجات مناعية حسب قرار الفريق المختص", "ex": "ciclosporin, etanercept"}
+ ],
+ "procedures": ["الدخول إلى وحدة الحروق أو العناية المركزة", "فحص العيون والأغشية المخاطية بانتظام"],
+ "selfcare": ["تجنّب الدواء المسبب مدى الحياة"],
+ "refs": ["NICE", "AAD"],
+ "guide": "UK guidelines for the management of Stevens-Johnson syndrome/toxic epidermal necrolysis in adults (BAD, 2016)"
+},
+"skin.erysipelas": {
+ "tests": ["صورة دم كاملة و CRP عند الشدة", "مزرعة دم عند الحمّى العالية"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية بنسلينية", "ex": "phenoxymethylpenicillin, flucloxacillin, amoxicillin"},
+  {"cls": "بديل عند حساسية البنسلين", "ex": "clarithromycin, doxycycline"}
+ ],
+ "procedures": [],
+ "selfcare": ["رفع الطرف المصاب", "علاج فطريات القدم"],
+ "refs": ["NICE", "IDSA"],
+ "guide": "NICE NG141 Cellulitis and erysipelas: antimicrobial prescribing (2019)"
+},
+"skin.folliculitis": {
+ "tests": ["مسحة ومزرعة عند التكرار أو عدم الاستجابة"], "imaging": [],
+ "meds": [
+  {"cls": "مطهّرات جلدية", "ex": "chlorhexidine, benzoyl peroxide wash"},
+  {"cls": "مضادات حيوية موضعية", "ex": "fusidic acid, mupirocin"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنّب الحلاقة والملابس الضيقة مؤقتًا", "كمادات دافئة"],
+ "refs": ["IDSA", "AAD"],
+ "guide": "IDSA Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections (2014)"
+},
+"skin.pfb": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي خفيف لفترة قصيرة", "ex": "hydrocortisone"},
+  {"cls": "رتينويدات موضعية أو بنزويل بيروكسيد", "ex": "tretinoin, benzoyl peroxide"}
+ ],
+ "procedures": ["إزالة الشعر بالليزر"],
+ "selfcare": ["الحلاقة باتجاه نمو الشعر بشفرة واحدة", "إطالة اللحية قليلًا"],
+ "refs": ["AAD"],
+ "guide": "AAD: Razor bumps (pseudofolliculitis barbae) – diagnosis and treatment (2023)"
+},
+"skin.hidradenitis": {
+ "tests": ["مسحة ومزرعة من الإفرازات عند الحاجة", "سكر الدم والدهون"], "imaging": ["موجات فوق صوتية على الجلد لتقييم الأنفاق والخراجات"],
+ "meds": [
+  {"cls": "مطهّرات ومضادات حيوية موضعية", "ex": "chlorhexidine, clindamycin (topical)"},
+  {"cls": "مضادات حيوية فموية طويلة", "ex": "doxycycline, lymecycline, clindamycin with rifampicin"},
+  {"cls": "علاج بيولوجي للحالات المتوسطة والشديدة", "ex": "adalimumab, secukinumab"}
+ ],
+ "procedures": ["فتح الأنفاق أو استئصالها جراحيًا", "إزالة الشعر بالليزر"],
+ "selfcare": ["الإقلاع عن التدخين", "إنقاص الوزن", "ملابس واسعة"],
+ "refs": ["AAD", "NICE"],
+ "guide": "North American Clinical Management Guidelines for Hidradenitis Suppurativa (2019)"
+},
+"skin.tineapedis": {
+ "tests": ["كشط الجلد وفحصه للفطريات (KOH) عند الشك"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات فطريات موضعية", "ex": "terbinafine (topical), clotrimazole, miconazole"},
+  {"cls": "مضادات فطريات فموية للحالات الواسعة", "ex": "terbinafine, itraconazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجفيف ما بين الأصابع", "تغيير الجوارب يوميًا"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Fungal skin infection – foot (2023)"
+},
+"skin.tineacruris": {
+ "tests": ["كشط الجلد وفحصه للفطريات (KOH) عند الشك"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات فطريات موضعية", "ex": "terbinafine (topical), clotrimazole, miconazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["إبقاء المنطقة جافة", "تجنّب الكورتيزون الموضعي"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Fungal skin infection – body and groin (2023)"
+},
+"skin.tineacapitis": {
+ "tests": ["فحص الشعر والقشور للفطريات (KOH and culture)", "فحص بمصباح وود (Wood's lamp)"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات فطريات فموية", "ex": "griseofulvin, terbinafine"},
+  {"cls": "شامبو مضاد للفطريات مساعد", "ex": "ketoconazole shampoo, selenium sulfide"}
+ ],
+ "procedures": [],
+ "selfcare": ["عدم مشاركة الأمشاط والقبعات", "فحص أفراد الأسرة والحيوانات الأليفة"],
+ "refs": ["NICE", "AAD"],
+ "guide": "BAD Guidelines for the management of tinea capitis in children (2014)"
+},
+"skin.pityriasisversicolor": {
+ "tests": ["فحص القشور للفطريات (KOH) عند الشك"], "imaging": [],
+ "meds": [
+  {"cls": "شامبو أو كريم مضاد للفطريات", "ex": "ketoconazole shampoo, selenium sulfide, clotrimazole"},
+  {"cls": "مضادات فطريات فموية للحالات الواسعة", "ex": "itraconazole, fluconazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["علاج وقائي في بداية الصيف عند التكرار"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Pityriasis versicolor (2022)"
+},
+"skin.intertrigo": {
+ "tests": ["سكر الدم الصائم أو السكر التراكمي (HbA1c) عند التكرار", "مسحة للفطريات والبكتيريا عند عدم الاستجابة"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات فطريات موضعية", "ex": "clotrimazole, miconazole, nystatin"},
+  {"cls": "كورتيزون خفيف مع مضاد فطريات عند الالتهاب الشديد لفترة قصيرة", "ex": "hydrocortisone with miconazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجفيف الثنايا وفصلها بقماش قطني"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Candida – skin (2023)"
+},
+"skin.onychomycosis": {
+ "tests": ["فحص قلامة الظفر للفطريات (KOH and culture)", "وظائف الكبد قبل العلاج الفموي"], "imaging": [],
+ "meds": [
+  {"cls": "طلاء أظافر مضاد للفطريات", "ex": "amorolfine, ciclopirox"},
+  {"cls": "مضادات فطريات فموية", "ex": "terbinafine, itraconazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["علاج فطريات القدم وتجفيف القدمين"],
+ "refs": ["NICE", "AAD"],
+ "guide": "BAD Guidelines for the management of onychomycosis (2014)"
+},
+"skin.molluscum": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "علاج موضعي مهيّج عند الحاجة", "ex": "potassium hydroxide (topical), benzoyl peroxide"}
+ ],
+ "procedures": ["التجميد بالنيتروجين السائل أو الكشط لدى البالغين"],
+ "selfcare": ["عدم الحك", "عدم مشاركة المناشف"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Molluscum contagiosum (2023)"
+},
+"skin.telogen": {
+ "tests": ["مخزون الحديد (Ferritin)", "وظائف الغدة الدرقية (TSH)", "صورة دم كاملة (CBC)", "فيتامين د عند الحاجة"], "imaging": [],
+ "meds": [
+  {"cls": "تعويض الحديد عند ثبوت نقصه", "ex": "ferrous sulfate"},
+  {"cls": "محفّز موضعي لنمو الشعر عند الاستمرار", "ex": "minoxidil (topical)"}
+ ],
+ "procedures": [],
+ "selfcare": ["غذاء متوازن غني بالبروتين"],
+ "refs": ["AAD", "NICE"],
+ "guide": "AAD: Hair loss – telogen effluvium diagnosis and treatment (2023)"
+},
+"skin.scarringalopecia": {
+ "tests": ["خزعة من فروة الرأس", "فحص منظار الجلد (Trichoscopy)", "الأجسام المضادة للنواة (ANA) عند الاشتباه في الذئبة"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي قوي أو بالحقن", "ex": "clobetasol propionate, triamcinolone acetonide"},
+  {"cls": "علاج جهازي مضاد للالتهاب", "ex": "hydroxychloroquine, doxycycline"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنّب تصفيفات الشد والحرارة"],
+ "refs": ["AAD"],
+ "guide": "BAD/BHS: Primary cicatricial alopecias – overview and management (2021)"
+},
+"skin.keloid": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون بالحقن داخل الندبة", "ex": "triamcinolone acetonide"},
+  {"cls": "شرائح أو جل السيليكون", "ex": "silicone gel"}
+ ],
+ "procedures": ["التجميد", "الاستئصال الجراحي مع علاج مساعد", "العلاج الإشعاعي بعد الاستئصال في حالات مختارة"],
+ "selfcare": ["تجنّب الثقب والوشم"],
+ "refs": ["AAD"],
+ "guide": "International Clinical Recommendations on Scar Management (updated, 2014)"
+},
+"skin.lipoma": {
+ "tests": [], "imaging": ["موجات فوق صوتية (Ultrasound) عند الشك", "رنين مغناطيسي (MRI) إذا كانت كبيرة أو عميقة لاستبعاد ورم آخر"],
+ "meds": [],
+ "procedures": ["استئصال جراحي بسيط عند الحاجة"],
+ "selfcare": [],
+ "refs": ["NICE"],
+ "guide": "NICE NG12 Suspected cancer: recognition and referral – soft tissue sarcoma (2015, updated 2023)"
+},
+"skin.epidermoidcyst": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "مضاد حيوي فموي عند العدوى المصاحبة بالتهاب ممتد", "ex": "flucloxacillin"}
+ ],
+ "procedures": ["استئصال الكيس كاملًا مع جداره", "تصريف الكيس الملتهب الممتلئ بالصديد"],
+ "selfcare": ["عدم عصر الكيس"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Epidermoid and pilar cysts (2023)"
+},
+"skin.seborrheickeratosis": {
+ "tests": ["فحص بمنظار الجلد (Dermoscopy) عند الشك"], "imaging": [],
+ "meds": [],
+ "procedures": ["التجميد بالنيتروجين السائل", "الكي أو الكشط"],
+ "selfcare": [],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Seborrhoeic keratosis (2022)"
+},
+"skin.actinickeratosis": {
+ "tests": ["خزعة إذا كانت الآفة سميكة أو مؤلمة أو تنمو"], "imaging": [],
+ "meds": [
+  {"cls": "علاجات موضعية للحقل المصاب", "ex": "fluorouracil (topical), imiquimod, diclofenac (topical gel)"}
+ ],
+ "procedures": ["التجميد بالنيتروجين السائل", "العلاج الضوئي الديناميكي (PDT)"],
+ "selfcare": ["واقٍ شمسي يومي وقبعة"],
+ "refs": ["NICE", "AAD"],
+ "guide": "BAD Guidelines for the management of actinic keratosis (2017)"
+},
+"skin.bcc": {
+ "tests": ["فحص بمنظار الجلد (Dermoscopy)", "خزعة جلدية"], "imaging": [],
+ "meds": [
+  {"cls": "علاجات موضعية للأنواع السطحية", "ex": "imiquimod, fluorouracil (topical)"},
+  {"cls": "مثبطات مسار هيدجهوج للحالات المتقدمة", "ex": "vismodegib"}
+ ],
+ "procedures": ["الاستئصال الجراحي بهامش آمن", "جراحة موس (Mohs) للوجه", "العلاج الإشعاعي لمن لا تناسبه الجراحة"],
+ "selfcare": ["الحماية من الشمس والفحص الذاتي للجلد"],
+ "refs": ["NICE", "NCCN", "AAD"],
+ "guide": "NCCN Guidelines: Basal Cell Skin Cancer (2024)"
+},
+"skin.scc": {
+ "tests": ["خزعة جلدية", "فحص الغدد اللمفاوية القريبة"], "imaging": ["موجات فوق صوتية أو أشعة مقطعية للغدد اللمفاوية في الحالات عالية الخطورة"],
+ "meds": [
+  {"cls": "علاج مناعي للحالات المتقدمة", "ex": "cemiplimab"}
+ ],
+ "procedures": ["الاستئصال الجراحي الكامل بهامش آمن", "جراحة موس (Mohs)", "العلاج الإشعاعي"],
+ "selfcare": ["الحماية من الشمس والفحص الدوري"],
+ "refs": ["NICE", "NCCN", "AAD"],
+ "guide": "NCCN Guidelines: Squamous Cell Skin Cancer (2024)"
+},
+"skin.paronychia": {
+ "tests": ["مسحة ومزرعة من الصديد عند عدم الاستجابة"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية موضعية", "ex": "fusidic acid, mupirocin"},
+  {"cls": "مضاد حيوي فموي عند الالتهاب الممتد", "ex": "flucloxacillin, clarithromycin"}
+ ],
+ "procedures": ["تصريف الصديد بشق بسيط"],
+ "selfcare": ["نقع الإصبع في ماء دافئ", "تجنّب قضم الأظافر وقص الجليدة"],
+ "refs": ["NICE", "IDSA"],
+ "guide": "NICE CKS: Paronychia – acute (2022)"
+},
+"skin.venousulcer": {
+ "tests": ["قياس مؤشر الضغط الكاحلي العضدي (ABPI) قبل الضغط", "سكر الدم", "مسحة فقط عند علامات العدوى"], "imaging": ["دوبلر على أوردة الساق (Venous duplex)"],
+ "meds": [
+  {"cls": "مضاد حيوي فقط عند العدوى الواضحة", "ex": "flucloxacillin"},
+  {"cls": "أدوية مساعدة على الالتئام في حالات مختارة", "ex": "pentoxifylline"}
+ ],
+ "procedures": ["الضمادات والأربطة الضاغطة متعددة الطبقات", "علاج الدوالي جراحيًا أو بالكي الحراري لتقليل التكرار"],
+ "selfcare": ["رفع الساق", "المشي وتمارين الكاحل"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Leg ulcer – venous (2023)"
+},
+"skin.stasisdermatitis": {
+ "tests": ["قياس مؤشر الضغط الكاحلي العضدي (ABPI) قبل الجوارب الضاغطة"], "imaging": ["دوبلر على أوردة الساق (Venous duplex)"],
+ "meds": [
+  {"cls": "مطرّيات", "ex": "emollients"},
+  {"cls": "كورتيزون موضعي للنوبات", "ex": "mometasone furoate, betamethasone valerate"}
+ ],
+ "procedures": ["الجوارب الضاغطة", "علاج الدوالي"],
+ "selfcare": ["رفع الساقين", "تجنّب الكريمات المعطّرة"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Venous eczema and lipodermatosclerosis (2023)"
+},
+"skin.burnsevere": {
+ "tests": ["صورة دم كاملة وأملاح ووظائف كلى", "غازات الدم وأول أكسيد الكربون عند استنشاق الدخان"], "imaging": [],
+ "meds": [
+  {"cls": "سوائل وريدية حسب مساحة الحرق", "ex": "Ringer's lactate"},
+  {"cls": "مسكنات قوية", "ex": "morphine, paracetamol"},
+  {"cls": "لقاح التيتانوس حسب حالة التطعيم", "ex": "tetanus toxoid"}
+ ],
+ "procedures": ["تبريد الحرق بماء جارٍ 20 دقيقة", "تغطية بغلاف بلاستيكي نظيف", "التحويل إلى وحدة الحروق", "ترقيع الجلد عند الحاجة"],
+ "selfcare": [],
+ "refs": ["WHO", "ACEP"],
+ "guide": "ISBI Practice Guidelines for Burn Care (2016)"
+},
+"skin.frostbite": {
+ "tests": [], "imaging": ["تصوير العظام الومضاني أو الرنين لتقييم الأنسجة المتضررة في الحالات الشديدة"],
+ "meds": [
+  {"cls": "مسكنات ومضادات الالتهاب", "ex": "ibuprofen"},
+  {"cls": "موسّعات الأوعية أو مذيبات الجلطات في الحالات الشديدة المبكرة بالمستشفى", "ex": "iloprost, alteplase"},
+  {"cls": "لقاح التيتانوس حسب حالة التطعيم", "ex": "tetanus toxoid"}
+ ],
+ "procedures": ["تدفئة سريعة في ماء دافئ تحت الإشراف", "تأجيل أي بتر حتى وضوح حدود الأنسجة الميتة"],
+ "selfcare": ["عدم الدلك أو التدفئة بالنار"],
+ "refs": ["ACEP"],
+ "guide": "Wilderness Medical Society Clinical Practice Guidelines for the Prevention and Treatment of Frostbite (2019)"
+},
+"skin.chilblains": {
+ "tests": ["صورة دم كاملة والأجسام المضادة للنواة (ANA) عند التكرار الشديد أو الاستمرار"], "imaging": [],
+ "meds": [
+  {"cls": "حاصرات قنوات الكالسيوم للحالات المتكررة الشديدة", "ex": "nifedipine"},
+  {"cls": "كورتيزون موضعي للحكة", "ex": "hydrocortisone"}
+ ],
+ "procedures": [],
+ "selfcare": ["تدفئة الأطراف تدريجيًا", "الإقلاع عن التدخين"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Chilblains (2021)"
+},
+"skin.pityriasisrosea": {
+ "tests": ["تحليل الزهري (Syphilis serology) عند الشك"], "imaging": [],
+ "meds": [
+  {"cls": "مرطّبات وكورتيزون موضعي خفيف للحكة", "ex": "emollients, hydrocortisone"},
+  {"cls": "مضادات الهيستامين", "ex": "cetirizine"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنّب الصابون المعطّر"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Pityriasis rosea (2021)"
+},
+"skin.lichenplanus": {
+ "tests": ["خزعة جلدية عند الشك", "تحليل فيروس التهاب الكبد C (anti-HCV)"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي قوي", "ex": "clobetasol propionate"},
+  {"cls": "مضادات الهيستامين للحكة", "ex": "cetirizine, hydroxyzine"},
+  {"cls": "علاج جهازي للحالات الواسعة", "ex": "prednisolone, acitretin"}
+ ],
+ "procedures": ["العلاج الضوئي (NB-UVB)"],
+ "selfcare": [],
+ "refs": ["AAD", "NICE"],
+ "guide": "NICE CKS: Lichen planus (2023)"
+},
+"skin.miliaria": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "غسول مهدّئ", "ex": "calamine lotion"},
+  {"cls": "كورتيزون موضعي خفيف عند الحكة الشديدة", "ex": "hydrocortisone"}
+ ],
+ "procedures": [],
+ "selfcare": ["تبريد الجسم وملابس قطنية خفيفة"],
+ "refs": ["AAD"],
+ "guide": "AAD: Heat rash – diagnosis and treatment (2023)"
+},
+"skin.skintags": {
+ "tests": ["سكر الدم أو السكر التراكمي (HbA1c) عند كثرتها"], "imaging": [],
+ "meds": [],
+ "procedures": ["القص أو التجميد أو الكي الكهربائي"],
+ "selfcare": ["عدم قطعها بالمنزل"],
+ "refs": ["NICE", "AAD"],
+ "guide": "NICE CKS: Skin tags (2022)"
+},
+"skin.pemphigoid": {
+ "tests": ["خزعة جلدية مع الومضان المناعي المباشر (DIF)", "الأجسام المضادة BP180/BP230"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون موضعي قوي جدًا", "ex": "clobetasol propionate"},
+  {"cls": "مضادات حيوية مضادة للالتهاب", "ex": "doxycycline"},
+  {"cls": "كورتيزون فموي أو مثبطات مناعة", "ex": "prednisolone, methotrexate, azathioprine"}
+ ],
+ "procedures": ["ثقب الفقاعات الكبيرة بإبرة معقمة مع ترك سقفها"],
+ "selfcare": ["تغطية الفقاعات وحمايتها"],
+ "refs": ["AAD"],
+ "guide": "BAD Guidelines for the management of bullous pemphigoid (2022)"
+},
+"skin.pemphigus": {
+ "tests": ["خزعة جلدية مع الومضان المناعي المباشر (DIF)", "الأجسام المضادة Desmoglein 1 و3"], "imaging": [],
+ "meds": [
+  {"cls": "كورتيزون جهازي", "ex": "prednisolone"},
+  {"cls": "علاج بيولوجي مضاد لـ CD20", "ex": "rituximab"},
+  {"cls": "مثبطات مناعة موفّرة للكورتيزون", "ex": "mycophenolate mofetil, azathioprine"}
+ ],
+ "procedures": ["دخول المستشفى للحالات الواسعة"],
+ "selfcare": ["عناية لطيفة بالفم والجلد"],
+ "refs": ["AAD"],
+ "guide": "S2k guideline on diagnosis and treatment of pemphigus vulgaris/foliaceus (EADV, 2020)"
+},
+"skin.erythemanodosum": {
+ "tests": ["صورة دم كاملة و CRP", "مسح من الحلق أو ASO", "اختبار السل (IGRA أو Tuberculin)"], "imaging": ["أشعة سينية على الصدر (لاستبعاد الساركويد والسل)"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen"},
+  {"cls": "علاج السبب الأساسي", "ex": "phenoxymethylpenicillin"}
+ ],
+ "procedures": [],
+ "selfcare": ["الراحة ورفع الساقين"],
+ "refs": ["NICE"],
+ "guide": "NICE CKS: Erythema nodosum (2021)"
+},
+"skin.keratosispilaris": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "مرطّبات مقشّرة", "ex": "urea cream, lactic acid, salicylic acid"},
+  {"cls": "رتينويدات موضعية", "ex": "tretinoin, adapalene"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنّب الفرك القاسي"],
+ "refs": ["AAD"],
+ "guide": "AAD: Keratosis pilaris – diagnosis and treatment (2023)"
+},
+"skin.acanthosis": {
+ "tests": ["سكر الدم الصائم والسكر التراكمي (HbA1c)", "الإنسولين الصائم والدهون", "وظائف الغدة الدرقية"], "imaging": [],
+ "meds": [
+  {"cls": "رتينويدات أو مقشرات موضعية لتحسين المظهر", "ex": "tretinoin, urea cream"},
+  {"cls": "علاج مقاومة الإنسولين حسب قرار الطبيب", "ex": "metformin"}
+ ],
+ "procedures": [],
+ "selfcare": ["إنقاص الوزن والنشاط البدني"],
+ "refs": ["ADA", "AAD"],
+ "guide": "ADA Standards of Care in Diabetes (2025)"
+},
+"skin.larvamigrans": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "مضادات الديدان", "ex": "ivermectin, albendazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["لبس الحذاء على الرمال"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Yellow Book: Cutaneous larva migrans (2024)"
+},
+"skin.chronicpruritus": {
+ "tests": ["صورة دم كاملة (CBC) ومخزون الحديد", "وظائف الكلى والكبد", "وظائف الغدة الدرقية (TSH)", "سكر الدم"], "imaging": ["أشعة سينية على الصدر عند وجود أعراض عامة"],
+ "meds": [
+  {"cls": "مطرّيات ومضادات الحكة الموضعية", "ex": "emollients, menthol cream"},
+  {"cls": "مضادات الهيستامين المنوّمة ليلًا", "ex": "hydroxyzine"},
+  {"cls": "أدوية للحكة العصبية أو الكلوية حسب السبب", "ex": "gabapentin, sertraline"}
+ ],
+ "procedures": ["العلاج الضوئي (NB-UVB)"],
+ "selfcare": ["ماء فاتر وملابس قطنية"],
+ "refs": ["NICE", "AAD"],
+ "guide": "European S2k Guideline on Chronic Pruritus (EADV, 2019)"
+},
+"skin.pmle": {
+ "tests": ["الأجسام المضادة للنواة (ANA) و Ro/La عند الشك في الذئبة"], "imaging": [],
+ "meds": [
+  {"cls": "واقٍ شمسي واسع الطيف", "ex": "broad-spectrum sunscreen"},
+  {"cls": "كورتيزون موضعي للنوبة", "ex": "mometasone furoate"},
+  {"cls": "مضادات الهيستامين", "ex": "cetirizine"}
+ ],
+ "procedures": ["العلاج الضوئي الوقائي في أول الربيع للحالات الشديدة"],
+ "selfcare": ["تعرّض تدريجي للشمس", "ملابس طويلة"],
+ "refs": ["AAD", "NICE"],
+ "guide": "NICE CKS: Polymorphic light eruption (2021)"
+},
+"skin.xerosis": {
+ "tests": ["وظائف الغدة الدرقية والكلى عند الشدة أو الاستمرار"], "imaging": [],
+ "meds": [
+  {"cls": "مطرّيات", "ex": "emollients, urea cream"}
+ ],
+ "procedures": [],
+ "selfcare": ["استحمام قصير بماء فاتر", "مرطّب بعد الاستحمام مباشرة"],
+ "refs": ["AAD", "NICE"],
+ "guide": "AAD: Dry skin – diagnosis and treatment (2023)"
+},
+"infectious.sepsis": {
+ "tests": ["مزارع الدم قبل المضاد الحيوي", "اللاكتات (Lactate)", "صورة دم كاملة و CRP", "وظائف كلى وكبد وتجلط", "مزرعة بول"], "imaging": ["أشعة على الصدر أو البطن حسب مصدر العدوى"],
+ "meds": [
+  {"cls": "مضادات حيوية وريدية واسعة الطيف خلال الساعة الأولى", "ex": "piperacillin-tazobactam, ceftriaxone, meropenem"},
+  {"cls": "سوائل وريدية", "ex": "balanced crystalloids"},
+  {"cls": "رافعات الضغط عند الصدمة", "ex": "norepinephrine"}
+ ],
+ "procedures": ["علاج مصدر العدوى (تصريف خراج أو إزالة قسطرة)", "المتابعة في العناية المركزة"],
+ "selfcare": [],
+ "refs": ["NICE", "WHO"],
+ "guide": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock (2021)"
+},
+"infectious.mono": {
+ "tests": ["اختبار الأجسام المتغايرة (Monospot) أو أجسام EBV المضادة", "صورة دم كاملة مع اللمفاويات اللانمطية", "وظائف الكبد"], "imaging": ["موجات فوق صوتية على البطن عند ألم يسار البطن"],
+ "meds": [
+  {"cls": "خافضات الحرارة والمسكنات", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": [],
+ "selfcare": ["راحة وسوائل", "تجنّب الرياضات العنيفة 4–6 أسابيع"],
+ "refs": ["CDC", "NICE"],
+ "guide": "NICE CKS: Glandular fever (infectious mononucleosis) (2022)"
+},
+"infectious.rubella": {
+ "tests": ["أجسام الحصبة الألمانية المضادة (Rubella IgM/IgG)", "مسحة PCR عند الحاجة"], "imaging": [],
+ "meds": [
+  {"cls": "خافضات الحرارة", "ex": "paracetamol"},
+  {"cls": "لقاح الحصبة والنكاف والحصبة الألمانية للوقاية", "ex": "MMR vaccine", "note": "لا يُعطى أثناء الحمل"}
+ ],
+ "procedures": [],
+ "selfcare": ["الابتعاد عن الحوامل 7 أيام بعد الطفح"],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Rubella vaccines: WHO position paper (2020)"
+},
+"infectious.tetanus": {
+ "tests": ["التشخيص سريري أساسًا"], "imaging": [],
+ "meds": [
+  {"cls": "الغلوبولين المناعي البشري للتيتانوس", "ex": "human tetanus immunoglobulin"},
+  {"cls": "مضاد حيوي", "ex": "metronidazole"},
+  {"cls": "مرخيات العضلات والمهدئات", "ex": "diazepam, magnesium sulfate"},
+  {"cls": "لقاح التيتانوس", "ex": "tetanus toxoid"}
+ ],
+ "procedures": ["تنظيف الجرح وإزالة الأنسجة الميتة", "دعم التنفس في العناية المركزة"],
+ "selfcare": [],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Current recommendations for treatment of tetanus during humanitarian emergencies (2010)"
+},
+"infectious.tetanusprone": {
+ "tests": [], "imaging": [],
+ "meds": [
+  {"cls": "لقاح التيتانوس المعزز", "ex": "Td or Tdap vaccine"},
+  {"cls": "الغلوبولين المناعي للتيتانوس للجروح عالية الخطورة لدى غير المطعّمين", "ex": "human tetanus immunoglobulin"}
+ ],
+ "procedures": ["تنظيف الجرح جيدًا وإزالة الأجسام الغريبة"],
+ "selfcare": ["غسل الجرح بالماء والصابون فورًا", "استكمال جدول التطعيم"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Tetanus: Wound management for tetanus prevention (Pink Book, 2024)"
+},
+"infectious.cutaneousleish": {
+ "tests": ["مسحة أو خزعة من حافة القرحة للفحص المجهري أو PCR"], "imaging": [],
+ "meds": [
+  {"cls": "مركّبات الأنتيمون الخماسي بالحقن الموضعي", "ex": "sodium stibogluconate, meglumine antimoniate"},
+  {"cls": "علاج موضعي", "ex": "paromomycin (topical)"},
+  {"cls": "علاج جهازي حسب النوع", "ex": "miltefosine"}
+ ],
+ "procedures": ["التبريد بالنيتروجين السائل", "العلاج الحراري الموضعي"],
+ "selfcare": ["ناموسيات وطارد حشرات"],
+ "refs": ["WHO", "IDSA"],
+ "guide": "IDSA/ASTMH Clinical Practice Guidelines for the Diagnosis and Treatment of Leishmaniasis (2016)"
+},
+"infectious.visceralleish": {
+ "tests": ["اختبار rK39 السريع", "عينة من نخاع العظم أو الطحال", "صورة دم كاملة"], "imaging": ["موجات فوق صوتية على البطن لتقييم الطحال والكبد"],
+ "meds": [
+  {"cls": "أمفوتريسين الليبوزومي", "ex": "liposomal amphotericin B"},
+  {"cls": "بدائل حسب المنطقة", "ex": "miltefosine, sodium stibogluconate, paromomycin"}
+ ],
+ "procedures": [],
+ "selfcare": [],
+ "refs": ["WHO", "IDSA"],
+ "guide": "WHO Guideline for the treatment of visceral leishmaniasis in East Africa and HIV co-infection (2022)"
+},
+"infectious.toxo": {
+ "tests": ["أجسام التوكسوبلازما المضادة (IgM, IgG) وفحص نشاط الأجسام (Avidity) للحامل"], "imaging": ["موجات فوق صوتية للجنين عند إصابة الحامل"],
+ "meds": [
+  {"cls": "للحامل في الإصابة المبكرة", "ex": "spiramycin"},
+  {"cls": "للحالات الشديدة أو ضعف المناعة", "ex": "pyrimethamine with sulfadiazine and folinic acid"}
+ ],
+ "procedures": [],
+ "selfcare": ["طهي اللحم جيدًا", "قفازات عند تنظيف فضلات القطط"],
+ "refs": ["CDC", "ACOG"],
+ "guide": "CDC Parasites – Toxoplasmosis: Clinical care (2024)"
+},
+"infectious.lyme": {
+ "tests": ["لا تحليل في مرحلة البقعة المميزة؛ تحليل الأجسام المضادة على مرحلتين لاحقًا"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية فموية", "ex": "doxycycline, amoxicillin, cefuroxime axetil"}
+ ],
+ "procedures": ["تخطيط القلب (ECG) عند الخفقان أو الدوخة"],
+ "selfcare": ["نزع القراد بملقط من قرب الجلد"],
+ "refs": ["IDSA", "NICE"],
+ "guide": "IDSA/AAN/ACR Clinical Practice Guidelines for the Prevention, Diagnosis and Treatment of Lyme Disease (2020)"
+},
+"infectious.lepto": {
+ "tests": ["تحليل PCR في الدم في الأسبوع الأول ثم الأجسام المضادة", "وظائف الكلى والكبد", "صورة دم كاملة"], "imaging": ["أشعة على الصدر عند ضيق التنفس"],
+ "meds": [
+  {"cls": "مضادات حيوية فموية للحالات الخفيفة", "ex": "doxycycline, azithromycin"},
+  {"cls": "مضادات حيوية وريدية للحالات الشديدة", "ex": "benzylpenicillin, ceftriaxone"}
+ ],
+ "procedures": ["الغسيل الكلوي عند الفشل الكلوي"],
+ "selfcare": ["أحذية وقفازات عند الخوض في المياه"],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Human leptospirosis: guidance for diagnosis, surveillance and control (2003)"
+},
+"infectious.longcovid": {
+ "tests": ["صورة دم كاملة ووظائف كلى وكبد وغدة درقية", "قياس الأكسجين أثناء الجهد", "تخطيط القلب (ECG)"], "imaging": ["أشعة سينية على الصدر عند استمرار أعراض التنفس"],
+ "meds": [
+  {"cls": "علاج الأعراض حسب الحالة", "ex": "paracetamol"}
+ ],
+ "procedures": ["برنامج تأهيل تدريجي متعدد التخصصات"],
+ "selfcare": ["تنظيم الجهد وتجنّب الإرهاق"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE NG188 COVID-19 rapid guideline: managing the long-term effects of COVID-19 (2024)"
+},
+"infectious.mers": {
+ "tests": ["مسحة من الجهاز التنفسي بتقنية PCR لفيروس MERS-CoV"], "imaging": ["أشعة سينية أو مقطعية على الصدر"],
+ "meds": [
+  {"cls": "علاج داعم: أكسجين وسوائل وخافض حرارة", "ex": "paracetamol"}
+ ],
+ "procedures": ["العزل في المستشفى مع احتياطات الرذاذ والتلامس", "دعم التنفس عند الحاجة"],
+ "selfcare": ["كمامة والابتعاد عن الآخرين", "تجنّب شرب حليب الإبل غير المغلي"],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Clinical management of severe acute respiratory infection when MERS-CoV infection is suspected (2019)"
+},
+"infectious.travellersdiarrhoea": {
+ "tests": ["مزرعة وتحليل براز عند الدم أو الحمّى أو الاستمرار"], "imaging": [],
+ "meds": [
+  {"cls": "محلول معالجة الجفاف الفموي", "ex": "oral rehydration salts"},
+  {"cls": "مضاد للإسهال للحالات الخفيفة دون حمّى أو دم", "ex": "loperamide"},
+  {"cls": "مضاد حيوي للحالات المتوسطة والشديدة", "ex": "azithromycin, rifaximin"}
+ ],
+ "procedures": [],
+ "selfcare": ["مياه معبأة", "تجنّب الأطعمة النيئة"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Yellow Book: Travelers' diarrhea (2024)"
+},
+"infectious.fuo": {
+ "tests": ["صورة دم كاملة وسرعة الترسيب و CRP", "مزارع دم متكررة", "تحليل البروسيلا والتيفود والسل", "الأجسام المضادة للنواة (ANA)", "تحليل فيروس HIV"], "imaging": ["أشعة مقطعية على الصدر والبطن", "إيكو على القلب عند الاشتباه في التهاب الشغاف", "PET-CT في حالات مختارة"],
+ "meds": [
+  {"cls": "خافضات الحرارة مع تجنّب المضادات الحيوية العشوائية قبل التشخيص", "ex": "paracetamol"}
+ ],
+ "procedures": ["خزعة من الغدد أو نخاع العظم حسب النتائج"],
+ "selfcare": ["تسجيل درجات الحرارة يوميًا"],
+ "refs": ["IDSA"],
+ "guide": "Fever of unknown origin: a systematic diagnostic approach (Haidar & Singh, NEJM review, 2022)"
+},
+"infectious.botulism": {
+ "tests": ["تحليل السم في الدم والبراز والطعام المشتبه به"], "imaging": [],
+ "meds": [
+  {"cls": "مضاد سم البوتيوليزم", "ex": "heptavalent botulinum antitoxin"}
+ ],
+ "procedures": ["مراقبة وظائف التنفس والتنفس الصناعي عند الحاجة", "إبلاغ الجهات الصحية"],
+ "selfcare": ["الاحتفاظ ببقية الطعام المشتبه به"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Clinical Guidelines for Diagnosis and Treatment of Botulism (2021)"
+},
+"infectious.amoebiasis": {
+ "tests": ["تحليل مستضد أو PCR للأنتاميبا هستوليتيكا في البراز", "أجسام الأميبا المضادة عند الشك في خراج الكبد"], "imaging": ["موجات فوق صوتية على الكبد عند ألم أعلى يمين البطن"],
+ "meds": [
+  {"cls": "مضاد للطفيليات النسيجية", "ex": "metronidazole, tinidazole"},
+  {"cls": "مطهّر معوي للحويصلات", "ex": "paromomycin, diloxanide furoate"}
+ ],
+ "procedures": [],
+ "selfcare": ["شرب ماء نظيف", "غسل اليدين"],
+ "refs": ["WHO", "CDC"],
+ "guide": "CDC Parasites – Amebiasis: Clinical care (2024)"
+},
+"infectious.shigellosis": {
+ "tests": ["مزرعة براز مع اختبار الحساسية"], "imaging": [],
+ "meds": [
+  {"cls": "محلول معالجة الجفاف الفموي", "ex": "oral rehydration salts"},
+  {"cls": "مضادات حيوية حسب الحساسية", "ex": "azithromycin, ciprofloxacin, ceftriaxone"},
+  {"cls": "الزنك للأطفال", "ex": "zinc sulfate"}
+ ],
+ "procedures": [],
+ "selfcare": ["غسل اليدين جيدًا", "تجنّب أدوية إيقاف الإسهال"],
+ "refs": ["WHO", "IDSA"],
+ "guide": "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea (2017)"
+},
+"infectious.giardiasis": {
+ "tests": ["تحليل مستضد الجيارديا أو PCR في البراز"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات الطفيليات", "ex": "tinidazole, metronidazole, nitazoxanide"}
+ ],
+ "procedures": [],
+ "selfcare": ["غسل اليدين", "شرب ماء نظيف"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Parasites – Giardia: Treatment (2024)"
+},
+"infectious.fascioliasis": {
+ "tests": ["صورة دم كاملة مع الحمضات", "أجسام الفاشيولا المضادة", "تحليل البراز للبويضات"], "imaging": ["موجات فوق صوتية أو أشعة مقطعية على الكبد"],
+ "meds": [
+  {"cls": "مضاد ديدان الكبد", "ex": "triclabendazole"}
+ ],
+ "procedures": ["المنظار الطرفي (ERCP) عند انسداد القنوات المرارية"],
+ "selfcare": ["غسل الخضراوات الورقية جيدًا"],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Control of foodborne trematode infections – fascioliasis (2021)"
+},
+"infectious.hydatid": {
+ "tests": ["أجسام المشوكات المضادة (Echinococcus serology)"], "imaging": ["موجات فوق صوتية على البطن وتصنيف WHO للكيس", "أشعة مقطعية على الصدر والبطن"],
+ "meds": [
+  {"cls": "مضاد للديدان", "ex": "albendazole"}
+ ],
+ "procedures": ["التصريف عبر الجلد بتقنية PAIR", "الاستئصال الجراحي"],
+ "selfcare": ["علاج الكلاب من الديدان", "غسل اليدين بعد مخالطتها"],
+ "refs": ["WHO"],
+ "guide": "WHO-IWGE Expert consensus for the diagnosis and treatment of cystic and alveolar echinococcosis in humans (2010)"
+},
+"infectious.ascariasis": {
+ "tests": ["تحليل البراز للبويضات"], "imaging": ["موجات فوق صوتية على البطن عند ألم أو انسداد"],
+ "meds": [
+  {"cls": "مضادات الديدان", "ex": "albendazole, mebendazole"}
+ ],
+ "procedures": [],
+ "selfcare": ["غسل اليدين قبل الأكل", "غسل الخضار"],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Guideline: preventive chemotherapy to control soil-transmitted helminth infections (2017)"
+},
+"infectious.diphtheria": {
+ "tests": ["مسحة من الحلق للمزرعة واختبار السم"], "imaging": [],
+ "meds": [
+  {"cls": "مضاد سم الدفتيريا", "ex": "diphtheria antitoxin"},
+  {"cls": "مضادات حيوية", "ex": "benzylpenicillin, erythromycin, azithromycin"},
+  {"cls": "اللقاح بعد الشفاء وللمخالطين", "ex": "diphtheria toxoid-containing vaccine"}
+ ],
+ "procedures": ["العزل", "تخطيط القلب لمتابعة التهاب عضلة القلب", "تأمين مجرى التنفس"],
+ "selfcare": [],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Clinical management of diphtheria: guideline (2024)"
+},
+"infectious.rickettsia": {
+ "tests": ["الأجسام المضادة للريكتسيا (Serology) أو PCR من القشرة", "صورة دم كاملة ووظائف كبد"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية", "ex": "doxycycline", "note": "الخيار الأول لجميع الأعمار في الحالات المشتبهة"}
+ ],
+ "procedures": [],
+ "selfcare": ["طارد حشرات ومكافحة البراغيث والقوارض"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Diagnosis and Management of Tickborne Rickettsial Diseases (MMWR, 2016)"
+},
+"infectious.anthrax": {
+ "tests": ["مسحة من القرحة للصبغة والمزرعة و PCR"], "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية فموية", "ex": "ciprofloxacin, doxycycline, amoxicillin"}
+ ],
+ "procedures": ["إبلاغ الجهات الصحية والبيطرية"],
+ "selfcare": ["عدم فتح القرحة أو عصرها"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Expert Panel Meetings on Prevention and Treatment of Anthrax in Adults (2014)"
+},
+"infectious.mpox": {
+ "tests": ["مسحة من الآفة بتقنية PCR", "تحليل HIV والأمراض المنقولة جنسيًا"], "imaging": [],
+ "meds": [
+  {"cls": "مسكنات وعناية بالجلد", "ex": "paracetamol"},
+  {"cls": "مضاد فيروسي للحالات الشديدة تحت إشراف مختص", "ex": "tecovirimat"},
+  {"cls": "لقاح للوقاية والمخالطين المعرّضين", "ex": "MVA-BN vaccine"}
+ ],
+ "procedures": ["العزل حتى التئام الجلد"],
+ "selfcare": ["تغطية الطفح", "تجنّب المخالطة الجسدية"],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Clinical management and infection prevention and control for mpox: living guideline (2025)"
+},
+"infectious.tblymph": {
+ "tests": ["سحب عينة بالإبرة الدقيقة أو خزعة للفحص و GeneXpert", "اختبار السل (IGRA)", "تحليل HIV"], "imaging": ["موجات فوق صوتية على الرقبة", "أشعة سينية على الصدر"],
+ "meds": [
+  {"cls": "علاج السل القياسي الرباعي ثم الثنائي", "ex": "isoniazid, rifampicin, pyrazinamide, ethambutol"}
+ ],
+ "procedures": [],
+ "selfcare": ["الالتزام الكامل بمدة العلاج"],
+ "refs": ["WHO", "NICE"],
+ "guide": "WHO Consolidated guidelines on tuberculosis: Module 4 – Treatment (2022)"
+},
+"infectious.necfasc": {
+ "tests": ["صورة دم كاملة و CRP والكرياتينين والصوديوم والسكر واللاكتات", "مزارع الدم والأنسجة"], "imaging": ["أشعة مقطعية عند عدم تأخير الجراحة"],
+ "meds": [
+  {"cls": "مضادات حيوية وريدية واسعة الطيف مع مثبط للسموم", "ex": "piperacillin-tazobactam with clindamycin, vancomycin"}
+ ],
+ "procedures": ["استكشاف جراحي عاجل وإزالة الأنسجة الميتة", "المتابعة في العناية المركزة"],
+ "selfcare": [],
+ "refs": ["IDSA"],
+ "guide": "IDSA Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections (2014)"
+},
+"infectious.tss": {
+ "tests": ["مزارع الدم والمسحات من مصدر العدوى", "صورة دم كاملة ووظائف كلى وكبد وتجلط و CK"], "imaging": [],
+ "meds": [
+  {"cls": "سوائل وريدية", "ex": "balanced crystalloids"},
+  {"cls": "مضادات حيوية وريدية مع مثبط للسموم", "ex": "flucloxacillin or vancomycin with clindamycin"},
+  {"cls": "الغلوبولين المناعي الوريدي في حالات مختارة", "ex": "intravenous immunoglobulin"}
+ ],
+ "procedures": ["إزالة السدادة القطنية أو مصدر العدوى", "العناية المركزة"],
+ "selfcare": [],
+ "refs": ["IDSA", "CDC"],
+ "guide": "CDC Toxic Shock Syndrome (Other Than Streptococcal) case definition and clinical overview (2011)"
+},
+"infectious.chikungunya": {
+ "tests": ["تحليل PCR في الأسبوع الأول ثم الأجسام المضادة", "تحليل الضنك والملاريا لاستبعادهما"], "imaging": [],
+ "meds": [
+  {"cls": "خافض حرارة ومسكن", "ex": "paracetamol"},
+  {"cls": "مضادات الالتهاب بعد استبعاد الضنك لآلام المفاصل المستمرة", "ex": "ibuprofen, naproxen"}
+ ],
+ "procedures": [],
+ "selfcare": ["راحة وسوائل", "الوقاية من البعوض"],
+ "refs": ["WHO", "CDC"],
+ "guide": "WHO Guidelines for the clinical management of arboviral diseases: dengue, chikungunya, Zika and yellow fever (2025)"
+},
+"infectious.catscratch": {
+ "tests": ["أجسام البارتونيلا المضادة (Bartonella serology)"], "imaging": ["موجات فوق صوتية على الغدة المتضخمة"],
+ "meds": [
+  {"cls": "مضاد حيوي للحالات الواضحة أو ضعف المناعة", "ex": "azithromycin"}
+ ],
+ "procedures": ["سحب الصديد بالإبرة عند تليّن الغدة"],
+ "selfcare": ["غسل الخدوش فورًا", "مكافحة براغيث القطط"],
+ "refs": ["IDSA", "CDC"],
+ "guide": "IDSA Practice Guidelines for the Diagnosis and Management of Skin and Soft Tissue Infections (2014)"
+},
+"infectious.viralfever": {
+ "tests": ["صورة دم كاملة و CRP إذا استمرت الحمّى أكثر من 3 أيام", "تحليل الملاريا بعد السفر لمنطقة موبوءة"], "imaging": [],
+ "meds": [
+  {"cls": "خافضات الحرارة", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": [],
+ "selfcare": ["راحة وسوائل كافية"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE NG143 Fever in under 5s: assessment and initial management (2019, updated 2021)"
+}
+}

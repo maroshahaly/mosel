@@ -1,0 +1,817 @@
+{
+"bones.golfer": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على أوتار المرفق (Ultrasound) عند استمرار الأعراض"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية الموضعية", "ex": "diclofenac (topical), ibuprofen (topical)"},
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol"}
+ ],
+ "procedures": ["علاج طبيعي بتمارين الإطالة والتقوية اللامركزية", "دعامة للساعد عند الحاجة"],
+ "selfcare": ["تعديل النشاط المسبب", "كمادات باردة بعد النشاط"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Tennis elbow / epicondylitis (2022)"
+},
+"bones.dequervain": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على أوتار الإبهام (Ultrasound) عند الشك في التشخيص"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen", "note": "أقل مدة ممكنة"},
+  {"cls": "حقن الكورتيكوستيرويد الموضعية", "ex": "methylprednisolone acetate, triamcinolone", "note": "يقررها الطبيب"}
+ ],
+ "procedures": ["جبيرة للإبهام والرسغ", "تحرير غمد الوتر جراحيًا للحالات المستمرة"],
+ "selfcare": ["إراحة الإبهام وتجنّب الحركة المسببة", "كمادات باردة"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: De Quervain's tenosynovitis (2021)"
+},
+"bones.ganglion": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية (Ultrasound) لتأكيد أنه كيس سائلي"],
+ "meds": [],
+ "procedures": ["سحب السائل بالإبرة عند الألم", "استئصال جراحي للكيس المؤلم أو المتكرر"],
+ "selfcare": ["المراقبة؛ كثير منها يختفي تلقائيًا", "عدم محاولة فقعه"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Ganglion (2020)"
+},
+"bones.dupuytren": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["قطع الحبل الليفي بالإبرة (Needle fasciotomy)", "استئصال اللفافة جراحيًا (Fasciectomy)", "اختبار الطاولة لمتابعة التقدم"],
+ "selfcare": ["متابعة قدرة وضع اليد مسطحة على الطاولة"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Dupuytren's disease (2021)"
+},
+"bones.scaphoid": {
+ "tests": [],
+ "imaging": ["أشعة سينية على الرسغ بزوايا خاصة للعظم الزورقي (Scaphoid series X-ray)", "رنين مغناطيسي (MRI) عند سلامة الأشعة مع استمرار الشك"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["جبيرة للرسغ والإبهام حتى عند الشك", "تثبيت جراحي بمسمار للكسور المزاحة أو غير الملتئمة"],
+ "selfcare": ["رفع اليد وعدم استخدامها في الحمل"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE NG38 Fractures (non-complex): assessment and management (2016)"
+},
+"bones.shoulderdisloc": {
+ "tests": [],
+ "imaging": ["أشعة سينية على الكتف قبل الإرجاع وبعده (X-ray)", "رنين مغناطيسي (MRI) للشباب أو عند تكرار الخلع"],
+ "meds": [{"cls": "تسكين وتهدئة إجرائية في الطوارئ", "ex": "morphine, entonox", "note": "تحت إشراف الطبيب"}],
+ "procedures": ["إرجاع الكتف المغلق في الطوارئ", "فحص العصب الإبطي والنبض", "حمّالة ذراع ثم علاج طبيعي", "إصلاح جراحي لعدم الثبات المتكرر"],
+ "selfcare": ["عدم محاولة إرجاع الكتف ذاتيًا", "الالتزام بتمارين التأهيل"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "AAOS OrthoInfo: Dislocated Shoulder; BESS/BOA Patient Care Pathway: Traumatic anterior shoulder instability (2015)"
+},
+"bones.trochanteric": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية (Ultrasound) عند الشك في التشخيص"],
+ "meds": [
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol"},
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen", "note": "أقل مدة ممكنة"},
+  {"cls": "حقن الكورتيكوستيرويد الموضعية", "ex": "methylprednisolone acetate", "note": "تخفيف قصير المدى"}
+ ],
+ "procedures": ["علاج طبيعي بتمارين تحميل أوتار الإلية"],
+ "selfcare": ["تجنّب النوم على الجهة المؤلمة", "وسادة بين الركبتين", "تجنّب وضع ساق فوق الأخرى"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Greater trochanteric pain syndrome (trochanteric bursitis) (2021)"
+},
+"bones.pfps": {
+ "tests": [],
+ "imaging": ["أشعة سينية على الركبة فقط عند الشك في سبب آخر"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["علاج طبيعي بتمارين تقوية الفخذ والورك", "شريط لاصق أو نعال طبية مساعدة قصيرة المدى"],
+ "selfcare": ["تقليل القرفصاء وصعود الدرج مؤقتًا", "عودة تدريجية للرياضة"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "Patellofemoral pain clinical practice guideline (JOSPT, 2019); International Patellofemoral Pain Consensus (2016)"
+},
+"bones.osgood": {
+ "tests": [],
+ "imaging": ["أشعة سينية على الركبة عند وجود أعراض غير نمطية"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["تمارين إطالة لعضلات الفخذ الأمامية والخلفية"],
+ "selfcare": ["تقليل الجري والقفز بحسب الألم", "كمادات باردة بعد النشاط", "واقٍ للركبة عند الركوع"],
+ "refs": ["AAP", "AAOS"],
+ "guide": "AAOS OrthoInfo: Osgood-Schlatter Disease (2021)"
+},
+"bones.achillestend": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على وتر العقب (Ultrasound) عند الشك في التشخيص أو التمزق"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen", "note": "لا تُحقن الكورتيكوستيرويدات في الوتر"}],
+ "procedures": ["برنامج تمارين التحميل اللامركزي للسمانة", "رفع كعب الحذاء مؤقتًا"],
+ "selfcare": ["تقليل الجري والقفز", "عودة تدريجية للنشاط"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Achilles tendinopathy (2020)"
+},
+"bones.achillesrupture": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على وتر العقب (Ultrasound) عند الشك في التشخيص"],
+ "meds": [{"cls": "مسكنات", "ex": "paracetamol, ibuprofen"}, {"cls": "الوقاية من الجلطات أثناء التثبيت", "ex": "enoxaparin", "note": "بحسب تقييم الطبيب للخطر"}],
+ "procedures": ["اختبار ضغط السمانة (Simmonds/Thompson test)", "حذاء طبي أو جبيرة مع ميل القدم للأسفل", "إصلاح جراحي في حالات مختارة", "برنامج تأهيل تدريجي"],
+ "selfcare": ["عدم الارتكاز على القدم حتى التقييم"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "AAOS Clinical Practice Guideline: Diagnosis and Treatment of Acute Achilles Tendon Rupture (2009)"
+},
+"bones.morton": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على مقدمة القدم (Ultrasound)", "رنين مغناطيسي (MRI) عند الشك"],
+ "meds": [{"cls": "حقن الكورتيكوستيرويد الموضعية", "ex": "methylprednisolone acetate", "note": "يقررها الطبيب"}, {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["وسادة أو دعامة لمقدمة القدم", "استئصال العصب جراحيًا للحالات المستمرة"],
+ "selfcare": ["أحذية واسعة منخفضة الكعب"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Morton's neuroma (2020)"
+},
+"bones.bunion": {
+ "tests": [],
+ "imaging": ["أشعة سينية على القدم وقوفًا (Weight-bearing X-ray) قبل الجراحة"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["وسائد حماية للبروز", "جراحة تصحيح العظم للحالات المؤلمة المستمرة"],
+ "selfcare": ["أحذية واسعة من الأمام منخفضة الكعب"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Bunions (hallux valgus) (2021)"
+},
+"bones.flatfoot": {
+ "tests": [],
+ "imaging": ["أشعة سينية على القدم وقوفًا عند الألم أو التيبّس أو الإصابة في قدم واحدة"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol"}],
+ "procedures": ["نعال طبية داعمة للقوس", "علاج طبيعي لتقوية عضلات القدم والوتر الظنبوبي الخلفي"],
+ "selfcare": ["أحذية داعمة", "إطالة عضلات السمانة", "الحفاظ على وزن صحي"],
+ "refs": ["AAOS", "AAP"],
+ "guide": "AAOS OrthoInfo: Flatfoot (Pes Planus) (2022)"
+},
+"bones.stressfx": {
+ "tests": ["فيتامين د والكالسيوم (Vitamin D, Calcium) عند التكرار"],
+ "imaging": ["أشعة سينية (X-ray) وقد تكون سليمة مبكرًا", "رنين مغناطيسي (MRI) لتأكيد التشخيص"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol"}],
+ "procedures": ["حذاء طبي أو عكازان لتخفيف الارتكاز", "تقييم نقص الطاقة لدى الرياضيين وانقطاع الدورة لدى الرياضيات"],
+ "selfcare": ["إيقاف النشاط المسبب ثم عودة تدريجية", "تغذية كافية"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "AAOS OrthoInfo: Stress Fractures (2020)"
+},
+"bones.vertebralfx": {
+ "tests": ["الكالسيوم وفيتامين د ووظائف الكلى (Calcium, Vitamin D, Creatinine)", "صورة الدم والفحوص لاستبعاد الأسباب الثانوية (CBC, Protein electrophoresis) بحسب الحالة"],
+ "imaging": ["أشعة سينية على العمود الفقري (X-ray)", "قياس كثافة العظام (DXA)", "رنين مغناطيسي (MRI) عند الشك في ورم أو ضغط عصبي"],
+ "meds": [
+  {"cls": "مسكنات", "ex": "paracetamol"},
+  {"cls": "أدوية هشاشة العظام", "ex": "alendronic acid, zoledronic acid, denosumab"},
+  {"cls": "مكملات الكالسيوم وفيتامين د", "ex": "calcium carbonate, colecalciferol"}
+ ],
+ "procedures": ["علاج طبيعي وتمارين آمنة للظهر", "تقييم مخاطر السقوط"],
+ "selfcare": ["الحركة المبكرة الآمنة", "الوقاية من السقوط في المنزل"],
+ "refs": ["NICE", "ENDO"],
+ "guide": "NOGG Clinical guideline for the prevention and treatment of osteoporosis (2022)"
+},
+"bones.stenosis": {
+ "tests": [],
+ "imaging": ["رنين مغناطيسي على أسفل الظهر (MRI) عند التفكير في الجراحة", "قياس مؤشر الكاحل والعضد (ABPI) لاستبعاد ضعف الشرايين"],
+ "meds": [{"cls": "مسكنات", "ex": "paracetamol, ibuprofen"}, {"cls": "أدوية ألم الأعصاب", "ex": "duloxetine, amitriptyline", "note": "بحسب تقييم الطبيب"}],
+ "procedures": ["علاج طبيعي وتمارين", "جراحة تخفيف الضغط (Decompression) للحالات الشديدة"],
+ "selfcare": ["المشي المنتظم بحسب التحمل", "ركوب الدراجة الثابتة"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE NG59 Low back pain and sciatica in over 16s (2016, updated 2020); NASS Lumbar spinal stenosis guideline (2011)"
+},
+"bones.spondylolisthesis": {
+ "tests": [],
+ "imaging": ["أشعة سينية جانبية على أسفل الظهر (X-ray)", "رنين مغناطيسي أو مقطعية (MRI/CT) لتأكيد الانحلال"],
+ "meds": [{"cls": "مسكنات", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["علاج طبيعي لتقوية عضلات الجذع", "دعامة ظهر في حالات مختارة", "تثبيت فقري جراحي للانزلاق الكبير"],
+ "selfcare": ["إيقاف الأنشطة التي تتطلب إمالة الظهر للخلف مؤقتًا"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "NASS Evidence-based clinical guideline: Diagnosis and treatment of adult isthmic spondylolisthesis (2014)"
+},
+"bones.whiplash": {
+ "tests": [],
+ "imaging": ["أشعة أو مقطعية على الرقبة (X-ray/CT) فقط بحسب قواعد Canadian C-spine"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["تمارين حركة الرقبة التدريجية", "علاج طبيعي إذا استمرت الأعراض"],
+ "selfcare": ["الاستمرار في الحركة الطبيعية دون طوق", "كمادات"],
+ "refs": ["NICE", "ACEP"],
+ "guide": "NICE CKS: Neck pain - whiplash injury (2023)"
+},
+"bones.cauda": {
+ "tests": ["قياس البول المتبقي بعد التبول (Post-void residual bladder scan)"],
+ "imaging": ["رنين مغناطيسي عاجل على العمود الفقري القطني (Urgent MRI)"],
+ "meds": [{"cls": "مسكنات", "ex": "paracetamol, morphine", "note": "في المستشفى"}],
+ "procedures": ["جراحة عاجلة لتخفيف الضغط (Emergency decompression)", "فحص الإحساس حول الشرج والمنعكسات"],
+ "selfcare": ["التوجه فورًا للطوارئ وعدم الانتظار"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "GIRFT/BASS National suspected cauda equina syndrome pathway (2023)"
+},
+"bones.psa": {
+ "tests": ["معدل الترسيب والبروتين التفاعلي (ESR, CRP)", "العامل الروماتويدي ومضاد CCP لاستبعاد الروماتويد (RF, anti-CCP)"],
+ "imaging": ["أشعة سينية على اليدين والقدمين (X-ray)", "موجات فوق صوتية أو رنين (Ultrasound/MRI) عند الحاجة"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "naproxen, ibuprofen"},
+  {"cls": "الأدوية المعدّلة لسير المرض", "ex": "methotrexate, sulfasalazine, leflunomide"},
+  {"cls": "العلاجات البيولوجية والموجّهة", "ex": "adalimumab, secukinumab, apremilast"}
+ ],
+ "procedures": ["علاج طبيعي", "حقن مفصلية بالكورتيكوستيرويد عند الحاجة"],
+ "selfcare": ["الحفاظ على وزن صحي", "الإقلاع عن التدخين"],
+ "refs": ["EULAR", "ACR", "NICE"],
+ "guide": "EULAR recommendations for the management of psoriatic arthritis (2023 update)"
+},
+"bones.reactive": {
+ "tests": ["معدل الترسيب والبروتين التفاعلي (ESR, CRP)", "تحليل الكلاميديا والسيلان (NAAT) ومزرعة البراز بحسب القصة", "سحب سائل المفصل (Joint aspiration) لاستبعاد العدوى والبلورات", "HLA-B27 عند الحاجة"],
+ "imaging": ["أشعة سينية على المفاصل المصابة"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "naproxen, ibuprofen"},
+  {"cls": "مضادات حيوية للعدوى التناسلية القائمة", "ex": "doxycycline"},
+  {"cls": "الأدوية المعدّلة لسير المرض للحالات المزمنة", "ex": "sulfasalazine"}
+ ],
+ "procedures": ["حقن الكورتيكوستيرويد داخل المفصل بعد استبعاد العدوى"],
+ "selfcare": ["راحة نسبية للمفصل", "علاج الشريك عند العدوى التناسلية"],
+ "refs": ["EULAR", "NICE"],
+ "guide": "NICE CKS: Reactive arthritis (2021)"
+},
+"bones.pseudogout": {
+ "tests": ["سحب سائل المفصل وفحص البلورات والمزرعة (Synovial fluid analysis)", "الكالسيوم والمغنيسيوم ووظائف الغدة الدرقية والجار درقية (Ca, Mg, TSH, PTH) لدى الشباب أو الحالات المتكررة"],
+ "imaging": ["أشعة سينية لإظهار تكلّس الغضروف (Chondrocalcinosis)"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "naproxen, ibuprofen"},
+  {"cls": "الكولشيسين", "ex": "colchicine"},
+  {"cls": "الكورتيكوستيرويدات", "ex": "prednisolone, triamcinolone (intra-articular)"}
+ ],
+ "procedures": ["سحب سائل المفصل للتخفيف والتشخيص"],
+ "selfcare": ["ثلج وراحة للمفصل"],
+ "refs": ["EULAR", "ACR"],
+ "guide": "EULAR recommendations for calcium pyrophosphate deposition (2011); ACR/EULAR CPPD classification criteria (2023)"
+},
+"bones.osteomyelitis": {
+ "tests": ["صورة الدم ومؤشرات الالتهاب (CBC, ESR, CRP)", "مزرعة الدم (Blood cultures)", "خزعة ومزرعة من العظم (Bone biopsy and culture)"],
+ "imaging": ["أشعة سينية (X-ray)", "رنين مغناطيسي (MRI) لتأكيد التشخيص"],
+ "meds": [{"cls": "مضادات حيوية وريدية ثم فموية لفترة طويلة", "ex": "flucloxacillin, cefazolin, vancomycin, clindamycin", "note": "بحسب المزرعة"}],
+ "procedures": ["تنظيف جراحي للعظم الميت (Debridement) عند الحاجة"],
+ "selfcare": ["ضبط السكر لمرضى السكري", "العناية بالقدم والجروح"],
+ "refs": ["IDSA", "NICE"],
+ "guide": "IDSA/IWGDF Guideline on the diagnosis and treatment of diabetes-related foot infections (2023); NICE NG19 Diabetic foot problems (2019)"
+},
+"bones.sjogren": {
+ "tests": ["الأجسام المضادة Anti-Ro/SSA وAnti-La/SSB والأجسام المضادة للنواة (ANA)", "صورة الدم والغلوبولينات المناعية (CBC, Immunoglobulins)", "اختبار شيرمر لدموع العين (Schirmer test)"],
+ "imaging": ["موجات فوق صوتية على الغدد اللعابية (Ultrasound)"],
+ "meds": [
+  {"cls": "دموع صناعية وبدائل اللعاب", "ex": "carmellose, hypromellose"},
+  {"cls": "محفّزات إفراز اللعاب", "ex": "pilocarpine"},
+  {"cls": "مضادات الملاريا للأعراض الجهازية", "ex": "hydroxychloroquine"}
+ ],
+ "procedures": ["خزعة الغدد اللعابية الصغيرة عند الحاجة", "متابعة الأسنان والعيون بانتظام"],
+ "selfcare": ["شرب الماء بانتظام", "العناية الدقيقة بالأسنان", "تجنّب الجو الجاف"],
+ "refs": ["EULAR", "ACR"],
+ "guide": "EULAR recommendations for the management of Sjögren's syndrome (2019)"
+},
+"bones.scleroderma": {
+ "tests": ["الأجسام المضادة للنواة ومضاد Scl-70 ومضاد السنترومير (ANA, anti-Scl-70, anti-centromere)", "وظائف الكلى وتحليل البول (Creatinine, Urinalysis)"],
+ "imaging": ["مقطعية عالية الدقة على الصدر (HRCT)", "موجات صوتية على القلب (Echocardiography)", "منظار الشعيرات عند قاعدة الأظافر (Nailfold capillaroscopy)"],
+ "meds": [
+  {"cls": "حاصرات قنوات الكالسيوم لظاهرة رينو", "ex": "nifedipine, amlodipine"},
+  {"cls": "مثبطات المناعة", "ex": "mycophenolate mofetil, methotrexate, cyclophosphamide"},
+  {"cls": "مثبطات مضخة البروتون للمريء", "ex": "omeprazole"}
+ ],
+ "procedures": ["قياس وظائف الرئة دوريًا (PFT)", "قياس ضغط الدم بانتظام"],
+ "selfcare": ["تدفئة اليدين", "الإقلاع عن التدخين", "العناية بالجلد"],
+ "refs": ["EULAR", "ACR"],
+ "guide": "EULAR recommendations for the treatment of systemic sclerosis (2023 update)"
+},
+"bones.gca": {
+ "tests": ["معدل الترسيب والبروتين التفاعلي (ESR, CRP)", "صورة الدم (CBC)"],
+ "imaging": ["موجات فوق صوتية على الشريان الصدغي (Temporal artery ultrasound)"],
+ "meds": [
+  {"cls": "الكورتيكوستيرويدات عالية الجرعة فورًا عند الشك", "ex": "prednisolone, methylprednisolone"},
+  {"cls": "العلاجات البيولوجية الموفّرة للكورتيزون", "ex": "tocilizumab"}
+ ],
+ "procedures": ["خزعة الشريان الصدغي (Temporal artery biopsy) عند الحاجة", "فحص عاجل للعين عند الأعراض البصرية"],
+ "selfcare": ["عدم إيقاف الكورتيزون فجأة", "حماية العظام أثناء العلاج الطويل"],
+ "refs": ["EULAR", "ACR"],
+ "guide": "BSR guideline on diagnosis and treatment of giant cell arteritis (2020); EULAR recommendations for large vessel vasculitis (2018)"
+},
+"bones.raynaud": {
+ "tests": ["الأجسام المضادة للنواة (ANA)", "صورة الدم ومعدل الترسيب (CBC, ESR)"],
+ "imaging": ["منظار الشعيرات عند قاعدة الأظافر (Nailfold capillaroscopy)"],
+ "meds": [{"cls": "حاصرات قنوات الكالسيوم", "ex": "nifedipine, amlodipine"}],
+ "procedures": [],
+ "selfcare": ["تدفئة الجسم واليدين", "الإقلاع عن التدخين", "تجنّب البرد المفاجئ"],
+ "refs": ["NICE", "EULAR"],
+ "guide": "NICE CKS: Raynaud's phenomenon (2020)"
+},
+"bones.hypermobility": {
+ "tests": [],
+ "imaging": ["موجات صوتية على القلب (Echocardiography) عند الشك في متلازمة وراثية"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol"}],
+ "procedures": ["تقييم بمقياس بايتون (Beighton score)", "علاج طبيعي لتقوية العضلات والتحكم الحركي", "استشارة وراثية عند الحاجة"],
+ "selfcare": ["نشاط بدني منتظم منخفض الصدمات", "حماية المفاصل"],
+ "refs": ["NICE", "ACR"],
+ "guide": "International Consortium on Ehlers-Danlos Syndromes: Hypermobility spectrum disorders framework (2017)"
+},
+"bones.olecranon": {
+ "tests": ["سحب السائل وتحليله ومزرعته (Aspiration, Gram stain, culture) عند الشك في العدوى"],
+ "imaging": ["موجات فوق صوتية (Ultrasound) عند الحاجة"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen"},
+  {"cls": "مضادات حيوية عند العدوى", "ex": "flucloxacillin, clindamycin"}
+ ],
+ "procedures": ["ضماد ضاغط", "سحب السائل عند الحاجة"],
+ "selfcare": ["تجنّب الارتكاز على المرفق", "كمادات باردة"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Bursitis (2021)"
+},
+"bones.prepatellar": {
+ "tests": ["سحب السائل وتحليله ومزرعته عند الشك في العدوى"],
+ "imaging": ["موجات فوق صوتية (Ultrasound) عند الحاجة"],
+ "meds": [
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen"},
+  {"cls": "مضادات حيوية عند العدوى", "ex": "flucloxacillin, clindamycin"}
+ ],
+ "procedures": ["سحب السائل عند الحاجة"],
+ "selfcare": ["تجنّب الركوع", "وسادة للركبتين", "كمادات باردة"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CKS: Bursitis (2021)"
+},
+"bones.costochondritis": {
+ "tests": ["تخطيط القلب الكهربائي (ECG) لاستبعاد أسباب قلبية عند الشك", "إنزيمات القلب (Troponin) عند وجود عوامل خطر"],
+ "imaging": ["أشعة سينية على الصدر عند الحاجة"],
+ "meds": [{"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "ibuprofen, naproxen"}, {"cls": "مسكنات بسيطة", "ex": "paracetamol"}],
+ "procedures": [],
+ "selfcare": ["كمادات دافئة", "تجنّب المجهود المثير للألم"],
+ "refs": ["NICE", "ACEP"],
+ "guide": "NICE CKS: Chest pain (2023); NICE CG95 Recent-onset chest pain of suspected cardiac origin (2016)"
+},
+"bones.cubital": {
+ "tests": ["تخطيط الأعصاب والعضلات (Nerve conduction study, EMG)"],
+ "imaging": ["موجات فوق صوتية على العصب الزندي (Ultrasound)"],
+ "meds": [],
+ "procedures": ["جبيرة ليلية للمرفق", "تحرير العصب جراحيًا للحالات المستمرة أو مع ضعف"],
+ "selfcare": ["تجنّب ثني المرفق طويلًا والاتكاء عليه"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "AAOS OrthoInfo: Ulnar Nerve Entrapment at the Elbow (Cubital Tunnel Syndrome) (2020)"
+},
+"bones.hipfracture": {
+ "tests": ["صورة الدم والأملاح ووظائف الكلى وفصيلة الدم (CBC, U&E, Group and save)"],
+ "imaging": ["أشعة سينية على الحوض والورك (X-ray)", "رنين مغناطيسي أو مقطعية عند سلامة الأشعة مع استمرار الشك"],
+ "meds": [
+  {"cls": "تسكين الألم", "ex": "paracetamol, morphine", "note": "مع حقن تخدير موضعي لعصب الفخذ"},
+  {"cls": "الوقاية من الجلطات", "ex": "enoxaparin"},
+  {"cls": "أدوية هشاشة العظام بعد الكسر", "ex": "zoledronic acid, alendronic acid"}
+ ],
+ "procedures": ["جراحة التثبيت أو الاستبدال خلال 36 ساعة", "حركة مبكرة وتأهيل", "تقييم شيخوخة شامل ومخاطر السقوط"],
+ "selfcare": ["عدم محاولة الوقوف حتى التقييم"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE CG124 Hip fracture: management (2011, updated 2023)"
+},
+"bones.mallet": {
+ "tests": [],
+ "imaging": ["أشعة سينية على الإصبع (X-ray)"],
+ "meds": [],
+ "procedures": ["جبيرة مستمرة لطرف الإصبع في وضع الامتداد", "تثبيت جراحي للكسور الكبيرة"],
+ "selfcare": ["عدم نزع الجبيرة أو ثني طرف الإصبع طوال فترة العلاج"],
+ "refs": ["NICE", "AAOS"],
+ "guide": "NICE NG38 Fractures (non-complex): assessment and management (2016)"
+},
+"bones.myositis": {
+ "tests": ["إنزيم العضلات (CK)", "الأجسام المضادة الخاصة بالتهاب العضلات (Myositis-specific antibodies, ANA)", "تخطيط العضلات (EMG)", "خزعة عضلية (Muscle biopsy)"],
+ "imaging": ["رنين مغناطيسي على العضلات (MRI)", "مقطعية على الصدر لتقييم الرئة والبحث عن ورم"],
+ "meds": [
+  {"cls": "الكورتيكوستيرويدات", "ex": "prednisolone"},
+  {"cls": "مثبطات المناعة", "ex": "methotrexate, azathioprine, mycophenolate mofetil"},
+  {"cls": "الغلوبولين المناعي الوريدي", "ex": "intravenous immunoglobulin"}
+ ],
+ "procedures": ["علاج طبيعي", "تقييم البلع"],
+ "selfcare": ["حماية الجلد من الشمس في التهاب الجلد والعضلات"],
+ "refs": ["EULAR", "ACR"],
+ "guide": "EULAR/ACR classification criteria for idiopathic inflammatory myopathies (2017); BSR guideline on idiopathic inflammatory myopathy (2022)"
+},
+"bones.itband": {
+ "tests": [],
+ "imaging": ["رنين مغناطيسي (MRI) فقط عند الشك في إصابة داخل الركبة"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["علاج طبيعي لتقوية عضلات الورك وإطالة الشريط"],
+ "selfcare": ["تقليل المسافة والانحدارات", "كمادات باردة", "عودة تدريجية"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "AAOS OrthoInfo: Iliotibial Band Syndrome (2021)"
+},
+"bones.shinsplints": {
+ "tests": [],
+ "imaging": ["رنين مغناطيسي (MRI) عند الشك في كسر الإجهاد"],
+ "meds": [{"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["برنامج عودة تدريجية للجري", "تقييم الحذاء وطريقة الجري"],
+ "selfcare": ["رياضات بديلة كالسباحة", "كمادات باردة", "أحذية مناسبة"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "AAOS OrthoInfo: Shin Splints (2021)"
+},
+"bones.compartment": {
+ "tests": ["قياس ضغط الحيّز العضلي (Compartment pressure measurement)", "إنزيم العضلات ووظائف الكلى (CK, Creatinine)"],
+ "imaging": [],
+ "meds": [{"cls": "تسكين وريدي", "ex": "morphine", "note": "في المستشفى"}],
+ "procedures": ["إزالة الجبيرة أو الضماد الضاغط فورًا", "شق اللفافة جراحيًا بصورة عاجلة (Fasciotomy)"],
+ "selfcare": ["إبقاء الطرف بمستوى القلب وعدم رفعه عاليًا", "التوجه للطوارئ فورًا"],
+ "refs": ["AAOS", "NICE"],
+ "guide": "BOAST: Diagnosis and management of compartment syndrome of the limbs (2016); NICE NG37 Fractures (complex) (2016)"
+},
+"bones.bonetumor": {
+ "tests": ["صورة الدم ومؤشرات الالتهاب والفوسفاتاز القلوي والكالسيوم (CBC, ESR, ALP, Calcium)", "رحلان البروتين (Protein electrophoresis) لدى الكبار"],
+ "imaging": ["أشعة سينية على العظم المؤلم (X-ray) خلال أيام", "رنين مغناطيسي (MRI) عند الشك"],
+ "meds": [{"cls": "مسكنات", "ex": "paracetamol"}],
+ "procedures": ["إحالة عاجلة إلى مركز أورام العظام قبل أي خزعة"],
+ "selfcare": ["عدم تأجيل الفحص للألم العظمي الليلي المستمر"],
+ "refs": ["NICE", "ESMO"],
+ "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated 2023)"
+},
+"bones.sufe": {
+ "tests": [],
+ "imaging": ["أشعة سينية على الحوض من الأمام وبوضع الضفدع (AP and frog-leg lateral X-ray)"],
+ "meds": [],
+ "procedures": ["تثبيت رأس الفخذ جراحيًا بمسمار (In situ pinning)", "عدم الارتكاز على الساق حتى الجراحة"],
+ "selfcare": ["إدارة الوزن بعد العلاج"],
+ "refs": ["AAOS", "AAP"],
+ "guide": "AAOS OrthoInfo: Slipped Capital Femoral Epiphysis (2021); NICE CKS: Limp in children (2022)"
+},
+"bones.transientsynovitis": {
+ "tests": ["صورة الدم ومؤشرات الالتهاب (CBC, CRP, ESR) لاستبعاد التهاب المفصل الصديدي"],
+ "imaging": ["موجات فوق صوتية على الورك (Ultrasound)", "أشعة سينية لاستبعاد أسباب أخرى عند الحاجة"],
+ "meds": [{"cls": "مضادات الالتهاب أو المسكنات", "ex": "ibuprofen, paracetamol"}],
+ "procedures": ["سحب سائل المفصل عند الشك في العدوى", "متابعة سريرية خلال أيام"],
+ "selfcare": ["راحة نسبية"],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE CKS: Limp in children (2022)"
+},
+"andrology.paraphimosis": {
+ "tests": [],
+ "imaging": [],
+ "meds": [{"cls": "تخدير موضعي وتسكين", "ex": "lidocaine (topical/penile block)"}],
+ "procedures": ["إرجاع القلفة يدويًا بعد الضغط لتقليل التورّم", "شق ظهري للقلفة إذا فشل الإرجاع", "الختان لاحقًا لمنع التكرار"],
+ "selfcare": ["إعادة القلفة لمكانها دائمًا بعد الاغتسال أو القسطرة"],
+ "refs": ["EAU", "NICE"],
+ "guide": "EAU Guidelines on Paediatric Urology (2024); NICE CKS: Balanitis / Paraphimosis"
+},
+"andrology.acuteprostatitis": {
+ "tests": ["تحليل ومزرعة البول (Urinalysis, Urine culture)", "مزرعة الدم وصورة الدم عند الحمّى العالية (Blood cultures, CBC)", "تحليل الكلاميديا والسيلان لدى الشباب (NAAT)"],
+ "imaging": ["موجات فوق صوتية عبر المستقيم عند الشك في خراج البروستاتا", "قياس البول المتبقي بعد التبول"],
+ "meds": [
+  {"cls": "مضادات حيوية لعدة أسابيع", "ex": "ciprofloxacin, levofloxacin, trimethoprim", "note": "بحسب المزرعة"},
+  {"cls": "مسكنات", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": ["قسطرة فوق العانة عند احتباس البول"],
+ "selfcare": ["سوائل كافية", "إكمال المضاد الحيوي كاملًا"],
+ "refs": ["EAU", "NICE"],
+ "guide": "NICE NG110 Prostatitis (acute): antimicrobial prescribing (2018); EAU Guidelines on Urological Infections (2024)"
+},
+"andrology.hematospermia": {
+ "tests": ["تحليل ومزرعة البول (Urinalysis, Urine culture)", "مستضد البروستاتا النوعي بعد الأربعين (PSA)", "تحليل العدوى المنقولة جنسيًا (NAAT)"],
+ "imaging": ["موجات فوق صوتية عبر المستقيم (TRUS) عند التكرار", "رنين مغناطيسي على البروستاتا عند الحاجة"],
+ "meds": [{"cls": "مضادات حيوية عند ثبوت العدوى", "ex": "doxycycline, ciprofloxacin"}],
+ "procedures": ["فحص البروستاتا والخصيتين وقياس ضغط الدم"],
+ "selfcare": ["المتابعة؛ معظم الحالات المفردة تزول تلقائيًا"],
+ "refs": ["EAU", "AUA"],
+ "guide": "EAU Guidelines on Sexual and Reproductive Health (2024)"
+},
+"andrology.delayedejac": {
+ "tests": ["سكر الدم (HbA1c)", "هرمون الذكورة الصباحي والبرولاكتين والغدة الدرقية (Testosterone, Prolactin, TSH)"],
+ "imaging": [],
+ "meds": [{"cls": "مراجعة الأدوية المسببة", "ex": "sertraline, fluoxetine, paroxetine", "note": "لا يُوقف أي دواء دون الطبيب"}],
+ "procedures": ["علاج جنسي ونفسي للزوجين", "فحص البول بعد القذف عند الشك في القذف الراجع"],
+ "selfcare": ["التواصل الصريح مع الشريك"],
+ "refs": ["EAU", "ISSM"],
+ "guide": "EAU Guidelines on Sexual and Reproductive Health (2024); AUA Disorders of Ejaculation Guideline (2020)"
+},
+"andrology.spermatocele": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية على الصفن (Scrotal ultrasound)"],
+ "meds": [],
+ "procedures": ["استئصال جراحي للكيس الكبير المزعج"],
+ "selfcare": ["فحص ذاتي شهري للخصيتين"],
+ "refs": ["EAU", "NICE"],
+ "guide": "NICE CKS: Scrotal pain and swelling (2023)"
+},
+"andrology.undescended": {
+ "tests": ["تحاليل هرمونية وكروموسومية عند غياب الخصيتين معًا"],
+ "imaging": ["لا يُنصح بالتصوير روتينيًا؛ تنظير البطن للخصية غير المحسوسة"],
+ "meds": [],
+ "procedures": ["تثبيت الخصية جراحيًا (Orchidopexy) ويفضل قبل 18 شهرًا", "فحص الخصيتين في فحوص حديثي الولادة والرضع"],
+ "selfcare": ["الفحص الذاتي للخصيتين بعد البلوغ"],
+ "refs": ["EAU", "AUA", "AAP"],
+ "guide": "AUA Evaluation and Treatment of Cryptorchidism (2014, amended 2018); EAU Guidelines on Paediatric Urology (2024)"
+},
+"andrology.lichensclerosus": {
+ "tests": ["خزعة جلدية عند الشك في التشخيص أو عدم الاستجابة (Biopsy)"],
+ "imaging": [],
+ "meds": [{"cls": "كورتيكوستيرويدات موضعية قوية جدًا", "ex": "clobetasol propionate (topical)"}],
+ "procedures": ["الختان للحالات المستمرة أو مع تضيّق القلفة", "توسيع فتحة البول عند التضيّق", "متابعة دورية"],
+ "selfcare": ["مرطبات بدل الصابون", "تجفيف المنطقة بعد التبول"],
+ "refs": ["EAU", "NICE"],
+ "guide": "BAD guidelines for the management of lichen sclerosus (2018)"
+},
+"andrology.penilefracture": {
+ "tests": ["تحليل البول بحثًا عن الدم"],
+ "imaging": ["موجات فوق صوتية أو رنين مغناطيسي على القضيب عند الشك", "تصوير مجرى البول بالصبغة أو منظار عند وجود دم في فتحة البول"],
+ "meds": [{"cls": "مسكنات", "ex": "paracetamol, morphine", "note": "في المستشفى"}],
+ "procedures": ["إصلاح جراحي عاجل للغلاف الليفي", "إصلاح مجرى البول عند إصابته"],
+ "selfcare": ["الامتناع عن العلاقة حتى يأذن الجراح"],
+ "refs": ["EAU", "AUA"],
+ "guide": "EAU Guidelines on Urological Trauma (2024)"
+},
+"andrology.hematuria": {
+ "tests": ["تحليل ومزرعة البول (Urinalysis, Urine culture)", "وظائف الكلى (Creatinine, eGFR)", "مستضد البروستاتا النوعي بحسب العمر (PSA)"],
+ "imaging": ["مقطعية على المسالك البولية (CT urography) أو موجات فوق صوتية بحسب الخطر"],
+ "meds": [],
+ "procedures": ["منظار المثانة (Cystoscopy)", "إحالة عاجلة لطبيب المسالك"],
+ "selfcare": ["الإقلاع عن التدخين"],
+ "refs": ["NICE", "AUA", "EAU"],
+ "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated 2023); AUA/SUFU Microhematuria Guideline (2020)"
+},
+"andrology.oab": {
+ "tests": ["تحليل البول (Urinalysis)", "سكر الدم (HbA1c)", "مفكرة التبول لثلاثة أيام (Bladder diary)"],
+ "imaging": ["قياس البول المتبقي بعد التبول بالموجات فوق الصوتية (Post-void residual)"],
+ "meds": [
+  {"cls": "مضادات الموسكارين", "ex": "solifenacin, tolterodine, oxybutynin", "note": "الحذر لدى المسنين"},
+  {"cls": "ناهضات مستقبلات بيتا-3", "ex": "mirabegron, vibegron"}
+ ],
+ "procedures": ["تدريب المثانة", "تمارين قاع الحوض", "حقن البوتولينوم في المثانة للحالات المقاومة"],
+ "selfcare": ["تقليل الكافيين", "تنظيم السوائل مساءً"],
+ "refs": ["EAU", "NICE", "AUA"],
+ "guide": "NICE CG97 Lower urinary tract symptoms in men: management (2010, updated 2015); EAU Guidelines on Management of Non-neurogenic Male LUTS (2024)"
+},
+"andrology.fournier": {
+ "tests": ["صورة الدم والأملاح ووظائف الكلى والسكر واللاكتات (CBC, U&E, Glucose, Lactate)", "مزرعة الدم والأنسجة (Blood and tissue cultures)"],
+ "imaging": ["مقطعية على الحوض والعجان (CT) دون تأخير الجراحة"],
+ "meds": [{"cls": "مضادات حيوية وريدية واسعة الطيف", "ex": "piperacillin-tazobactam, meropenem, clindamycin, vancomycin"}],
+ "procedures": ["تنظيف جراحي عاجل وموسّع (Surgical debridement)", "إنعاش بالسوائل ورعاية مركزة"],
+ "selfcare": ["ضبط السكر", "التوجه فورًا للطوارئ"],
+ "refs": ["EAU", "IDSA"],
+ "guide": "IDSA Practice guidelines for skin and soft tissue infections (2014); EAU Guidelines on Urological Infections (2024)"
+},
+"andrology.lowdesire": {
+ "tests": ["هرمون الذكورة الصباحي (Total testosterone)", "البرولاكتين والغدة الدرقية (Prolactin, TSH)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "تعويض هرمون الذكورة عند ثبوت نقصه فقط", "ex": "testosterone gel"},
+  {"cls": "مراجعة الأدوية المسببة", "ex": "SSRIs, finasteride, opioids", "note": "لا يُوقف أي دواء دون الطبيب"}
+ ],
+ "procedures": ["علاج نفسي أو زوجي", "تقييم الاكتئاب والقلق"],
+ "selfcare": ["تحسين النوم والنشاط البدني", "تقليل الضغوط"],
+ "refs": ["EAU", "ISSM"],
+ "guide": "EAU Guidelines on Sexual and Reproductive Health (2024)"
+},
+"gynecology.menorrhagia": {
+ "tests": ["صورة الدم (CBC)", "مخزون الحديد (Ferritin)", "وظائف الغدة الدرقية وتحاليل التخثر بحسب القصة (TSH, Coagulation)"],
+ "imaging": ["موجات فوق صوتية على الحوض (Pelvic ultrasound)"],
+ "meds": [
+  {"cls": "اللولب الهرموني", "ex": "levonorgestrel intrauterine system"},
+  {"cls": "مضادات انحلال الفيبرين", "ex": "tranexamic acid"},
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "mefenamic acid, naproxen"},
+  {"cls": "مكملات الحديد", "ex": "ferrous sulfate, ferrous fumarate"}
+ ],
+ "procedures": ["منظار الرحم عند الحاجة (Hysteroscopy)", "كيّ بطانة الرحم أو استئصاله للحالات المستعصية"],
+ "selfcare": ["تسجيل كمية النزيف وعدد الفوط", "غذاء غني بالحديد"],
+ "refs": ["NICE", "ACOG"],
+ "guide": "NICE NG88 Heavy menstrual bleeding: assessment and management (2018, updated 2021)"
+},
+"gynecology.adenomyosis": {
+ "tests": ["صورة الدم (CBC)"],
+ "imaging": ["موجات فوق صوتية مهبلية (Transvaginal ultrasound)", "رنين مغناطيسي على الحوض (MRI)"],
+ "meds": [
+  {"cls": "اللولب الهرموني", "ex": "levonorgestrel intrauterine system"},
+  {"cls": "البروجستينات", "ex": "dienogest, norethisterone"},
+  {"cls": "مضادات الالتهاب غير الستيرويدية", "ex": "mefenamic acid, naproxen"},
+  {"cls": "مضادات انحلال الفيبرين", "ex": "tranexamic acid"}
+ ],
+ "procedures": ["استئصال الرحم لمن أتمّت الإنجاب"],
+ "selfcare": ["كمادات دافئة", "تسجيل الأعراض"],
+ "refs": ["NICE", "ACOG"],
+ "guide": "NICE NG88 Heavy menstrual bleeding: assessment and management (2018, updated 2021)"
+},
+"gynecology.ovariancyst": {
+ "tests": ["اختبار الحمل (hCG)", "دلالة الأورام CA-125 بعد انقطاع الطمث أو للأكياس المعقدة"],
+ "imaging": ["موجات فوق صوتية مهبلية (Transvaginal ultrasound) مع تصنيف O-RADS أو IOTA"],
+ "meds": [{"cls": "مسكنات", "ex": "paracetamol, ibuprofen"}],
+ "procedures": ["متابعة بالموجات الصوتية", "استئصال الكيس بالمنظار عند الحاجة"],
+ "selfcare": ["التوجه للطوارئ عند ألم مفاجئ شديد"],
+ "refs": ["RCOG", "ACOG"],
+ "guide": "RCOG Green-top Guideline No. 62: Management of suspected ovarian masses in premenopausal women (2011)"
+},
+"gynecology.cervicalscreen": {
+ "tests": ["فحص فيروس الورم الحليمي عالي الخطورة (Primary HPV test)", "مسحة عنق الرحم (Cervical cytology)"],
+ "imaging": [],
+ "meds": [{"cls": "التطعيم ضد فيروس الورم الحليمي", "ex": "HPV vaccine (9-valent, bivalent)"}],
+ "procedures": ["منظار عنق الرحم (Colposcopy) عند نتيجة غير طبيعية"],
+ "selfcare": ["الالتزام بمواعيد الفحص الدوري", "الإقلاع عن التدخين"],
+ "refs": ["WHO", "ACOG"],
+ "guide": "WHO guideline for screening and treatment of cervical pre-cancer lesions (2021)"
+},
+"gynecology.ovarianca": {
+ "tests": ["دلالة الأورام (CA-125)"],
+ "imaging": ["موجات فوق صوتية على البطن والحوض (Pelvic ultrasound)", "مقطعية على البطن والحوض عند الشك"],
+ "meds": [],
+ "procedures": ["إحالة عاجلة إلى طبيبة الأورام النسائية عند نتيجة مقلقة"],
+ "selfcare": ["تسجيل الأعراض وتكرارها", "إخبار الطبيبة بالتاريخ العائلي لسرطان المبيض أو الثدي"],
+ "refs": ["NICE", "ESMO"],
+ "guide": "NICE CG122 Ovarian cancer: recognition and initial management (2011, updated 2023)"
+},
+"gynecology.mastalgia": {
+ "tests": [],
+ "imaging": ["موجات فوق صوتية أو أشعة الثدي فقط عند وجود ألم موضعي ثابت أو كتلة"],
+ "meds": [
+  {"cls": "مضادات الالتهاب الموضعية", "ex": "diclofenac (topical)"},
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"}
+ ],
+ "procedures": ["فحص سريري للثدي"],
+ "selfcare": ["صدرية داعمة مناسبة", "تسجيل الألم مع الدورة"],
+ "refs": ["NICE", "ACOG"],
+ "guide": "NICE CKS: Breast pain - cyclical (2022)"
+},
+"gynecology.poi": {
+ "tests": ["هرمون FSH مرتين بفارق 4 إلى 6 أسابيع", "الإستراديول والبرولاكتين والغدة الدرقية واختبار الحمل (Estradiol, Prolactin, TSH, hCG)", "تحليل الكروموسومات وطفرة FMR1 (Karyotype, Fragile X)"],
+ "imaging": ["قياس كثافة العظام (DXA)"],
+ "meds": [{"cls": "العلاج الهرموني التعويضي أو حبوب منع الحمل المركّبة", "ex": "estradiol with progesterone, combined oral contraceptive"}],
+ "procedures": ["استشارة في الخصوبة", "دعم نفسي"],
+ "selfcare": ["نشاط بدني وكالسيوم وفيتامين د كافيان", "الإقلاع عن التدخين"],
+ "refs": ["ESHRE", "NICE"],
+ "guide": "ESHRE Guideline: Management of women with premature ovarian insufficiency (2024)"
+},
+"gynecology.vulvodynia": {
+ "tests": ["مسحات لاستبعاد الفطريات والعدوى (Vaginal swabs)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مخدر موضعي", "ex": "lidocaine (topical)"},
+  {"cls": "أدوية ألم الأعصاب", "ex": "amitriptyline, gabapentin"}
+ ],
+ "procedures": ["علاج طبيعي لعضلات قاع الحوض", "علاج نفسي وزوجي (CBT)"],
+ "selfcare": ["تجنّب الصابون والمعطرات", "ملابس قطنية واسعة", "مزلّق مائي"],
+ "refs": ["ACOG", "RCOG"],
+ "guide": "ACOG Committee Opinion No. 673: Persistent Vulvar Pain (2016); BASHH UK guideline on vulval conditions (2014)"
+},
+"gynecology.vulvarls": {
+ "tests": ["خزعة جلدية عند الشك أو عدم الاستجابة (Biopsy)"],
+ "imaging": [],
+ "meds": [{"cls": "كورتيكوستيرويدات موضعية قوية جدًا", "ex": "clobetasol propionate (topical)"}],
+ "procedures": ["متابعة سنوية لفحص الفرج"],
+ "selfcare": ["مرطبات بدل الصابون", "تجنّب الحك والمهيجات"],
+ "refs": ["RCOG", "NICE"],
+ "guide": "BAD guidelines for the management of lichen sclerosus (2018); RCOG Green-top Guideline No. 58: Management of vulval skin disorders (2011)"
+},
+"gynecology.pph": {
+ "tests": ["صورة الدم وتحاليل التخثر وفصيلة الدم والتوافق (CBC, Coagulation, Crossmatch)"],
+ "imaging": ["موجات فوق صوتية للبحث عن بقايا المشيمة"],
+ "meds": [
+  {"cls": "مقبّضات الرحم", "ex": "oxytocin, carbetocin, ergometrine, misoprostol, carboprost"},
+  {"cls": "مضادات انحلال الفيبرين", "ex": "tranexamic acid"}
+ ],
+ "procedures": ["تدليك الرحم", "نقل الدم", "إزالة بقايا المشيمة", "بالون داخل الرحم أو تدخل جراحي"],
+ "selfcare": ["التوجه فورًا للطوارئ"],
+ "refs": ["WHO", "RCOG"],
+ "guide": "WHO recommendations for the prevention and treatment of postpartum haemorrhage (2023); RCOG Green-top Guideline No. 52 (2016)"
+},
+"gynecology.rfm": {
+ "tests": ["تخطيط قلب الجنين (CTG)"],
+ "imaging": ["موجات فوق صوتية لتقييم نمو الجنين والسائل الأمنيوسي"],
+ "meds": [],
+ "procedures": ["تقييم في اليوم نفسه بوحدة الولادة", "قرار الولادة بحسب النتائج"],
+ "selfcare": ["عدم الاعتماد على أجهزة سماع القلب المنزلية", "التواصل فورًا عند تكرار قلة الحركة"],
+ "refs": ["RCOG", "NICE"],
+ "guide": "RCOG Green-top Guideline No. 57: Reduced fetal movements (2011); NHS Saving Babies' Lives Care Bundle v3 (2023)"
+},
+"gynecology.prom": {
+ "tests": ["فحص بالمنظار المهبلي المعقم وتحاليل السائل (Speculum exam, IGFBP-1/PAMG-1)", "مسحة للبكتيريا العقدية ب (GBS swab)", "مؤشرات العدوى (CBC, CRP)"],
+ "imaging": ["موجات فوق صوتية لكمية السائل ووضع الجنين"],
+ "meds": [
+  {"cls": "مضادات حيوية في التمزق المبكر", "ex": "erythromycin"},
+  {"cls": "كورتيكوستيرويدات لنضج رئة الجنين", "ex": "betamethasone, dexamethasone"}
+ ],
+ "procedures": ["تخطيط قلب الجنين (CTG)", "تحفيز الولادة عند اكتمال الحمل بحسب القرار"],
+ "selfcare": ["تجنّب العلاقة والسدادات المهبلية", "مراقبة الحرارة ولون السائل"],
+ "refs": ["NICE", "RCOG", "ACOG"],
+ "guide": "NICE NG25 Preterm labour and birth (2015, updated 2022); ACOG Practice Bulletin No. 217: Prelabor Rupture of Membranes (2020)"
+},
+"gynecology.pretermlabour": {
+ "tests": ["اختبار فيبرونكتين الجنين أو قياس طول عنق الرحم (Fetal fibronectin, Cervical length)", "تحليل البول ومسحات العدوى"],
+ "imaging": ["موجات فوق صوتية مهبلية لقياس طول عنق الرحم"],
+ "meds": [
+  {"cls": "كورتيكوستيرويدات لنضج رئة الجنين", "ex": "betamethasone, dexamethasone"},
+  {"cls": "مثبطات الانقباض المؤقتة", "ex": "nifedipine, atosiban"},
+  {"cls": "حماية دماغ الجنين", "ex": "magnesium sulfate"}
+ ],
+ "procedures": ["تخطيط قلب الجنين (CTG)", "النقل إلى مستشفى فيه رعاية مركزة لحديثي الولادة"],
+ "selfcare": ["التوجه فورًا لوحدة الولادة"],
+ "refs": ["NICE", "WHO"],
+ "guide": "NICE NG25 Preterm labour and birth (2015, updated 2022); WHO recommendations on interventions to improve preterm birth outcomes (2022)"
+},
+"gynecology.ec": {
+ "tests": ["اختبار الحمل إذا تأخرت الدورة (hCG)", "فحص العدوى المنقولة جنسيًا عند الحاجة"],
+ "imaging": [],
+ "meds": [{"cls": "حبوب منع الحمل الطارئة", "ex": "levonorgestrel, ulipristal acetate"}],
+ "procedures": ["تركيب اللولب النحاسي خلال 5 أيام (Copper IUD)", "مناقشة وسيلة منع حمل منتظمة"],
+ "selfcare": ["استخدام الوسيلة في أقرب وقت ممكن"],
+ "refs": ["WHO", "NICE"],
+ "guide": "FSRH Clinical Guideline: Emergency Contraception (2017, amended 2023); WHO Medical eligibility criteria for contraceptive use (2015)"
+},
+"gynecology.mittelschmerz": {
+ "tests": ["اختبار الحمل عند الشك (hCG)"],
+ "imaging": ["موجات فوق صوتية فقط عند ألم شديد أو غير نمطي"],
+ "meds": [
+  {"cls": "مسكنات بسيطة", "ex": "paracetamol, ibuprofen"},
+  {"cls": "حبوب منع الحمل المركّبة لمنع الإباضة", "ex": "ethinylestradiol with levonorgestrel"}
+ ],
+ "procedures": [],
+ "selfcare": ["كمادات دافئة", "تسجيل الألم في تقويم الدورة"],
+ "refs": ["ACOG", "NICE"],
+ "guide": "ACOG FAQ: Chronic Pelvic Pain (2022)"
+},
+"gynecology.primaryamenorrhea": {
+ "tests": ["اختبار الحمل (hCG)", "الهرمونات FSH وLH والإستراديول والبرولاكتين والغدة الدرقية (FSH, LH, Estradiol, Prolactin, TSH)", "تحليل الكروموسومات (Karyotype) عند ارتفاع FSH"],
+ "imaging": ["موجات فوق صوتية على الحوض لتقييم الرحم والمبيضين"],
+ "meds": [{"cls": "علاج هرموني بحسب السبب", "ex": "estradiol, medroxyprogesterone", "note": "بإشراف الطبيبة"}],
+ "procedures": ["تقييم مراحل البلوغ والطول والوزن", "تصحيح جراحي للانسداد عند وجوده"],
+ "selfcare": ["تغذية متوازنة وعدم الإفراط في الرياضة"],
+ "refs": ["ACOG", "ENDO"],
+ "guide": "ASRM Practice Committee: Current evaluation of amenorrhea (2008); ACOG Committee Opinion No. 651: Menstruation in Girls and Adolescents (2015)"
+},
+"gynecology.sui": {
+ "tests": ["تحليل البول (Urinalysis)", "مفكرة التبول (Bladder diary)"],
+ "imaging": ["قياس البول المتبقي بعد التبول"],
+ "meds": [{"cls": "مثبطات استرداد السيروتونين والنورأدرينالين", "ex": "duloxetine", "note": "خيار ثانوي لمن لا تناسبها الجراحة"}],
+ "procedures": ["تمارين قاع الحوض بإشراف لمدة 3 أشهر", "دراسة ديناميكية التبول قبل الجراحة", "الجراحات مثل تعليق عنق المثانة أو حقن مواد الحشو"],
+ "selfcare": ["إنقاص الوزن", "تجنّب الإمساك", "تقليل الكافيين"],
+ "refs": ["NICE", "EAU"],
+ "guide": "NICE NG123 Urinary incontinence and pelvic organ prolapse in women: management (2019)"
+},
+"gynecology.aph": {
+ "tests": ["صورة الدم وتحاليل التخثر وفصيلة الدم والتوافق (CBC, Coagulation, Crossmatch)", "اختبار Kleihauer لدى سالبات العامل الريزيسي"],
+ "imaging": ["موجات فوق صوتية لتحديد موضع المشيمة وحالة الجنين"],
+ "meds": [
+  {"cls": "الغلوبولين المناعي المضاد للعامل الريزيسي لسالبات الريزيسي", "ex": "anti-D immunoglobulin"},
+  {"cls": "كورتيكوستيرويدات لنضج رئة الجنين قبل الأسبوع 35", "ex": "betamethasone, dexamethasone"}
+ ],
+ "procedures": ["تخطيط قلب الجنين (CTG)", "ولادة عاجلة عند الحاجة", "عدم إجراء فحص مهبلي قبل تحديد موضع المشيمة"],
+ "selfcare": ["التوجه فورًا لوحدة الولادة"],
+ "refs": ["RCOG", "NICE"],
+ "guide": "RCOG Green-top Guideline No. 63: Antepartum Haemorrhage (2011)"
+},
+"sexual.mgen": {
+ "tests": ["تحليل المفطورة التناسلية بتضخيم الحمض النووي مع فحص مقاومة الماكروليدات (NAAT with resistance testing)", "فحص الكلاميديا والسيلان والزهري وفيروس نقص المناعة"],
+ "imaging": [],
+ "meds": [{"cls": "مضادات حيوية بحسب المقاومة", "ex": "doxycycline followed by azithromycin or moxifloxacin"}],
+ "procedures": ["اختبار الشفاء بعد العلاج", "إبلاغ الشريك وعلاجه"],
+ "selfcare": ["الامتناع عن العلاقة حتى التأكد من الشفاء", "استخدام الواقي"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021); BASHH UK national guideline for Mycoplasma genitalium (2018)"
+},
+"sexual.lgv": {
+ "tests": ["تحليل الكلاميديا مع تحديد سلالة LGV (NAAT with genotyping)", "فحص الزهري وفيروس نقص المناعة والتهاب الكبد"],
+ "imaging": [],
+ "meds": [{"cls": "مضادات حيوية لمدة 3 أسابيع", "ex": "doxycycline"}],
+ "procedures": ["سحب الصديد من الغدد المتقيحة", "إبلاغ الشركاء خلال الشهرين السابقين وعلاجهم"],
+ "selfcare": ["الامتناع عن العلاقة حتى الشفاء", "استخدام الواقي"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021); IUSTI European guideline on LGV (2019)"
+},
+"sexual.chancroid": {
+ "tests": ["فحص الزهري (Treponemal and non-treponemal tests)", "تحليل الهربس من القرحة (HSV PCR)", "فحص فيروس نقص المناعة (HIV test)"],
+ "imaging": [],
+ "meds": [{"cls": "مضادات حيوية", "ex": "azithromycin, ceftriaxone, ciprofloxacin"}],
+ "procedures": ["سحب صديد الغدد المتقيحة", "علاج الشركاء"],
+ "selfcare": ["الامتناع عن العلاقة حتى الشفاء", "استخدام الواقي"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021)"
+},
+"sexual.pubiclice": {
+ "tests": ["فحص العدوى المنقولة جنسيًا الأخرى"],
+ "imaging": [],
+ "meds": [{"cls": "مستحضرات موضعية قاتلة للقمل", "ex": "permethrin (topical), malathion (topical)"}],
+ "procedures": ["تكرار العلاج بعد 7 إلى 10 أيام", "علاج الشريك"],
+ "selfcare": ["غسل الملابس والأغطية بماء ساخن", "تجنّب الاتصال القريب حتى الشفاء"],
+ "refs": ["CDC", "NICE"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021)"
+},
+"sexual.molluscum": {
+ "tests": ["فحص العدوى المنقولة جنسيًا الأخرى بما فيها فيروس نقص المناعة"],
+ "imaging": [],
+ "meds": [{"cls": "علاجات موضعية", "ex": "podophyllotoxin (topical), imiquimod (topical)", "note": "بحسب تقييم الطبيب"}],
+ "procedures": ["التجميد بالنيتروجين السائل (Cryotherapy)", "الكشط عند الحاجة"],
+ "selfcare": ["تجنّب الحك والحلاقة في المنطقة"],
+ "refs": ["CDC", "NICE"],
+ "guide": "BASHH UK national guideline on the management of molluscum contagiosum (2014); NICE CKS: Molluscum contagiosum (2023)"
+},
+"sexual.ngu": {
+ "tests": ["تحليل البول الأول وفحص الكلاميديا والسيلان والمفطورة (First-void urine NAAT)", "صبغة جرام لمسحة الإحليل (Urethral Gram stain)"],
+ "imaging": [],
+ "meds": [{"cls": "مضادات حيوية", "ex": "doxycycline, azithromycin"}],
+ "procedures": ["إبلاغ الشريك وعلاجه"],
+ "selfcare": ["الامتناع عن العلاقة حتى انتهاء العلاج وزوال الأعراض", "استخدام الواقي"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021); BASHH UK national guideline on non-gonococcal urethritis (2023)"
+},
+"sexual.screen": {
+ "tests": ["الكلاميديا والسيلان من البول أو المسحة (NAAT)", "الزهري (Syphilis serology)", "فيروس نقص المناعة (HIV Ag/Ab test)", "التهاب الكبد B وC (HBsAg, anti-HCV)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "اللقاحات الوقائية", "ex": "hepatitis B vaccine, HPV vaccine"},
+  {"cls": "الوقاية قبل التعرّض لمن هم في خطر مرتفع", "ex": "tenofovir disoproxil with emtricitabine"}
+ ],
+ "procedures": ["إعادة الفحص بعد فترة النافذة", "تقييم الحاجة للوقاية بعد التعرّض خلال 72 ساعة"],
+ "selfcare": ["استخدام الواقي", "التواصل مع الشركاء"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021)"
+},
+"sexual.cervicitis": {
+ "tests": ["تحليل الكلاميديا والسيلان والمفطورة والمشعّرات (NAAT)", "اختبار الحمل (hCG)"],
+ "imaging": [],
+ "meds": [{"cls": "مضادات حيوية", "ex": "doxycycline, azithromycin, ceftriaxone", "note": "بحسب السبب"}],
+ "procedures": ["فحص بالمنظار المهبلي", "علاج الشريك", "فحص عنق الرحم الدوري"],
+ "selfcare": ["الامتناع عن العلاقة حتى الشفاء", "استخدام الواقي"],
+ "refs": ["CDC", "WHO"],
+ "guide": "CDC Sexually Transmitted Infections Treatment Guidelines (2021)"
+}
+}

@@ -1,0 +1,2501 @@
+{
+"internal.cholecystitis": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "مؤشرات الالتهاب (CRP)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "إنزيم الليباز (Lipase)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "أشعة مقطعية عند الشك في المضاعفات (CT)"
+ ],
+ "meds": [
+  {
+   "cls": "مسكنات بسيطة",
+   "ex": "paracetamol",
+   "note": "الحذر وعدم تجاوز الحد الآمن لدى مرضى الكبد"
+  },
+  {
+   "cls": "مضادات الالتهاب غير الستيرويدية لتسكين الألم المراري",
+   "ex": "diclofenac, ibuprofen"
+  },
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "ceftriaxone + metronidazole, piperacillin-tazobactam",
+   "note": "بإشراف طبي فقط"
+  }
+ ],
+ "procedures": [
+  "استئصال المرارة بالمنظار (Laparoscopic cholecystectomy) خلال أيام من التشخيص غالبًا",
+  "تصريف المرارة عبر الجلد (Percutaneous cholecystostomy) لغير المؤهلين للجراحة"
+ ],
+ "selfcare": [
+  "الصيام المؤقت حسب تعليمات المستشفى",
+  "وجبات قليلة الدهون حتى موعد الجراحة"
+ ],
+ "refs": [
+  "NICE",
+  "IDSA"
+ ],
+ "guide": "Tokyo Guidelines 2018 (TG18) for acute cholecystitis; NICE CG188 Gallstone disease (2014)"
+},
+"internal.choledocholithiasis": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "صورة دم كاملة (CBC)",
+  "إنزيم الليباز (Lipase)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "تصوير القنوات بالرنين المغناطيسي (MRCP)",
+  "أشعة صوتية بالمنظار (EUS)"
+ ],
+ "meds": [
+  {
+   "cls": "مسكنات بسيطة",
+   "ex": "paracetamol",
+   "note": "الحذر وعدم تجاوز الحد الآمن لدى مرضى الكبد"
+  }
+ ],
+ "procedures": [
+  "استخراج الحصوة بمنظار القنوات الصفراوية (ERCP)",
+  "استئصال المرارة بالمنظار بعد إزالة الحصوة"
+ ],
+ "selfcare": [
+  "وجبات قليلة الدهون حتى العلاج",
+  "مراقبة لون البول والبراز وظهور الحمّى"
+ ],
+ "refs": [
+  "NICE",
+  "ACG"
+ ],
+ "guide": "ASGE Guideline on the role of endoscopy in the evaluation and management of choledocholithiasis (2019)"
+},
+"internal.cholangitis": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "مؤشرات الالتهاب (CRP)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "مزرعة دم (Blood cultures)",
+  "وظائف الكلى وحمض اللاكتيك (Creatinine, Lactate)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "تصوير القنوات بالرنين المغناطيسي (MRCP) أو مقطعية (CT)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "piperacillin-tazobactam, ceftriaxone + metronidazole, meropenem",
+   "note": "بإشراف طبي فقط"
+  },
+  {
+   "cls": "سوائل وريدية",
+   "ex": "sodium chloride, Ringer's lactate",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "تصريف القناة الصفراوية بالمنظار (ERCP) بشكل عاجل",
+  "تصريف عبر الجلد (PTBD) عند تعذّر المنظار"
+ ],
+ "selfcare": [],
+ "refs": [
+  "IDSA",
+  "NICE"
+ ],
+ "guide": "Tokyo Guidelines 2018 (TG18) for acute cholangitis"
+},
+"internal.gbpolyp": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound) دورية للمتابعة",
+  "أشعة صوتية بالمنظار (EUS) في حالات مختارة"
+ ],
+ "meds": [],
+ "procedures": [
+  "استئصال المرارة بالمنظار للزوائد 10 مم فأكثر أو سريعة النمو أو المصحوبة بأعراض"
+ ],
+ "selfcare": [
+  "الالتزام بمواعيد الأشعة الدورية"
+ ],
+ "refs": [
+  "ACR"
+ ],
+ "guide": "European joint guidelines (ESGAR, EAES, EFISDS, ESGE) on gallbladder polyps (2022)"
+},
+"internal.gallstoneileus": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "أملاح الدم ووظائف الكلى (Electrolytes, Creatinine)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن بالصبغة (CT abdomen with contrast)",
+  "أشعة سينية على البطن (Abdominal X-ray)"
+ ],
+ "meds": [
+  {
+   "cls": "سوائل وريدية وتصحيح الأملاح",
+   "ex": "sodium chloride, potassium chloride",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "إزالة الحصوة جراحيًا بفتح الأمعاء (Enterolithotomy)",
+  "أنبوب أنفي معدي لتفريغ المعدة (NG tube)"
+ ],
+ "selfcare": [],
+ "refs": [
+  "NICE",
+  "ACEP"
+ ],
+ "guide": "NICE CG188 Gallstone disease: diagnosis and management (2014)"
+},
+"internal.postcholecystectomy": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "إنزيم الليباز (Lipase)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "تصوير القنوات بالرنين المغناطيسي (MRCP)"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  },
+  {
+   "cls": "مضادات التقلّص",
+   "ex": "hyoscine butylbromide, mebeverine"
+  },
+  {
+   "cls": "رابطات الأحماض الصفراوية عند الإسهال",
+   "ex": "colestyramine"
+  }
+ ],
+ "procedures": [
+  "منظار القنوات (ERCP) فقط عند ثبوت حصوة متبقية أو تضيّق"
+ ],
+ "selfcare": [
+  "وجبات صغيرة قليلة الدهون"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "Rome IV: Functional gallbladder and sphincter of Oddi disorders (2016)"
+},
+"internal.chronicpancreatitis": {
+ "tests": [
+  "إيلاستاز البراز (Faecal elastase)",
+  "سكر الدم التراكمي (HbA1c)",
+  "فيتامينات أ ود وهـ وك (Fat-soluble vitamins)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن بالصبغة (CT abdomen with contrast)",
+  "تصوير البنكرياس بالرنين (MRCP) أو بالمنظار (EUS)"
+ ],
+ "meds": [
+  {
+   "cls": "إنزيمات البنكرياس مع الوجبات",
+   "ex": "pancrelipase (pancreatin)"
+  },
+  {
+   "cls": "مسكنات بسيطة",
+   "ex": "paracetamol",
+   "note": "الحذر وعدم تجاوز الحد الآمن لدى مرضى الكبد"
+  },
+  {
+   "cls": "مسكنات أقوى بإشراف طبي عند الألم الشديد",
+   "ex": "tramadol",
+   "note": "لأقصر مدة ممكنة"
+  },
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  }
+ ],
+ "procedures": [
+  "علاج بالمنظار للحصوات أو التضيّقات في قناة البنكرياس",
+  "جراحة في حالات مختارة"
+ ],
+ "selfcare": [
+  "الامتناع التام عن الكحول والتدخين",
+  "وجبات صغيرة متوازنة"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline: Chronic Pancreatitis (2020); NICE NG104 Pancreatitis (2018)"
+},
+"internal.pseudocyst": {
+ "tests": [
+  "إنزيم الليباز (Lipase)",
+  "صورة دم كاملة (CBC)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن بالصبغة (CT abdomen with contrast)",
+  "أشعة صوتية بالمنظار (EUS)"
+ ],
+ "meds": [
+  {
+   "cls": "مسكنات بسيطة",
+   "ex": "paracetamol",
+   "note": "الحذر وعدم تجاوز الحد الآمن لدى مرضى الكبد"
+  }
+ ],
+ "procedures": [
+  "تصريف الكيس بالمنظار عبر المعدة (EUS-guided drainage) عند الأعراض أو المضاعفات",
+  "متابعة بالأشعة للأكياس الصغيرة غير المسببة للأعراض"
+ ],
+ "selfcare": [
+  "الامتناع عن الكحول"
+ ],
+ "refs": [
+  "NICE",
+  "ACG"
+ ],
+ "guide": "NICE NG104 Pancreatitis (2018)"
+},
+"internal.pei": {
+ "tests": [
+  "إيلاستاز البراز (Faecal elastase)",
+  "فيتامينات أ ود وهـ وك (Fat-soluble vitamins)",
+  "سكر الدم التراكمي (HbA1c)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن بالصبغة (CT abdomen with contrast)"
+ ],
+ "meds": [
+  {
+   "cls": "إنزيمات البنكرياس مع كل وجبة",
+   "ex": "pancrelipase (pancreatin)"
+  },
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  },
+  {
+   "cls": "مكملات الفيتامينات الذائبة في الدهون",
+   "ex": "colecalciferol, retinol, tocopherol, phytomenadione"
+  }
+ ],
+ "procedures": [
+  "تقييم لدى أخصائي تغذية"
+ ],
+ "selfcare": [
+  "عدم التقييد الشديد للدهون",
+  "تناول الإنزيمات مع أول لقمة"
+ ],
+ "refs": [
+  "NICE",
+  "ACG"
+ ],
+ "guide": "NICE NG104 Pancreatitis (2018)"
+},
+"internal.pancreaticca": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "دلالة الأورام (CA 19-9)",
+  "سكر الدم التراكمي (HbA1c)"
+ ],
+ "imaging": [
+  "أشعة مقطعية بروتوكول البنكرياس (Pancreatic protocol CT)",
+  "أشعة صوتية بالمنظار مع خزعة (EUS-FNA)"
+ ],
+ "meds": [
+  {
+   "cls": "علاج كيميائي وفق خطة فريق الأورام",
+   "ex": "gemcitabine, oxaliplatin, irinotecan, fluorouracil",
+   "note": "بإشراف أخصائي الأورام فقط"
+  }
+ ],
+ "procedures": [
+  "إحالة عاجلة لفريق أورام متعدد التخصصات",
+  "تركيب دعامة في القناة الصفراوية عند الانسداد"
+ ],
+ "selfcare": [],
+ "refs": [
+  "NICE",
+  "ESMO",
+  "NCCN"
+ ],
+ "guide": "NICE NG85 Pancreatic cancer in adults: diagnosis and management (2018)"
+},
+"internal.ald": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "صورة دم كاملة (CBC)",
+  "زمن التخثر (INR)",
+  "تقييم التليّف (FIB-4 / Elastography)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "قياس صلابة الكبد (Transient elastography)"
+ ],
+ "meds": [
+  {
+   "cls": "أدوية مساعدة على الإقلاع عن الكحول بإشراف طبي",
+   "ex": "acamprosate, naltrexone, baclofen"
+  },
+  {
+   "cls": "فيتامين ب1 لمدمني الكحول",
+   "ex": "thiamine"
+  }
+ ],
+ "procedures": [
+  "برامج علاج إدمان الكحول والدعم النفسي"
+ ],
+ "selfcare": [
+  "الامتناع التام عن الكحول",
+  "تغذية غنية بالبروتين"
+ ],
+ "refs": [
+  "EASL",
+  "AASLD",
+  "NICE"
+ ],
+ "guide": "EASL Clinical Practice Guidelines: Management of alcohol-related liver disease (2018)"
+},
+"internal.alcoholichepatitis": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "زمن التخثر (INR)",
+  "صورة دم كاملة (CBC)",
+  "وظائف الكلى (Creatinine)",
+  "حساب مؤشر الشدة (Maddrey / MELD)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)"
+ ],
+ "meds": [
+  {
+   "cls": "الكورتيزون في الحالات الشديدة المختارة",
+   "ex": "prednisolone",
+   "note": "بقرار طبي بعد استبعاد العدوى"
+  },
+  {
+   "cls": "فيتامين ب1",
+   "ex": "thiamine"
+  }
+ ],
+ "procedures": [
+  "دعم غذائي مكثف في المستشفى",
+  "إحالة لبرنامج علاج الإدمان"
+ ],
+ "selfcare": [
+  "الامتناع التام عن الكحول"
+ ],
+ "refs": [
+  "ACG",
+  "EASL",
+  "AASLD"
+ ],
+ "guide": "ACG Clinical Guideline: Alcohol-Associated Liver Disease (2024)"
+},
+"internal.ascites": {
+ "tests": [
+  "تحليل سائل الاستسقاء (SAAG, cell count, albumin)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "أملاح الدم ووظائف الكلى (Electrolytes, Creatinine)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)"
+ ],
+ "meds": [
+  {
+   "cls": "مدرات البول",
+   "ex": "spironolactone, furosemide",
+   "note": "بإشراف طبي ومتابعة الأملاح"
+  }
+ ],
+ "procedures": [
+  "بزل البطن التشخيصي والعلاجي (Paracentesis) مع ألبومين للكميات الكبيرة",
+  "وصلة بابية جهازية (TIPS) في الحالات المقاومة"
+ ],
+ "selfcare": [
+  "تقليل الملح",
+  "تجنّب مضادات الالتهاب غير الستيرويدية",
+  "وزن يومي"
+ ],
+ "refs": [
+  "EASL",
+  "AASLD"
+ ],
+ "guide": "EASL Clinical Practice Guidelines for the management of patients with decompensated cirrhosis (2018)"
+},
+"internal.sbp": {
+ "tests": [
+  "تحليل سائل الاستسقاء: عدد الخلايا المتعادلة ومزرعة (Ascitic PMN count, culture)",
+  "مزرعة دم (Blood cultures)",
+  "وظائف الكلى (Creatinine)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "cefotaxime, ceftriaxone",
+   "note": "بإشراف طبي فقط"
+  },
+  {
+   "cls": "ألبومين وريدي لحماية الكلى",
+   "ex": "human albumin",
+   "note": "بإشراف طبي"
+  },
+  {
+   "cls": "وقاية بعد الشفاء",
+   "ex": "ciprofloxacin, co-trimoxazole",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "بزل البطن التشخيصي (Diagnostic paracentesis)"
+ ],
+ "selfcare": [],
+ "refs": [
+  "AASLD",
+  "EASL"
+ ],
+ "guide": "AASLD Practice Guidance: Diagnosis, evaluation and management of ascites, SBP and hepatorenal syndrome (2021)"
+},
+"internal.hepencephalopathy": {
+ "tests": [
+  "الأمونيا في الدم (Ammonia)",
+  "أملاح الدم وسكر الدم (Electrolytes, Glucose)",
+  "صورة دم كاملة (CBC)",
+  "بحث عن العدوى (cultures, urinalysis)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على الدماغ لاستبعاد أسباب أخرى (CT head) عند الحاجة"
+ ],
+ "meds": [
+  {
+   "cls": "ملينات تقلل امتصاص الأمونيا",
+   "ex": "lactulose"
+  },
+  {
+   "cls": "مضاد حيوي معوي للوقاية من التكرار",
+   "ex": "rifaximin"
+  }
+ ],
+ "procedures": [
+  "علاج المحفّز (عدوى، نزيف، إمساك، جفاف)",
+  "تقييم الأهلية لزراعة الكبد"
+ ],
+ "selfcare": [
+  "تجنّب المهدئات والمنومات",
+  "تغذية كافية بالبروتين دون تقييد"
+ ],
+ "refs": [
+  "AASLD",
+  "EASL"
+ ],
+ "guide": "AASLD/EASL Practice Guideline: Hepatic encephalopathy in chronic liver disease (2014)"
+},
+"internal.varicealbleed": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "زمن التخثر (INR)",
+  "فصيلة الدم والتوافق (Group and crossmatch)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "أدوية خافضة لضغط الوريد البابي",
+   "ex": "terlipressin, octreotide",
+   "note": "في المستشفى"
+  },
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "ceftriaxone",
+   "note": "بإشراف طبي فقط"
+  },
+  {
+   "cls": "حاصرات بيتا غير الانتقائية للوقاية",
+   "ex": "propranolol, carvedilol",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "منظار علوي عاجل مع ربط الدوالي (Band ligation)",
+  "وصلة بابية جهازية (TIPS) في الحالات المختارة",
+  "نقل الدم عند الحاجة"
+ ],
+ "selfcare": [],
+ "refs": [
+  "EASL",
+  "AASLD",
+  "NICE"
+ ],
+ "guide": "Baveno VII – Renewing consensus in portal hypertension (2022)"
+},
+"internal.hepa": {
+ "tests": [
+  "الأجسام المضادة لالتهاب الكبد A من نوع IgM (Anti-HAV IgM)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "زمن التخثر (INR)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound) عند الحاجة"
+ ],
+ "meds": [
+  {
+   "cls": "لقاح التهاب الكبد A للمخالطين",
+   "ex": "hepatitis A vaccine",
+   "note": "حسب توصيات الصحة العامة"
+  }
+ ],
+ "procedures": [
+  "إبلاغ الصحة العامة حسب الأنظمة المحلية"
+ ],
+ "selfcare": [
+  "الراحة والسوائل",
+  "تجنّب الكحول والأدوية غير الضرورية",
+  "غسل اليدين جيدًا"
+ ],
+ "refs": [
+  "WHO",
+  "CDC",
+  "NICE"
+ ],
+ "guide": "WHO Position Paper on hepatitis A vaccines (2022)"
+},
+"internal.hepb": {
+ "tests": [
+  "HBsAg, HBeAg, Anti-HBe",
+  "الحمل الفيروسي (HBV DNA)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "الأجسام المضادة لالتهاب الكبد C وD وفيروس نقص المناعة (Anti-HCV, Anti-HDV, HIV)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "قياس صلابة الكبد (Transient elastography)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات فيروس التهاب الكبد B",
+   "ex": "entecavir, tenofovir disoproxil, tenofovir alafenamide",
+   "note": "بقرار طبيب الكبد"
+  }
+ ],
+ "procedures": [
+  "أشعة صوتية دورية للكشف المبكر عن سرطان الكبد لدى الفئات المعرضة",
+  "تطعيم المخالطين"
+ ],
+ "selfcare": [
+  "تجنّب الكحول",
+  "عدم مشاركة الأدوات الحادة"
+ ],
+ "refs": [
+  "WHO",
+  "AASLD",
+  "EASL"
+ ],
+ "guide": "WHO Guidelines for the prevention, diagnosis, care and treatment of people with chronic hepatitis B infection (2024)"
+},
+"internal.hepc": {
+ "tests": [
+  "الحمل الفيروسي (HCV RNA)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "تقييم التليّف (FIB-4)",
+  "فحص فيروس B وفيروس نقص المناعة (HBsAg, HIV)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "قياس صلابة الكبد (Transient elastography)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات فيروسات مباشرة التأثير",
+   "ex": "sofosbuvir/velpatasvir, glecaprevir/pibrentasvir",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "تحليل الحمل الفيروسي بعد انتهاء العلاج لتأكيد الشفاء"
+ ],
+ "selfcare": [
+  "تجنّب الكحول",
+  "عدم مشاركة الأدوات الحادة"
+ ],
+ "refs": [
+  "AASLD",
+  "IDSA",
+  "WHO"
+ ],
+ "guide": "AASLD-IDSA HCV Guidance: Recommendations for testing, managing and treating hepatitis C (2023)"
+},
+"internal.hepe": {
+ "tests": [
+  "الأجسام المضادة لالتهاب الكبد E من نوع IgM أو PCR (Anti-HEV IgM / HEV RNA)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "زمن التخثر (INR)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound) عند الحاجة"
+ ],
+ "meds": [
+  {
+   "cls": "مضاد فيروسات في العدوى المزمنة لدى ضعيفي المناعة",
+   "ex": "ribavirin",
+   "note": "بقرار أخصائي فقط"
+  }
+ ],
+ "procedures": [
+  "متابعة لصيقة للحوامل ومرضى الكبد المزمن"
+ ],
+ "selfcare": [
+  "شرب مياه آمنة",
+  "تجنّب الكحول",
+  "طهو اللحوم جيدًا"
+ ],
+ "refs": [
+  "EASL",
+  "WHO"
+ ],
+ "guide": "EASL Clinical Practice Guidelines on hepatitis E virus infection (2018)"
+},
+"internal.aih": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "الأجسام المضادة الذاتية (ANA, ASMA, anti-LKM1)",
+  "الغلوبيولين المناعي G (IgG)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)"
+ ],
+ "meds": [
+  {
+   "cls": "الكورتيزون",
+   "ex": "prednisolone, budesonide",
+   "note": "بقرار طبي"
+  },
+  {
+   "cls": "مثبطات المناعة",
+   "ex": "azathioprine, mycophenolate mofetil",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "خزعة الكبد (Liver biopsy) لتأكيد التشخيص"
+ ],
+ "selfcare": [
+  "الالتزام بالعلاج وعدم إيقافه فجأة",
+  "الوقاية من هشاشة العظام"
+ ],
+ "refs": [
+  "AASLD",
+  "EASL"
+ ],
+ "guide": "AASLD Practice Guidance and Guidelines: Autoimmune hepatitis (2019)"
+},
+"internal.pbc": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "الأجسام المضادة للميتوكوندريا (AMA)",
+  "الدهون في الدم (Lipid profile)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "قياس صلابة الكبد (Transient elastography)",
+  "قياس كثافة العظام (DXA)"
+ ],
+ "meds": [
+  {
+   "cls": "أحماض صفراوية علاجية",
+   "ex": "ursodeoxycholic acid"
+  },
+  {
+   "cls": "علاج من الخط الثاني",
+   "ex": "obeticholic acid, bezafibrate, elafibranor, seladelpar",
+   "note": "بقرار طبيب الكبد"
+  },
+  {
+   "cls": "علاج الحكة",
+   "ex": "colestyramine, rifampicin"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "الوقاية من هشاشة العظام بالكالسيوم وفيتامين د والرياضة"
+ ],
+ "refs": [
+  "EASL",
+  "AASLD"
+ ],
+ "guide": "EASL Clinical Practice Guidelines: The diagnosis and management of patients with primary biliary cholangitis (2017)"
+},
+"internal.psc": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "دلالة الأورام (CA 19-9) عند الشك"
+ ],
+ "imaging": [
+  "تصوير القنوات بالرنين المغناطيسي (MRCP)",
+  "منظار قولون دوري (Colonoscopy surveillance)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات حيوية عند نوبات التهاب القنوات",
+   "ex": "ciprofloxacin, amoxicillin-clavulanate",
+   "note": "بقرار طبي"
+  },
+  {
+   "cls": "علاج الحكة",
+   "ex": "colestyramine"
+  }
+ ],
+ "procedures": [
+  "توسيع التضيّقات المهمة بالمنظار (ERCP balloon dilatation)",
+  "تقييم زراعة الكبد في المراحل المتقدمة"
+ ],
+ "selfcare": [],
+ "refs": [
+  "EASL",
+  "ACG"
+ ],
+ "guide": "EASL Clinical Practice Guidelines on sclerosing cholangitis (2022)"
+},
+"internal.hemochromatosis": {
+ "tests": [
+  "تشبّع الترانسفيرين والفيريتين (Transferrin saturation, Ferritin)",
+  "التحليل الجيني لطفرة HFE (C282Y)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)"
+ ],
+ "imaging": [
+  "قياس صلابة الكبد أو رنين لتقدير الحديد (MRI liver iron)"
+ ],
+ "meds": [
+  {
+   "cls": "مزيلات الحديد عند تعذّر الفصد",
+   "ex": "deferasirox, desferrioxamine",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "الفصد الدوري (Venesection) حتى يصل الفيريتين للمستوى المطلوب ثم للمحافظة",
+  "فحص الأقارب من الدرجة الأولى"
+ ],
+ "selfcare": [
+  "تجنّب مكملات الحديد وفيتامين ج",
+  "تقليل الكحول",
+  "تجنّب المحار النيء"
+ ],
+ "refs": [
+  "EASL",
+  "ACG"
+ ],
+ "guide": "EASL Clinical Practice Guidelines on haemochromatosis (2022)"
+},
+"internal.wilson": {
+ "tests": [
+  "السيرولوبلازمين في الدم (Ceruloplasmin)",
+  "النحاس في بول 24 ساعة (24h urinary copper)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "التحليل الجيني (ATP7B)"
+ ],
+ "imaging": [
+  "فحص العين بالمصباح الشقي لحلقة كايزر-فلايشر",
+  "رنين على الدماغ (MRI brain) عند الأعراض العصبية"
+ ],
+ "meds": [
+  {
+   "cls": "طاردات النحاس",
+   "ex": "penicillamine, trientine",
+   "note": "بإشراف طبي"
+  },
+  {
+   "cls": "أملاح الزنك لمنع الامتصاص",
+   "ex": "zinc acetate"
+  }
+ ],
+ "procedures": [
+  "فحص الإخوة",
+  "تقييم زراعة الكبد في الفشل الكبدي الحاد"
+ ],
+ "selfcare": [
+  "تقليل الأطعمة الغنية بالنحاس (الكبدة والمحار والمكسرات والشوكولاتة)"
+ ],
+ "refs": [
+  "AASLD",
+  "EASL"
+ ],
+ "guide": "AASLD Practice Guidance: Wilson disease (2022)"
+},
+"internal.liverabscess": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "مؤشرات الالتهاب (CRP)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "مزرعة دم (Blood cultures)",
+  "الأجسام المضادة للأميبا (Entamoeba serology)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)",
+  "أشعة مقطعية على البطن بالصبغة (CT abdomen with contrast)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "ceftriaxone + metronidazole, piperacillin-tazobactam",
+   "note": "بإشراف طبي فقط"
+  },
+  {
+   "cls": "مضاد الأميبا عند الخراج الأميبي",
+   "ex": "metronidazole ثم paromomycin",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "تصريف الخراج بإبرة أو أنبوب موجه بالأشعة (Percutaneous drainage)"
+ ],
+ "selfcare": [],
+ "refs": [
+  "IDSA",
+  "ACG"
+ ],
+ "guide": "ACG Clinical Guideline: Focal Liver Lesions (2024)"
+},
+"internal.hydatid": {
+ "tests": [
+  "الأجسام المضادة للمشوّكة (Echinococcus serology)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound) لتصنيف الكيس (WHO-IWGE)",
+  "أشعة مقطعية على البطن أو الصدر (CT)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات الطفيليات",
+   "ex": "albendazole",
+   "note": "بقرار طبي وبمتابعة التحاليل"
+  }
+ ],
+ "procedures": [
+  "تصريف عبر الجلد بطريقة PAIR في المراحل المناسبة",
+  "استئصال جراحي للأكياس المعقدة",
+  "المتابعة بالأشعة للأكياس غير النشطة"
+ ],
+ "selfcare": [
+  "علاج الكلاب من الديدان وغسل اليدين بعد مخالطتها",
+  "غسل الخضار جيدًا"
+ ],
+ "refs": [
+  "WHO"
+ ],
+ "guide": "WHO-IWGE Expert consensus for the diagnosis and treatment of cystic and alveolar echinococcosis (2010)"
+},
+"internal.liverhemangioma": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)"
+ ],
+ "imaging": [
+  "رنين مغناطيسي على الكبد بالصبغة (MRI liver)",
+  "أشعة صوتية بالصبغة (CEUS) أو مقطعية متعددة المراحل"
+ ],
+ "meds": [],
+ "procedures": [
+  "لا يلزم علاج غالبًا",
+  "استئصال جراحي أو انصمام للأورام الكبيرة المسببة للأعراض"
+ ],
+ "selfcare": [
+  "الطمأنة بأنه حميد"
+ ],
+ "refs": [
+  "EASL",
+  "ACG"
+ ],
+ "guide": "EASL Clinical Practice Guidelines on the management of benign liver tumours (2016)"
+},
+"internal.hcc": {
+ "tests": [
+  "ألفا فيتو بروتين (AFP)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "زمن التخثر (INR)"
+ ],
+ "imaging": [
+  "أشعة مقطعية أو رنين متعدد المراحل على الكبد (Multiphase CT / MRI)"
+ ],
+ "meds": [
+  {
+   "cls": "علاج دوائي جهازي وفق فريق الأورام",
+   "ex": "atezolizumab + bevacizumab, durvalumab, lenvatinib, sorafenib",
+   "note": "بإشراف أخصائي الأورام فقط"
+  }
+ ],
+ "procedures": [
+  "إحالة عاجلة لفريق أورام الكبد",
+  "الاستئصال أو الكي الحراري (Ablation) أو الحقن الشرياني (TACE) أو الزراعة حسب المرحلة",
+  "أشعة صوتية كل 6 أشهر لمرضى التليّف للكشف المبكر"
+ ],
+ "selfcare": [],
+ "refs": [
+  "AASLD",
+  "EASL",
+  "NCCN"
+ ],
+ "guide": "AASLD Practice Guidance on prevention, diagnosis and treatment of hepatocellular carcinoma (2023)"
+},
+"internal.dili": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "زمن التخثر (INR)",
+  "فحوص استبعاد الفيروسات والأسباب المناعية (Viral hepatitis serology, autoantibodies)",
+  "مستوى الباراسيتامول عند الشك في الجرعة الزائدة"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)"
+ ],
+ "meds": [
+  {
+   "cls": "ترياق تسمم الباراسيتامول في المستشفى",
+   "ex": "acetylcysteine",
+   "note": "عند الجرعة الزائدة فقط وبإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "إيقاف الدواء أو العشب المشتبه به بعد استشارة الطبيب",
+  "حساب نمط الإصابة (R ratio) ومتابعة التحاليل"
+ ],
+ "selfcare": [
+  "عدم تناول أعشاب أو مكملات دون استشارة"
+ ],
+ "refs": [
+  "ACG",
+  "EASL"
+ ],
+ "guide": "ACG Clinical Guideline: Diagnosis and management of idiosyncratic drug-induced liver injury (2021)"
+},
+"internal.gilbert": {
+ "tests": [
+  "البيليروبين الكلي والمباشر (Total and direct bilirubin)",
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin)",
+  "صورة دم كاملة (CBC) لاستبعاد تكسّر الدم"
+ ],
+ "imaging": [],
+ "meds": [],
+ "procedures": [
+  "الطمأنة بعد تأكيد التشخيص"
+ ],
+ "selfcare": [
+  "تجنّب الصيام الطويل والجفاف"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ACG Clinical Guideline: Evaluation of abnormal liver chemistries (2017)"
+},
+"internal.abnormallft": {
+ "tests": [
+  "وظائف الكبد والبيليروبين (LFT, Bilirubin) مكررة",
+  "فحوص فيروسات الكبد (HBsAg, Anti-HCV)",
+  "الحديد والفيريتين (Ferritin, Transferrin saturation)",
+  "تقييم التليّف (FIB-4)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound)"
+ ],
+ "meds": [],
+ "procedures": [
+  "مراجعة الأدوية والأعشاب والكحول",
+  "قياس صلابة الكبد عند ارتفاع FIB-4"
+ ],
+ "selfcare": [
+  "إنقاص الوزن",
+  "تقليل الكحول"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline: Evaluation of abnormal liver chemistries (2017)"
+},
+"internal.barrett": {
+ "tests": [],
+ "imaging": [
+  "منظار علوي مع خزعات وفق بروتوكول سياتل (Upper endoscopy with biopsies)"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  }
+ ],
+ "procedures": [
+  "منظار مراقبة دوري حسب الطول ونتيجة الخزعة",
+  "استئصال بالمنظار أو الكي بالترددات الحرارية (RFA) عند خلل التنسّج"
+ ],
+ "selfcare": [
+  "رفع رأس السرير",
+  "إنقاص الوزن والإقلاع عن التدخين"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ACG Clinical Guideline: Diagnosis and Management of Barrett's Esophagus (2022)"
+},
+"internal.esophagitis": {
+ "tests": [],
+ "imaging": [
+  "منظار علوي (Upper endoscopy) عند الأعراض المستمرة أو علامات الإنذار"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  },
+  {
+   "cls": "مضادات الحموضة للتسكين السريع",
+   "ex": "alginate, calcium carbonate"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "رفع رأس السرير",
+  "تجنّب الأكل قبل النوم بثلاث ساعات",
+  "إنقاص الوزن"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline for the Diagnosis and Management of Gastroesophageal Reflux Disease (2022)"
+},
+"internal.achalasia": {
+ "tests": [],
+ "imaging": [
+  "قياس ضغط المريء عالي الدقة (High-resolution manometry)",
+  "تصوير بلع الباريوم (Barium swallow)",
+  "منظار علوي لاستبعاد الورم"
+ ],
+ "meds": [
+  {
+   "cls": "أدوية مرخية للعضلة الملساء لغير المؤهلين للتدخل",
+   "ex": "nifedipine, isosorbide dinitrate",
+   "note": "خيار محدود الفائدة"
+  }
+ ],
+ "procedures": [
+  "توسيع بالبالون (Pneumatic dilation)",
+  "قطع العضلة بالمنظار عبر الفم (POEM)",
+  "قطع العضلة جراحيًا بالمنظار (Heller myotomy)",
+  "حقن البوتولينوم لكبار السن غير المؤهلين"
+ ],
+ "selfcare": [
+  "الأكل ببطء مع شرب الماء"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ACG Clinical Guidelines: Diagnosis and Management of Achalasia (2020)"
+},
+"internal.esostricture": {
+ "tests": [],
+ "imaging": [
+  "منظار علوي مع خزعة (Upper endoscopy with biopsy)",
+  "تصوير بلع الباريوم (Barium swallow)"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  }
+ ],
+ "procedures": [
+  "توسيع المريء بالمنظار (Endoscopic dilation)"
+ ],
+ "selfcare": [
+  "مضغ الطعام جيدًا وتقطيعه صغيرًا"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ASGE Guideline: The role of endoscopy in the evaluation and management of dysphagia (2014)"
+},
+"internal.hiatalhernia": {
+ "tests": [],
+ "imaging": [
+  "منظار علوي (Upper endoscopy)",
+  "تصوير بلع الباريوم (Barium swallow)"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  }
+ ],
+ "procedures": [
+  "إصلاح جراحي بالمنظار مع تثبيت الصمام (Laparoscopic repair with fundoplication) للحالات المختارة"
+ ],
+ "selfcare": [
+  "وجبات صغيرة",
+  "تجنّب الانحناء والاستلقاء بعد الأكل",
+  "إنقاص الوزن"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "SAGES Guidelines for the management of hiatal hernia (2013)"
+},
+"internal.eoe": {
+ "tests": [
+  "عدد خلايا الدم البيضاء الحمضية (CBC with eosinophils)"
+ ],
+ "imaging": [
+  "منظار علوي مع خزعات متعددة من المريء"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  },
+  {
+   "cls": "الكورتيزون الموضعي المبلوع",
+   "ex": "budesonide (orodispersible), fluticasone (swallowed)"
+  },
+  {
+   "cls": "علاج بيولوجي للحالات المقاومة",
+   "ex": "dupilumab",
+   "note": "بقرار أخصائي"
+  }
+ ],
+ "procedures": [
+  "توسيع المريء بالمنظار عند التضيّق",
+  "حمية استبعاد أطعمة محددة بإشراف أخصائي تغذية"
+ ],
+ "selfcare": [
+  "مضغ الطعام جيدًا"
+ ],
+ "refs": [
+  "ACG",
+  "AAAAI"
+ ],
+ "guide": "AGA/JTF Clinical Guidelines for the Management of Eosinophilic Esophagitis (2020)"
+},
+"internal.malloryweiss": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "زمن التخثر (INR)",
+  "فصيلة الدم (Group and save)"
+ ],
+ "imaging": [
+  "منظار علوي (Upper endoscopy)"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  },
+  {
+   "cls": "مضادات القيء",
+   "ex": "ondansetron, metoclopramide"
+  }
+ ],
+ "procedures": [
+  "علاج بالمنظار (مشابك أو كي) عند استمرار النزيف"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline: Upper Gastrointestinal and Ulcer Bleeding (2021)"
+},
+"internal.boerhaave": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "مؤشرات الالتهاب (CRP)",
+  "مزرعة دم (Blood cultures)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على الصدر مع صبغة فموية (CT with oral contrast)",
+  "أشعة سينية على الصدر (Chest X-ray)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "piperacillin-tazobactam, meropenem",
+   "note": "بإشراف طبي فقط"
+  },
+  {
+   "cls": "مضادات الفطريات حسب الحالة",
+   "ex": "fluconazole",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "إصلاح جراحي أو دعامة بالمنظار مع تصريف الصدر",
+  "صيام تام وتغذية وريدية أو بأنبوب"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACEP"
+ ],
+ "guide": "Management of oesophageal perforation follows emergency thoracic surgery protocols (no single international guideline)"
+},
+"internal.foodbolus": {
+ "tests": [],
+ "imaging": [
+  "منظار علوي عاجل (Urgent upper endoscopy)",
+  "أشعة مقطعية عند الشك في جسم حاد أو ثقب"
+ ],
+ "meds": [],
+ "procedures": [
+  "إزالة اللقمة بالمنظار خلال ساعات",
+  "أخذ خزعات من المريء بعد الإزالة للبحث عن التهاب يوزيني"
+ ],
+ "selfcare": [
+  "مضغ اللحم جيدًا وتقطيعه صغيرًا"
+ ],
+ "refs": [
+  "ACG",
+  "ACEP"
+ ],
+ "guide": "ESGE Guideline: Removal of foreign bodies in the upper gastrointestinal tract in adults (2016)"
+},
+"internal.zenker": {
+ "tests": [],
+ "imaging": [
+  "تصوير بلع الباريوم (Barium swallow)",
+  "منظار علوي بحذر"
+ ],
+ "meds": [],
+ "procedures": [
+  "قطع الحاجز بالمنظار (Endoscopic septotomy / Z-POEM)",
+  "جراحة عبر الرقبة في حالات مختارة"
+ ],
+ "selfcare": [
+  "الأكل ببطء ومضغ جيد",
+  "الجلوس منتصبًا بعد الأكل"
+ ],
+ "refs": [
+  "AAO_HNS",
+  "ACG"
+ ],
+ "guide": "ASGE Guideline: The role of endoscopy in the evaluation and management of dysphagia (2014)"
+},
+"internal.atrophicgastritis": {
+ "tests": [
+  "فيتامين ب12 وصورة الدم (Vitamin B12, CBC)",
+  "الأجسام المضادة للخلايا الجدارية والعامل الداخلي (Anti-parietal cell, anti-intrinsic factor)",
+  "فحص جرثومة المعدة (H. pylori)"
+ ],
+ "imaging": [
+  "منظار علوي مع خزعات وفق بروتوكول سيدني (Upper endoscopy with biopsies)"
+ ],
+ "meds": [
+  {
+   "cls": "تعويض فيتامين ب12",
+   "ex": "hydroxocobalamin, cyanocobalamin"
+  },
+  {
+   "cls": "علاج جرثومة المعدة عند ثبوتها",
+   "ex": "amoxicillin, clarithromycin, metronidazole, bismuth",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [
+  "منظار مراقبة دوري حسب الامتداد"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "AGA Clinical Practice Update on the diagnosis and management of atrophic gastritis (2021)"
+},
+"internal.gastroparesis": {
+ "tests": [
+  "سكر الدم التراكمي (HbA1c)",
+  "أملاح الدم (Electrolytes)"
+ ],
+ "imaging": [
+  "دراسة تفريغ المعدة بالنظائر (Gastric emptying scintigraphy)",
+  "منظار علوي لاستبعاد الانسداد"
+ ],
+ "meds": [
+  {
+   "cls": "منشطات حركة المعدة",
+   "ex": "metoclopramide, domperidone, erythromycin",
+   "note": "مدة محددة وبإشراف طبي"
+  },
+  {
+   "cls": "مضادات القيء",
+   "ex": "ondansetron, metoclopramide"
+  }
+ ],
+ "procedures": [
+  "مراجعة الأدوية المبطئة للمعدة (مثل مشتقات الأفيون ومنبهات GLP-1)"
+ ],
+ "selfcare": [
+  "وجبات صغيرة قليلة الدهون والألياف",
+  "ضبط سكر الدم"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ACG Clinical Guideline: Gastroparesis (2022)"
+},
+"internal.perforatedulcer": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "أملاح الدم ووظائف الكلى (Electrolytes, Creatinine)",
+  "حمض اللاكتيك (Lactate)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن (CT)",
+  "أشعة سينية على الصدر واقفًا لرؤية الهواء تحت الحجاب"
+ ],
+ "meds": [
+  {
+   "cls": "مثبطات مضخة البروتون",
+   "ex": "omeprazole, esomeprazole, pantoprazole"
+  },
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "piperacillin-tazobactam, ceftriaxone + metronidazole",
+   "note": "بإشراف طبي فقط"
+  }
+ ],
+ "procedures": [
+  "جراحة إغلاق الثقب (Omental patch repair) بالمنظار أو الفتح",
+  "علاج جرثومة المعدة بعد الشفاء"
+ ],
+ "selfcare": [
+  "تجنّب مضادات الالتهاب غير الستيرويدية والتدخين"
+ ],
+ "refs": [
+  "ACEP",
+  "ACG"
+ ],
+ "guide": "WSES guidelines on perforated and bleeding peptic ulcer (2020)"
+},
+"internal.gastricca": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "مخزون الحديد (Ferritin)"
+ ],
+ "imaging": [
+  "منظار علوي مع خزعات (Upper endoscopy with biopsies)",
+  "أشعة مقطعية للتصنيف (Staging CT)"
+ ],
+ "meds": [
+  {
+   "cls": "علاج كيميائي أو مناعي وفق فريق الأورام",
+   "ex": "fluorouracil, oxaliplatin, docetaxel, nivolumab",
+   "note": "بإشراف أخصائي الأورام فقط"
+  }
+ ],
+ "procedures": [
+  "إحالة عاجلة خلال أسبوعين وفق مسار الاشتباه بالسرطان",
+  "استئصال جراحي حسب المرحلة"
+ ],
+ "selfcare": [],
+ "refs": [
+  "NICE",
+  "ESMO",
+  "NCCN"
+ ],
+ "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated 2025); ESMO Gastric cancer guideline (2022)"
+},
+"internal.cvs": {
+ "tests": [
+  "أملاح الدم ووظائف الكلى (Electrolytes, Creatinine)"
+ ],
+ "imaging": [
+  "منظار علوي وأشعة بطن لاستبعاد الأسباب العضوية"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات القيء",
+   "ex": "ondansetron, metoclopramide"
+  },
+  {
+   "cls": "وقاية للنوبات المتكررة",
+   "ex": "amitriptyline, topiramate",
+   "note": "بقرار طبي"
+  },
+  {
+   "cls": "علاج إجهاضي مبكر للنوبة",
+   "ex": "sumatriptan",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "سوائل وريدية خلال النوبات الشديدة"
+ ],
+ "selfcare": [
+  "انتظام النوم",
+  "تجنّب القنب والمحفزات المعروفة"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ANMS/CVSA Guidelines on the management of cyclic vomiting syndrome in adults (2019)"
+},
+"internal.dumping": {
+ "tests": [
+  "سكر الدم بعد الأكل أو اختبار تحمّل الجلوكوز المعدل"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "مبطئات امتصاص السكريات",
+   "ex": "acarbose",
+   "note": "بقرار طبي"
+  },
+  {
+   "cls": "نظائر السوماتوستاتين للحالات الشديدة",
+   "ex": "octreotide",
+   "note": "بإشراف أخصائي"
+  }
+ ],
+ "procedures": [
+  "تقييم لدى أخصائي تغذية"
+ ],
+ "selfcare": [
+  "وجبات صغيرة متكررة",
+  "فصل السوائل عن الطعام بنصف ساعة",
+  "تجنّب السكريات البسيطة"
+ ],
+ "refs": [
+  "ACG",
+  "ENDO"
+ ],
+ "guide": "International consensus on the diagnosis and management of dumping syndrome (2020)"
+},
+"internal.sibo": {
+ "tests": [
+  "اختبار التنفس بالجلوكوز أو اللاكتولوز (Glucose/lactulose breath test)",
+  "فيتامين ب12 وصورة الدم (Vitamin B12, CBC)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "مضاد حيوي معوي",
+   "ex": "rifaximin",
+   "note": "بوصفة طبية بعد التشخيص"
+  }
+ ],
+ "procedures": [
+  "علاج السبب كبطء حركة الأمعاء"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ACG Clinical Guideline: Small Intestinal Bacterial Overgrowth (2020)"
+},
+"internal.bileacid": {
+ "tests": [
+  "تحليل SeHCAT أو C4 في الدم حيث يتوفر",
+  "استبعاد الأسباب الأخرى (calprotectin, coeliac serology)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "رابطات الأحماض الصفراوية",
+   "ex": "colestyramine, colesevelam",
+   "note": "تؤخذ بعيدًا عن الأدوية الأخرى"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "تقليل الدهون في الطعام"
+ ],
+ "refs": [
+  "NICE",
+  "ACG"
+ ],
+ "guide": "BSG guidelines for the investigation of chronic diarrhoea in adults (2018)"
+},
+"internal.ncgs": {
+ "tests": [
+  "تحاليل السيلياك قبل إيقاف القمح (tTG-IgA, total IgA)"
+ ],
+ "imaging": [],
+ "meds": [],
+ "procedures": [
+  "حمية قليلة الغلوتين بإشراف أخصائي تغذية مع إعادة الإدخال لتأكيد العلاقة"
+ ],
+ "selfcare": [
+  "عدم إيقاف القمح قبل إجراء تحاليل السيلياك"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "Salerno Experts' Criteria for the diagnosis of non-coeliac gluten sensitivity (2015)"
+},
+"internal.microcolitis": {
+ "tests": [
+  "كالبروتكتين البراز (Faecal calprotectin)",
+  "تحاليل السيلياك (tTG-IgA)",
+  "مزرعة البراز"
+ ],
+ "imaging": [
+  "منظار قولون مع خزعات متعددة (Colonoscopy with biopsies)"
+ ],
+ "meds": [
+  {
+   "cls": "كورتيزون موضعي التأثير",
+   "ex": "budesonide"
+  },
+  {
+   "cls": "مضادات الإسهال للأعراض الخفيفة",
+   "ex": "loperamide"
+  }
+ ],
+ "procedures": [
+  "مراجعة الأدوية المحفزة (مضادات الالتهاب، مثبطات مضخة البروتون، مضادات الاكتئاب)"
+ ],
+ "selfcare": [
+  "الإقلاع عن التدخين"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "European guidelines on microscopic colitis (UEG and EMCG, 2021)"
+},
+"internal.ischemiccolitis": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "حمض اللاكتيك (Lactate)",
+  "أملاح الدم ووظائف الكلى"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن (CT)",
+  "منظار قولون خلال 48 ساعة (Colonoscopy)"
+ ],
+ "meds": [
+  {
+   "cls": "سوائل وريدية",
+   "ex": "sodium chloride",
+   "note": "بإشراف طبي"
+  },
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "ceftriaxone + metronidazole",
+   "note": "بإشراف طبي فقط"
+  }
+ ],
+ "procedures": [
+  "جراحة في الحالات الشديدة أو مع موت الأنسجة"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "ACG Clinical Guideline: Colon Ischemia (2015)"
+},
+"internal.ami": {
+ "tests": [
+  "حمض اللاكتيك (Lactate)",
+  "صورة دم كاملة (CBC)",
+  "د-دايمر (D-dimer)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على الأوعية (CT angiography)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات التخثر الوريدية",
+   "ex": "heparin",
+   "note": "في المستشفى"
+  },
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "piperacillin-tazobactam",
+   "note": "بإشراف طبي فقط"
+  }
+ ],
+ "procedures": [
+  "فتح الشريان بالقسطرة أو جراحيًا (Revascularization)",
+  "استئصال الأمعاء المتضررة"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACR",
+  "ACEP"
+ ],
+ "guide": "Acute mesenteric ischemia: updated guidelines of the World Society of Emergency Surgery (2022)"
+},
+"internal.cmi": {
+ "tests": [
+  "الدهون وسكر الدم (Lipid profile, HbA1c)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على الأوعية (CT angiography)",
+  "دوبلر على شرايين البطن (Mesenteric duplex)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات الصفائح",
+   "ex": "aspirin, clopidogrel"
+  },
+  {
+   "cls": "خافضات الدهون",
+   "ex": "atorvastatin, rosuvastatin"
+  }
+ ],
+ "procedures": [
+  "توسيع الشريان بالبالون مع دعامة (Endovascular stenting)",
+  "جراحة تحويل مسار في حالات مختارة"
+ ],
+ "selfcare": [
+  "الإقلاع عن التدخين",
+  "وجبات صغيرة"
+ ],
+ "refs": [
+  "ACR",
+  "ESC"
+ ],
+ "guide": "ESVS 2017 Clinical Practice Guidelines on the management of diseases of mesenteric arteries and veins"
+},
+"internal.volvulus": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "أملاح الدم (Electrolytes)",
+  "حمض اللاكتيك (Lactate)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن (CT)",
+  "أشعة سينية على البطن (Abdominal X-ray)"
+ ],
+ "meds": [
+  {
+   "cls": "سوائل وريدية وتصحيح الأملاح",
+   "ex": "sodium chloride, potassium chloride",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "فك الالتواء بالمنظار (Endoscopic detorsion) في الالتواء السيني",
+  "استئصال جراحي لمنع التكرار أو عند موت الأمعاء"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACEP",
+  "ACG"
+ ],
+ "guide": "ASCRS Clinical Practice Guidelines for the Management of Colonic Volvulus and Acute Colonic Pseudo-Obstruction (2021)"
+},
+"internal.intussusception": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "أملاح الدم (Electrolytes)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن (CT)"
+ ],
+ "meds": [
+  {
+   "cls": "سوائل وريدية",
+   "ex": "sodium chloride",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "جراحة مع استئصال الجزء المصاب وفحص السبب نسيجيًا"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACR",
+  "ACEP"
+ ],
+ "guide": "ACR Appropriateness Criteria: Suspected Small-Bowel Obstruction (2019)"
+},
+"internal.peritonitis": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "مؤشرات الالتهاب (CRP)",
+  "حمض اللاكتيك (Lactate)",
+  "مزرعة دم (Blood cultures)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن (CT)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "piperacillin-tazobactam, ceftriaxone + metronidazole, meropenem",
+   "note": "بإشراف طبي فقط"
+  },
+  {
+   "cls": "سوائل وريدية",
+   "ex": "sodium chloride, Ringer's lactate",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "التحكم في المصدر جراحيًا أو بالتصريف (Source control)"
+ ],
+ "selfcare": [],
+ "refs": [
+  "IDSA",
+  "ACEP"
+ ],
+ "guide": "SIS/IDSA Guidelines for the diagnosis and management of complicated intra-abdominal infection (2010)"
+},
+"internal.colonpolyps": {
+ "tests": [],
+ "imaging": [
+  "منظار قولون كامل (Colonoscopy)"
+ ],
+ "meds": [],
+ "procedures": [
+  "استئصال الزوائد بالمنظار (Polypectomy) وتحليلها",
+  "منظار متابعة حسب النوع والعدد والحجم"
+ ],
+ "selfcare": [
+  "الإقلاع عن التدخين",
+  "تقليل اللحوم المصنعة",
+  "نشاط بدني ووزن صحي"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "US Multi-Society Task Force: Recommendations for follow-up after colonoscopy and polypectomy (2020)"
+},
+"internal.lgib": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "زمن التخثر (INR)",
+  "فصيلة الدم والتوافق (Group and crossmatch)",
+  "وظائف الكلى (Urea, Creatinine)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على الأوعية (CT angiography) عند النزيف النشط",
+  "منظار قولون بعد التحضير (Colonoscopy)"
+ ],
+ "meds": [
+  {
+   "cls": "سوائل وريدية ونقل الدم عند الحاجة",
+   "ex": "sodium chloride, packed red cells",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "إيقاف النزيف بالمنظار أو الانصمام بالقسطرة (Embolization)",
+  "منظار علوي إذا كان النزيف غزيرًا مع احتمال مصدر علوي"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline: Management of Patients With Acute Lower Gastrointestinal Bleeding (2023)"
+},
+"internal.ibsd": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "تحاليل السيلياك (tTG-IgA)",
+  "كالبروتكتين البراز (Faecal calprotectin)",
+  "مؤشرات الالتهاب (CRP)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "مضادات الإسهال",
+   "ex": "loperamide"
+  },
+  {
+   "cls": "مضادات التقلّص",
+   "ex": "mebeverine, hyoscine butylbromide, peppermint oil"
+  },
+  {
+   "cls": "علاجات للحالات المستمرة",
+   "ex": "rifaximin, amitriptyline",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "نظام منخفض الفودماب بإشراف أخصائي تغذية",
+  "تقليل الكافيين والمحليات الصناعية",
+  "إدارة التوتر"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline: Management of Irritable Bowel Syndrome (2021); NICE CG61 (2017)"
+},
+"internal.ibsc": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "تحاليل السيلياك (tTG-IgA)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "ملينات أسموزية",
+   "ex": "macrogol (polyethylene glycol)"
+  },
+  {
+   "cls": "ألياف ذائبة",
+   "ex": "ispaghula (psyllium)"
+  },
+  {
+   "cls": "أدوية مخصصة عند عدم الاستجابة",
+   "ex": "linaclotide, lubiprostone",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "زيادة الألياف الذائبة والسوائل",
+  "النشاط البدني المنتظم"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline: Management of Irritable Bowel Syndrome (2021); NICE CG61 (2017)"
+},
+"internal.ibsm": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "تحاليل السيلياك (tTG-IgA)",
+  "كالبروتكتين البراز (Faecal calprotectin)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "مضادات التقلّص",
+   "ex": "mebeverine, peppermint oil"
+  },
+  {
+   "cls": "علاج النمط الغالب في كل نوبة",
+   "ex": "loperamide, macrogol",
+   "note": "بحسب الأعراض"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "نظام منخفض الفودماب بإشراف أخصائي تغذية",
+  "مذكرة يومية للطعام والأعراض",
+  "إدارة التوتر"
+ ],
+ "refs": [
+  "ACG",
+  "NICE"
+ ],
+ "guide": "ACG Clinical Guideline: Management of Irritable Bowel Syndrome (2021); NICE CG61 (2017)"
+},
+"internal.umbilicalhernia": {
+ "tests": [],
+ "imaging": [
+  "أشعة صوتية على جدار البطن عند الشك (Ultrasound)"
+ ],
+ "meds": [],
+ "procedures": [
+  "إصلاح جراحي مفتوح أو بالمنظار مع شبكة حسب الحجم"
+ ],
+ "selfcare": [
+  "إنقاص الوزن",
+  "تجنّب الإمساك والإجهاد"
+ ],
+ "refs": [
+  "NICE"
+ ],
+ "guide": "European Hernia Society and Americas Hernia Society guidelines for umbilical and epigastric hernias (2020)"
+},
+"internal.incisionalhernia": {
+ "tests": [],
+ "imaging": [
+  "أشعة مقطعية على جدار البطن (CT) للتخطيط الجراحي"
+ ],
+ "meds": [],
+ "procedures": [
+  "إصلاح بشبكة مفتوحًا أو بالمنظار"
+ ],
+ "selfcare": [
+  "إنقاص الوزن والإقلاع عن التدخين قبل الجراحة",
+  "ضبط سكر الدم"
+ ],
+ "refs": [
+  "NICE"
+ ],
+ "guide": "European Hernia Society guidelines on the treatment of incisional hernias (2015)"
+},
+"internal.epigastrichernia": {
+ "tests": [],
+ "imaging": [
+  "أشعة صوتية على جدار البطن (Ultrasound)"
+ ],
+ "meds": [],
+ "procedures": [
+  "إصلاح جراحي عند الأعراض"
+ ],
+ "selfcare": [
+  "تجنّب رفع الأثقال بطريقة خاطئة"
+ ],
+ "refs": [
+  "NICE"
+ ],
+ "guide": "European Hernia Society and Americas Hernia Society guidelines for umbilical and epigastric hernias (2020)"
+},
+"internal.femoralhernia": {
+ "tests": [],
+ "imaging": [
+  "أشعة صوتية على منطقة الفخذ (Groin ultrasound)"
+ ],
+ "meds": [],
+ "procedures": [
+  "إحالة جراحية مبكرة وإصلاح دون تأخير"
+ ],
+ "selfcare": [
+  "معرفة علامات الاختناق والتوجه للطوارئ عند ظهورها"
+ ],
+ "refs": [
+  "NICE"
+ ],
+ "guide": "HerniaSurge International guidelines for groin hernia management (2018)"
+},
+"internal.strangulatedhernia": {
+ "tests": [
+  "صورة دم كاملة (CBC)",
+  "حمض اللاكتيك (Lactate)",
+  "أملاح الدم (Electrolytes)"
+ ],
+ "imaging": [
+  "أشعة مقطعية على البطن (CT) عند الحاجة"
+ ],
+ "meds": [
+  {
+   "cls": "مسكنات وريدية",
+   "ex": "morphine, paracetamol",
+   "note": "في المستشفى"
+  },
+  {
+   "cls": "مضادات حيوية وريدية في المستشفى",
+   "ex": "cefazolin + metronidazole",
+   "note": "بإشراف طبي فقط"
+  }
+ ],
+ "procedures": [
+  "إصلاح جراحي طارئ مع فحص حيوية الأمعاء"
+ ],
+ "selfcare": [
+  "عدم محاولة دفع الفتق بقوة"
+ ],
+ "refs": [
+  "ACEP",
+  "NICE"
+ ],
+ "guide": "WSES guidelines for emergency repair of complicated abdominal wall hernias (2017)"
+},
+"internal.diastasis": {
+ "tests": [],
+ "imaging": [
+  "أشعة صوتية على جدار البطن لقياس المسافة واستبعاد الفتق"
+ ],
+ "meds": [],
+ "procedures": [
+  "برنامج علاج طبيعي لتقوية عضلات البطن العميقة",
+  "إصلاح جراحي نادرًا للحالات الشديدة المصحوبة بفتق"
+ ],
+ "selfcare": [
+  "تمارين البطن العميقة",
+  "الحفاظ على وزن صحي"
+ ],
+ "refs": [
+  "NICE"
+ ],
+ "guide": "European Hernia Society guidelines on management of rectus diastasis (2021)"
+},
+"internal.rectalprolapse": {
+ "tests": [],
+ "imaging": [
+  "منظار قولون لاستبعاد الأورام",
+  "تصوير التبرّز (Defecography) عند الحاجة"
+ ],
+ "meds": [
+  {
+   "cls": "ملينات لعلاج الإمساك",
+   "ex": "macrogol, ispaghula"
+  }
+ ],
+ "procedures": [
+  "إصلاح جراحي عبر البطن (Rectopexy) أو عبر الشرج حسب العمر والحالة"
+ ],
+ "selfcare": [
+  "تجنّب الإجهاد عند التبرّز",
+  "ألياف وسوائل كافية"
+ ],
+ "refs": [
+  "NICE",
+  "ACG"
+ ],
+ "guide": "ASCRS Clinical Practice Guidelines for the Management of Rectal Prolapse (2017)"
+},
+"internal.analca": {
+ "tests": [
+  "فحص فيروس نقص المناعة (HIV) حسب الحالة"
+ ],
+ "imaging": [
+  "رنين مغناطيسي على الحوض (Pelvic MRI)",
+  "أشعة مقطعية للتصنيف (Staging CT)"
+ ],
+ "meds": [
+  {
+   "cls": "علاج كيميائي إشعاعي وفق فريق الأورام",
+   "ex": "mitomycin, fluorouracil, capecitabine",
+   "note": "بإشراف أخصائي الأورام فقط"
+  }
+ ],
+ "procedures": [
+  "فحص سريري وخزعة من الآفة",
+  "إحالة عاجلة لفريق أورام متعدد التخصصات"
+ ],
+ "selfcare": [],
+ "refs": [
+  "ESMO",
+  "NCCN",
+  "NICE"
+ ],
+ "guide": "ESMO Clinical Practice Guidelines: Anal cancer (2021)"
+},
+"internal.proctalgia": {
+ "tests": [],
+ "imaging": [
+  "فحص شرجي ومنظار شرجي لاستبعاد الأسباب العضوية عند الحاجة"
+ ],
+ "meds": [
+  {
+   "cls": "موسعات موضعية أو مستنشقة للنوبات المتكررة",
+   "ex": "glyceryl trinitrate (topical), salbutamol (inhaled)",
+   "note": "بقرار طبي"
+  }
+ ],
+ "procedures": [
+  "تدريب عضلات قاع الحوض (Biofeedback) للحالات المتكررة"
+ ],
+ "selfcare": [
+  "مغطس ماء دافئ أثناء النوبة",
+  "علاج الإمساك"
+ ],
+ "refs": [
+  "ACG"
+ ],
+ "guide": "Rome IV: Functional anorectal disorders (2016)"
+},
+"internal.fecalincontinence": {
+ "tests": [
+  "مزرعة البراز وكالبروتكتين عند الإسهال"
+ ],
+ "imaging": [
+  "أشعة صوتية على عضلة الشرج من الداخل (Endoanal ultrasound)",
+  "قياس ضغط الشرج (Anorectal manometry)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات الإسهال لتحسين القوام",
+   "ex": "loperamide"
+  },
+  {
+   "cls": "ألياف ذائبة",
+   "ex": "ispaghula"
+  }
+ ],
+ "procedures": [
+  "تمارين قاع الحوض والتدريب الحيوي الراجع (Biofeedback)",
+  "تحفيز العصب العجزي أو إصلاح العضلة في حالات مختارة"
+ ],
+ "selfcare": [
+  "تنظيم أوقات التبرّز",
+  "تجنّب الأطعمة التي تزيد الإسهال"
+ ],
+ "refs": [
+  "NICE"
+ ],
+ "guide": "NICE CG49 Faecal incontinence in adults (2007)"
+},
+"internal.fecalimpaction": {
+ "tests": [
+  "أملاح الدم والكالسيوم ووظائف الغدة الدرقية (Electrolytes, Calcium, TSH)"
+ ],
+ "imaging": [
+  "أشعة سينية على البطن عند الشك (Abdominal X-ray)"
+ ],
+ "meds": [
+  {
+   "cls": "تحاميل أو حقن شرجية",
+   "ex": "glycerol suppository, bisacodyl suppository, phosphate enema"
+  },
+  {
+   "cls": "ملينات فموية بعد التفريغ",
+   "ex": "macrogol, lactulose, senna"
+  }
+ ],
+ "procedures": [
+  "إخراج البراز يدويًا عند الحاجة بإشراف طبي",
+  "مراجعة الأدوية المسببة للإمساك"
+ ],
+ "selfcare": [
+  "سوائل وألياف كافية",
+  "حركة منتظمة قدر الإمكان"
+ ],
+ "refs": [
+  "NICE"
+ ],
+ "guide": "NICE CKS: Constipation (2023)"
+},
+"internal.norovirus": {
+ "tests": [
+  "أملاح الدم ووظائف الكلى (Electrolytes, Creatinine) عند الجفاف",
+  "فحص PCR للبراز عند التفشيات (Norovirus PCR)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "محلول معالجة الجفاف الفموي (ORS)",
+   "ex": "oral rehydration salts",
+   "note": "الخيار الأول لتعويض السوائل"
+  },
+  {
+   "cls": "مضادات القيء",
+   "ex": "ondansetron, metoclopramide"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "الشرب على دفعات صغيرة متكررة",
+  "غسل اليدين بالماء والصابون",
+  "تنظيف الأسطح بمحلول الكلور",
+  "عدم تحضير الطعام للآخرين حتى يومين بعد الشفاء"
+ ],
+ "refs": [
+  "CDC",
+  "WHO"
+ ],
+ "guide": "CDC Updated norovirus outbreak management and disease prevention guidelines (2011)"
+},
+"internal.campylobacter": {
+ "tests": [
+  "مزرعة البراز أو فحص PCR متعدد (Stool culture / multiplex PCR)",
+  "أملاح الدم ووظائف الكلى (Electrolytes, Creatinine) عند الجفاف"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "محلول معالجة الجفاف الفموي (ORS)",
+   "ex": "oral rehydration salts",
+   "note": "الخيار الأول لتعويض السوائل"
+  },
+  {
+   "cls": "مضاد حيوي للحالات الشديدة",
+   "ex": "azithromycin",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "طهو الدجاج جيدًا",
+  "فصل أدوات اللحوم النيئة"
+ ],
+ "refs": [
+  "IDSA",
+  "WHO"
+ ],
+ "guide": "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea (2017)"
+},
+"internal.salmonella": {
+ "tests": [
+  "مزرعة البراز أو فحص PCR متعدد (Stool culture / multiplex PCR)",
+  "مزرعة دم عند الحمّى العالية (Blood culture)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "محلول معالجة الجفاف الفموي (ORS)",
+   "ex": "oral rehydration salts",
+   "note": "الخيار الأول لتعويض السوائل"
+  },
+  {
+   "cls": "مضاد حيوي للفئات المعرضة أو الحالات الشديدة",
+   "ex": "azithromycin, ciprofloxacin, ceftriaxone",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "طهو البيض والدجاج جيدًا",
+  "غسل اليدين بعد لمس الحيوانات والزواحف"
+ ],
+ "refs": [
+  "IDSA",
+  "CDC"
+ ],
+ "guide": "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea (2017)"
+},
+"internal.shigella": {
+ "tests": [
+  "مزرعة البراز أو فحص PCR متعدد (Stool culture / multiplex PCR) مع اختبار الحساسية",
+  "أملاح الدم ووظائف الكلى (Electrolytes, Creatinine) عند الجفاف"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "محلول معالجة الجفاف الفموي (ORS)",
+   "ex": "oral rehydration salts",
+   "note": "الخيار الأول لتعويض السوائل"
+  },
+  {
+   "cls": "مضاد حيوي حسب الحساسية",
+   "ex": "azithromycin, ciprofloxacin, ceftriaxone",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [
+  "إبلاغ الصحة العامة حسب الأنظمة المحلية"
+ ],
+ "selfcare": [
+  "غسل اليدين الدقيق",
+  "تجنّب السباحة والعلاقة الجنسية حتى الشفاء"
+ ],
+ "refs": [
+  "IDSA",
+  "WHO",
+  "CDC"
+ ],
+ "guide": "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea (2017)"
+},
+"internal.stec": {
+ "tests": [
+  "مزرعة البراز أو فحص PCR متعدد (Stool culture / multiplex PCR) مع فحص سم الشيغا (Shiga toxin)",
+  "صورة دم كاملة (CBC) مع الصفائح وصورة الدم (blood film)",
+  "وظائف الكلى (Creatinine)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "محلول معالجة الجفاف الفموي (ORS)",
+   "ex": "oral rehydration salts",
+   "note": "الخيار الأول لتعويض السوائل"
+  },
+  {
+   "cls": "سوائل وريدية عند الحاجة",
+   "ex": "sodium chloride",
+   "note": "بإشراف طبي"
+  }
+ ],
+ "procedures": [
+  "تجنّب المضادات الحيوية وأدوية إيقاف الإسهال",
+  "متابعة لصيقة للأطفال وكبار السن لاكتشاف انحلال الدم اليوريمي"
+ ],
+ "selfcare": [
+  "طهو اللحم المفروم جيدًا",
+  "تجنّب الحليب غير المبستر"
+ ],
+ "refs": [
+  "IDSA",
+  "CDC"
+ ],
+ "guide": "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea (2017)"
+},
+"internal.cdiff": {
+ "tests": [
+  "فحص سموم المطثية العسيرة في البراز (C. difficile GDH/toxin)",
+  "صورة دم كاملة (CBC)",
+  "وظائف الكلى (Creatinine)"
+ ],
+ "imaging": [
+  "أشعة مقطعية عند الشك في الحالة الشديدة"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات حيوية فموية مخصصة",
+   "ex": "fidaxomicin, vancomycin (oral)",
+   "note": "بوصفة طبية"
+  },
+  {
+   "cls": "علاج يقلل التكرار",
+   "ex": "bezlotoxumab",
+   "note": "بقرار أخصائي"
+  }
+ ],
+ "procedures": [
+  "زرع ميكروبيوم البراز (FMT) للحالات المتكررة",
+  "إيقاف المضاد الحيوي المسبب إن أمكن"
+ ],
+ "selfcare": [
+  "غسل اليدين بالماء والصابون",
+  "تجنّب أدوية إيقاف الإسهال"
+ ],
+ "refs": [
+  "IDSA",
+  "ACG"
+ ],
+ "guide": "IDSA/SHEA Clinical Practice Guideline: 2021 Focused Update on Management of Clostridioides difficile Infection in Adults"
+},
+"internal.giardiasis": {
+ "tests": [
+  "فحص مستضد الجيارديا أو PCR في البراز (Giardia antigen / PCR)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "مضادات الطفيليات",
+   "ex": "tinidazole, metronidazole, nitazoxanide",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "شرب مياه مغلية أو معالجة",
+  "غسل اليدين"
+ ],
+ "refs": [
+  "CDC",
+  "WHO"
+ ],
+ "guide": "CDC Yellow Book 2024: Giardiasis"
+},
+"internal.amoebiasis": {
+ "tests": [
+  "فحص مستضد أو PCR للأميبا في البراز (E. histolytica antigen / PCR)",
+  "الأجسام المضادة للأميبا (serology)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound) عند الشك في خراج الكبد"
+ ],
+ "meds": [
+  {
+   "cls": "مضاد الأميبا النسيجي",
+   "ex": "metronidazole, tinidazole",
+   "note": "بوصفة طبية"
+  },
+  {
+   "cls": "مضاد الأكياس المعوية بعده",
+   "ex": "paromomycin, diloxanide furoate",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "شرب مياه آمنة",
+  "غسل الخضار والفاكهة جيدًا"
+ ],
+ "refs": [
+  "CDC",
+  "WHO"
+ ],
+ "guide": "CDC Yellow Book 2024: Amebiasis"
+},
+"internal.ascariasis": {
+ "tests": [
+  "فحص البراز للبيض (Stool ova and parasites)",
+  "صورة دم كاملة (CBC)"
+ ],
+ "imaging": [
+  "أشعة صوتية على البطن (Abdominal ultrasound) عند الشك في الانسداد أو انتقال الدودة للقنوات الصفراوية"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات الديدان",
+   "ex": "albendazole, mebendazole",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "غسل الخضار جيدًا",
+  "غسل اليدين قبل الأكل"
+ ],
+ "refs": [
+  "WHO",
+  "WHO_EML"
+ ],
+ "guide": "WHO Guideline: Preventive chemotherapy to control soil-transmitted helminth infections in at-risk population groups (2017)"
+},
+"internal.taeniasis": {
+ "tests": [
+  "فحص البراز للبيض والقطع (Stool ova and parasites)"
+ ],
+ "imaging": [
+  "رنين أو مقطعية على الدماغ عند أعراض عصبية (cysticercosis)"
+ ],
+ "meds": [
+  {
+   "cls": "مضادات الديدان الشريطية",
+   "ex": "praziquantel, niclosamide",
+   "note": "بوصفة طبية"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "طهو اللحوم جيدًا",
+  "غسل اليدين"
+ ],
+ "refs": [
+  "WHO",
+  "CDC"
+ ],
+ "guide": "WHO Guidelines on management of Taenia solium neurocysticercosis (2021); CDC Taeniasis resources for health professionals"
+},
+"internal.hookworm": {
+ "tests": [
+  "فحص البراز للبيض (Stool ova and parasites)",
+  "صورة دم كاملة (CBC)",
+  "مخزون الحديد (Ferritin)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "مضادات الديدان",
+   "ex": "albendazole, mebendazole",
+   "note": "بوصفة طبية"
+  },
+  {
+   "cls": "مكملات الحديد",
+   "ex": "ferrous sulfate, ferrous fumarate"
+  }
+ ],
+ "procedures": [],
+ "selfcare": [
+  "ارتداء الأحذية في المناطق الموبوءة"
+ ],
+ "refs": [
+  "WHO",
+  "WHO_EML"
+ ],
+ "guide": "WHO Guideline: Preventive chemotherapy to control soil-transmitted helminth infections in at-risk population groups (2017)"
+},
+"internal.botulism": {
+ "tests": [
+  "فحص سم البوتيولينوم في الدم والبراز وبقايا الطعام (Botulinum toxin assay)"
+ ],
+ "imaging": [],
+ "meds": [
+  {
+   "cls": "مضاد سم البوتيولينوم",
+   "ex": "botulism antitoxin (heptavalent)",
+   "note": "يُطلب عبر جهات الصحة العامة"
+  }
+ ],
+ "procedures": [
+  "مراقبة وظائف التنفس ودعم التنفس الصناعي عند الحاجة",
+  "إبلاغ الصحة العامة فورًا"
+ ],
+ "selfcare": [
+  "عدم تذوق المعلبات المنتفخة أو التالفة",
+  "اتباع طرق الحفظ المنزلي الآمنة"
+ ],
+ "refs": [
+  "CDC",
+  "WHO"
+ ],
+ "guide": "CDC Clinical Guidelines for Diagnosis and Treatment of Botulism (2021)"
+}
+}
