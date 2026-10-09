@@ -70,7 +70,16 @@ const I = {
   home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/>',
   heart: '<path d="M12 21s-7-4.5-9.5-9C.5 8 2 4 6 4c2 0 3.5 1.2 4 2.2C10.5 5.2 12 4 14 4c4 0 5.5 4 3.5 8-2.5 4.5-9.5 9-9.5 9z"/>',
   bulb: '<path d="M9 18h6M10 22h4M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/>',
-  list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>'
+  list: '<path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/>',
+  moon: '<path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  auto: '<circle cx="12" cy="12" r="9"/><path d="M12 3v18a9 9 0 000-18z" fill="currentColor"/>',
+  pen: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/>',
+  folder: '<path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>',
+  card: '<rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M6 16c.5-1.5 1.7-2 3-2s2.5.5 3 2M14 10h4M14 13h3"/>',
+  trash: '<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
+  mic: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/>',
+  chat: '<path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/>'
 };
 const ico = (p, sw = 2) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${sw}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -383,6 +392,41 @@ let terms = null;
 try { terms = JSON.parse(localStorage.getItem(TERMS_KEY) || "null"); } catch (e) { /* تخزين مقفول */ }
 const termsOk = () => !!(terms && terms.v === TERMS_VERSION);
 
+/* سجلّي الصحي: البطاقة الصحية وسجل التقييمات — على جهاز المستخدم فقط */
+const CARD_KEY = "moselCard", HIST_KEY = "moselHistory", HIST_MAX = 50;
+const load = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k) || "null"); return v == null ? d : v; } catch (e) { return d; } };
+const keep = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* تخزين مقفول */ } };
+let card = load(CARD_KEY, {});
+let history = load(HIST_KEY, []);
+if (!Array.isArray(history)) history = [];
+const BLOOD = ["", "A+", "A−", "B+", "B−", "AB+", "AB−", "O+", "O−"];
+const CARD_FIELDS = [
+  ["name", "الاسم (اختياري)", "text", "يظهر في التقرير المطبوع فقط"],
+  ["allergies", "الحساسية من أدوية أو أطعمة", "text", "مثل: البنسلين، الفول السوداني"],
+  ["meds", "الأدوية التي تتناولها حاليًا", "text", "مثل: ميتفورمين، أملوديبين"],
+  ["surgeries", "عمليات أو أمراض سابقة", "text", "مثل: استئصال الزائدة 2019"],
+  ["emName", "اسم شخص للطوارئ", "text", ""],
+  ["emPhone", "رقم هاتفه", "tel", "01xxxxxxxxx"]
+];
+
+/* العرض: الوضع الليلي وحجم الخط (يُطبَّقان مبكرًا من prefs.js) */
+const THEME_KEY = "moselTheme", ZOOM_KEY = "moselZoom", ZOOMS = [90, 100, 112, 125, 140];
+const curTheme = () => { try { return localStorage.getItem(THEME_KEY) || "auto"; } catch (e) { return "auto"; } };
+function applyTheme(m) {
+  if (m === "auto") document.documentElement.removeAttribute("data-theme"); else document.documentElement.setAttribute("data-theme", m);
+  try { localStorage.setItem(THEME_KEY, m); } catch (e) { /* ignore */ }
+}
+const curZoom = () => { try { const z = +localStorage.getItem(ZOOM_KEY); return ZOOMS.includes(z) ? z : 100; } catch (e) { return 100; } };
+function applyZoom(z) {
+  document.documentElement.style.setProperty("--ui-zoom", z / 100);
+  try { localStorage.setItem(ZOOM_KEY, z); } catch (e) { /* ignore */ }
+}
+const THEME_NEXT = { auto: "dark", dark: "light", light: "auto" }, THEME_NAME = { auto: "تلقائي حسب الجهاز", dark: "ليلي", light: "نهاري" };
+const prefBtns = () => `<div class="prefs">
+  <button class="icon-btn sm" data-act="zoom-" aria-label="تصغير الخط">A<small>−</small></button>
+  <button class="icon-btn sm" data-act="zoom+" aria-label="تكبير الخط">A<small>+</small></button>
+  <button class="icon-btn sm" data-act="theme" aria-label="الوضع: ${THEME_NAME[curTheme()]} — اضغط للتبديل">${ico({ auto: I.auto, dark: I.moon, light: I.sun }[curTheme()])}</button></div>`;
+
 const state = {
   screen: saved && termsOk() ? "home" : "onboarding",
   profile: saved || { gender: null, age: "", height: "", weight: "", chronic: [] },
@@ -391,7 +435,8 @@ const state = {
   region: null, zone: null,
   checked: new Set(), denied: new Set(), asked: new Set(),
   answers: {}, followup: [], round: 0,
-  openCond: null, query: ""
+  openCond: null, query: "",
+  describe: "", described: null, caseId: null, recTab: "history"
 };
 const resetCase = () => { state.checked = new Set(); state.denied = new Set(); state.asked = new Set(); state.answers = {}; state.followup = []; state.round = 0; state.openCond = null; };
 
@@ -530,6 +575,7 @@ function go(screen) { state.screen = screen; render(); }
 function back() {
   const s = state.screen;
   if (s === "terms") go(state.prev || "about");
+  else if (s === "describe" || s === "records" || s === "tips") go(s === "tips" && state.prev === "results" ? "results" : "home");
   else if (s === "about" || s === "stages") go(state.prev || "home");
   else if (s === "results" || s === "followup") { state.round = 0; state.asked = new Set(); state.denied = new Set(); state.answers = {}; go("symptoms"); }
   else if (s === "symptoms") { resetCase(); state.zone = null; go(state.region ? "sections" : "home"); }
@@ -540,6 +586,7 @@ function pickRegion(key) { state.region = key; go("sections"); }
 function pickZone(key, preset) {
   state.zone = key; resetCase();
   if (preset) state.checked.add(preset);
+  state.caseId = Date.now().toString(36);
   go("symptoms");
 }
 function restart() { resetCase(); state.zone = null; state.region = null; state.query = ""; go("home"); }
@@ -549,6 +596,160 @@ const zoneSymptoms = k => DATA[k].symptoms.filter(sexOk);
 function allowedZone(k) {
   const z = ZONE[k];
   return !z.sex || !state.profile.gender || z.sex === state.profile.gender;
+}
+
+/* =========================================================
+   الوصف المكتوب: يحوّل وصف المريض بكلماته (فصحى أو عامية) إلى أعراض من المكتبة
+   ========================================================= */
+const STOP = new Set("في من الى علي عن مع او و ثم قد لا ما هو هي انا عندي عنده عندها لدي لدى منذ بعد قبل اثناء عند كل جدا شويه شوية اوي قوي اكثر اقل حتي حتى دون غير بين يوم ايام اسبوع اسابيع شهر شهور ساعه ساعات بقالي من بقاله بقالها لما لو ان اني انه انها كان كانت بيكون عشان علشان بس كمان برضه حاسس حاسه بحس اشعر احس شعور احساس يعني فيه فيها ده دي دا هذا هذه التي الذي مش مو لم لن يوجد توجد خلافه وخلافه ونحوه وغيره كده كدا".split(" "));
+// عامية ← فصحى (بعد التطبيع والتجريد). القيمة كلمة أو أكثر مفصولة بمسافة
+const SYN = {
+  وجع: "الم", وجعني: "الم", واجعني: "الم", بيوجعني: "الم", بتوجعني: "الم", تعبان: "تعب ارهاق", تعبانه: "تعب ارهاق", همدان: "ارهاق تعب", مرهق: "ارهاق",
+  سخونيه: "حمي", سخونه: "حمي", سخن: "حمي", حراره: "حمي", مسخن: "حمي", رعشه: "رعشه قشعريره", برد: "قشعريره برد",
+  ترجيع: "قيء", برجع: "قيء", بستفرغ: "قيء", استفراغ: "قيء", قيء: "قيء", ترجع: "قيء", قرف: "غثيان", غمم: "غثيان", غامه: "غثيان", لعيان: "غثيان",
+  كحه: "سعال", بكح: "سعال", كح: "سعال", نهجان: "ضيق تنفس نهجان", بنهج: "ضيق تنفس نهجان", مخنوق: "ضيق تنفس", نفس: "تنفس", نفسي: "تنفس", تزييق: "صفير ازيز", صفير: "صفير ازيز",
+  دوخه: "دوخه دوار", دايخ: "دوخه دوار", بدوخ: "دوخه دوار", لفه: "دوار", اغمي: "اغماء", اغماء: "اغماء", وقعت: "سقوط اغماء",
+  مسهل: "اسهال", اسهال: "اسهال", بطني: "بطن", معدتي: "معده", مغص: "مغص الم بطن", تقلصات: "مغص تقلص", انتفاخ: "انتفاخ", منفوخ: "انتفاخ", غازات: "غازات انتفاخ", حموضه: "حموضه حرقان", حرقان: "حرقان", حرقه: "حرقان",
+  وارمه: "تورم", وارم: "تورم", متورمه: "تورم", سخنه: "سخونه حراره", محمره: "احمرار", مبحوح: "بحه", مبحوحه: "بحه", بحه: "بحه", صوتي: "صوت بحه",
+  مسدوده: "انسداد", مسدود: "انسداد", مزكوم: "انسداد انف", زكام: "انسداد انف سيلان عطس", رشح: "سيلان رشح", عطس: "عطس", برشح: "سيلان رشح",
+  ترعش: "رعشه", رعش: "رعشه", تراب: "غبار", غبار: "غبار", حساسه: "تناسلي", تناسلي: "تناسلي", اقف: "وقوف", واقف: "وقوف",
+  نزف: "نزيف دم", تنزف: "نزيف دم", ايديا: "يد يدين", ايدي: "يد يدين", ايد: "يد يدين", مزغلله: "زغلله", خسيت: "فقدان وزن", خاسس: "فقدان وزن", تخنت: "زياده وزن",
+  تنمل: "تنميل خدر", نمل: "تنميل خدر", حرقني: "حرقان", تحرقني: "حرقان", عرقان: "تعرق عرق", بعرق: "تعرق عرق", جعان: "جوع", جوعان: "جوع",
+  شخر: "شخير", شخير: "شخير", صحي: "نهوض نوم", نعسان: "نعاس", توه: "تشوش نسيان", بتوه: "تشوش نسيان",
+  تعب: "تعب ارهاق", شعري: "شعر", شعر: "شعر", ركبه: "ركبه مفصل", ركبتي: "ركبه مفصل", كوع: "مرفق مفصل", كاحلي: "كاحل", صباع: "اصبع", صوابع: "اصبع",
+  ابني: "ابن طفل", بنتي: "بنت طفل", طفلي: "طفل", ولادي: "طفل", الواد: "طفل", البيبي: "رضيع", بيبي: "رضيع", وشي: "وجه", وش: "وجه",
+  ضهر: "ظهر", ضهري: "ظهر", رجل: "ساق قدم", رجلي: "ساق قدم", رجليا: "ساق قدم", ايد: "يد", ايدي: "يد", دراع: "ذراع", دراعي: "ذراع", رقبتي: "رقبه", كتفي: "كتف", وسطي: "ظهر اسفل",
+  زور: "حلق بلع", زوري: "حلق بلع", ودن: "اذن", وداني: "اذن", ودني: "اذن", مناخير: "انف", مناخيري: "انف", سنان: "سن", سناني: "سن", ضرس: "سن ضرس", ضرسي: "سن ضرس", عيني: "عين", عنيا: "عين", عينيا: "عين",
+  راس: "صداع راس", راسي: "صداع راس", دماغ: "صداع راس", دماغي: "صداع راس", صداع: "صداع", شقيقه: "صداع جانب غثيان ضوء",
+  قلبي: "قلب خفقان", بيدق: "خفقان نبض", دقات: "خفقان نبض", بيرفرف: "خفقان", صدري: "صدر", كتمه: "ضغط صدر ضيق",
+  تنميل: "تنميل خدر", منمل: "تنميل خدر", منمله: "تنميل خدر", خدر: "تنميل خدر", تقل: "ثقل", تقيل: "ثقل",
+  هرش: "حكه", بيهرشني: "حكه", بهرش: "حكه", حكه: "حكه", حبوب: "حبوب بثور", بقع: "بقع", قشره: "قشره قشور", بيقع: "تساقط", صلع: "تساقط شعر",
+  وارم: "تورم", ورم: "تورم", متورم: "تورم", نزيف: "نزيف دم", بينزف: "نزيف دم", دم: "دم دموي",
+  عطشان: "عطش", عطش: "عطش", بتبول: "تبول بول", بول: "بول تبول", حمام: "تبول", بطرطر: "تبول بول",
+  ارق: "اضطراب نوم", نوم: "نوم", منمتش: "اضطراب نوم", قلقان: "قلق توتر", متوتر: "قلق توتر", مخنوقه: "ضيق قلق", مكتئب: "اكتئاب مزاج", زهقان: "اكتئاب مزاج", حزين: "حزن مزاج اكتئاب", خايف: "خوف", نسيان: "نسيان", بنسي: "نسيان",
+  دوره: "دوره", البريود: "دوره", بريود: "دوره", حامل: "حمل", حمل: "حمل", افرازات: "افرازات", انتصاب: "انتصاب", قذف: "قذف",
+  اصفرار: "اصفرار", صفرا: "اصفرار", صفار: "اصفرار", شحوب: "شحوب", باهت: "شحوب", كدمات: "كدمات", زرقان: "كدمات ازرقاق",
+  نغزه: "الم حاد وخز", نغزات: "الم حاد وخز", بينغزني: "الم حاد وخز", وخز: "وخز الم", شكه: "وخز الم", طفح: "طفح", طفحه: "طفح", حبيبات: "طفح حبوب", احمرار: "احمرار", محمر: "احمرار",
+  ناشفه: "جاف", ناشف: "جاف", بالليل: "ليل ليلا", ليل: "ليل ليلا", تحت: "اسفل", فوق: "اعلي", يمين: "يمين", شمال: "يسار", نص: "منتصف",
+  بقوم: "نهوض", اقوم: "نهوض", قمت: "نهوض", بصحي: "نهوض نوم", حمرا: "احمرار", حمراء: "احمرار", احمر: "احمرار", ساقطه: "ساخن", سخنه: "ساخن", ساقع: "بارد", ساقعه: "بارد",
+  نازل: "يمتد", بينزل: "يمتد", ماسك: "يمتد", واصل: "يمتد", ممتد: "يمتد", بلغم: "بلغم", اسبوعين: "اسبوعين", شديد: "شديد", جامد: "شديد", فجاه: "مفاجء", فجأه: "مفاجء", بسرعه: "سريع",
+  زغلله: "زغلله", مش_شايف: "زغلله رؤيه", طنين: "طنين", صفاره: "طنين صفير", سمع: "سمع", شم: "شم", طعم: "تذوق"
+};
+for (const w of [...STOP]) STOP.add(normAr(w));
+// السوابق: «ال» وأخواتها تُحذف إن بقي 3 أحرف، والحرف المفرد (و ف ب) إن بقي 4 أحرف؛ كي لا تصبح «بطني» «طني»
+const PRE2 = /^(وال|بال|كال|فال|لل|ال)/, PRE1 = /^[وفب]/;
+const SUF = /(هما|هم|ها|نا|كم|ات|ين|ون|يا|ه|ي|ك)$/;
+const unprefix = s => PRE2.test(s) && s.replace(PRE2, "").length >= 2 ? s.replace(PRE2, "") : PRE1.test(s) && s.length - 1 >= 4 ? s.slice(1) : s;
+function stem(w) {
+  let s = unprefix(normAr(w).replace(/[^ء-ي]/g, ""));
+  if (s.length > 4) s = s.replace(SUF, "");
+  return s;
+}
+const toks = text => normAr(text).replace(/[^ء-ي\s]/g, " ").split(/\s+/).filter(Boolean);
+// كلام المستخدم يُجرَّد بتساهل أكبر (بتعب ← تعب، شعري ← شعر)؛ الصيغ الزائدة لا تضر لأنها لا تطابق شيئًا
+function variants(w) {
+  const s = stem(w), out = new Set([s]);
+  if (/^[وفبل]/.test(s) && s.length >= 4) out.add(s.slice(1));
+  // أفعال العامية: بيوجع، بترعش، بنزف، بعطس ← الجذر
+  const v = normAr(w).replace(/^و/, "");
+  if (/^(بي|بت|بن)/.test(v) && v.length >= 5) out.add(v.slice(2)); else if (/^ب/.test(v) && v.length >= 4) out.add(v.slice(1));
+  for (const x of [...out]) if (x.length > 3) out.add(x.replace(SUF, ""));
+  return out;
+}
+// تعيد كل الصيغ (out) والصيغ الموثوقة (strict) التي يُسمح بمطابقتها بالبادئة
+function userStems(text) {
+  const out = new Set(), strict = new Set();
+  for (const w of toks(text)) {
+    if (STOP.has(w) || STOP.has(unprefix(w))) continue;
+    const vs = variants(w);
+    const syn = SYN[w] || SYN[unprefix(w)] || [...vs].map(v => SYN[v]).find(Boolean);
+    if (syn) syn.split(" ").forEach(x => { out.add(stem(x)); strict.add(stem(x)); });
+    for (const v of vs) if (v.length >= 2 && !STOP.has(v)) out.add(v);
+    if (!STOP.has(stem(w))) strict.add(stem(w));
+  }
+  out.strict = strict;
+  return out;
+}
+// تخصصات موضعية لا تُقترح إلا إذا ذكر المستخدم موضعها، وكلمات ترجّح تخصصًا بعينه
+const NEED = {
+  eyes: "عين رؤيه نظر جفن زغلله", ent: "اذن انف حلق بلع سمع طنين صوت بحه شم عطس", dental: "سن ضرس لثه فك فم",
+  andrology: "قضيب خصيه انتصاب قذف بروستاتا بول تبول صفن جنسي رغبه ثدي حمل زوجه فخذ",
+  gynecology: "دوره حمل مهبل ثدي افرازات رحم ولاده رضاعه علاقه حوض طمث نزيف", sexual: "علاقه جنسي قضيب مهبل افرازات تناسلي شرج واقي",
+  pediatrics: "طفل رضيع مولود ابني بنتي حفاض"
+};
+const HINT = {
+  bones: "مفصل ركبه ظهر رقبه كتف عظم كاحل كعب", heart: "قلب خفقان نبض ضغط", respiratory: "سعال تنفس بلغم صفير", neuro: "صداع تنميل خدر تشنج",
+  internal: "بطن معده اسهال قيء امساك براز سره", skin: "جلد طفح حكه بشره شعر حبوب بقع", mental: "قلق اكتئاب خوف مزاج توتر",
+  endocrine: "سكر عطش غده", andrology: "قضيب خصيه انتصاب قذف بروستاتا", gynecology: "دوره حمل مهبل ثدي افرازات", pediatrics: "طفل رضيع مولود ابن بنت",
+  geriatric: "نسيان", eyes: "عين", ent: "اذن حلق", dental: "سن ضرس لثه"
+};
+const words = s => new Set(s.split(" ").map(stem));
+const NEED_S = Object.fromEntries(Object.entries(NEED).map(([k, v]) => [k, words(v)]));
+const HINT_S = Object.fromEntries(Object.entries(HINT).map(([k, v]) => [k, words(v)]));
+let IDX = null;
+function describeIndex() {
+  if (IDX) return IDX;
+  const docs = [], df = new Map();
+  for (const z of ZONES) for (const s of DATA[z.key].symptoms) {
+    const st = [...new Set(toks(s.label).filter(w => !STOP.has(w)).map(stem).filter(x => x.length >= 2))];
+    st.forEach(x => df.set(x, (df.get(x) || 0) + 1));
+    docs.push({ zone: z.key, sym: s, st, alt: / أو /.test(s.label) });
+  }
+  const N = docs.length, idf = x => Math.log(1 + N / (df.get(x) || 1));
+  docs.forEach(d => { d.w = d.st.map(idf); d.total = d.w.reduce((a, b) => a + b, 0); });
+  IDX = { docs, idf };
+  return IDX;
+}
+// يرتب التخصصات حسب ما فُهم من الوصف، ويعيد لكل تخصص الأعراض المطابقة
+function analyzeDescription(text) {
+  const u = userStems(text), { docs } = describeIndex();
+  if (!u.size) return [];
+  // تطابق تام، أو بادئة (يد ← يدين، دم ← دموي) ما دام الفرق حرفين على الأكثر أو الكلمتان طويلتين
+  const pre = (a, b) => a.length <= b.length && b.startsWith(a) && (a.length >= 4 || a.length >= 2 && /^(ين|ي|وي|ه|يه|ات|ون)$/.test(b.slice(a.length)));
+  const strict = [...u.strict];
+  const has0 = x => u.has(x) || strict.some(y => pre(x, y) || pre(y, x));
+  // «وجوع» و«وحكه» في نص العرض: واو العطف على كلمة قصيرة
+  const has = x => has0(x) || x.length === 4 && /^[وف]/.test(x) && u.has(x.slice(1));
+  const byZone = new Map();
+  const mentions = set => [...set].some(has);
+  for (const d of docs) {
+    if (!allowedZone(d.zone) || !sexOk(d.sym) || !d.total) continue;
+    if (NEED_S[d.zone] && !mentions(NEED_S[d.zone])) continue;
+    // لا نخلط الجهتين: من قال «يمين» لا يُقترح له عرض في اليسار، والعكس
+    if (u.has("يمين") && d.st.includes("يسار") && !d.st.includes("يمين") || u.has("يسار") && d.st.includes("يمين") && !d.st.includes("يسار")) continue;
+    let m = 0, n = 0;
+    d.st.forEach((x, i) => { if (has(x)) { m += d.w[i]; n++; } });
+    const ratio = m / d.total, head = has(d.st[0]);
+    // يُقبل العرض إذا طابقت كلمتان مهمتان، أو طابقت كلمته الرئيسية (أول كلمة) مع جزء معتبر من باقيه
+    // علامات الخطر لا تُحدَّد تلقائيًا إلا إذا ذُكرت صراحة تقريبًا (كي لا نُفزع المستخدم بطوارئ لم يقلها)
+    if (d.sym.red && ratio < 0.75) continue;
+    // عرض من كلمتين: تكفي الأولى إذا كانت الثانية عامة (كـ«مستمرة»)، وإلا لزمت الكلمتان (فلا يصير «دم» وحده «دم في البول»)
+    // «دوخة أو إغماء»: البدائل المفصولة بـ«أو» يكفي أحدها
+    const alt = d.alt && d.st.length <= 3 && d.st.some((x, i) => has(x) && d.w[i] >= 2.5);
+    const short = d.st.length <= 2 ? alt || head && (n === 2 || d.w[1] < 0.6 * d.w[0]) : false;
+    const rareHead = head && (d.w[0] >= 4.5 && ratio >= 0.25 || n >= 2 && ratio >= 0.3);
+    if (d.st.length <= 2 ? short : (n >= 2 && ratio >= 0.4 || n >= 3 && ratio >= 0.33 || head && ratio >= 0.45 || rareHead || n >= 1 && ratio >= 0.6 && d.total > 3)) {
+      const z = byZone.get(d.zone) || { key: d.zone, score: 0, syms: [] };
+      // لا تكون المطابقة «قوية» إذا غابت أكثر كلمات العرض تميّزًا (مثل «التبرز» في «ألم حاد أثناء التبرز»)
+      const top = d.w.indexOf(Math.max(...d.w)), r = has(d.st[top]) || ratio >= 0.65 ? ratio : Math.min(ratio, 0.49);
+      z.score += r; z.syms.push({ s: d.sym, r });
+      byZone.set(d.zone, z);
+    }
+  }
+  // التخصصات التي ذُكر موضعها (مثل «صداع» أو «ركبة») تُقترح حتى لو لم يطابق عرض بعينه
+  for (const [k, set] of Object.entries(HINT_S)) if (DATA[k] && allowedZone(k) && !byZone.has(k) && mentions(set)) byZone.set(k, { key: k, score: 0, syms: [] });
+  // مطابقة قوية (≥ 0.5) تُحدَّد مسبقًا، والأضعف تُعرض اقتراحًا فقط ولا تُحدَّد
+  const zones = [...byZone.values()].map(z => {
+    z.syms.sort((a, b) => b.r - a.r);
+    const strong = z.syms.filter(x => x.r >= 0.5), weak = z.syms.filter(x => x.r < 0.5);
+    z.hint = !!(HINT_S[z.key] && mentions(HINT_S[z.key])) || !!NEED_S[z.key];
+    z.score = strong.reduce((a, x) => a + x.r, 0) + 0.3 * weak.reduce((a, x) => a + x.r, 0) + (z.hint ? 0.6 : 0);
+    z.syms = strong.slice(0, 6).map(x => x.s); z.maybe = weak.slice(0, 4).map(x => x.s);
+    z.red = z.syms.some(s => s.red); z.score += z.red ? 0.3 : 0;
+    return z;
+  });
+  const anyStrong = zones.some(z => z.syms.length);
+  return zones.filter(z => !anyStrong || z.syms.length || z.hint).sort((a, b) => b.score - a.score).slice(0, 3);
 }
 
 /* =========================================================
@@ -565,7 +766,7 @@ function renderTopbar() {
     $topbar.innerHTML = `<div class="bar-row">
       <div class="brand"><div class="logo">${ico(I.pulse, 2.4).replace('stroke="currentColor"', 'stroke="#fff"')}</div>
         <div><div class="brand-name">موصل</div><div class="brand-sub">حدّد موضع الألم واعرف الطبيب المناسب</div></div></div>
-      <button class="icon-btn" data-act="about" aria-label="عن موصل والمصادر">${ico(I.info)}</button>
+      ${prefBtns()}<button class="icon-btn" data-act="about" aria-label="عن موصل والمصادر">${ico(I.info)}</button>
     </div>`;
     return;
   }
@@ -576,7 +777,8 @@ function renderTopbar() {
     followup: "أسئلة للتأكد",
     results: "النتيجة",
     about: "عن موصل والمصادر",
-    stages: "حاسبة المراحل", terms: "الشروط والأحكام"
+    stages: "حاسبة المراحل", terms: "الشروط والأحكام",
+    describe: "تحليل وصفك", records: "سجلّي الصحي", tips: "نصائح لصحتك"
   }[state.screen] || "";
   const si = stepIndex();
   $topbar.innerHTML = `<div class="bar-row">
@@ -684,6 +886,14 @@ function renderHome() {
         <div class="bmi-cat" style="color:${b.color};margin-top:6px">${b.cat}</div></div></div>` : ""}
     </div>
 
+    <div class="card describe">
+      <label for="desc" class="desc-l">${ico(I.pen)}<b>صف حالتك بكلماتك</b></label>
+      <textarea id="desc" rows="3" maxlength="600" placeholder="مثل: أشعر بنغزة في صدري مع نهجان منذ الصباح، أو: عندي طفح وحكة في ذراعي">${esc(state.describe)}</textarea>
+      <div class="btn-row desc-row">
+        ${SpeechRec ? `<button class="btn btn-ghost" data-act="voice" aria-label="تحدّث بدل الكتابة">${ico(I.mic)} <span id="voice-l">تحدّث</span></button>` : ""}
+        <button class="btn btn-primary" data-act="describe">${ico(I.search)} حلّل وصفي</button></div>
+    </div>
+
     <div class="search" role="search">
       ${ico(I.search)}
       <label for="q" class="sr-only">ابحث عن عرض</label>
@@ -698,6 +908,12 @@ function renderHome() {
 
     <button class="quick stages-card" data-act="stages"><span class="qi">${ico(I.clock)}</span>
       <span class="t"><b>اعرف مرحلة السكري والضغط والكلى</b><span>أدخل نتائج تحاليلك وقياساتك لتعرف درجتها وفق الإرشادات الدولية</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
+    <div class="quick-2">
+      <button class="quick" data-act="records"><span class="qi">${ico(I.folder)}</span>
+        <span class="t"><b>سجلّي الصحي</b><span>${history.length ? `${history.length} تقييم محفوظ` : "تقييماتك وبطاقتك الصحية"}</span></span></button>
+      <button class="quick" data-act="tips"><span class="qi">${ico(I.heart)}</span>
+        <span class="t"><b>نصائح لصحتك</b><span>${personalTips().length ? `${personalTips().length} نصائح تخصك` : "النوم والرياضة والغذاء"}</span></span></button>
+    </div>
     <div class="label">أو اختر مباشرة دون تحديد موضع</div>
     ${quick}
 
@@ -944,9 +1160,12 @@ function renderResults() {
   const top = scored[0], rest = scored.slice(1, 6);
   const picked = zoneSymptoms(state.zone).filter(s => state.checked.has(s.id));
   const isEmergency = tri.key === "emergency" && !tri.crisis;
+  saveHistory(top, tri.key);
+  const zTips = (TIPS.zone || {})[state.zone] || [];
+  const cardLine = cardSummary();
 
   $content.innerHTML = `<div class="fade-in">
-    <div class="print-only"><h2>تقرير موصل — ${new Date().toLocaleDateString("ar-EG")}</h2></div>
+    <div class="print-only"><h2>تقرير موصل — ${new Date().toLocaleDateString("ar-EG")}</h2>${cardLine ? `<p>${esc(cardLine)}</p>` : ""}</div>
     ${tri.crisis ? `<div class="alert crisis" role="alert">${ico(I.heart).replace("<svg", '<svg class="ai"')}<div>
       <b>لست وحدك — تحدّث مع أحد الآن</b>
       <p>لهذه الأفكار علاج ومساعدة متاحة. اتصل بالخط الساخن للصحة النفسية (مجاني وسري)، أو بشخص تثق به. وإذا كنت في خطر الآن فاتصل بالإسعاف ${EMERGENCY_NUMBER}.</p>
@@ -973,13 +1192,146 @@ function renderResults() {
     ${rest.length ? `<div class="more-hd"><b>احتمالات أخرى</b><span class="muted small">اضغط لعرض التفاصيل</span></div>
       ${rest.map((c, i) => condCard(c, i + 2, false)).join("")}` : ""}
 
+    ${zTips.length ? `<details class="card zone-tips"><summary>${ico(I.heart)}<b>نصائح للوقاية — ${esc(z.name)}</b></summary>
+      <ul class="tip-list">${zTips.map(t => `<li>${esc(t)}</li>`).join("")}</ul>
+      <button class="link-btn" style="padding:0" data-act="tips">كل نصائح الصحة العامة</button></details>` : ""}
+
     <div class="btn-row no-print" style="margin-top:16px">
       <button class="btn btn-ghost" data-act="share">${ico(I.share)} مشاركة التقرير</button>
+      <a class="btn btn-ghost" href="https://wa.me/?text=${encodeURIComponent(reportText())}" target="_blank" rel="noopener noreferrer">${ico(I.chat)} واتساب</a>
       <button class="btn btn-ghost" data-act="print">${ico(I.print)} طباعة للطبيب</button>
     </div>
     <button class="btn btn-primary btn-block no-print" style="margin-top:10px" data-act="restart">${ico(I.restart)} فحص جديد</button>
 
     <div class="disclaimer">${ico(I.shield)}<span>هذه النسب درجة تطابق بين أعراضك والأعراض المعروفة لكل حالة، وليست احتمالًا إحصائيًا ولا تشخيصًا. ${z.status === "validated" ? "راجعنا هذا القسم وفق مصادر طبية" : "هذا القسم ما زال قيد المراجعة الطبية"}. افتح «المراجع» أسفل أي حالة للقراءة من المصدر.</span></div>
+  </div>`;
+  setCta(null);
+}
+
+/* ---------- الإملاء الصوتي (من المتصفح نفسه؛ لا نسجّل ولا نرسل صوتًا إلى أي خادم لنا) ---------- */
+const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+let rec = null;
+function toggleVoice() {
+  if (!SpeechRec) return;
+  if (rec) { rec.stop(); return; }
+  const box = document.getElementById("desc"), lab = document.getElementById("voice-l");
+  const base = box ? box.value.trim() : "";
+  rec = new SpeechRec();
+  rec.lang = "ar-EG"; rec.interimResults = true; rec.continuous = false;
+  rec.onresult = e => {
+    const said = [...e.results].map(r => r[0].transcript).join(" ");
+    state.describe = (base ? base + " " : "") + said;
+    if (box) box.value = state.describe;
+  };
+  rec.onerror = e => toast(e.error === "not-allowed" ? "اسمح للمتصفح باستخدام الميكروفون" : "تعذّر التعرف على الصوت، جرّب مرة أخرى");
+  rec.onend = () => { rec = null; if (lab) lab.textContent = "تحدّث"; };
+  if (lab) lab.textContent = "أستمع… اضغط للإيقاف";
+  try { rec.start(); } catch (err) { rec = null; }
+}
+
+/* ---------- الوصف المكتوب ---------- */
+function runDescribe() {
+  const box = document.getElementById("desc");
+  if (box) state.describe = box.value;
+  if (state.describe.trim().length < 3) return toast("اكتب وصفًا قصيرًا لما تشعر به");
+  state.described = analyzeDescription(state.describe);
+  state.prev = "home";
+  go("describe");
+}
+function renderDescribe() {
+  const res = state.described || [];
+  const red = res.some(z => z.red);
+  $content.innerHTML = `<div class="fade-in">
+    <div class="card"><div class="small muted">وصفك:</div><p style="margin:4px 0 0">«${esc(state.describe)}»</p>
+      <button class="link-btn" style="padding:0;margin-top:6px" data-act="desc-edit">تعديل الوصف</button></div>
+    ${red ? `<div class="alert danger" role="alert">${ico(I.alert).replace("<svg", '<svg class="ai"')}<div><b>في وصفك علامة قد تكون خطيرة</b>
+      <p>إذا كانت الأعراض شديدة أو مفاجئة فلا تنتظر؛ اتصل بالإسعاف ${EMERGENCY_NUMBER} أو توجّه إلى أقرب طوارئ.</p>
+      <a class="btn" href="tel:${EMERGENCY_NUMBER}">${ico(I.phone)} اتصل ${EMERGENCY_NUMBER}</a></div></div>` : ""}
+    ${res.length ? `<h2 class="h2" style="margin:16px 0 4px">فهمنا من وصفك</h2>
+      <p class="muted small" style="margin:0 0 10px">اختر التخصص الأقرب، وستجد هذه الأعراض محددة مسبقًا؛ أكمل باقي أعراضك ثم اعرض النتيجة.</p>
+      ${res.map((z, i) => `<div class="card desc-z ${i === 0 ? "best" : ""}">
+        <div class="desc-h"><span class="qi">${ico(ZONE[z.key].icon)}</span><b>${esc(ZONE[z.key].name)}</b>${i === 0 ? `<span class="badge ok">الأقرب</span>` : ""}</div>
+        ${z.syms.length ? `<div class="matched">${z.syms.map(s => `<span>✓ ${esc(s.label)}</span>`).join("")}</div>` : `<p class="muted small" style="margin:0 0 10px">لم نحدد أعراضًا بعينها من وصفك؛ اختر أعراضك في الصفحة التالية.</p>`}
+        ${z.maybe && z.maybe.length ? `<div class="maybe"><span class="small muted">قد تنطبق عليك (لن تُحدَّد إلا إذا اخترتها):</span><div class="matched">${z.maybe.map(s => `<span class="miss">${esc(s.label)}</span>`).join("")}</div></div>` : ""}
+        <button class="btn ${i === 0 ? "btn-primary" : "btn-ghost"} btn-block" data-desc-zone="${z.key}">تابع في ${esc(ZONE[z.key].name)}</button></div>`).join("")}`
+    : `<div class="card"><b>لم نتعرف على أعراض محددة في وصفك</b>
+      <p class="muted small" style="margin:6px 0 0">جرّب أن تذكر موضع الألم ونوعه ومدته، مثل: «ألم في أسفل يمين البطن مع حرارة وقيء منذ يوم»، أو اضغط على موضع الألم في الجسم.</p></div>`}
+    <button class="btn btn-ghost btn-block" style="margin-top:12px" data-act="home">${ico(I.home)} اختيار الموضع من الجسم</button>
+  </div>`;
+  setCta(null);
+}
+
+/* ---------- سجلّي الصحي ---------- */
+function saveHistory(top, triKey) {
+  if (!state.caseId || !state.zone) return;
+  const e = { id: state.caseId, at: new Date().toISOString(), zone: state.zone, checked: [...state.checked], denied: [...state.denied],
+    top: top ? { id: top.id, name: top.name, pct: top.pct } : null, triage: triKey };
+  history = [e, ...history.filter(h => h.id !== e.id)].slice(0, HIST_MAX);
+  keep(HIST_KEY, history);
+}
+const fmtDate = iso => { try { return new Date(iso).toLocaleString("ar-EG", { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } };
+function renderRecords() {
+  const tab = state.recTab;
+  const tabs = `<div class="seg rec-tabs" role="tablist">
+    <button role="tab" data-rec-tab="history" aria-pressed="${tab === "history"}">${ico(I.folder)} التقييمات السابقة (${history.length})</button>
+    <button role="tab" data-rec-tab="card" aria-pressed="${tab === "card"}">${ico(I.card)} بطاقتي الصحية</button></div>`;
+  let body;
+  if (tab === "card") {
+    body = `<div class="card rec-card">
+      <p class="muted small" style="margin:0 0 10px">تُحفظ على جهازك فقط، وتظهر في التقرير المطبوع لطبيبك وفي حالات الطوارئ.</p>
+      <div class="field"><label class="flabel" for="c-blood">فصيلة الدم</label>
+        <select id="c-blood" data-card="blood">${BLOOD.map(b => `<option value="${b}" ${card.blood === b ? "selected" : ""}>${b || "لا أعرف"}</option>`).join("")}</select></div>
+      ${CARD_FIELDS.map(([k, l, t, ph]) => `<div class="field"><label class="flabel" for="c-${k}">${l}</label>
+        <input id="c-${k}" type="${t}" data-card="${k}" value="${esc(card[k] || "")}" placeholder="${esc(ph)}" ${t === "tel" ? 'inputmode="tel" dir="ltr"' : ""} maxlength="160"></div>`).join("")}
+      ${card.emPhone ? `<a class="btn btn-ghost btn-block" href="tel:${esc(card.emPhone.replace(/[^\d+]/g, ""))}">${ico(I.phone)} اتصال بـ${esc(card.emName || "جهة الطوارئ")}</a>` : ""}
+    </div>`;
+  } else {
+    body = history.length ? `<div class="hist">${history.map(h => {
+      const z = ZONE[h.zone], T = TRIAGE[h.triage] || TRIAGE.doctor;
+      return z ? `<div class="hist-row t-${T.tone}">
+        <button class="hist-main" data-hist="${h.id}"><span class="hist-d">${esc(fmtDate(h.at))} · ${esc(z.name)}</span>
+          <b>${h.top ? esc(h.top.name) : "دون تطابق واضح"}${h.top ? ` <span class="muted small">${h.top.pct}%</span>` : ""}</b>
+          <span class="hist-t">${esc(T.label)}</span></button>
+        <button class="icon-btn sm" data-hist-del="${h.id}" aria-label="حذف هذا التقييم">${ico(I.trash)}</button></div>` : "";
+    }).join("")}</div>
+      <button class="btn btn-ghost btn-block" style="margin-top:12px" data-act="hist-clear">${ico(I.trash)} مسح السجل كله</button>`
+      : `<div class="card"><b>لا توجد تقييمات بعد</b><p class="muted small" style="margin:6px 0 0">كل تقييم تكمله يُحفظ هنا تلقائيًا لتتابع حالتك أو تعرضه على طبيبك.</p></div>`;
+  }
+  $content.innerHTML = `<div class="fade-in">${tabs}${body}</div>`;
+  if (tab === "card") setCta("حفظ البطاقة", saveCard, false); else setCta(null);
+}
+function saveCard() {
+  document.querySelectorAll("[data-card]").forEach(el => { card[el.dataset.card] = el.value.trim(); });
+  keep(CARD_KEY, card);
+  toast("حُفظت بطاقتك الصحية");
+  render();
+}
+function openHistory(id) {
+  const h = history.find(x => x.id === id);
+  if (!h || !DATA[h.zone]) return;
+  resetCase();
+  state.zone = h.zone; state.caseId = h.id; state.region = null;
+  state.checked = new Set(h.checked); state.denied = new Set(h.denied || []);
+  go("results");
+}
+
+/* ---------- نصائح لصحتك ---------- */
+const TIPS = window.MOSEL_TIPS || { general: [], when: [], zone: {} };
+function personalTips() {
+  const p = state.profile, b = bmiOf(p), age = +p.age, chronic = p.chronic || [];
+  return TIPS.when.filter(({ if: c }) =>
+    (c.bmiMin == null || (b && b.value >= c.bmiMin)) && (c.bmiMax == null || (b && b.value < c.bmiMax)) &&
+    (c.ageMin == null || age >= c.ageMin) && (c.ageMax == null || age <= c.ageMax) &&
+    (!c.sex || c.sex === p.gender) && (!c.chronic || chronic.includes(c.chronic)));
+}
+const tipLi = x => `<li>${esc(x.t)}${x.src && GUIDE_ORGS[x.src] ? ` <a class="tip-src" href="${GUIDE_ORGS[x.src][1]}" target="_blank" rel="noopener noreferrer">${esc(GUIDE_ORGS[x.src][0])}</a>` : ""}</li>`;
+function renderTips() {
+  const mine = personalTips();
+  $content.innerHTML = `<div class="fade-in tips">
+    <h1 class="h1">نصائح لصحتك</h1>
+    <p class="muted">نصائح وقائية عامة من جهات صحية دولية، وبعضها مخصص لعمرك وبياناتك. لا تغني عن استشارة الطبيب.</p>
+    ${mine.length ? `<section class="card"><h2 class="h2">${ico(I.user)} خاصة بك</h2><ul class="tip-list">${mine.map(tipLi).join("")}</ul></section>` : ""}
+    <section class="card"><h2 class="h2">${ico(I.heart)} لكل الناس</h2><ul class="tip-list">${TIPS.general.map(tipLi).join("")}</ul></section>
   </div>`;
   setCta(null);
 }
@@ -1012,6 +1364,8 @@ function renderAbout() {
     </ul>
     <h2>خصوصيتك</h2>
     <p>تُحفظ بياناتك (العمر والطول والوزن والأمراض المزمنة) على جهازك فقط ولا تُرسَل إلى أي خادم، ولا تُحفظ الأعراض إطلاقًا.</p>
+    <h2>العرض</h2>
+    <div class="pref-row"><span>الوضع الليلي وحجم الخط</span>${prefBtns()}</div>
     <h2>شروط الاستخدام</h2>
     <p>استخدامك لـ«موصل» خاضع لشروط الاستخدام وإخلاء المسؤولية التي وافقت عليها${terms && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString("ar-EG", { year: "numeric", month: "long", day: "numeric" })) : ""}. <button class="link-btn" data-act="terms">اقرأ الشروط</button></p>
     <div class="btn-row"><button class="btn btn-ghost" data-act="edit">${ico(I.user)} تعديل بياناتي</button><button class="btn btn-ghost" data-act="wipe">${ico(I.x)} حذف بياناتي</button></div>
@@ -1103,6 +1457,14 @@ function renderStageOut() {
 }
 
 /* ---------- التقرير ---------- */
+function cardSummary() {
+  return [
+    card.name ? `الاسم: ${card.name}` : "", card.blood ? `فصيلة الدم: ${card.blood}` : "",
+    card.allergies ? `الحساسية: ${card.allergies}` : "", card.meds ? `الأدوية الحالية: ${card.meds}` : "",
+    card.surgeries ? `عمليات/أمراض سابقة: ${card.surgeries}` : "",
+    card.emPhone ? `للطوارئ: ${card.emName || ""} ${card.emPhone}` : ""
+  ].filter(Boolean).join(" · ");
+}
 function reportText() {
   const p = state.profile, z = ZONE[state.zone], d = DATA[state.zone];
   const scored = scoreZone(state.zone).slice(0, 3);
@@ -1110,6 +1472,7 @@ function reportText() {
   return [
     `تقرير موصل — ${new Date().toLocaleDateString("ar-EG")}`,
     `${p.gender === "male" ? "ذكر" : "أنثى"}، ${p.age} سنة، ${p.height} سم، ${p.weight} كجم${p.chronic.length ? "، أمراض مزمنة: " + p.chronic.join("، ") : ""}`,
+    cardSummary(),
     `التخصص: ${z.name}`,
     `الأعراض: ${d.symptoms.filter(s => state.checked.has(s.id)).map(s => s.label).join("، ")}`,
     state.denied.size ? `أعراض نفاها: ${d.symptoms.filter(s => state.denied.has(s.id)).map(s => s.label).join("، ")}` : "",
@@ -1143,6 +1506,9 @@ function render() {
   else if (s === "results") renderResults();
   else if (s === "about") renderAbout();
   else if (s === "stages") renderStages();
+  else if (s === "describe") renderDescribe();
+  else if (s === "records") renderRecords();
+  else if (s === "tips") renderTips();
   if (render.last !== s) { window.scrollTo(0, 0); render.last = s; }
 }
 
@@ -1161,6 +1527,15 @@ document.addEventListener("click", e => {
     return render();
   }
   if (ds.gender) { state.profile.gender = ds.gender; return render(); }
+  if (ds.descZone) {
+    const z = (state.described || []).find(x => x.key === ds.descZone);
+    pickZone(ds.descZone);
+    if (z) { z.syms.forEach(s => state.checked.add(s.id)); render(); }
+    return;
+  }
+  if (ds.recTab) { state.recTab = ds.recTab; return render(); }
+  if (ds.hist) return openHistory(ds.hist);
+  if (ds.histDel) { history = history.filter(h => h.id !== ds.histDel); keep(HIST_KEY, history); toast("حُذف التقييم"); return render(); }
   if (ds.chronic) {
     const c = ds.chronic, arr = state.profile.chronic;
     state.profile.chronic = arr.includes(c) ? arr.filter(x => x !== c) : [...arr, c];
@@ -1172,6 +1547,19 @@ document.addEventListener("click", e => {
     case "about": state.prev = state.screen; return go("about");
     case "stages": state.prev = state.screen; return go("stages");
     case "terms": e.preventDefault(); state.prev = state.screen; return go("terms");
+    case "describe": return runDescribe();
+    case "voice": return toggleVoice();
+    case "desc-edit": return go("home");
+    case "records": state.prev = state.screen; return go("records");
+    case "tips": state.prev = state.screen; return go("tips");
+    case "theme": { const m = THEME_NEXT[curTheme()]; applyTheme(m); toast("الوضع: " + THEME_NAME[m]); return render(); }
+    case "zoom+": case "zoom-": {
+      const i = Math.max(0, Math.min(ZOOMS.length - 1, ZOOMS.indexOf(curZoom()) + (ds.act === "zoom+" ? 1 : -1)));
+      applyZoom(ZOOMS[i]); return toast("حجم الخط: " + ZOOMS[i] + "%");
+    }
+    case "hist-clear":
+      if (!confirm("هل تريد مسح كل التقييمات المحفوظة؟")) return;
+      history = []; keep(HIST_KEY, history); return render();
     case "edit": state.editingProfile = true; return go("onboarding");
     case "cancel-edit":
       try { state.profile = JSON.parse(localStorage.getItem(PROFILE_KEY)) || state.profile; } catch (err) { /* ignore */ }
@@ -1183,7 +1571,8 @@ document.addEventListener("click", e => {
     case "print": return window.print();
     case "wipe":
       if (!confirm("هل تريد حذف بياناتك من هذا الجهاز؟")) return;
-      try { localStorage.removeItem(PROFILE_KEY); } catch (err) { /* ignore */ }
+      try { [PROFILE_KEY, CARD_KEY, HIST_KEY].forEach(k => localStorage.removeItem(k)); } catch (err) { /* ignore */ }
+      card = {}; history = [];
       state.profile = { gender: null, age: "", height: "", weight: "", chronic: [] };
       state.consent = false; resetCase(); return go("onboarding");
   }
@@ -1204,6 +1593,7 @@ document.addEventListener("pointerover", e => {
 document.addEventListener("input", e => {
   const t = e.target;
   if (t.id === "q") { state.query = t.value; return renderSearch(); }
+  if (t.id === "desc") { state.describe = t.value; return; }
   if (t.dataset && t.dataset.field) {
     state.profile[t.dataset.field] = t.value;
     const err = fieldError(t.dataset.field, t.value);
@@ -1230,5 +1620,5 @@ window.addEventListener("load", () => {
 });
 
 /* للاختبارات الآلية */
-window.__mosel = { state, scoreZone, evaluate, render };
+window.__mosel = { state, scoreZone, evaluate, render, analyzeDescription };
 })();

@@ -1119,7 +1119,7 @@
     "andrology.balanitis":   p => [p.has("سكر") && "السكري"]
   };
 
-  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.4.0", updatedAt: "2026-10" };
+  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.5.0", updatedAt: "2026-10" };
 
   /* إضافة أمراض وأعراض من ملفات data/more_*.js
      MOSEL_EXTEND("zoneKey", { zone?, regions?, symptoms?, conditions?, risk? }) */
