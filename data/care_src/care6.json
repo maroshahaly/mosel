@@ -1,0 +1,555 @@
+{
+"mental.bipolar": {
+ "tests": ["وظائف الغدة الدرقية (TSH)", "وظائف الكلى (Creatinine, eGFR)", "سكر الدم ودهون الدم (HbA1c, Lipid profile)", "مستوى الليثيوم في الدم عند استخدامه"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبتات المزاج", "ex": "lithium, valproic acid", "note": "بوصفة طبية فقط؛ تحتاج متابعة تحاليل؛ يُتجنب الفالبروات لمن قد تحمل"},
+  {"cls": "مضادات الذهان الحديثة", "ex": "quetiapine, olanzapine, aripiprazole, risperidone", "note": "بوصفة طبية فقط؛ متابعة الوزن والسكر"}
+ ],
+ "procedures": ["التثقيف النفسي للمريض وأسرته حول المرض وعلامات الانتكاس", "علاج نفسي منظم مثل العلاج المعرفي السلوكي (CBT) أو العلاج الأسري", "دخول المستشفى عند نوبة هوس شديدة أو خطر إيذاء النفس"],
+ "selfcare": ["الالتزام بمواعيد نوم منتظمة", "تجنب الكحول والمخدرات", "عدم إيقاف الدواء دون استشارة الطبيب"],
+ "refs": ["NICE", "APA", "WHO_MHGAP", "WHO_EML"],
+ "guide": "NICE CG185 Bipolar disorder: assessment and management (2014, updated)"
+},
+"mental.ocd": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)", "ex": "fluoxetine, sertraline, fluvoxamine, escitalopram", "note": "بوصفة طبية فقط؛ يظهر أثرها بعد أسابيع"},
+  {"cls": "مضادات الاكتئاب ثلاثية الحلقات", "ex": "clomipramine", "note": "بوصفة طبية فقط؛ خيار لاحق عند عدم الاستجابة"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي مع التعرّض ومنع الاستجابة (ERP)"],
+ "selfcare": ["مقاومة الأفعال القهرية تدريجيًا بحسب خطة المعالج", "تجنب البحث المتكرر عن الطمأنة"],
+ "refs": ["NICE", "APA", "WHO_EML"],
+ "guide": "NICE CG31 Obsessive-compulsive disorder and body dysmorphic disorder: treatment (2005)"
+},
+"mental.ptsd": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الاكتئاب (SSRIs/SNRIs)", "ex": "sertraline, paroxetine, venlafaxine", "note": "بوصفة طبية فقط؛ ليست بديلًا عن العلاج النفسي"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي المركّز على الصدمة (TF-CBT)", "علاج إزالة التحسس وإعادة المعالجة بحركة العين (EMDR)"],
+ "selfcare": ["الحفاظ على روتين يومي ونوم منتظم", "تجنب الكحول والمهدئات غير الموصوفة", "طلب المساعدة العاجلة عند أفكار إيذاء النفس"],
+ "refs": ["NICE", "APA", "WHO_MHGAP", "WHO_EML"],
+ "guide": "NICE NG116 Post-traumatic stress disorder (2018)"
+},
+"mental.psychosis": {
+ "tests": ["صورة دم كاملة (CBC)", "سكر الدم ودهون الدم (HbA1c, Lipid profile)", "فحص المخدرات في البول (Urine drug screen)", "وظائف الغدة الدرقية والكلى والكبد"],
+ "imaging": ["رنين مغناطيسي على الدماغ (MRI) عند وجود علامات عصبية أو أعراض غير نمطية"],
+ "meds": [
+  {"cls": "مضادات الذهان", "ex": "risperidone, olanzapine, aripiprazole, haloperidol", "note": "بوصفة طبية فقط؛ متابعة الوزن والسكر والآثار الجانبية الحركية"}
+ ],
+ "procedures": ["تقييم نفسي عاجل وتقدير خطر إيذاء النفس أو الآخرين", "التحويل إلى خدمة التدخل المبكر في الذهان", "العلاج المعرفي السلوكي للذهان (CBTp) والتدخل الأسري", "دخول المستشفى عند الخطر الشديد"],
+ "selfcare": ["الاتصال بالرقم 123 فورًا عند وجود خطر إيذاء النفس أو الآخرين", "الامتناع عن المخدرات والكحول"],
+ "refs": ["NICE", "APA", "WHO_MHGAP", "WHO_EML"],
+ "guide": "NICE CG178 Psychosis and schizophrenia in adults: prevention and management (2014)"
+},
+"mental.anorexia": {
+ "tests": ["الأملاح: البوتاسيوم والفوسفات والمغنيسيوم (Electrolytes)", "صورة دم كاملة (CBC) وسكر الدم", "وظائف الكلى والكبد", "تخطيط القلب الكهربائي (ECG)"],
+ "imaging": ["قياس كثافة العظام (DEXA) عند طول مدة المرض"],
+ "meds": [],
+ "procedures": ["علاج نفسي متخصص لاضطرابات الأكل (CBT-ED)", "العلاج الأسري للأطفال والمراهقين (FBT)", "خطة تغذية علاجية بإشراف أخصائي تغذية مع مراقبة متلازمة إعادة التغذية", "دخول المستشفى عند انخفاض شديد في الوزن أو اضطراب النبض أو الأملاح"],
+ "selfcare": ["التوجه للطوارئ أو الاتصال بالرقم 123 عند الإغماء أو اضطراب النبض"],
+ "refs": ["NICE", "APA"],
+ "guide": "NICE NG69 Eating disorders: recognition and treatment (2017, updated 2020)"
+},
+"mental.bulimia": {
+ "tests": ["الأملاح خاصة البوتاسيوم (Electrolytes)", "وظائف الكلى (Creatinine)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)", "ex": "fluoxetine", "note": "بوصفة طبية فقط؛ مساعد للعلاج النفسي وليس بديلًا عنه"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي لاضطرابات الأكل (CBT-ED)", "برنامج مساعدة ذاتية موجَّه", "فحص الأسنان ومتابعة تآكل المينا"],
+ "selfcare": ["تناول وجبات منتظمة وعدم تخطيها", "تجنب الوزن المتكرر والحميات القاسية"],
+ "refs": ["NICE", "APA", "WHO_EML"],
+ "guide": "NICE NG69 Eating disorders: recognition and treatment (2017, updated 2020)"
+},
+"mental.addiction": {
+ "tests": ["فحص المخدرات في البول (Urine drug screen)", "وظائف الكبد (LFTs)", "فحص فيروسات الكبد B وC وفيروس نقص المناعة (HBV, HCV, HIV)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "العلاج البديل لإدمان الأفيونات", "ex": "methadone, buprenorphine", "note": "بوصفة طبية فقط وتحت إشراف برنامج علاجي مختص"},
+  {"cls": "أدوية منع الانتكاس في إدمان الكحول", "ex": "naltrexone, acamprosate", "note": "بوصفة طبية فقط"},
+  {"cls": "البنزوديازيبينات لأعراض انسحاب الكحول", "ex": "diazepam", "note": "بوصفة طبية فقط وتحت إشراف طبي لفترة قصيرة"}
+ ],
+ "procedures": ["سحب السموم تحت إشراف طبي عند الحاجة", "المقابلة التحفيزية والعلاج المعرفي السلوكي (CBT)", "مجموعات الدعم والتأهيل النفسي والاجتماعي"],
+ "selfcare": ["عدم التوقف المفاجئ عن الكحول أو المهدئات دون إشراف طبي", "الاتصال بالرقم 123 عند الاشتباه بجرعة زائدة"],
+ "refs": ["WHO_MHGAP", "NICE", "APA", "WHO_EML"],
+ "guide": "WHO mhGAP Intervention Guide version 2.0 (2016)"
+},
+"mental.socialanxiety": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)", "ex": "sertraline, escitalopram", "note": "بوصفة طبية فقط؛ عند تفضيلها أو عدم الاستجابة للعلاج النفسي"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي الفردي المخصص للقلق الاجتماعي (CBT)"],
+ "selfcare": ["مواجهة المواقف الاجتماعية تدريجيًا", "تجنب الاعتماد على الكحول لتخفيف القلق"],
+ "refs": ["NICE", "APA", "WHO_EML"],
+ "guide": "NICE CG159 Social anxiety disorder: recognition, assessment and treatment (2013)"
+},
+"mental.ppd": {
+ "tests": ["وظائف الغدة الدرقية (TSH)", "صورة دم كاملة (CBC) للكشف عن فقر الدم"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)", "ex": "sertraline", "note": "بوصفة طبية فقط؛ يختار الطبيب الدواء الملائم للرضاعة"}
+ ],
+ "procedures": ["العلاج المعرفي السلوكي (CBT) أو العلاج النفسي البينشخصي (IPT)", "تقييم نفسي عاجل عند أفكار إيذاء النفس أو الطفل"],
+ "selfcare": ["طلب المساعدة من الأسرة في رعاية الطفل لأخذ قسط من النوم", "الاتصال بالرقم 123 فورًا عند أفكار إيذاء النفس أو الطفل"],
+ "refs": ["NICE", "ACOG", "WHO_MHGAP", "WHO_EML"],
+ "guide": "NICE CG192 Antenatal and postnatal mental health: clinical management and service guidance (2014)"
+},
+"mental.smoking": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "العلاج ببدائل النيكوتين", "ex": "nicotine replacement therapy", "note": "لصقات أو علكة؛ استشر الطبيب في الحمل وأمراض القلب"},
+  {"cls": "أدوية الإقلاع عن التدخين", "ex": "varenicline, bupropion", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["دعم سلوكي واستشارات الإقلاع عن التدخين"],
+ "selfcare": ["تحديد موعد للإقلاع والتخلص من السجائر", "تجنب المحفزات مثل القهوة مع التدخين في البداية", "الاستعانة بخط مساعدة الإقلاع"],
+ "refs": ["NICE", "WHO", "WHO_EML"],
+ "guide": "NICE NG209 Tobacco: preventing uptake, promoting quitting and treating dependence (2021)"
+},
+"pediatrics.neonatalfever": {
+ "tests": ["صورة دم كاملة (CBC)", "مزرعة دم (Blood culture)", "تحليل البول ومزرعته (Urinalysis, Urine culture)", "مؤشرات الالتهاب (CRP, Procalcitonin)"],
+ "imaging": ["أشعة سينية على الصدر عند وجود أعراض تنفسية"],
+ "meds": [
+  {"cls": "مضادات حيوية وريدية", "ex": "ampicillin, gentamicin, cefotaxime", "note": "تُعطى في المستشفى؛ الجرعة حسب الوزن يحددها طبيب الأطفال"},
+  {"cls": "مضادات الفيروسات", "ex": "aciclovir", "note": "تُعطى في المستشفى عند الاشتباه بعدوى الهربس"}
+ ],
+ "procedures": ["بزل قطني لفحص السائل الدماغي الشوكي (LP) عند الحاجة", "دخول المستشفى للمراقبة حتى ظهور نتائج المزارع"],
+ "selfcare": ["التوجه فورًا إلى الطوارئ أو الاتصال بالرقم 123"],
+ "refs": ["AAP", "NICE", "WHO_EML"],
+ "guide": "AAP Clinical Practice Guideline: Evaluation and Management of Well-Appearing Febrile Infants 8 to 60 Days Old (2021)"
+},
+"pediatrics.dehydration": {
+ "tests": ["الأملاح (Electrolytes)", "سكر الدم", "وظائف الكلى (Urea, Creatinine)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "محلول معالجة الجفاف الفموي", "ex": "oral rehydration salts", "note": "الكمية حسب الوزن يحددها طبيب الأطفال"},
+  {"cls": "مكملات الزنك في الإسهال", "ex": "zinc sulfate", "note": "الجرعة حسب العمر يحددها طبيب الأطفال"},
+  {"cls": "سوائل وريدية للجفاف الشديد", "ex": "sodium chloride 0.9%, compound solution of sodium lactate", "note": "تُعطى في المستشفى"}
+ ],
+ "procedures": ["إعطاء السوائل عبر أنبوب أنفي معدي أو الوريد عند الجفاف الشديد"],
+ "selfcare": ["إعطاء محلول الإرواء الفموي برشفات صغيرة متكررة", "الاستمرار في الرضاعة الطبيعية", "تجنب العصائر والمشروبات الغازية"],
+ "refs": ["WHO", "NICE", "ESPGHAN", "WHO_EML"],
+ "guide": "NICE CG84 Diarrhoea and vomiting caused by gastroenteritis in under 5s: diagnosis and management (2009)"
+},
+"pediatrics.croup": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "الكورتيكوستيرويدات", "ex": "dexamethasone, prednisolone", "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن يحددها طبيب الأطفال"},
+  {"cls": "الأدرينالين بالبخار للحالات الشديدة", "ex": "epinephrine (adrenaline)", "note": "تُعطى في المستشفى"}
+ ],
+ "procedures": ["المراقبة في المستشفى والأكسجين عند الحالات الشديدة"],
+ "selfcare": ["إبقاء الطفل هادئًا وفي وضعية مريحة", "التوجه للطوارئ عند صرير أثناء الراحة أو صعوبة تنفس"],
+ "refs": ["NICE", "AAP", "WHO_EML"],
+ "guide": "NICE Clinical Knowledge Summary: Croup"
+},
+"pediatrics.bronchiolitis": {
+ "tests": ["قياس نسبة الأكسجين في الدم (Pulse oximetry)"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["الأكسجين عند انخفاض نسبة التشبع", "شفط الإفرازات الأنفية", "تغذية أو سوائل عبر أنبوب أنفي معدي أو الوريد عند صعوبة الرضاعة", "دخول المستشفى للحالات المتوسطة والشديدة"],
+ "selfcare": ["تنظيف الأنف بمحلول ملحي وشفط لطيف", "رضعات صغيرة متكررة", "التوجه للطوارئ عند صعوبة التنفس أو توقفه أو قلة البلل"],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE NG9 Bronchiolitis in children: diagnosis and management (2015, updated 2021)"
+},
+"pediatrics.febrileseizure": {
+ "tests": ["تحليل البول للبحث عن مصدر الحرارة (Urinalysis)", "الأملاح وسكر الدم عند الحاجة"],
+ "imaging": [],
+ "meds": [
+  {"cls": "البنزوديازيبينات لإيقاف التشنج الممتد", "ex": "midazolam, diazepam", "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن يحددها طبيب الأطفال"},
+  {"cls": "خافضات الحرارة", "ex": "paracetamol, ibuprofen", "note": "للراحة فقط ولا تمنع التشنج؛ الجرعة حسب الوزن"}
+ ],
+ "procedures": ["تقييم سبب الحرارة، والبزل القطني (LP) عند الاشتباه بالتهاب السحايا"],
+ "selfcare": ["وضع الطفل على جنبه وعدم وضع أي شيء في فمه", "حساب مدة التشنج والاتصال بالرقم 123 إذا تجاوز 5 دقائق"],
+ "refs": ["AAP", "NICE", "WHO_EML"],
+ "guide": "AAP Clinical Practice Guideline: Neurodiagnostic Evaluation of the Child With a Simple Febrile Seizure (2011)"
+},
+"pediatrics.jaundice": {
+ "tests": ["البيليروبين الكلي والمباشر (Total & direct bilirubin)", "فصيلة الدم واختبار كومبس (Blood group, DAT)", "صورة دم كاملة والخلايا الشبكية (CBC, Reticulocytes)", "إنزيم G6PD"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["العلاج الضوئي (Phototherapy)", "تبديل الدم (Exchange transfusion) في الحالات الشديدة"],
+ "selfcare": ["الرضاعة المتكررة 8 إلى 12 مرة يوميًا", "مراجعة الطبيب عند البراز الباهت أو البول الداكن أو خمول الرضيع"],
+ "refs": ["AAP", "NICE"],
+ "guide": "AAP Clinical Practice Guideline Revision: Management of Hyperbilirubinemia in the Newborn Infant 35 or More Weeks of Gestation (2022)"
+},
+"pediatrics.colic": {
+ "tests": [],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["فحص الرضيع لاستبعاد أسباب أخرى للبكاء"],
+ "selfcare": ["حمل الرضيع وهزه بلطف أو استخدام صوت هادئ", "أخذ استراحة عند الإرهاق وعدم هز الرضيع بعنف أبدًا"],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE Clinical Knowledge Summary: Colic - infantile"
+},
+"pediatrics.pyloric": {
+ "tests": ["غازات الدم والأملاح (Blood gas, Electrolytes)"],
+ "imaging": ["أشعة موجات فوق صوتية على البطن (Ultrasound)"],
+ "meds": [
+  {"cls": "سوائل وريدية لتصحيح الأملاح", "ex": "sodium chloride, glucose, potassium chloride", "note": "تُعطى في المستشفى؛ حسب الوزن يحددها طبيب الأطفال"}
+ ],
+ "procedures": ["جراحة شق عضلة البواب (Pyloromyotomy) بالمنظار أو الجراحة المفتوحة"],
+ "selfcare": [],
+ "refs": ["ACR", "AAP"],
+ "guide": "ACR Appropriateness Criteria: Vomiting in Infants"
+},
+"pediatrics.autism": {
+ "tests": ["فحص السمع (Audiology)", "فحوص جينية عند الحاجة (Chromosomal microarray, Fragile X)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الذهان للتهيج الشديد", "ex": "risperidone, aripiprazole", "note": "بوصفة طبية فقط؛ للتهيج الشديد وليس للتوحد نفسه"}
+ ],
+ "procedures": ["التدخل السلوكي المبكر المكثف", "علاج النطق واللغة", "العلاج الوظيفي", "تدريب الوالدين والدعم التعليمي"],
+ "selfcare": ["الحفاظ على روتين يومي ثابت للطفل"],
+ "refs": ["AAP", "NICE", "WHO_EML"],
+ "guide": "AAP Clinical Report: Identification, Evaluation, and Management of Children With Autism Spectrum Disorder (2020)"
+},
+"pediatrics.adhd": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "المنبهات", "ex": "methylphenidate, lisdexamfetamine", "note": "بوصفة طبية فقط؛ متابعة الطول والوزن والنبض والضغط"},
+  {"cls": "غير المنبهات", "ex": "atomoxetine", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["برامج تدريب الوالدين على إدارة السلوك", "دعم وتعديلات مدرسية", "العلاج المعرفي السلوكي (CBT) للمراهقين والبالغين"],
+ "selfcare": ["تنظيم روتين يومي ونوم كافٍ"],
+ "refs": ["NICE", "AAP", "WHO_EML"],
+ "guide": "NICE NG87 Attention deficit hyperactivity disorder: diagnosis and management (2018, updated 2019)"
+},
+"pediatrics.enuresis": {
+ "tests": ["تحليل البول (Urinalysis) لاستبعاد السكري والالتهاب"],
+ "imaging": [],
+ "meds": [
+  {"cls": "نظائر الهرمون المضاد لإدرار البول", "ex": "desmopressin", "note": "بوصفة طبية فقط؛ تقييد السوائل مساءً أثناء استخدامه"}
+ ],
+ "procedures": ["جهاز إنذار التبول الليلي (Enuresis alarm)"],
+ "selfcare": ["التبول قبل النوم وشرب السوائل بانتظام خلال النهار", "عدم معاقبة الطفل ومكافأة التقدم"],
+ "refs": ["NICE", "WHO_EML"],
+ "guide": "NICE CG111 Bedwetting in under 19s (2010)"
+},
+"pediatrics.pinworm": {
+ "tests": ["اختبار الشريط اللاصق حول فتحة الشرج (Tape test)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "طاردات الديدان", "ex": "mebendazole, albendazole", "note": "يُعالج أفراد الأسرة معًا؛ استشر الطبيب في الحمل ولمن دون عامين"}
+ ],
+ "procedures": [],
+ "selfcare": ["غسل اليدين جيدًا وقص الأظافر", "غسل الملابس الداخلية وأغطية السرير بماء ساخن"],
+ "refs": ["CDC", "NICE", "WHO_EML"],
+ "guide": "NICE Clinical Knowledge Summary: Threadworm"
+},
+"pediatrics.ftt": {
+ "tests": ["صورة دم كاملة ومخزون الحديد (CBC, Ferritin)", "وظائف الكلى والكبد والأملاح", "وظائف الغدة الدرقية (TSH)", "فحص الداء البطني (tTG-IgA) وتحليل البول"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["متابعة النمو على منحنيات النمو", "تقييم التغذية والرضاعة من أخصائي تغذية", "علاج السبب الأساسي عند اكتشافه"],
+ "selfcare": [],
+ "refs": ["NICE", "AAP"],
+ "guide": "NICE NG75 Faltering growth: recognition and management of faltering growth in children (2017)"
+},
+"pediatrics.roseola": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "خافضات الحرارة", "ex": "paracetamol, ibuprofen", "note": "الجرعة حسب الوزن يحددها طبيب الأطفال؛ لا يُعطى الأسبرين للأطفال"}
+ ],
+ "procedures": [],
+ "selfcare": ["الإكثار من السوائل", "ملابس خفيفة وراحة"],
+ "refs": ["NICE", "AAP", "WHO_EML"],
+ "guide": "NICE NG143 Fever in under 5s: assessment and initial management (2019)"
+},
+"pediatrics.hfmd": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "مسكنات وخافضات حرارة", "ex": "paracetamol, ibuprofen", "note": "الجرعة حسب الوزن يحددها طبيب الأطفال؛ لا يُعطى الأسبرين للأطفال"}
+ ],
+ "procedures": [],
+ "selfcare": ["سوائل باردة وطعام لين", "غسل اليدين جيدًا لمنع العدوى"],
+ "refs": ["CDC", "NICE", "WHO_EML"],
+ "guide": "NICE Clinical Knowledge Summary: Hand, foot and mouth disease"
+},
+"infectious.typhoid": {
+ "tests": ["مزرعة دم (Blood culture)", "صورة دم كاملة (CBC)", "وظائف الكبد (LFTs)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية", "ex": "azithromycin, ceftriaxone, ciprofloxacin", "note": "بوصفة طبية فقط؛ يختار الطبيب حسب نمط المقاومة المحلي"}
+ ],
+ "procedures": ["دخول المستشفى للحالات الشديدة أو المضاعفات"],
+ "selfcare": ["الإكثار من السوائل", "غسل اليدين وشرب ماء آمن"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "WHO Guidelines for the Management of Typhoid Fever (2011)"
+},
+"infectious.brucellosis": {
+ "tests": ["اختبار التراص للبروسيلا (Brucella serology)", "مزرعة دم (Blood culture)", "صورة دم كاملة ووظائف الكبد"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية مركبة", "ex": "doxycycline, rifampicin, gentamicin, streptomycin", "note": "بوصفة طبية فقط؛ لعدة أسابيع؛ بدائل خاصة للحمل والأطفال"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنب الحليب ومشتقاته غير المبسترة"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "WHO Brucellosis in humans and animals (2006)"
+},
+"infectious.malaria": {
+ "tests": ["مسحة دم سميكة ورقيقة (Blood smear)", "اختبار تشخيصي سريع للملاريا (RDT)", "صورة دم كاملة وسكر الدم (CBC, Glucose)", "وظائف الكلى والكبد"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات الملاريا للحالات الشديدة", "ex": "artesunate", "note": "تُعطى في المستشفى"},
+  {"cls": "علاج مركب أساسه الأرتيميسينين (ACT)", "ex": "artemether + lumefantrine", "note": "تُعطى في المستشفى؛ بوصفة طبية فقط"}
+ ],
+ "procedures": ["دخول المستشفى والمراقبة المكثفة في الحالات الشديدة"],
+ "selfcare": ["التوجه فورًا إلى الطوارئ أو الاتصال بالرقم 123"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "WHO Guidelines for malaria"
+},
+"infectious.dengue": {
+ "tests": ["مستضد NS1 أو الأجسام المضادة IgM", "صورة دم كاملة مع الصفائح والهيماتوكريت (CBC)", "وظائف الكبد (LFTs)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "خافضات الحرارة", "ex": "paracetamol", "note": "تجنب الأسبرين والإيبوبروفين لخطر النزف"}
+ ],
+ "procedures": ["سوائل وريدية ومراقبة في المستشفى عند ظهور علامات الخطر"],
+ "selfcare": ["الراحة والإكثار من السوائل", "تجنب الأسبرين والإيبوبروفين", "مراجعة الطوارئ عند ألم بطن شديد أو نزف أو قيء مستمر"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "WHO Dengue: guidelines for diagnosis, treatment, prevention and control (2009)"
+},
+"infectious.covid": {
+ "tests": ["اختبار المستضد السريع أو تفاعل البوليميراز (Antigen test, PCR)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "خافضات الحرارة والمسكنات", "ex": "paracetamol"},
+  {"cls": "مضادات الفيروسات لمن هم أكثر عرضة للخطر", "ex": "nirmatrelvir + ritonavir", "note": "بوصفة طبية فقط؛ تداخلات دوائية كثيرة"}
+ ],
+ "procedures": ["الأكسجين ودخول المستشفى عند انخفاض الأكسجين"],
+ "selfcare": ["الراحة والسوائل", "ارتداء الكمامة وتقليل المخالطة", "التوجه للطوارئ عند ضيق التنفس"],
+ "refs": ["WHO", "CDC", "NICE", "WHO_EML"],
+ "guide": "WHO Therapeutics and COVID-19: living guideline"
+},
+"infectious.chickenpox": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "خافضات الحرارة", "ex": "paracetamol", "note": "لا يُعطى الأسبرين للأطفال، ويُفضَّل تجنب الإيبوبروفين"},
+  {"cls": "مضادات الفيروسات", "ex": "aciclovir", "note": "بوصفة طبية فقط؛ للبالغين والحوامل وضعاف المناعة"}
+ ],
+ "procedures": [],
+ "selfcare": ["دهان الكالامين لتخفيف الحكة", "قص الأظافر وتجنب الحك", "البقاء في المنزل حتى تجف كل البثور"],
+ "refs": ["NICE", "CDC", "WHO_EML"],
+ "guide": "NICE Clinical Knowledge Summary: Chickenpox"
+},
+"infectious.mumps": {
+ "tests": ["فحص الفيروس (PCR) أو الأجسام المضادة عند الحاجة"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مسكنات وخافضات حرارة", "ex": "paracetamol, ibuprofen", "note": "لا يُعطى الأسبرين للأطفال"}
+ ],
+ "procedures": [],
+ "selfcare": ["كمادات دافئة أو باردة على الغدة", "طعام لين وسوائل وتجنب العصائر الحامضة", "العزل خمسة أيام بعد بدء التورم"],
+ "refs": ["CDC", "NICE", "WHO_EML"],
+ "guide": "CDC Clinical Overview of Mumps"
+},
+"infectious.measles": {
+ "tests": ["الأجسام المضادة IgM للحصبة أو فحص الفيروس (PCR)"],
+ "imaging": ["أشعة سينية على الصدر عند الاشتباه بالتهاب رئوي"],
+ "meds": [
+  {"cls": "فيتامين أ", "ex": "retinol", "note": "بوصفة طبية؛ الجرعة حسب العمر يحددها طبيب الأطفال"},
+  {"cls": "خافضات الحرارة", "ex": "paracetamol", "note": "الجرعة حسب الوزن للأطفال"}
+ ],
+ "procedures": ["العزل لمنع العدوى", "علاج المضاعفات مثل الالتهاب الرئوي"],
+ "selfcare": ["الإكثار من السوائل والراحة", "عزل المريض عن غير المطعمين والحوامل"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "WHO Treating measles in children"
+},
+"infectious.schisto": {
+ "tests": ["فحص البول والبراز للبحث عن البيوض (Microscopy)", "الأجسام المضادة للبلهارسيا (Serology)"],
+ "imaging": ["أشعة موجات فوق صوتية على البطن والمسالك البولية (Ultrasound)"],
+ "meds": [
+  {"cls": "طاردات الديدان", "ex": "praziquantel", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": [],
+ "selfcare": ["تجنب السباحة أو الخوض في المياه العذبة الراكدة"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "WHO guideline on control and elimination of human schistosomiasis (2022)"
+},
+"infectious.cholera": {
+ "tests": ["اختبار سريع أو مزرعة للبراز (Stool culture)", "الأملاح ووظائف الكلى (Electrolytes)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "محلول معالجة الجفاف الفموي", "ex": "oral rehydration salts", "note": "يُبدأ فورًا"},
+  {"cls": "سوائل وريدية", "ex": "compound solution of sodium lactate", "note": "تُعطى في المستشفى"},
+  {"cls": "مضادات حيوية", "ex": "doxycycline, azithromycin", "note": "تُعطى في المستشفى؛ الأزيثرومايسين للأطفال والحوامل"},
+  {"cls": "مكملات الزنك للأطفال", "ex": "zinc sulfate", "note": "الجرعة حسب العمر يحددها طبيب الأطفال"}
+ ],
+ "procedures": ["تعويض السوائل الوريدي السريع ومراقبة الإخراج"],
+ "selfcare": ["البدء بمحلول الإرواء الفموي فورًا أثناء التوجه للمستشفى", "الاتصال بالرقم 123"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "GTFCC / WHO Cholera outbreak response: field manual"
+},
+"infectious.foodpoisoning": {
+ "tests": ["مزرعة البراز عند الإسهال الدموي أو الشديد (Stool culture)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "محلول معالجة الجفاف الفموي", "ex": "oral rehydration salts"}
+ ],
+ "procedures": [],
+ "selfcare": ["شرب السوائل ومحلول الإرواء برشفات صغيرة", "العودة التدريجية للطعام الخفيف", "مراجعة الطبيب عند دم في البراز أو جفاف أو حرارة عالية"],
+ "refs": ["IDSA", "WHO", "CDC", "WHO_EML"],
+ "guide": "IDSA Clinical Practice Guidelines for the Diagnosis and Management of Infectious Diarrhea (2017)"
+},
+"infectious.rabies": {
+ "tests": [],
+ "imaging": [],
+ "meds": [
+  {"cls": "لقاح داء الكلب", "ex": "rabies vaccine", "note": "تُعطى في المستشفى أو مركز مختص وفق جدول محدد"},
+  {"cls": "الغلوبولين المناعي لداء الكلب", "ex": "rabies immunoglobulin", "note": "تُعطى في المستشفى للتعرض الشديد"},
+  {"cls": "لقاح الكزاز", "ex": "tetanus toxoid", "note": "تُعطى في المستشفى عند الحاجة"}
+ ],
+ "procedures": ["غسل الجرح وتنظيفه جيدًا في المستشفى", "تقييم الجرح ودرجة التعرض"],
+ "selfcare": ["غسل الجرح فورًا بالماء والصابون لمدة 15 دقيقة", "التوجه فورًا إلى الطوارئ"],
+ "refs": ["WHO", "CDC", "WHO_EML"],
+ "guide": "WHO Expert Consultation on Rabies, third report (2018)"
+},
+"infectious.cellulitis": {
+ "tests": ["صورة دم كاملة ومؤشرات الالتهاب (CBC, CRP)", "مزرعة دم عند وجود أعراض عامة (Blood culture)"],
+ "imaging": ["أشعة موجات فوق صوتية (Ultrasound) عند الاشتباه بخراج"],
+ "meds": [
+  {"cls": "مضادات حيوية", "ex": "flucloxacillin, cefalexin", "note": "بوصفة طبية فقط"},
+  {"cls": "بدائل لحساسية البنسلين", "ex": "clindamycin, clarithromycin", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": ["تصريف الخراج إن وُجد", "مضادات حيوية وريدية في المستشفى للحالات الشديدة"],
+ "selfcare": ["رفع الطرف المصاب", "تحديد حدود الاحمرار بقلم لمتابعة انتشاره"],
+ "refs": ["NICE", "IDSA", "WHO_EML"],
+ "guide": "NICE NG141 Cellulitis and erysipelas: antimicrobial prescribing (2019)"
+},
+"infectious.meningococcal": {
+ "tests": ["مزرعة دم (Blood culture)", "صورة دم كاملة ومؤشرات الالتهاب (CBC, CRP)", "فحص التخثر واللاكتات (Coagulation, Lactate)", "فحص المكورات السحائية بالـ PCR"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية وريدية", "ex": "ceftriaxone, cefotaxime, benzylpenicillin", "note": "تُعطى في المستشفى بأسرع وقت"}
+ ],
+ "procedures": ["إنعاش بالسوائل ودعم في العناية المركزة", "وقاية المخالطين بالمضادات الحيوية"],
+ "selfcare": ["الاتصال بالرقم 123 فورًا"],
+ "refs": ["NICE", "WHO", "CDC", "WHO_EML"],
+ "guide": "NICE NG240 Meningitis (bacterial) and meningococcal disease: recognition, diagnosis and management (2024)"
+},
+"infectious.scarlet": {
+ "tests": ["مسحة الحلق واختبار البكتيريا العقدية السريع (Rapid strep test)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "مضادات حيوية من فئة البنسلين", "ex": "phenoxymethylpenicillin, amoxicillin", "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن للأطفال"},
+  {"cls": "بدائل لحساسية البنسلين", "ex": "azithromycin, clarithromycin", "note": "بوصفة طبية فقط"}
+ ],
+ "procedures": [],
+ "selfcare": ["الإكثار من السوائل", "البقاء في المنزل 24 ساعة على الأقل بعد بدء المضاد الحيوي"],
+ "refs": ["IDSA", "NICE", "AAP", "WHO_EML"],
+ "guide": "IDSA Clinical Practice Guideline for the Diagnosis and Management of Group A Streptococcal Pharyngitis (2012)"
+},
+"hematology.irondef": {
+ "tests": ["صورة دم كاملة (CBC)", "مخزون الحديد (Ferritin)", "دراسة الحديد (Serum iron, TSAT)", "فحص الداء البطني (tTG-IgA)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الحديد الفموي", "ex": "ferrous salt", "note": "قد يسبب الإمساك وتغير لون البراز"},
+  {"cls": "الحديد الوريدي", "ex": "iron sucrose, ferric carboxymaltose", "note": "يُعطى في المستشفى عند عدم تحمل الحديد الفموي"}
+ ],
+ "procedures": ["تنظير المعدة والقولون عند الاشتباه بنزف هضمي أو لكبار السن"],
+ "selfcare": ["تناول أطعمة غنية بالحديد مع فيتامين ج", "تجنب الشاي والقهوة مع وجبات الحديد"],
+ "refs": ["WHO", "ASH", "WHO_EML"],
+ "guide": "British Society of Gastroenterology guidelines for the management of iron deficiency anaemia in adults (2021)"
+},
+"hematology.sickle": {
+ "tests": ["الرحلان الكهربائي للهيموجلوبين (Hb electrophoresis/HPLC)", "صورة دم كاملة والخلايا الشبكية (CBC, Reticulocytes)"],
+ "imaging": ["دوبلر الشرايين الدماغية عبر الجمجمة للأطفال (TCD)"],
+ "meds": [
+  {"cls": "معدّل مرض الخلايا المنجلية", "ex": "hydroxycarbamide", "note": "بوصفة طبية فقط؛ متابعة تحاليل الدم"},
+  {"cls": "مسكنات نوبات الألم", "ex": "paracetamol, ibuprofen, morphine", "note": "المورفين يُعطى في المستشفى بوصفة طبية فقط"},
+  {"cls": "الوقاية للأطفال", "ex": "phenoxymethylpenicillin, folic acid", "note": "بوصفة طبية؛ الجرعة حسب الوزن يحددها طبيب الأطفال"}
+ ],
+ "procedures": ["نقل الدم عند الحاجة", "استكمال التطعيمات خاصة ضد المكورات الرئوية"],
+ "selfcare": ["الإكثار من السوائل وتجنب البرد والإجهاد الشديد", "التوجه للطوارئ عند الحرارة أو ألم الصدر أو ضيق التنفس"],
+ "refs": ["ASH", "NICE", "WHO_EML"],
+ "guide": "NHLBI Evidence-Based Management of Sickle Cell Disease: Expert Panel Report (2014)"
+},
+"hematology.thalassemia": {
+ "tests": ["صورة دم كاملة (CBC)", "الرحلان الكهربائي للهيموجلوبين (Hb electrophoresis)", "مخزون الحديد (Ferritin)", "الفحص الجيني عند الحاجة"],
+ "imaging": ["رنين مغناطيسي لقياس الحديد في القلب والكبد (MRI T2*)"],
+ "meds": [
+  {"cls": "خالبات الحديد", "ex": "deferoxamine, deferasirox", "note": "بوصفة طبية فقط؛ تحتاج متابعة دورية"},
+  {"cls": "مكملات حمض الفوليك", "ex": "folic acid"}
+ ],
+ "procedures": ["نقل الدم المنتظم للأنواع المعتمدة على النقل", "زراعة الخلايا الجذعية لحالات مختارة", "استشارة وراثية قبل الزواج والحمل"],
+ "selfcare": ["عدم تناول مكملات الحديد دون استشارة الطبيب"],
+ "refs": ["ASH", "WHO_EML"],
+ "guide": "Thalassaemia International Federation Guidelines for the Management of Transfusion Dependent Thalassaemia (4th ed., 2021)"
+},
+"hematology.g6pd": {
+ "tests": ["قياس إنزيم G6PD", "صورة دم كاملة والخلايا الشبكية (CBC, Reticulocytes)", "البيليروبين وإنزيم LDH"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["نقل الدم في نوبات التكسر الشديدة", "العلاج الضوئي لحديثي الولادة المصابين باليرقان"],
+ "selfcare": ["تجنب الفول والأدوية والمواد المحفزة للتكسر مثل النفثالين", "إخبار أي طبيب أو صيدلي بالحالة قبل أي دواء"],
+ "refs": ["WHO", "ASH"],
+ "guide": "WHO Working Group: Glucose-6-phosphate dehydrogenase deficiency (Bulletin of the WHO, 1989)"
+},
+"hematology.itp": {
+ "tests": ["صورة دم كاملة ولطاخة دم (CBC, Blood smear)", "فحص فيروس نقص المناعة والتهاب الكبد C (HIV, HCV)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "الكورتيكوستيرويدات", "ex": "prednisolone, dexamethasone", "note": "بوصفة طبية فقط"},
+  {"cls": "الغلوبولين المناعي الوريدي", "ex": "human normal immunoglobulin", "note": "يُعطى في المستشفى"}
+ ],
+ "procedures": ["نقل الصفائح الدموية عند النزف الشديد", "المتابعة دون علاج في الحالات الخفيفة خاصة لدى الأطفال"],
+ "selfcare": ["تجنب الأسبرين والإيبوبروفين", "تجنب الرياضات العنيفة", "التوجه للطوارئ عند نزف لا يتوقف أو صداع شديد"],
+ "refs": ["ASH", "WHO_EML"],
+ "guide": "ASH 2019 guidelines for immune thrombocytopenia"
+},
+"hematology.leukemia": {
+ "tests": ["صورة دم كاملة ولطاخة دم (CBC, Blood smear)", "وظائف الكلى والكبد وإنزيم LDH", "فحص التخثر (Coagulation)"],
+ "imaging": [],
+ "meds": [],
+ "procedures": ["خزعة وشفط نخاع العظم (Bone marrow biopsy)", "علاج كيميائي أو موجّه يحدده طبيب أورام الدم", "زراعة الخلايا الجذعية لحالات مختارة"],
+ "selfcare": [],
+ "refs": ["NCCN", "ESMO", "ASH"],
+ "guide": "NCCN Clinical Practice Guidelines in Oncology: leukemias (by subtype)"
+},
+"hematology.lymphoma": {
+ "tests": ["صورة دم كاملة وإنزيم LDH (CBC, LDH)", "فحص فيروسات الكبد وفيروس نقص المناعة (HBV, HCV, HIV)"],
+ "imaging": ["تصوير مقطعي بالإصدار البوزيتروني (PET-CT)", "أشعة مقطعية على الصدر والبطن (CT)"],
+ "meds": [],
+ "procedures": ["خزعة استئصالية للعقدة اللمفاوية", "علاج كيميائي أو مناعي يحدده طبيب الأورام", "علاج إشعاعي لحالات مختارة"],
+ "selfcare": [],
+ "refs": ["NCCN", "ESMO", "ASCO"],
+ "guide": "NCCN Clinical Practice Guidelines in Oncology: Hodgkin Lymphoma and B-Cell Lymphomas"
+},
+"hematology.hemophilia": {
+ "tests": ["مستوى عامل التخثر الثامن أو التاسع (Factor VIII/IX assay)", "زمن الثرومبوبلاستين الجزئي (aPTT)", "فحص المثبطات (Inhibitor screen)"],
+ "imaging": ["أشعة موجات فوق صوتية على المفصل عند النزف"],
+ "meds": [
+  {"cls": "عوامل التخثر المركزة", "ex": "coagulation factor VIII, coagulation factor IX", "note": "بوصفة طبية فقط؛ وقائيًا أو عند النزف"},
+  {"cls": "علاج وقائي للهيموفيليا A", "ex": "emicizumab", "note": "بوصفة طبية فقط"},
+  {"cls": "مضادات انحلال الفبرين ومحفزات التخثر", "ex": "tranexamic acid, desmopressin", "note": "بوصفة طبية فقط؛ الديزموبريسين للحالات الخفيفة"}
+ ],
+ "procedures": ["المتابعة في مركز متخصص للهيموفيليا", "العلاج الطبيعي بعد نزف المفاصل"],
+ "selfcare": ["تجنب الأسبرين والإيبوبروفين والحقن العضلية", "حمل بطاقة تعريف طبية"],
+ "refs": ["ASH", "WHO_EML"],
+ "guide": "WFH Guidelines for the Management of Hemophilia, 3rd edition (2020)"
+},
+"hematology.b12": {
+ "tests": ["مستوى فيتامين ب12 في الدم (Serum B12)", "صورة دم كاملة (CBC)", "حمض الميثيل مالونيك (MMA)", "أجسام مضادة للعامل الداخلي (Intrinsic factor antibodies)"],
+ "imaging": [],
+ "meds": [
+  {"cls": "فيتامين ب12 بالحقن", "ex": "hydroxocobalamin", "note": "بوصفة طبية"},
+  {"cls": "فيتامين ب12 الفموي", "ex": "cyanocobalamin", "note": "عندما يكون السبب غذائيًا"}
+ ],
+ "procedures": ["البحث عن سبب النقص ومعالجته مثل فقر الدم الخبيث"],
+ "selfcare": ["تناول أطعمة غنية بفيتامين ب12 أو مكملات للنباتيين"],
+ "refs": ["NICE", "WHO_EML"],
+ "guide": "NICE NG239 Vitamin B12 deficiency in over 16s: diagnosis and management (2024)"
+}
+}

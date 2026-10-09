@@ -1,0 +1,1538 @@
+{
+ "gynecology.prolapse": {
+  "tests": [
+   "تحليل البول (Urinalysis) لاستبعاد العدوى"
+  ],
+  "imaging": [
+   "موجات صوتية على المثانة لقياس البول المتبقي بعد التبول"
+  ],
+  "meds": [
+   {
+    "cls": "إستروجين مهبلي موضعي",
+    "ex": "estradiol (vaginal), estriol (vaginal)",
+    "note": "هرمون بوصفة طبية فقط، للنساء بعد انقطاع الطمث عند وجود ضمور"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي لقاع الحوض بإشراف مختص لمدة 16 أسبوعًا على الأقل",
+   "تركيب حلقة مهبلية داعمة (Pessary)",
+   "جراحة إصلاح قاع الحوض للدرجات المتقدمة"
+  ],
+  "selfcare": [
+   "تمارين قاع الحوض (كيجل) يوميًا",
+   "إنقاص الوزن وتجنّب الإمساك ورفع الأثقال"
+  ],
+  "refs": [
+   "NICE",
+   "ACOG"
+  ],
+  "guide": "NICE NG123 Urinary incontinence and pelvic organ prolapse in women: management (2019)"
+ },
+ "gynecology.vaginismus": {
+  "tests": [],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "علاج طبيعي لقاع الحوض لدى معالِجة متخصصة",
+   "علاج نفسي جنسي أو علاج معرفي سلوكي (CBT) للزوجين أو للمريضة",
+   "استخدام موسّعات مهبلية تدريجية بإشراف مختص",
+   "تثقيف جنسي وتوعية بتشريح الجسم"
+  ],
+  "selfcare": [
+   "تمارين الاسترخاء والتنفس العميق"
+  ],
+  "refs": [
+   "ISSM",
+   "ACOG"
+  ],
+  "guide": "International Consultation on Sexual Medicine (ICSM) recommendations on female sexual pain disorders"
+ },
+ "gynecology.postcoital": {
+  "tests": [
+   "مسحة عنق الرحم (Pap/LBC) مع فحص فيروس الورم الحليمي (HPV)",
+   "فحص الكلاميديا والسيلان بالحمض النووي (NAAT)",
+   "اختبار الحمل"
+  ],
+  "imaging": [
+   "موجات صوتية مهبلية (TVUS) عند الحاجة"
+  ],
+  "meds": [],
+  "procedures": [
+   "فحص عنق الرحم بالمنظار المكبّر (Colposcopy) مع خزعة عند الحاجة",
+   "استئصال لحمية عنق الرحم إن وُجدت"
+  ],
+  "selfcare": [],
+  "refs": [
+   "NICE",
+   "ACOG"
+  ],
+  "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated)"
+ },
+ "gynecology.pid": {
+  "tests": [
+   "فحص الكلاميديا والسيلان بالحمض النووي (NAAT)",
+   "اختبار الحمل",
+   "صورة دم كاملة (CBC) وبروتين سي التفاعلي (CRP)",
+   "فحص الأمراض المنقولة جنسيًا الأخرى (HIV والزهري والتهاب الكبد B)"
+  ],
+  "imaging": [
+   "موجات صوتية مهبلية (TVUS) لاستبعاد الخراج"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية مركّبة",
+    "ex": "ceftriaxone, doxycycline, metronidazole",
+    "note": "بوصفة طبية فقط، ويجب إكمال الشوط كاملًا"
+   },
+   {
+    "cls": "مسكنات مضادة للالتهاب",
+    "ex": "ibuprofen, paracetamol"
+   }
+  ],
+  "procedures": [
+   "فحص الشريك وعلاجه",
+   "دخول المستشفى للحالات الشديدة أو الحمل أو وجود خراج"
+  ],
+  "selfcare": [
+   "الامتناع عن العلاقة حتى انتهاء علاج الطرفين"
+  ],
+  "refs": [
+   "CDC",
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "gynecology.pcos": {
+  "tests": [
+   "هرمون التستوستيرون الكلي والحر",
+   "البرولاكتين وهرمون الغدة الدرقية (TSH) لاستبعاد أسباب أخرى",
+   "الهيموجلوبين السكري (HbA1c) أو اختبار تحمّل الجلوكوز (OGTT)",
+   "دهون الدم (Lipid profile)"
+  ],
+  "imaging": [
+   "موجات صوتية مهبلية على المبيضين (TVUS)"
+  ],
+  "meds": [
+   {
+    "cls": "حبوب منع الحمل المركّبة لتنظيم الدورة",
+    "ex": "ethinylestradiol, levonorgestrel",
+    "note": "هرمونات بوصفة طبية فقط"
+   },
+   {
+    "cls": "محسّن حساسية الإنسولين",
+    "ex": "metformin",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "محفّز التبويض لمن ترغب في الحمل",
+    "ex": "letrozole",
+    "note": "بإشراف طبيب مختص فقط"
+   }
+  ],
+  "procedures": [
+   "برنامج غذائي ورياضي منظّم لإنقاص الوزن"
+  ],
+  "selfcare": [
+   "إنقاص 5–10% من الوزن يحسّن الدورة والتبويض",
+   "نشاط بدني منتظم"
+  ],
+  "refs": [
+   "ESHRE",
+   "ENDO",
+   "WHO_EML"
+  ],
+  "guide": "International Evidence-based Guideline for the Assessment and Management of Polycystic Ovary Syndrome 2023"
+ },
+ "gynecology.vaginitis": {
+  "tests": [
+   "فحص الإفرازات بالمجهر وقياس الحموضة (pH)",
+   "مسحة مهبلية للزرع عند الحاجة",
+   "فحص الكلاميديا والسيلان والترايكوموناس (NAAT)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الفطريات",
+    "ex": "clotrimazole, fluconazole",
+    "note": "للعدوى الفطرية حسب تشخيص الطبيب"
+   },
+   {
+    "cls": "مضاد حيوي/مضاد للطفيليات",
+    "ex": "metronidazole",
+    "note": "بوصفة طبية فقط، للعدوى البكتيرية أو الترايكوموناس"
+   }
+  ],
+  "procedures": [
+   "علاج الشريك عند العدوى المنقولة جنسيًا"
+  ],
+  "selfcare": [
+   "تجنّب الدش المهبلي والغسولات المعطّرة",
+   "ارتداء ملابس داخلية قطنية"
+  ],
+  "refs": [
+   "CDC",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "gynecology.fibroids": {
+  "tests": [
+   "صورة دم كاملة (CBC) لفحص فقر الدم",
+   "اختبار الحمل"
+  ],
+  "imaging": [
+   "موجات صوتية على الحوض (بطنية أو مهبلية)",
+   "رنين مغناطيسي على الحوض (MRI) قبل بعض الإجراءات"
+  ],
+  "meds": [
+   {
+    "cls": "مضاد لانحلال الفيبرين لتقليل النزيف",
+    "ex": "tranexamic acid",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مسكنات مضادة للالتهاب",
+    "ex": "ibuprofen, mefenamic acid"
+   },
+   {
+    "cls": "لولب هرموني",
+    "ex": "levonorgestrel (intrauterine system)",
+    "note": "هرمون بوصفة طبية فقط، حسب حجم الأورام وموقعها"
+   },
+   {
+    "cls": "مكملات الحديد لفقر الدم",
+    "ex": "ferrous sulfate"
+   }
+  ],
+  "procedures": [
+   "استئصال الأورام الليفية (Myomectomy) بالمنظار أو الجراحة",
+   "إصمام الشرايين الرحمية (UAE)",
+   "استئصال الرحم لمن أتمّت الإنجاب عند الحاجة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "NICE",
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG88 Heavy menstrual bleeding: assessment and management (2018, updated)"
+ },
+ "gynecology.menopause": {
+  "tests": [
+   "هرمون FSH للنساء الأصغر من 45 عامًا فقط",
+   "دهون الدم وسكر الدم ضمن التقييم الدوري"
+  ],
+  "imaging": [
+   "قياس كثافة العظام (DEXA) حسب عوامل الخطر"
+  ],
+  "meds": [
+   {
+    "cls": "العلاج الهرموني التعويضي",
+    "ex": "estradiol, progesterone",
+    "note": "هرمونات بوصفة طبية فقط بعد تقييم المخاطر؛ يُضاف البروجستيرون لمن لديها رحم"
+   },
+   {
+    "cls": "إستروجين مهبلي موضعي",
+    "ex": "estradiol (vaginal), estriol (vaginal)",
+    "note": "للجفاف المهبلي، بوصفة طبية فقط"
+   },
+   {
+    "cls": "الكالسيوم وفيتامين د",
+    "ex": "calcium carbonate, colecalciferol"
+   }
+  ],
+  "procedures": [
+   "العلاج المعرفي السلوكي (CBT) للهبّات الساخنة واضطراب المزاج"
+  ],
+  "selfcare": [
+   "رياضة منتظمة وغذاء غني بالكالسيوم",
+   "تجنّب محفزات الهبّات كالكافيين والأماكن الحارة"
+  ],
+  "refs": [
+   "NICE",
+   "ENDO",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG23 Menopause: identification and management (2015, updated 2024)"
+ },
+ "gynecology.dysmenorrhea": {
+  "tests": [],
+  "imaging": [
+   "موجات صوتية على الحوض عند الاشتباه بسبب ثانوي"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات مضادة للالتهاب",
+    "ex": "ibuprofen, naproxen, mefenamic acid",
+    "note": "تُتجنّب مع قرحة المعدة أو الربو الحساس للأسبرين"
+   },
+   {
+    "cls": "مسكن بسيط",
+    "ex": "paracetamol"
+   },
+   {
+    "cls": "حبوب منع الحمل المركّبة",
+    "ex": "ethinylestradiol, levonorgestrel",
+    "note": "هرمونات بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "فحص لاستبعاد بطانة الرحم المهاجرة إذا لم تتحسن الأعراض"
+  ],
+  "selfcare": [
+   "كمادات دافئة على أسفل البطن",
+   "البدء بالمسكن مع أول أعراض الألم",
+   "نشاط بدني منتظم"
+  ],
+  "refs": [
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "ACOG Committee Opinion No. 760: Dysmenorrhea and Endometriosis in the Adolescent (2018)"
+ },
+ "gynecology.pms": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)",
+    "ex": "fluoxetine, sertraline",
+    "note": "بوصفة طبية فقط للحالات الشديدة، بإشراف الطبيب"
+   },
+   {
+    "cls": "حبوب منع الحمل المركّبة",
+    "ex": "ethinylestradiol, drospirenone",
+    "note": "هرمونات بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "العلاج المعرفي السلوكي (CBT) للحالات الشديدة"
+  ],
+  "selfcare": [
+   "تسجيل الأعراض في مفكرة لدورتين على الأقل",
+   "الرياضة والنوم المنتظم",
+   "تقليل الملح والكافيين"
+  ],
+  "refs": [
+   "RCOG",
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "RCOG Green-top Guideline No. 48: Management of Premenstrual Syndrome (2016)"
+ },
+ "gynecology.miscarriage": {
+  "tests": [
+   "هرمون الحمل الكمي في الدم (β-hCG)",
+   "فصيلة الدم والعامل الريزيسي (Rh)",
+   "صورة دم كاملة (CBC)"
+  ],
+  "imaging": [
+   "موجات صوتية مهبلية (TVUS) لتحديد مكان الحمل وحيويته"
+  ],
+  "meds": [
+   {
+    "cls": "الغلوبولين المناعي المضاد لـ D",
+    "ex": "anti-D immunoglobulin",
+    "note": "تُعطى في المستشفى لغير الحوامل ذوات Rh السالب حسب الحالة"
+   },
+   {
+    "cls": "البروجستيرون المهبلي",
+    "ex": "progesterone (vaginal)",
+    "note": "بوصفة طبية فقط، لمن لديها نزيف وإجهاض سابق بقرار الطبيب"
+   },
+   {
+    "cls": "أدوية إفراغ الرحم",
+    "ex": "mifepristone, misoprostol",
+    "note": "تُعطى في المستشفى، عند تأكيد الإجهاض فقط"
+   }
+  ],
+  "procedures": [
+   "متابعة بالموجات الصوتية وتحليل الحمل",
+   "إفراغ الرحم بالشفط عند الحاجة"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) عند النزيف الغزير أو الدوخة أو الألم الشديد"
+  ],
+  "refs": [
+   "NICE",
+   "RCOG",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG126 Ectopic pregnancy and miscarriage: diagnosis and initial management (2019, updated 2023)"
+ },
+ "gynecology.hyperemesis": {
+  "tests": [
+   "تحليل البول للكيتونات",
+   "أملاح الدم ووظائف الكلى",
+   "وظائف الكبد والغدة الدرقية (TSH)",
+   "صورة دم كاملة (CBC)"
+  ],
+  "imaging": [
+   "موجات صوتية لتأكيد الحمل واستبعاد التوائم أو الحمل العنقودي"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات القيء من الخط الأول",
+    "ex": "cyclizine, promethazine, doxylamine, pyridoxine",
+    "note": "آمنة في الحمل، بوصفة طبية فقط"
+   },
+   {
+    "cls": "مضادات القيء من الخط الثاني",
+    "ex": "metoclopramide, ondansetron",
+    "note": "بوصفة طبية فقط بعد تقييم الطبيب"
+   },
+   {
+    "cls": "محاليل وريدية",
+    "ex": "sodium chloride, potassium chloride",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "فيتامين ب1",
+    "ex": "thiamine",
+    "note": "لمنع نقصه مع القيء الطويل"
+   }
+  ],
+  "procedures": [
+   "محاليل وريدية في العيادة النهارية أو بالتنويم"
+  ],
+  "selfcare": [
+   "وجبات صغيرة متكررة",
+   "رشفات سوائل متكررة على مدار اليوم"
+  ],
+  "refs": [
+   "RCOG",
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "RCOG Green-top Guideline No. 69: Nausea and Vomiting of Pregnancy and Hyperemesis Gravidarum (2016, updated 2024)"
+ },
+ "gynecology.ovariantorsion": {
+  "tests": [
+   "اختبار الحمل",
+   "صورة دم كاملة (CBC)",
+   "فصيلة الدم والتوافق"
+  ],
+  "imaging": [
+   "موجات صوتية مهبلية مع دوبلر (Doppler TVUS)"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات قوية",
+    "ex": "morphine, paracetamol",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "مضاد للقيء",
+    "ex": "ondansetron",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "منظار بطني عاجل لفك الالتواء والحفاظ على المبيض",
+   "إيقاف نزيف الكيس المنفجر جراحيًا عند الحاجة"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) فورًا",
+   "عدم الأكل أو الشرب لاحتمال الجراحة"
+  ],
+  "refs": [
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "ACOG Committee Opinion No. 783: Adnexal Torsion in Adolescents (2019)"
+ },
+ "gynecology.mastitis": {
+  "tests": [
+   "زرع الحليب عند عدم التحسن أو تكرار الالتهاب"
+  ],
+  "imaging": [
+   "موجات صوتية على الثدي عند الاشتباه بخراج"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات وخافضات حرارة",
+    "ex": "ibuprofen, paracetamol",
+    "note": "آمنة مع الرضاعة"
+   },
+   {
+    "cls": "مضادات حيوية",
+    "ex": "flucloxacillin, cefalexin",
+    "note": "بوصفة طبية فقط، ومتوافقة مع الرضاعة"
+   }
+  ],
+  "procedures": [
+   "تفريغ الخراج بالإبرة أو بشق جراحي عند وجوده",
+   "استشارة رضاعة لتصحيح وضعية الالتقام"
+  ],
+  "selfcare": [
+   "الاستمرار في الرضاعة الطبيعية",
+   "كمادات باردة بعد الرضاعة",
+   "الراحة وشرب سوائل كافية"
+  ],
+  "refs": [
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "Academy of Breastfeeding Medicine Clinical Protocol #36: The Mastitis Spectrum (2022)"
+ },
+ "gynecology.amenorrhea": {
+  "tests": [
+   "اختبار الحمل (β-hCG)",
+   "البرولاكتين وهرمون الغدة الدرقية (TSH)",
+   "هرمونات FSH وLH والإستراديول",
+   "التستوستيرون عند وجود علامات زيادة الأندروجين"
+  ],
+  "imaging": [
+   "موجات صوتية على الحوض",
+   "رنين مغناطيسي على الغدة النخامية (MRI) عند ارتفاع البرولاكتين"
+  ],
+  "meds": [],
+  "procedures": [
+   "علاج السبب حسب نتائج الفحوص",
+   "تنظيم الوزن والتغذية وتقليل التمارين المفرطة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ACOG",
+   "ENDO",
+   "ESHRE"
+  ],
+  "guide": "ASRM Practice Committee: Current evaluation of amenorrhea"
+ },
+ "gynecology.pmb": {
+  "tests": [
+   "صورة دم كاملة (CBC)"
+  ],
+  "imaging": [
+   "موجات صوتية مهبلية (TVUS) لقياس سُمك بطانة الرحم"
+  ],
+  "meds": [],
+  "procedures": [
+   "خزعة من بطانة الرحم (Endometrial biopsy)",
+   "تنظير الرحم (Hysteroscopy) مع أخذ عينة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "NICE",
+   "ACOG"
+  ],
+  "guide": "NICE NG12 Suspected cancer: recognition and referral (2015, updated)"
+ },
+ "sexual.pep": {
+  "tests": [
+   "فحص فيروس نقص المناعة (HIV) الأساسي",
+   "التهاب الكبد B وC",
+   "وظائف الكلى",
+   "اختبار الحمل وفحص الأمراض المنقولة جنسيًا"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الفيروسات القهقرية",
+    "ex": "tenofovir disoproxil, lamivudine, dolutegravir",
+    "note": "تُبدأ في المستشفى خلال 72 ساعة وتُستكمل 28 يومًا، بوصفة طبية فقط"
+   },
+   {
+    "cls": "منع الحمل الطارئ عند الحاجة",
+    "ex": "levonorgestrel",
+    "note": "تُعطى في المستشفى بعد الاعتداء الجنسي حسب الحالة"
+   }
+  ],
+  "procedures": [
+   "تقييم نوع التعرض وخطورته",
+   "تطعيم التهاب الكبد B عند الحاجة",
+   "تحاليل متابعة بعد انتهاء العلاج"
+  ],
+  "selfcare": [
+   "غسل الجرح أو المنطقة بالماء والصابون فورًا",
+   "التوجه إلى الطوارئ فورًا دون انتظار"
+  ],
+  "refs": [
+   "WHO",
+   "CDC",
+   "WHO_EML"
+  ],
+  "guide": "WHO Guidelines for HIV post-exposure prophylaxis (2024)"
+ },
+ "sexual.gonorrhea": {
+  "tests": [
+   "فحص الحمض النووي (NAAT) من البول أو المسحة",
+   "زرع واختبار حساسية للمضادات الحيوية",
+   "فحص الكلاميديا",
+   "فحص الأمراض المنقولة جنسيًا الأخرى (HIV والزهري والتهاب الكبد B)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضاد حيوي بالحقن",
+    "ex": "ceftriaxone",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مضاد حيوي للكلاميديا إن لم تُستبعد",
+    "ex": "doxycycline",
+    "note": "بوصفة طبية فقط، ولا يُعطى في الحمل"
+   }
+  ],
+  "procedures": [
+   "إبلاغ الشريك وفحصه وعلاجه",
+   "إعادة الفحص بعد 3 أشهر"
+  ],
+  "selfcare": [
+   "الامتناع عن العلاقة 7 أيام بعد العلاج"
+  ],
+  "refs": [
+   "CDC",
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.chlamydia": {
+  "tests": [
+   "فحص الحمض النووي (NAAT) من البول أو المسحة",
+   "فحص السيلان",
+   "فحص الأمراض المنقولة جنسيًا الأخرى (HIV والزهري والتهاب الكبد B)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضاد حيوي (الخيار الأول)",
+    "ex": "doxycycline",
+    "note": "بوصفة طبية فقط، ولا يُعطى في الحمل"
+   },
+   {
+    "cls": "بدائل في الحمل",
+    "ex": "azithromycin, amoxicillin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "علاج الشريك",
+   "إعادة الفحص بعد 3 أشهر"
+  ],
+  "selfcare": [
+   "الامتناع عن العلاقة 7 أيام وحتى علاج الشريك"
+  ],
+  "refs": [
+   "CDC",
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.syphilis1": {
+  "tests": [
+   "تحليل الزهري غير اللولبي (RPR/VDRL)",
+   "تحليل الزهري اللولبي (TPPA/EIA)",
+   "فحص فيروس نقص المناعة (HIV)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "بنسلين طويل المفعول بالحقن",
+    "ex": "benzathine benzylpenicillin",
+    "note": "بوصفة طبية فقط؛ أخبر الطبيب بأي حساسية للبنسلين"
+   },
+   {
+    "cls": "بديل عند حساسية البنسلين",
+    "ex": "doxycycline",
+    "note": "بوصفة طبية فقط، ولا يُعطى في الحمل"
+   }
+  ],
+  "procedures": [
+   "فحص الشريك وعلاجه",
+   "متابعة تحليل RPR بعد 6 و12 شهرًا"
+  ],
+  "selfcare": [
+   "الامتناع عن العلاقة حتى اكتمال العلاج"
+  ],
+  "refs": [
+   "CDC",
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.syphilis2": {
+  "tests": [
+   "تحليل الزهري غير اللولبي (RPR/VDRL)",
+   "تحليل الزهري اللولبي (TPPA/EIA)",
+   "فحص فيروس نقص المناعة (HIV)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "بنسلين طويل المفعول بالحقن",
+    "ex": "benzathine benzylpenicillin",
+    "note": "بوصفة طبية فقط؛ أخبر الطبيب بأي حساسية للبنسلين"
+   },
+   {
+    "cls": "بديل عند حساسية البنسلين",
+    "ex": "doxycycline",
+    "note": "بوصفة طبية فقط، ولا يُعطى في الحمل"
+   }
+  ],
+  "procedures": [
+   "فحص الشريك وعلاجه",
+   "متابعة تحليل RPR بعد 6 و12 شهرًا",
+   "فحص عصبي وعيني عند وجود أعراض"
+  ],
+  "selfcare": [
+   "الامتناع عن العلاقة حتى اكتمال العلاج"
+  ],
+  "refs": [
+   "CDC",
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.herpes": {
+  "tests": [
+   "فحص الحمض النووي (PCR) من مسحة القرحة",
+   "فحص الأمراض المنقولة جنسيًا الأخرى (HIV والزهري والتهاب الكبد B)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الفيروسات",
+    "ex": "aciclovir, valaciclovir",
+    "note": "بوصفة طبية فقط؛ للنوبة أو كعلاج وقائي للنوبات المتكررة"
+   },
+   {
+    "cls": "مسكن بسيط",
+    "ex": "paracetamol"
+   }
+  ],
+  "procedures": [
+   "علاج وقائي مستمر عند تكرار النوبات"
+  ],
+  "selfcare": [
+   "تجنّب العلاقة أثناء النوبة",
+   "استخدام الواقي لتقليل الانتقال",
+   "كمادات وماء دافئ مع ملح لتخفيف الألم"
+  ],
+  "refs": [
+   "CDC",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.warts": {
+  "tests": [
+   "فحص الأمراض المنقولة جنسيًا الأخرى (HIV والزهري والتهاب الكبد B)",
+   "مسحة عنق الرحم للنساء حسب برنامج الفحص الدوري"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "علاجات موضعية",
+    "ex": "imiquimod, podophyllotoxin",
+    "note": "بوصفة طبية فقط، ولا تُستخدم في الحمل"
+   }
+  ],
+  "procedures": [
+   "الكيّ بالتبريد (Cryotherapy)",
+   "الإزالة الجراحية أو بالليزر",
+   "لقاح فيروس الورم الحليمي (HPV) للفئات المؤهلة"
+  ],
+  "selfcare": [
+   "استخدام الواقي",
+   "عدم محاولة إزالة الثآليل منزليًا"
+  ],
+  "refs": [
+   "CDC",
+   "AAD"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.trich": {
+  "tests": [
+   "فحص الحمض النووي (NAAT) أو فحص الإفرازات بالمجهر",
+   "فحص الأمراض المنقولة جنسيًا الأخرى (HIV والزهري والتهاب الكبد B)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضاد للطفيليات",
+    "ex": "metronidazole, tinidazole",
+    "note": "بوصفة طبية فقط للمريض والشريك؛ تجنّب الكحول أثناء العلاج"
+   }
+  ],
+  "procedures": [
+   "علاج الشريك في الوقت نفسه",
+   "إعادة الفحص للنساء بعد 3 أشهر"
+  ],
+  "selfcare": [
+   "الامتناع عن العلاقة حتى انتهاء علاج الطرفين"
+  ],
+  "refs": [
+   "CDC",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.candida": {
+  "tests": [
+   "فحص الإفرازات بالمجهر عند الشك أو التكرار",
+   "الهيموجلوبين السكري (HbA1c) عند تكرار النوبات"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات فطريات مهبلية",
+    "ex": "clotrimazole, miconazole",
+    "note": "استشيري الطبيبة إذا كنتِ حاملًا"
+   },
+   {
+    "cls": "مضاد فطريات بالفم",
+    "ex": "fluconazole",
+    "note": "بوصفة طبية فقط، ولا يُستخدم في الحمل"
+   }
+  ],
+  "procedures": [
+   "علاج وقائي طويل للنوبات المتكررة يقرره الطبيب"
+  ],
+  "selfcare": [
+   "ارتداء ملابس داخلية قطنية",
+   "تجنّب الدش المهبلي والغسولات المعطّرة"
+  ],
+  "refs": [
+   "CDC",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.bv": {
+  "tests": [
+   "فحص الإفرازات بالمجهر وقياس الحموضة (pH)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات حيوية بالفم أو موضعية",
+    "ex": "metronidazole, clindamycin (vaginal)",
+    "note": "بوصفة طبية فقط؛ تجنّبي الكحول مع الميترونيدازول"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "تجنّب الدش المهبلي والغسولات المعطّرة"
+  ],
+  "refs": [
+   "CDC",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.epididymitis": {
+  "tests": [
+   "تحليل البول وزرعه",
+   "فحص الكلاميديا والسيلان (NAAT)",
+   "فحص الأمراض المنقولة جنسيًا الأخرى (HIV والزهري والتهاب الكبد B)"
+  ],
+  "imaging": [
+   "موجات صوتية دوبلر على الصفن لاستبعاد التواء الخصية"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية",
+    "ex": "ceftriaxone, doxycycline, levofloxacin",
+    "note": "بوصفة طبية فقط، ويحدد الطبيب الاختيار حسب السبب والعمر"
+   },
+   {
+    "cls": "مسكنات مضادة للالتهاب",
+    "ex": "ibuprofen"
+   }
+  ],
+  "procedures": [
+   "استكشاف جراحي عاجل إذا لم يُستبعد التواء الخصية",
+   "علاج الشريك إذا كان السبب منقولًا جنسيًا"
+  ],
+  "selfcare": [
+   "رفع الصفن بملابس داخلية داعمة",
+   "كمادات باردة والراحة"
+  ],
+  "refs": [
+   "CDC",
+   "EAU",
+   "WHO_EML"
+  ],
+  "guide": "CDC Sexually Transmitted Infections Treatment Guidelines, 2021"
+ },
+ "sexual.hiv": {
+  "tests": [
+   "فحص HIV التأكيدي",
+   "الحمل الفيروسي (Viral load) وعدد خلايا CD4",
+   "التهاب الكبد B وC وفحص السل",
+   "وظائف الكلى والكبد"
+  ],
+  "imaging": [
+   "أشعة سينية على الصدر لاستبعاد السل"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الفيروسات القهقرية",
+    "ex": "tenofovir disoproxil, lamivudine, dolutegravir",
+    "note": "علاج مستمر مدى الحياة بوصفة طبية فقط مع متابعة منتظمة"
+   },
+   {
+    "cls": "وقاية من العدوى الانتهازية",
+    "ex": "sulfamethoxazole + trimethoprim",
+    "note": "بوصفة طبية فقط، حسب عدد خلايا CD4"
+   }
+  ],
+  "procedures": [
+   "بدء العلاج يوم التشخيص أو بأسرع وقت",
+   "فحص الشريك وتقديم الوقاية قبل التعرض (PrEP)",
+   "دعم الالتزام بالدواء"
+  ],
+  "selfcare": [
+   "الالتزام اليومي بالدواء دون انقطاع",
+   "استخدام الواقي حتى يصبح الفيروس غير قابل للقياس"
+  ],
+  "refs": [
+   "WHO",
+   "WHO_EML",
+   "CDC"
+  ],
+  "guide": "WHO Consolidated guidelines on HIV prevention, testing, treatment, service delivery and monitoring (2021)"
+ },
+ "geriatric.delirium": {
+  "tests": [
+   "تحليل البول وزرعه",
+   "صورة دم كاملة (CBC) وبروتين سي التفاعلي (CRP)",
+   "أملاح الدم ووظائف الكلى والكبد",
+   "سكر الدم"
+  ],
+  "imaging": [
+   "أشعة سينية على الصدر",
+   "أشعة مقطعية على الرأس (CT) عند السقوط أو علامات عصبية"
+  ],
+  "meds": [
+   {
+    "cls": "مضاد ذهان لفترة قصيرة",
+    "ex": "haloperidol",
+    "note": "تُعطى في المستشفى للهياج الشديد الخطِر فقط، ولأقصر مدة"
+   }
+  ],
+  "procedures": [
+   "علاج السبب (عدوى أو جفاف أو احتباس بول أو إمساك)",
+   "مراجعة الأدوية وإيقاف المسبِّب منها",
+   "إجراءات غير دوائية: توجيه وإضاءة ونظارات وسماعات"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) عند التغير المفاجئ في الوعي",
+   "إحضار قائمة بكل الأدوية",
+   "بقاء أحد أفراد الأسرة بجانب المريض"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG103 Delirium: prevention, diagnosis and management in hospital and long-term care (2010, updated 2023)"
+ },
+ "geriatric.dementia": {
+  "tests": [
+   "صورة دم كاملة (CBC)",
+   "فيتامين ب12 وحمض الفوليك",
+   "هرمون الغدة الدرقية (TSH)",
+   "أملاح الدم ووظائف الكلى والكبد وسكر الدم"
+  ],
+  "imaging": [
+   "رنين مغناطيسي (MRI) أو أشعة مقطعية (CT) على الدماغ"
+  ],
+  "meds": [
+   {
+    "cls": "مثبطات الكولينستراز",
+    "ex": "donepezil, rivastigmine, galantamine",
+    "note": "بوصفة طبية فقط لمرض ألزهايمر الخفيف إلى المتوسط"
+   },
+   {
+    "cls": "مضاد مستقبلات NMDA",
+    "ex": "memantine",
+    "note": "بوصفة طبية فقط للمراحل المتوسطة إلى الشديدة"
+   }
+  ],
+  "procedures": [
+   "اختبارات معرفية لتقييم الذاكرة",
+   "أنشطة التحفيز المعرفي",
+   "دعم وتدريب مقدمي الرعاية",
+   "التخطيط المسبق للرعاية"
+  ],
+  "selfcare": [
+   "روتين يومي ثابت ونشاط بدني واجتماعي"
+  ],
+  "refs": [
+   "NICE",
+   "AAN",
+   "WHO"
+  ],
+  "guide": "NICE NG97 Dementia: assessment, management and support for people living with dementia and their carers (2018)"
+ },
+ "geriatric.frailty": {
+  "tests": [
+   "صورة دم كاملة (CBC)",
+   "فيتامين د",
+   "وظائف الكلى والغدة الدرقية (TSH)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "فيتامين د عند ثبوت نقصه",
+    "ex": "colecalciferol"
+   }
+  ],
+  "procedures": [
+   "تقييم شامل لكبار السن (CGA)",
+   "برنامج تمارين مقاومة وتوازن بإشراف علاج طبيعي",
+   "مراجعة الأدوية وتقييم خطر السقوط"
+  ],
+  "selfcare": [
+   "غذاء غني بالبروتين",
+   "المشي وتمارين التقوية بانتظام"
+  ],
+  "refs": [
+   "WHO",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ICFSR International Clinical Practice Guidelines for Physical Frailty: Identification and Management (2019)"
+ },
+ "geriatric.incontinence": {
+  "tests": [
+   "تحليل البول (Urinalysis)",
+   "مفكرة المثانة لمدة 3 أيام"
+  ],
+  "imaging": [
+   "موجات صوتية لقياس البول المتبقي بعد التبول"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات المسكارين لسلس الإلحاح",
+    "ex": "oxybutynin, solifenacin",
+    "note": "بوصفة طبية فقط؛ بحذر لدى كبار السن لتأثيرها على الذاكرة"
+   },
+   {
+    "cls": "ناهض مستقبلات بيتا-3",
+    "ex": "mirabegron",
+    "note": "بوصفة طبية فقط، بديل مناسب لكبار السن"
+   }
+  ],
+  "procedures": [
+   "تمارين قاع الحوض بإشراف مختص لمدة 3 أشهر",
+   "تدريب المثانة لمدة 6 أسابيع على الأقل",
+   "جراحة لسلس الإجهاد عند فشل العلاج المحافظ"
+  ],
+  "selfcare": [
+   "تنظيم السوائل وتقليل الكافيين",
+   "إنقاص الوزن الزائد"
+  ],
+  "refs": [
+   "NICE",
+   "EAU",
+   "AUA"
+  ],
+  "guide": "NICE NG123 Urinary incontinence and pelvic organ prolapse in women: management (2019); EAU Guidelines on Urinary Incontinence"
+ },
+ "geriatric.orthostatic": {
+  "tests": [
+   "قياس ضغط الدم مستلقيًا ثم واقفًا",
+   "تخطيط القلب الكهربائي (ECG)",
+   "صورة دم كاملة (CBC) وأملاح الدم وسكر الدم"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "رافعات الضغط",
+    "ex": "midodrine, fludrocortisone",
+    "note": "بوصفة طبية فقط عند فشل الإجراءات غير الدوائية، مع مراقبة الضغط مستلقيًا"
+   }
+  ],
+  "procedures": [
+   "مراجعة الأدوية وتعديل أدوية الضغط والبروستاتا",
+   "جوارب ضاغطة أو حزام بطني"
+  ],
+  "selfcare": [
+   "النهوض على مراحل (الجلوس ثم الوقوف ببطء)",
+   "شرب سوائل كافية",
+   "رفع رأس السرير قليلًا"
+  ],
+  "refs": [
+   "ESC",
+   "AAN"
+  ],
+  "guide": "ESC 2018 Guidelines for the diagnosis and management of syncope"
+ },
+ "geriatric.pressureulcer": {
+  "tests": [
+   "صورة دم كاملة (CBC) وتقييم تغذوي (الألبومين)",
+   "زرع من الجرح عند الاشتباه بعدوى",
+   "سكر الدم"
+  ],
+  "imaging": [
+   "أشعة سينية أو رنين مغناطيسي (MRI) لاستبعاد التهاب العظم"
+  ],
+  "meds": [
+   {
+    "cls": "مسكن للألم أثناء العناية بالجرح",
+    "ex": "paracetamol"
+   }
+  ],
+  "procedures": [
+   "تنظيف الجرح وإزالة الأنسجة الميتة (Debridement)",
+   "ضمادات مناسبة لمرحلة القرحة",
+   "مراتب وأسطح لتوزيع الضغط",
+   "جراحة ترقيع للمراحل المتقدمة"
+  ],
+  "selfcare": [
+   "تغيير الوضعية بانتظام",
+   "إبقاء الجلد نظيفًا وجافًا",
+   "تغذية غنية بالبروتين والسوائل"
+  ],
+  "refs": [
+   "NICE"
+  ],
+  "guide": "NICE CG179 Pressure ulcers: prevention and management (2014)"
+ },
+ "geriatric.polypharmacy": {
+  "tests": [
+   "وظائف الكلى (eGFR) والكبد",
+   "أملاح الدم",
+   "مستوى الدواء في الدم لبعض الأدوية عند الحاجة"
+  ],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "مراجعة دوائية منظّمة بمعايير STOPP/START أو Beers",
+   "إيقاف تدريجي للأدوية غير الضرورية بإشراف الطبيب",
+   "تبسيط مواعيد الجرعات"
+  ],
+  "selfcare": [
+   "الاحتفاظ بقائمة محدثة لكل الأدوية والأعشاب",
+   "عدم إيقاف أي دواء دون استشارة الطبيب"
+  ],
+  "refs": [
+   "NICE",
+   "WHO"
+  ],
+  "guide": "American Geriatrics Society Beers Criteria (2023 update); NICE NG5 Medicines optimisation (2015)"
+ },
+ "geriatric.malnutrition": {
+  "tests": [
+   "صورة دم كاملة (CBC) والألبومين",
+   "فيتامين ب12 وحمض الفوليك وفيتامين د",
+   "هرمون الغدة الدرقية (TSH) وأملاح الدم"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "فيتامين د عند ثبوت نقصه",
+    "ex": "colecalciferol"
+   }
+  ],
+  "procedures": [
+   "تقييم غذائي (MNA أو MUST) لدى أخصائي تغذية",
+   "مكملات غذائية فموية عالية البروتين والطاقة",
+   "فحص الأسنان والبلع والاكتئاب"
+  ],
+  "selfcare": [
+   "وجبات صغيرة متكررة غنية بالبروتين",
+   "تناول الطعام مع الآخرين"
+  ],
+  "refs": [
+   "NICE",
+   "WHO"
+  ],
+  "guide": "ESPEN guideline on clinical nutrition and hydration in geriatrics (2022); NICE CG32 Nutrition support for adults"
+ },
+ "congenital.chd": {
+  "tests": [
+   "قياس تشبّع الأكسجين (Pulse oximetry)",
+   "تخطيط القلب الكهربائي (ECG)",
+   "فحص جيني عند الاشتباه بمتلازمة مرافقة"
+  ],
+  "imaging": [
+   "موجات صوتية على القلب (Echocardiography)",
+   "أشعة سينية على الصدر",
+   "رنين مغناطيسي على القلب (Cardiac MRI) عند الحاجة"
+  ],
+  "meds": [
+   {
+    "cls": "مدرّات البول لقصور القلب",
+    "ex": "furosemide",
+    "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن يحددها طبيب الأطفال"
+   },
+   {
+    "cls": "بروستاغلاندين لإبقاء القناة الشريانية مفتوحة",
+    "ex": "alprostadil",
+    "note": "تُعطى في المستشفى لحديثي الولادة في عيوب محددة"
+   }
+  ],
+  "procedures": [
+   "قسطرة قلبية علاجية",
+   "جراحة القلب لإصلاح العيب",
+   "متابعة دورية لدى طبيب قلب الأطفال"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ACC_AHA",
+   "ESC",
+   "AAP",
+   "WHO_EML"
+  ],
+  "guide": "AHA/ACC Guideline for the Management of Adults With Congenital Heart Disease (2018); AAP newborn pulse oximetry screening for critical CHD"
+ },
+ "congenital.metabolic": {
+  "tests": [
+   "فحص حديثي الولادة (Newborn screening)",
+   "الأحماض الأمينية في الدم والأحماض العضوية في البول",
+   "الأمونيا واللاكتات وسكر الدم",
+   "التحليل الجيني التأكيدي"
+  ],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "نظام غذائي علاجي خاص بإشراف أخصائي تغذية",
+   "متابعة لدى طبيب الأمراض الاستقلابية الوراثية",
+   "استشارة وراثية للأسرة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AAP",
+   "WHO"
+  ],
+  "guide": "ACMG newborn screening ACT sheets and confirmatory algorithms"
+ },
+ "congenital.skeletal": {
+  "tests": [
+   "تحليل جيني عند الاشتباه بمتلازمة"
+  ],
+  "imaging": [
+   "أشعة سينية على العظام المصابة",
+   "موجات صوتية على الورك للرضّع (خلع الورك الولادي)"
+  ],
+  "meds": [],
+  "procedures": [
+   "الجبس التدريجي بطريقة بونسيتي للقدم الحنفاء",
+   "حزام بافليك لخلع الورك الولادي",
+   "علاج طبيعي",
+   "جراحة تصحيحية عند الحاجة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AAOS",
+   "AAP"
+  ],
+  "guide": "AAOS Clinical Practice Guideline: Detection and Nonoperative Management of Pediatric Developmental Dysplasia of the Hip (2014)"
+ },
+ "congenital.down": {
+  "tests": [
+   "تحليل الكروموسومات (Karyotype)",
+   "هرمون الغدة الدرقية (TSH) دوريًا",
+   "صورة دم كاملة (CBC)",
+   "فحص السمع والنظر"
+  ],
+  "imaging": [
+   "موجات صوتية على القلب (Echocardiography) لكل مولود"
+  ],
+  "meds": [
+   {
+    "cls": "هرمون الغدة الدرقية عند ثبوت القصور",
+    "ex": "levothyroxine",
+    "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن يحددها طبيب الأطفال"
+   }
+  ],
+  "procedures": [
+   "تدخّل مبكر: علاج طبيعي وتخاطب وعلاج وظيفي",
+   "جراحة القلب عند وجود عيب",
+   "متابعة دورية وفق جدول الرعاية الخاص"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AAP",
+   "WHO_EML"
+  ],
+  "guide": "AAP Clinical Report: Health Supervision for Children and Adolescents With Down Syndrome (2022)"
+ },
+ "congenital.cleft": {
+  "tests": [
+   "تقييم السمع",
+   "فحص جيني عند وجود تشوهات أخرى"
+  ],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "جراحة إصلاح الشفة في الشهور الأولى",
+   "جراحة إصلاح سقف الحلق قبل اكتمال السنة الأولى غالبًا",
+   "علاج التخاطب وتقويم الأسنان",
+   "زجاجات وحلمات خاصة لتسهيل الرضاعة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AAP",
+   "AAO_HNS"
+  ],
+  "guide": "ACPA Parameters for Evaluation and Treatment of Patients with Cleft Lip/Palate or Other Craniofacial Differences"
+ },
+ "congenital.cf": {
+  "tests": [
+   "اختبار كلوريد العرق (Sweat test)",
+   "التحليل الجيني لجين CFTR",
+   "زرع البلغم",
+   "إيلاستاز البراز ووظائف الرئة"
+  ],
+  "imaging": [
+   "أشعة سينية أو مقطعية (CT) على الصدر"
+  ],
+  "meds": [
+   {
+    "cls": "إنزيمات البنكرياس الهاضمة",
+    "ex": "pancreatin (pancrelipase)",
+    "note": "مع كل وجبة؛ الجرعة حسب الوزن يحددها طبيب الأطفال"
+   },
+   {
+    "cls": "مذيب للمخاط",
+    "ex": "dornase alfa",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "معدِّلات بروتين CFTR",
+    "ex": "elexacaftor, tezacaftor, ivacaftor",
+    "note": "بوصفة طبية فقط من الاختصاصي، لطفرات محددة"
+   },
+   {
+    "cls": "مضادات حيوية بالاستنشاق",
+    "ex": "tobramycin (inhaled)",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "علاج طبيعي يومي لتنظيف الصدر",
+   "متابعة في مركز متخصص بالتليف الكيسي",
+   "دعم غذائي ومكملات الفيتامينات الذائبة في الدهون"
+  ],
+  "selfcare": [],
+  "refs": [
+   "NICE",
+   "ERS",
+   "ATS",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG78 Cystic fibrosis: diagnosis and management (2017)"
+ },
+ "congenital.turner": {
+  "tests": [
+   "تحليل الكروموسومات (Karyotype)",
+   "هرمونات FSH وLH",
+   "هرمون الغدة الدرقية (TSH) والهيموجلوبين السكري (HbA1c)",
+   "وظائف الكبد"
+  ],
+  "imaging": [
+   "موجات صوتية أو رنين مغناطيسي على القلب",
+   "موجات صوتية على الكلى"
+  ],
+  "meds": [
+   {
+    "cls": "هرمون النمو",
+    "ex": "somatropin",
+    "note": "في الطفولة بوصفة طبية فقط من طبيب الغدد"
+   },
+   {
+    "cls": "تعويض الإستروجين لبدء البلوغ",
+    "ex": "estradiol",
+    "note": "هرمون بوصفة طبية فقط بإشراف طبيب الغدد"
+   }
+  ],
+  "procedures": [
+   "متابعة دورية للقلب والسمع والكلى",
+   "استشارة خصوبة مبكرة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ENDO",
+   "ESHRE"
+  ],
+  "guide": "International Turner Syndrome Consensus Group clinical practice guidelines (2024)"
+ },
+ "congenital.klinefelter": {
+  "tests": [
+   "تحليل الكروموسومات (Karyotype)",
+   "التستوستيرون وهرمونات FSH وLH",
+   "تحليل السائل المنوي"
+  ],
+  "imaging": [
+   "قياس كثافة العظام (DEXA)"
+  ],
+  "meds": [
+   {
+    "cls": "تعويض هرمون الذكورة",
+    "ex": "testosterone",
+    "note": "بوصفة طبية فقط بإشراف طبيب الغدد؛ قد يقلل إنتاج الحيوانات المنوية"
+   }
+  ],
+  "procedures": [
+   "استخراج الحيوانات المنوية جراحيًا (micro-TESE) مع الحقن المجهري (ICSI)",
+   "دعم تعليمي ونفسي"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ENDO",
+   "EAU"
+  ],
+  "guide": "European Academy of Andrology (EAA) clinical practice guidelines on Klinefelter syndrome (2020)"
+ },
+ "congenital.spinabifida": {
+  "tests": [
+   "تحليل البول ووظائف الكلى",
+   "دراسة ديناميكية المثانة (Urodynamics)"
+  ],
+  "imaging": [
+   "موجات صوتية على الكلى والمثانة",
+   "رنين مغناطيسي (MRI) على الدماغ والحبل الشوكي"
+  ],
+  "meds": [
+   {
+    "cls": "مضاد مسكاريني للمثانة العصبية",
+    "ex": "oxybutynin",
+    "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن يحددها طبيب الأطفال"
+   },
+   {
+    "cls": "حمض الفوليك قبل الحمل التالي للوقاية",
+    "ex": "folic acid",
+    "note": "يحدد الطبيب الجرعة الوقائية للأم"
+   }
+  ],
+  "procedures": [
+   "إغلاق جراحي للعيب بعد الولادة",
+   "تحويلة لاستسقاء الرأس (VP shunt) عند الحاجة",
+   "قسطرة بولية متقطعة نظيفة",
+   "علاج طبيعي وأجهزة مساعدة على الحركة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AAP",
+   "AAN",
+   "WHO_EML"
+  ],
+  "guide": "Spina Bifida Association Guidelines for the Care of People with Spina Bifida (2018)"
+ },
+ "mental.anxiety": {
+  "tests": [
+   "هرمون الغدة الدرقية (TSH) لاستبعاد سبب عضوي",
+   "صورة دم كاملة (CBC)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)",
+    "ex": "sertraline, escitalopram",
+    "note": "بوصفة طبية فقط؛ يظهر أثرها بعد أسابيع ولا تُوقف فجأة"
+   },
+   {
+    "cls": "مثبطات استرداد السيروتونين والنورأدرينالين (SNRIs)",
+    "ex": "venlafaxine, duloxetine",
+    "note": "بوصفة طبية فقط؛ لا تُوقف فجأة"
+   }
+  ],
+  "procedures": [
+   "العلاج المعرفي السلوكي (CBT)",
+   "المساعدة الذاتية الموجّهة",
+   "تدريب على الاسترخاء التطبيقي"
+  ],
+  "selfcare": [
+   "نشاط بدني منتظم",
+   "تقليل الكافيين",
+   "تمارين التنفس البطيء"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_MHGAP",
+   "WFSBP"
+  ],
+  "guide": "NICE CG113 Generalised anxiety disorder and panic disorder in adults: management (2011, updated)"
+ },
+ "mental.panic": {
+  "tests": [
+   "تخطيط القلب الكهربائي (ECG) عند النوبة الأولى",
+   "هرمون الغدة الدرقية (TSH) وسكر الدم"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)",
+    "ex": "sertraline, escitalopram, paroxetine",
+    "note": "بوصفة طبية فقط؛ يظهر أثرها بعد أسابيع ولا تُوقف فجأة"
+   }
+  ],
+  "procedures": [
+   "العلاج المعرفي السلوكي (CBT)",
+   "المساعدة الذاتية الموجّهة"
+  ],
+  "selfcare": [
+   "تمارين التنفس البطيء أثناء النوبة",
+   "تقليل الكافيين والمنبهات"
+  ],
+  "refs": [
+   "NICE",
+   "APA",
+   "WFSBP"
+  ],
+  "guide": "NICE CG113 Generalised anxiety disorder and panic disorder in adults: management (2011, updated)"
+ },
+ "mental.depression": {
+  "tests": [
+   "استبيان تقييم الاكتئاب (PHQ-9)",
+   "هرمون الغدة الدرقية (TSH)",
+   "صورة دم كاملة (CBC) وفيتامين ب12"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات استرداد السيروتونين الانتقائية (SSRIs)",
+    "ex": "fluoxetine, sertraline, escitalopram",
+    "note": "بوصفة طبية فقط؛ لا تُوقف فجأة، وراجع الطبيب فورًا عند أفكار إيذاء النفس"
+   }
+  ],
+  "procedures": [
+   "العلاج المعرفي السلوكي (CBT)",
+   "التنشيط السلوكي (Behavioural activation)",
+   "العلاج النفسي بين الأشخاص (IPT)"
+  ],
+  "selfcare": [
+   "نشاط بدني منتظم",
+   "الحفاظ على التواصل مع الأهل والأصدقاء",
+   "مواعيد نوم منتظمة"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_MHGAP",
+   "APA",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG222 Depression in adults: treatment and management (2022)"
+ },
+ "mental.insomnia": {
+  "tests": [
+   "دراسة النوم (Polysomnography) عند الاشتباه بانقطاع النفس أثناء النوم"
+  ],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "العلاج المعرفي السلوكي للأرق (CBT-I)",
+   "مراجعة الأدوية والمنبهات المسببة للأرق"
+  ],
+  "selfcare": [
+   "مواعيد نوم واستيقاظ ثابتة يوميًا",
+   "الابتعاد عن الشاشات والكافيين مساءً",
+   "مغادرة السرير عند عدم القدرة على النوم"
+  ],
+  "refs": [
+   "NICE",
+   "APA"
+  ],
+  "guide": "European Insomnia Guideline 2023 (European Sleep Research Society)"
+ }
+}

@@ -765,6 +765,79 @@ function renderFollowup() {
   setCta("حدِّث النتيجة", commitAnswers, false);
 }
 
+/* ما قد يقرّره الطبيب: من data/care.js — فحوصات وأشعة وأدوية (فئات بلا جرعات) وإجراءات، مع الدليل الإرشادي */
+const CARE = window.MOSEL_CARE || {};
+const GUIDE_ORGS = {
+  WHO: ["منظمة الصحة العالمية", "https://www.who.int/publications/who-guidelines"],
+  WHO_EML: ["قائمة الأدوية الأساسية — WHO", "https://list.essentialmeds.org/"],
+  WHO_MHGAP: ["برنامج الصحة النفسية mhGAP — WHO", "https://www.who.int/teams/mental-health-and-substance-use/treatment-care/mental-health-gap-action-programme"],
+  NICE: ["المعهد البريطاني للتميز الصحي NICE", "https://www.nice.org.uk/guidance"],
+  CDC: ["مراكز مكافحة الأمراض الأمريكية CDC", "https://www.cdc.gov/"],
+  FDA: ["هيئة الغذاء والدواء الأمريكية FDA", "https://www.fda.gov/drugs"],
+  EMA: ["وكالة الأدوية الأوروبية EMA", "https://www.ema.europa.eu/en/medicines"],
+  ADA: ["الجمعية الأمريكية للسكري ADA", "https://professional.diabetes.org/standards-of-care"],
+  ACC_AHA: ["الكلية الأمريكية لأمراض القلب ACC/AHA", "https://www.acc.org/guidelines"],
+  ESC: ["الجمعية الأوروبية لأمراض القلب ESC", "https://www.escardio.org/Guidelines"],
+  ESH: ["الجمعية الأوروبية لارتفاع ضغط الدم ESH", "https://www.eshonline.org/guidelines/"],
+  GINA: ["المبادرة العالمية للربو GINA", "https://ginasthma.org/reports/"],
+  GOLD: ["المبادرة العالمية للانسداد الرئوي GOLD", "https://goldcopd.org/"],
+  KDIGO: ["KDIGO — أمراض الكلى", "https://kdigo.org/guidelines/"],
+  IDSA: ["جمعية الأمراض المعدية الأمريكية IDSA", "https://www.idsociety.org/practice-guideline/practice-guidelines/"],
+  ACOG: ["الكلية الأمريكية للنساء والتوليد ACOG", "https://www.acog.org/clinical"],
+  RCOG: ["الكلية الملكية للنساء والتوليد RCOG", "https://www.rcog.org.uk/guidance/"],
+  AUA: ["الجمعية الأمريكية للمسالك البولية AUA", "https://www.auanet.org/guidelines-and-quality/guidelines"],
+  EAU: ["الجمعية الأوروبية للمسالك البولية EAU", "https://uroweb.org/guidelines"],
+  AAP: ["الأكاديمية الأمريكية لطب الأطفال AAP", "https://publications.aap.org/pediatrics"],
+  APA: ["الجمعية الأمريكية للطب النفسي APA", "https://www.psychiatry.org/psychiatrists/practice/clinical-practice-guidelines"],
+  AAD: ["الأكاديمية الأمريكية للأمراض الجلدية AAD", "https://www.aad.org/member/clinical-quality/guidelines"],
+  AAO: ["الأكاديمية الأمريكية لطب العيون AAO", "https://www.aao.org/education/preferred-practice-patterns"],
+  AAO_HNS: ["الأكاديمية الأمريكية للأنف والأذن والحنجرة", "https://www.entnet.org/quality-practice/quality-products/clinical-practice-guidelines/"],
+  ACR: ["الكلية الأمريكية للروماتيزم ACR", "https://rheumatology.org/clinical-practice-guidelines"],
+  EULAR: ["الرابطة الأوروبية للروماتيزم EULAR", "https://www.eular.org/recommendations"],
+  ESHRE: ["الجمعية الأوروبية للتكاثر البشري ESHRE", "https://www.eshre.eu/Guidelines-and-Legal"],
+  ACG: ["الكلية الأمريكية لأمراض الجهاز الهضمي ACG", "https://gi.org/guidelines/"],
+  AASLD: ["الجمعية الأمريكية لأمراض الكبد AASLD", "https://www.aasld.org/practice-guidelines"],
+  EASL: ["الرابطة الأوروبية لدراسة الكبد EASL", "https://easl.eu/publications/clinical-practice-guidelines/"],
+  ATS: ["جمعية الصدر الأمريكية ATS", "https://www.thoracic.org/statements/"],
+  ERS: ["الجمعية الأوروبية للجهاز التنفسي ERS", "https://www.ersnet.org/guidelines/"],
+  BTS: ["جمعية الصدر البريطانية BTS", "https://www.brit-thoracic.org.uk/quality-improvement/guidelines/"],
+  ESMO: ["الجمعية الأوروبية للأورام ESMO", "https://www.esmo.org/guidelines"],
+  NCCN: ["الشبكة الأمريكية الشاملة للسرطان NCCN", "https://www.nccn.org/guidelines/patients"],
+  ASCO: ["الجمعية الأمريكية لعلاج الأورام ASCO", "https://www.asco.org/practice-patients/guidelines"],
+  ILAE: ["الرابطة الدولية لمكافحة الصرع ILAE", "https://www.ilae.org/guidelines"],
+  AAN: ["الأكاديمية الأمريكية للأعصاب AAN", "https://www.aan.com/guidelines"],
+  AHS: ["الجمعية الأمريكية للصداع AHS", "https://americanheadachesociety.org/"],
+  ENDO: ["جمعية الغدد الصماء Endocrine Society", "https://www.endocrine.org/clinical-practice-guidelines"],
+  ATA: ["الجمعية الأمريكية للغدة الدرقية ATA", "https://www.thyroid.org/professionals/ata-professional-guidelines/"],
+  AAOS: ["الأكاديمية الأمريكية لجراحي العظام AAOS", "https://www.aaos.org/quality/quality-programs/"],
+  ACEP: ["الكلية الأمريكية لأطباء الطوارئ ACEP", "https://www.acep.org/patient-care/clinical-policies"],
+  ESPGHAN: ["الجمعية الأوروبية لجهاز هضم الأطفال ESPGHAN", "https://www.espghan.org/knowledge-center/publications"],
+  ADA_DENTAL: ["جمعية طب الأسنان الأمريكية", "https://www.ada.org/resources/research/science-and-research-institute"],
+  WFSBP: ["الاتحاد العالمي للطب النفسي البيولوجي WFSBP", "https://www.wfsbp.org/educational-activities/wfsbp-treatment-guideline-and-consensus-papers/"],
+  ISSM: ["الجمعية الدولية للطب الجنسي ISSM", "https://www.issm.info/"],
+  ASH: ["الجمعية الأمريكية لأمراض الدم ASH", "https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines"],
+  AAAAI: ["الأكاديمية الأمريكية للحساسية والمناعة AAAAI", "https://www.aaaai.org/allergist-resources/statements-practice-parameters"]
+};
+function careBlock(c) {
+  const k = CARE[c.id];
+  if (!k) return "";
+  const li = arr => arr.map(x => `<li>${esc(x)}</li>`).join("");
+  const grp = (title, icon, body) => body ? `<div class="care-g"><h4>${ico(icon)}${title}</h4>${body}</div>` : "";
+  const meds = (k.meds || []).map(m => `<li><b>${esc(m.cls)}</b>${m.ex ? `<span class="ex" dir="ltr">${m.ex.split(/\s*,\s*/).map(n => `<a href="https://vsearch.nlm.nih.gov/vivisimo/cgi-bin/query-meta?v%3Aproject=medlineplus&v%3Asources=medlineplus-bundle&query=${encodeURIComponent(n)}" target="_blank" rel="noopener noreferrer">${esc(n)}</a>`).join("، ")}</span>` : ""}${m.note ? `<small>${esc(m.note)}</small>` : ""}</li>`).join("");
+  const orgs = (k.refs || []).filter(r => GUIDE_ORGS[r]);
+  return `<details class="care"${c.triage === "emergency" ? "" : ""}><summary>${ico(I.steth)}ما قد يقرّره الطبيب: الفحوصات والعلاج</summary>
+    <p class="care-warn">${ico(I.alert)}<span>للمعرفة والنقاش مع طبيبك فقط. <b>لا تتناول أي دواء دون وصفة طبية</b>؛ الاختيار والجرعة يحددهما الطبيب حسب حالتك وأدويتك الأخرى والحمل والرضاعة.</span></p>
+    ${grp("التحاليل", I.list, k.tests && k.tests.length ? `<ul>${li(k.tests)}</ul>` : "")}
+    ${grp("الأشعة والتصوير", I.info, k.imaging && k.imaging.length ? `<ul>${li(k.imaging)}</ul>` : "")}
+    ${grp("الأدوية المعتمدة (فئات وأسماء علمية دون جرعات)", I.shield, meds ? `<ul class="meds">${meds}</ul>` : "")}
+    ${grp("الإجراءات والعلاجات غير الدوائية", I.steth, k.procedures && k.procedures.length ? `<ul>${li(k.procedures)}</ul>` : "")}
+    ${grp("ما يمكنك فعله بنفسك", I.user, k.selfcare && k.selfcare.length ? `<ul>${li(k.selfcare)}</ul>` : "")}
+    <div class="care-src">${k.guide ? `<div>الدليل الإرشادي: <a href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(k.guide)}" target="_blank" rel="noopener noreferrer" dir="ltr">${esc(k.guide)}</a></div>` : ""}
+      ${orgs.length ? `<div class="orgs">${orgs.map(r => `<a href="${GUIDE_ORGS[r][1]}" target="_blank" rel="noopener noreferrer">${esc(GUIDE_ORGS[r][0])}</a>`).join("")}</div>` : ""}
+      <small>${k.reviewed ? `راجعه: ${esc(k.reviewed)}` : "قيد المراجعة من أطباء مختصين"}</small></div>
+  </details>`;
+}
+
 /* المراجع: روابط بحث مباشر في مصادر موثوقة (مابتتكسرش) + كود ICD-10 */
 function refsFor(c) {
   const q = encodeURIComponent(c.en);
@@ -805,6 +878,7 @@ function condCard(c, rank, isTop) {
       </div>
       <div class="blk def"><span class="bl">${ico(I.info)}ما هو؟</span>${esc(c.def)}</div>
       <div class="blk tx"><span class="bl">${ico(I.steth)}كيف يُعالَج؟</span>${esc(c.treatment)}</div>
+      ${careBlock(c)}
       <div class="small muted" style="margin-top:8px">مستوى الاستعجال المعتاد: <b>${TRIAGE[c.triage].label}</b>${reviewPending ? " · المحتوى قيد المراجعة الطبية" : ""}</div>
       ${refsFor(c)}
     </div>` : ""}

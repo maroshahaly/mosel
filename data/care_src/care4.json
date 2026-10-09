@@ -1,0 +1,1435 @@
+{
+ "dental.pericoronitis": {
+  "tests": [],
+  "imaging": [
+   "أشعة سينية بانورامية للفكين (OPG)"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات الألم",
+    "ex": "ibuprofen, paracetamol"
+   },
+   {
+    "cls": "غسول فموي مطهر",
+    "ex": "chlorhexidine"
+   },
+   {
+    "cls": "مضادات حيوية عند انتشار العدوى",
+    "ex": "amoxicillin, metronidazole",
+    "note": "بوصفة طبية فقط؛ عند وجود تورم أو حرارة"
+   }
+  ],
+  "procedures": [
+   "تنظيف المنطقة تحت غطاء اللثة وغسلها",
+   "إزالة غطاء اللثة أو خلع ضرس العقل عند التكرار"
+  ],
+  "selfcare": [
+   "المضمضة بماء دافئ مالح عدة مرات يوميًا",
+   "تنظيف المنطقة بلطف بالفرشاة"
+  ],
+  "refs": [
+   "NICE",
+   "ADA_DENTAL",
+   "WHO_EML"
+  ],
+  "guide": "NICE TA1 Guidance on the extraction of wisdom teeth (2000)"
+ },
+ "dental.drysocket": {
+  "tests": [],
+  "imaging": [
+   "أشعة سينية على مكان الخلع عند الاشتباه ببقايا جذر أو عظم"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات الألم",
+    "ex": "ibuprofen, paracetamol"
+   },
+   {
+    "cls": "غسول فموي مطهر",
+    "ex": "chlorhexidine"
+   }
+  ],
+  "procedures": [
+   "غسل السنخ بمحلول ملحي وإزالة البقايا",
+   "وضع ضماد مسكّن داخل السنخ (Alveolar dressing)"
+  ],
+  "selfcare": [
+   "تجنّب التدخين والشفط بالمصاصة",
+   "المضمضة بماء دافئ مالح بلطف بعد الوجبات"
+  ],
+  "refs": [
+   "ADA_DENTAL",
+   "WHO_EML"
+  ],
+  "guide": "SDCEP Drug Prescribing for Dentistry guidance"
+ },
+ "dental.aphthous": {
+  "tests": [
+   "صورة دم كاملة (CBC) عند تكرار القرح",
+   "مخزون الحديد (Ferritin) وفيتامين ب12 وحمض الفوليك",
+   "أجسام مضادة لمرض السيلياك (tTG-IgA) عند الاشتباه"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "غسول فموي مطهر",
+    "ex": "chlorhexidine"
+   },
+   {
+    "cls": "مضاد التهاب موضعي للفم",
+    "ex": "benzydamine"
+   },
+   {
+    "cls": "كورتيكوستيرويد موضعي للفم",
+    "ex": "hydrocortisone",
+    "note": "بوصفة طبية؛ للأطفال باستشارة الطبيب"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "تجنّب الأطعمة الحارة والحمضية والمقرمشة",
+   "استخدام فرشاة ناعمة ومعجون خالٍ من SLS"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE CKS Aphthous ulcer"
+ },
+ "dental.thrush": {
+  "tests": [
+   "مسحة فطرية من الفم عند عدم الاستجابة للعلاج",
+   "سكر الدم أو الهيموجلوبين السكري (HbA1c) عند التكرار"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضاد فطريات موضعي",
+    "ex": "miconazole, nystatin",
+    "note": "الميكونازول يتداخل مع الوارفارين؛ للرضع بإرشاد الطبيب"
+   },
+   {
+    "cls": "مضاد فطريات فموي للحالات الشديدة",
+    "ex": "fluconazole",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "المضمضة بالماء بعد بخاخ الكورتيزون",
+   "تنظيف طقم الأسنان ونزعه ليلًا",
+   "تعقيم حلمات الرضّاعة واللهايات"
+  ],
+  "refs": [
+   "IDSA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "IDSA Clinical Practice Guideline for the Management of Candidiasis (2016)"
+ },
+ "dental.bruxism": {
+  "tests": [],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "واقٍ ليلي للأسنان (Occlusal splint) يصنعه طبيب الأسنان",
+   "العلاج المعرفي السلوكي وإدارة التوتر (CBT)",
+   "تقييم اضطرابات النوم كانقطاع النفس النومي عند الاشتباه"
+  ],
+  "selfcare": [
+   "تجنّب الكافيين والكحول مساءً",
+   "كمادات دافئة وتمارين إرخاء الفك"
+  ],
+  "refs": [
+   "ADA_DENTAL"
+  ],
+  "guide": "International consensus on the assessment of bruxism (Lobbezoo et al., 2018)"
+ },
+ "dental.periodontitis": {
+  "tests": [
+   "الهيموجلوبين السكري (HbA1c) لاكتشاف السكري أو تقييم ضبطه"
+  ],
+  "imaging": [
+   "أشعة سينية للأسنان (Periapical / Bitewing)"
+  ],
+  "meds": [
+   {
+    "cls": "غسول فموي مطهر",
+    "ex": "chlorhexidine",
+    "note": "لفترة قصيرة؛ قد يصبغ الأسنان"
+   },
+   {
+    "cls": "مضادات حيوية مساعدة للحالات المتقدمة",
+    "ex": "amoxicillin, metronidazole",
+    "note": "بوصفة طبية فقط؛ ليست روتينية"
+   }
+  ],
+  "procedures": [
+   "تقليح الجذور وكشطها (Scaling and root planing)",
+   "جراحة اللثة للجيوب العميقة عند عدم الاستجابة",
+   "متابعة دورية لدى طبيب اللثة كل 3-6 أشهر"
+  ],
+  "selfcare": [
+   "تفريش الأسنان مرتين يوميًا وتنظيف ما بينها بالخيط",
+   "الإقلاع عن التدخين"
+  ],
+  "refs": [
+   "ADA_DENTAL",
+   "WHO_EML"
+  ],
+  "guide": "EFP S3 level clinical practice guideline for the treatment of periodontitis stage I-III (2020)"
+ },
+ "dental.oralca": {
+  "tests": [
+   "خزعة من الآفة (Biopsy) للفحص النسيجي"
+  ],
+  "imaging": [
+   "أشعة مقطعية أو رنين مغناطيسي للرأس والرقبة (CT/MRI) بعد التأكيد",
+   "تصوير مقطعي بالإصدار البوزيتروني (PET-CT) لتحديد المرحلة"
+  ],
+  "meds": [],
+  "procedures": [
+   "فحص شامل للفم والرقبة لدى جراح الفم أو طبيب الأنف والأذن",
+   "إحالة عاجلة لفريق أورام الرأس والرقبة عند تأكيد الإصابة",
+   "الاستئصال الجراحي أو العلاج الإشعاعي حسب المرحلة"
+  ],
+  "selfcare": [
+   "الإقلاع عن التدخين ومضغ التبغ والكحول"
+  ],
+  "refs": [
+   "NICE",
+   "NCCN"
+  ],
+  "guide": "NICE NG12 Suspected cancer: recognition and referral"
+ },
+ "endocrine.prediabetes": {
+  "tests": [
+   "الهيموجلوبين السكري (HbA1c)",
+   "سكر الدم الصائم (FPG)",
+   "اختبار تحمل الجلوكوز الفموي (OGTT)",
+   "دهون الدم (Lipid profile)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "بيغوانيدات لذوي الخطورة العالية",
+    "ex": "metformin",
+    "note": "بوصفة طبية فقط؛ ليست لكل المرضى"
+   }
+  ],
+  "procedures": [
+   "برنامج منظم لتغيير نمط الحياة وإنقاص الوزن 5-7%",
+   "فحص سنوي للسكر"
+  ],
+  "selfcare": [
+   "150 دقيقة أسبوعيًا من النشاط البدني المعتدل",
+   "تقليل السكريات والمشروبات المحلاة"
+  ],
+  "refs": [
+   "ADA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ADA Standards of Care in Diabetes 2025 (Section 3: Prevention or Delay of Diabetes)"
+ },
+ "endocrine.diabetes": {
+  "tests": [
+   "الهيموجلوبين السكري (HbA1c)",
+   "وظائف الكلى ونسبة الألبومين في البول (eGFR, UACR)",
+   "دهون الدم (Lipid profile)",
+   "وظائف الكبد (LFT)"
+  ],
+  "imaging": [
+   "تصوير قاع العين (Retinal screening) لاعتلال الشبكية السكري"
+  ],
+  "meds": [
+   {
+    "cls": "بيغوانيدات (الخط الأول غالبًا)",
+    "ex": "metformin",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مثبطات SGLT2",
+    "ex": "empagliflozin, dapagliflozin",
+    "note": "بوصفة طبية فقط؛ مفيدة خاصة لمرضى القلب والكلى"
+   },
+   {
+    "cls": "منبهات مستقبلات GLP-1",
+    "ex": "semaglutide, liraglutide",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "ستاتينات لحماية القلب",
+    "ex": "atorvastatin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "برنامج تثقيف ودعم ذاتي لمرضى السكري (DSMES)",
+   "فحص سنوي للقدمين والعينين والكلى"
+  ],
+  "selfcare": [
+   "قياس السكر في المنزل حسب خطة الطبيب",
+   "غذاء متوازن ونشاط بدني منتظم"
+  ],
+  "refs": [
+   "ADA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ADA Standards of Care in Diabetes 2025"
+ },
+ "endocrine.t1dm": {
+  "tests": [
+   "سكر الدم والهيموجلوبين السكري (HbA1c)",
+   "الكيتونات في الدم أو البول",
+   "أجسام مضادة ذاتية للبنكرياس (GAD, IA-2)",
+   "الببتيد سي (C-peptide)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "إنسولين قاعدي وسريع المفعول",
+    "ex": "insulin glargine, insulin aspart, insulin (human)",
+    "note": "بوصفة طبية فقط؛ الجرعات يحددها الطبيب"
+   },
+   {
+    "cls": "علاج هبوط السكر الشديد",
+    "ex": "glucagon",
+    "note": "للطوارئ بإرشاد الطبيب"
+   }
+  ],
+  "procedures": [
+   "برنامج تثقيف منظم لحساب الكربوهيدرات وضبط الإنسولين",
+   "المراقبة المستمرة للجلوكوز (CGM) أو مضخة الإنسولين عند الملاءمة",
+   "فحص سنوي للعينين والكلى والقدمين"
+  ],
+  "selfcare": [
+   "عدم إيقاف الإنسولين أبدًا حتى أثناء المرض",
+   "حمل مصدر سكر سريع دائمًا"
+  ],
+  "refs": [
+   "ADA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG17 Type 1 diabetes in adults: diagnosis and management (2015, updated)"
+ },
+ "endocrine.dka": {
+  "tests": [
+   "غازات الدم (Blood gases) ودرجة الحموضة",
+   "الكيتونات في الدم (Beta-hydroxybutyrate)",
+   "الأملاح والبوتاسيوم ووظائف الكلى (U&E)",
+   "سكر الدم كل ساعة"
+  ],
+  "imaging": [
+   "أشعة سينية على الصدر (CXR) عند الاشتباه بعدوى محفزة"
+  ],
+  "meds": [
+   {
+    "cls": "سوائل وريدية",
+    "ex": "sodium chloride 0.9%",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "إنسولين وريدي",
+    "ex": "insulin (human)",
+    "note": "تُعطى في المستشفى بمراقبة دقيقة"
+   },
+   {
+    "cls": "تعويض البوتاسيوم",
+    "ex": "potassium chloride",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "الإدخال إلى المستشفى وغالبًا العناية المركزة",
+   "مراقبة متكررة للسكر والأملاح والحموضة",
+   "علاج السبب المحفز كالعدوى أو إيقاف الإنسولين"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) فورًا"
+  ],
+  "refs": [
+   "ADA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ADA/EASD/JBDS/AACE/DTS consensus report: Hyperglycemic Crises in Adults With Diabetes (2024)"
+ },
+ "endocrine.gdm": {
+  "tests": [
+   "اختبار تحمل الجلوكوز الفموي (OGTT) بين الأسبوعين 24 و28",
+   "قياس السكر المنزلي صائمًا وبعد الوجبات"
+  ],
+  "imaging": [
+   "موجات فوق صوتية لمتابعة نمو الجنين (Ultrasound)"
+  ],
+  "meds": [
+   {
+    "cls": "إنسولين",
+    "ex": "insulin (human)",
+    "note": "بوصفة طبية فقط؛ آمن في الحمل"
+   },
+   {
+    "cls": "بيغوانيدات",
+    "ex": "metformin",
+    "note": "بوصفة طبية فقط؛ بقرار طبيب النساء"
+   }
+  ],
+  "procedures": [
+   "تعديل الغذاء بإشراف أخصائي تغذية",
+   "متابعة مكثفة للحمل وتحديد موعد الولادة",
+   "فحص السكر بعد 6-13 أسبوعًا من الولادة ثم سنويًا"
+  ],
+  "selfcare": [
+   "المشي الخفيف بعد الوجبات إن سمح الطبيب"
+  ],
+  "refs": [
+   "NICE",
+   "ADA",
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG3 Diabetes in pregnancy: management from preconception to the postnatal period (2015, updated)"
+ },
+ "endocrine.diabeticfoot": {
+  "tests": [
+   "صورة دم كاملة ومؤشرات الالتهاب (CBC, CRP)",
+   "مزرعة من عمق الجرح (Tissue culture)",
+   "الهيموجلوبين السكري (HbA1c)"
+  ],
+  "imaging": [
+   "أشعة سينية على القدم لاستبعاد التهاب العظم",
+   "رنين مغناطيسي (MRI) عند الاشتباه بالتهاب العظم",
+   "دوبلر للشرايين ومؤشر الكاحل-العضد (ABI)"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية عند وجود عدوى",
+    "ex": "amoxicillin+clavulanic acid, flucloxacillin, clindamycin",
+    "note": "بوصفة طبية فقط؛ حسب شدة العدوى والمزرعة"
+   }
+  ],
+  "procedures": [
+   "تنظيف الجرح وإزالة الأنسجة الميتة (Debridement)",
+   "تخفيف الضغط عن القدم بجبيرة أو حذاء خاص (Offloading)",
+   "تقييم لدى فريق القدم السكرية وجراحة الأوعية عند ضعف التروية"
+  ],
+  "selfcare": [
+   "فحص القدمين يوميًا وعدم المشي حافيًا",
+   "عدم الضغط على القرحة والحفاظ على نظافتها"
+  ],
+  "refs": [
+   "IDSA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "IWGDF/IDSA Guidelines on the diagnosis and treatment of diabetes-related foot infections (2023)"
+ },
+ "endocrine.hypoglycemia": {
+  "tests": [
+   "قياس سكر الدم بالإصبع فورًا",
+   "مراجعة أدوية السكر وجرعاتها"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "جلوكوز سريع (إذا كان الوعي سليمًا)",
+    "ex": "glucose"
+   },
+   {
+    "cls": "جلوكوز وريدي أو جلوكاجون (عند فقدان الوعي)",
+    "ex": "glucose, glucagon",
+    "note": "يعطيه المسعف أو مرافق مدرَّب"
+   }
+  ],
+  "procedures": [
+   "تعديل خطة الإنسولين أو أدوية السلفونيل يوريا",
+   "تثقيف المريض وأسرته حول علامات الهبوط وعلاجه"
+  ],
+  "selfcare": [
+   "تناول 15 غرامًا من سكر سريع ثم إعادة القياس بعد 15 دقيقة",
+   "عند فقدان الوعي لا يُعطى شيء بالفم، واتصل بالإسعاف (123)"
+  ],
+  "refs": [
+   "ADA",
+   "WHO_EML"
+  ],
+  "guide": "ADA Standards of Care in Diabetes 2025 (Section 6: Glycemic Goals and Hypoglycemia)"
+ },
+ "endocrine.hypothyroid": {
+  "tests": [
+   "الهرمون المنبه للدرقية (TSH)",
+   "هرمون الثيروكسين الحر (Free T4)",
+   "أجسام مضادة للدرقية (Anti-TPO)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "هرمون الغدة الدرقية التعويضي",
+    "ex": "levothyroxine",
+    "note": "بوصفة طبية فقط؛ يؤخذ على معدة فارغة"
+   }
+  ],
+  "procedures": [
+   "إعادة قياس TSH بعد 6-8 أسابيع من بدء العلاج أو تعديله"
+  ],
+  "selfcare": [
+   "عدم أخذ الحديد أو الكالسيوم مع دواء الغدة في الوقت نفسه"
+  ],
+  "refs": [
+   "ATA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG145 Thyroid disease: assessment and management (2019)"
+ },
+ "endocrine.hyperthyroid": {
+  "tests": [
+   "الهرمون المنبه للدرقية (TSH)",
+   "هرمونا الغدة الحران (Free T4, Free T3)",
+   "أجسام مضادة لمستقبلات TSH (TRAb)",
+   "صورة دم كاملة (CBC) أثناء العلاج"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للغدة الدرقية",
+   "مسح ذري للغدة الدرقية (Thyroid scintigraphy)"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات الغدة الدرقية",
+    "ex": "carbimazole, methimazole, propylthiouracil",
+    "note": "بوصفة طبية فقط؛ راجع الطبيب فورًا عند الحمى أو التهاب الحلق"
+   },
+   {
+    "cls": "حاصرات بيتا لتخفيف الأعراض",
+    "ex": "propranolol",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "العلاج باليود المشع (Radioactive iodine)",
+   "استئصال الغدة الدرقية جراحيًا عند الحاجة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ATA",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "2016 ATA Guidelines for Diagnosis and Management of Hyperthyroidism and Other Causes of Thyrotoxicosis"
+ },
+ "endocrine.addison": {
+  "tests": [
+   "الكورتيزول الصباحي في الدم",
+   "اختبار تحفيز ACTH (Synacthen test)",
+   "الأملاح (الصوديوم والبوتاسيوم)",
+   "مستوى ACTH والرينين"
+  ],
+  "imaging": [
+   "أشعة مقطعية على الغدد الكظرية (CT) حسب السبب"
+  ],
+  "meds": [
+   {
+    "cls": "كورتيكوستيرويد تعويضي",
+    "ex": "hydrocortisone",
+    "note": "بوصفة طبية فقط؛ لا يُوقف فجأة"
+   },
+   {
+    "cls": "منيرالوكورتيكويد",
+    "ex": "fludrocortisone",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "تعليم قواعد زيادة الجرعة وقت المرض (Sick day rules)",
+   "حمل بطاقة طوارئ وحقنة هيدروكورتيزون للطوارئ"
+  ],
+  "selfcare": [
+   "عدم إيقاف الدواء أبدًا، والتوجه للطوارئ عند القيء أو الإغماء"
+  ],
+  "refs": [
+   "ENDO",
+   "WHO_EML"
+  ],
+  "guide": "Endocrine Society Clinical Practice Guideline: Diagnosis and Treatment of Primary Adrenal Insufficiency (2016)"
+ },
+ "endocrine.cushing": {
+  "tests": [
+   "الكورتيزول الحر في بول 24 ساعة",
+   "الكورتيزول في اللعاب ليلًا",
+   "اختبار تثبيط الديكساميثازون الليلي",
+   "مستوى ACTH في الدم"
+  ],
+  "imaging": [
+   "رنين مغناطيسي للغدة النخامية (MRI)",
+   "أشعة مقطعية على الغدد الكظرية (CT)"
+  ],
+  "meds": [],
+  "procedures": [
+   "مراجعة أدوية الكورتيزون وتخفيضها تدريجيًا إن كانت هي السبب",
+   "استئصال الورم جراحيًا في النخامية أو الكظرية حسب السبب"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ENDO"
+  ],
+  "guide": "Endocrine Society Clinical Practice Guideline: Treatment of Cushing's Syndrome (2015)"
+ },
+ "endocrine.goiter": {
+  "tests": [
+   "الهرمون المنبه للدرقية (TSH)",
+   "هرمون الثيروكسين الحر (Free T4)",
+   "خزعة بالإبرة الدقيقة (FNA) للعقيدة المشبوهة"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للغدة الدرقية والرقبة"
+  ],
+  "meds": [],
+  "procedures": [
+   "متابعة دورية بالموجات فوق الصوتية للعقيدات الحميدة",
+   "استئصال جزئي أو كلي للغدة عند الاشتباه بالسرطان أو الضغط",
+   "اليود المشع للعقيدات مفرطة النشاط"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ATA",
+   "NICE"
+  ],
+  "guide": "2015 ATA Management Guidelines for Adult Patients with Thyroid Nodules and Differentiated Thyroid Cancer"
+ },
+ "endocrine.di": {
+  "tests": [
+   "حجم البول خلال 24 ساعة وكثافته",
+   "الصوديوم والأسمولية في الدم والبول",
+   "اختبار الحرمان من الماء أو قياس الكوبيبتين (Copeptin)"
+  ],
+  "imaging": [
+   "رنين مغناطيسي للغدة النخامية (MRI)"
+  ],
+  "meds": [
+   {
+    "cls": "نظير الهرمون المضاد لإدرار البول",
+    "ex": "desmopressin",
+    "note": "بوصفة طبية فقط؛ خطر نقص الصوديوم مع الإفراط في الشرب"
+   }
+  ],
+  "procedures": [
+   "علاج السبب، ومراجعة أدوية كالليثيوم في النوع الكلوي"
+  ],
+  "selfcare": [
+   "الشرب حسب العطش وعدم تقييد الماء"
+  ],
+  "refs": [
+   "ENDO"
+  ],
+  "guide": "Society for Endocrinology clinical guidance on cranial diabetes insipidus (arginine vasopressin deficiency)"
+ },
+ "endocrine.vitd": {
+  "tests": [
+   "مستوى فيتامين د في الدم (25-OH Vitamin D)",
+   "الكالسيوم والفوسفات والفوسفاتاز القلوي (ALP)",
+   "هرمون الغدة الجار درقية (PTH) عند الحاجة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "فيتامين د",
+    "ex": "colecalciferol, ergocalciferol",
+    "note": "الجرعة يحددها الطبيب؛ الإفراط ضار"
+   },
+   {
+    "cls": "مكملات الكالسيوم عند نقصه في الغذاء",
+    "ex": "calcium carbonate"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "التعرض المعتدل لأشعة الشمس",
+   "أطعمة غنية بفيتامين د كالأسماك الدهنية والبيض"
+  ],
+  "refs": [
+   "NICE",
+   "ENDO",
+   "WHO_EML"
+  ],
+  "guide": "NICE CKS Vitamin D deficiency in adults"
+ },
+ "endocrine.obesity": {
+  "tests": [
+   "مؤشر كتلة الجسم ومحيط الخصر (BMI)",
+   "سكر الدم والهيموجلوبين السكري (HbA1c)",
+   "دهون الدم ووظائف الكبد",
+   "وظائف الغدة الدرقية (TSH)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "أدوية تعمل على مستقبلات GLP-1",
+    "ex": "semaglutide, liraglutide, tirzepatide",
+    "note": "بوصفة طبية فقط؛ لا تُستخدم في الحمل"
+   },
+   {
+    "cls": "مثبطات الليباز",
+    "ex": "orlistat",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "برنامج متعدد المكونات: غذاء ونشاط وتعديل سلوكي",
+   "جراحة السمنة (Bariatric surgery) للحالات المؤهلة"
+  ],
+  "selfcare": [
+   "تقليل السعرات والمشروبات المحلاة",
+   "زيادة النشاط البدني تدريجيًا"
+  ],
+  "refs": [
+   "NICE",
+   "ENDO",
+   "WHO"
+  ],
+  "guide": "NICE NG246 Overweight and obesity management (2025)"
+ },
+ "endocrine.hyperpara": {
+  "tests": [
+   "الكالسيوم في الدم (مصحح بالألبومين)",
+   "هرمون الغدة الجار درقية (PTH)",
+   "فيتامين د ووظائف الكلى",
+   "الكالسيوم في بول 24 ساعة"
+  ],
+  "imaging": [
+   "قياس كثافة العظام (DEXA)",
+   "موجات فوق صوتية للرقبة ومسح سيستامبي (Sestamibi scan)",
+   "موجات فوق صوتية للكلى لاستبعاد الحصوات"
+  ],
+  "meds": [],
+  "procedures": [
+   "استئصال الغدة الجار درقية المتضخمة جراحيًا (Parathyroidectomy)",
+   "متابعة دورية للكالسيوم والعظام والكلى لمن لا يحتاج جراحة"
+  ],
+  "selfcare": [
+   "شرب كمية كافية من الماء"
+  ],
+  "refs": [
+   "NICE",
+   "ENDO"
+  ],
+  "guide": "NICE NG132 Hyperparathyroidism (primary): diagnosis, assessment and initial management (2019)"
+ },
+ "andrology.torsion": {
+  "tests": [
+   "تحليل البول (Urinalysis) لاستبعاد العدوى"
+  ],
+  "imaging": [
+   "موجات فوق صوتية مع دوبلر للصفن دون تأخير الجراحة"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات الألم",
+    "ex": "morphine, paracetamol",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "استكشاف جراحي عاجل وفك الالتواء وتثبيت الخصيتين (Orchidopexy)",
+   "استئصال الخصية إن كانت غير قابلة للحياة"
+  ],
+  "selfcare": [
+   "التوجه للطوارئ فورًا أو الاتصال بالإسعاف (123)",
+   "عدم الأكل أو الشرب تحسبًا للجراحة"
+  ],
+  "refs": [
+   "EAU",
+   "AUA",
+   "WHO_EML"
+  ],
+  "guide": "EAU Guidelines on Paediatric Urology (testicular torsion)"
+ },
+ "andrology.ed": {
+  "tests": [
+   "سكر الدم الصائم أو الهيموجلوبين السكري (HbA1c)",
+   "دهون الدم (Lipid profile)",
+   "التستوستيرون الكلي صباحًا"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات الفوسفودايستيراز-5",
+    "ex": "sildenafil, tadalafil",
+    "note": "بوصفة طبية فقط؛ ممنوعة مع أدوية النترات"
+   }
+  ],
+  "procedures": [
+   "علاج عوامل الخطر القلبية والوعائية",
+   "العلاج النفسي الجنسي (Psychosexual therapy)",
+   "حقن داخل الجسم الكهفي أو دعامة القضيب عند فشل الأقراص"
+  ],
+  "selfcare": [
+   "الإقلاع عن التدخين وممارسة الرياضة وإنقاص الوزن"
+  ],
+  "refs": [
+   "AUA",
+   "EAU",
+   "ISSM"
+  ],
+  "guide": "AUA Erectile Dysfunction Guideline (2018)"
+ },
+ "andrology.varicocele": {
+  "tests": [
+   "تحليل السائل المنوي (Semen analysis) عند الرغبة في الإنجاب"
+  ],
+  "imaging": [
+   "موجات فوق صوتية مع دوبلر للصفن"
+  ],
+  "meds": [],
+  "procedures": [
+   "ربط الدوالي جراحيًا بالمجهر (Microsurgical varicocelectomy) عند العقم أو الألم",
+   "إغلاق الأوردة بالقسطرة (Embolization) كبديل",
+   "المتابعة فقط إذا لم توجد أعراض أو مشكلة خصوبة"
+  ],
+  "selfcare": [
+   "ارتداء ملابس داخلية داعمة لتخفيف الثقل"
+  ],
+  "refs": [
+   "EAU",
+   "AUA"
+  ],
+  "guide": "EAU Guidelines on Sexual and Reproductive Health (male infertility: varicocele)"
+ },
+ "andrology.hypogonadism": {
+  "tests": [
+   "التستوستيرون الكلي صباحًا مرتين",
+   "هرمونا LH وFSH",
+   "البرولاكتين",
+   "صورة دم كاملة ومستضد البروستاتا (CBC, PSA) قبل العلاج"
+  ],
+  "imaging": [
+   "رنين مغناطيسي للنخامية عند الاشتباه بسبب نخامي"
+  ],
+  "meds": [
+   {
+    "cls": "العلاج التعويضي بالتستوستيرون",
+    "ex": "testosterone",
+    "note": "بوصفة طبية فقط؛ يثبط الخصوبة ويحتاج متابعة دورية"
+   }
+  ],
+  "procedures": [
+   "علاج الأسباب كالسمنة والسكري ومراجعة الأدوية"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ENDO",
+   "EAU",
+   "AUA",
+   "WHO_EML"
+  ],
+  "guide": "Endocrine Society Clinical Practice Guideline: Testosterone Therapy in Men With Hypogonadism (2018)"
+ },
+ "andrology.lump": {
+  "tests": [
+   "دلالات أورام الخصية (AFP, beta-hCG, LDH)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للصفن",
+   "أشعة مقطعية للصدر والبطن والحوض (CT) لتحديد المرحلة"
+  ],
+  "meds": [],
+  "procedures": [
+   "استئصال الخصية عبر الأربية (Radical inguinal orchiectomy) عند الاشتباه",
+   "حفظ السائل المنوي قبل العلاج",
+   "علاج كيميائي أو إشعاعي حسب نوع الورم ومرحلته"
+  ],
+  "selfcare": [
+   "الفحص الذاتي الشهري للخصيتين"
+  ],
+  "refs": [
+   "EAU",
+   "NCCN",
+   "NICE"
+  ],
+  "guide": "EAU Guidelines on Testicular Cancer"
+ },
+ "andrology.infertility": {
+  "tests": [
+   "تحليل السائل المنوي مرتين (Semen analysis)",
+   "هرمونات FSH وLH والتستوستيرون",
+   "تحاليل وراثية (Karyotype, Y-microdeletion) عند القلة الشديدة"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للصفن"
+  ],
+  "meds": [],
+  "procedures": [
+   "علاج دوالي الخصية عند وجودها",
+   "التلقيح الصناعي أو الحقن المجهري (IUI/ICSI) حسب الحالة",
+   "استخراج الحيوانات المنوية جراحيًا (TESE) عند انعدامها"
+  ],
+  "selfcare": [
+   "الإقلاع عن التدخين وتجنب تعريض الخصيتين للحرارة",
+   "تجنب المنشطات والتستوستيرون الخارجي"
+  ],
+  "refs": [
+   "AUA",
+   "EAU",
+   "WHO"
+  ],
+  "guide": "AUA/ASRM Diagnosis and Treatment of Infertility in Men Guideline (2020, amended 2024)"
+ },
+ "andrology.gynecomastia": {
+  "tests": [
+   "التستوستيرون وLH وFSH والإستراديول",
+   "البرولاكتين وهرمون beta-hCG",
+   "وظائف الكبد والكلى والغدة الدرقية"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للثدي أو ماموجرام عند الاشتباه بكتلة",
+   "موجات فوق صوتية للخصيتين حسب نتائج الهرمونات"
+  ],
+  "meds": [],
+  "procedures": [
+   "مراجعة الأدوية والمواد المسببة وإيقافها",
+   "الطمأنة والمتابعة في سن البلوغ لأنها تزول غالبًا",
+   "جراحة تصغير الثدي للحالات المستمرة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ENDO"
+  ],
+  "guide": "European Academy of Andrology (EAA) clinical practice guidelines on gynecomastia evaluation and management (2019)"
+ },
+ "andrology.pe": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مثبطات استرداد السيروتونين الانتقائية",
+    "ex": "dapoxetine, sertraline, paroxetine",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مخدر موضعي",
+    "ex": "lidocaine, prilocaine",
+    "note": "كريم أو بخاخ موضعي"
+   }
+  ],
+  "procedures": [
+   "العلاج السلوكي (تقنية التوقف والبدء أو الضغط)",
+   "الإرشاد النفسي الجنسي للزوجين"
+  ],
+  "selfcare": [
+   "تمارين عضلات قاع الحوض"
+  ],
+  "refs": [
+   "ISSM",
+   "EAU",
+   "AUA"
+  ],
+  "guide": "ISSM Guidelines for the Diagnosis and Treatment of Premature Ejaculation (2014)"
+ },
+ "andrology.phimosis": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "كريم كورتيكوستيرويد موضعي",
+    "ex": "betamethasone",
+    "note": "بوصفة طبية فقط؛ للأطفال بإشراف الطبيب"
+   }
+  ],
+  "procedures": [
+   "الختان (Circumcision) عند فشل العلاج الموضعي أو تكرار العدوى",
+   "لدى الأطفال الصغار: الانتظار غالبًا لأن التضيق طبيعي في السنوات الأولى"
+  ],
+  "selfcare": [
+   "عدم سحب القلفة بالقوة لدى الأطفال",
+   "النظافة اليومية بالماء الدافئ"
+  ],
+  "refs": [
+   "EAU",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "EAU Guidelines on Paediatric Urology (phimosis)"
+ },
+ "andrology.balanitis": {
+  "tests": [
+   "سكر الدم لاستبعاد السكري",
+   "مسحة ومزرعة عند عدم الاستجابة للعلاج"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضاد فطريات موضعي",
+    "ex": "clotrimazole, miconazole"
+   },
+   {
+    "cls": "كورتيكوستيرويد موضعي خفيف",
+    "ex": "hydrocortisone",
+    "note": "لفترة قصيرة بإرشاد الطبيب"
+   }
+  ],
+  "procedures": [
+   "الختان عند التكرار"
+  ],
+  "selfcare": [
+   "الغسل اليومي بالماء الدافئ وتجفيف المنطقة جيدًا",
+   "تجنب الصابون المعطر"
+  ],
+  "refs": [
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "BASHH UK National Guideline on the Management of Balanoposthitis (2015)"
+ },
+ "andrology.peyronie": {
+  "tests": [],
+  "imaging": [
+   "موجات فوق صوتية مع دوبلر للقضيب"
+  ],
+  "meds": [],
+  "procedures": [
+   "المتابعة في المرحلة النشطة لأن بعض الحالات تستقر",
+   "أجهزة الشد (Traction therapy)",
+   "جراحة تصحيح الانحناء بعد استقرار المرض"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AUA",
+   "EAU"
+  ],
+  "guide": "AUA Peyronie's Disease Guideline (2015, amended)"
+ },
+ "andrology.hydrocele": {
+  "tests": [],
+  "imaging": [
+   "موجات فوق صوتية للصفن"
+  ],
+  "meds": [],
+  "procedures": [
+   "المتابعة لدى الرضع حتى سن 1-2 سنة لأنها تزول غالبًا",
+   "استئصال القيلة المائية جراحيًا (Hydrocelectomy) للكبيرة أو المزعجة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "EAU",
+   "AUA"
+  ],
+  "guide": "EAU Guidelines on Paediatric Urology (hydrocele)"
+ },
+ "andrology.hernia": {
+  "tests": [],
+  "imaging": [
+   "موجات فوق صوتية للأربية عند عدم وضوح التشخيص"
+  ],
+  "meds": [],
+  "procedures": [
+   "إصلاح الفتق جراحيًا بشبكة (Mesh repair) مفتوحًا أو بالمنظار",
+   "الانتظار اليقظ للفتق الصغير غير المؤلم لدى الرجال"
+  ],
+  "selfcare": [
+   "التوجه للطوارئ إذا أصبح الفتق مؤلمًا ولا يعود للداخل",
+   "تجنب رفع الأثقال الثقيلة"
+  ],
+  "refs": [
+   "NICE"
+  ],
+  "guide": "HerniaSurge International Guidelines for Groin Hernia Management (2018)"
+ },
+ "andrology.prostatitis": {
+  "tests": [
+   "تحليل ومزرعة البول (Urinalysis, culture)",
+   "فحوص الأمراض المنقولة جنسيًا عند الحاجة"
+  ],
+  "imaging": [
+   "موجات فوق صوتية عبر المستقيم عند الاشتباه بخراج"
+  ],
+  "meds": [
+   {
+    "cls": "مضادات حيوية للالتهاب البكتيري",
+    "ex": "ciprofloxacin, trimethoprim, sulfamethoxazole+trimethoprim",
+    "note": "بوصفة طبية فقط؛ لعدة أسابيع"
+   },
+   {
+    "cls": "حاصرات ألفا",
+    "ex": "tamsulosin",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مسكنات الألم",
+    "ex": "paracetamol, ibuprofen"
+   }
+  ],
+  "procedures": [
+   "العلاج الطبيعي لقاع الحوض في الالتهاب المزمن"
+  ],
+  "selfcare": [
+   "شرب السوائل بكثرة"
+  ],
+  "refs": [
+   "NICE",
+   "EAU",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG110 Prostatitis (acute): antimicrobial prescribing (2018)"
+ },
+ "andrology.bph": {
+  "tests": [
+   "مستضد البروستاتا النوعي (PSA) بعد المشورة",
+   "تحليل البول (Urinalysis)",
+   "وظائف الكلى (Creatinine)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للمسالك البولية وقياس البول المتبقي",
+   "مخطط تدفق البول (Uroflowmetry)"
+  ],
+  "meds": [
+   {
+    "cls": "حاصرات ألفا",
+    "ex": "tamsulosin, doxazosin",
+    "note": "بوصفة طبية فقط؛ قد تسبب دوخة"
+   },
+   {
+    "cls": "مثبطات إنزيم 5-ألفا ريدكتاز",
+    "ex": "finasteride, dutasteride",
+    "note": "بوصفة طبية فقط؛ تخفض قراءة PSA"
+   }
+  ],
+  "procedures": [
+   "استئصال البروستاتا بالمنظار (TURP) عند فشل الأدوية أو المضاعفات"
+  ],
+  "selfcare": [
+   "تقليل السوائل مساءً والكافيين والكحول"
+  ],
+  "refs": [
+   "NICE",
+   "EAU",
+   "AUA"
+  ],
+  "guide": "NICE CG97 Lower urinary tract symptoms in men: management (2010, updated)"
+ },
+ "andrology.retention": {
+  "tests": [
+   "وظائف الكلى (Creatinine, U&E)",
+   "تحليل ومزرعة البول"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للمثانة لقياس حجم البول"
+  ],
+  "meds": [
+   {
+    "cls": "حاصرات ألفا قبل محاولة إزالة القسطرة",
+    "ex": "tamsulosin",
+    "note": "تُعطى في المستشفى أو بوصفة الطبيب"
+   }
+  ],
+  "procedures": [
+   "تركيب قسطرة بولية فورًا لتفريغ المثانة",
+   "قسطرة فوق العانة عند تعذر القسطرة العادية",
+   "علاج السبب كتضخم البروستاتا"
+  ],
+  "selfcare": [
+   "التوجه للطوارئ فورًا"
+  ],
+  "refs": [
+   "EAU",
+   "NICE"
+  ],
+  "guide": "EAU Guidelines on Management of Non-neurogenic Male LUTS"
+ },
+ "andrology.prostateca": {
+  "tests": [
+   "مستضد البروستاتا النوعي (PSA) بعد مناقشة المنافع والمخاطر"
+  ],
+  "imaging": [
+   "رنين مغناطيسي متعدد المعايير للبروستاتا (mpMRI) عند ارتفاع PSA"
+  ],
+  "meds": [],
+  "procedures": [
+   "قرار مشترك مع الطبيب حول الفحص من سن 50 (أو 45 لذوي الخطورة العالية)",
+   "فحص البروستاتا بالإصبع (DRE)",
+   "خزعة البروستاتا الموجهة عند الاشتباه"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AUA",
+   "EAU",
+   "NICE"
+  ],
+  "guide": "AUA/SUO Early Detection of Prostate Cancer Guideline (2023)"
+ },
+ "andrology.stricture": {
+  "tests": [
+   "تحليل البول (Urinalysis)",
+   "مخطط تدفق البول (Uroflowmetry)"
+  ],
+  "imaging": [
+   "تصوير الإحليل بالصبغة (Retrograde urethrogram)"
+  ],
+  "meds": [],
+  "procedures": [
+   "منظار المثانة والإحليل (Cystoscopy)",
+   "توسيع الإحليل أو شق التضيق بالمنظار (Urethrotomy)",
+   "جراحة ترميم الإحليل (Urethroplasty) للتضيقات الطويلة أو المتكررة"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AUA",
+   "EAU"
+  ],
+  "guide": "AUA Urethral Stricture Guideline (2016, amended 2023)"
+ },
+ "andrology.priapism": {
+  "tests": [
+   "غازات الدم من الجسم الكهفي (Cavernosal blood gas)",
+   "صورة دم كاملة (CBC) وفحص الأنيميا المنجلية"
+  ],
+  "imaging": [
+   "دوبلر ملون للقضيب"
+  ],
+  "meds": [
+   {
+    "cls": "قابض للأوعية يُحقن في الجسم الكهفي",
+    "ex": "phenylephrine",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "سحب الدم من الجسم الكهفي (Aspiration) مع الغسيل",
+   "جراحة تحويلة (Shunt) عند فشل العلاج"
+  ],
+  "selfcare": [
+   "التوجه للطوارئ إذا استمر الانتصاب أكثر من 4 ساعات"
+  ],
+  "refs": [
+   "AUA",
+   "EAU"
+  ],
+  "guide": "AUA/SMSNA Guideline on Acute Ischemic Priapism (2021, amended 2022)"
+ },
+ "gynecology.ectopic": {
+  "tests": [
+   "هرمون الحمل الكمي في الدم (beta-hCG)",
+   "فصيلة الدم وعامل Rh وصورة دم كاملة (CBC)"
+  ],
+  "imaging": [
+   "موجات فوق صوتية مهبلية (Transvaginal ultrasound)"
+  ],
+  "meds": [
+   {
+    "cls": "مثبط حمض الفوليك للحالات المستقرة المؤهلة",
+    "ex": "methotrexate",
+    "note": "تُعطى في المستشفى؛ بقرار طبيبة النساء"
+   },
+   {
+    "cls": "مضاد D لمن فصيلتها سالبة عند الحاجة",
+    "ex": "anti-D immunoglobulin",
+    "note": "تُعطى في المستشفى"
+   }
+  ],
+  "procedures": [
+   "جراحة بالمنظار لإزالة الحمل أو قناة فالوب",
+   "المتابعة بقياس beta-hCG حتى يعود للصفر"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف (123) فورًا عند الألم الشديد أو الإغماء"
+  ],
+  "refs": [
+   "NICE",
+   "RCOG",
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG126 Ectopic pregnancy and miscarriage: diagnosis and initial management (2019, updated 2023)"
+ },
+ "gynecology.preeclampsia": {
+  "tests": [
+   "قياس ضغط الدم المتكرر",
+   "نسبة البروتين إلى الكرياتينين في البول (uPCR)",
+   "صورة دم كاملة والصفائح ووظائف الكبد والكلى",
+   "اختبار عامل نمو المشيمة (PlGF) عند الاشتباه"
+  ],
+  "imaging": [
+   "موجات فوق صوتية لنمو الجنين ودوبلر الشريان السري"
+  ],
+  "meds": [
+   {
+    "cls": "خافضات ضغط آمنة في الحمل",
+    "ex": "labetalol, nifedipine, methyldopa",
+    "note": "تُعطى في المستشفى أو بوصفة الطبيب"
+   },
+   {
+    "cls": "وقاية من التشنجات",
+    "ex": "magnesium sulfate",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "كورتيكوستيرويد لنضج رئة الجنين",
+    "ex": "dexamethasone, betamethasone",
+    "note": "تُعطى في المستشفى قبل الولادة المبكرة"
+   }
+  ],
+  "procedures": [
+   "الإدخال للمستشفى والمراقبة المكثفة للأم والجنين",
+   "الولادة هي العلاج النهائي ويحدد الطبيب توقيتها"
+  ],
+  "selfcare": [
+   "التوجه للطوارئ فورًا عند الصداع الشديد أو زغللة العين أو ألم أعلى البطن"
+  ],
+  "refs": [
+   "NICE",
+   "ACOG",
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG133 Hypertension in pregnancy: diagnosis and management (2019, updated 2023)"
+ },
+ "gynecology.breastlump": {
+  "tests": [
+   "خزعة إبرية موجهة (Core biopsy) عند الاشتباه"
+  ],
+  "imaging": [
+   "موجات فوق صوتية للثدي (الأولى غالبًا لمن دون 35 عامًا)",
+   "تصوير الثدي الشعاعي (Mammogram)"
+  ],
+  "meds": [],
+  "procedures": [
+   "التقييم الثلاثي: فحص سريري وتصوير وخزعة",
+   "الإحالة العاجلة لعيادة الثدي"
+  ],
+  "selfcare": [
+   "عدم انتظار اختفاء الكتلة ومراجعة الطبيب سريعًا"
+  ],
+  "refs": [
+   "NICE",
+   "NCCN"
+  ],
+  "guide": "NICE NG12 Suspected cancer: recognition and referral"
+ },
+ "gynecology.prolactin": {
+  "tests": [
+   "البرولاكتين في الدم (يُعاد صباحًا عند الحاجة)",
+   "اختبار الحمل (beta-hCG)",
+   "وظائف الغدة الدرقية (TSH) والكلى",
+   "مراجعة الأدوية التي ترفع البرولاكتين"
+  ],
+  "imaging": [
+   "رنين مغناطيسي للغدة النخامية (MRI)"
+  ],
+  "meds": [
+   {
+    "cls": "ناهضات الدوبامين",
+    "ex": "cabergoline, bromocriptine",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "فحص المجال البصري للأورام الكبيرة",
+   "جراحة الغدة النخامية عبر الأنف عند فشل الأدوية أو عدم تحملها"
+  ],
+  "selfcare": [],
+  "refs": [
+   "ENDO"
+  ],
+  "guide": "Endocrine Society Clinical Practice Guideline: Diagnosis and Treatment of Hyperprolactinemia (2011)"
+ },
+ "gynecology.infertility": {
+  "tests": [
+   "هرمون مضاد مولر (AMH)",
+   "هرمونات FSH وLH والإستراديول في اليوم 2-5 من الدورة",
+   "البروجسترون في منتصف الطور الأصفري",
+   "الهرمون المنبه للدرقية (TSH) والبرولاكتين"
+  ],
+  "imaging": [
+   "موجات فوق صوتية مهبلية",
+   "تصوير الرحم والأنابيب بالصبغة (HSG)"
+  ],
+  "meds": [
+   {
+    "cls": "محفزات التبويض",
+    "ex": "letrozole, clomifene",
+    "note": "بوصفة طبية فقط؛ بمتابعة بالموجات فوق الصوتية"
+   },
+   {
+    "cls": "حمض الفوليك قبل الحمل",
+    "ex": "folic acid"
+   }
+  ],
+  "procedures": [
+   "تحليل السائل المنوي للزوج (Semen analysis)",
+   "التلقيح داخل الرحم أو أطفال الأنابيب (IUI/IVF)",
+   "تنظير البطن أو الرحم حسب السبب"
+  ],
+  "selfcare": [
+   "الحفاظ على وزن صحي والإقلاع عن التدخين"
+  ],
+  "refs": [
+   "NICE",
+   "ESHRE",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG156 Fertility problems: assessment and treatment (2013, updated)"
+ },
+ "gynecology.endometriosis": {
+  "tests": [],
+  "imaging": [
+   "موجات فوق صوتية مهبلية (Transvaginal ultrasound)",
+   "رنين مغناطيسي للحوض (MRI) للحالات العميقة"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات غير ستيرويدية",
+    "ex": "ibuprofen, naproxen, paracetamol"
+   },
+   {
+    "cls": "علاج هرموني",
+    "ex": "ethinylestradiol+levonorgestrel, dienogest, medroxyprogesterone acetate",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "تنظير البطن للتشخيص واستئصال البؤر (Laparoscopy)",
+   "الإحالة لمركز متخصص للحالات العميقة أو المرتبطة بتأخر الحمل"
+  ],
+  "selfcare": [
+   "الكمادات الدافئة والرياضة الخفيفة"
+  ],
+  "refs": [
+   "ESHRE",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ESHRE Guideline: Endometriosis (2022)"
+ },
+ "gynecology.bartholin": {
+  "tests": [
+   "مسحة ومزرعة من الصديد",
+   "فحوص الأمراض المنقولة جنسيًا عند الحاجة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مسكنات الألم",
+    "ex": "paracetamol, ibuprofen"
+   },
+   {
+    "cls": "مضادات حيوية عند انتشار الالتهاب حول الخراج",
+    "ex": "amoxicillin+clavulanic acid",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "تصريف الخراج مع تركيب قسطرة وورد (Word catheter)",
+   "التكييس الجراحي (Marsupialization) عند التكرار",
+   "خزعة لمن تجاوزت 40 عامًا لاستبعاد الأورام"
+  ],
+  "selfcare": [
+   "الجلوس في ماء دافئ (Sitz bath) عدة مرات يوميًا"
+  ],
+  "refs": [
+   "ACOG",
+   "WHO_EML"
+  ],
+  "guide": "No dedicated major guideline; standard gynaecological practice (ACOG)"
+ }
+}

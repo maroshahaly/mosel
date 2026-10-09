@@ -2,7 +2,7 @@
 /* فحص آلي لمكتبة الأمراض — شغّله بعد أي تعديل في data/conditions.js:
      node tools/validate_data.mjs
    يخرج بالرمز 1 عند وجود أي خطأ (صالح للاستخدام في CI). */
-import { readFileSync, readdirSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import vm from "node:vm";
 
@@ -78,6 +78,29 @@ for (const z of ZONES) {
 for (const r of REGIONS) for (const k of r.specialties) if (!DATA[k]) errors.push(`region ${r.key}: تخصص غير موجود ${k}`);
 for (const k of Object.keys(RISK_FACTORS)) if (!ids.has(k)) errors.push(`RISK_FACTORS: ${k} غير موجود`);
 
+// ما قد يقرّره الطبيب (data/care.js): تغطية كاملة، مصادر معروفة، وبلا جرعات أو أسماء تجارية واضحة
+{
+  const carePath = dataDir + "care.js";
+  if (!existsSync(carePath)) errors.push("data/care.js غير موجود (شغّل node tools/build_care.mjs)");
+  else {
+    if (!html.includes('src="data/care.js"')) errors.push("data/care.js غير مُدرج في index.html");
+    const box = {}; new Function("window", "globalThis", readFileSync(carePath, "utf8"))(box, box);
+    const CARE = box.MOSEL_CARE || {};
+    const ORGS = new Set(["WHO","WHO_EML","NICE","CDC","FDA","EMA","ADA","ACC_AHA","ESC","ESH","GINA","GOLD","KDIGO","IDSA","ACOG","RCOG","AUA","EAU","AAP","APA","AAD","AAO","ACR","EULAR","ESHRE","ACG","AASLD","EASL","ATS","ERS","BTS","ESMO","NCCN","ASCO","ILAE","AAN","AHS","ENDO","ATA","AAOS","ACEP","ESPGHAN","AAO_HNS","ADA_DENTAL","WFSBP","ISSM","WHO_MHGAP","ASH","AAAAI"]);
+    const DOSE = /\d+(\.\d+)?\s*(mg|mcg|µg|g\b|ml|iu|units?|ملغ|مجم|ملجم|مل\b|وحدة|ميكروغرام|جرام|غرام)|(مرتين|ثلاث مرات|مرة) (يوميًا|يوميا|في اليوم)|\b(bid|tid|qid|q\d+h)\b/i;
+    for (const id of ids) if (!CARE[id]) errors.push(`care: ${id} بلا بيانات علاج`);
+    for (const [id, k] of Object.entries(CARE)) {
+      if (!ids.has(id)) errors.push(`care: ${id} لا يطابق أي مرض`);
+      if (!k.refs?.length) errors.push(`care/${id}: بلا مرجع`);
+      for (const r of k.refs || []) if (!ORGS.has(r)) errors.push(`care/${id}: مرجع غير معروف ${r}`);
+      if (!k.guide?.trim()) warnings.push(`care/${id}: بلا دليل إرشادي محدد`);
+      const texts = [...(k.tests||[]), ...(k.imaging||[]), ...(k.procedures||[]), ...(k.selfcare||[]), ...(k.meds||[]).flatMap(m => [m.cls, m.ex, m.note].filter(Boolean))];
+      for (const t of texts) if (DOSE.test(t)) errors.push(`care/${id}: يبدو أنه يحتوي جرعة: «${t}»`);
+      for (const m of k.meds || []) if (!m.cls?.trim()) errors.push(`care/${id}: دواء بلا فئة`);
+      if (!(k.tests||[]).length && !(k.imaging||[]).length && !(k.meds||[]).length && !(k.procedures||[]).length) errors.push(`care/${id}: فارغ تمامًا`);
+    }
+  }
+}
 console.log(`✔ ${ZONES.length} تخصصًا · ${total} مرضًا · ${Object.values(DATA).reduce((a, d) => a + d.symptoms.length, 0)} عَرَضًا`);
 warnings.forEach(w => console.log("⚠ " + w));
 errors.forEach(e => console.error("✘ " + e));

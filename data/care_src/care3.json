@@ -1,0 +1,1605 @@
+{
+ "eyes.dryeye": {
+  "tests": [
+   "اختبار شيرمر لقياس كمية الدموع (Schirmer test)",
+   "زمن تفكك الغشاء الدمعي (TBUT) وصبغة الفلوريسين"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "دموع اصطناعية (مزلّقات العين)",
+    "ex": "carmellose, hypromellose",
+    "note": "يُفضَّل الخالي من المواد الحافظة عند الاستعمال المتكرر"
+   },
+   {
+    "cls": "مضادات الالتهاب الموضعية للحالات المتوسطة والشديدة",
+    "ex": "ciclosporin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "فحص بالمصباح الشقي (Slit lamp) لتقييم سطح العين والجفون",
+   "سدّادات القنوات الدمعية (Punctal plugs) للحالات الشديدة"
+  ],
+  "selfcare": [
+   "فترات راحة منتظمة من الشاشات مع الرمش المتعمد",
+   "كمادات دافئة وتنظيف حافة الجفن",
+   "تجنب الهواء المباشر من المكيّف والمراوح"
+  ],
+  "refs": [
+   "AAO",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "AAO Preferred Practice Pattern: Dry Eye Syndrome"
+ },
+ "eyes.cataract": {
+  "tests": [
+   "قياس حدة الإبصار والانكسار",
+   "قياسات العدسة قبل الجراحة (Biometry)"
+  ],
+  "imaging": [
+   "تصوير التماسك البصري للشبكية (OCT) عند الحاجة قبل الجراحة"
+  ],
+  "meds": [],
+  "procedures": [
+   "فحص العين بالمصباح الشقي بعد توسيع الحدقة",
+   "جراحة استحلاب العدسة وزراعة عدسة داخل العين (Phacoemulsification)",
+   "تحديث النظارة في المراحل المبكرة"
+  ],
+  "selfcare": [
+   "نظارة شمسية واقية من الأشعة فوق البنفسجية",
+   "إضاءة جيدة للقراءة وتجنب القيادة الليلية عند ضعف الرؤية"
+  ],
+  "refs": [
+   "NICE",
+   "AAO"
+  ],
+  "guide": "NICE NG77 Cataracts in adults: management (2017)"
+ },
+ "eyes.stye": {
+  "tests": [],
+  "imaging": [],
+  "meds": [],
+  "procedures": [
+   "فحص الجفن لدى الطبيب إذا لم يتحسن خلال أسبوعين",
+   "شق وتصريف صغير لدى طبيب العيون للحالات المستمرة"
+  ],
+  "selfcare": [
+   "كمادات دافئة 10 دقائق عدة مرات يوميًا",
+   "تنظيف حافة الجفن بلطف وعدم عصر التورم",
+   "إيقاف المكياج والعدسات اللاصقة حتى الشفاء"
+  ],
+  "refs": [
+   "NICE",
+   "AAO"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Stye (hordeolum)"
+ },
+ "eyes.amd": {
+  "tests": [
+   "قياس حدة الإبصار واختبار شبكة أمسلر (Amsler grid)"
+  ],
+  "imaging": [
+   "تصوير التماسك البصري للشبكية (OCT)",
+   "تصوير الأوعية بالفلوريسين (FFA) عند الاشتباه بالنوع الرطب"
+  ],
+  "meds": [
+   {
+    "cls": "مثبطات عامل نمو بطانة الأوعية (Anti-VEGF) للنوع الرطب",
+    "ex": "ranibizumab, aflibercept, bevacizumab",
+    "note": "حقن داخل العين لدى طبيب الشبكية فقط"
+   },
+   {
+    "cls": "مكملات مضادة للأكسدة (تركيبة AREDS2) للنوع الجاف المتوسط",
+    "ex": "vitamin C, vitamin E, zinc, lutein, zeaxanthin",
+    "note": "بعد استشارة الطبيب"
+   }
+  ],
+  "procedures": [
+   "فحص قاع العين بعد توسيع الحدقة",
+   "تأهيل ضعف البصر ووسائل التكبير"
+  ],
+  "selfcare": [
+   "الإقلاع عن التدخين",
+   "فحص الرؤية المركزية بشبكة أمسلر في المنزل ومراجعة فورية عند التغير"
+  ],
+  "refs": [
+   "NICE",
+   "AAO",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG82 Age-related macular degeneration (2018)"
+ },
+ "eyes.dr": {
+  "tests": [
+   "الهيموجلوبين السكري (HbA1c)",
+   "قياس ضغط الدم ودهون الدم",
+   "وظائف الكلى ونسبة الألبومين في البول (ACR)"
+  ],
+  "imaging": [
+   "تصوير قاع العين الرقمي (Fundus photography)",
+   "تصوير التماسك البصري للشبكية (OCT) لوذمة البقعة",
+   "تصوير الأوعية بالفلوريسين (FFA) عند الحاجة"
+  ],
+  "meds": [
+   {
+    "cls": "مثبطات عامل نمو بطانة الأوعية (Anti-VEGF) لوذمة البقعة",
+    "ex": "ranibizumab, aflibercept, bevacizumab",
+    "note": "حقن داخل العين لدى طبيب الشبكية فقط"
+   }
+  ],
+  "procedures": [
+   "الليزر الضوئي الشامل للشبكية (PRP) للاعتلال التكاثري",
+   "جراحة استئصال الزجاجي (Vitrectomy) للنزيف أو الانفصال",
+   "ضبط السكر والضغط بالتعاون مع طبيب السكري"
+  ],
+  "selfcare": [
+   "فحص قاع العين سنويًا على الأقل",
+   "الالتزام بأدوية السكري والضغط",
+   "الإقلاع عن التدخين"
+  ],
+  "refs": [
+   "AAO",
+   "ADA",
+   "WHO_EML"
+  ],
+  "guide": "AAO Preferred Practice Pattern: Diabetic Retinopathy"
+ },
+ "eyes.poag": {
+  "tests": [
+   "قياس ضغط العين (Tonometry)",
+   "فحص مجال الإبصار (Visual field)",
+   "قياس سماكة القرنية (Pachymetry) وفحص زاوية العين (Gonioscopy)"
+  ],
+  "imaging": [
+   "تصوير التماسك البصري للعصب البصري وطبقة الألياف العصبية (OCT)"
+  ],
+  "meds": [
+   {
+    "cls": "نظائر البروستاجلاندين (قطرات)",
+    "ex": "latanoprost",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "حاصرات بيتا الموضعية (قطرات)",
+    "ex": "timolol",
+    "note": "بوصفة طبية فقط؛ تُتجنب غالبًا مع الربو"
+   },
+   {
+    "cls": "مثبطات الأنهيدراز الكربونية الموضعية",
+    "ex": "dorzolamide, brinzolamide",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "الرأب الانتقائي للتربيق بالليزر (SLT)",
+   "جراحة الترشيح (Trabeculectomy) عند عدم السيطرة على الضغط"
+  ],
+  "selfcare": [
+   "استعمال القطرات بانتظام في مواعيدها",
+   "المتابعة الدورية حتى مع عدم وجود أعراض"
+  ],
+  "refs": [
+   "NICE",
+   "AAO",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG81 Glaucoma: diagnosis and management (2017, updated 2022)"
+ },
+ "eyes.keratitis": {
+  "tests": [
+   "كشط القرنية لعمل مزرعة وصبغة (Corneal scraping & culture)",
+   "مزرعة العدسات اللاصقة وعلبتها عند الحاجة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "قطرات مضاد حيوي موضعية",
+    "ex": "ofloxacin, ciprofloxacin, moxifloxacin",
+    "note": "بوصفة طبية فقط؛ يحددها طبيب العيون"
+   },
+   {
+    "cls": "مضادات الفيروسات للالتهاب الهربسي",
+    "ex": "aciclovir",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مضادات الفطريات للالتهاب الفطري",
+    "ex": "natamycin",
+    "note": "بوصفة طبية فقط؛ لدى طبيب العيون"
+   }
+  ],
+  "procedures": [
+   "فحص عاجل بالمصباح الشقي مع صبغة الفلوريسين",
+   "متابعة لصيقة وقد يلزم الدخول للمستشفى في الحالات الشديدة"
+  ],
+  "selfcare": [
+   "نزع العدسات اللاصقة فورًا وعدم ارتدائها حتى الشفاء",
+   "عدم استخدام قطرات الكورتيزون دون إذن الطبيب"
+  ],
+  "refs": [
+   "AAO",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "AAO Preferred Practice Pattern: Bacterial Keratitis"
+ },
+ "eyes.strabismus": {
+  "tests": [
+   "قياس حدة الإبصار المناسب للعمر",
+   "قياس الانكسار بعد قطرات شل التكيّف (Cycloplegic refraction)",
+   "اختبار التغطية (Cover test)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "قطرات توسيع الحدقة لعلاج الكسل (Penalisation)",
+    "ex": "atropine",
+    "note": "بوصفة طبية فقط؛ للأطفال حسب تقدير الطبيب"
+   }
+  ],
+  "procedures": [
+   "نظارة طبية لتصحيح الانكسار",
+   "تغطية العين السليمة (Patching) لعلاج كسل العين",
+   "جراحة عضلات العين عند الحاجة",
+   "تمارين العين لبعض الحالات"
+  ],
+  "selfcare": [],
+  "refs": [
+   "AAO",
+   "AAP",
+   "WHO_EML"
+  ],
+  "guide": "AAO Preferred Practice Pattern: Esotropia and Exotropia"
+ },
+ "eyes.refractive": {
+  "tests": [
+   "قياس حدة الإبصار والانكسار",
+   "قياس الانكسار بعد قطرات شل التكيّف للأطفال"
+  ],
+  "imaging": [
+   "تخطيط القرنية (Corneal topography) قبل جراحات الليزر"
+  ],
+  "meds": [],
+  "procedures": [
+   "نظارة طبية أو عدسات لاصقة",
+   "جراحات الليزر لتصحيح النظر للبالغين (LASIK/PRK)",
+   "فحص قاع العين عند قصر النظر الشديد"
+  ],
+  "selfcare": [
+   "فحص النظر دوريًا وخاصة للأطفال",
+   "قضاء وقت في الهواء الطلق للأطفال",
+   "العناية الصحيحة بالعدسات اللاصقة"
+  ],
+  "refs": [
+   "AAO",
+   "WHO"
+  ],
+  "guide": "AAO Preferred Practice Pattern: Refractive Errors"
+ },
+ "eyes.injury": {
+  "tests": [
+   "قياس حموضة سطح العين (pH) بعد الإصابات الكيميائية",
+   "قياس حدة الإبصار"
+  ],
+  "imaging": [
+   "أشعة مقطعية على الحجاج (CT orbit) عند الاشتباه بجسم غريب أو كسر"
+  ],
+  "meds": [
+   {
+    "cls": "قطرات مضاد حيوي موضعية",
+    "ex": "chloramphenicol, ofloxacin",
+    "note": "تُعطى في المستشفى؛ بوصفة طبية فقط"
+   },
+   {
+    "cls": "مسكنات الألم",
+    "ex": "paracetamol, ibuprofen",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "الوقاية من الكزاز عند الجروح النافذة",
+    "ex": "tetanus toxoid",
+    "note": "تُعطى في المستشفى حسب حالة التطعيم"
+   }
+  ],
+  "procedures": [
+   "غسل العين الغزير بمحلول ملحي حتى تعود درجة الحموضة لطبيعتها",
+   "فحص بالمصباح الشقي مع صبغة الفلوريسين",
+   "إزالة الأجسام الغريبة السطحية",
+   "جراحة إصلاح عاجلة للجروح النافذة"
+  ],
+  "selfcare": [
+   "للمواد الكيميائية: غسل العين بماء جارٍ 15 دقيقة فورًا",
+   "عدم فرك العين أو الضغط عليها أو نزع جسم مغروس فيها",
+   "الاتصال بالإسعاف 123 أو التوجه لطوارئ العيون"
+  ],
+  "refs": [
+   "AAO",
+   "ACEP",
+   "WHO_EML"
+  ],
+  "guide": "AAO guidance on eye trauma and chemical injury"
+ },
+ "ent.otitis": {
+  "tests": [
+   "فحص الأذن بالمنظار (Otoscopy)",
+   "قياس ضغط الأذن الوسطى (Tympanometry) عند استمرار السائل"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مسكنات وخافضات حرارة",
+    "ex": "paracetamol, ibuprofen",
+    "note": "الجرعة حسب الوزن يحددها طبيب الأطفال"
+   },
+   {
+    "cls": "مضادات حيوية بنسلينية",
+    "ex": "amoxicillin",
+    "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن يحددها طبيب الأطفال"
+   },
+   {
+    "cls": "بديل للبنسلين أو عند الفشل",
+    "ex": "amoxicillin + clavulanic acid",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "الانتظار مع المراقبة 48–72 ساعة في الحالات الخفيفة",
+   "أنابيب تهوية الأذن (Grommets) للحالات المتكررة أو السائل المزمن"
+  ],
+  "selfcare": [
+   "مسكن وخافض حرارة حسب التعليمات",
+   "الراحة وشرب السوائل",
+   "تجنب التدخين السلبي حول الطفل"
+  ],
+  "refs": [
+   "NICE",
+   "AAP",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG91 Otitis media (acute): antimicrobial prescribing (2018)"
+ },
+ "ent.sinusitis": {
+  "tests": [],
+  "imaging": [
+   "أشعة مقطعية على الجيوب الأنفية (CT) للحالات المزمنة أو المضاعفات فقط"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات",
+    "ex": "paracetamol, ibuprofen"
+   },
+   {
+    "cls": "بخاخ كورتيزون أنفي للأعراض المستمرة",
+    "ex": "mometasone, fluticasone, budesonide",
+    "note": "بحسب إرشاد الطبيب أو الصيدلي"
+   },
+   {
+    "cls": "مضادات حيوية عند الاشتباه البكتيري",
+    "ex": "amoxicillin, amoxicillin + clavulanic acid",
+    "note": "بوصفة طبية فقط؛ ليست لازمة لأغلب الحالات"
+   }
+  ],
+  "procedures": [
+   "التنظير الأنفي (Nasal endoscopy) للحالات المزمنة",
+   "جراحة الجيوب بالمنظار (FESS) للحالات المزمنة غير المستجيبة"
+  ],
+  "selfcare": [
+   "غسول الأنف بالمحلول الملحي",
+   "استنشاق البخار والراحة وشرب السوائل",
+   "مراجعة الطبيب إذا تجاوزت الأعراض 10 أيام أو ظهر تورم حول العين"
+  ],
+  "refs": [
+   "NICE",
+   "IDSA",
+   "AAO_HNS",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG79 Sinusitis (acute): antimicrobial prescribing (2017)"
+ },
+ "ent.tonsillitis": {
+  "tests": [
+   "اختبار المستضد السريع للعقديات (Rapid strep test)",
+   "مزرعة مسحة الحلق (Throat culture)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مسكنات وخافضات حرارة",
+    "ex": "paracetamol, ibuprofen",
+    "note": "للأطفال: الجرعة حسب الوزن يحددها الطبيب"
+   },
+   {
+    "cls": "مضادات حيوية بنسلينية للعقديات",
+    "ex": "phenoxymethylpenicillin, amoxicillin",
+    "note": "بوصفة طبية فقط؛ يجب إكمال المدة كاملة"
+   },
+   {
+    "cls": "بديل عند حساسية البنسلين",
+    "ex": "clarithromycin, azithromycin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "تقييم الحاجة للمضاد الحيوي بمعايير سريرية (Centor/FeverPAIN)",
+   "تصريف خراج حول اللوزة عند حدوثه",
+   "استئصال اللوزتين للحالات المتكررة وفق المعايير"
+  ],
+  "selfcare": [
+   "سوائل دافئة وأطعمة لينة",
+   "الغرغرة بالماء المالح الدافئ للبالغين",
+   "طلب فحص عاجل عند تعذّر بلع الريق أو فتح الفم"
+  ],
+  "refs": [
+   "NICE",
+   "IDSA",
+   "AAO_HNS",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG84 Sore throat (acute): antimicrobial prescribing (2018)"
+ },
+ "ent.bppv": {
+  "tests": [
+   "اختبار ديكس-هولبايك (Dix-Hallpike) للتشخيص"
+  ],
+  "imaging": [
+   "رنين مغناطيسي على الدماغ (MRI) فقط عند وجود علامات عصبية غير معتادة"
+  ],
+  "meds": [],
+  "procedures": [
+   "مناورات إعادة البلورات (مثل مناورة إبلي Epley)",
+   "تمارين التأهيل الدهليزي (Vestibular rehabilitation)"
+  ],
+  "selfcare": [
+   "النهوض من السرير ببطء",
+   "الحذر من السقوط عند تحريك الرأس"
+  ],
+  "refs": [
+   "AAO_HNS",
+   "AAN",
+   "NICE"
+  ],
+  "guide": "AAO-HNS Clinical Practice Guideline: Benign Paroxysmal Positional Vertigo (2017 update)"
+ },
+ "ent.tinnitus": {
+  "tests": [
+   "تخطيط السمع (Audiometry)",
+   "قياس ضغط الأذن الوسطى (Tympanometry)"
+  ],
+  "imaging": [
+   "رنين مغناطيسي (MRI) عند طنين في أذن واحدة أو مع فقدان سمع غير متماثل"
+  ],
+  "meds": [],
+  "procedures": [
+   "سماعات الأذن عند وجود ضعف سمع",
+   "العلاج المعرفي السلوكي (CBT) للطنين المزعج",
+   "العلاج بالصوت وبرامج التعوّد"
+  ],
+  "selfcare": [
+   "تجنب الضوضاء العالية واستعمال واقيات الأذن",
+   "استخدام أصوات خلفية هادئة عند النوم"
+  ],
+  "refs": [
+   "NICE",
+   "AAO_HNS"
+  ],
+  "guide": "NICE NG155 Tinnitus: assessment and management (2020)"
+ },
+ "ent.sshl": {
+  "tests": [
+   "تخطيط السمع (Audiometry) لتأكيد النوع الحسي العصبي",
+   "قياس ضغط الأذن الوسطى (Tympanometry)"
+  ],
+  "imaging": [
+   "رنين مغناطيسي على قناة الأذن الداخلية (MRI) لاستبعاد الأسباب الأخرى"
+  ],
+  "meds": [
+   {
+    "cls": "الكورتيكوستيرويدات الفموية",
+    "ex": "prednisolone",
+    "note": "بوصفة طبية فقط؛ تبدأ مبكرًا بقرار الطبيب"
+   },
+   {
+    "cls": "الكورتيكوستيرويدات بالحقن داخل الطبلة",
+    "ex": "dexamethasone",
+    "note": "لدى طبيب الأنف والأذن فقط"
+   }
+  ],
+  "procedures": [
+   "فحص عاجل لدى طبيب الأنف والأذن خلال أيام",
+   "سماعات أو زراعة قوقعة إذا بقي فقدان السمع"
+  ],
+  "selfcare": [
+   "عدم تأجيل المراجعة وعدم انتظار التحسن التلقائي"
+  ],
+  "refs": [
+   "AAO_HNS",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "AAO-HNS Clinical Practice Guideline: Sudden Hearing Loss (2019 update)"
+ },
+ "ent.septum": {
+  "tests": [],
+  "imaging": [
+   "أشعة مقطعية على الجيوب الأنفية (CT) عند التخطيط للجراحة"
+  ],
+  "meds": [
+   {
+    "cls": "بخاخ كورتيزون أنفي عند وجود التهاب مرافق",
+    "ex": "mometasone, fluticasone, budesonide",
+    "note": "بحسب إرشاد الطبيب"
+   },
+   {
+    "cls": "بخاخات مزيلة للاحتقان لفترة قصيرة",
+    "ex": "xylometazoline, oxymetazoline",
+    "note": "لا تتجاوز بضعة أيام لتجنب الاحتقان الارتدادي"
+   }
+  ],
+  "procedures": [
+   "التنظير الأنفي (Nasal endoscopy)",
+   "جراحة تعديل الحاجز الأنفي (Septoplasty)"
+  ],
+  "selfcare": [
+   "غسول الأنف بالمحلول الملحي"
+  ],
+  "refs": [
+   "AAO_HNS",
+   "WHO_EML"
+  ],
+  "guide": "AAO-HNS Clinical Consensus Statement: Septoplasty with or without Inferior Turbinate Reduction"
+ },
+ "ent.allergicrhinitis": {
+  "tests": [
+   "اختبار وخز الجلد للحساسية (Skin prick test)",
+   "الأجسام المضادة النوعية (Specific IgE)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "بخاخ كورتيزون أنفي",
+    "ex": "mometasone, fluticasone, budesonide",
+    "note": "يُستعمل بانتظام للفعالية"
+   },
+   {
+    "cls": "مضادات الهيستامين غير المنومة",
+    "ex": "loratadine, cetirizine",
+    "note": "للأطفال: الجرعة حسب العمر والوزن"
+   },
+   {
+    "cls": "بخاخات مضادة للهيستامين أنفية",
+    "ex": "azelastine"
+   }
+  ],
+  "procedures": [
+   "العلاج المناعي للحساسية (Immunotherapy) للحالات الشديدة لدى المختص"
+  ],
+  "selfcare": [
+   "تجنب المسببات كالغبار وحبوب اللقاح",
+   "غسول الأنف بالمحلول الملحي",
+   "إغلاق النوافذ في مواسم حبوب اللقاح"
+  ],
+  "refs": [
+   "AAAAI",
+   "AAO_HNS",
+   "WHO_EML"
+  ],
+  "guide": "ARIA (Allergic Rhinitis and its Impact on Asthma) guidelines"
+ },
+ "ent.epistaxis": {
+  "tests": [
+   "صورة دم كاملة (CBC) للنزيف الغزير أو المتكرر",
+   "اختبارات التخثر (PT/INR) لمن يتناول مميعات الدم"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات النزف الموضعية أو الوريدية",
+    "ex": "tranexamic acid",
+    "note": "بوصفة طبية فقط؛ بقرار الطبيب"
+   },
+   {
+    "cls": "مراهم أنفية مطهرة لمنع التكرار",
+    "ex": "chlorhexidine + neomycin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "الكي الكيميائي بنترات الفضة لمصدر النزيف",
+   "حشو الأنف (Nasal packing) للنزيف المستمر",
+   "ربط الأوعية جراحيًا للحالات النادرة المستعصية"
+  ],
+  "selfcare": [
+   "الجلوس مع الميل للأمام والضغط على الجزء اللين من الأنف 10–15 دقيقة",
+   "عدم الاستلقاء أو إمالة الرأس للخلف",
+   "الطوارئ إذا استمر النزيف أكثر من 20 دقيقة"
+  ],
+  "refs": [
+   "AAO_HNS",
+   "NICE"
+  ],
+  "guide": "AAO-HNS Clinical Practice Guideline: Nosebleed (Epistaxis) (2020)"
+ },
+ "ent.laryngitis": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مسكنات",
+    "ex": "paracetamol, ibuprofen"
+   }
+  ],
+  "procedures": [
+   "تنظير الحنجرة (Laryngoscopy) إذا استمرت البحة أكثر من 3 أسابيع",
+   "علاج النطق (Voice therapy) للبحة المزمنة"
+  ],
+  "selfcare": [
+   "إراحة الصوت وتجنب الهمس والصراخ",
+   "شرب السوائل واستنشاق البخار",
+   "الإقلاع عن التدخين"
+  ],
+  "refs": [
+   "AAO_HNS",
+   "NICE"
+  ],
+  "guide": "AAO-HNS Clinical Practice Guideline: Hoarseness (Dysphonia) (2018 update)"
+ },
+ "ent.otitisexterna": {
+  "tests": [
+   "مزرعة إفرازات الأذن للحالات المتكررة أو غير المستجيبة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "قطرات أذن مضاد حيوي مع أو بدون كورتيزون",
+    "ex": "ciprofloxacin, ofloxacin",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "قطرات أذن حمضية",
+    "ex": "acetic acid"
+   },
+   {
+    "cls": "مسكنات",
+    "ex": "paracetamol, ibuprofen"
+   }
+  ],
+  "procedures": [
+   "تنظيف قناة الأذن لدى الطبيب",
+   "فتيلة أذن (Ear wick) عند تورم القناة الشديد"
+  ],
+  "selfcare": [
+   "إبقاء الأذن جافة أثناء الاستحمام",
+   "تجنب أعواد القطن والسباحة حتى الشفاء"
+  ],
+  "refs": [
+   "AAO_HNS",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "AAO-HNS Clinical Practice Guideline: Acute Otitis Externa (2014)"
+ },
+ "ent.wax": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "قطرات تليين الشمع",
+    "ex": "sodium bicarbonate ear drops, olive oil",
+    "note": "لا تُستعمل مع ثقب طبلة الأذن"
+   }
+  ],
+  "procedures": [
+   "غسل الأذن بالماء (Irrigation) لدى الطبيب",
+   "الشفط الدقيق تحت المجهر (Microsuction)"
+  ],
+  "selfcare": [
+   "عدم إدخال أعواد القطن داخل الأذن",
+   "قطرات تليين الشمع عدة أيام قبل التنظيف"
+  ],
+  "refs": [
+   "NICE",
+   "AAO_HNS"
+  ],
+  "guide": "NICE NG98 Hearing loss in adults (earwax management) (2018)"
+ },
+ "ent.polyps": {
+  "tests": [],
+  "imaging": [
+   "أشعة مقطعية على الجيوب الأنفية (CT)"
+  ],
+  "meds": [
+   {
+    "cls": "بخاخ أو قطرات كورتيزون أنفي",
+    "ex": "mometasone, fluticasone, budesonide",
+    "note": "يُستعمل بانتظام طويل الأمد"
+   },
+   {
+    "cls": "كورتيكوستيرويدات فموية لفترة قصيرة",
+    "ex": "prednisolone",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "التنظير الأنفي (Nasal endoscopy)",
+   "جراحة الجيوب بالمنظار (FESS) لإزالة الزوائد"
+  ],
+  "selfcare": [
+   "غسول الأنف بالمحلول الملحي"
+  ],
+  "refs": [
+   "AAO_HNS",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "EPOS 2020: European Position Paper on Rhinosinusitis and Nasal Polyps"
+ },
+ "ent.headneckca": {
+  "tests": [
+   "خزعة من الآفة (Biopsy) للتحليل النسيجي",
+   "فحص فيروس الورم الحليمي (HPV/p16) لأورام البلعوم الفموي"
+  ],
+  "imaging": [
+   "أشعة مقطعية أو رنين مغناطيسي على الرقبة (CT/MRI)",
+   "تصوير مقطعي بالإصدار البوزيتروني (PET-CT) لتحديد المرحلة",
+   "موجات فوق صوتية على الرقبة مع خزعة إبرية (FNA)"
+  ],
+  "meds": [],
+  "procedures": [
+   "منظار الحنجرة والبلعوم (Laryngoscopy)",
+   "الجراحة أو العلاج الإشعاعي أو الكيميائي حسب المرحلة بقرار فريق الأورام"
+  ],
+  "selfcare": [
+   "الإقلاع عن التدخين والكحول"
+  ],
+  "refs": [
+   "NICE",
+   "NCCN",
+   "AAO_HNS"
+  ],
+  "guide": "NICE NG36 Cancer of the upper aerodigestive tract (2016)"
+ },
+ "skin.anaphylaxis": {
+  "tests": [
+   "مستوى إنزيم التريبتاز في الدم (Mast cell tryptase)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "الأدرينالين بالحقن العضلي",
+    "ex": "epinephrine",
+    "note": "الدواء الأول والأهم؛ تُعطى في المستشفى أو بقلم الطوارئ"
+   },
+   {
+    "cls": "محاليل وريدية",
+    "ex": "sodium chloride 0.9%",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "موسعات الشعب الهوائية للأزيز",
+    "ex": "salbutamol",
+    "note": "تُعطى في المستشفى"
+   },
+   {
+    "cls": "مضادات الهيستامين والكورتيزون كعلاج مساعد",
+    "ex": "chlorphenamine, hydrocortisone",
+    "note": "تُعطى في المستشفى بعد الأدرينالين"
+   }
+  ],
+  "procedures": [
+   "مراقبة في المستشفى عدة ساعات بعد النوبة",
+   "وصف قلم أدرينالين وتدريب على استعماله",
+   "إحالة لاختصاصي الحساسية لتحديد المسبب"
+  ],
+  "selfcare": [
+   "الاتصال بالإسعاف 123 فورًا",
+   "حقن قلم الأدرينالين في الفخذ إن كان متاحًا",
+   "الاستلقاء مع رفع الساقين، أو الجلوس عند صعوبة التنفس"
+  ],
+  "refs": [
+   "WHO_EML",
+   "AAAAI",
+   "NICE"
+  ],
+  "guide": "World Allergy Organization Anaphylaxis Guidance 2020"
+ },
+ "skin.melanoma": {
+  "tests": [
+   "خزعة استئصالية للشامة مع تحليل نسيجي (Excisional biopsy)",
+   "فحص الطفرات الجينية مثل (BRAF) للحالات المتقدمة"
+  ],
+  "imaging": [
+   "فحص بالمنظار الجلدي (Dermoscopy)",
+   "خزعة العقدة الليمفاوية الحارسة (Sentinel node) حسب السماكة",
+   "أشعة مقطعية أو (PET-CT) للحالات المتقدمة"
+  ],
+  "meds": [
+   {
+    "cls": "العلاج المناعي للحالات المتقدمة",
+    "ex": "nivolumab, pembrolizumab",
+    "note": "لدى طبيب الأورام فقط"
+   }
+  ],
+  "procedures": [
+   "استئصال جراحي واسع بهامش أمان",
+   "متابعة دورية لفحص الجلد"
+  ],
+  "selfcare": [
+   "واقٍ شمسي وتجنب الشمس وقت الذروة",
+   "فحص الجلد ذاتيًا شهريًا لملاحظة تغيّر الشامات (ABCDE)"
+  ],
+  "refs": [
+   "NICE",
+   "NCCN",
+   "AAD",
+   "ESMO"
+  ],
+  "guide": "NICE NG14 Melanoma: assessment and management (2015, updated 2022)"
+ },
+ "skin.eczema": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "المرطبات (المطريات)",
+    "ex": "emollients (e.g. white soft paraffin)",
+    "note": "تُستعمل يوميًا حتى بلا أعراض"
+   },
+   {
+    "cls": "كورتيكوستيرويدات موضعية",
+    "ex": "hydrocortisone, betamethasone",
+    "note": "بإشراف الطبيب؛ القوة والمدة حسب الموضع والعمر"
+   },
+   {
+    "cls": "مثبطات الكالسينيورين الموضعية",
+    "ex": "tacrolimus, pimecrolimus",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "العلاج الضوئي (Phototherapy) للحالات المتوسطة والشديدة",
+   "علاجات جهازية للحالات الشديدة لدى طبيب الجلدية"
+  ],
+  "selfcare": [
+   "ترطيب الجلد بعد الاستحمام مباشرة",
+   "استعمال صابون لطيف خالٍ من العطور",
+   "تجنب المهيّجات والملابس الصوفية"
+  ],
+  "refs": [
+   "NICE",
+   "AAD",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG57 Atopic eczema in under 12s; AAD guidelines of care for atopic dermatitis"
+ },
+ "skin.psoriasis": {
+  "tests": [
+   "صورة دم كاملة ووظائف الكبد والكلى قبل العلاج الجهازي",
+   "فحص السل والتهاب الكبد قبل العلاجات البيولوجية"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "كورتيكوستيرويدات موضعية",
+    "ex": "betamethasone, clobetasol",
+    "note": "بإشراف طبيب الجلدية"
+   },
+   {
+    "cls": "نظائر فيتامين د الموضعية",
+    "ex": "calcipotriol"
+   },
+   {
+    "cls": "علاج جهازي تقليدي للحالات المتوسطة والشديدة",
+    "ex": "methotrexate, ciclosporin",
+    "note": "بوصفة طبية فقط مع تحاليل دورية؛ ممنوع في الحمل"
+   },
+   {
+    "cls": "علاجات بيولوجية للحالات الشديدة",
+    "ex": "adalimumab",
+    "note": "لدى طبيب الجلدية فقط"
+   }
+  ],
+  "procedures": [
+   "العلاج الضوئي بالأشعة فوق البنفسجية ضيقة النطاق (NB-UVB)",
+   "تقييم التهاب المفاصل الصدفي ومخاطر القلب"
+  ],
+  "selfcare": [
+   "ترطيب الجلد بانتظام",
+   "الإقلاع عن التدخين وتقليل الكحول",
+   "الحفاظ على وزن صحي"
+  ],
+  "refs": [
+   "NICE",
+   "AAD",
+   "WHO_EML"
+  ],
+  "guide": "NICE CG153 Psoriasis: assessment and management (2012, updated 2017)"
+ },
+ "skin.alopecia": {
+  "tests": [
+   "وظائف الغدة الدرقية (TSH) عند الاشتباه",
+   "فحص بالمنظار الجلدي لفروة الرأس (Trichoscopy)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "كورتيكوستيرويدات موضعية أو بالحقن داخل الجلد",
+    "ex": "clobetasol, triamcinolone",
+    "note": "لدى طبيب الجلدية"
+   },
+   {
+    "cls": "مثبطات JAK الفموية للحالات الشديدة",
+    "ex": "baricitinib",
+    "note": "بوصفة طبية فقط لدى المختص؛ تحتاج متابعة"
+   }
+  ],
+  "procedures": [
+   "مراقبة دون علاج في الحالات البسيطة لاحتمال العودة التلقائية",
+   "الدعم النفسي عند الحاجة"
+  ],
+  "selfcare": [
+   "حماية فروة الرأس من الشمس",
+   "الاستعانة بمجموعات الدعم"
+  ],
+  "refs": [
+   "AAD",
+   "NICE"
+  ],
+  "guide": "British Association of Dermatologists guidelines for the management of alopecia areata"
+ },
+ "skin.acne": {
+  "tests": [
+   "تحاليل الهرمونات عند وجود علامات زيادة الأندروجين لدى النساء"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "بنزويل بيروكسايد موضعي",
+    "ex": "benzoyl peroxide"
+   },
+   {
+    "cls": "الريتينويدات الموضعية",
+    "ex": "adapalene, tretinoin",
+    "note": "تُتجنب في الحمل"
+   },
+   {
+    "cls": "مضادات حيوية فموية للحالات المتوسطة (مع علاج موضعي)",
+    "ex": "doxycycline, lymecycline",
+    "note": "بوصفة طبية فقط؛ ليست للحامل أو الأطفال دون 12"
+   },
+   {
+    "cls": "الريتينويد الفموي للحالات الشديدة",
+    "ex": "isotretinoin",
+    "note": "لدى طبيب الجلدية فقط؛ ممنوع في الحمل"
+   }
+  ],
+  "procedures": [
+   "متابعة لدى طبيب الجلدية للحالات الشديدة أو المسببة للندبات",
+   "علاجات الندبات كالتقشير أو الليزر بعد السيطرة"
+  ],
+  "selfcare": [
+   "غسل الوجه بغسول لطيف مرتين يوميًا",
+   "تجنب عصر الحبوب",
+   "استخدام مستحضرات غير مسببة للرؤوس السوداء"
+  ],
+  "refs": [
+   "NICE",
+   "AAD",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG198 Acne vulgaris: management (2021)"
+ },
+ "skin.urticaria": {
+  "tests": [
+   "صورة دم كاملة (CBC) وسرعة الترسيب أو (CRP) للشرى المزمن"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الهيستامين غير المنومة",
+    "ex": "cetirizine, loratadine, fexofenadine",
+    "note": "قد يرفع الطبيب الجرعة في الحالات المزمنة"
+   },
+   {
+    "cls": "كورتيكوستيرويدات فموية لفترة قصيرة في النوبات الشديدة",
+    "ex": "prednisolone",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "علاج بيولوجي للشرى المزمن المقاوم",
+    "ex": "omalizumab",
+    "note": "لدى المختص فقط"
+   }
+  ],
+  "procedures": [
+   "تحديد المحفزات ومراجعة الأدوية المسببة"
+  ],
+  "selfcare": [
+   "تجنب المسبب المعروف",
+   "كمادات باردة لتخفيف الحكة",
+   "الطوارئ عند تورم الشفتين أو صعوبة التنفس"
+  ],
+  "refs": [
+   "NICE",
+   "AAAAI",
+   "WHO_EML"
+  ],
+  "guide": "EAACI/GA²LEN/EuroGuiDerm/APAAACI guideline for urticaria (2022)"
+ },
+ "skin.tinea": {
+  "tests": [
+   "فحص الكشط الجلدي بهيدروكسيد البوتاسيوم (KOH) والمزرعة الفطرية"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات فطريات موضعية",
+    "ex": "clotrimazole, miconazole, terbinafine",
+    "note": "تُستكمل أسبوعين على الأقل"
+   },
+   {
+    "cls": "مضادات فطريات فموية للحالات المنتشرة أو فروة الرأس",
+    "ex": "terbinafine, griseofulvin",
+    "note": "بوصفة طبية فقط؛ للأطفال الجرعة حسب الوزن"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "إبقاء المنطقة جافة ونظيفة",
+   "عدم مشاركة المناشف والأمشاط",
+   "فحص الحيوانات الأليفة عند الاشتباه بالعدوى منها"
+  ],
+  "refs": [
+   "NICE",
+   "AAD",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Fungal skin infection - body and groin"
+ },
+ "skin.shingles": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات الفيروسات (خلال 72 ساعة)",
+    "ex": "aciclovir, valaciclovir",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مسكنات",
+    "ex": "paracetamol, ibuprofen"
+   },
+   {
+    "cls": "أدوية ألم الأعصاب بعد الهربس",
+    "ex": "amitriptyline, gabapentin, pregabalin",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "إحالة عاجلة لطبيب العيون إذا أصاب الطفح منطقة العين أو الأنف"
+  ],
+  "selfcare": [
+   "تغطية الطفح وعدم حكّه",
+   "تجنب ملامسة الحوامل والرضع ومن لم يُصب بالجدري",
+   "لقاح الهربس النطاقي للوقاية بعد الخمسين بحسب نصيحة الطبيب"
+  ],
+  "refs": [
+   "NICE",
+   "CDC",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Shingles"
+ },
+ "skin.scabies": {
+  "tests": [
+   "فحص مجهري لكشط الجلد عند الشك"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "كريم مضاد للجرب",
+    "ex": "permethrin",
+    "note": "يُكرَّر بعد أسبوع لجميع المخالطين معًا"
+   },
+   {
+    "cls": "دواء فموي مضاد للطفيليات للحالات الخاصة أو المتقشرة",
+    "ex": "ivermectin",
+    "note": "بوصفة طبية فقط؛ ليس للحامل أو الأطفال الصغار"
+   },
+   {
+    "cls": "مضادات الهيستامين لتخفيف الحكة",
+    "ex": "cetirizine, chlorphenamine"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "علاج جميع أفراد المنزل في الوقت نفسه",
+   "غسل الملابس والملاءات بماء ساخن أو حفظها في كيس مغلق 3 أيام",
+   "الحكة قد تستمر أسابيع بعد العلاج الناجح"
+  ],
+  "refs": [
+   "WHO",
+   "CDC",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "CDC Scabies Treatment Guidelines (STI Treatment Guidelines 2021)"
+ },
+ "skin.impetigo": {
+  "tests": [
+   "مزرعة من الآفة للحالات المتكررة أو غير المستجيبة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مطهرات موضعية للحالات البسيطة",
+    "ex": "hydrogen peroxide cream"
+   },
+   {
+    "cls": "مضاد حيوي موضعي",
+    "ex": "fusidic acid, mupirocin",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مضاد حيوي فموي للحالات المنتشرة",
+    "ex": "flucloxacillin, cefalexin",
+    "note": "بوصفة طبية فقط؛ الجرعة حسب الوزن للأطفال"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "غسل الآفات بلطف وتغطيتها",
+   "عدم مشاركة المناشف وغسل اليدين",
+   "إبقاء الطفل في المنزل حتى تجف القشور أو بعد 48 ساعة من المضاد الحيوي"
+  ],
+  "refs": [
+   "NICE",
+   "IDSA",
+   "WHO_EML"
+  ],
+  "guide": "NICE NG153 Impetigo: antimicrobial prescribing (2020)"
+ },
+ "skin.vitiligo": {
+  "tests": [
+   "وظائف الغدة الدرقية (TSH) والأجسام المضادة للغدة",
+   "فحص بمصباح وود (Wood's lamp)"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "كورتيكوستيرويدات موضعية",
+    "ex": "mometasone, betamethasone",
+    "note": "بإشراف طبيب الجلدية"
+   },
+   {
+    "cls": "مثبطات الكالسينيورين الموضعية للوجه",
+    "ex": "tacrolimus, pimecrolimus",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مثبطات JAK الموضعية",
+    "ex": "ruxolitinib cream",
+    "note": "لدى طبيب الجلدية فقط"
+   }
+  ],
+  "procedures": [
+   "العلاج الضوئي بالأشعة فوق البنفسجية ضيقة النطاق (NB-UVB)",
+   "الدعم النفسي عند الحاجة"
+  ],
+  "selfcare": [
+   "واقٍ شمسي للمناطق المصابة",
+   "مستحضرات التمويه التجميلية عند الرغبة"
+  ],
+  "refs": [
+   "AAD",
+   "NICE"
+  ],
+  "guide": "British Association of Dermatologists guidelines for the management of vitiligo (2021)"
+ },
+ "skin.rosacea": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "علاجات موضعية",
+    "ex": "metronidazole, azelaic acid, ivermectin",
+    "note": "بوصفة طبية فقط"
+   },
+   {
+    "cls": "مضادات حيوية فموية للحالات المتوسطة والشديدة",
+    "ex": "doxycycline",
+    "note": "بوصفة طبية فقط؛ ليست للحامل"
+   },
+   {
+    "cls": "قابض موضعي للأوعية لاحمرار الوجه",
+    "ex": "brimonidine",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [
+   "الليزر أو الضوء النبضي المكثف (IPL) للأوعية الظاهرة",
+   "فحص لدى طبيب العيون عند وجود أعراض عينية"
+  ],
+  "selfcare": [
+   "تجنب المحفزات كالحرارة والأطعمة الحارة والكحول",
+   "واقٍ شمسي يوميًا",
+   "منظفات لطيفة خالية من العطور"
+  ],
+  "refs": [
+   "NICE",
+   "AAD"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Rosacea"
+ },
+ "skin.seborrheic": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "شامبو أو كريم مضاد للفطريات",
+    "ex": "ketoconazole, ciclopirox, selenium sulfide"
+   },
+   {
+    "cls": "كورتيكوستيرويدات موضعية خفيفة لفترة قصيرة",
+    "ex": "hydrocortisone",
+    "note": "بإشراف الطبيب للوجه"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "شامبو مضاد للفطريات بانتظام مع تركه دقائق قبل الشطف",
+   "تليين القشور بالزيت عند الرضع"
+  ],
+  "refs": [
+   "NICE",
+   "AAD",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Seborrhoeic dermatitis"
+ },
+ "skin.warts": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مستحضرات حمض الساليسيليك الموضعية",
+    "ex": "salicylic acid",
+    "note": "لا تُستعمل على الوجه أو لمرضى السكري دون استشارة"
+   }
+  ],
+  "procedures": [
+   "الكي بالتبريد (Cryotherapy) لدى الطبيب",
+   "علاجات أخرى لدى طبيب الجلدية للحالات المقاومة"
+  ],
+  "selfcare": [
+   "عدم خدش الثآليل أو مشاركة المناشف",
+   "انتظار الاختفاء التلقائي خيار مقبول للعديد منها"
+  ],
+  "refs": [
+   "NICE",
+   "AAD",
+   "WHO_EML"
+  ],
+  "guide": "British Association of Dermatologists guidelines for the management of cutaneous warts (2014)"
+ },
+ "skin.lice": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مستحضرات موضعية مضادة للقمل",
+    "ex": "dimeticone, permethrin, malathion",
+    "note": "يُكرَّر بعد 7–10 أيام؛ للرضّع بإرشاد الطبيب"
+   },
+   {
+    "cls": "دواء فموي للحالات المقاومة",
+    "ex": "ivermectin",
+    "note": "بوصفة طبية فقط؛ ليس للأطفال الصغار"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "التمشيط بمشط دقيق على شعر مبلل",
+   "فحص جميع أفراد الأسرة وعلاج المصابين فقط",
+   "غسل أغطية الوسائد والأمشاط بماء ساخن"
+  ],
+  "refs": [
+   "CDC",
+   "AAP",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "AAP Clinical Report: Head Lice (2022)"
+ },
+ "skin.coldsores": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "كريم مضاد للفيروسات",
+    "ex": "aciclovir",
+    "note": "يُبدأ عند أول إحساس بالوخز"
+   },
+   {
+    "cls": "مضادات فيروسات فموية للنوبات المتكررة أو الشديدة",
+    "ex": "aciclovir, valaciclovir",
+    "note": "بوصفة طبية فقط"
+   }
+  ],
+  "procedures": [],
+  "selfcare": [
+   "تجنب التقبيل ومشاركة الأدوات أثناء النوبة",
+   "غسل اليدين بعد لمس القرحة",
+   "واقٍ شمسي للشفاه إذا كانت الشمس محفّزة"
+  ],
+  "refs": [
+   "NICE",
+   "AAD",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Herpes simplex - oral"
+ },
+ "skin.melasma": {
+  "tests": [
+   "فحص بمصباح وود (Wood's lamp) لتحديد عمق التصبغ"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مفتحات موضعية",
+    "ex": "hydroquinone, azelaic acid",
+    "note": "بوصفة طبية؛ تُتجنب في الحمل"
+   },
+   {
+    "cls": "الريتينويدات الموضعية",
+    "ex": "tretinoin",
+    "note": "ممنوعة في الحمل"
+   },
+   {
+    "cls": "حمض الترانيكساميك الفموي للحالات المقاومة",
+    "ex": "tranexamic acid",
+    "note": "بوصفة طبية فقط؛ تقييم خطر الجلطات"
+   }
+  ],
+  "procedures": [
+   "التقشير الكيميائي أو الليزر بحذر لدى طبيب الجلدية",
+   "مراجعة حبوب منع الحمل الهرمونية مع الطبيبة"
+  ],
+  "selfcare": [
+   "واقٍ شمسي واسع الطيف يوميًا ويُجدَّد",
+   "قبعة واسعة وتجنب الشمس وقت الذروة"
+  ],
+  "refs": [
+   "AAD"
+  ],
+  "guide": "American Academy of Dermatology guidance on melasma"
+ },
+ "skin.hyperhidrosis": {
+  "tests": [
+   "وظائف الغدة الدرقية (TSH)",
+   "سكر الدم الصائم أو الهيموجلوبين السكري (HbA1c) عند التعرق المعمم"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مضادات التعرق القوية الموضعية",
+    "ex": "aluminium chloride hexahydrate"
+   },
+   {
+    "cls": "مضادات الكولين الفموية للحالات المعممة",
+    "ex": "oxybutynin, glycopyrronium",
+    "note": "بوصفة طبية فقط؛ قد تسبب جفاف الفم"
+   }
+  ],
+  "procedures": [
+   "الرحلان الشاردي بماء الصنبور (Iontophoresis) لليدين والقدمين",
+   "حقن ذيفان البوتولينوم (Botulinum toxin) تحت الإبط",
+   "قطع العصب الودي الصدري جراحيًا للحالات النادرة المستعصية"
+  ],
+  "selfcare": [
+   "ملابس قطنية فضفاضة وجوارب ماصة",
+   "استعمال مضاد التعرق ليلًا على جلد جاف"
+  ],
+  "refs": [
+   "NICE",
+   "AAD"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Hyperhidrosis"
+ },
+ "skin.burn": {
+  "tests": [
+   "صورة دم كاملة وأملاح الدم للحروق الكبيرة"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "مسكنات",
+    "ex": "paracetamol, ibuprofen"
+   },
+   {
+    "cls": "كريم مضاد للبكتيريا للحروق",
+    "ex": "silver sulfadiazine",
+    "note": "بوصفة طبية؛ لا يُستعمل للرضّع حديثي الولادة أو الحامل في آخر الحمل"
+   },
+   {
+    "cls": "الوقاية من الكزاز",
+    "ex": "tetanus toxoid",
+    "note": "حسب حالة التطعيم"
+   }
+  ],
+  "procedures": [
+   "تقييم عمق الحرق ومساحته",
+   "تنظيف الحرق وتضميده بضمادات مناسبة",
+   "إحالة لمركز حروق للحروق الكبيرة أو العميقة",
+   "ترقيع جلدي للحروق العميقة"
+  ],
+  "selfcare": [
+   "تبريد الحرق بماء جارٍ فاتر 20 دقيقة",
+   "تغطيته بشاش نظيف أو غلاف بلاستيكي دون شد",
+   "عدم وضع الثلج أو معجون الأسنان أو الزبدة"
+  ],
+  "refs": [
+   "WHO",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Burns and scalds"
+ },
+ "skin.hairloss": {
+  "tests": [
+   "مخزون الحديد (Ferritin) وصورة دم كاملة (CBC)",
+   "وظائف الغدة الدرقية (TSH)",
+   "فيتامين د (25-OH Vitamin D)",
+   "تحاليل الهرمونات لدى النساء عند الاشتباه"
+  ],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "المينوكسيديل الموضعي",
+    "ex": "minoxidil",
+    "note": "يحتاج أشهر لظهور النتيجة؛ ليس للحامل"
+   },
+   {
+    "cls": "مثبطات إنزيم 5-ألفا ريدكتاز للرجال",
+    "ex": "finasteride",
+    "note": "بوصفة طبية فقط؛ للرجال فقط وتتجنبه النساء الحوامل"
+   }
+  ],
+  "procedures": [
+   "فحص بالمنظار الجلدي لفروة الرأس (Trichoscopy)",
+   "زراعة الشعر للحالات المناسبة"
+  ],
+  "selfcare": [
+   "نظام غذائي متوازن غني بالبروتين والحديد",
+   "تجنب الشد المستمر للشعر والحرارة الزائدة"
+  ],
+  "refs": [
+   "AAD",
+   "ENDO"
+  ],
+  "guide": "European Dermatology Forum (EDF) S3 guideline for androgenetic alopecia"
+ },
+ "dental.caries": {
+  "tests": [],
+  "imaging": [
+   "أشعة الأسنان الصغيرة (Bitewing / Periapical X-ray)"
+  ],
+  "meds": [
+   {
+    "cls": "فلورايد موضعي (ورنيش أو معجون عالي التركيز)",
+    "ex": "sodium fluoride",
+    "note": "يحدده طبيب الأسنان حسب العمر"
+   },
+   {
+    "cls": "مسكنات",
+    "ex": "paracetamol, ibuprofen"
+   }
+  ],
+  "procedures": [
+   "حشو الجزء المتسوس",
+   "علاج عصب السن (Root canal) للحالات المتقدمة",
+   "خلع السن إذا تعذر إصلاحه",
+   "سدّ الشقوق (Fissure sealants) للأطفال"
+  ],
+  "selfcare": [
+   "التفريش مرتين يوميًا بمعجون يحتوي على الفلورايد",
+   "تقليل السكريات والمشروبات المحلاة",
+   "زيارة طبيب الأسنان دوريًا"
+  ],
+  "refs": [
+   "ADA_DENTAL",
+   "WHO",
+   "WHO_EML"
+  ],
+  "guide": "ADA (American Dental Association) clinical practice guideline on nonrestorative treatments for carious lesions (2018)"
+ },
+ "dental.gingivitis": {
+  "tests": [],
+  "imaging": [],
+  "meds": [
+   {
+    "cls": "غسول فم مطهر لفترة قصيرة",
+    "ex": "chlorhexidine",
+    "note": "قد يسبب تصبغ الأسنان مع الاستعمال الطويل"
+   }
+  ],
+  "procedures": [
+   "تنظيف الجير والتلميع لدى طبيب الأسنان (Scaling)",
+   "تقييم أمراض اللثة العميقة (Periodontitis)"
+  ],
+  "selfcare": [
+   "التفريش مرتين يوميًا لمدة دقيقتين",
+   "استخدام خيط الأسنان أو الفرش بين الأسنان يوميًا",
+   "الإقلاع عن التدخين"
+  ],
+  "refs": [
+   "ADA_DENTAL",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "EFP S3 Level Clinical Practice Guideline for the treatment of periodontitis stages I–III (2020)"
+ },
+ "dental.abscess": {
+  "tests": [],
+  "imaging": [
+   "أشعة الأسنان (Periapical X-ray) أو بانوراما (OPG)",
+   "أشعة مقطعية (CT) عند امتداد التورم للرقبة"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات",
+    "ex": "paracetamol, ibuprofen"
+   },
+   {
+    "cls": "مضادات حيوية عند انتشار العدوى أو الحمى",
+    "ex": "amoxicillin, phenoxymethylpenicillin, metronidazole",
+    "note": "بوصفة طبية فقط؛ لا تغني عن علاج السن"
+   }
+  ],
+  "procedures": [
+   "تصريف الخراج لدى طبيب الأسنان",
+   "علاج عصب السن (Root canal) أو خلع السن",
+   "دخول المستشفى عند صعوبة البلع أو التنفس"
+  ],
+  "selfcare": [
+   "المضمضة بماء مالح دافئ",
+   "الطوارئ عند تورم متزايد مع حمى أو صعوبة بلع أو تنفس"
+  ],
+  "refs": [
+   "ADA_DENTAL",
+   "NICE",
+   "WHO_EML"
+  ],
+  "guide": "ADA (American Dental Association) guideline on antibiotic use for dental pain and swelling (2019)"
+ },
+ "dental.tmj": {
+  "tests": [],
+  "imaging": [
+   "أشعة بانوراما للفك (OPG)",
+   "رنين مغناطيسي على مفصل الفك (MRI) للحالات المستمرة"
+  ],
+  "meds": [
+   {
+    "cls": "مسكنات ومضادات الالتهاب غير الستيرويدية",
+    "ex": "ibuprofen, paracetamol",
+    "note": "لفترات قصيرة"
+   }
+  ],
+  "procedures": [
+   "واقٍ ليلي للأسنان (Occlusal splint)",
+   "العلاج الطبيعي لعضلات الفك",
+   "العلاج المعرفي السلوكي (CBT) لإدارة التوتر والألم المزمن"
+  ],
+  "selfcare": [
+   "إراحة الفك وتناول طعام لين",
+   "كمادات دافئة أو باردة على الفك",
+   "تجنب العلكة وفتح الفم على اتساعه"
+  ],
+  "refs": [
+   "ADA_DENTAL",
+   "NICE"
+  ],
+  "guide": "NICE Clinical Knowledge Summary: Temporomandibular disorders"
+ }
+}
