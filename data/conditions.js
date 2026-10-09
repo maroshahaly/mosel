@@ -1057,13 +1057,28 @@
   };
 
   /* المنطقة في الجسم -> التخصصات المناسبة */
+  /* off:true = منطقة لا تظهر على الصورة الأمامية (تُعرض أزرارًا أسفلها) */
   const REGIONS = [
-    { key: "head", name: "الرأس والوجه", color: "#3E8E9A", specialties: ["neuro", "eyes", "ent", "dental", "mental"] },
-    { key: "chest", name: "الصدر", color: "#C2414B", specialties: ["heart", "respiratory", "internal"] },
-    { key: "abdomen", name: "البطن", color: "#D08A2E", specialties: ["internal", "endocrine"] },
-    { key: "arm", name: "الذراعان واليدان", color: "#5E9A63", specialties: ["bones", "neuro", "skin"] },
+    { key: "head", name: "الرأس", color: "#3E8E9A", specialties: ["neuro", "mental", "ent"] },
+    { key: "eyes", name: "العينان", color: "#2F7F9E", specialties: ["eyes", "neuro"] },
+    { key: "ears", name: "الأذنان", color: "#4A8C8C", specialties: ["ent", "neuro"] },
+    { key: "nose", name: "الأنف والجيوب الأنفية", color: "#4F8F7A", specialties: ["ent", "respiratory"] },
+    { key: "mouth", name: "الفم والأسنان", color: "#6B8F4E", specialties: ["dental", "ent", "sexual"] },
+    { key: "neck", name: "الرقبة والحلق", color: "#7A8A3C", specialties: ["ent", "endocrine", "bones"] },
+    { key: "shoulder", name: "الكتفان", color: "#5E9A63", specialties: ["bones", "heart"] },
+    { key: "chest", name: "الصدر", color: "#C2414B", specialties: ["heart", "respiratory", "internal", "gynecology"] },
+    { key: "abdomen", name: "أعلى البطن", color: "#D08A2E", specialties: ["internal", "endocrine"] },
+    { key: "lowabd", name: "أسفل البطن", color: "#C47A3A", specialties: ["internal", "gynecology", "andrology"] },
     { key: "pelvis", name: "الحوض والأعضاء التناسلية", color: "#9C5A8B", specialties: ["andrology", "gynecology", "sexual", "internal"] },
-    { key: "leg", name: "الساقان والقدمان", color: "#4F76A8", specialties: ["bones", "heart", "neuro", "skin"] }
+    { key: "arm", name: "الذراعان والمرفقان", color: "#5E9A63", specialties: ["bones", "neuro", "skin"] },
+    { key: "hand", name: "اليدان والمعصمان", color: "#4E8A5A", specialties: ["bones", "neuro", "skin"] },
+    { key: "thigh", name: "الفخذان والوركان", color: "#4F76A8", specialties: ["bones", "heart", "andrology"] },
+    { key: "knee", name: "الركبتان", color: "#476E9E", specialties: ["bones"] },
+    { key: "leg", name: "الساقان", color: "#3F6694", specialties: ["bones", "heart", "neuro", "skin"] },
+    { key: "foot", name: "القدمان والكاحلان", color: "#3A5E88", specialties: ["bones", "endocrine", "neuro", "skin"] },
+    { key: "back", name: "الظهر والعمود الفقري", color: "#8A6A4A", specialties: ["bones", "neuro", "internal"], off: true },
+    { key: "skin", name: "الجلد والشعر والأظافر", color: "#B07A5A", specialties: ["skin", "infectious", "sexual"], off: true },
+    { key: "whole", name: "الجسم كله (حمّى، تعب، وزن)", color: "#6A6F8A", specialties: ["internal", "infectious", "endocrine", "hematology", "mental", "geriatric"], off: true }
   ];
 
   /* عوامل خطورة معروفة ترفع النسبة (ولا تخفضها أبدًا) عند وجود تطابق أعراض أصلًا */
@@ -1119,7 +1134,7 @@
     "andrology.balanitis":   p => [p.has("سكر") && "السكري"]
   };
 
-  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.5.0", updatedAt: "2026-10" };
+  root.MOSEL_DATA = { TRIAGE, ZONES, ZONE_SOURCES, DATA, REGIONS, RISK_FACTORS, version: "3.6.0", updatedAt: "2026-10" };
 
   /* إضافة أمراض وأعراض من ملفات data/more_*.js
      MOSEL_EXTEND("zoneKey", { zone?, regions?, symptoms?, conditions?, risk? }) */

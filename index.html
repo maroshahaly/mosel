@@ -328,7 +328,9 @@ a{color:var(--brand-ink);}
 .describe textarea{width:100%; box-sizing:border-box; resize:vertical; min-height:76px; padding:10px 12px; border:1px solid var(--line-2); border-radius:var(--r); background:var(--surface); color:var(--ink); font:inherit; font-size:14.5px; line-height:1.6; margin-bottom:10px;}
 .describe textarea:focus{outline:2px solid var(--brand); outline-offset:1px;}
 .desc-row{display:flex; gap:8px; margin:0;}
-.desc-row .btn-primary{flex:1;}
+.desc-row .btn-primary{flex:1 1 auto;}
+.desc-row .btn-ghost{flex:0 0 auto; padding-inline:16px;}
+.desc-row .btn{white-space:nowrap;}
 .desc-row .btn svg{width:18px; height:18px;}
 .maybe{margin:-2px 0 10px;}
 .maybe .matched{margin-top:4px;}
@@ -427,6 +429,55 @@ a{color:var(--brand-ink);}
 .fade-in{animation:fade .22s ease both;}
 @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
 @media (prefers-reduced-motion: reduce){ .fade-in{animation:none;} }
+
+/* ===== الإطار الذهبي الرفيع والتدرج الهادئ ===== */
+:root{
+  --gold:#B8963E; --gold-line:rgba(184,150,62,.42); --gold-soft:rgba(184,150,62,.14);
+  --grad-bg:linear-gradient(172deg, #F7F4EC 0%, #F1F6F3 48%, #ECF3F5 100%);
+  --grad-card:linear-gradient(180deg, #FFFFFF 0%, #FCFBF7 100%);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --gold:#D4B46A; --gold-line:rgba(212,180,106,.34); --gold-soft:rgba(212,180,106,.12);
+  --grad-bg:linear-gradient(172deg, #0E1513 0%, #101A18 50%, #121A1E 100%);
+  --grad-card:linear-gradient(180deg, #17221F 0%, #141D1B 100%);
+} }
+:root[data-theme="dark"]{
+  --gold:#D4B46A; --gold-line:rgba(212,180,106,.34); --gold-soft:rgba(212,180,106,.12);
+  --grad-bg:linear-gradient(172deg, #0E1513 0%, #101A18 50%, #121A1E 100%);
+  --grad-card:linear-gradient(180deg, #17221F 0%, #141D1B 100%);
+}
+body{background:var(--grad-bg) fixed;}
+#app{background:transparent;}
+.card, .cond, .quick, .stage, .summary-card, .care, .region-btn, .hist-row, .pref-row, .consent, .terms-list, .redflags, .zone-tips{
+  border:1px solid var(--gold-line); background:var(--grad-card);
+  box-shadow:0 1px 0 var(--gold-soft) inset, 0 6px 18px rgba(60,48,20,.05);
+}
+.cond.top{border-color:var(--gold);}
+.guide-line{display:flex; gap:8px; margin-top:10px; padding:10px 12px; border:1px solid var(--gold-line); border-radius:var(--r); background:var(--gold-soft); font-size:12.5px; line-height:1.7;}
+.guide-line > svg{width:18px; height:18px; flex:0 0 auto; color:var(--gold); margin-top:2px;}
+.guide-line b{display:block; font-size:12.5px; color:var(--ink);}
+.guide-line span{display:block; color:var(--ink-2);}
+.orgs-mini{display:flex !important; flex-wrap:wrap; gap:4px 10px; margin-top:2px;}
+.ref-tiers{margin:6px 0 0; padding-inline-start:20px; line-height:1.85;}
+.ref-tiers li{margin-bottom:6px;}
+.search input, .describe textarea, .rec-card select, .rec-card input, .num input{border-color:var(--gold-line);}
+.search input:focus, .describe textarea:focus, .num input:focus{outline:2px solid var(--gold); outline-offset:1px;}
+.topbar{border-bottom-color:var(--gold-line);}
+.cta-bar{background:linear-gradient(0deg, color-mix(in srgb, var(--surface) 92%, transparent) 70%, transparent);}
+.badge.code{border:1px solid var(--gold-line);}
+
+/* خريطة الجسم: بلا كتابة؛ المنطقة تتوهّج بالذهبي واسمها يظهر عند المرور */
+.body-wrap.photo .region{opacity:0; fill:var(--gold); stroke:#fff; stroke-width:.4; transition:opacity .15s ease;}
+.body-wrap.photo .region:hover, .body-wrap.photo .region:focus-visible, .body-wrap.photo .region.hot{opacity:.55; outline:none;}
+.spot-g{pointer-events:none;}
+.spot{fill:var(--gold); opacity:.55;}
+.body-wrap.photo:hover .spot{opacity:.25;}
+.map-tip{position:absolute; transform:translate(-50%, calc(-100% - 10px)); z-index:5; background:var(--grad-card); color:var(--ink); border:1px solid var(--gold); border-radius:999px; padding:5px 12px; font-size:13px; font-weight:600; white-space:nowrap; box-shadow:0 6px 16px rgba(60,48,20,.18); cursor:pointer; pointer-events:auto; display:inline-flex; gap:6px; align-items:center;}
+.map-tip.below{transform:translate(-50%, 12px);}
+.map-tip[hidden]{display:none;}
+.map-tip span{color:var(--gold); font-weight:700;}
+.region-list{grid-template-columns:1fr; gap:6px;}
+.region-btn{justify-content:flex-start;}
 
 @media print{
   body{background:#fff;}

@@ -170,7 +170,7 @@ function bodyMapSvg() {
 }
 
 function pulses(geo, r) {
-  return `<g class="pulse-g" aria-hidden="true">${REGIONS.map((x, i) => {
+  return `<g class="pulse-g" aria-hidden="true">${REGIONS.filter(x => geo[x.key]).map((x, i) => {
     const g = geo[x.key];
     return `<line class="leader" x1="${g.a[0]}" y1="${g.a[1]}" x2="${g.l[0]}" y2="${g.l[1]}"/>
       <circle class="pulse-ring" cx="${g.a[0]}" cy="${g.a[1]}" r="${r}" style="animation-delay:${(i * .37).toFixed(2)}s"/>
@@ -186,31 +186,48 @@ function pulses(geo, r) {
    إن لم تتوفر الصورة يعود التطبيق تلقائيًا إلى الرسم البديل.
    ========================================================= */
 const BODY_PHOTOS = { male: "assets/body-male.jpg", female: "assets/body-female.jpg" };
+/* المناطق على الصورة (من قياس الصورتين 560×1110 بكسل ÷ 5.6 أفقيًا و5.55 رأسيًا).
+   كل منطقة: شكل SVG (أو أكثر، للجهتين) ونقطة ارتكاز a لظهور اسمها عند المرور عليها */
+const E = (cx, cy, rx, ry) => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}"/>`;
+const RC = (x, y, w, h, r = 3) => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}"/>`;
+const PG = pts => `<polygon points="${pts}"/>`;
+const mirrorPts = (pts, c) => pts.split(" ").map(p => { const [x, y] = p.split(",").map(Number); return `${+(2 * c - x).toFixed(1)},${y}`; }).join(" ");
+function photoGeo(o) {
+  const c = o.c, m = x => +(2 * c - x).toFixed(1);
+  const shapes = {
+    head: E(c, o.head[0], o.head[1], o.head[2]),
+    eyes: RC(c - 6, o.eyes - 2, 12, 4, 2),
+    ears: E(o.ear[0], o.ear[1], 1.9, 3.4) + E(m(o.ear[0]), o.ear[1], 1.9, 3.4),
+    nose: E(c, o.nose, 2.2, 2.3),
+    mouth: E(c, o.mouth, 3.8, 1.9),
+    neck: RC(c - 4.6, o.neck[0], 9.2, o.neck[1] - o.neck[0], 2),
+    shoulder: E(o.sh[0], o.sh[1], 4.6, 3.8) + E(m(o.sh[0]), o.sh[1], 4.6, 3.8),
+    chest: RC(c - 15, o.chest[0], 30, o.chest[1] - o.chest[0], 5),
+    abdomen: RC(c - 15.5, o.chest[1], 31, o.abd - o.chest[1], 4),
+    lowabd: RC(c - 16, o.abd, 32, o.pel[0] - o.abd, 4),
+    pelvis: RC(c - 19, o.pel[0], 38, o.pel[1] - o.pel[0], 4),
+    arm: PG(o.arm) + PG(mirrorPts(o.arm, c)),
+    hand: E(o.hand[0], o.hand[1], 5.2, 8.6) + E(m(o.hand[0]), o.hand[1], 5.2, 8.6),
+    thigh: RC(o.th[0], o.pel[1], o.th[1], o.knee[1] - o.knee[3] - o.pel[1], 3) + RC(m(o.th[0] + o.th[1]), o.pel[1], o.th[1], o.knee[1] - o.knee[3] - o.pel[1], 3),
+    knee: E(o.knee[0], o.knee[1], o.knee[2], o.knee[3]) + E(m(o.knee[0]), o.knee[1], o.knee[2], o.knee[3]),
+    leg: RC(o.leg[0], o.knee[1] + o.knee[3], o.leg[1], o.foot[1] - o.foot[3] - o.knee[1] - o.knee[3], 4) + RC(m(o.leg[0] + o.leg[1]), o.knee[1] + o.knee[3], o.leg[1], o.foot[1] - o.foot[3] - o.knee[1] - o.knee[3], 4),
+    foot: E(o.foot[0], o.foot[1], o.foot[2], o.foot[3]) + E(m(o.foot[0]), o.foot[1], o.foot[2], o.foot[3])
+  };
+  const a = {
+    head: [c, o.head[0]], eyes: [c, o.eyes], ears: [m(o.ear[0]), o.ear[1]], nose: [c, o.nose], mouth: [c, o.mouth], neck: [c, (o.neck[0] + o.neck[1]) / 2],
+    shoulder: [m(o.sh[0]), o.sh[1]], chest: [c, (o.chest[0] + o.chest[1]) / 2], abdomen: [c, (o.chest[1] + o.abd) / 2], lowabd: [c, (o.abd + o.pel[0]) / 2],
+    pelvis: [c, (o.pel[0] + o.pel[1]) / 2], arm: [m(o.armA[0]), o.armA[1]], hand: [m(o.hand[0]), o.hand[1]], thigh: [m(o.th[0] + o.th[1] / 2), (o.pel[1] + o.knee[1]) / 2],
+    knee: [m(o.knee[0]), o.knee[1]], leg: [m(o.leg[0] + o.leg[1] / 2), (o.knee[1] + o.foot[1]) / 2], foot: [m(o.foot[0]), o.foot[1]]
+  };
+  return { shapes, a };
+}
 const PHOTO_GEO = {
-  male: {
-    shapes: {
-      head: '<ellipse cx="50" cy="18" rx="11" ry="17"/>',
-      chest: '<rect x="29" y="34" width="42" height="28" rx="7"/>',
-      abdomen: '<rect x="30" y="62" width="40" height="34" rx="6"/>',
-      pelvis: '<rect x="29" y="96" width="42" height="28" rx="6"/>',
-      arm: '<polygon points="29,35 21,40 18,70 15,96 13,114 21,119 24,100 27,74 30,52"/><polygon points="71,35 79,40 82,70 85,96 87,114 79,119 76,100 73,74 70,52"/>',
-      leg: '<polygon points="30,124 49,124 47,160 45,196 33,196 33,160"/><polygon points="70,124 51,124 53,160 55,196 67,196 67,160"/>'
-    },
-    geo: { head: { a: [50, 18], l: [80, 12] }, chest: { a: [50, 46], l: [86, 40] }, abdomen: { a: [50, 78], l: [86, 74] },
-           arm: { a: [21, 80], l: [10, 62] }, pelvis: { a: [50, 106], l: [14, 104] }, leg: { a: [40, 160], l: [14, 152] } }
-  },
-  female: {
-    shapes: {
-      head: '<ellipse cx="50" cy="20" rx="10" ry="17"/>',
-      chest: '<rect x="30" y="36" width="40" height="28" rx="7"/>',
-      abdomen: '<rect x="31" y="64" width="38" height="28" rx="6"/>',
-      pelvis: '<rect x="29" y="92" width="42" height="36" rx="6"/>',
-      arm: '<polygon points="30,37 22,42 20,70 18,96 17,114 25,116 27,96 29,72 31,54"/><polygon points="70,37 78,42 80,70 82,96 83,114 75,116 73,96 71,72 69,54"/>',
-      leg: '<polygon points="31,128 49,128 46,160 43,192 34,192 33,160"/><polygon points="69,128 51,128 54,160 57,192 66,192 67,160"/>'
-    },
-    geo: { head: { a: [50, 20], l: [80, 14] }, chest: { a: [50, 48], l: [86, 42] }, abdomen: { a: [50, 76], l: [86, 74] },
-           arm: { a: [23, 82], l: [10, 64] }, pelvis: { a: [50, 106], l: [14, 106] }, leg: { a: [40, 162], l: [14, 156] } }
-  }
+  male: photoGeo({ c: 50.9, head: [9.5, 8.6, 6.6], eyes: 17.7, ear: [42.6, 20], nose: 21.4, mouth: 25.3, neck: [28.6, 33.8], sh: [31.2, 38.8],
+    chest: [35, 58.5], abd: 77.5, pel: [95.5, 115.5], arm: "25,43.5 33,45 33.4,59.5 30.4,77.5 25.5,98 19.3,97.3 22.9,77.5 25.4,58.6", armA: [27.5, 70],
+    hand: [20.3, 106], th: [31.5, 15.5], knee: [39.3, 140.5, 6.2, 5.3], leg: [34, 11], foot: [33, 183, 7, 8.4] }),
+  female: photoGeo({ c: 50.5, head: [12.5, 8.4, 6.2], eyes: 21.3, ear: [42.4, 23.4], nose: 25.2, mouth: 28.8, neck: [33.2, 37.2], sh: [33, 40.6],
+    chest: [39, 61.3], abd: 77.5, pel: [91.2, 111.6], arm: "28.5,44 35.5,45.5 34.5,62 29,80 26.5,97 20.5,96.5 22.5,80 27,62", armA: [28.5, 72],
+    hand: [21.8, 106.3], th: [31, 16], knee: [40.2, 139, 6, 5.4], leg: [34, 10.5], foot: [37, 181, 6.5, 7.4] })
 };
 const photoOK = {};
 for (const [sex, src] of Object.entries(BODY_PHOTOS)) {
@@ -219,21 +236,57 @@ for (const [sex, src] of Object.entries(BODY_PHOTOS)) {
   im.src = src;
 }
 
+// المناطق التي لا تُرسم على الصورة (الظهر، الجلد، الجسم كله) تظهر أزرارًا أسفلها
+const offRegions = keys => {
+  const list = REGIONS.filter(r => r.off || !keys.includes(r.key));
+  return list.length ? `<div class="region-list">${list.map(r => `<button class="region-btn" data-region="${r.key}"><i style="background:${r.color}"></i>${esc(r.name)}</button>`).join("")}</div>` : "";
+};
 function bodyStage() {
   const sex = state.profile.gender === "female" ? "female" : "male";
   if (photoOK[sex]) {
-    const P = PHOTO_GEO[sex];
-    return `<div class="body-wrap photo">
+    const P = PHOTO_GEO[sex], on = REGIONS.filter(r => !r.off && P.shapes[r.key]);
+    return `<div class="body-wrap photo" data-sex="${sex}">
       <img src="${BODY_PHOTOS[sex]}" alt="" draggable="false">
-      <svg viewBox="0 0 100 200" preserveAspectRatio="none" role="group" aria-label="خريطة الجسم — اضغط على موضع الألم">
-        ${REGIONS.map(r => `<g class="region" data-region="${r.key}" tabindex="0" role="button" aria-label="${esc(r.name)}" fill="${r.color}">${P.shapes[r.key]}</g>`).join("")}
-        ${pulses(P.geo, 1.6)}
+      <svg viewBox="0 0 100 200" preserveAspectRatio="none" role="group" aria-label="خريطة الجسم — مرّر المؤشر أو المس موضع الألم">
+        ${on.map(r => `<g class="region" data-region="${r.key}" tabindex="0" role="button" aria-label="${esc(r.name)}">${P.shapes[r.key]}</g>`).join("")}
+        <g class="spot-g" aria-hidden="true">${on.map(r => `<circle class="spot" cx="${P.a[r.key][0]}" cy="${P.a[r.key][1]}" r=".9"/>`).join("")}</g>
       </svg>
-      ${tagLayer(P.geo, 100, 200)}
-    </div>`;
+      <button class="map-tip" id="map-tip" hidden></button>
+    </div>${offRegions(on.map(r => r.key))}`;
   }
-  return `<div class="body-wrap">${bodyMapSvg()}${tagLayer(SVG_GEO, 300, 700)}</div>`;
+  return `<div class="body-wrap">${bodyMapSvg()}</div>${offRegions(Object.keys(SVG_GEO))}`;
 }
+/* اسم المنطقة يظهر عند المرور بالمؤشر؛ وعلى اللمس: أول لمسة تُظهر الاسم والثانية (أو لمس الاسم) تفتحها */
+let lastPointer = "mouse", armed = null;
+function showTip(key) {
+  const tip = document.getElementById("map-tip"), wrap = tip && tip.parentElement;
+  if (!tip) return;
+  const r = REGIONS.find(x => x.key === key), P = PHOTO_GEO[wrap.dataset.sex];
+  if (!r || !P || !P.a[key]) return hideTip();
+  const [x, y] = P.a[key];
+  tip.dataset.region = key;
+  tip.innerHTML = `${esc(r.name)} <span aria-hidden="true">‹</span>`;
+  tip.style.left = x + "%"; tip.style.top = (y / 2) + "%";
+  tip.classList.toggle("below", y < 30);
+  tip.hidden = false;
+  document.querySelectorAll(".body-wrap .region").forEach(g => g.classList.toggle("hot", g.dataset.region === key));
+}
+function hideTip() {
+  const tip = document.getElementById("map-tip");
+  if (tip) tip.hidden = true;
+  armed = null;
+  document.querySelectorAll(".body-wrap .region.hot").forEach(g => g.classList.remove("hot"));
+}
+document.addEventListener("pointerdown", e => { lastPointer = e.pointerType || "mouse"; }, true);
+document.addEventListener("pointerover", e => {
+  const g = e.target.closest && e.target.closest(".body-wrap.photo .region");
+  if (g && e.pointerType === "mouse") showTip(g.dataset.region);
+});
+document.addEventListener("pointerout", e => {
+  const wrap = e.target.closest && e.target.closest(".body-wrap.photo");
+  if (wrap && e.pointerType === "mouse" && !wrap.contains(e.relatedTarget)) hideTip();
+});
+document.addEventListener("focusin", e => { const g = e.target.closest && e.target.closest(".body-wrap.photo .region"); if (g) showTip(g.dataset.region); });
 
 /* =========================================================
    طبقة الأعضاء الداخلية فوق الصورة الواقعية
@@ -361,7 +414,6 @@ function organCard(organ) {
     <span><b>العضو المعني: ${keys.map(k => ORGAN_NAMES[k]).join("، ")}</b><br><span class="muted small">رسم توضيحي لموضع العضو داخل الجسم (يمين المريض يظهر على يسار الصورة).</span></span></div>`;
 }
 
-const tagLayer = (geo, w, h) => `<div class="tag-layer">${REGIONS.map(r => `<button class="tag" data-region="${r.key}" style="left:${geo[r.key].l[0] / w * 100}%;top:${geo[r.key].l[1] / h * 100}%"><i style="background:${r.color}"></i>${esc(r.name)}</button>`).join("")}</div>`;
 
 /* رسمة صغيرة لمكان العضو — نفس الجسم بالظبط عشان التناسق */
 const ORGANS = {
@@ -902,7 +954,7 @@ function renderHome() {
     </div>
 
     <div class="stage">
-      <div class="stage-head"><b>أين تشعر بالألم؟</b><span>اضغط على الموضع في الجسم</span></div>
+      <div class="stage-head"><b>أين تشعر بالألم؟</b><span>مرّر المؤشر أو المس موضع الألم</span></div>
       ${bodyStage()}
     </div>
 
@@ -1074,6 +1126,14 @@ const GUIDE_ORGS = {
   ASH: ["الجمعية الأمريكية لأمراض الدم ASH", "https://www.hematology.org/education/clinicians/guidelines-and-quality-care/clinical-practice-guidelines"],
   AAAAI: ["الأكاديمية الأمريكية للحساسية والمناعة AAAAI", "https://www.aaaai.org/allergist-resources/statements-practice-parameters"]
 };
+// سطر المرجع الدولي ظاهر دائمًا في بطاقة المرض: التصنيف من منظمة الصحة العالمية، والعلاج من الدليل الإرشادي الدولي
+function guideLine(c) {
+  const k = CARE[c.id], orgs = (k && k.refs || []).filter(r => GUIDE_ORGS[r]).slice(0, 3);
+  return `<div class="guide-line">${ico(I.shield)}<div><b>مرجعية المعلومة</b>
+    <span>التصنيف: <a href="https://icd.who.int/browse10/2019/en#/${esc(c.icd10)}" target="_blank" rel="noopener noreferrer">منظمة الصحة العالمية ICD-10 · ${esc(c.icd10)}</a></span>
+    ${k && k.guide ? `<span>الدليل العلاجي: <a href="https://pubmed.ncbi.nlm.nih.gov/?term=${encodeURIComponent(k.guide)}" target="_blank" rel="noopener noreferrer" dir="ltr">${esc(k.guide)}</a></span>` : ""}
+    ${orgs.length ? `<span class="orgs-mini">${orgs.map(r => `<a href="${GUIDE_ORGS[r][1]}" target="_blank" rel="noopener noreferrer">${esc(GUIDE_ORGS[r][0])}</a>`).join("")}</span>` : ""}</div></div>`;
+}
 function careBlock(c) {
   const k = CARE[c.id];
   if (!k) return "";
@@ -1132,6 +1192,7 @@ function condCard(c, rank, isTop) {
         ${c.note ? esc(c.note) : "بناءً على تطابق الأعراض التالية:"}
         <div class="matched">${c.matchedSyms.map(s => `<span>✓ ${esc(s.label)}</span>`).join("")}${c.deniedSyms.map(s => `<span class="miss">${esc(s.label)}</span>`).join("")}</div>
       </div>
+      ${guideLine(c)}
       <div class="blk def"><span class="bl">${ico(I.info)}ما هو؟</span>${esc(c.def)}</div>
       <div class="blk tx"><span class="bl">${ico(I.steth)}كيف يُعالَج؟</span>${esc(c.treatment)}</div>
       ${careBlock(c)}
@@ -1355,6 +1416,14 @@ function renderAbout() {
     <div class="legend-t">${Object.values(TRIAGE).map(t => `<div class="t-${t.tone}"><b>${t.label}:</b> ${t.action}</div>`).join("")}</div>
     <h2>حالة المراجعة</h2>
     <table class="tbl"><thead><tr><th>التخصص</th><th>حالات</th><th>الحالة</th></tr></thead><tbody>${zoneRows}</tbody></table>
+    <h2>درجات المرجعية في «موصل»</h2>
+    <p>لا يعتمد «موصل» على رأي فرد. كل معلومة تستند إلى مرجع دولي معتمد بهذا الترتيب:</p>
+    <ol class="ref-tiers">
+      <li><b>منظمة الصحة العالمية (WHO):</b> التصنيف الدولي للأمراض ICD-10، وقائمة الأدوية الأساسية، والإرشادات العامة.</li>
+      <li><b>الأدلة الإرشادية الدولية للتخصصات:</b> NICE البريطاني، وCDC الأمريكي، وجمعيات القلب والسكري والكلى والصدر والنساء والمسالك وغيرها (يظهر اسم الدليل في بطاقة كل مرض).</li>
+      <li><b>هيئات الدواء:</b> منظمة الصحة العالمية وFDA وEMA، ثم هيئة الدواء المصرية قبل الإطلاق المحلي.</li>
+      <li><b>مراجعة الأطباء المختصين:</b> للتحقق من أن التطبيق نقل هذه المراجع بدقة ودون خطأ، وليست بديلًا عنها.</li>
+    </ol>
     <h2>المصادر</h2>
     <ul>
       <li>تصنيف الأمراض: <a href="https://icd.who.int/browse10/2019/en" target="_blank" rel="noopener noreferrer">ICD-10 — WHO</a>، ومصطلحات <a href="https://www.nlm.nih.gov/research/umls/" target="_blank" rel="noopener noreferrer">UMLS — NLM</a></li>
@@ -1516,7 +1585,14 @@ document.addEventListener("click", e => {
   const t = e.target.closest("button, [data-region]");
   if (!t) return;
   const ds = t.dataset;
-  if (ds.region) return pickRegion(ds.region);
+  if (ds.region) {
+    // على اللمس: أول لمسة على الجسم تُظهر اسم المنطقة فقط
+    if (t.classList.contains("region") && t.closest(".body-wrap.photo") && lastPointer !== "mouse" && armed !== ds.region) {
+      armed = ds.region; return showTip(ds.region);
+    }
+    armed = null;
+    return pickRegion(ds.region);
+  }
   if (ds.zone) return pickZone(ds.zone, ds.preset);
   if (ds.sym) { state.checked.has(ds.sym) ? state.checked.delete(ds.sym) : state.checked.add(ds.sym); return render(); }
   if (ds.ans) return answer(ds.q, ds.ans);
