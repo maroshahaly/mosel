@@ -17,7 +17,7 @@ const root = fileURLToPath(new URL("../", import.meta.url));
 const OWNER = "MOSEL|Maro Shahaly|2026";
 // النطاقات المرخّصة؛ أضف نطاقك الخاص هنا أو في متغير البيئة MOSEL_DOMAINS (مفصولة بفواصل)
 // كل اسم يُعامَل كنطاق وكل ما تحته: فـ"mosel.workers.dev" يشمل أي عامل في حساب Cloudflare الخاص بنا (لا يستطيع غيرنا إنشاء أسماء تحته)
-const DOMAINS = ["mosol.netlify.app", "mosel.workers.dev", "maro-shahaly.workers.dev", "localhost", "127.0.0.1",
+const DOMAINS = ["mosol.netlify.app", "mosel.workers.dev", "maro-shahaly.workers.dev", "mosel-health.pages.dev", "mosel-app.pages.dev", "localhost", "127.0.0.1",
   ...(process.env.MOSEL_DOMAINS || "").split(",").map(s => s.trim()).filter(Boolean)];
 
 // ---------- 1) البصمة غير المرئية: بتات OWNER بمحرفين صفريي العرض بعد أول مسافة في كل تعريف ----------
@@ -63,7 +63,7 @@ export async function protect(out, { dataFiles, assetFiles }) {
   var H=${JSON.stringify(hostHash)}, A="${k1.toString("base64")}", B="${mask.toString("base64")}";
   function b64(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u;}
   async function h(s){var d=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(s));return Array.from(new Uint8Array(d)).map(function(x){return x.toString(16).padStart(2,"0");}).join("").slice(0,16);}
-  function stop(){var c=document.getElementById("content");if(c)c.innerHTML='<div style="padding:40px 20px;text-align:center;line-height:1.9"><h2>نسخة غير مرخّصة</h2><p>هذه نسخة منسوخة من تطبيق «موصل» دون إذن مالكه.</p><p>النسخة الرسمية: <a href="https://mosel-health.mosel.workers.dev/">mosel-health.mosel.workers.dev</a></p></div>';}
+  function stop(){var c=document.getElementById("content");if(c)c.innerHTML='<div style="padding:40px 20px;text-align:center;line-height:1.9"><h2>نسخة غير مرخّصة</h2><p>هذه نسخة منسوخة من تطبيق «موصل» دون إذن مالكه.</p><p>النسخة الرسمية: <a href="https://mosel-health.pages.dev/">mosel-health.pages.dev</a></p></div>';}
   var ok=false; try{ ok=!!(window.crypto&&crypto.subtle)&&location.protocol!=="file:"&&await (async function(){var p=location.hostname.split(".");for(var i=0;i<p.length-1||i===0&&p.length===1;i++){if(H.indexOf(await h(p.slice(i).join(".")))>=0)return true;}return false;})(); }catch(e){ ok=false; }
   if(!ok){stop();return;}
   try{
