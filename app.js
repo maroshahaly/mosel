@@ -189,6 +189,60 @@ function pulses(geo, r) {
    ========================================================= */
 // في النسخة المنشورة تأتي الصور مفكوكة التشفير من loader.js على شكل روابط blob:
 const asset = p => (window.MOSEL_ASSETS || {})[p] || p;
+/* =========================================================
+   اللغة: العربية (الأصل) والإنجليزية
+   ---------------------------------------------------------
+   المحرك الطبي يبقى عربيًا كما هو (المطابقة والترجيح لا تتأثر)، وطبقة الترجمة تحوّل كل نص
+   معروض إلى الإنجليزية من القاموس data/i18n_en.js (يُبنى بالأمر node tools/build_i18n.mjs).
+   ========================================================= */
+const LANG_KEY = "moselLang";
+const LANG = (() => { try { return localStorage.getItem(LANG_KEY) === "en" ? "en" : "ar"; } catch (e) { return "ar"; } })();
+const LOCALE = LANG === "en" ? "en-GB" : "ar-EG";
+const EN = window.MOSEL_EN || { exact: {}, patterns: [] };
+const EN_PAT = (EN.patterns || []).map(([src, tpl]) => [new RegExp("^" + src + "$"), tpl]);
+const HAS_AR = /[\u0600-\u06FF]/;
+function trCore(k) {
+  const e = EN.exact[k];
+  if (e) return e;
+  for (const [re, tpl] of EN_PAT) { const m = k.match(re); if (m) return tpl.replace(/\{(\d+)\}/g, (_, i) => tr(m[+i + 1] || "")); }
+  return null;
+}
+// ترجمة نص واحد: مطابقة تامة، ثم الأنماط ذات المتغيرات، ثم ترجمة اللب العربي مع إبقاء الأرقام والرموز حوله، ثم تقسيم على الفواصل
+function tr(s) {
+  if (LANG !== "en" || !s || !HAS_AR.test(s)) return s;
+  const lead = s.match(/^\s*/)[0], trail = s.match(/\s*$/)[0], k = s.replace(/\s+/g, " ").trim();
+  let r = trCore(k);
+  if (r == null) {
+    const m = k.match(/^([^\u0600-\u06FF]*)([\s\S]*?[\u0600-\u06FF][\s\S]*?)([^\u0600-\u06FF]*)$/);
+    if (m && (m[1] || m[3])) { const c = trCore(m[2].trim()); if (c != null) r = m[1] + c + m[3]; }
+  }
+  if (r == null) for (const sep of [" · ", "، ", " — ", ": ", "؛ "]) if (k.includes(sep)) { const parts = k.split(sep).map(x => tr(x)); if (parts.some((x, i) => x !== k.split(sep)[i])) { r = parts.join(sep === "، " ? ", " : sep === "؛ " ? "; " : sep); break; } }
+  return r == null ? s : lead + r + trail;
+}
+const TR_ATTRS = ["placeholder", "aria-label", "title", "alt"];
+let trBusy = false;
+function translateDOM(root) {
+  if (LANG !== "en" || !root) return;
+  trBusy = true;
+  try {
+    if (root.nodeType === 3) { if (HAS_AR.test(root.nodeValue)) { const t = tr(root.nodeValue); if (t !== root.nodeValue) root.nodeValue = t; } return; }
+    if (root.nodeType !== 1) return;
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentNode && /^(SCRIPT|STYLE|TEXTAREA)$/.test(n.parentNode.nodeName) ? 2 : 1 });
+    for (let n; (n = w.nextNode());) if (HAS_AR.test(n.nodeValue)) { const t = tr(n.nodeValue); if (t !== n.nodeValue) n.nodeValue = t; }
+    for (const el of [root, ...root.querySelectorAll("[placeholder],[aria-label],[title],[alt]")])
+      for (const a of TR_ATTRS) { const v = el.getAttribute && el.getAttribute(a); if (v && HAS_AR.test(v)) { const t = tr(v); if (t !== v) el.setAttribute(a, t); } }
+  } finally { trBusy = false; }
+}
+if (LANG === "en") {
+  new MutationObserver(ms => { if (trBusy) return; for (const m of ms) { if (m.type === "characterData") translateDOM(m.target); else m.addedNodes.forEach(translateDOM); if (m.type === "attributes") translateDOM(m.target); } })
+    .observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: TR_ATTRS });
+  document.addEventListener("DOMContentLoaded", () => translateDOM(document.body));
+  translateDOM(document.body);
+  document.title = "Mosel — your first medical guide";
+}
+function setLang(l) { try { localStorage.setItem(LANG_KEY, l); } catch (e) { /* */ } location.reload(); }
+const langBtns = () => `<div class="lang-seg" role="group" aria-label="Language / اللغة"><button data-lang="ar" aria-pressed="${LANG === "ar"}" lang="ar">العربية</button><button data-lang="en" aria-pressed="${LANG === "en"}" lang="en">English</button></div>`;
+
 const BODY_PHOTOS = { male: asset("assets/body-male.jpg"), female: asset("assets/body-female.jpg") };
 /* المناطق على الصورة (من قياس الصورتين 560×1110 بكسل ÷ 5.6 أفقيًا و5.55 رأسيًا).
    كل منطقة: شكل SVG (أو أكثر، للجهتين) ونقطة ارتكاز a لظهور اسمها عند المرور عليها */
@@ -855,8 +909,8 @@ function goBack() {
 function back() {
   const s = state.screen;
   if (s === "terms") go(state.prev || "about");
-  else if (s === "condinfo") go("systems");
-  else if (s === "systems") { if (state.system) { state.system = null; render(); } else go("home"); }
+  else if (s === "condinfo") go("systems");  // يعود إلى قائمة التخصص أو الجهاز نفسها
+  else if (s === "systems") { if (state.system || state.spec) { state.system = null; state.spec = null; render(); } else go("home"); }
   else if (s === "describe" || s === "records" || s === "tips") go(s === "tips" && state.prev === "results" ? "results" : "home");
   else if (s === "about" || s === "stages") go(state.prev || "home");
   else if (s === "results" || s === "followup") { state.round = 0; state.asked = new Set(); state.denied = new Set(); state.answers = {}; go("symptoms"); }
@@ -995,12 +1049,64 @@ const EMERGENCY_RE = [
   [/نزيف\s*(شديد|جامد|كتير|مش بيقف|لا يتوقف)|(بترجع|برجع|بيرجع|بستفرغ|قيء|ترجيع)\s*دم|براز\s*(اسود|اسود زي)/, "نزيف شديد أو قيء دموي أو براز أسود"],
   [/(شفايفي|شفتي|لساني|وشي|وجهي|زوري)\s*(وارم|وارمه|ورم|منفوخ|منفوخه|اتورم)[^.]{0,40}(نفس|تنفس|بلع)/, "تورّم الوجه أو اللسان مع صعوبة التنفس (حساسية شديدة)"]
 ];
+// الإنجليزية: نفس منطق الأمان (الأزمة النفسية وعلامات الطوارئ الصريحة)
+const CRISIS_EN = /(suicid|kill(ing)? myself|end (my|it all)|want to die|wanna die|self[- ]?harm|hurt(ing)? myself|don'?t want to (live|be alive)|no reason to live|better off dead)/i;
+const EMERGENCY_EN = [
+  [/chest (pain|pressure|tight)[^.]*(arm|jaw|sweat|breath)|(arm|jaw)[^.]*chest (pain|pressure)/i, "ألم أو ضغط في الصدر مع عرق أو امتداد إلى الذراع أو الفك"],
+  [/(face|mouth)[^.]*(droop|drop|crooked)|slurred speech|can'?t (speak|talk) suddenly|sudden(ly)? (weak|numb)[^.]*(one side|arm|leg)|one side[^.]*(weak|numb)/i, "قد تكون علامات جلطة دماغية (اعوجاج الوجه، ضعف جانب، اضطراب الكلام)"],
+  [/(can'?t|cannot|unable to|struggling to|hard to) breathe|severe(ly)? short(ness)? of breath|gasping/i, "صعوبة شديدة في التنفس"],
+  [/worst headache|thunderclap/i, "صداع مفاجئ شديد"],
+  [/(vomit|throw(ing)? up|cough(ing)? up)[^.]*blood|black (tarry )?stool|bleeding (heavily|won'?t stop|a lot)|heavy bleeding/i, "نزيف شديد أو قيء دموي أو براز أسود"],
+  [/(lips?|tongue|face|throat)[^.]*swell[^.]*(breath|swallow)|swell[^.]*(lips?|tongue)[^.]*(breath|swallow)/i, "تورّم الوجه أو اللسان مع صعوبة التنفس (حساسية شديدة)"],
+  [/(seizure|convuls|fit)s?\b[^.]*(won'?t stop|minutes|first)|unconscious|passed out and (won'?t|not) wak/i, "تشنجات أو فقدان للوعي"],
+  [/(baby|infant|newborn)[^.]*(fever|temperature)|(fever|temperature)[^.]*(baby|infant|newborn)/i, "حمّى عند رضيع صغير (أقل من 3 أشهر)"]
+];
 function describeAlerts(text) {
+  if (/[a-z]/i.test(text) && !HAS_AR.test(text)) return { crisis: CRISIS_EN.test(text), emergencies: EMERGENCY_EN.filter(([re]) => re.test(text)).map(([, label]) => label) };
   const t = normAr(text).replace(/[^ء-ي\s.]/g, " ").replace(/\s+/g, " ");
   return { crisis: CRISIS_RE.test(t), emergencies: EMERGENCY_RE.filter(([re]) => re.test(t)).map(([, label]) => label) };
 }
+/* وصف الحالة بالإنجليزية: مطابقة كلمات الوصف مع ترجمات الأعراض (بوزن ندرة الكلمة)، بنفس عتبات الأمان */
+const EN_STOP = new Set("a an the i my me im i'm am is are was were be been have has had do does did and or but with without of in on at to from for by it its this that there feel feeling felt get got some very really bit little lot since when after before about like just also".split(" "));
+const EN_SYN = { tummy: "abdomin", belly: "abdomin", stomach: "abdomin", gut: "abdomin", puke: "vomit", throw: "vomit", sick: "nause", queasy: "nause", dizzy: "dizzi", lightheaded: "dizzi", faint: "faint", pee: "urin", peeing: "urin", wee: "urin", poo: "stool", poop: "stool", bowel: "stool", runny: "nose", sob: "breath", breathless: "breath", breathing: "breath", tired: "fatigu", exhausted: "fatigu", achy: "pain", ache: "pain", aching: "pain", hurts: "pain", hurt: "pain", sore: "pain", painful: "pain", itchy: "itch", itching: "itch", temperature: "fever", feverish: "fever", hot: "fever", rash: "rash", spots: "rash", lump: "lump", swollen: "swell", swelling: "swell", bloated: "bloat", heartburn: "burn", burning: "burn", throat: "throat", cough: "cough", coughing: "cough" };
+const enStem = w => { w = w.toLowerCase().replace(/[^a-z]/g, ""); if (EN_SYN[w]) return EN_SYN[w]; if (w.length > 5) w = w.replace(/(ations?|ness|ing|ed|ly|es|s)$/, ""); else if (w.length > 3) w = w.replace(/s$/, ""); return EN_SYN[w] || w.slice(0, 7); };
+const enTokens = t => String(t || "").toLowerCase().split(/[^a-z']+/).filter(w => w && !EN_STOP.has(w)).map(enStem).filter(w => w.length > 1);
+let enIndex = null;
+function analyzeEnglish(text) {
+  if (!enIndex) {
+    const docs = [], df = new Map();
+    for (const z of ZONES) for (const sym of DATA[z.key].symptoms) {
+      const en = EN.exact[String(sym.label).replace(/\s+/g, " ").trim()]; if (!en) continue;
+      const st = [...new Set(enTokens(en.replace(/\(.*?\)/g, "")))]; if (!st.length) continue;
+      st.forEach(x => df.set(x, (df.get(x) || 0) + 1)); docs.push({ zone: z.key, sym, st });
+    }
+    const N = docs.length; docs.forEach(d => { d.w = d.st.map(x => Math.log(1 + N / df.get(x))); d.total = d.w.reduce((a, b) => a + b, 0); });
+    enIndex = docs;
+  }
+  const u = new Set(enTokens(text)); if (!u.size) return [];
+  const byZone = new Map();
+  for (const d of enIndex) {
+    if (!allowedZone(d.zone) || !sexOk(d.sym)) continue;
+    let m = 0, n = 0; d.st.forEach((x, i) => { if (u.has(x)) { m += d.w[i]; n++; } });
+    if (!n) continue;
+    const ratio = m / d.total;
+    if (d.sym.red && ratio < 0.75) continue;
+    if (d.st.length <= 2 ? ratio >= 0.6 : (n >= 2 && ratio >= 0.45 || ratio >= 0.6)) {
+      const z = byZone.get(d.zone) || { key: d.zone, score: 0, syms: [] }; z.syms.push({ s: d.sym, r: ratio }); byZone.set(d.zone, z);
+    }
+  }
+  const zones = [...byZone.values()].map(z => {
+    z.syms.sort((a, b) => b.r - a.r);
+    const strong = z.syms.filter(x => x.r >= 0.5), weak = z.syms.filter(x => x.r < 0.5);
+    z.score = strong.reduce((a, x) => a + x.r, 0) + 0.3 * weak.reduce((a, x) => a + x.r, 0);
+    z.syms = strong.slice(0, 6).map(x => x.s); z.maybe = weak.slice(0, 4).map(x => x.s); z.hint = false;
+    z.red = z.syms.some(s => s.red); return z;
+  });
+  return zones.filter(z => z.syms.length || z.maybe.length).sort((a, b) => b.score - a.score).slice(0, 3);
+}
 // يرتب التخصصات حسب ما فُهم من الوصف، ويعيد لكل تخصص الأعراض المطابقة
 function analyzeDescription(text) {
+  if (/[a-z]/i.test(text) && (text.match(/[a-z]/gi) || []).length > (text.match(/[\u0600-\u06FF]/g) || []).length) return analyzeEnglish(text);
   const u = userStems(text), { docs } = describeIndex();
   if (!u.size) return [];
   // تطابق تام، أو بادئة (يد ← يدين، دم ← دموي) ما دام الفرق حرفين على الأكثر أو الكلمتان طويلتين
@@ -1069,7 +1175,7 @@ function renderTopbar() {
       <button class="icon-btn aa" data-act="prefs" aria-expanded="${!!state.showPrefs}" aria-label="حجم الخط والوضع الليلي">Aa</button>
       <button class="icon-btn" data-act="about" aria-label="عن موصل والمصادر">${ico(I.info)}</button></div>
     </div>
-    ${state.showPrefs ? `<div class="prefs-row"><span>حجم الخط والوضع</span>${prefBtns()}</div>` : ""}`;
+    ${state.showPrefs ? `<div class="prefs-row"><span>حجم الخط والوضع</span>${prefBtns()}</div><div class="prefs-row"><span>اللغة</span>${langBtns()}</div>` : ""}`;
     return;
   }
   const z = ZONE[state.zone], r = REGIONS.find(x => x.key === state.region);
@@ -1081,7 +1187,7 @@ function renderTopbar() {
     about: "عن موصل والمصادر",
     stages: "حاسبة المراحل", terms: "الشروط والأحكام",
     describe: "تحليل وصفك", records: "سجلّي الصحي", tips: "نصائح لصحتك",
-    systems: state.system ? (SYSTEMS.find(x => x.key === state.system) || {}).name || "أجهزة الجسم" : "الأمراض حسب أجهزة الجسم", condinfo: "عن المرض"
+    systems: state.system ? (SYSTEMS.find(x => x.key === state.system) || {}).name || "أجهزة الجسم" : (state.spec && ZONE[state.spec] ? ZONE[state.spec].name : "الأمراض حسب التخصص"), condinfo: "عن المرض"
   }[state.screen] || "";
   const si = stepIndex();
   $topbar.innerHTML = `<div class="bar-row">
@@ -1106,7 +1212,7 @@ function setCta(text, onClick, disabled) {
    ========================================================= */
 function renderTerms() {
   const accepted = termsOk();
-  const when = accepted && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString("ar-EG", { year: "numeric", month: "long", day: "numeric" })) : "";
+  const when = accepted && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString(LOCALE, { year: "numeric", month: "long", day: "numeric" })) : "";
   $content.innerHTML = `<div class="fade-in terms">
     <div class="onb-hero"><h1>الشروط والأحكام</h1>
       <p>${accepted ? `وافقت على هذه الشروط (الإصدار ${TERMS_VERSION})${when}.` : "يُرجى قراءة البنود التالية بعناية؛ استخدامك لـ«موصل» يعني موافقتك عليها كاملة."}</p></div>
@@ -1143,7 +1249,7 @@ function renderOnboarding() {
   };
   $content.innerHTML = `<div class="fade-in">
     <div class="onb-hero">
-      <div class="brand"><div class="logo">${ico(I.pulse, 2.4)}</div><div class="brand-name">موصل</div></div>
+      <div class="brand"><div class="logo">${ico(I.pulse, 2.4)}</div><div class="brand-name">موصل</div>${langBtns()}</div>
       <h1>${state.editingProfile ? "تعديل بياناتك" : "صحتك أولًا… كل يوم"}</h1>
       <p>${state.editingProfile ? "حدّث بياناتك لتبقى النتائج والنصائح دقيقة." : MISSION}</p>
       <div class="trust-row">
@@ -1235,7 +1341,7 @@ function renderHome() {
         <span class="t"><b>نصائح لصحتك</b><span>${personalTips().length ? `${personalTips().length} نصائح تخصك` : "النوم والرياضة والغذاء"}</span></span></button>
     </div>
     <button class="quick sys-entry" data-act="systems"><span class="qi">${ico(I.book)}</span>
-      <span class="t"><b>الأمراض حسب أجهزة الجسم</b><span>تصفّح كل الأمراض مرتبة حسب الجهاز، مع علاجها ومراجعها</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
+      <span class="t"><b>الأمراض حسب التخصص</b><span>الصدر، القلب، الباطنة، الجلدية… كل تخصص بأمراضه وأعراضها وعلاجها ومراجعها</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
     <div class="label">أو اختر مباشرة دون تحديد موضع</div>
     ${quick}
 
@@ -1271,7 +1377,7 @@ function renderSearch() {
   for (const z of ZONES) {
     if (!allowedZone(z.key)) continue;
     for (const s of zoneSymptoms(z.key)) {
-      const n = normAr(s.label);
+      const n = normAr(s.label + (LANG === "en" ? " " + (EN.exact[s.label.replace(/\s+/g, " ").trim()] || "") : ""));
       if (words.every(w => n.includes(w))) hits.push({ z, s, i: n.indexOf(words[0]) });
     }
     for (const c of DATA[z.key].conditions.filter(sexOk)) {
@@ -1283,7 +1389,7 @@ function renderSearch() {
   const hl = label => {
     // تمييز أول كلمة متطابقة
     const n = normAr(label), i = n.indexOf(words[0]);
-    if (i < 0) return esc(label);
+    if (i < 0 || LANG === "en") return esc(label);  // بالإنجليزية يُترجم النص كاملًا فلا نقسّمه بالتمييز
     return esc(label.slice(0, i)) + "<mark>" + esc(label.slice(i, i + words[0].length)) + "</mark>" + esc(label.slice(i + words[0].length));
   };
   box.innerHTML = `<div class="results-pop">${hits.length ? hits.slice(0, 8).map(h => h.s
@@ -1292,12 +1398,28 @@ function renderSearch() {
   ).join("") : `<div class="empty">لم نجد نتائج لـ«${esc(state.query)}». جرّب كلمة أخرى أو اضغط على موضع الألم في الجسم.</div>`}</div>`;
 }
 
+/* صور تشريحية حقيقية للأعضاء الداخلية في كل منطقة (Blausen Medical، CC BY 3.0) */
+const REGION_PHOTOS = {
+  head: ["brain"], occiput: ["brain"], eyes: ["brain"], neck: ["thyroid"], nape: ["thyroid"], jaw: ["digestive"], mouth: ["digestive"], nose: ["lungs"],
+  chest: ["heart", "lungs"], breast: ["lungs"], upperback: ["lungs", "heart"], scapula: ["lungs"], armpit: ["lungs"],
+  epi: ["digestive", "pancreas"], ruq: ["liver", "gbp"], luq: ["digestive", "pancreas"], umbilical: ["smallint", "colon"],
+  rlq: ["colon", "smallint"], llq: ["colon"], hypo: ["smallint", "colon"], flank: ["kidney"], lowback: ["kidney"]
+};
+const PHOTO_NAME = { brain: "الدماغ", thyroid: "الغدة الدرقية", heart: "القلب", lungs: "الجهاز التنفسي والرئتان", digestive: "الجهاز الهضمي", pancreas: "البنكرياس", liver: "الكبد", gbp: "المرارة والكبد والبنكرياس", smallint: "الأمعاء الدقيقة", colon: "القولون", kidney: "الكليتان", female: "الجهاز التناسلي الأنثوي" };
+function regionAnatomy(key) {
+  const files = [...(REGION_PHOTOS[key] || []), ...(key === "pelvis" && state.profile.gender === "female" ? ["female"] : key === "hypo" && state.profile.gender === "female" ? ["female"] : [])].slice(0, 3);
+  if (!files.length) return "";
+  return `<details class="atlas" open><summary>${ico(I.info)}<span>الأعضاء الداخلية في هذه المنطقة — صور تشريحية حقيقية</span></summary>
+    <div class="atlas-imgs">${files.map(f => `<figure><img src="${asset("assets/organs/" + f + ".jpg")}" alt="رسم تشريحي: ${esc(PHOTO_NAME[f])}" loading="lazy"><figcaption>${esc(PHOTO_NAME[f])}</figcaption></figure>`).join("")}</div>
+    <p class="muted small">رسوم طبية مرجعية (التسميات بالإنجليزية) — Blausen Medical 2014، رخصة CC BY 3.0.</p></details>`;
+}
 function renderSections() {
   const r = REGIONS.find(x => x.key === state.region);
   const zones = r.specialties.filter(allowedZone);
   $content.innerHTML = `<div class="fade-in">
     <h1 class="h1">${esc(r.name)}: أي التخصصات أقرب إلى شكواك؟</h1>
     ${regionOrgans(r.key).length ? `<div class="near-organs"><span class="small muted">الأعضاء الأقرب لهذا الموضع:</span><div>${regionOrgans(r.key).map(o => `<span>${esc(o)}</span>`).join("")}</div></div>` : ""}
+    ${regionAnatomy(r.key)}
     <p class="lead">اختر التخصص الأقرب إلى شكواك. إن لم تكن متأكدًا فابدأ بالأول، ويمكنك الرجوع لاحقًا.</p>
     <div class="zone-grid">${zones.map(k => {
       const z = ZONE[k];
@@ -1527,7 +1649,7 @@ function renderResults() {
   const cardLine = cardSummary();
 
   $content.innerHTML = `<div class="fade-in">
-    <div class="print-only"><h2>تقرير موصل — ${new Date().toLocaleDateString("ar-EG")}</h2>${cardLine ? `<p>${esc(cardLine)}</p>` : ""}</div>
+    <div class="print-only"><h2>تقرير موصل — ${new Date().toLocaleDateString(LOCALE)}</h2>${cardLine ? `<p>${esc(cardLine)}</p>` : ""}</div>
     ${tri.crisis ? `<div class="alert crisis" role="alert">${ico(I.heart).replace("<svg", '<svg class="ai"')}<div>
       <b>لست وحدك — تحدّث مع أحد الآن</b>
       <p>لهذه الأفكار علاج ومساعدة متاحة. اتصل بالخط الساخن للصحة النفسية (مجاني وسري)، أو بشخص تثق به. وإذا كنت في خطر الآن فاتصل بالإسعاف ${EMERGENCY_NUMBER}.</p>
@@ -1579,7 +1701,7 @@ function toggleVoice() {
   const box = document.getElementById("desc"), lab = document.getElementById("voice-l");
   const base = box ? box.value.trim() : "";
   rec = new SpeechRec();
-  rec.lang = "ar-EG"; rec.interimResults = true; rec.continuous = false;
+  rec.lang = LANG === "en" ? "en-US" : "ar-EG"; rec.interimResults = true; rec.continuous = false;
   rec.onresult = e => {
     const said = [...e.results].map(r => r[0].transcript).join(" ");
     state.describe = (base ? base + " " : "") + said;
@@ -1675,22 +1797,75 @@ function systemIndex() {
   for (const z of ZONES) if (allowedZone(z.key)) for (const c of DATA[z.key].conditions.filter(sexOk)) idx[systemOf(c, z.key)].push({ c, zone: z.key });
   return idx;
 }
+/* مراجع كل تخصص: محلية (مصر) وعربية ودولية. الروابط مراجع للاستزادة ولا تعني اعتماد الجهة للتطبيق */
+const SPEC_LOCAL = [
+  ["وزارة الصحة والسكان المصرية — الأدلة والبروتوكولات العلاجية", "https://www.mohp.gov.eg/"],
+  ["كلية طب قصر العيني — جامعة القاهرة (أقسام التخصصات)", "https://kasralainy.edu.eg/"],
+  ["كلية الطب — جامعة عين شمس", "https://med.asu.edu.eg/"]
+];
+const SPEC_ARAB = [
+  ["المجلس العربي للاختصاصات الصحية (البورد العربي)", "https://arab-board.org/"],
+  ["الهيئة السعودية للتخصصات الصحية", "https://scfhs.org.sa/"],
+  ["وزارة الصحة السعودية — البروتوكولات والأدلة", "https://www.moh.gov.sa/"],
+  ["منظمة الصحة العالمية — إقليم شرق المتوسط", "https://www.emro.who.int/"]
+];
+const refLinks = list => list.map(([n, u]) => `<li><a href="${u}" target="_blank" rel="noopener noreferrer">${esc(n)}</a></li>`).join("");
+// الجمعيات العلمية الدولية لكل تخصص (أدلتها هي ما تعتمد عليه كليات الطب والوزارات في المنطقة)
+const SPEC_INTL = {
+  respiratory: [["الجمعية الأوروبية لأمراض الجهاز التنفسي ERS", "https://www.ersnet.org/"], ["الجمعية الأمريكية لأمراض الصدر ATS", "https://www.thoracic.org/"], ["المبادرة العالمية للربو GINA", "https://ginasthma.org/"], ["المبادرة العالمية للانسداد الرئوي GOLD", "https://goldcopd.org/"]],
+  heart: [["الجمعية الأوروبية لأمراض القلب ESC", "https://www.escardio.org/"], ["الكلية الأمريكية لأمراض القلب ACC", "https://www.acc.org/"], ["جمعية القلب الأمريكية AHA", "https://www.heart.org/"]],
+  internal: [["الكلية الأمريكية لأمراض الجهاز الهضمي ACG", "https://gi.org/"], ["الجمعية الأوروبية لدراسة الكبد EASL", "https://easl.eu/"], ["مبادرة أمراض الكلى KDIGO", "https://kdigo.org/"]],
+  bones: [["الأكاديمية الأمريكية لجراحي العظام AAOS", "https://www.aaos.org/"], ["الرابطة الأوروبية للروماتيزم EULAR", "https://www.eular.org/"], ["الكلية الأمريكية للروماتيزم ACR", "https://rheumatology.org/"]],
+  neuro: [["الأكاديمية الأمريكية للأعصاب AAN", "https://www.aan.com/"], ["الأكاديمية الأوروبية للأعصاب EAN", "https://www.ean.org/"]],
+  eyes: [["الأكاديمية الأمريكية لطب العيون AAO", "https://www.aao.org/"]],
+  ent: [["الأكاديمية الأمريكية لطب الأنف والأذن والحنجرة AAO-HNS", "https://www.entnet.org/"]],
+  dental: [["الاتحاد العالمي لطب الأسنان FDI", "https://www.fdiworlddental.org/"], ["جمعية أطباء الأسنان الأمريكية ADA", "https://www.ada.org/"]],
+  skin: [["الأكاديمية الأمريكية للأمراض الجلدية AAD", "https://www.aad.org/"], ["الجمعية البريطانية لأطباء الجلد BAD", "https://www.bad.org.uk/"]],
+  mental: [["الجمعية الأمريكية للطب النفسي APA", "https://www.psychiatry.org/"], ["الكلية الملكية للأطباء النفسيين", "https://www.rcpsych.ac.uk/"]],
+  endocrine: [["جمعية الغدد الصماء Endocrine Society", "https://www.endocrine.org/"], ["الجمعية الأمريكية للسكري ADA", "https://diabetes.org/"]],
+  andrology: [["الجمعية الأوروبية للمسالك البولية EAU", "https://uroweb.org/"], ["الجمعية الأمريكية للمسالك البولية AUA", "https://www.auanet.org/"]],
+  sexual: [["مراكز مكافحة الأمراض CDC — الأمراض المنقولة جنسيًا", "https://www.cdc.gov/sti/"], ["الجمعية الأوروبية للمسالك البولية EAU", "https://uroweb.org/"]],
+  gynecology: [["الكلية الأمريكية لأطباء النساء والتوليد ACOG", "https://www.acog.org/"], ["الكلية الملكية لأطباء النساء والتوليد RCOG", "https://www.rcog.org.uk/"], ["الاتحاد الدولي لأمراض النساء والتوليد FIGO", "https://www.figo.org/"]],
+  geriatric: [["الجمعية البريطانية لطب الشيخوخة BGS", "https://www.bgs.org.uk/"], ["الجمعية الأمريكية لطب الشيخوخة AGS", "https://www.americangeriatrics.org/"]],
+  pediatrics: [["الأكاديمية الأمريكية لطب الأطفال AAP", "https://www.aap.org/"], ["منظمة الصحة العالمية — صحة الطفل", "https://www.who.int/health-topics/child-health"]],
+  congenital: [["الأكاديمية الأمريكية لطب الأطفال AAP", "https://www.aap.org/"], ["منظمة الصحة العالمية — العيوب الخلقية", "https://www.who.int/health-topics/congenital-anomalies"]],
+  infectious: [["جمعية الأمراض المعدية الأمريكية IDSA", "https://www.idsociety.org/"], ["مراكز مكافحة الأمراض CDC", "https://www.cdc.gov/"], ["منظمة الصحة العالمية WHO", "https://www.who.int/"]],
+  hematology: [["الجمعية الأمريكية لأمراض الدم ASH", "https://www.hematology.org/"], ["الجمعية البريطانية لأمراض الدم BSH", "https://b-s-h.org.uk/"]]
+};
+function specRefs(k) {
+  const intl = [...(SPEC_INTL[k] || []).map(([name, url]) => ({ name, url })), ...((window.MOSEL_DATA.ZONE_SOURCES || {})[k] || [])];
+  return `<details class="spec-refs" open><summary>${ico(I.book)} مراجع التخصص</summary>
+    <div class="ref-grp"><b>مصر</b><ul>${refLinks(SPEC_LOCAL)}</ul></div>
+    <div class="ref-grp"><b>العالم العربي</b><ul>${refLinks(SPEC_ARAB)}</ul></div>
+    ${intl.length ? `<div class="ref-grp"><b>دوليًا</b><ul>${refLinks(intl.map(x => [x.name, x.url]))}</ul></div>` : ""}
+    <p class="muted small">مراجع للاستزادة والتدريب الطبي، ويُذكر مع كل مرض دليله الإرشادي الدولي. وجود الرابط لا يعني اعتماد الجهة لهذا التطبيق.</p></details>`;
+}
+const condRows = list => `<div class="cond-list">${list.map(({ c, zone }) => `<button class="cond-row t-${TRIAGE[c.triage].tone}" data-info="${c.id}" data-info-zone="${zone}">
+  <span><b>${esc(c.name)}</b><small>${esc(c.en)} · ICD-10 ${esc(c.icd10)}</small></span><span class="tri">${esc(TRIAGE[c.triage].label)}</span></button>`).join("")}</div>`;
+const byTriage = (a, b) => TRIAGE_ORDER.indexOf(b.c.triage) - TRIAGE_ORDER.indexOf(a.c.triage) || a.c.name.localeCompare(b.c.name, "ar");
 function renderSystems() {
-  const idx = systemIndex(), sys = SYSTEMS.find(s => s.key === state.system);
-  if (!sys) {
-    $content.innerHTML = `<div class="fade-in">
-      <h1 class="h1">الأمراض حسب أجهزة الجسم</h1>
-      <p class="lead">تصفّح ${diseasesAr(Object.values(idx).reduce((a, l) => a + l.length, 0))} مرتبة حسب جهاز الجسم، واقرأ عن أي مرض وعلاجه ومراجعه.</p>
-      <div class="sys-grid">${SYSTEMS.filter(s => (!s.sex || !state.profile.gender || s.sex === state.profile.gender) && idx[s.key].length).map(s => `
-        <button class="sys-card" data-system="${s.key}"><span class="qi">${ico(s.icon)}</span><b>${esc(s.name)}</b><small>${diseasesAr(idx[s.key].length)}</small></button>`).join("")}</div>
-    </div>`;
+  const by = state.browseBy || "spec", idx = systemIndex();
+  const tabs = `<div class="seg" role="tablist"><button data-browse="spec" aria-pressed="${by === "spec"}">حسب التخصص الطبي</button><button data-browse="sys" aria-pressed="${by === "sys"}">حسب أجهزة الجسم</button></div>`;
+  if (by === "spec" && state.spec && ZONE[state.spec]) {
+    const k = state.spec, z = ZONE[k], list = DATA[k].conditions.filter(sexOk).map(c => ({ c, zone: k })).sort(byTriage);
+    $content.innerHTML = `<div class="fade-in"><h1 class="h1 spec-h">${ico(z.icon)} ${esc(z.name)}</h1>
+      <p class="lead">${list.length} مرضًا في هذا التخصص. اضغط على أي مرض لترى تعريفه وأعراضه وفحوصاته وعلاجه ومراجعه.</p>
+      ${specRefs(k)}
+      <button class="btn btn-primary btn-block" style="margin:10px 0" data-zone="${k}">${ico(I.list)} قيّم أعراضي في ${esc(z.name)}</button>
+      ${condRows(list)}</div>`;
+  } else if (by === "spec") {
+    const zs = ZONES.filter(z => allowedZone(z.key));
+    $content.innerHTML = `<div class="fade-in"><h1 class="h1">الأمراض حسب التخصص الطبي</h1>${tabs}
+      <p class="lead">كل تخصص بأمراضه وأعراضها وعلاجها، مع مراجعه من وزارة الصحة المصرية وكليات الطب المصرية والعربية والجمعيات الطبية الدولية.</p>
+      <div class="sys-grid">${zs.map(z => `<button class="sys-card" data-spec="${z.key}"><span class="qi">${ico(z.icon)}</span><b>${esc(z.name)}</b><small>${diseasesAr(DATA[z.key].conditions.filter(sexOk).length)}</small></button>`).join("")}</div></div>`;
   } else {
-    const list = idx[sys.key].slice().sort((a, b) => TRIAGE_ORDER.indexOf(b.c.triage) - TRIAGE_ORDER.indexOf(a.c.triage) || a.c.name.localeCompare(b.c.name, "ar"));
-    $content.innerHTML = `<div class="fade-in">
-      <h1 class="h1">${esc(sys.name)}</h1>
-      <div class="cond-list">${list.map(({ c, zone }) => `<button class="cond-row t-${TRIAGE[c.triage].tone}" data-info="${c.id}" data-info-zone="${zone}">
-        <span><b>${esc(c.name)}</b><small>${esc(c.en)} · ICD-10 ${esc(c.icd10)}</small></span><span class="tri">${esc(TRIAGE[c.triage].label)}</span></button>`).join("")}</div>
-    </div>`;
+    const sys = SYSTEMS.find(s => s.key === state.system);
+    if (!sys) {
+      $content.innerHTML = `<div class="fade-in"><h1 class="h1">الأمراض حسب أجهزة الجسم</h1>${tabs}
+        <p class="lead">تصفّح ${diseasesAr(Object.values(idx).reduce((a, l) => a + l.length, 0))} مرتبة حسب جهاز الجسم، واقرأ عن أي مرض وعلاجه ومراجعه.</p>
+        <div class="sys-grid">${SYSTEMS.filter(s => (!s.sex || !state.profile.gender || s.sex === state.profile.gender) && idx[s.key].length).map(s => `
+          <button class="sys-card" data-system="${s.key}"><span class="qi">${ico(s.icon)}</span><b>${esc(s.name)}</b><small>${diseasesAr(idx[s.key].length)}</small></button>`).join("")}</div></div>`;
+    } else $content.innerHTML = `<div class="fade-in"><h1 class="h1">${esc(sys.name)}</h1>${condRows(idx[sys.key].slice().sort(byTriage))}</div>`;
   }
   setCta(null);
 }
@@ -1727,7 +1902,7 @@ function saveHistory(top, triKey, crisis) {
   history = [e, ...history.filter(h => h.id !== e.id)].slice(0, HIST_MAX);
   keep(HIST_KEY, history);
 }
-const fmtDate = iso => { try { return new Date(iso).toLocaleString("ar-EG", { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } };
+const fmtDate = iso => { try { return new Date(iso).toLocaleString(LOCALE, { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" }); } catch (e) { return ""; } };
 /* مواقف خاصة: أمراض الطفولة والعيوب الخلقية والعمليات والحوادث... تُحفظ في البطاقة الصحية وتظهر في تقرير الطبيب */
 const SPECIAL_TYPES = [
   ["childhood", "مرض في الطفولة"], ["congenital", "عيب خلقي وُلدت به"], ["surgery", "عملية جراحية"], ["injury", "حادث أو إصابة أو كسر"],
@@ -1900,6 +2075,7 @@ function renderVitals() {
       <h2 class="h2">${ico(I.share)} ربط جهاز أو استيراد قراءات</h2>
       <div class="vt-src">
         <button class="btn btn-ghost btn-block" data-act="vt-ble" ${bt ? "" : "disabled"}>${ico(I.pulse)} ربط جهاز ${T.name} بالبلوتوث</button>
+        ${bt && Object.keys(bleSaved()).length ? `<p class="muted small">${ico(I.check)} ${Object.keys(bleSaved()).length} جهاز مقترن: تُستقبل قراءاته تلقائيًا عند تشغيله قريبًا من الهاتف.</p>` : ""}
         ${bt ? "" : `<p class="muted small">الربط بالبلوتوث يعمل من متصفح Chrome أو Edge على أندرويد أو الكمبيوتر. على آيفون استخدم الاستيراد من ملف.</p>`}
         <label class="btn btn-ghost btn-block file-btn">${ico(I.folder)} استيراد ملف من ساعة أو هاتف أو بريد
           <input type="file" id="vt-file" accept=".csv,.txt,.xml,.zip,text/csv,application/zip,text/xml" hidden></label>
@@ -1942,26 +2118,51 @@ const BLE = {
   glucose: { svc: 0x1808, chr: 0x2a18, mode: "notify", racp: 0x2a52, parse(dv) { const f = dv.getUint8(0); let o = 10; if (f & 1) o += 2; if (!(f & 2)) return null;
       const c = sfloat(dv, o), mg = f & 4 ? c * 1000 * 18.016 : c * 100000; return { type: "glucose", v: { v: Math.round(mg), ctx: "random" } }; } }
 };
+// الاستقبال التلقائي: بعد أول اقتران نحفظ الجهاز، ثم نتصل به تلقائيًا كلما شُغّل قريبًا من الهاتف فتُحفظ قراءاته دون أي ضغطة
+const BLE_KEY = "moselBleDevices";
+const bleSaved = () => load(BLE_KEY, {});
+async function subscribeBLE(dev, t, quiet) {
+  const spec = BLE[t];
+  const gatt = dev.gatt.connected ? dev.gatt : await dev.gatt.connect(), svc = await gatt.getPrimaryService(spec.svc);
+  let ch; try { ch = await svc.getCharacteristic(spec.chr); } catch (e) { if (!spec.alt) throw e; ch = await svc.getCharacteristic(spec.alt); }
+  let got = 0;
+  ch.addEventListener("characteristicvaluechanged", ev => {
+    try { const r = spec.parse(ev.target.value); if (r && addVital(r.type, r.v, "bluetooth")) { got++; saveVitals(); if (state.screen === "records") render(); toast(`استُقبلت قراءة: ${vitalText({ type: r.type, v: r.v })}`); }
+      if (spec.once && got) { ch.stopNotifications().catch(() => {}); } } catch (e) { /* قراءة غير مكتملة */ }
+  });
+  await ch.startNotifications();
+  if (spec.racp) { const racp = await svc.getCharacteristic(spec.racp); await racp.startNotifications(); await racp.writeValue(new Uint8Array([1, 1])); }
+  if (!quiet) toast("تم الاتصال. ابدأ القياس على الجهاز وستصل القراءة تلقائيًا.");
+  // إن انقطع الاتصال (أُطفئ الجهاز) ننتظر ظهوره مجددًا لنتصل تلقائيًا
+  dev.addEventListener("gattserverdisconnected", () => watchBLE(dev, t), { once: true });
+}
+async function watchBLE(dev, t) {
+  if (!dev.watchAdvertisements) return;
+  try {
+    dev.addEventListener("advertisementreceived", function onAdv() { dev.removeEventListener("advertisementreceived", onAdv); subscribeBLE(dev, t, true).catch(() => watchBLE(dev, t)); });
+    await dev.watchAdvertisements();
+  } catch (e) { /* المتصفح لا يدعم المراقبة في الخلفية */ }
+}
 async function connectBLE() {
   const t = state.vType || "bp", spec = BLE[t];
   try {
     const dev = await navigator.bluetooth.requestDevice({ filters: [{ services: [spec.svc] }] });
     toast("جارٍ الاتصال بـ" + (dev.name || "الجهاز") + "…");
-    const gatt = await dev.gatt.connect(), svc = await gatt.getPrimaryService(spec.svc);
-    let ch; try { ch = await svc.getCharacteristic(spec.chr); } catch (e) { if (!spec.alt) throw e; ch = await svc.getCharacteristic(spec.alt); }
-    let got = 0;
-    ch.addEventListener("characteristicvaluechanged", ev => {
-      try { const r = spec.parse(ev.target.value); if (r && addVital(r.type, r.v, "bluetooth")) { got++; saveVitals(); render(); toast(`استُقبلت قراءة: ${vitalText({ type: r.type, v: r.v })}`); }
-        if (spec.once && got) { ch.stopNotifications().catch(() => {}); gatt.disconnect(); } } catch (e) { /* قراءة غير مكتملة */ }
-    });
-    await ch.startNotifications();
-    if (spec.racp) { const racp = await svc.getCharacteristic(spec.racp); await racp.startNotifications(); await racp.writeValue(new Uint8Array([1, 1])); }
-    toast("تم الاتصال. ابدأ القياس على الجهاز وستصل القراءة تلقائيًا.");
+    const saved = bleSaved(); saved[dev.id] = t; keep(BLE_KEY, saved);
+    await subscribeBLE(dev, t);
   } catch (e) {
     if (e && e.name === "NotFoundError") return; // المستخدم أغلق نافذة الاختيار
     toast("تعذّر الاتصال بالجهاز. تأكد أنه في وضع الاقتران ويدعم البلوتوث الصحي القياسي، أو استورد قراءاته من ملف.");
   }
 }
+// عند فتح البرنامج: نراقب الأجهزة التي اقترنت من قبل ونستقبل قراءاتها تلقائيًا
+(async () => {
+  try {
+    if (!navigator.bluetooth || !navigator.bluetooth.getDevices) return;
+    const saved = bleSaved(); if (!Object.keys(saved).length) return;
+    for (const dev of await navigator.bluetooth.getDevices()) if (saved[dev.id]) watchBLE(dev, saved[dev.id]);
+  } catch (e) { /* */ }
+})();
 
 /* ---------- استيراد الملفات ---------- */
 // قارئ ZIP مصغّر (يكفي لملف export.zip من Apple Health) باستخدام DecompressionStream المدمج في المتصفح
@@ -2110,8 +2311,9 @@ function renderAbout() {
     <p>لا يُرسَل أي شيء إلى أي خادم. تُحفظ على جهازك فقط: بياناتك الأساسية (العمر والطول والوزن والأمراض المزمنة)، وبطاقتك الصحية إن ملأتها، وسجل تقييماتك (الأعراض المختارة والنتيجة) لتعود إليه. <b>لا تُحفظ أبدًا</b> تقييمات الصحة الجنسية ولا التقييمات التي ظهرت فيها علامات أزمة نفسية. يمكنك حذف أي تقييم أو حذف كل بياناتك في أي وقت.</p>
     <h2>العرض</h2>
     <div class="pref-row"><span>الوضع الليلي وحجم الخط</span>${prefBtns()}</div>
+    <div class="pref-row"><span>اللغة</span>${langBtns()}</div>
     <h2>شروط الاستخدام</h2>
-    <p>استخدامك لـ«موصل» خاضع لشروط الاستخدام وإخلاء المسؤولية التي وافقت عليها${terms && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString("ar-EG", { year: "numeric", month: "long", day: "numeric" })) : ""}. <button class="link-btn" data-act="terms">اقرأ الشروط</button></p>
+    <p>استخدامك لـ«موصل» خاضع لشروط الاستخدام وإخلاء المسؤولية التي وافقت عليها${terms && terms.at ? " بتاريخ " + esc(new Date(terms.at).toLocaleDateString(LOCALE, { year: "numeric", month: "long", day: "numeric" })) : ""}. <button class="link-btn" data-act="terms">اقرأ الشروط</button></p>
     <div class="btn-row"><button class="btn btn-ghost" data-act="edit">${ico(I.user)} تعديل بياناتي</button><button class="btn btn-ghost" data-act="wipe">${ico(I.x)} حذف بياناتي</button></div>
     <div class="disclaimer">${ico(I.shield)}<span>«موصل» أداة توجيه وتثقيف صحي، وليس جهازًا طبيًا ولا بديلًا عن الطبيب، ويحتاج محتواه إلى مراجعة أطباء متخصصين واعتمادهم قبل الاستخدام الواسع.</span></div>
     <div class="foot">الإصدار ${version} · جميع الحقوق محفوظة © 2026 موصل</div>
@@ -2216,16 +2418,16 @@ function reportText() {
   const scored = scoreZone(state.zone).slice(0, 3);
   const tri = TRIAGE[overallTriage(scoreZone(state.zone)).key];
   return [
-    `تقرير موصل — ${new Date().toLocaleDateString("ar-EG")}`,
+    `تقرير موصل — ${new Date().toLocaleDateString(LOCALE)}`,
     `${p.gender === "male" ? "ذكر" : "أنثى"}، ${p.age} سنة، ${p.height} سم، ${p.weight} كجم${p.chronic.length ? "، أمراض مزمنة: " + p.chronic.join("، ") : ""}`,
     cardSummary(),
     `التخصص: ${z.name}`,
     `الأعراض: ${d.symptoms.filter(s => state.checked.has(s.id)).map(s => s.label).join("، ")}`,
     state.denied.size ? `أعراض نفاها: ${d.symptoms.filter(s => state.denied.has(s.id)).map(s => s.label).join("، ")}` : "",
-    `الاحتمالات: ${scored.map(c => `${c.name} (${c.en}, ICD-10 ${c.icd10}) ${c.pct}%`).join(" | ")}`,
+    `الاحتمالات: ${scored.map(c => LANG === "en" ? `${c.en} (ICD-10 ${c.icd10}) ${c.pct}%` : `${c.name} (${c.en}, ICD-10 ${c.icd10}) ${c.pct}%`).join(" | ")}`,
     `الخطوة التالية: ${tri.label}`,
     `— أداة توجيه وليست تشخيصًا.`
-  ].filter(Boolean).join("\n");
+  ].filter(Boolean).map(l => tr(l)).join("\n");
 }
 async function shareReport() {
   const text = reportText();
@@ -2278,6 +2480,7 @@ document.addEventListener("click", e => {
     armed = null;
     return pickRegion(ds.region);
   }
+  if (ds.lang) { if (ds.lang !== LANG) setLang(ds.lang); return; }
   if (ds.face != null && B3D.api) { hideTip(); return B3D.api.face(+ds.face * Math.PI / 180); }
   if (ds.zone) return pickZone(ds.zone, ds.preset);
   if (ds.sym) { state.checked.has(ds.sym) ? state.checked.delete(ds.sym) : state.checked.add(ds.sym); return render(); }
@@ -2301,6 +2504,8 @@ document.addEventListener("click", e => {
   if (ds.vdel) { vitals = vitals.filter(x => x.id !== ds.vdel); saveVitals(); toast("حُذفت القراءة"); return render(); }
   if (ds.spDel) { card.special = specials().filter(x => x.id !== ds.spDel); keep(CARD_KEY, card); toast("حُذف الموقف"); return render(); }
   if (ds.system) { state.system = ds.system; window.scrollTo(0, 0); return render(); }
+  if (ds.spec) { state.spec = ds.spec; window.scrollTo(0, 0); return render(); }
+  if (ds.browse) { state.browseBy = ds.browse; state.spec = null; state.system = null; return render(); }
   if (ds.info) { state.info = ds.info; state.infoZone = ds.infoZone; window.scrollTo(0, 0); return go("condinfo"); }
   if (ds.hist) return openHistory(ds.hist);
   if (ds.histDel) { history = history.filter(h => h.id !== ds.histDel); keep(HIST_KEY, history); toast("حُذف التقييم"); return render(); }
@@ -2328,7 +2533,7 @@ document.addEventListener("click", e => {
     case "records": state.prev = state.screen; return go("records");
     case "vitals": state.prev = state.screen; state.recTab = "vitals"; return go("records");
     case "tips": state.prev = state.screen; return go("tips");
-    case "systems": state.system = null; return go("systems");
+    case "systems": state.system = null; state.spec = null; return go("systems");
     case "theme": { const m = THEME_NEXT[curTheme()]; applyTheme(m); toast("الوضع: " + THEME_NAME[m]); return render(); }
     case "zoom+": case "zoom-": {
       const i = Math.max(0, Math.min(ZOOMS.length - 1, ZOOMS.indexOf(curZoom()) + (ds.act === "zoom+" ? 1 : -1)));
@@ -2338,7 +2543,7 @@ document.addEventListener("click", e => {
     case "vt-save": return saveManualVital();
     case "vt-ble": return connectBLE();
     case "hist-clear":
-      if (!confirm("هل تريد مسح كل التقييمات المحفوظة؟")) return;
+      if (!confirm(tr("هل تريد مسح كل التقييمات المحفوظة؟"))) return;
       history = []; keep(HIST_KEY, history); return render();
     case "edit": state.editingProfile = true; return go("onboarding");
     case "cancel-edit":
@@ -2350,7 +2555,7 @@ document.addEventListener("click", e => {
     case "share": return shareReport();
     case "print": return window.print();
     case "wipe":
-      if (!confirm("هل تريد حذف بياناتك من هذا الجهاز؟")) return;
+      if (!confirm(tr("هل تريد حذف بياناتك من هذا الجهاز؟"))) return;
       try { [PROFILE_KEY, CARD_KEY, HIST_KEY, VITALS_KEY].forEach(k => localStorage.removeItem(k)); } catch (err) { /* ignore */ }
       card = {}; history = []; vitals = [];
       state.profile = { gender: null, age: "", height: "", weight: "", chronic: [] };

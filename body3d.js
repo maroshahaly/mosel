@@ -33,7 +33,7 @@ void main(){
   if(dot(n,v)<0.) n=-n;
   float m=vM; if(m<.5){ if(vS.x>0.) m=2.; else if(vS.y>0.) m=1.; else if(vS.z>0.) m=4.; }
   vec3 base=matCol(m);
-  if(m>2.5&&m<3.5){ float f=normalize(vMN).z; base=mix(vec3(.92,.90,.86),vec3(.24,.15,.09),smoothstep(.86,.9,f)); base=mix(base,vec3(.03),smoothstep(.965,.975,f)); }
+  if(m>2.5&&m<3.5){ base=uSkin*.97; }  // عينان مغمضتان بلون البشرة: وجه هادئ كمجسّمات التشريح الطبية
   vec3 L1=normalize(vec3(.45,.75,.85)), L2=normalize(vec3(-.7,.25,.5)), L3=normalize(vec3(0.,.4,-1.));
   float skin=step(m,.5);
   float w=.35*skin+.1;
@@ -42,8 +42,8 @@ void main(){
   vec3 h=normalize(L1+v); float sp=pow(max(dot(n,h),0.),mix(18.,42.,skin))*mix(.06,.12,skin);
   vec3 sss=vec3(.25,.06,.03)*skin*(1.-d1)*d1*1.6;
   float sky=.5+.5*n.y;
-  vec3 c=base*(.30*mix(vec3(.55,.5,.48),vec3(1.,.98,.96),sky)+ .95*d1*vec3(1.,.97,.92) + .32*d2*vec3(.85,.9,1.)) + sss + sp + rim*.18*vec3(1.,.92,.8)*max(dot(n,L3)+.6,0.);
-  c*=mix(1.,vA,.9);
+  vec3 c=base*(.42*mix(vec3(.62,.58,.56),vec3(1.,.98,.96),sky)+ .78*d1*vec3(1.,.97,.93) + .34*d2*vec3(.9,.93,1.)) + sss + sp + rim*.18*vec3(1.,.92,.8)*max(dot(n,L3)+.6,0.);
+  c*=mix(1.,vA,.6);
   if(uDbg>.5){ c=mix(c, fract(vec3(.37,.61,.83)*(vR+1.)*vec3(7.1,3.3,5.7))*(.35+.75*d1), .8); }
   float hot=1.-step(.5,abs(vR-uHot)); float sel=1.-step(.5,abs(vR-uSel));
   vec3 gold=vec3(.86,.66,.24);
@@ -227,7 +227,7 @@ void main(){
       bindAttr(P, "aP", bufP, 3); bindAttr(P, "aN", bufN, 3); bindAttr(P, "aR", bufR, 1); bindAttr(P, "aM", bufM, 1); bindAttr(P, "aS", bufS, 3); bindAttr(P, "aA", bufA, 1);
       gl.uniformMatrix4fv(uni(P, "uMVP"), false, MVP); gl.uniformMatrix4fv(uni(P, "uM"), false, MM);
       gl.uniform3fv(uni(P, "uEye"), eye); gl.uniform1f(uni(P, "uHot"), st.hot); gl.uniform1f(uni(P, "uDbg"), opt.debug ? 1 : 0); gl.uniform1f(uni(P, "uSel"), st.sel);
-      gl.uniform1f(uni(P, "uT"), (performance.now() - st.t0) / 1000); gl.uniform3fv(uni(P, "uSkin"), opt.skin || [0.70, 0.52, 0.42]);
+      gl.uniform1f(uni(P, "uT"), (performance.now() - st.t0) / 1000); gl.uniform3fv(uni(P, "uSkin"), opt.skin || [0.80, 0.63, 0.53]);
       gl.drawArrays(gl.TRIANGLES, 0, nT * 3);
     }
     function pick(cx, cy) {

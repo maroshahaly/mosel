@@ -12,7 +12,7 @@ const VER = readFileSync(root + "data/conditions.js", "utf8").match(/version: "(
 if (!readFileSync(root + "sw.js", "utf8").includes(`"mosel-v${VER}"`)) { console.error(`✘ رقم الإصدار في sw.js لا يطابق ${VER}`); process.exit(1); }
 rmSync(out, { recursive: true, force: true }); mkdirSync(out + "data", { recursive: true });
 for (const f of ["index.html", "app.js", "body3d.js", "prefs.js", "sw.js", "manifest.json", "_headers", "LICENSE"]) cpSync(root + f, out + f);
-for (const f of readdirSync(root + "data").filter(f => f === "conditions.js" || f === "care.js" || f === "tips.js" || /^more_.*\.js$/.test(f))) cpSync(root + "data/" + f, out + "data/" + f);
+for (const f of readdirSync(root + "data").filter(f => f === "conditions.js" || f === "care.js" || f === "tips.js" || f === "i18n_en.js" || /^more_.*\.js$/.test(f))) cpSync(root + "data/" + f, out + "data/" + f);
 cpSync(root + "icons", out + "icons", { recursive: true });
 mkdirSync(out + "assets"); for (const f of readdirSync(root + "assets").filter(f => /\.(jpg|png|webp|bin)$/.test(f))) cpSync(root + "assets/" + f, out + "assets/" + f);
 // الصور التشريحية (Blausen، رخصة CC BY 3.0): تُنسخ وتُشفَّر مع الحزمة، لكن لا نضع عليها علامتنا لأنها ليست من إنتاجنا

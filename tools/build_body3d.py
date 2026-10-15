@@ -262,7 +262,7 @@ def clothing(V, g):
             if z > ez - .15:
                 yb = ey + .135 * hh - .9 * (abs(x) - xe - .02) ** 2
                 db = min((.022 if g == 'female' else .028) * hh - abs(y - yb), .24 - abs(abs(x) - xe - .04))
-                d = max(d, db * 2.2)
+                pass  # الحواجب أُلغيت: وجه هادئ ناعم بلا ملامح مقلقة
             sd[n, 0] = d
             continue
         if armish > .5:
