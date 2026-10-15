@@ -210,7 +210,8 @@ function trCore(k) {
 // ترجمة نص واحد: مطابقة تامة، ثم الأنماط ذات المتغيرات، ثم ترجمة اللب العربي مع إبقاء الأرقام والرموز حوله، ثم تقسيم على الفواصل
 function tr(s) {
   if (LANG !== "en" || !s || !HAS_AR.test(s)) return s;
-  const lead = s.match(/^\s*/)[0], trail = s.match(/\s*$/)[0], k = s.replace(/\s+/g, " ").trim();
+  // نحذف محارف البصمة غير المرئية قبل البحث في القاموس (لا معنى لها في النص الإنجليزي)
+  const lead = s.match(/^\s*/)[0], trail = s.match(/\s*$/)[0], k = s.replace(/[\u200B\u2060]/g, "").replace(/\s+/g, " ").trim();
   let r = trCore(k);
   if (r == null) {
     const m = k.match(/^([^\u0600-\u06FF]*)([\s\S]*?[\u0600-\u06FF][\s\S]*?)([^\u0600-\u06FF]*)$/);
@@ -227,7 +228,7 @@ function translateDOM(root) {
   try {
     if (root.nodeType === 3) { if (HAS_AR.test(root.nodeValue)) { const t = tr(root.nodeValue); if (t !== root.nodeValue) root.nodeValue = t; } return; }
     if (root.nodeType !== 1) return;
-    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentNode && /^(SCRIPT|STYLE|TEXTAREA)$/.test(n.parentNode.nodeName) ? 2 : 1 });
+    const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: n => n.parentNode && /^(SCRIPT|STYLE|TEXTAREA|NOSCRIPT)$/.test(n.parentNode.nodeName) ? 2 : 1 });
     for (let n; (n = w.nextNode());) if (HAS_AR.test(n.nodeValue)) { const t = tr(n.nodeValue); if (t !== n.nodeValue) n.nodeValue = t; }
     for (const el of [root, ...root.querySelectorAll("[placeholder],[aria-label],[title],[alt]")])
       for (const a of TR_ATTRS) { const v = el.getAttribute && el.getAttribute(a); if (v && HAS_AR.test(v)) { const t = tr(v); if (t !== v) el.setAttribute(a, t); } }
@@ -1842,12 +1843,30 @@ const SPEC_INTL = {
   infectious: [["جمعية الأمراض المعدية الأمريكية IDSA", "https://www.idsociety.org/"], ["مراكز مكافحة الأمراض CDC", "https://www.cdc.gov/"], ["منظمة الصحة العالمية WHO", "https://www.who.int/"]],
   hematology: [["الجمعية الأمريكية لأمراض الدم ASH", "https://www.hematology.org/"], ["الجمعية البريطانية لأمراض الدم BSH", "https://b-s-h.org.uk/"]]
 };
+// المراجع العلمية العامة والكتب الأساسية ومراجع الأمراض في مصر (تظهر في «كيف يعمل» وفي مراجع كل تخصص)
+const GENERAL_REFS = [
+  ["التصنيف الدولي للأمراض ICD-11 — منظمة الصحة العالمية (بالعربية)", "https://icd.who.int/ar/docs/192190_ICD-11_Implementation_or_Transition_Guide-ar.pdf"],
+  ["مرجع هاريسون للطب الباطني — Harrison's Principles of Internal Medicine", "https://accessmedicine.mhmedical.com/book.aspx?bookid=3095"],
+  ["مرجع دافيدسون للطب — Davidson's Principles and Practice of Medicine", "https://www.elsevier.com/books/davidsons-principles-and-practice-of-medicine/9780702083471"],
+  ["مرجع روبنز لعلم الأمراض — Robbins & Cotran Pathologic Basis of Disease", "https://www.elsevier.com/books/robbins-and-cotran-pathologic-basis-of-disease/9780323531139"],
+  ["أساسيات علم الأمراض — Pathoma", "https://www.pathoma.com/"],
+  ["بنك المعرفة المصري (الوصول القانوني المجاني للكتب والمراجع الطبية)", "https://www.ekb.eg/"]
+];
+const EGYPT_REFS = [
+  ["وزارة الصحة والسكان — قطاع الطب الوقائي (الأمراض المتوطنة: الملاريا والفيلاريا والليشمانيا وفيروسات الكبد)", "https://www.mohp.gov.eg/SectorServices.aspx?Deptcode=10&&SectorCode=6"],
+  ["مجلة «أحوال مصرية» — مركز المعلومات ودعم اتخاذ القرار بمجلس الوزراء (أبحاث الأمراض المتوطنة والوبائية)", "https://library.idsc.gov.eg/bib/101065"],
+  ["الطب في مصر القديمة: وصف أمراض العظام والهضم والتنفس والجراحة — PMC (المكتبة الوطنية للطب)", "https://pmc.ncbi.nlm.nih.gov/articles/PMC8459052/"]
+];
+const EGYPT_BOOKS = ["«الأمراض والأوبئة وآثارها على المجتمع المصري (1798–1813م)» — د. ليلى السيد عبد العزيز، الهيئة المصرية العامة للكتاب (سلسلة تاريخ المصريين)"];
+const generalRefsHtml = () => `<div class="ref-grp"><b>الكتب والمراجع الطبية الأساسية</b><ul>${refLinks(GENERAL_REFS)}</ul></div>
+  <div class="ref-grp"><b>الأمراض في مصر: المتوطنة والتاريخية</b><ul>${refLinks(EGYPT_REFS)}${EGYPT_BOOKS.map(b => `<li>${esc(b)}</li>`).join("")}</ul></div>`;
 function specRefs(k) {
   const intl = [...(SPEC_INTL[k] || []).map(([name, url]) => ({ name, url })), ...((window.MOSEL_DATA.ZONE_SOURCES || {})[k] || [])];
   return `<details class="spec-refs" open><summary>${ico(I.book)} مراجع التخصص</summary>
     <div class="ref-grp"><b>مصر</b><ul>${refLinks(SPEC_LOCAL)}</ul></div>
     <div class="ref-grp"><b>العالم العربي</b><ul>${refLinks(SPEC_ARAB)}</ul></div>
     ${intl.length ? `<div class="ref-grp"><b>دوليًا</b><ul>${refLinks(intl.map(x => [x.name, x.url]))}</ul></div>` : ""}
+    <details class="ref-more"><summary>مراجع عامة وكتب أساسية ومراجع الأمراض في مصر</summary>${generalRefsHtml()}</details>
     <p class="muted small">مراجع للاستزادة والتدريب الطبي، ويُذكر مع كل مرض دليله الإرشادي الدولي. وجود الرابط لا يعني اعتماد الجهة لهذا التطبيق.</p></details>`;
 }
 const condRows = list => `<div class="cond-list">${list.map(({ c, zone }) => `<button class="cond-row t-${TRIAGE[c.triage].tone}" data-info="${c.id}" data-info-zone="${zone}">
@@ -2338,6 +2357,9 @@ function renderAbout() {
       ${sources}
       <li>الرسوم التشريحية للأعضاء: Blausen.com staff (2014). <a href="https://en.wikiversity.org/wiki/WikiJournal_of_Medicine/Medical_gallery_of_Blausen_Medical_2014" target="_blank" rel="noopener noreferrer">Medical gallery of Blausen Medical 2014</a>. WikiJournal of Medicine 1(2) — رخصة <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener noreferrer">CC BY 3.0</a> (صُغّرت للعرض دون تعديل المحتوى).</li>
     </ul>
+    <h2>المراجع العلمية والكتب الأساسية</h2>
+    ${generalRefsHtml()}
+    <p class="muted small">نربط فقط بالمصادر الرسمية والناشرين وبنك المعرفة المصري؛ ولا نربط بنسخ منشورة دون إذن أصحاب حقوقها.</p>
     <h2>خصوصيتك</h2>
     <p>لا يُرسَل أي شيء إلى أي خادم. تُحفظ على جهازك فقط: بياناتك الأساسية (العمر والطول والوزن والأمراض المزمنة)، وبطاقتك الصحية إن ملأتها، وسجل تقييماتك (الأعراض المختارة والنتيجة) لتعود إليه. <b>لا تُحفظ أبدًا</b> تقييمات الصحة الجنسية ولا التقييمات التي ظهرت فيها علامات أزمة نفسية. يمكنك حذف أي تقييم أو حذف كل بياناتك في أي وقت.</p>
     <h2>العرض</h2>
