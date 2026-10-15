@@ -440,10 +440,18 @@ function pick3d(key, x, y, type) {
   if (type === "mouse" || B3D.armed === key) { B3D.armed = null; return pickRegion(key); }
   B3D.armed = key; B3D.api.setHot(key); showTip3d(key, x, y);
 }
+// طريقة العرض: الصورة الحقيقية (افتراضيًا) أو المجسّم ثلاثي الأبعاد — يختارها المستخدم وتُحفظ
+const VIEW_KEY = "moselBodyView";
+const bodyView = () => { try { return localStorage.getItem(VIEW_KEY) === "3d" ? "3d" : "photo"; } catch (e) { return "photo"; } };
+const viewSwitch = () => B3D.ok ? `<div class="view-seg" role="group" aria-label="طريقة عرض الجسم"><button data-bview="photo" aria-pressed="${bodyView() === "photo"}">صورة حقيقية</button><button data-bview="3d" aria-pressed="${bodyView() === "3d"}">مجسّم ثلاثي الأبعاد</button></div>` : "";
 function bodyStage() {
   const sex = state.profile.gender === "female" ? "female" : "male";
-  if (B3D.ok) return body3dStage(sex);
-  if (photoOK[sex]) {
+  if (B3D.ok && (bodyView() === "3d" || !photoOK[sex])) return viewSwitch() + body3dStage(sex);
+  if (photoOK[sex]) return viewSwitch() + bodyPhotoStage(sex);
+  return `<div class="body-wrap">${bodyMapSvg()}</div>${offRegions(Object.keys(SVG_GEO))}`;
+}
+function bodyPhotoStage(sex) {
+  {  // الصورتان الحقيقيتان (أمام وخلف) بمناطق مضبوطة عليهما
     const canTurn = !!photoOK[sex + "Back"];
     const frontKeys = REGIONS.filter(r => !r.off && PHOTO_GEO[sex].shapes[r.key] && (!r.sex || r.sex === sex)).map(r => r.key);
     return `<div class="body-wrap photo ${canTurn ? "turnable" : ""}" data-sex="${sex}">
@@ -912,7 +920,7 @@ function back() {
   else if (s === "condinfo") go("systems");  // يعود إلى قائمة التخصص أو الجهاز نفسها
   else if (s === "systems") { if (state.system || state.spec) { state.system = null; state.spec = null; render(); } else go("home"); }
   else if (s === "describe" || s === "records" || s === "tips") go(s === "tips" && state.prev === "results" ? "results" : "home");
-  else if (s === "about" || s === "stages") go(state.prev || "home");
+  else if (s === "about" || s === "stages" || s === "glands") go(state.prev || "home");
   else if (s === "results" || s === "followup") { state.round = 0; state.asked = new Set(); state.denied = new Set(); state.answers = {}; go("symptoms"); }
   else if (s === "symptoms") { resetCase(); state.zone = null; go(state.region ? "sections" : "home"); }
   else if (s === "sections") { state.region = null; go("home"); }
@@ -1186,7 +1194,7 @@ function renderTopbar() {
     results: "النتيجة",
     about: "عن موصل والمصادر",
     stages: "حاسبة المراحل", terms: "الشروط والأحكام",
-    describe: "تحليل وصفك", records: "سجلّي الصحي", tips: "نصائح لصحتك",
+    describe: "تحليل وصفك", records: "سجلّي الصحي", tips: "نصائح لصحتك", glands: "الغدد والهرمونات",
     systems: state.system ? (SYSTEMS.find(x => x.key === state.system) || {}).name || "أجهزة الجسم" : (state.spec && ZONE[state.spec] ? ZONE[state.spec].name : "الأمراض حسب التخصص"), condinfo: "عن المرض"
   }[state.screen] || "";
   const si = stepIndex();
@@ -1325,6 +1333,8 @@ function renderHome() {
       <div id="qres" aria-live="polite"></div>
     </div>
 
+    <button class="quick sys-entry" data-act="systems"><span class="qi">${ico(I.book)}</span>
+      <span class="t"><b>الأمراض حسب التخصص</b><span>الصدر، القلب، الباطنة، الجلدية… كل تخصص بأمراضه وأعراضها وعلاجها ومراجعها</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
     <div class="stage">
       <div class="stage-head"><b>أين تشعر بالألم؟</b><span>مرّر المؤشر أو المس موضع الألم</span></div>
       ${bodyStage()}
@@ -1340,8 +1350,8 @@ function renderHome() {
       <button class="quick" data-act="tips"><span class="qi">${ico(I.heart)}</span>
         <span class="t"><b>نصائح لصحتك</b><span>${personalTips().length ? `${personalTips().length} نصائح تخصك` : "النوم والرياضة والغذاء"}</span></span></button>
     </div>
-    <button class="quick sys-entry" data-act="systems"><span class="qi">${ico(I.book)}</span>
-      <span class="t"><b>الأمراض حسب التخصص</b><span>الصدر، القلب، الباطنة، الجلدية… كل تخصص بأمراضه وأعراضها وعلاجها ومراجعها</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
+    <button class="quick" data-act="glands"><span class="qi">${ico(I.drop)}</span>
+      <span class="t"><b>الغدد الصماء وهرموناتها</b><span>الدرقية والنخامية والكظرية والبنكرياس والمبيض والخصية… ووظيفة كل هرمون وتحاليله</span></span>${ico(I.chevL).replace("<svg", '<svg class="chev"')}</button>
     <div class="label">أو اختر مباشرة دون تحديد موضع</div>
     ${quick}
 
@@ -1851,6 +1861,7 @@ function renderSystems() {
     $content.innerHTML = `<div class="fade-in"><h1 class="h1 spec-h">${ico(z.icon)} ${esc(z.name)}</h1>
       <p class="lead">${list.length} مرضًا في هذا التخصص. اضغط على أي مرض لترى تعريفه وأعراضه وفحوصاته وعلاجه ومراجعه.</p>
       ${specRefs(k)}
+      ${k === "endocrine" ? `<button class="btn btn-ghost btn-block" style="margin:10px 0 0" data-act="glands">${ico(I.drop)} الغدد الصماء وهرموناتها</button>` : ""}
       <button class="btn btn-primary btn-block" style="margin:10px 0" data-zone="${k}">${ico(I.list)} قيّم أعراضي في ${esc(z.name)}</button>
       ${condRows(list)}</div>`;
   } else if (by === "spec") {
@@ -2247,6 +2258,26 @@ async function importVitalsFile(file) {
   } catch (e) { toast("تعذّرت قراءة الملف. جرّب ملف CSV أو ملف export.zip من تطبيق الصحة."); }
 }
 
+/* ---------- الغدد الصماء وهرموناتها ---------- */
+function renderGlands() {
+  const G = (window.MOSEL_GLANDS || []).filter(g => !g.sex || !state.profile.gender || g.sex === state.profile.gender);
+  const cond = id => { const c = DATA.endocrine.conditions.find(x => x.id === id); return c && sexOk(c) ? `<button class="chip-link" data-info="${c.id}" data-info-zone="endocrine">${esc(c.name)}</button>` : ""; };
+  $content.innerHTML = `<div class="fade-in glands">
+    <h1 class="h1">الغدد الصماء وهرموناتها</h1>
+    <p class="lead">الغدد الصماء تفرز هرمونات في الدم تنظّم النمو والطاقة والسكر والضغط والخصوبة والنوم. اضغط على أي غدة لتعرف موضعها وهرموناتها، وماذا يحدث عند زيادتها أو نقصها، وكيف تُقاس، والأمراض المرتبطة بها.</p>
+    ${G.map((g, i) => `<details class="gland" ${i === 0 ? "open" : ""}><summary><b>${esc(g.name)}</b><span class="muted small">${esc(g.en)}</span></summary>
+      <p class="g-where">${ico(I.info)} ${esc(g.where)}</p>
+      ${g.img ? `<img class="g-img" src="${asset("assets/organs/" + g.img + ".jpg")}" alt="رسم تشريحي: ${esc(g.name)}" loading="lazy">` : ""}
+      ${g.hormones.map(h => `<div class="hormone"><b>${esc(h.n)} <span class="code">${esc(h.en)}</span></b>
+        ${h.fn ? `<p>${esc(h.fn)}</p>` : ""}${h.high ? `<p class="hi"><span>عند الزيادة:</span> ${esc(h.high)}</p>` : ""}${h.low ? `<p class="lo"><span>عند النقص:</span> ${esc(h.low)}</p>` : ""}
+        ${h.test ? `<p class="ts"><span>التحليل:</span> ${esc(h.test)}</p>` : ""}</div>`).join("")}
+      ${g.conds && g.conds.length ? `<div class="g-conds"><span class="muted small">أمراض مرتبطة:</span>${g.conds.map(cond).join("")}</div>` : ""}
+    </details>`).join("")}
+    <button class="btn btn-primary btn-block" style="margin-top:12px" data-zone="endocrine">${ico(I.list)} قيّم أعراضي في الغدد الصماء</button>
+    <div class="disclaimer">${ico(I.shield)}<span>المراجع: Endocrine Society، وNICE، وMedlinePlus، وStatPearls. القيم الطبيعية تختلف بين المعامل؛ فسّر تحاليلك مع طبيبك.</span></div>
+  </div>`;
+  setCta(null);
+}
 /* ---------- نصائح لصحتك ---------- */
 const TIPS = window.MOSEL_TIPS || { general: [], when: [], zone: {} };
 function personalTips() {
@@ -2459,6 +2490,7 @@ function render() {
   else if (s === "condinfo") renderCondInfo();
   else if (s === "records") renderRecords();
   else if (s === "tips") renderTips();
+  else if (s === "glands") renderGlands();
   if (render.last !== s) {
     window.scrollTo(0, 0);
     // لقارئ الشاشة ومستخدمي لوحة المفاتيح: ننقل التركيز إلى عنوان الشاشة الجديدة
@@ -2481,6 +2513,7 @@ document.addEventListener("click", e => {
     return pickRegion(ds.region);
   }
   if (ds.lang) { if (ds.lang !== LANG) setLang(ds.lang); return; }
+  if (ds.bview) { try { localStorage.setItem(VIEW_KEY, ds.bview); } catch (e) { /* */ } hideTip(); return render(); }
   if (ds.face != null && B3D.api) { hideTip(); return B3D.api.face(+ds.face * Math.PI / 180); }
   if (ds.zone) return pickZone(ds.zone, ds.preset);
   if (ds.sym) { state.checked.has(ds.sym) ? state.checked.delete(ds.sym) : state.checked.add(ds.sym); return render(); }
@@ -2533,6 +2566,7 @@ document.addEventListener("click", e => {
     case "records": state.prev = state.screen; return go("records");
     case "vitals": state.prev = state.screen; state.recTab = "vitals"; return go("records");
     case "tips": state.prev = state.screen; return go("tips");
+    case "glands": state.prev = state.screen; return go("glands");
     case "systems": state.system = null; state.spec = null; return go("systems");
     case "theme": { const m = THEME_NEXT[curTheme()]; applyTheme(m); toast("الوضع: " + THEME_NAME[m]); return render(); }
     case "zoom+": case "zoom-": {
